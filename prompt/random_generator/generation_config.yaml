@@ -226,7 +226,7 @@ multi_character:
   enabled: true             # 总开关：false 时人数/性别强制为 1girl，不生成双人/多人角色提示词
   probability: 0.25         # 多人角色占比（0-1）：每条样本按该概率掷骰，命中则 count_gender 为
                             # 2girls，否则为 1girl；0.5 = 与原来 1girl/2girls 均等随机等价；
-                            # 若用 --balance 自动均衡（run_opencode.bat 已启用），
+                            # 若用 --balance 自动均衡（opencode_runner.py 命令行加 --balance），
                             # 会先纯单人补充到整体占比达标后自动切换为本值稳态
   tag_count_bonus: 30       # n，默认 20
   focus_character_bonus: 5 # m，默认 10（百分比）

@@ -421,7 +421,7 @@ PRICE_OUTPUT_PER_M = 0.28      # 输出单价
 
 - 启动时统计输出 txt 中 `2girls` 行占比；高于目标则 `probability=0` 纯单人补充，后台守护线程定时重测，达标后直接把 `multi_character_cfg["probability"]` 改为目标值切稳态（无需重启）。
 - 用于把含历史旧数据（如 50% 多人）的输出文件逐步稀释到目标占比。
-- `run_opencode.bat` 已启用 `--balance 0.25`。
+- 在 `opencode_runner.py` 命令行加 `--balance 0.25` 即可启用（见下方运行示例）。
 
 ### 7.4 运行示例
 
