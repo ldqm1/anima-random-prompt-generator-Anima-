@@ -84,12 +84,8 @@ anima-rag-knowledge/
 │   ├── random_prompts.jsonl          # 生成结果（默认输出）
 │   └── curated_pools.json            # 精选 tag 池（生成产物）
 │
-├── scripts/                          # 知识库数据处理脚本
-│   ├── 1_tag_生成.py
-│   ├── 2_角色合并.py
-│   ├── 3_画师去重.py
-│   ├── 4_prompt_prep.py
-│   └── 5_模板生成.py
+├── scripts/                          # 辅助工具
+│   └── mcp_shell_mini.py             # MCP Shell Server（供 Chatbox 等调用）
 │
 ├── source/                           # 原始数据源
 │   └── danbooru_e261_updated.csv
@@ -104,9 +100,8 @@ anima-rag-knowledge/
 │   │   ├── tags_物品.txt
 │   │   ├── tags_镜头.txt
 │   │   ├── tags_表情动作.txt
-│   │   ├── tags_二次元角色.txt
-│   │   └── ...
-│   └── artists_curated.txt
+│   │   └── tags_二次元角色.txt
+│   └── .version
 │
 └── archive/                          # 归档目录（历史临时文件，可定期清理）
 ```
@@ -656,16 +651,7 @@ extra_requirements_pool:
 
 ## 数据准备
 
-若需从原始数据重新构建知识库：
-
-```bash
-cd scripts
-python 1_tag_生成.py
-python 2_角色合并.py
-python 3_画师去重.py
-python 4_prompt_prep.py
-python 5_模板生成.py
-```
+若需从原始数据重新构建知识库，请从上游 [BuXinZi/anima-rag-knowledge](https://github.com/BuXinZi/anima-rag-knowledge) 获取 `scripts/` 处理脚本。
 
 构建精选 tag 池：
 
@@ -746,7 +732,7 @@ BuXinZi 是原 anima-rag-knowledge 知识库的作者，负责整理 Danbooru �
 
 ## 许可
 
-- 处理脚本（`scripts/`、`prompt/random_generator/`）：**MIT License**
+- 处理脚本（`prompt/random_generator/`）：**MIT License**
 - 知识库文件（`知识库/`）：整理自公开数据源，**永久免费开放**
 
 > ⚠️ 如果你在付费渠道获得此知识库，你被骗了。本仓库始终免费提供最新版本。

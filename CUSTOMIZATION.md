@@ -211,7 +211,6 @@ category_whitelists:      # 通用类别白名单池
 ```
 知识库/
 ├── .version
-├── artists_curated.txt        # 精选画师（去重后）
 └── v1/
     ├── tags_人物.txt           # 人物（外貌/表情/姿势 等，按 CAT 细分）
     ├── tags_服饰.txt           # 服饰
@@ -221,14 +220,7 @@ category_whitelists:      # 通用类别白名单池
     ├── tags_环境.txt           # 环境/天气/氛围
     ├── tags_画面.txt           # 画面质量/风格/光照
     ├── tags_物品.txt           # 物品
-    ├── tags_二次元角色.txt       # 角色/作品名
-    ├── tags_艺术家.txt          # 画师
-    ├── tags_无法分类.txt        # 噪声/元数据
-    ├── tags_all.txt
-    ├── characters_merged.txt
-    ├── enhancement_rules.txt
-    ├── prompt_examples.txt
-    └── templates_*.txt         # 插画/漫画/局部重绘/关键帧/故事模板
+    └── tags_二次元角色.txt       # 角色/作品名
 ```
 
 - 知识库 v1 行格式：`[DOMAIN:标签] [CAT:分类/子分类] 英文tag | 中文翻译`。
