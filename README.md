@@ -84,9 +84,6 @@ anima-rag-knowledge/
 │   ├── random_prompts.jsonl          # 生成结果（默认输出）
 │   └── curated_pools.json            # 精选 tag 池（生成产物）
 │
-├── scripts/                          # 辅助工具
-│   └── mcp_shell_mini.py             # MCP Shell Server（供 Chatbox 等调用）
-│
 ├── source/                           # 原始数据源
 │   └── danbooru_e261_updated.csv
 │
