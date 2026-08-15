@@ -1,0 +1,7402 @@
+[
+  {
+    "series_tag": "kantai_collection",
+    "series_name_cn": "舰队Collection",
+    "enabled": true,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 422
+  },
+  {
+    "series_tag": "fate_(series)",
+    "series_name_cn": "命运_(系列)",
+    "enabled": true,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 348
+  },
+  {
+    "series_tag": "hololive",
+    "series_name_cn": "Hololive",
+    "enabled": true,
+    "allow_male": true,
+    "weight": 50,
+    "character_count": 273
+  },
+  {
+    "series_tag": "idolmaster",
+    "series_name_cn": "偶像大师",
+    "enabled": true,
+    "allow_male": true,
+    "weight": 20,
+    "character_count": 228
+  },
+  {
+    "series_tag": "blue_archive",
+    "series_name_cn": "蓝色档案",
+    "enabled": true,
+    "allow_male": true,
+    "weight": 1000,
+    "character_count": 217
+  },
+  {
+    "series_tag": "touhou",
+    "series_name_cn": "东方",
+    "enabled": true,
+    "allow_male": true,
+    "weight": 50,
+    "character_count": 215
+  },
+  {
+    "series_tag": "arknights",
+    "series_name_cn": "明日方舟",
+    "enabled": true,
+    "allow_male": true,
+    "weight": 1000,
+    "character_count": 215
+  },
+  {
+    "series_tag": "azur_lane",
+    "series_name_cn": "碧蓝航线",
+    "enabled": true,
+    "allow_male": true,
+    "weight": 1000,
+    "character_count": 181
+  },
+  {
+    "series_tag": "original",
+    "series_name_cn": "原创",
+    "enabled": true,
+    "allow_male": true,
+    "weight": 20,
+    "character_count": 175
+  },
+  {
+    "series_tag": "genshin_impact",
+    "series_name_cn": "原神",
+    "enabled": true,
+    "allow_male": true,
+    "weight": 1000,
+    "character_count": 143
+  },
+  {
+    "series_tag": "umamusume",
+    "series_name_cn": "马娘",
+    "enabled": true,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 128
+  },
+  {
+    "series_tag": "honkai_(series)",
+    "series_name_cn": "崩坏_(系列)",
+    "enabled": true,
+    "allow_male": true,
+    "weight": 500,
+    "character_count": 107
+  },
+  {
+    "series_tag": "final_fantasy",
+    "series_name_cn": "最终幻想",
+    "enabled": true,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 103
+  },
+  {
+    "series_tag": "girls'_frontline",
+    "series_name_cn": "少女前线",
+    "enabled": true,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 102
+  },
+  {
+    "series_tag": "granblue_fantasy",
+    "series_name_cn": "碧蓝幻想",
+    "enabled": true,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 83
+  },
+  {
+    "series_tag": "vocaloid",
+    "series_name_cn": "vocaloid",
+    "enabled": true,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 69
+  },
+  {
+    "series_tag": "princess_connect!",
+    "series_name_cn": "公主连接！",
+    "enabled": true,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 33
+  },
+  {
+    "series_tag": "reverse:1999",
+    "series_name_cn": "逆转:1999",
+    "enabled": true,
+    "allow_male": true,
+    "weight": 50,
+    "character_count": 15
+  },
+  {
+    "series_tag": "gochuumon_wa_usagi_desu_ka?",
+    "series_name_cn": "点兔（请问您今天要吃兔子吗？）",
+    "enabled": true,
+    "allow_male": true,
+    "weight": 100,
+    "character_count": 13
+  },
+  {
+    "series_tag": "magia_record:_mahou_shoujo_madoka_magica_gaiden",
+    "series_name_cn": "魔法记录：魔法少女小圆外传",
+    "enabled": true,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 11
+  },
+  {
+    "series_tag": "sousou_no_frieren",
+    "series_name_cn": "葬送的弗里伦",
+    "enabled": true,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 10
+  },
+  {
+    "series_tag": "kobayashi-san_chi_no_maidragon",
+    "series_name_cn": "小林家的龙女仆",
+    "enabled": true,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 8
+  },
+  {
+    "series_tag": "date_a_live",
+    "series_name_cn": "约会大作战",
+    "enabled": true,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 7
+  },
+  {
+    "series_tag": "go-toubun_no_hanayome",
+    "series_name_cn": "五等分的花嫁",
+    "enabled": true,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "oshi_no_ko",
+    "series_name_cn": "推しの子",
+    "enabled": true,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "majo_no_tabitabi",
+    "series_name_cn": "魔女之旅",
+    "enabled": true,
+    "allow_male": true,
+    "weight": 100,
+    "character_count": 1
+  },
+  {
+    "series_tag": "toaru_kagaku_no_railgun",
+    "series_name_cn": "某科学的超电磁炮",
+    "enabled": true,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "pokemon",
+    "series_name_cn": "口袋妖怪",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 624
+  },
+  {
+    "series_tag": "fire_emblem",
+    "series_name_cn": "火焰纹章",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 165
+  },
+  {
+    "series_tag": "nijisanji",
+    "series_name_cn": "Nijisanji",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 124
+  },
+  {
+    "series_tag": "fate/grand_order",
+    "series_name_cn": "命运/大订单",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 122
+  },
+  {
+    "series_tag": "precure",
+    "series_name_cn": "光之美少女",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 111
+  },
+  {
+    "series_tag": "kemono_friends",
+    "series_name_cn": "兽之朋友",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 79
+  },
+  {
+    "series_tag": "gundam",
+    "series_name_cn": "高达",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 79
+  },
+  {
+    "series_tag": "girls_und_panzer",
+    "series_name_cn": "少女与战车",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 77
+  },
+  {
+    "series_tag": "jojo_no_kimyou_na_bouken",
+    "series_name_cn": "乔乔的奇妙冒险",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 71
+  },
+  {
+    "series_tag": "danganronpa_(series)",
+    "series_name_cn": "弹丸论破（系列）",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 64
+  },
+  {
+    "series_tag": "league_of_legends",
+    "series_name_cn": "英雄联盟",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 64
+  },
+  {
+    "series_tag": "love_live!",
+    "series_name_cn": "Love Live!",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 58
+  },
+  {
+    "series_tag": "touken_ranbu",
+    "series_name_cn": "刀剑乱舞",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 56
+  },
+  {
+    "series_tag": "tales_of_(series)",
+    "series_name_cn": "传说_系列",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 49
+  },
+  {
+    "series_tag": "lyrical_nanoha",
+    "series_name_cn": "魔法少女奈叶",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 47
+  },
+  {
+    "series_tag": "persona",
+    "series_name_cn": "女神异闻录",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 46
+  },
+  {
+    "series_tag": "yu-gi-oh!",
+    "series_name_cn": "游戏王!",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 45
+  },
+  {
+    "series_tag": "one_piece",
+    "series_name_cn": "海贼王",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 42
+  },
+  {
+    "series_tag": "dragon_ball",
+    "series_name_cn": "龙珠",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 39
+  },
+  {
+    "series_tag": "ragnarok_online",
+    "series_name_cn": "仙境传说在线",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 38
+  },
+  {
+    "series_tag": "bang_dream!",
+    "series_name_cn": "偶像梦幻祭！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 36
+  },
+  {
+    "series_tag": "umineko_no_naku_koro_ni",
+    "series_name_cn": "海猫鸣泣之时",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 35
+  },
+  {
+    "series_tag": "bishoujo_senshi_sailor_moon",
+    "series_name_cn": "美少女战士_水手月亮",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 34
+  },
+  {
+    "series_tag": "boku_no_hero_academia",
+    "series_name_cn": "我的英雄学院",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 34
+  },
+  {
+    "series_tag": "marvel",
+    "series_name_cn": "漫威",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 33
+  },
+  {
+    "series_tag": "dragon_quest",
+    "series_name_cn": "勇者斗恶龙",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 32
+  },
+  {
+    "series_tag": "project_moon",
+    "series_name_cn": "project_moon",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 31
+  },
+  {
+    "series_tag": "the_legend_of_zelda",
+    "series_name_cn": "塞尔达传说",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 30
+  },
+  {
+    "series_tag": "xenoblade_chronicles_(series)",
+    "series_name_cn": "异度之刃编年史_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 30
+  },
+  {
+    "series_tag": "street_fighter",
+    "series_name_cn": "街头霸王",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 30
+  },
+  {
+    "series_tag": "toaru_majutsu_no_index",
+    "series_name_cn": "某科学的超电磁炮",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 27
+  },
+  {
+    "series_tag": "zenless_zone_zero",
+    "series_name_cn": "无神论者零",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 27
+  },
+  {
+    "series_tag": "inazuma_eleven_(series)",
+    "series_name_cn": "闪电十一人_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 27
+  },
+  {
+    "series_tag": "goddess_of_victory:_nikke",
+    "series_name_cn": "胜利女神：尼克",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 27
+  },
+  {
+    "series_tag": "mahou_shoujo_madoka_magica",
+    "series_name_cn": "魔法少女小圆",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 26
+  },
+  {
+    "series_tag": "splatoon_(series)",
+    "series_name_cn": "喷射战士_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 25
+  },
+  {
+    "series_tag": "mario_(series)",
+    "series_name_cn": "马里奥_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 25
+  },
+  {
+    "series_tag": "naruto_(series)",
+    "series_name_cn": "火影忍者_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 25
+  },
+  {
+    "series_tag": "world_witches_series",
+    "series_name_cn": "魔女的世界系列",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 25
+  },
+  {
+    "series_tag": "sword_art_online",
+    "series_name_cn": "刀剑神域",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 24
+  },
+  {
+    "series_tag": "honkai:_star_rail",
+    "series_name_cn": "崩坏：星穹铁道",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 1000,
+    "character_count": 24
+  },
+  {
+    "series_tag": "ensemble_stars!",
+    "series_name_cn": "偶像梦幻祭！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 24
+  },
+  {
+    "series_tag": "overwatch",
+    "series_name_cn": "守望先锋",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 24
+  },
+  {
+    "series_tag": "blazblue",
+    "series_name_cn": "苍蓝革命",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 24
+  },
+  {
+    "series_tag": "digimon",
+    "series_name_cn": "数码宝贝",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 24
+  },
+  {
+    "series_tag": "guilty_gear",
+    "series_name_cn": "罪恶装备",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 23
+  },
+  {
+    "series_tag": "mega_man_(series)",
+    "series_name_cn": "洛克人_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 23
+  },
+  {
+    "series_tag": "dungeon_meshi",
+    "series_name_cn": "地下美食",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 22
+  },
+  {
+    "series_tag": "neptune_(series)",
+    "series_name_cn": "海王星_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 22
+  },
+  {
+    "series_tag": "holostars",
+    "series_name_cn": "holostars",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 22
+  },
+  {
+    "series_tag": "project_sekai",
+    "series_name_cn": "项目世界",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 21
+  },
+  {
+    "series_tag": "dc_comics",
+    "series_name_cn": "dc_漫画",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 21
+  },
+  {
+    "series_tag": "tokyo_afterschool_summoners",
+    "series_name_cn": "东京放学后召唤师",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 21
+  },
+  {
+    "series_tag": "saki",
+    "series_name_cn": "咲",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 21
+  },
+  {
+    "series_tag": "chainsaw_man",
+    "series_name_cn": "电锯人",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 20
+  },
+  {
+    "series_tag": "shingeki_no_kyojin",
+    "series_name_cn": "进击的巨人",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 20
+  },
+  {
+    "series_tag": "indie_virtual_youtuber",
+    "series_name_cn": "独立虚拟主播",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 20
+  },
+  {
+    "series_tag": "assault_lily",
+    "series_name_cn": "突击百合",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 20
+  },
+  {
+    "series_tag": "cookie_(touhou)",
+    "series_name_cn": "饼干_(东方)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 20
+  },
+  {
+    "series_tag": "queen's_blade",
+    "series_name_cn": "女王之刃",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 20
+  },
+  {
+    "series_tag": "omori",
+    "series_name_cn": "梦境",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 20
+  },
+  {
+    "series_tag": "jujutsu_kaisen",
+    "series_name_cn": "咒术回战",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 19
+  },
+  {
+    "series_tag": "axis_powers_hetalia",
+    "series_name_cn": "轴心国的力量_黑塔利亚",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 19
+  },
+  {
+    "series_tag": "ace_attorney",
+    "series_name_cn": "逆转裁判",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 19
+  },
+  {
+    "series_tag": "macross",
+    "series_name_cn": "超时空要塞",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 19
+  },
+  {
+    "series_tag": "neon_genesis_evangelion",
+    "series_name_cn": "新世纪福音战士",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 18
+  },
+  {
+    "series_tag": "tengen_toppa_gurren_lagann",
+    "series_name_cn": "天元突破_红莲之眼",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 18
+  },
+  {
+    "series_tag": "apex_legends",
+    "series_name_cn": "apex_传奇",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 18
+  },
+  {
+    "series_tag": "eiyuu_densetsu",
+    "series_name_cn": "英雄传说",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 18
+  },
+  {
+    "series_tag": "bleach",
+    "series_name_cn": "死神",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 18
+  },
+  {
+    "series_tag": "code_geass",
+    "series_name_cn": "代码_盖亚斯",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 17
+  },
+  {
+    "series_tag": "kimetsu_no_yaiba",
+    "series_name_cn": "鬼灭之刃",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 17
+  },
+  {
+    "series_tag": "senran_kagura",
+    "series_name_cn": "战神学院",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 17
+  },
+  {
+    "series_tag": "kill_la_kill",
+    "series_name_cn": "杀戮之歌",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 16
+  },
+  {
+    "series_tag": "sonic_(series)",
+    "series_name_cn": "索尼克_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 16
+  },
+  {
+    "series_tag": "tiger_&_bunny",
+    "series_name_cn": "老虎与兔子",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 16
+  },
+  {
+    "series_tag": "pretty_series",
+    "series_name_cn": "漂亮系列",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 16
+  },
+  {
+    "series_tag": "punishing:_gray_raven",
+    "series_name_cn": "惩罚：灰烬",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 16
+  },
+  {
+    "series_tag": "len'en",
+    "series_name_cn": "连恩",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 16
+  },
+  {
+    "series_tag": "to_heart_(series)",
+    "series_name_cn": "心之系列",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 15
+  },
+  {
+    "series_tag": "the_king_of_fighters",
+    "series_name_cn": "拳皇",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 15
+  },
+  {
+    "series_tag": "tsukihime",
+    "series_name_cn": "月姬",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 15
+  },
+  {
+    "series_tag": "suzumiya_haruhi_no_yuuutsu",
+    "series_name_cn": "凉宫春日的忧郁",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 14
+  },
+  {
+    "series_tag": "kirby_(series)",
+    "series_name_cn": "卡比_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 14
+  },
+  {
+    "series_tag": "monogatari_(series)",
+    "series_name_cn": "物语_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 14
+  },
+  {
+    "series_tag": "elsword",
+    "series_name_cn": "伊尔索德",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 14
+  },
+  {
+    "series_tag": "skullgirls",
+    "series_name_cn": "骷髅女孩",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 14
+  },
+  {
+    "series_tag": "saibou_shinkyoku",
+    "series_name_cn": "细胞_新曲",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 13
+  },
+  {
+    "series_tag": "angel_beats!",
+    "series_name_cn": "天使的节奏!",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 13
+  },
+  {
+    "series_tag": "little_busters!",
+    "series_name_cn": "小小的战斗者！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 13
+  },
+  {
+    "series_tag": "kagerou_project",
+    "series_name_cn": "风之少女计划",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 13
+  },
+  {
+    "series_tag": "twisted_wonderland",
+    "series_name_cn": "扭曲的仙境",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 13
+  },
+  {
+    "series_tag": "nanashi_inc.",
+    "series_name_cn": "无名_公司",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 13
+  },
+  {
+    "series_tag": "lucky_star",
+    "series_name_cn": "幸运星",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 12
+  },
+  {
+    "series_tag": "high_school_dxd",
+    "series_name_cn": "高校DxD",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 12
+  },
+  {
+    "series_tag": "sayonara_zetsubou_sensei",
+    "series_name_cn": "绝望先生",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 12
+  },
+  {
+    "series_tag": "rwby",
+    "series_name_cn": "红白黑黄",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 12
+  },
+  {
+    "series_tag": "osomatsu-san",
+    "series_name_cn": "小松先生",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 12
+  },
+  {
+    "series_tag": "helltaker",
+    "series_name_cn": "地狱使者",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 12
+  },
+  {
+    "series_tag": "undertale",
+    "series_name_cn": "地下世界",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 12
+  },
+  {
+    "series_tag": "kono_subarashii_sekai_ni_shukufuku_wo!",
+    "series_name_cn": "这个美好的世界有祝福！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 11
+  },
+  {
+    "series_tag": "voiceroid",
+    "series_name_cn": "音声合成",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 11
+  },
+  {
+    "series_tag": "watashi_ga_motenai_no_wa_dou_kangaetemo_omaera_ga_warui!",
+    "series_name_cn": "我怎么想你们都是错的！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 11
+  },
+  {
+    "series_tag": "senki_zesshou_symphogear",
+    "series_name_cn": "战姬绝唱Symphogear",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 11
+  },
+  {
+    "series_tag": "hibike!_euphonium",
+    "series_name_cn": "轻音少女",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 11
+  },
+  {
+    "series_tag": "elden_ring",
+    "series_name_cn": "艾尔登法环",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 11
+  },
+  {
+    "series_tag": "to_love-ru",
+    "series_name_cn": "恋爱随风",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 11
+  },
+  {
+    "series_tag": "resident_evil",
+    "series_name_cn": "生化危机",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 11
+  },
+  {
+    "series_tag": "kingdom_hearts",
+    "series_name_cn": "王国之心",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 11
+  },
+  {
+    "series_tag": "aikatsu!_(series)",
+    "series_name_cn": "偶像活动！_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 11
+  },
+  {
+    "series_tag": "pikmin_(series)",
+    "series_name_cn": "皮克敏_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 11
+  },
+  {
+    "series_tag": "vspo!",
+    "series_name_cn": "vspo!",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 11
+  },
+  {
+    "series_tag": "vshojo",
+    "series_name_cn": "Vshojo",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 11
+  },
+  {
+    "series_tag": "bocchi_the_rock!",
+    "series_name_cn": "摇滚少女",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 10
+  },
+  {
+    "series_tag": "rozen_maiden",
+    "series_name_cn": "蔷薇少女",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 10
+  },
+  {
+    "series_tag": "atelier_(series)",
+    "series_name_cn": "工作室_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 10
+  },
+  {
+    "series_tag": "ranma_1/2",
+    "series_name_cn": "乱马1/2",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 10
+  },
+  {
+    "series_tag": "wuthering_waves",
+    "series_name_cn": "鸣潮",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 10
+  },
+  {
+    "series_tag": "hunter_x_hunter",
+    "series_name_cn": "猎人×猎人",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 10
+  },
+  {
+    "series_tag": "monster_musume_no_iru_nichijou",
+    "series_name_cn": "怪物娘日常",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 10
+  },
+  {
+    "series_tag": "kamen_rider",
+    "series_name_cn": "假面骑士",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 10
+  },
+  {
+    "series_tag": "k-on!",
+    "series_name_cn": "轻音部!",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 10
+  },
+  {
+    "series_tag": "amagami",
+    "series_name_cn": "天使的心跳",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 10
+  },
+  {
+    "series_tag": "clannad",
+    "series_name_cn": "凉宫春日",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 10
+  },
+  {
+    "series_tag": "puyopuyo",
+    "series_name_cn": "胖胖球",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 10
+  },
+  {
+    "series_tag": "re:zero_kara_hajimeru_isekai_seikatsu",
+    "series_name_cn": "从零开始的异世界生活",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 9
+  },
+  {
+    "series_tag": "spy_x_family",
+    "series_name_cn": "间谍过家家",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 9
+  },
+  {
+    "series_tag": "onii-chan_wa_oshimai!",
+    "series_name_cn": "哥哥是终结者！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 9
+  },
+  {
+    "series_tag": "higurashi_no_naku_koro_ni",
+    "series_name_cn": "寒蝉鸣泣之时",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 9
+  },
+  {
+    "series_tag": "houseki_no_kuni",
+    "series_name_cn": "宝石之国",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 9
+  },
+  {
+    "series_tag": "yuru_yuri",
+    "series_name_cn": "轻松百合",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 9
+  },
+  {
+    "series_tag": "dead_or_alive",
+    "series_name_cn": "死或生",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 9
+  },
+  {
+    "series_tag": "made_in_abyss",
+    "series_name_cn": "来自深渊",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 9
+  },
+  {
+    "series_tag": "touqi_guaitan",
+    "series_name_cn": "touqi_guaitan",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 9
+  },
+  {
+    "series_tag": "golden_kamuy",
+    "series_name_cn": "黄金神威",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 9
+  },
+  {
+    "series_tag": "maria-sama_ga_miteru",
+    "series_name_cn": "玛利亚的祝福",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 9
+  },
+  {
+    "series_tag": "kirakira_precure_a_la_mode",
+    "series_name_cn": "闪亮的光辉！甜点魔法少女",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 9
+  },
+  {
+    "series_tag": "45860",
+    "series_name_cn": "45860",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 9
+  },
+  {
+    "series_tag": "gintama",
+    "series_name_cn": "银魂",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 9
+  },
+  {
+    "series_tag": "disgaea",
+    "series_name_cn": "魔界战记",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 9
+  },
+  {
+    "series_tag": "os-tan",
+    "series_name_cn": "os-tan",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 9
+  },
+  {
+    "series_tag": "haikyuu!!",
+    "series_name_cn": "排球少年!!",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 9
+  },
+  {
+    "series_tag": "zero_no_tsukaima",
+    "series_name_cn": "零之使魔",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 8
+  },
+  {
+    "series_tag": "little_witch_academia",
+    "series_name_cn": "小魔女学园",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 8
+  },
+  {
+    "series_tag": "gegege_no_kitarou",
+    "series_name_cn": "鬼太郎",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 8
+  },
+  {
+    "series_tag": "zombie_land_saga",
+    "series_name_cn": "僵尸土地传奇",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 8
+  },
+  {
+    "series_tag": "gakuen_idolmaster",
+    "series_name_cn": "学园偶像大师",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 8
+  },
+  {
+    "series_tag": "aria_(manga)",
+    "series_name_cn": "ARIA（漫画）",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 8
+  },
+  {
+    "series_tag": "little_nuns_(diva)",
+    "series_name_cn": "小修女_(歌姬)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 8
+  },
+  {
+    "series_tag": "fairy_tail",
+    "series_name_cn": "妖精的尾巴",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 8
+  },
+  {
+    "series_tag": "mahou_sensei_negima!",
+    "series_name_cn": "魔法老师！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 8
+  },
+  {
+    "series_tag": "panty_&_stocking_with_garterbelt",
+    "series_name_cn": "长袜子与吊带袜",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 8
+  },
+  {
+    "series_tag": "steins;gate",
+    "series_name_cn": "命运石之门",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 8
+  },
+  {
+    "series_tag": "kanon",
+    "series_name_cn": "香农",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 8
+  },
+  {
+    "series_tag": "nier_(series)",
+    "series_name_cn": "尼尔（系列）",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 7
+  },
+  {
+    "series_tag": "vampire_(game)",
+    "series_name_cn": "吸血鬼_(游戏)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 7
+  },
+  {
+    "series_tag": "darling_in_the_franxx",
+    "series_name_cn": "零之使魔",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 7
+  },
+  {
+    "series_tag": "kaguya-sama_wa_kokurasetai_~tensai-tachi_no_renai_zunousen~",
+    "series_name_cn": "辉夜大小姐想让我告白~天才们的恋爱头脑战~",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 7
+  },
+  {
+    "series_tag": "fullmetal_alchemist",
+    "series_name_cn": "钢之炼金术师",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 7
+  },
+  {
+    "series_tag": "azumanga_daioh",
+    "series_name_cn": "阿滋漫画大王",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 7
+  },
+  {
+    "series_tag": "meitantei_conan",
+    "series_name_cn": "名侦探柯南",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 7
+  },
+  {
+    "series_tag": "shoujo_kageki_revue_starlight",
+    "series_name_cn": "少女歌剧Revue Starlight",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 7
+  },
+  {
+    "series_tag": "mawaru_penguindrum",
+    "series_name_cn": "回转企鹅罐",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 7
+  },
+  {
+    "series_tag": "baldur's_gate",
+    "series_name_cn": "博德之门",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 7
+  },
+  {
+    "series_tag": "dungeon_and_fighter",
+    "series_name_cn": "地下城与勇士",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 7
+  },
+  {
+    "series_tag": "sekaiju_no_meikyuu",
+    "series_name_cn": "世界树的迷宫",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 7
+  },
+  {
+    "series_tag": "utau",
+    "series_name_cn": "歌唱",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 7
+  },
+  {
+    "series_tag": "working!!",
+    "series_name_cn": "打工！！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 7
+  },
+  {
+    "series_tag": "tekken",
+    "series_name_cn": "铁拳",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 7
+  },
+  {
+    "series_tag": "free!",
+    "series_name_cn": "免费！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 7
+  },
+  {
+    "series_tag": "cardcaptor_sakura",
+    "series_name_cn": "魔卡少女樱",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "black_rock_shooter",
+    "series_name_cn": "黑岩射手",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "gridman_universe",
+    "series_name_cn": "格里德曼宇宙",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "ore_no_imouto_ga_konna_ni_kawaii_wake_ga_nai",
+    "series_name_cn": "我妹妹不可能这么可爱",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "girls_band_cry",
+    "series_name_cn": "女孩乐队哭泣",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "yume_nikki",
+    "series_name_cn": "梦日记",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "yuri!!!_on_ice",
+    "series_name_cn": "冰上的尤里!!!",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "yahari_ore_no_seishun_lovecome_wa_machigatteiru.",
+    "series_name_cn": "我的青春恋爱物语果然有问题。",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "infinite_stratos",
+    "series_name_cn": "无限的星辰",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "hidamari_sketch",
+    "series_name_cn": "阳光小屋",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "luo_xiaohei_zhanji",
+    "series_name_cn": "洛小黑_战记",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "among_us",
+    "series_name_cn": "在我们之中",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "new_game!",
+    "series_name_cn": "新游戏！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "metal_gear_(series)",
+    "series_name_cn": "合金装备_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "hataraku_saibou",
+    "series_name_cn": "工作细胞",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "scott_pilgrim_(series)",
+    "series_name_cn": "斯科特·皮尔格林_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "delicious_party_precure",
+    "series_name_cn": "美味派对光之美少女",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "nagi_no_asukara",
+    "series_name_cn": "凪之海",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "galaxy_angel",
+    "series_name_cn": "银河天使",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "chrono_trigger",
+    "series_name_cn": "时空之轮",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "dark_souls_(series)",
+    "series_name_cn": "黑暗之魂_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "my_little_pony",
+    "series_name_cn": "我的小马",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "katawa_shoujo",
+    "series_name_cn": "残念少女",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "breath_of_fire",
+    "series_name_cn": "火之呼吸",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "star_ocean",
+    "series_name_cn": "星之海",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "star_wars",
+    "series_name_cn": "星球大战",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "powerpuff_girls_z",
+    "series_name_cn": "泡泡糖女孩Z",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "last_origin",
+    "series_name_cn": "最后的起源",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "yurucamp",
+    "series_name_cn": "悠哉日常大王",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "transformers",
+    "series_name_cn": "变形金刚",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "nichijou",
+    "series_name_cn": "日常",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "durarara!!",
+    "series_name_cn": "无头骑士异闻录!!",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "inuyasha",
+    "series_name_cn": "犬夜叉",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "dorohedoro",
+    "series_name_cn": "多罗罗",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "cevio",
+    "series_name_cn": "cevio",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 6
+  },
+  {
+    "series_tag": "sono_bisque_doll_wa_koi_wo_suru",
+    "series_name_cn": "那个比企谷的娃娃会恋爱",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "dungeon_ni_deai_wo_motomeru_no_wa_machigatteiru_darou_ka",
+    "series_name_cn": "在地下城寻求邂逅是否搞错了什么",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "monster_hunter_(series)",
+    "series_name_cn": "怪物猎人_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "one-punch_man",
+    "series_name_cn": "一拳超人",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "alice_in_wonderland",
+    "series_name_cn": "爱丽丝梦游仙境",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "machikado_mazoku",
+    "series_name_cn": "街角魔族",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "link!_like!_love_live!",
+    "series_name_cn": "链接!_喜欢!_爱情生活!",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "chuunibyou_demo_koi_ga_shitai!",
+    "series_name_cn": "中二病也想谈恋爱！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "dokidoki!_precure",
+    "series_name_cn": "心跳心跳！光之美少女",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "senpai_ga_uzai_kouhai_no_hanashi",
+    "series_name_cn": "学长很烦的后辈的故事",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "mushoku_tensei",
+    "series_name_cn": "无职转生",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "kamitsubaki_studio",
+    "series_name_cn": "异世界情绪",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "mob_psycho_100",
+    "series_name_cn": "灵能百分百",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "overlord_(maruyama)",
+    "series_name_cn": "无职转生_(丸山)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "soul_eater",
+    "series_name_cn": "灵魂收割者",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "kin-iro_mosaic",
+    "series_name_cn": "金色马赛克",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "mahou_girls_precure!",
+    "series_name_cn": "魔法少女☆小圆！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "tamako_market",
+    "series_name_cn": "玉子市场",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "hayate_no_gotoku!",
+    "series_name_cn": "旋风管家!",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "happinesscharge_precure!",
+    "series_name_cn": "幸福充电光之美少女！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "avatar_legends",
+    "series_name_cn": "化身_传奇",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "gekkan_shoujo_nozaki-kun",
+    "series_name_cn": "月刊少女野崎君",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "tears_of_themis",
+    "series_name_cn": "他们的眼泪",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "heartcatch_precure!",
+    "series_name_cn": "心捕捉光之美少女！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "watashi_ni_tenshi_ga_maiorita!",
+    "series_name_cn": "我身上降临了天使！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "magi_the_labyrinth_of_magic",
+    "series_name_cn": "魔法迷宫",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "journey_to_the_west",
+    "series_name_cn": "西游记",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "taimanin_(series)",
+    "series_name_cn": "堕天使_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "warship_girls_r",
+    "series_name_cn": "战舰少女_r",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "cowboy_bebop",
+    "series_name_cn": "牛仔星际",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "summer_pockets",
+    "series_name_cn": "夏日口袋",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "ichigo_mashimaro",
+    "series_name_cn": "一护_马西玛罗",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "vividred_operation",
+    "series_name_cn": "鲜红的操作",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "youkai_watch",
+    "series_name_cn": "妖怪手表",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "gakkou_gurashi!",
+    "series_name_cn": "学园孤岛!",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "puzzle_&_dragons",
+    "series_name_cn": "拼图_&_龙",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "south_park",
+    "series_name_cn": "南方公园",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "toradora!",
+    "series_name_cn": "龙与虎!",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "hyouka",
+    "series_name_cn": "冰菓",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "sanrio",
+    "series_name_cn": "三丽鸥",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "nekopara",
+    "series_name_cn": "猫娘乐园",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "utawarerumono",
+    "series_name_cn": "乌塔瓦雷鲁莫诺",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "shuffle!",
+    "series_name_cn": "洗牌！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "closers",
+    "series_name_cn": "结束者",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 5
+  },
+  {
+    "series_tag": "shakugan_no_shana",
+    "series_name_cn": "灼眼的夏娜",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "boku_wa_tomodachi_ga_sukunai",
+    "series_name_cn": "我没有很多朋友",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "kara_no_kyoukai",
+    "series_name_cn": "空之境界",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "kid_icarus",
+    "series_name_cn": "小天使",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "devil_may_cry_(series)",
+    "series_name_cn": "恶魔猎人（系列）",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "doki_doki_literature_club",
+    "series_name_cn": "心跳文学社",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "ano_hi_mita_hana_no_namae_wo_bokutachi_wa_mada_shiranai.",
+    "series_name_cn": "我们还不知道那天看到的花的名字。",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "animal_crossing",
+    "series_name_cn": "动物之森",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "tokyo_ghoul",
+    "series_name_cn": "东京食尸鬼",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "mother_2",
+    "series_name_cn": "母亲_2",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "tensei_shitara_slime_datta_ken",
+    "series_name_cn": "转生史莱姆的故事",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "samurai_spirits",
+    "series_name_cn": "侍魂",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "va-11_hall-a",
+    "series_name_cn": "VA-11 HALL-A",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "phantasy_star",
+    "series_name_cn": "幻想之星",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "gabriel_dropout",
+    "series_name_cn": "加布里埃尔掉线",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "mahou_shoujo_ni_akogarete",
+    "series_name_cn": "对魔忍的憧憬",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "warhammer_40k",
+    "series_name_cn": "战锤_40k",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "path_to_nowhere",
+    "series_name_cn": "无处可去",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "yuusha_de_aru",
+    "series_name_cn": "勇者的阿鲁",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "slam_dunk_(series)",
+    "series_name_cn": "灌篮高手_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "deltarune",
+    "series_name_cn": "德尔塔之梦",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "princess_principal",
+    "series_name_cn": "公主代理",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "goblin_slayer!",
+    "series_name_cn": "哥布林杀手!",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "sakura_no_sekai",
+    "series_name_cn": "樱花的世界",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "hazbin_hotel",
+    "series_name_cn": "哈兹宾_酒店",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "death_note",
+    "series_name_cn": "死亡笔记",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "aoki_hagane_no_arpeggio",
+    "series_name_cn": "苍蓝钢铁的琶音",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "adventure_time",
+    "series_name_cn": "冒险时间",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "brave_witches",
+    "series_name_cn": "勇敢的女巫",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "lupin_iii",
+    "series_name_cn": "鲁邦三世",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "pani_poni_dash!",
+    "series_name_cn": "潘尼·波尼·达什！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "non_non_biyori",
+    "series_name_cn": "非非日常",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "keroro_gunsou",
+    "series_name_cn": "凯罗军曹",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "heaven_burns_red",
+    "series_name_cn": "天国燃烧红",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "tenchi_muyou!",
+    "series_name_cn": "天地无用!",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "kuroko_no_basuke",
+    "series_name_cn": "黑子的篮球",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "school_rumble",
+    "series_name_cn": "校园狂想曲",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "team_fortress_2",
+    "series_name_cn": "团队要塞_2",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "blue_lock",
+    "series_name_cn": "蓝色锁",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "zannen_onna-kanbu_black_general-san",
+    "series_name_cn": "遗憾的女干部黑色将军桑",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "monster_girl_encyclopedia",
+    "series_name_cn": "怪物女孩百科全书",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "sengoku_basara",
+    "series_name_cn": "战国巴萨拉",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "kyoukaisenjou_no_horizon",
+    "series_name_cn": "境界线上的地平线",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "wild_arms",
+    "series_name_cn": "狂野之臂",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "yu_yu_hakusho",
+    "series_name_cn": "幽游白书",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "octopath_traveler",
+    "series_name_cn": "八方旅人",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "metroid",
+    "series_name_cn": "银河战士",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "ib",
+    "series_name_cn": "ib",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "xenosaga",
+    "series_name_cn": "异度之刃",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "trigun",
+    "series_name_cn": "枪神",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "minecraft",
+    "series_name_cn": "我的世界",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "ikkitousen",
+    "series_name_cn": "一骑当千",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "soulcalibur",
+    "series_name_cn": "灵魂能力",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "nisekoi",
+    "series_name_cn": "伪恋",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "sinoalice",
+    "series_name_cn": "西诺爱丽丝",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 4
+  },
+  {
+    "series_tag": "lycoris_recoil",
+    "series_name_cn": "萤火虫的回忆",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "fatal_fury",
+    "series_name_cn": "致命狂怒",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "needy_girl_overdose",
+    "series_name_cn": "需要的女孩过量",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "eromanga_sensei",
+    "series_name_cn": "情色漫画老师",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "komi-san_wa_komyushou_desu",
+    "series_name_cn": "小宫桑是个社交恐惧症患者",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "yuuki_bakuhatsu_bang_bravern",
+    "series_name_cn": "优纪_爆发_轰_勇者",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "cyberpunk_(series)",
+    "series_name_cn": "赛博朋克_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "kill_me_baby",
+    "series_name_cn": "杀了我吧",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "go!_princess_precure",
+    "series_name_cn": "Go! 公主光之美少女",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "godzilla_(series)",
+    "series_name_cn": "哥斯拉_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "tate_no_yuusha_no_nariagari",
+    "series_name_cn": "盾之勇者成名录",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "darker_than_black",
+    "series_name_cn": "黑之契约者",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "saenai_heroine_no_sodatekata",
+    "series_name_cn": "冴えない彼女的育成方法",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "dragon's_crown",
+    "series_name_cn": "龙之冠",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "black_lagoon",
+    "series_name_cn": "黑礁",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "di_gi_charat",
+    "series_name_cn": "数码宝贝",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "shoujo_shuumatsu_ryokou",
+    "series_name_cn": "少女终末旅行",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "haiyore!_nyaruko-san",
+    "series_name_cn": "嗨！尼亚鲁科小姐",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "love_plus",
+    "series_name_cn": "恋爱+",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "eureka_seven_(series)",
+    "series_name_cn": "交响诗篇_艾蕾卡7_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "ryuuou_no_oshigoto!",
+    "series_name_cn": "龙王的工作！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "aa_megami-sama",
+    "series_name_cn": "阿啊·女神大人",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "yama_no_susume",
+    "series_name_cn": "山之进",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "shokugeki_no_souma",
+    "series_name_cn": "食戟之灵",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "ganbare_douki-chan",
+    "series_name_cn": "加油豆木酱",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "healin'_good_precure",
+    "series_name_cn": "治愈系_好魔法",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "sekai_seifuku:_bouryaku_no_zvezda",
+    "series_name_cn": "世界制服：暴略的泽维斯达",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "yagate_kimi_ni_naru",
+    "series_name_cn": "最终你将成为",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "odin_sphere",
+    "series_name_cn": "奥丁之 sphere",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "highschool_of_the_dead",
+    "series_name_cn": "死亡高中",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "sen_to_chihiro_no_kamikakushi",
+    "series_name_cn": "千与千寻",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "katekyo_hitman_reborn!",
+    "series_name_cn": "家庭教师黑手党！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "senren_banka",
+    "series_name_cn": "千恋万花",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "shingeki_no_bahamut",
+    "series_name_cn": "进击的巨人_巴哈姆特",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "mon-musu_quest!",
+    "series_name_cn": "怪物娘Quest!",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "nanatsu_no_taizai",
+    "series_name_cn": "七大罪",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "powerpuff_girls",
+    "series_name_cn": "飞天小女警",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "dog_days",
+    "series_name_cn": "狗日子",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "sakura_taisen",
+    "series_name_cn": "樱花大战",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "hanasaku_iroha",
+    "series_name_cn": "花咲工厂",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "eizouken_ni_wa_te_wo_dasu_na!",
+    "series_name_cn": "映像研要出手了!",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "nu_carnival",
+    "series_name_cn": "nu_carnival",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "magic_kaito",
+    "series_name_cn": "魔术快斗",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "hirogaru_sky!_precure",
+    "series_name_cn": "广阔天空！_光之美少女",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "himouto!_umaru-chan",
+    "series_name_cn": "干物妹！土间埋",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "ao_no_exorcist",
+    "series_name_cn": "青之驱魔师",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "mahjong_soul",
+    "series_name_cn": "麻将灵",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "under_night_in-birth",
+    "series_name_cn": "月下夜想曲",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "yakusoku_no_neverland",
+    "series_name_cn": "约定的梦幻岛",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "riddle_joker",
+    "series_name_cn": "谜语_小丑",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "tantei_opera_milky_holmes",
+    "series_name_cn": "侦探歌剧·魔法少女",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "magic_knight_rayearth",
+    "series_name_cn": "四堂光",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "star_fox",
+    "series_name_cn": "星际狐狸",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "flip_flappers",
+    "series_name_cn": "翻转小女孩",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "renkin_san-kyuu_magical_pokaan",
+    "series_name_cn": "炼金三级魔法少女",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "castlevania_(series)",
+    "series_name_cn": "恶魔城（系列）",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "high_school_fleet",
+    "series_name_cn": "高校舰队",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "ojamajo_doremi",
+    "series_name_cn": "魔法小仙女",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "kami_nomi_zo_shiru_sekai",
+    "series_name_cn": "神知道的世界",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "agent_aika",
+    "series_name_cn": "特工艾卡",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "super_robot_wars",
+    "series_name_cn": "超级机器人大战",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "kannagi",
+    "series_name_cn": "神凪",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "berserk",
+    "series_name_cn": "狂战士",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "aldnoah.zero",
+    "series_name_cn": "阿尔德诺零",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "bloodborne",
+    "series_name_cn": "血源",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "pangya",
+    "series_name_cn": "乒乓",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "doraemon",
+    "series_name_cn": "哆啦A梦",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "slayers",
+    "series_name_cn": "屠杀者",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "my-hime",
+    "series_name_cn": "我的公主",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "yuyushiki",
+    "series_name_cn": "悠游式",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "shirobako",
+    "series_name_cn": "白箱",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "hellsing",
+    "series_name_cn": "黑夜传说",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "gyee",
+    "series_name_cn": "呜呜",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "flcl",
+    "series_name_cn": "FLCL",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "minami-ke",
+    "series_name_cn": "南家",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "rewrite",
+    "series_name_cn": "重写",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "my-otome",
+    "series_name_cn": "我的女儿",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "muv-luv",
+    "series_name_cn": "Muv-Luv",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "rosario+vampire",
+    "series_name_cn": "吸血鬼骑士",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "amphibia",
+    "series_name_cn": "两栖动物",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "xenogears",
+    "series_name_cn": "异度之刃",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": ".live",
+    "series_name_cn": ".直播",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "valorant",
+    "series_name_cn": "英雄联盟",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 3
+  },
+  {
+    "series_tag": "spice_and_wolf",
+    "series_name_cn": "狼与香辛料",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "urusei_yatsura",
+    "series_name_cn": "乱马½",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "little_red_riding_hood",
+    "series_name_cn": "小红帽",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "ijiranaide_nagatoro-san",
+    "series_name_cn": "不要欺负我，长门小姐",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "frozen_(disney)",
+    "series_name_cn": "冰雪奇缘_(迪士尼)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "bayonetta_(series)",
+    "series_name_cn": "猎天使魔女_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "shantae_(series)",
+    "series_name_cn": "香塔伊_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "karakai_jouzu_no_takagi-san",
+    "series_name_cn": "高木同学",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "seiken_densetsu",
+    "series_name_cn": "圣剑传说",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "mahou_tsukai_no_yoru",
+    "series_name_cn": "魔法使之夜",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "uzaki-chan_wa_asobitai!",
+    "series_name_cn": "宇崎酱想玩！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "dagashi_kashi",
+    "series_name_cn": "零食之魂",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "amagi_brilliant_park",
+    "series_name_cn": "雨宫辉夜乐园",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "kimi_no_na_wa.",
+    "series_name_cn": "你的名字。",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "call_of_duty",
+    "series_name_cn": "使命召唤",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "seishun_buta_yarou",
+    "series_name_cn": "青春豚野郎",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "boku_no_kokoro_no_yabai_yatsu",
+    "series_name_cn": "我心中的那个家伙",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "majo_no_takkyuubin",
+    "series_name_cn": "魔女宅急便",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "shoujo_kakumei_utena",
+    "series_name_cn": "少女革命乌托邦",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "the_amazing_digital_circus",
+    "series_name_cn": "惊人的数字马戏团",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "mother_(game)",
+    "series_name_cn": "母亲_(游戏)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "tensei_oujo_to_tensai_reijou_no_mahou_kakumei",
+    "series_name_cn": "转生公主与天才令嬢的魔法革命",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "brand_new_animal",
+    "series_name_cn": "全新动物",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "tokidoki_bosotto_roshia-go_de_dereru_tonari_no_alya-san",
+    "series_name_cn": "时不时_扑通_罗西亚-戈_会出现_隔壁的阿莉亚小姐",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "mirai_nikki",
+    "series_name_cn": "未来日记",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "senjou_no_valkyria_(series)",
+    "series_name_cn": "战场上的瓦尔基里（系列）",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "no_game_no_life",
+    "series_name_cn": "无游戏不人生",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "sewayaki_kitsune_no_senko-san",
+    "series_name_cn": "世话狐的仙狐",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "mononoke_hime",
+    "series_name_cn": "幽灵公主",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "metal_slug",
+    "series_name_cn": "合金弹头",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "wii_fit",
+    "series_name_cn": "健身环",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "ookami_(game)",
+    "series_name_cn": "狼_(游戏)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "arms_(game)",
+    "series_name_cn": "arms_(游戏)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "show_by_rock!!",
+    "series_name_cn": "Show By Rock!!",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "kodomo_no_jikan",
+    "series_name_cn": "儿童的时间",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "blend_s",
+    "series_name_cn": "混合_s",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "dennou_coil",
+    "series_name_cn": "电脉圈",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "getsuyoubi_no_tawawa",
+    "series_name_cn": "星期一的田园",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "kanojo_okarishimasu",
+    "series_name_cn": "租借女友",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "miraculous_ladybug",
+    "series_name_cn": "奇迹少女",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "hataraku_maou-sama!",
+    "series_name_cn": "打工魔王！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "ryuu_ga_gotoku_(series)",
+    "series_name_cn": "龙与虎_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "inu_x_boku_ss",
+    "series_name_cn": "犬与博人SS",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "donkey_kong_(series)",
+    "series_name_cn": "大金刚_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "shin_megami_tensei",
+    "series_name_cn": "女神转生",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "86_-eightysix-",
+    "series_name_cn": "86_-八十六-",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "hades_(series)",
+    "series_name_cn": "哈迪斯_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "howl_no_ugoku_shiro",
+    "series_name_cn": "霍尔的移动城堡",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "kusuriya_no_hitorigoto",
+    "series_name_cn": "药师的独白",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "kaze_no_tani_no_nausicaa",
+    "series_name_cn": "风之谷的娜乌西卡",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "hoozuki_no_reitetsu",
+    "series_name_cn": "鬼灯的冷彻",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "the_owl_house",
+    "series_name_cn": "猫头鹰之家",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "mikakunin_de_shinkoukei",
+    "series_name_cn": "未确认进行时",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "omniscient_reader's_viewpoint",
+    "series_name_cn": "全知读者的视角",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "chrono_cross",
+    "series_name_cn": "时空之轮",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "cafe_stella_to_shinigami_no_chou",
+    "series_name_cn": "星之咖啡馆与死神的蝶",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "danna_ga_nani_wo_itte_iru_ka_wakaranai_ken",
+    "series_name_cn": "老公在说什么我不知道",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "ano_natsu_de_matteru",
+    "series_name_cn": "我们仍未知道那天所看见的花的名字",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "black_clover",
+    "series_name_cn": "黑色四叶草",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "hentai_ouji_to_warawanai_neko.",
+    "series_name_cn": "不笑的变态王子与猫",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "aquarion_(series)",
+    "series_name_cn": "水星战记_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "the_coffin_of_andy_and_leyley",
+    "series_name_cn": "安迪与莱莉的棺材",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "harry_potter_(series)",
+    "series_name_cn": "哈利·波特_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "baka_to_test_to_shoukanjuu",
+    "series_name_cn": "笨蛋与测试与召唤兽",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "silent_hill_(series)",
+    "series_name_cn": "寂静岭_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "yoru_no_kurage_wa_oyogenai",
+    "series_name_cn": "夜晚的水母无法游泳",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "tokyo_mew_mew",
+    "series_name_cn": "东京喵喵",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "shadows_house",
+    "series_name_cn": "阴影之家",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "kannazuki_no_miko",
+    "series_name_cn": "神无月的巫女",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "full_metal_panic!",
+    "series_name_cn": "全金属狂潮！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "sanoba_witch",
+    "series_name_cn": "沙诺巴女巫",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "7th_dragon",
+    "series_name_cn": "第七龙",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "adachi_to_shimamura",
+    "series_name_cn": "安达与志村",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "sakura_trick",
+    "series_name_cn": "樱花小镇",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "dirty_pair",
+    "series_name_cn": "肮脏对",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "master_detective_archives:_rain_code",
+    "series_name_cn": "大师侦探档案：雨之代码",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "mother_3",
+    "series_name_cn": "母亲_3",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "shino_to_ren",
+    "series_name_cn": "忍者与恋人",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "kimi_kiss",
+    "series_name_cn": "君吻",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "tianguan_cifu",
+    "series_name_cn": "天官赐福",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "rinne_no_lagrange",
+    "series_name_cn": "轮回的拉格朗日",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "bilibili",
+    "series_name_cn": "哔哩哔哩",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 50,
+    "character_count": 2
+  },
+  {
+    "series_tag": "jashin-chan_dropkick",
+    "series_name_cn": "邪神酱_飞踢",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "library_of_ruina",
+    "series_name_cn": "鲁伊纳图书馆",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "sora_no_otoshimono",
+    "series_name_cn": "天降之物",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "ar_tonelico",
+    "series_name_cn": "阿托尼科",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "quiz_magic_academy",
+    "series_name_cn": "魔法学院测验",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "mode_aim",
+    "series_name_cn": "模式_瞄准",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "owari_no_seraph",
+    "series_name_cn": "终结的炽天使",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "kininatteru_hito_ga_otoko_ja_nakatta",
+    "series_name_cn": "我在意的人不是男生",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "ben_10",
+    "series_name_cn": "本·10",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "hollow_knight",
+    "series_name_cn": "空洞骑士",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "oboro_muramasa",
+    "series_name_cn": "胧村正",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "zootopia",
+    "series_name_cn": "动物乌托邦",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "citrus_(saburouta)",
+    "series_name_cn": "柑橘（Saburouta）",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "dororo_(tezuka)",
+    "series_name_cn": "多罗罗_(手冢)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "to_heart",
+    "series_name_cn": "心跳回忆",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "tenshi_souzou_re-boot!",
+    "series_name_cn": "天使创造重启！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "yuusha_to_maou",
+    "series_name_cn": "勇者与魔王",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "en'en_no_shouboutai",
+    "series_name_cn": "炎炎诺热的消防队",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "bungou_stray_dogs",
+    "series_name_cn": "文豪野犬",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "love_hina",
+    "series_name_cn": "恋爱雏",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "a_channel",
+    "series_name_cn": "一个频道",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "dolphin_wave",
+    "series_name_cn": "海豚波",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "tokyo_revengers",
+    "series_name_cn": "东京复仇者",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "fushigiboshi_no_futago_hime",
+    "series_name_cn": "神秘星球的双子公主",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "gravity_falls",
+    "series_name_cn": "重力瀑布",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "ojisan_to_marshmallow",
+    "series_name_cn": "叔叔与棉花糖",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "log_horizon",
+    "series_name_cn": "日志地平线",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "youkoso_jitsuryoku_shijou_shugi_no_kyoushitsu_e",
+    "series_name_cn": "欢迎来到实力至上主义的教室",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "sono_hanabira_ni_kuchizuke_wo",
+    "series_name_cn": "在花瓣上吻",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "kimi_ga_nozomu_eien",
+    "series_name_cn": "君が望む永远",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "mega_man_(classic)",
+    "series_name_cn": "洛克人_（经典）",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "tokyo_7th_sisters",
+    "series_name_cn": "东京第七姐妹",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "love_and_deepspace",
+    "series_name_cn": "爱与深空",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "ice_climber",
+    "series_name_cn": "冰上攀登者",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "jibaku_shounen_hanako-kun",
+    "series_name_cn": "地狱少年花子君",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "lonely_girl_ni_sakaraenai",
+    "series_name_cn": "孤独的女孩无法盛开",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "taiho_shichauzo",
+    "series_name_cn": "逮捕しちゃうぞ",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "zhu_xian",
+    "series_name_cn": "诛仙",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "sk8_the_infinity",
+    "series_name_cn": "滑板无限",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "azure_striker_gunvolt",
+    "series_name_cn": "苍蓝枪击先锋",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "koihime_musou",
+    "series_name_cn": "恋姬无双",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "zettai_karen_children",
+    "series_name_cn": "绝对可怜少女",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "super_smash_bros.",
+    "series_name_cn": "超级粉碎兄弟",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "himehina_channel",
+    "series_name_cn": "雏姬频道",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "ao_no_kanata_no_four_rhythm",
+    "series_name_cn": "苍之彼方的四重奏",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "lovebrush_chronicles",
+    "series_name_cn": "爱刷笔记",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "sasayaku_you_ni_koi_wo_utau",
+    "series_name_cn": "细语如歌",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "gunslinger_girl",
+    "series_name_cn": "枪手女孩",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "nitroplus",
+    "series_name_cn": "Nitroplus",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "promare",
+    "series_name_cn": "火力全开",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "voicevox",
+    "series_name_cn": "voicevox",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "poptepipic",
+    "series_name_cn": "波普提皮克",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "kaiji",
+    "series_name_cn": "开司",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "warioware",
+    "series_name_cn": "万智牌",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "mabinogi",
+    "series_name_cn": "魔法大陆",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "yotsubato!",
+    "series_name_cn": "阳光下的吉乃！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "voms",
+    "series_name_cn": "voms",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "signalis",
+    "series_name_cn": "信号",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "kuroshitsuji",
+    "series_name_cn": "黑执事",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "disney",
+    "series_name_cn": "迪士尼",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "mcdonald's",
+    "series_name_cn": "麦当劳",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "dandadan",
+    "series_name_cn": "丹达丹",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "shinrabanshou",
+    "series_name_cn": "神罗万象",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "mitsudomoe",
+    "series_name_cn": "三叶草",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "suigetsu",
+    "series_name_cn": "水月",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "d.gray-man",
+    "series_name_cn": "黑之契约者",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "grandia",
+    "series_name_cn": "大地",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "zoids",
+    "series_name_cn": "兽神",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "genshiken",
+    "series_name_cn": "研究社",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "soulworker",
+    "series_name_cn": "灵魂工匠",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "rou-kyuu-bu!",
+    "series_name_cn": "萝球社!",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "vyugen",
+    "series_name_cn": "维尤根",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "9-nine-",
+    "series_name_cn": "9-九-",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "given",
+    "series_name_cn": "给定",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "gnosia",
+    "series_name_cn": "gnosia",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 2
+  },
+  {
+    "series_tag": "shinryaku!_ikamusume",
+    "series_name_cn": "侵略！海月姬",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "sana_channel",
+    "series_name_cn": "sana_channel",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "guilty_crown",
+    "series_name_cn": "罪恶之冠",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "tsugu_(vtuber)",
+    "series_name_cn": "嗣_(虚拟主播)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "kizuna_ai_inc.",
+    "series_name_cn": "绊爱公司",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "air_(visual_novel)",
+    "series_name_cn": "AIR_(视觉小说)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "ado_(utaite)",
+    "series_name_cn": "ado_(歌手)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "ghost_in_the_shell",
+    "series_name_cn": "攻壳机动队",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "tera_online",
+    "series_name_cn": "泰拉在线",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "the_moon_studio",
+    "series_name_cn": "月亮工作室",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "god_eater",
+    "series_name_cn": "神之食者",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "violet_evergarden_(series)",
+    "series_name_cn": "紫罗兰永恒花园（系列）",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "kino_no_tabi",
+    "series_name_cn": "奇诺的旅人",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "limbus_company",
+    "series_name_cn": "边界公司",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "serial_experiments_lain",
+    "series_name_cn": "灵异实验莲",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "fushigi_no_umi_no_nadia",
+    "series_name_cn": "神秘之海的纳迪亚",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "the_ring",
+    "series_name_cn": "咒怨",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "youjo_senki",
+    "series_name_cn": "幼女战记",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "rakuen_tsuihou",
+    "series_name_cn": "乐园追放",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "nige_jouzu_no_wakagimi",
+    "series_name_cn": "逃跑高手的年轻人",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "kidou_senkan_nadesico",
+    "series_name_cn": "机动战舰娜迪希克",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "maoyuu_maou_yuusha",
+    "series_name_cn": "魔勇者与魔王",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "lord_of_the_mysteries",
+    "series_name_cn": "谜之主",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "koutetsujou_no_kabaneri",
+    "series_name_cn": "甲铁城的卡巴内瑞",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "jigoku_shoujo",
+    "series_name_cn": "地狱少女",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "saya_no_uta",
+    "series_name_cn": "我的歌",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "final_fight",
+    "series_name_cn": "最终战斗",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "denpa_onna_to_seishun_otoko",
+    "series_name_cn": "电波女与青春男",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "capcom_fighting_jam",
+    "series_name_cn": "卡普空格斗嘉年华",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "gravity_daze",
+    "series_name_cn": "重力迷雾",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "hinata_channel",
+    "series_name_cn": "雏田_频道",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "musaigen_no_phantom_world",
+    "series_name_cn": "无尽的幻影世界",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "charlotte_(anime)",
+    "series_name_cn": "夏洛特_(动漫)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "oshiete!_galko-chan",
+    "series_name_cn": "教えて！_伽尔科酱",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "fukumoto_mahjong",
+    "series_name_cn": "福本麻将",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "hacka_doll",
+    "series_name_cn": "黑客娃娃",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "shugo_chara!",
+    "series_name_cn": "守护甜心!",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "dennou_shoujo_youtuber_siro",
+    "series_name_cn": "电脳少女YouTuber白",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "fresh_precure!",
+    "series_name_cn": "新鲜的光辉!",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "douluo_dalu",
+    "series_name_cn": "斗罗大陆",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "new_horizon",
+    "series_name_cn": "新_地平线",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "make_heroine_ga_oo_sugiru!",
+    "series_name_cn": "制作_女主角_太过于_厉害！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "little_witch_nobeta",
+    "series_name_cn": "小女巫诺贝塔",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "accel_world",
+    "series_name_cn": "加速世界",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "yume_2kki",
+    "series_name_cn": "梦2ki",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "kyoukai_no_kanata",
+    "series_name_cn": "境界的彼方",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "yosuga_no_sora",
+    "series_name_cn": "缘之空",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "gate_-_jieitai_ka_no_chi_nite_kaku_tatakaeri",
+    "series_name_cn": "门_-_自卫队_彼之地_向着_战斗去",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "blade_&_soul",
+    "series_name_cn": "刀剑神域",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "yofukashi_no_uta",
+    "series_name_cn": "夜行歌",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "strike_the_blood",
+    "series_name_cn": "血之击",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "drag-on_dragoon",
+    "series_name_cn": "龙之拖曳",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "mirai_akari_project",
+    "series_name_cn": "未来_明里_项目",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "school_days",
+    "series_name_cn": "学校_日子",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "honzuki_no_gekokujou",
+    "series_name_cn": "书虫的逆袭",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "live_a_hero",
+    "series_name_cn": "活出英雄",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "akame_ga_kill!",
+    "series_name_cn": "斩·赤红之瞳！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "kagura_gumi",
+    "series_name_cn": "神楽组",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "stellar_blade",
+    "series_name_cn": "星际刀锋",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "pac-man_(game)",
+    "series_name_cn": "吃豆人_(游戏)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "pixiv",
+    "series_name_cn": "pixiv",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "super_heroine_boy",
+    "series_name_cn": "超级女英雄男孩",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "doom_(series)",
+    "series_name_cn": "毁灭战士_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "soredemo_ayumu_wa_yosetekuru",
+    "series_name_cn": "即使如此，步梦也会靠近",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "summon_night",
+    "series_name_cn": "召唤之夜",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "dorei_to_no_seikatsu_~teaching_feeling~",
+    "series_name_cn": "奴隶生活~教学感觉~",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "omamori_himari",
+    "series_name_cn": "御守姬",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "soukou_akki_muramasa",
+    "series_name_cn": "双子村正",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "f-zero",
+    "series_name_cn": "F-零",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "quiz_magic_academy_the_world_evolve",
+    "series_name_cn": "魔法学院测验_世界进化",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "tonari_no_totoro",
+    "series_name_cn": "邻家的龙猫",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "otome_game_no_hametsu_flag_shika_nai_akuyaku_reijou_ni_tensei_shite_shimatta",
+    "series_name_cn": "转生为乙女游戏的灭亡flag只好成为反派大小姐",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "american_mcgee's_alice",
+    "series_name_cn": "美国麦奇的爱丽丝",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "sekiro:_shadows_die_twice",
+    "series_name_cn": "只狼：影逝二度",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "jahy-sama_wa_kujikenai!",
+    "series_name_cn": "邪神酱不会气馁！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "the_road_to_el_dorado",
+    "series_name_cn": "通往埃尔多拉多的道路",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "dramatical_murder",
+    "series_name_cn": "戏剧性谋杀",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "futari_wa_precure",
+    "series_name_cn": "双胞胎光明",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "friday_the_13th",
+    "series_name_cn": "13号星期五",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "yoru_no_yatterman",
+    "series_name_cn": "夜之亚特曼",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "black_jack_(series)",
+    "series_name_cn": "黑杰克_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "saru_getchu",
+    "series_name_cn": "猿轶",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "the_little_mermaid",
+    "series_name_cn": "小美人鱼",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "satsuriku_no_tenshi",
+    "series_name_cn": "杀戮天使",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "kemomimi_oukoku_kokuei_housou",
+    "series_name_cn": "兽耳王国国营广播",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "foster's_home_for_imaginary_friends",
+    "series_name_cn": "想象力朋友的家",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "rurouni_kenshin",
+    "series_name_cn": "浪客剑心",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "la_pucelle",
+    "series_name_cn": "拉·普谢尔",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "uni_create",
+    "series_name_cn": "uni_create",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "shirokami_project",
+    "series_name_cn": "白神项目",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "record_of_lodoss_war",
+    "series_name_cn": "洛多斯战记",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "yumekui_merry",
+    "series_name_cn": "梦食者·梅里",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "puniru_wa_kawaii_slime",
+    "series_name_cn": "普尼鲁是可爱的史莱姆",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "shigatsu_wa_kimi_no_uso",
+    "series_name_cn": "四月是你的谎言",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "bamboo_blade",
+    "series_name_cn": "竹刀",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "uchuu_senkan_yamato",
+    "series_name_cn": "宇宙战舰大和号",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "tomb_raider",
+    "series_name_cn": "古墓丽影",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "ishuzoku_reviewers",
+    "series_name_cn": "异族审查员",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "fear_&_hunger",
+    "series_name_cn": "恐惧与饥饿",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "super_blackjack",
+    "series_name_cn": "超级二十一点",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "tsukuyomi_moonphase",
+    "series_name_cn": "月相月读",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "hitsugi_no_chaika",
+    "series_name_cn": "棺材少女",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "dumbbell_nan_kilo_moteru?",
+    "series_name_cn": "哑铃_能_举_多少_公斤？",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "doukutsu_monogatari",
+    "series_name_cn": "洞窟物语",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "mahouka_koukou_no_rettousei",
+    "series_name_cn": "魔法科高校的劣等生",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "top_wo_nerae_2!",
+    "series_name_cn": "顶上挑战2！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "pui_pui_molcar",
+    "series_name_cn": "扑扑毛毛车",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "do_it_yourself!!",
+    "series_name_cn": "自己动手!!",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "princess_tutu",
+    "series_name_cn": "公主小兔",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "tsuujou_kougeki_ga_zentai_kougeki_de_ni-kai_kougeki_no_okaasan_wa_suki_desu_ka?",
+    "series_name_cn": "通常攻击是全体攻击的二次攻击的妈妈喜欢吗？",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "phase_connect",
+    "series_name_cn": "相位连接",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "cthulhu_mythos",
+    "series_name_cn": "克苏鲁神话",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "liver_city",
+    "series_name_cn": "肝脏城",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "ame_to_kimi_to",
+    "series_name_cn": "雨与君与",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "dr._slump",
+    "series_name_cn": "阿拉蕾",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "onegai_teacher",
+    "series_name_cn": "请老师",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "addams_family",
+    "series_name_cn": "亚当斯一家",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "saikin_yatotta_maid_ga_ayashii",
+    "series_name_cn": "最近雇佣的女仆很可疑",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "read_or_die",
+    "series_name_cn": "阅读或死亡",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "ombok_diving_and_delivery_services",
+    "series_name_cn": "潜水和快递服务",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "shiro_seijo_to_kuro_bokushi",
+    "series_name_cn": "白圣女与黑牧师",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "koe_no_katachi",
+    "series_name_cn": "声之形",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "akebi-chan_no_serafuku",
+    "series_name_cn": "秋叶酱的制服",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "bravely_default_(series)",
+    "series_name_cn": "勇气默示录（系列）",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "oshiro_project:re",
+    "series_name_cn": "oshiro_project:re",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "top_wo_nerae!",
+    "series_name_cn": "顶上_射手!",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "tenki_no_ko",
+    "series_name_cn": "天气之子",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "maou-jou_de_oyasumi",
+    "series_name_cn": "魔王城的安眠",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "aika_(series)",
+    "series_name_cn": "爱佳_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "sakura-sou_no_pet_na_kanojo",
+    "series_name_cn": "樱花庄的宠物女孩",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "uta_no_prince-sama",
+    "series_name_cn": "歌之王子殿下",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "fall_guys",
+    "series_name_cn": "掉落的小家伙",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "valkyrie_profile_(series)",
+    "series_name_cn": "女武神传说（系列）",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "7th_dragon_(series)",
+    "series_name_cn": "第七龙_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "egyptian_mythology",
+    "series_name_cn": "埃及神话",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "shy_(series)",
+    "series_name_cn": "害羞_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "arc_the_lad",
+    "series_name_cn": "拉德的弧",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "c.c._lemon",
+    "series_name_cn": "C.C. 柠檬",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "ultra_series",
+    "series_name_cn": "奥特系列",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "yoake_mae_yori_ruri_iro_na",
+    "series_name_cn": "黎明前的瑠璃色",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "ansatsu_kyoushitsu",
+    "series_name_cn": "暗杀教室",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "urara_meirochou",
+    "series_name_cn": "うらら迷路帖",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "kfc",
+    "series_name_cn": "肯德基",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "tensui_no_sakuna-hime",
+    "series_name_cn": "天穗之咲稻姬",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "haibane_renmei",
+    "series_name_cn": "灰羽连盟",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "summertime_render",
+    "series_name_cn": "夏日重现",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "aogiri_koukou",
+    "series_name_cn": "青桐高中",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "strawberry_panic!",
+    "series_name_cn": "草莓恐慌!",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "strike_witches:_suomus_misfits_squadron",
+    "series_name_cn": "打击女巫：苏莫斯失误小队",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "spongebob_squarepants_(series)",
+    "series_name_cn": "海绵宝宝_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "mermaid_melody_pichi_pichi_pitch",
+    "series_name_cn": "美人鱼旋律：水晶之歌",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "futaba_channel",
+    "series_name_cn": "futaba_channel",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "a_hat_in_time",
+    "series_name_cn": "时间中的帽子",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "kaiten_muten-maru",
+    "series_name_cn": "回转无天丸",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "bokusatsu_tenshi_dokuro-chan",
+    "series_name_cn": "撕裂天使·毒骷髅酱",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "alien_(series)",
+    "series_name_cn": "外星人（系列）",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "seikimatsu_occult_gakuin",
+    "series_name_cn": "世纪末的阴阳师",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "canaan_(series)",
+    "series_name_cn": "卡南_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "miru_tights",
+    "series_name_cn": "看裤袜",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "ouran_high_school_host_club",
+    "series_name_cn": "我们的高中男孩俱乐部",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "ano_ko_wa_toshi_densetsu",
+    "series_name_cn": "那个是都市传说",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "mazinger_(series)",
+    "series_name_cn": "马扎因格_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "w_tails_cat",
+    "series_name_cn": "W·尾巴猫",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "ore_twintail_ni_narimasu",
+    "series_name_cn": "我会变成双马尾",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "family_guy",
+    "series_name_cn": "家庭家伙",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "helluva_boss",
+    "series_name_cn": "地狱老板",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "ender_lilies_quietus_of_the_knights",
+    "series_name_cn": "沉睡的莉莉_骑士的安静",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "master_of_eternity",
+    "series_name_cn": "永恒之主",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "shikanoko_nokonoko_koshitantan",
+    "series_name_cn": "鹿子诺诺子_小志坦坦",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "kuso_miso_technique",
+    "series_name_cn": "屎味技术",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "manatsu_no_yo_no_inmu",
+    "series_name_cn": "夏夜的阴梦",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "grimms_notes",
+    "series_name_cn": "格林笔记",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "snow_white_and_the_seven_dwarfs",
+    "series_name_cn": "白雪公主与七个小矮人",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "otonari_no_tenshi-sama_ni_itsu_no_mani_ka_dame_ningen_ni_sarete_ita_ken",
+    "series_name_cn": "我被邻居的天使大人给弄得无能为力了",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "crave_saga",
+    "series_name_cn": "渴望_传奇",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "crawling_dreams",
+    "series_name_cn": "爬行的梦想",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "fate/samurai_remnant",
+    "series_name_cn": "命运/武士遗迹",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "mahoujin_guruguru",
+    "series_name_cn": "魔法阵勇者",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "devil_summoner",
+    "series_name_cn": "恶魔召唤者",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "assassin's_creed_(series)",
+    "series_name_cn": "刺客信条（系列）",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "jinrui_wa_suitai_shimashita",
+    "series_name_cn": "人类已衰退到了何种地步",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "crayon_shin-chan",
+    "series_name_cn": "蜡笔小新",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "punch-out!!",
+    "series_name_cn": "拳击出击!!",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "suisei_no_gargantia",
+    "series_name_cn": "水星领航员",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "tonari_no_kyuuketsuki-san",
+    "series_name_cn": "邻居的吸血鬼小姐",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "battle_angel_alita",
+    "series_name_cn": "阿丽塔：战斗天使",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "gake_no_ue_no_ponyo",
+    "series_name_cn": "崖上的波妞",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "talkex",
+    "series_name_cn": "谈话",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "miniskirt_pirates",
+    "series_name_cn": "迷你裙海盗",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "shinmai_maou_no_testament",
+    "series_name_cn": "新妹魔王的契约者",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "cafe-chan_to_break_time",
+    "series_name_cn": "咖啡酱_休息时间",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "halo_(series)",
+    "series_name_cn": "光环_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "rakudai_kishi_no_cavalry",
+    "series_name_cn": "落第骑士的英雄谭",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "minecraft_youtube",
+    "series_name_cn": "我的世界_YouTube",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "mechanical_buddy_universe",
+    "series_name_cn": "机械伙伴宇宙",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "kanokon",
+    "series_name_cn": "神曲奏界",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "gaki_kyonyuu",
+    "series_name_cn": "小鬼_巨乳",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "cinderella_series",
+    "series_name_cn": "灰姑娘系列",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "ryuuko_no_ken",
+    "series_name_cn": "龙拳",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "parasite_eve",
+    "series_name_cn": "寄生前夜",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "majutsushi_orphen",
+    "series_name_cn": "魔术师奥尔芬",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "nazo_no_kanojo_x",
+    "series_name_cn": "谜之女友_x",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "nurse_witch_komugi-chan",
+    "series_name_cn": "护士魔法小麦",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "kao_no_nai_tsuki",
+    "series_name_cn": "没有脸的月亮",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "big_hero_6",
+    "series_name_cn": "大英雄_6",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "ousama_ranking",
+    "series_name_cn": "王者排名",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "valkyrie_no_densetsu",
+    "series_name_cn": "女武神的传说",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "hoshikuzu_witch_meruru",
+    "series_name_cn": "星屑女巫梅露露",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "nhk_ni_youkoso!",
+    "series_name_cn": "欢迎来到NHK！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "hokuto_no_ken",
+    "series_name_cn": "北斗之拳",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "predator_(series)",
+    "series_name_cn": "捕食者_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "lost_universe",
+    "series_name_cn": "失落的宇宙",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "tetsuwan_birdy",
+    "series_name_cn": "铁腕鸟",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "cardfight!!_vanguard",
+    "series_name_cn": "卡片战斗!!_先锋",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "eoduun_badaui_deungbul-i_doeeo",
+    "series_name_cn": "eoduun_badaui_deungbul-i_doeeo",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "elfen_lied",
+    "series_name_cn": "恶魔人",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "rance_(series)",
+    "series_name_cn": "兰斯_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "snow_white",
+    "series_name_cn": "白雪公主",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "hinako_note",
+    "series_name_cn": "雏子_笔记",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "houkago_play",
+    "series_name_cn": "放课后玩",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "collar_x_malice",
+    "series_name_cn": "恶意项圈_x",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "da_capo",
+    "series_name_cn": "大咖啡",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "prison_school",
+    "series_name_cn": "监狱学校",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "strike_witches",
+    "series_name_cn": "打击女巫",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "fate/stay_night",
+    "series_name_cn": "命运/停留_夜晚",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "kim_possible_(series)",
+    "series_name_cn": "金姆·可能（系列）",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "maria_holic",
+    "series_name_cn": "玛丽亚·霍利克",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "krt_girls",
+    "series_name_cn": "KRT女孩",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "atri-my_dear_moments-",
+    "series_name_cn": "atri-我的亲爱的时刻-",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "world_trigger",
+    "series_name_cn": "世界触发器",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "busou_renkin",
+    "series_name_cn": "武装炼金",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "shinkyoku_soukai_polyphonica",
+    "series_name_cn": "新曲_奏会_多声部",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "paripi_koumei",
+    "series_name_cn": "派对孔明",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "toeto_(vocaloid)",
+    "series_name_cn": "toeto_(虚拟歌手)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "toki_wo_kakeru_shoujo",
+    "series_name_cn": "穿越时空的少女",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "urasekai_picnic",
+    "series_name_cn": "异世界露营",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "pacific_rim",
+    "series_name_cn": "太平洋_边缘",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "kaleido_star",
+    "series_name_cn": "星之海洋",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "cutie_honey",
+    "series_name_cn": "可爱蜜蜂",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "sora_wo_kakeru_shoujo",
+    "series_name_cn": "飞翔的少女",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "tomo-chan_wa_onna_no_ko",
+    "series_name_cn": "智子酱是女孩子",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "tenkuu_no_shiro_laputa",
+    "series_name_cn": "天空之城·拉普达",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "doupo_cangqiong",
+    "series_name_cn": "斗破苍穹",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "boy's_club",
+    "series_name_cn": "男孩俱乐部",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "juusan_kihei_bouei_ken",
+    "series_name_cn": "十三机兵防卫圈",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "akarui_kioku_soushitsu",
+    "series_name_cn": "明亮的记忆缺失",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "dream_hunter_rem",
+    "series_name_cn": "梦境猎人_rem",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "mother_1",
+    "series_name_cn": "母亲_1",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "seto_no_hanayome",
+    "series_name_cn": "瀬戸の花嫁",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "claymore_(series)",
+    "series_name_cn": "黑色刀锋_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "gendai_ninjakko_zukan",
+    "series_name_cn": "现代忍者手册",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "justice_gakuen",
+    "series_name_cn": "正义学园",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "haite_kudasai_takamine-san",
+    "series_name_cn": "请进，隆美尔先生",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "the_big_o",
+    "series_name_cn": "大O",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "barbie_(franchise)",
+    "series_name_cn": "芭比_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "elf-san_wa_yaserarenai.",
+    "series_name_cn": "精灵小姐_无法减肥。",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "alien_stage",
+    "series_name_cn": "外星人_舞台",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "girlfriend_(kari)",
+    "series_name_cn": "女朋友_(卡里)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "akuma_no_riddle",
+    "series_name_cn": "恶魔的谜题",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "shadow_of_the_colossus",
+    "series_name_cn": "巨型雕像之影",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "catherine_(game)",
+    "series_name_cn": "凯瑟琳_(游戏)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "atelier_live",
+    "series_name_cn": "工作室_直播",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "project_kv",
+    "series_name_cn": "项目_KV",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "orenchi_no_meidosan",
+    "series_name_cn": "我的女仆小姐",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "akira_(manga)",
+    "series_name_cn": "阿基拉_(漫画)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "kaze_no_klonoa",
+    "series_name_cn": "风之克洛诺亚",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "ace_of_diamond",
+    "series_name_cn": "钻石之 ace",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "sister_princess",
+    "series_name_cn": "姐妹公主",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "galaxy_angel_rune",
+    "series_name_cn": "银河天使_露娜",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "busou_shinki",
+    "series_name_cn": "武装神姬",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "mister_donut",
+    "series_name_cn": "米斯特甜甜圈",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "kore_ga_watashi_no_goshujin-sama",
+    "series_name_cn": "这就是我的主人",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "my_life_as_a_teenage_robot",
+    "series_name_cn": "我的青少年机器人生活",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "jormungand_(manga)",
+    "series_name_cn": "约尔蒙冈(漫画)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "white_album_(series)",
+    "series_name_cn": "白色专辑(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "idolish7",
+    "series_name_cn": "偶像星愿",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "hakanai_kimi_wa_moukou_wo_hajimeru",
+    "series_name_cn": "儚い君は妄想を始める",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "the_bible",
+    "series_name_cn": "圣经",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "sayonara_wo_oshiete",
+    "series_name_cn": "告诉我再见",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "c_(control)",
+    "series_name_cn": "c_(控制)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "alice_gear_aegis",
+    "series_name_cn": "爱丽丝_装备_守护",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "shuuniichido_classmate_wo_kau_hanashi",
+    "series_name_cn": "收购班级的故事",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "fatal_frame",
+    "series_name_cn": "致命框架",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "tasogare_otome_x_amnesia",
+    "series_name_cn": "黄昏乙女×失忆",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "mahou_shoujo_ikusei_keikaku",
+    "series_name_cn": "魔法少女育成计划",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "mahou_tsukai_no_yome",
+    "series_name_cn": "魔法使的新娘",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "voltron_(series)",
+    "series_name_cn": "勇者王_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "magical_mirai_(vocaloid)",
+    "series_name_cn": "魔法未来_(Vocaloid)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "kimagure_orange_road",
+    "series_name_cn": "奇幻橙色之路",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "aladdin_(disney)",
+    "series_name_cn": "阿拉丁_(迪士尼)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "mass_effect_(series)",
+    "series_name_cn": "质量效应_(系列)",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "sound_voltex",
+    "series_name_cn": "声音_音速",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "sora_no_method",
+    "series_name_cn": "空之方法",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "bijin_onna_joushi_takizawa-san",
+    "series_name_cn": "美人女上司滝泽小姐",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "nier:automata",
+    "series_name_cn": "尼尔：自动人形",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "warcraft",
+    "series_name_cn": "魔兽",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "bombergirl",
+    "series_name_cn": "炸弹女孩",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "gosick",
+    "series_name_cn": "古书",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "chobits",
+    "series_name_cn": "初音岛",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "happiness!",
+    "series_name_cn": "幸福！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "occultic;nine",
+    "series_name_cn": "超自然九",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "fate/zero",
+    "series_name_cn": "命运/零",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "kakegurui",
+    "series_name_cn": "狂赌之渊",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "yatterman",
+    "series_name_cn": "亚特曼",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "kumamiko",
+    "series_name_cn": "熊猫巫女",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": ".flow",
+    "series_name_cn": ".flow",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "another",
+    "series_name_cn": "另一个",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "witchblade",
+    "series_name_cn": "女巫刀",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "mahoromatic",
+    "series_name_cn": "魔法少女",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "demonbane",
+    "series_name_cn": "恶魔之链",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "ga-rei",
+    "series_name_cn": "伽蕾",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "scooby-doo",
+    "series_name_cn": "史酷比",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "planetarian",
+    "series_name_cn": "星之梦",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "samsung",
+    "series_name_cn": "三星",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "ookami-san",
+    "series_name_cn": "狼小姐",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "saga",
+    "series_name_cn": "传奇",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "tangled",
+    "series_name_cn": "纠缠",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "dracu-riot!",
+    "series_name_cn": "吸血鬼暴动!",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "funamusea",
+    "series_name_cn": "funamusea",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "noripro",
+    "series_name_cn": "诺里普",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "mononoke",
+    "series_name_cn": "幽灵公主",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "tenshinranman",
+    "series_name_cn": "天真烂漫",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "ico",
+    "series_name_cn": "ico",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "mushishi",
+    "series_name_cn": "虫师",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "himawari-san",
+    "series_name_cn": "向日葵小姐",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "waktaverse",
+    "series_name_cn": "时间宇宙",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "re:creators",
+    "series_name_cn": "重：创造者",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "mieruko-chan",
+    "series_name_cn": "见鬼少女",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "melonbooks",
+    "series_name_cn": "melonbooks",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "deemo",
+    "series_name_cn": "德莫",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "yukijirushi",
+    "series_name_cn": "雪印",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "peanuts",
+    "series_name_cn": "花生漫画",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "ys",
+    "series_name_cn": "伊斯",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "shadowverse",
+    "series_name_cn": "影之诗",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "heroman",
+    "series_name_cn": "英雄男",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "psycho-pass",
+    "series_name_cn": "心理测量者",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "blood+",
+    "series_name_cn": "血+",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "katanagatari",
+    "series_name_cn": "刀剑之神域",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "me!me!me!",
+    "series_name_cn": "我！我！我！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "null-meta",
+    "series_name_cn": "空-null",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "blame!",
+    "series_name_cn": "责备！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "jigokuraku",
+    "series_name_cn": "地狱乐园",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "tsugumomo",
+    "series_name_cn": "次元之物",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "bakuon!!",
+    "series_name_cn": "轰鸣！！",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "wendy's",
+    "series_name_cn": "温迪的",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "denonbu",
+    "series_name_cn": "电音部",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "moomin",
+    "series_name_cn": "姆明",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "ef",
+    "series_name_cn": "ef",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "simoun",
+    "series_name_cn": "西蒙",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "sekirei",
+    "series_name_cn": "使者",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "benesse",
+    "series_name_cn": "便宜",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "kamichu!",
+    "series_name_cn": "神之中!",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "niconico",
+    "series_name_cn": "尼康尼可",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  },
+  {
+    "series_tag": "haks",
+    "series_name_cn": "哈克斯",
+    "enabled": false,
+    "allow_male": true,
+    "weight": 10,
+    "character_count": 1
+  }
+]

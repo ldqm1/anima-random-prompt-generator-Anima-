@@ -1,0 +1,135 @@
+{% set is_multi_character = is_multi_character | default(false) %}
+{% set fill_tag_phrase = 'style-consistent' if max_rating in ['r18', 'r18g'] else 'safe, style-consistent' %}
+{% if is_multi_character and character_pool_info and character_pool_info.characters %}
+Character seeds:
+{% for char in character_pool_info.characters %}
+--- Character {{ loop.index }} ---
+Name: {{ char.tag }}{% if char.series_tag %} (from {{ char.series_tag }}){% endif %}
+Core appearance (MUST KEEP): {{ char.core_appearance_tags | join(', ') }}
+{% if char.core_clothing_tags %}
+Core clothing: {{ char.core_clothing_tags | join(', ') }}
+{% endif %}
+{% endfor %}
+{% elif is_multi_character and character_tag and ',' in character_tag %}
+Character seeds:
+{% for name in character_tag.split(',') %}
+--- Character {{ loop.index }} ---
+Name: {{ name.strip() }}
+{% endfor %}
+{% elif character_tag %}
+Character / series seed: {{ character_tag }}
+{% endif %}
+
+Sampled tags:
+```
+{{ sampled_tags_text }}
+```
+
+{% if placeholder_meanings %}
+R18 placeholder hints: the sampled tags above contain r18 placeholders such as
+`[[r18_appearance_1]]`. Keep each placeholder verbatim and place it in the proper
+slot, exactly as you would the real tag. Each placeholder stands for a subtle,
+vague description below — never expand, rename, or drop a placeholder:
+{% for placeholder, meaning in placeholder_meanings.items() %}
+- {{ placeholder }}: {{ meaning }}
+{% endfor %}
+{% endif %}
+
+{% if subject_control %}
+Subject control: {{ subject_control }}
+This determines the selection of the `count/gender` slot.
+{% endif %}
+{% if max_rating %}
+Content ceiling: {{ max_rating }}
+{% endif %}
+{% if theme_hint %}
+Character / series / theme hint: {{ theme_hint }}
+Use this as a soft guide for mood, setting, and scene/environment tags. Place any character/series name in the `[character/series]` slot. Keep the prompt as random as possible.
+{% endif %}
+{% if forced_tags %}
+Forced tags (must keep if compatible): {{ forced_tags }}
+{% endif %}
+{% if forbidden_tags %}
+Forbidden tags (must drop): {{ forbidden_tags }}
+{% endif %}
+
+The sampled tags above are theme seeds. You do NOT have to use all of them.
+Choose compatible tags from each category to fill the slots in the strict slot order.
+If the sampled tags are insufficient, you may add {{ fill_tag_phrase }} tags, but do not add quality words, artist names, or content-rating tags.
+Respect `subject_control` when selecting `count/gender` tags; drop any tag that matches `forbidden_tags`; keep `forced_tags` in the proper slot unless they conflict with {% if max_rating not in ['r18', 'r18g'] %}the conflict table or {% endif %}content ceiling.
+
+Slot order: {{ slot_order }}
+
+{% if max_rating in ['r18', 'r18g'] %}
+Style direction: Japanese anime illustration of a female subject. Avoid male characters, beast-men, furries, anthros, taurs, dark/black skin, and full non-human creatures. Only cute partial beast-girl features are allowed: cat ears, fox ears, dog ears, wolf ears, bunny ears, deer ears, generic animal ears, simple tails, horns, antlers, and small fangs. Reject monstrous wings, claws, paws, snouts, muzzles, beaks, scales, fur, webbed limbs, tentacle hair, and animal-specific tails/ears that look too feral (bear, panda, mouse, monkey, horse, snake, lizard, etc.).
+{% else %}
+Style direction: Japanese anime girl illustration — soft, youthful, beautiful, delicate. The prompt must describe one or more young anime girls. Avoid male characters, mature women, beast-men, furries, anthros, taurs, dark/black skin, and full non-human creatures. Drop any sampled tag that breaks this aesthetic, such as `owl girl`, `ghost`, `nonbinary bunny`, `avian feet`, `monotone arms`, `brown arms`, `old`, `huge mouth`, `pixel-butts`, `leaf hair`, `living hair`, `forked tail`, `evil eyes`, `vertical bar eyes`, `sharp fangs`, `paw shoes`, `bear ears`, `x eyes`, `sadistic smile`, `gummi art`, `3d fluid sim`, or software/artwork meta tags like `adobe photoshop (artwork)`. Only cute partial beast-girl features are allowed: cat ears, fox ears, dog ears, wolf ears, bunny ears, deer ears, generic animal ears, simple tails, horns, antlers, and small fangs. Reject monstrous wings, claws, paws, snouts, muzzles, beaks, scales, fur, webbed limbs, tentacle hair, and animal-specific tails/ears that look too feral (bear, panda, mouse, monkey, horse, snake, lizard, etc.).
+{% endif %}
+
+Length constraint: Produce a final prompt with at least {{ min_tags }} tags and at most {{ max_tags }} tags. Do not fall far below {{ min_tags }}. If you drop unsuitable sampled tags, compensate with other sampled tags or {{ fill_tag_phrase }} tags to stay above {{ min_tags }}.
+
+{% if character_pool_info %}
+Character pool instructions:
+{% for char in character_pool_info.characters %}
+--- Character {{ loop.index }} ---
+Name: {{ char.tag }} (from {{ char.series_tag }})
+Core appearance (MUST KEEP these tags, they define the character): {{ char.core_appearance_tags | join(', ') }}
+{% if char.core_clothing_tags %}
+Core clothing: {{ char.core_clothing_tags | join(', ') }}
+{% endif %}
+{% endfor %}
+{% if character_pool_info.clothing_strategy == 'core_mixed' %}
+Clothing strategy: Use each character's core clothing tags as the base. You may add non-conflicting sampled clothing tags only if they do not override or contradict the core clothing (e.g., do not add a different hat if the character already has a distinctive hat).
+{% else %}
+Clothing strategy: Ignore core clothing tags. Use only the sampled clothing tags for all characters.
+{% endif %}
+Appearance strategy: Always keep the core appearance tags. You may add sampled appearance tags only if they do not conflict with or duplicate the core appearance tags.
+{% if is_multi_character %}
+
+Multi-character writing order: count/gender -> Character 1 + all Character 1 features -> Character 2 + all Character 2 features -> shared pose/camera/scene tags -> relationship/action phrase -> scene description sentences.
+Do not merge per-character appearance/clothing tags into shared tags. Write each character's features immediately after that character's name.
+{% endif %}
+{% endif %}
+
+Interaction requirement: Make the girl(s) feel embedded in the environment, but prefer using existing pose/action/scene tags first (e.g. sitting on stairs, holding lantern, wind lifting hair). Only add a natural-language phrase when sampled tags cannot express the interaction. Use at most ONE phrase, max 8 words, no list structures. Do not invent long phrases just to reach the tag count.
+
+{% if is_multi_character %}
+Multi-character reminder: When describing two or more characters, write the prompt in this strict order: count/gender -> Character 1 + all Character 1 features -> Character 2 + all Character 2 features -> shared pose/camera/scene tags -> relationship/action phrase -> scene description sentences. Never use list-style sentences such as `one girl..., another girl...`, `one with..., another with...`, or `the first..., the second...`. Put each character's key appearance and clothing immediately after that character's name in the Danbooru tag slots, then use 1-2 short natural-language sentences for the shared scene logic. Finish all tags for Character 1 before starting Character 2. Do not start Character 2 and then go back to Character 1. Emphasize the intimate interaction between the characters: prefer relationship tags such as hug, hand holding, cuddling, or cheek against cheek, and make the relationship/action phrase and scene sentences convey closeness. Differentiate the characters' actions and expressions as much as possible: give each character a distinct pose and facial expression rather than identical ones, unless a shared pose is required by the scene.
+
+The examples below show format only — do not reuse their characters, tags, or scenes.
+
+Good example for 2girls:
+`2girls, raiden shogun with long purple hair and purple eyes, yae miko with long pink hair and fox ears, shrine`
+
+Another good example:
+`2girls, raiden shogun with long purple hair and purple eyes, yae miko with long pink hair and fox ears, shrine, skirt lift, one playfully lifting the other's skirt. They stand close together under the torii gate, sharing a quiet, mischievous moment.`
+
+Bad example — mixed traits, do NOT use:
+`2girls, raiden shogun, yae miko, long purple hair, pink hair, fox ears`
+
+Bad example — list-style sentences, do NOT use:
+`2girls, raiden shogun, yae miko, one girl with long purple hair, the other with long pink hair, standing in a shrine.`
+{% endif %}
+
+{% if extra_requirements %}
+Additional requirements:
+{{ extra_requirements }}
+Respect these requirements when choosing tags and composing the final prompt, but do not add tags that violate the content ceiling or style direction.
+{% endif %}
+
+{% if focus_text %}
+Generation focus: {{ focus_text }}
+Use this as a soft guide for how much emphasis to put on character description versus background/environment/lighting/objects. Do not add new tags that are not implied by the sampled tags.
+{% endif %}
+
+Scene description sentences: After the comma-separated tag block, append 1 to 4 short sentences describing the overall scene logic, atmosphere, lighting intent, or spatial relationship. These sentences must complement the Danbooru tags, not replace them.
+
+Rules for the scene-description block:
+- Write 1 to 4 sentences, no more.
+- Use normal English sentence case (first word capitalized, end with a period).
+- Separate the last tag and the first sentence with a period and a space: `..., last_tag. First sentence. Second sentence.`
+- Keep each sentence concise.
+- Do not add quality words, artist names, or content-rating tags.
+- Example: `..., wind lifting hair. A gentle breeze lifts her hair as she looks toward the distant city lights.`
+
+Produce the JSON output now.

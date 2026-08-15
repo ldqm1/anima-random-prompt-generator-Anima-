@@ -1,0 +1,5 @@
+openai>=1.0
+jinja2
+pyyaml
+pandas
+openpyxl
