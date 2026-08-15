@@ -210,11 +210,10 @@ python run_generator.py \
 python run_generator.py --config my_config.yaml --count 5
 ```
 
-使用 API 平台配置文件（切换 Sensenova / DeepSeek 等不同 API）：
+使用 API 平台配置文件（先复制模板再填自己的平台信息）：
 
 ```bash
-python run_generator.py --api-config prompt/random_generator/api_profiles/sensenova.yaml --count 5
-python run_generator.py --api-config prompt/random_generator/api_profiles/deepseek.yaml --count 5
+python run_generator.py --api-config prompt/random_generator/api_profiles/example.yaml --count 5
 ```
 
 `--api-key` / `--api-base` / `--model` 优先级高于 `--api-config` 中的对应字段；API 平台配置文件放在 `prompt/random_generator/api_profiles/` 目录下。
@@ -256,7 +255,7 @@ character_whitelist:
 | `--forced-tags`        | `str` | `""`                          | 强制包含的 tag，逗号分隔                                     |
 | `--forbidden-tags`     | `str` | `""`                          | 强制排除的 tag，逗号分隔                                     |
 | `--config`             | `str` | `None`                        | 自定义 YAML 配置文件路径                                    |
-| `--api-config`         | `str` | `None`                        | API 平台配置文件路径（YAML，可含 `api_key`/`api_base`/`model`），如 `api_profiles/sensenova.yaml` |
+| `--api-config`         | `str` | `None`                        | API 平台配置文件路径（YAML，可含 `api_key`/`api_base`/`model`），如 `api_profiles/example.yaml` |
 | `--api-key`            | `str` | `None`                        | 临时覆盖 API Key                                       |
 | `--api-base`           | `str` | `None`                        | 临时覆盖 API Base                                      |
 | `--model`              | `str` | `None`                        | 临时覆盖模型名                                            |

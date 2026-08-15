@@ -8,8 +8,7 @@
 4. [角色池自定义](#4-角色池自定义) — 角色/IP 抽样怎么改
 5. [提示词模板自定义](#5-提示词模板自定义) — LLM 行为怎么改
 6. [代码级自定义（config.py / 后处理）](#6-代码级自定义configpy--后处理)
-7. [批量运行与预算控制（opencode_runner）](#7-批量运行与预算控制opencode_runner)
-8. [常见自定义场景速查](#8-常见自定义场景速查)
+7. [常见自定义场景速查](#7-常见自定义场景速查)
 
 ---
 
@@ -131,10 +130,9 @@ multi_character:
   focus_character_bonus: 5  # character 占比 +m%，从 background/other 按比例扣减
 ```
 
-- `enabled: false`：`count_gender` 强制为 `1girl`，`opencode_runner`/`cli` 的多人判定也失效。
+- `enabled: false`：`count_gender` 强制为 `1girl`，`cli` 的多人判定也失效。
 - `probability`：在 `random.seed` 之后掷骰，命中则 `_allowed_count_gender={"2girls"}`，未命中 `={"1girl"}`。
 - 语义要求「基础始终抽单人 + 最终按 probability 多人」。
-- `--balance <目标占比>` 可自动化：txt 整体多人占比高于目标时先纯单人补充，达标后自动切稳态（见第 7 节）。
 
 ### 2.6 DeepSeek API 参数
 
@@ -385,61 +383,7 @@ r18g_tier:     # 仅低于 r18g 的分级排除，r18g 模式放行
 
 ---
 
-## 7. 批量运行与预算控制（opencode_runner）
-
-`opencode_runner.py` 是预算守护批量生成器（独立于 run_generator.py），适用于持续大量补充数据。
-
-### 7.1 核心参数
-
-| 参数 | 默认 | 说明 |
-|---|---|---|
-| `--count` | 1 | 生成数量；`0` = 无限循环直到 Ctrl+C |
-| `--workers` | 4 | 并发数 |
-| `--ledger` | `output/opencode_budget.jsonl` | 预算账本文件（JSONL） |
-| `--ledger-guard` | 关 | 开启本地账本预算守门（默认关闭，账本仅展示） |
-| `--limit-ratio` | 0.9 | 窗口使用率阈值 |
-| `--real-usage` | - | 平台真实用量校准，格式 `"5h:2,7d:22,30d:22"`（官网控制台百分比） |
-| `--quota-cooldown` | 30 | 平台额度/限流错误后的冷却分钟数 |
-| `--quota-fail-n` | 10 | 连续额度/限流失败次数触发冷却 |
-| `--max-retries` | 3 | 失败样本重试次数 |
-| `--balance` | - | 自动均衡多人占比（0-1，如 0.25） |
-| `--balance-interval` | 60 | 检查整体多人占比的间隔秒数 |
-
-### 7.2 计费规则（代码内常量，可按需修改）
-
-```python
-WINDOWS = [("5h", 5*3600, 12.0), ("7d", 7*24*3600, 30.0), ("30d", 30*24*3600, 60.0)]
-PRICE_INPUT_PER_M = 0.14       # 未命中缓存输入单价（$/百万 token）
-PRICE_CACHED_PER_M = 0.0028    # 命中缓存输入单价
-PRICE_OUTPUT_PER_M = 0.28      # 输出单价
-```
-
-- 修改价格常量可适配你的平台计费。
-- `--real-usage` 会把账本折算系数持久化到 `output/opencode_budget.jsonl.calibration.json`，后续运行自动沿用。
-
-### 7.3 自动均衡多人占比（--balance）
-
-- 启动时统计输出 txt 中 `2girls` 行占比；高于目标则 `probability=0` 纯单人补充，后台守护线程定时重测，达标后直接把 `multi_character_cfg["probability"]` 改为目标值切稳态（无需重启）。
-- 用于把含历史旧数据（如 50% 多人）的输出文件逐步稀释到目标占比。
-- 在 `opencode_runner.py` 命令行加 `--balance 0.25` 即可启用（见下方运行示例）。
-
-### 7.4 运行示例
-
-```bash
-# 无限循环持续生成（Ctrl+C 停止）
-python opencode_runner.py --count 0 --output output/prompts_opencode.jsonl \
-    --api-config prompt/random_generator/api_profiles/deepseek4.yaml \
-    --workers 8 --real-usage "5h:2,7d:50,30d:36" --balance 0.25
-
-# r18 模式 27200 条
-python opencode_runner.py --count 27200 --output output/prompts_opencode_r18.jsonl \
-    --api-config prompt/random_generator/api_profiles/deepseek4.yaml \
-    --workers 64 --max-rating r18 --real-usage "5h:2,7d:22,30d:22"
-```
-
----
-
-## 8. 常见自定义场景速查
+## 7. 常见自定义场景速查
 
 | 需求 | 改哪里 |
 |---|---|
@@ -457,7 +401,6 @@ python opencode_runner.py --count 27200 --output output/prompts_opencode_r18.jso
 | r18 禁用某主题 | `r18_topic_control.topics.<主题>.enabled: false` |
 | 单人场景禁用某主题 | `r18_topic_control.solo.disabled_topics` |
 | 改 LLM 行为 | `system_prompt.md` / `system_prompt_v2.md` / `user_prompt.jinja` |
-| 批量持续生成 | `opencode_runner.py`（见第 7 节） |
 
 ---
 
