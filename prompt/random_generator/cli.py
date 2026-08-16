@@ -641,35 +641,21 @@ def _prompt_hashes(version_1: str) -> dict[str, str]:
     """为提示词计算两个稳定 hash，用于"图片元数据 → 日志"反查。
 
     - ``sha256``: 完整 prompt 原文 hash（与 PNG 元数据中的 positive prompt 一致时可直接匹配）。
-    - ``tags_sha256``: 归一化 tag 集合 hash（小写、去下划线/括号、过滤质量词、按词排序）——
+    - ``tags_sha256``: 归一化 tag 集合 hash（算法见 ``prompt_hash`` 共享模块）——
       用户给 prompt 加了质量前缀、调换顺序或微调分隔后仍可稳定匹配。
+
+    归一化算法集中在 ``prompt_hash`` 单一模块；算法变更时递增 ``HASH_VERSION``，
+    审计记录里的 ``prompt.hash_version`` 标明本记录的算法版本，未来可重算。
     """
-    import hashlib
+    from . import prompt_hash
 
-    sha = hashlib.sha256(version_1.encode("utf-8")).hexdigest()
-
-    # 非语义前缀词（质量/元数据类，用户可能手动添加到出图 prompt 而不影响画面语义）
-    _NON_SEMANTIC = {
-        "masterpiece", "best quality", "good quality", "ultra detailed", "ultra-detailed",
-        "score 7", "score 8", "score 9", "newest", "highres", "absurdres", "wallpaper",
-        "official art", "anime screenshot", "high quality", "lowres", "safe", "sensitive",
-        "nsfw", "explicit",
+    hashes = prompt_hash.prompt_hashes(version_1)
+    return {
+        "sha256": hashes["sha256"],
+        "tags_sha256": hashes["tags_sha256"],
+        "hash_version": prompt_hash.HASH_VERSION,
+        "norm_tags": prompt_hash.norm_tags(version_1),
     }
-
-    def _norm(tag: str) -> str:
-        # 剥离权重后缀 (tag:1.5 -> tag)，权重不影响语义集合
-        t = re.sub(r":\d+(\.\d+)?", "", tag.lower())
-        t = t.replace("_", " ").replace("(", " ").replace(")", " ")
-        return " ".join(t.split())
-
-    tags_part = version_1.split(". ")[0] if ". " in version_1 else version_1
-    norm_tags = sorted(
-        _norm(t)
-        for t in tags_part.split(",")
-        if t.strip() and _norm(t) not in _NON_SEMANTIC
-    )
-    tags_sha = hashlib.sha256("\n".join(norm_tags).encode("utf-8")).hexdigest()
-    return {"sha256": sha, "tags_sha256": tags_sha}
 
 
 def _build_audit_record(
@@ -692,7 +678,9 @@ def _build_audit_record(
     import uuid
 
     version_1 = result.get("version_1", "")
-    hashes = _prompt_hashes(version_1) if version_1 else {"sha256": "", "tags_sha256": ""}
+    hashes = _prompt_hashes(version_1) if version_1 else {
+        "sha256": "", "tags_sha256": "", "hash_version": "", "norm_tags": [],
+    }
     sampled = task.get("sampled") or {}
 
     def _item(cat: str) -> list[dict[str, Any]]:
@@ -766,6 +754,8 @@ def _build_audit_record(
             "version_1": version_1,
             "sha256": hashes["sha256"],
             "tags_sha256": hashes["tags_sha256"],
+            "hash_version": hashes.get("hash_version", "unknown"),
+            "norm_tags": hashes.get("norm_tags", []),
             "tag_count": len([t for t in version_1.split(", ") if t.strip()])
             if version_1
             else 0,

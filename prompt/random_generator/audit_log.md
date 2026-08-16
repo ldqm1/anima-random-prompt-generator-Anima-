@@ -61,43 +61,48 @@ ComfyUI 出图时会把工作流（含 positive prompt）嵌入 PNG 元数据。
 |---|---|
 | `prompt.sha256` | 完整 prompt 原文哈希——PNG 元数据中的 positive prompt 与原文**逐字节一致**时可直接匹配 |
 | `prompt.tags_sha256` | 归一化 tag 集合哈希（小写、去下划线/括号、剥离 `:权重`、过滤质量词、排序）——**加了质量前缀/调换顺序/改分隔符后仍可匹配** |
+| `prompt.hash_version` | 本次 tags_sha256 使用的算法版本（如 `tags_sha256_v1`）；算法变更时递增，旧记录靠此字段知道用哪版重算 |
+| `prompt.norm_tags` | 归一化后的语义 tag 列表（排序）——**即使未来算法变更，也可用任意规则重新校验/重算指纹** |
 | `sampled.*.subcategory` | 每个抽样 tag 的人工子类（如 惊讶恐惧/动态动作/奇幻幻想），用于统计"哪些子类产出你喜欢的图" |
 | `quota_snapshot` | 生成时的完整抽样配置，用于对比不同配置批次的效果 |
 | `postprocess.anti_convergence` | 默认词超标/构图完整性/表情多样性软校验结果 |
 
-## 三、反查流程（图片 → 日志）
+## 三、配置变更后反查是否仍有效？
+
+| 变更类型 | 影响 | 原因 |
+|---|---|---|
+| 修改 `generation_config.yaml`（抽样数/配额/锚点开关等） | **无影响** | 每条日志自带当时的 `quota_snapshot`，历史日志永远反映历史配置；指纹只依赖 prompt 文本、与配置无关 |
+| 新增配置字段 | **无影响** | `schema_version` 版本化，新增键只加不改，旧记录解析兼容 |
+| 修改指纹归一化算法（质量词表/归一化规则） | **可追溯** | 算法集中在共享模块 `prompt_hash.py`，变更时递增 `HASH_VERSION`；旧记录通过 `prompt.hash_version` 知道用哪版算法，且 `version_1` 原文 + `norm_tags` 始终可重算 |
+
+**因此：改配置/加配置后，历史图片照常可反查；唯一需要同步的是"指纹算法变更"——只要在 `prompt_hash.py` 一处修改并递增版本号，新旧日志都能被正确反查。**
+
+## 四、反查流程（图片 → 日志）
 
 1. **提取图片 positive prompt**：从 ComfyUI 生成的 PNG 元数据中取 positive 文本
    （可用 `anima_prompt_develop/extract_comfyui_metadata/extract.py` 同款 PIL 读取）。
-2. **计算 tags_sha256**（与生成器同规则）：
+2. **计算 tags_sha256**（**必须用与生成器相同的共享模块**，保证算法一致）：
    ```python
-   import hashlib, re
-   def tags_sha256(prompt: str) -> str:
-       NS = {"masterpiece","best quality","good quality","ultra detailed","score 7",
-             "score 8","score 9","newest","highres","absurdres","wallpaper","official art",
-             "anime screenshot","high quality","safe","sensitive","nsfw","explicit"}
-       tags_part = prompt.split(". ")[0] if ". " in prompt else prompt
-       def norm(t):
-           t = re.sub(r":\d+(\.\d+)?", "", t.lower()).replace("_"," ").replace("("," ").replace(")"," ")
-           return " ".join(t.split())
-       nt = sorted(norm(t) for t in tags_part.split(",")
-                   if t.strip() and norm(t) not in NS)
-       return hashlib.sha256("\n".join(nt).encode()).hexdigest()
+   import json, sys
+   sys.path.insert(0, "prompt/random_generator")
+   from prompt_hash import tags_sha256
 
-   import json
    recs = [json.loads(l) for l in open("output/audit_log.jsonl", encoding="utf-8")]
    hit = [r for r in recs if r["prompt"]["tags_sha256"] == tags_sha256(png_prompt)]
    # hit 即该图对应的全部生成输入与配置快照
    ```
-3. 若 tags_sha256 未命中，退而尝试 `sha256`（原文一致场景）。
+   若 tags_sha256 未命中，退而尝试 `sha256`（原文一致场景），或按 `prompt.hash_version`
+   用对应版本的算法重算。
+3. 跨版本反查（算法已变更）：取旧记录 `prompt.hash_version`，用当时版本的算法函数
+   对 `prompt.version_1` 重算指纹比对——`norm_tags` 也可直接用于集合比对。
 
-## 四、扩展方式
+## 五、扩展方式
 
 - 每条记录带 `schema_version`，未来新增字段（如 `image` 回填文件名、`rating` 人工标注）
   直接加键即可，旧记录解析不受影响；
 - 读取端请始终用 `record.get("字段", 默认值)` 兜底，兼容旧版本记录。
 
-## 五、健壮性说明
+## 六、健壮性说明
 
 - 每行严格单行 JSON（UTF-8，`ensure_ascii=False`），追加写入 + 逐条 flush；
 - 单条审计构建/写入失败只打印警告、跳过该条，不影响提示词主输出；
