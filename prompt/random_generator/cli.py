@@ -6,6 +6,7 @@ import argparse
 import json
 import os
 import random
+import re
 import sys
 import threading
 from concurrent.futures import ThreadPoolExecutor
@@ -636,6 +637,145 @@ def _record_to_jsonl(
     return record
 
 
+def _prompt_hashes(version_1: str) -> dict[str, str]:
+    """为提示词计算两个稳定 hash，用于"图片元数据 → 日志"反查。
+
+    - ``sha256``: 完整 prompt 原文 hash（与 PNG 元数据中的 positive prompt 一致时可直接匹配）。
+    - ``tags_sha256``: 归一化 tag 集合 hash（小写、去下划线/括号、过滤质量词、按词排序）——
+      用户给 prompt 加了质量前缀、调换顺序或微调分隔后仍可稳定匹配。
+    """
+    import hashlib
+
+    sha = hashlib.sha256(version_1.encode("utf-8")).hexdigest()
+
+    # 非语义前缀词（质量/元数据类，用户可能手动添加到出图 prompt 而不影响画面语义）
+    _NON_SEMANTIC = {
+        "masterpiece", "best quality", "good quality", "ultra detailed", "ultra-detailed",
+        "score 7", "score 8", "score 9", "newest", "highres", "absurdres", "wallpaper",
+        "official art", "anime screenshot", "high quality", "lowres", "safe", "sensitive",
+        "nsfw", "explicit",
+    }
+
+    def _norm(tag: str) -> str:
+        # 剥离权重后缀 (tag:1.5 -> tag)，权重不影响语义集合
+        t = re.sub(r":\d+(\.\d+)?", "", tag.lower())
+        t = t.replace("_", " ").replace("(", " ").replace(")", " ")
+        return " ".join(t.split())
+
+    tags_part = version_1.split(". ")[0] if ". " in version_1 else version_1
+    norm_tags = sorted(
+        _norm(t)
+        for t in tags_part.split(",")
+        if t.strip() and _norm(t) not in _NON_SEMANTIC
+    )
+    tags_sha = hashlib.sha256("\n".join(norm_tags).encode("utf-8")).hexdigest()
+    return {"sha256": sha, "tags_sha256": tags_sha}
+
+
+def _build_audit_record(
+    task: dict[str, Any],
+    result: dict[str, Any],
+    record: dict[str, Any],
+) -> dict[str, Any]:
+    """构建增强审计记录（每条提示词一条，含输入/输出/配置快照，可扩展）。
+
+    设计目标：
+    - 未来用 ComfyUI 出图后，从 PNG 元数据提取 positive prompt，计算
+      ``tags_sha256``/``sha256`` 即可在审计日志中反查该图的全部生成输入；
+    - 通过 ``quota_snapshot`` 对比不同配置批次的结果，支撑按喜好调配置；
+    - ``schema_version`` 保证未来加字段不破坏旧记录解析。
+
+    所有值均 JSON 可序列化；不含任何敏感信息（api key 绝不进入）。
+    """
+    import hashlib
+    import time
+    import uuid
+
+    version_1 = result.get("version_1", "")
+    hashes = _prompt_hashes(version_1) if version_1 else {"sha256": "", "tags_sha256": ""}
+    sampled = task.get("sampled") or {}
+
+    def _item(cat: str) -> list[dict[str, Any]]:
+        out = []
+        for it in sampled.get(cat) or []:
+            if isinstance(it, dict):
+                out.append(
+                    {
+                        "tag": it.get("tag", ""),
+                        "subcategory": it.get("subcategory", ""),
+                        "source": it.get("source", ""),
+                    }
+                )
+            else:
+                out.append({"tag": str(it), "subcategory": "", "source": ""})
+        return out
+
+    anchors = []
+    for a in task.get("creative_anchor_info") or []:
+        anchors.append(
+            {
+                "tag": a.get("tag", ""),
+                "anchor_cn": a.get("anchor_cn", ""),
+                "anchor_tags": list(a.get("anchor_tags", [])),
+            }
+        )
+
+    snapshot = task.get("config_snapshot") or {}
+    return {
+        "schema_version": 1,
+        "id": "%s-%s" % (task.get("seed", ""), hashes["tags_sha256"][:8]),
+        "created_at": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
+        "generator": {
+            "name": "anima-random-prompt-generator",
+            "output_file": (snapshot.get("output_file") or ""),
+        },
+        "params": {
+            "seed": task.get("seed"),
+            "max_rating": task.get("max_rating"),
+            "min_tags": task.get("min_tags"),
+            "max_tags": task.get("max_tags"),
+            "temperature": task.get("temperature"),
+            "model": task.get("model", ""),
+            "theme_hint": task.get("theme_hint", ""),
+            "subject_control": task.get("subject_control", ""),
+            "extra_requirements": task.get("extra_requirements", ""),
+            "is_multi_character": bool(task.get("sampled_text", "").lower().find("2girls") >= 0),
+        },
+        "sampled": {
+            "count_gender": _item("count_gender"),
+            "character_series": _item("character_series"),
+            "appearance": _item("appearance"),
+            "clothing_state": _item("clothing_state"),
+            "pose_action_sex": _item("pose_action_sex"),
+            "expression_reaction": _item("expression_reaction"),
+            "camera_shot": _item("camera_shot"),
+            "scene_environment": _item("scene_environment"),
+            "detail_mood": _item("detail_mood"),
+            "creative_anchor": _item("creative_anchor"),
+        },
+        "anchors": anchors,
+        "quota_snapshot": {
+            "sample_counts": snapshot.get("sample_counts", {}),
+            "subcategory_quotas": snapshot.get("subcategory_quotas", {}),
+            "default_word_quota": snapshot.get("default_word_quota", {}),
+            "multi_character": snapshot.get("multi_character", {}),
+            "focus_weights": snapshot.get("focus_weights", {}),
+            "creative_anchors_enabled": snapshot.get("creative_anchors_enabled", True),
+        },
+        "prompt": {
+            "version_1": version_1,
+            "sha256": hashes["sha256"],
+            "tags_sha256": hashes["tags_sha256"],
+            "tag_count": len([t for t in version_1.split(", ") if t.strip()])
+            if version_1
+            else 0,
+        },
+        "postprocess": record.get("postprocess_log", {}).get("version_1", {}),
+        "unknown_tags": record.get("unknown_tags", []),
+        "anchor_retry": bool(record.get("anchor_retry")),
+    }
+
+
 def _build_rating_map(curated_tags: dict) -> dict[str, str]:
     """从 curated_tags 构建 tag(规范化) -> rating 映射。"""
     rating_map: dict[str, str] = {}
@@ -767,6 +907,12 @@ def _generate_one_task(
         record["seed"] = task["seed"]
         if anchor_retry:
             record["anchor_retry"] = True
+        # 审计记录（含输入抽样/配置快照/双 hash），挂载在 record 上由主线程落盘。
+        try:
+            task["model"] = model
+            record["__audit__"] = _build_audit_record(task, result, record)
+        except Exception as exc:  # noqa: BLE001
+            record["__audit__"] = {"schema_version": 1, "error": str(exc)}
         return {"ok": True, "record": record, "idx": task["idx"]}
     except Exception as exc:  # noqa: BLE001
         return {"ok": False, "error": str(exc), "idx": task["idx"]}
@@ -1050,6 +1196,7 @@ def main(argv: list[str] | None = None) -> int:
     # 非 dry-run 时提前打开输出文件，循环内逐条写入并 flush，防止进度丢失。
     jsonl_handle = None
     txt_handle = None
+    audit_handle = None
     if not args.dry_run:
         out_dir = os.path.dirname(output_path)
         if out_dir:
@@ -1057,6 +1204,13 @@ def main(argv: list[str] | None = None) -> int:
         jsonl_handle = Path(output_path).open("a", encoding="utf-8")
         txt_path = str(Path(output_path).with_suffix(".txt"))
         txt_handle = Path(txt_path).open("a", encoding="utf-8")
+        # 审计日志（每条提示词的输入/输出/配置快照，供图片元数据反查与调参分析）。
+        audit_path = str(Path(output_path).with_name("audit_log.jsonl"))
+        try:
+            audit_handle = Path(audit_path).open("a", encoding="utf-8")
+        except OSError as exc:
+            print(f"警告：无法打开审计日志 {audit_path}（{exc}），本次跳过审计输出。")
+            audit_handle = None
 
     try:
         # dry-run 仅做抽样与提示词渲染，不走并发。
@@ -1315,6 +1469,15 @@ def main(argv: list[str] | None = None) -> int:
                     "max_parse_retries": deepseek_cfg.get("max_parse_retries", 2),
                     "reasoning_effort": deepseek_cfg.get("reasoning_effort"),
                     "creative_anchor_info": payload.get("creative_anchor_info"),
+                    "config_snapshot": {
+                        "output_file": output_path,
+                        "sample_counts": knowledge_sample_counts,
+                        "subcategory_quotas": subcategory_quotas,
+                        "default_word_quota": default_word_quota,
+                        "multi_character": multi_character_cfg,
+                        "focus_weights": focus_weights,
+                        "creative_anchors_enabled": bool(creative_anchors_cfg.get("enabled", True)),
+                    },
                 }
             )
             if (idx + 1) % 500 == 0 or idx + 1 == args.count:
@@ -1357,6 +1520,15 @@ def main(argv: list[str] | None = None) -> int:
 
                 # 文件写入与进度打印加锁，保证多线程下输出顺序正确。
                 with write_lock:
+                    if audit_handle is not None:
+                        # 审计记录先行落盘（从 record 剥离，避免污染普通 jsonl）。
+                        audit = record.pop("__audit__", None)
+                        if audit is not None:
+                            try:
+                                audit_handle.write(json.dumps(audit, ensure_ascii=False) + "\n")
+                                audit_handle.flush()
+                            except (TypeError, ValueError, OSError) as exc:
+                                print(f"警告：审计记录写入失败（{exc}），已跳过该条。")
                     if jsonl_handle is not None:
                         jsonl_handle.write(json.dumps(record, ensure_ascii=False) + "\n")
                         jsonl_handle.flush()
@@ -1380,11 +1552,15 @@ def main(argv: list[str] | None = None) -> int:
             jsonl_handle.close()
         if txt_handle is not None:
             txt_handle.close()
+        if audit_handle is not None:
+            audit_handle.close()
 
     if not args.dry_run:
         print(f"\n已追加保存 {len(records)} 条提示词到 {output_path}")
         txt_path = str(Path(output_path).with_suffix(".txt"))
         print(f"已追加保存 {len(records)} 条纯文本提示词到 {txt_path}")
+        audit_path = str(Path(output_path).with_name("audit_log.jsonl"))
+        print(f"已追加保存 {len(records)} 条审计日志到 {audit_path}")
 
     return 0
 
