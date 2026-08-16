@@ -68,6 +68,43 @@ creative_anchors:
   enabled: true          # false 时跳过 creative_anchor 抽样（兼容旧行为）
   file: null             # null 表示使用 config.CREATIVE_ANCHORS_FILE（creative_anchors.yaml）
 
+# 子类配额抽样（人工分类后的 min/max 控制，替代均匀抽样）
+# 每个类别下按"子类短名"配置配额：
+#   min: 该子类每批至少抽到的数量（保证冷门内容出现，对抗 LLM 默认偏好）
+#   max: 该子类每批最多抽到的数量（0 = 完全不抽该子类；不设 = 不限）
+# 子类短名对应知识库 v1 的 CAT 后段（如 表情动作/微笑喜悦 -> 微笑喜悦）。
+# 先满足所有子类 min，再在 max 约束下随机补足到 sample_counts 的数量。
+subcategory_quotas:
+  expression_reaction:     # 表情情绪谱系（保证非默认情绪出现）
+    微笑喜悦: {min: 0, max: 3}
+    害羞脸红: {min: 0, max: 3}
+    惊讶恐惧: {min: 1, max: 4}
+    愤怒不满: {min: 0, max: 3}
+    悲伤哭泣: {min: 0, max: 2}
+    冷淡思考: {min: 0, max: 3}
+    状态反应: {min: 0, max: 4}
+  pose_action_sex:         # 动作动静态（保证动态动作/交互出现）
+    静止姿态: {min: 1, max: 4}
+    基础动作: {min: 0, max: 4}
+    手势肢体: {min: 0, max: 4}
+    动态动作: {min: 1, max: 5}
+    人物交互: {min: 0, max: 4}
+    职业活动: {min: 0, max: 3}
+    手部动作: {min: 0, max: 4}
+    腿部动作: {min: 0, max: 3}
+    手部拿着某物: {min: 0, max: 5}
+    手放在某地: {min: 0, max: 3}
+    手抓着某物: {min: 0, max: 3}
+    性爱动作: {min: 0, max: 0}   # r15 默认完全排除；r18 模式可覆盖
+  scene_environment:       # 场景功能类（保证自然/奇幻等分布）
+    自然户外: {min: 1, max: 6}
+    城市街景: {min: 0, max: 5}
+    室内家居: {min: 0, max: 5}
+    公共设施: {min: 0, max: 5}
+    奇幻幻想: {min: 0, max: 5}
+    特殊场所: {min: 0, max: 4}
+    交通载具: {min: 0, max: 3}
+
 # 反趋同配额：构图子类（从 camera_shot 抽样结果中保证出现）
 # 每批保证以下每个子类至少 1 个 tag（从对应子类池优先抽，池子见 curated_tags.yaml 注释）
 camera_shot_quotas:

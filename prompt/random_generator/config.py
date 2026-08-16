@@ -405,6 +405,15 @@ CATEGORY_MAPPINGS: dict[tuple[str, str], str] = {
     ("表情动作", "蔑视"): "expression_reaction",
     ("表情动作", "其他表情"): "expression_reaction",
     ("表情动作", "颜文字"): "expression_reaction",
+    # 表情情绪谱系（人工细分子类）
+    ("表情动作", "微笑喜悦"): "expression_reaction",
+    ("表情动作", "害羞脸红"): "expression_reaction",
+    ("表情动作", "惊讶恐惧"): "expression_reaction",
+    ("表情动作", "愤怒不满"): "expression_reaction",
+    ("表情动作", "悲伤哭泣"): "expression_reaction",
+    ("表情动作", "冷淡思考"): "expression_reaction",
+    ("表情动作", "状态反应"): "expression_reaction",
+    ("表情动作", "其他表情"): "expression_reaction",
 
     # ---------- pose_action_sex ----------
     ("人物", "性器官"): "pose_action_sex",
@@ -418,6 +427,12 @@ CATEGORY_MAPPINGS: dict[tuple[str, str], str] = {
     ("表情动作", "手抓着某物"): "pose_action_sex",
     ("表情动作", "性爱动作"): "pose_action_sex",
     ("表情动作", "手部拿着某物"): "pose_action_sex",
+    # 动作动静态（人工细分子类）
+    ("表情动作", "静止姿态"): "pose_action_sex",
+    ("表情动作", "手势肢体"): "pose_action_sex",
+    ("表情动作", "动态动作"): "pose_action_sex",
+    ("表情动作", "人物交互"): "pose_action_sex",
+    ("表情动作", "职业活动"): "pose_action_sex",
 
     # ---------- clothing_state ----------
     ("服饰", "上半身服装"): "clothing_state",
@@ -451,6 +466,15 @@ CATEGORY_MAPPINGS: dict[tuple[str, str], str] = {
     ("场景", "室内"): "scene_environment",
     ("场景", "室外"): "scene_environment",
     ("场景", "城市"): "scene_environment",
+    # 场景功能类（人工细分子类）
+    ("场景", "自然户外"): "scene_environment",
+    ("场景", "城市街景"): "scene_environment",
+    ("场景", "室内家居"): "scene_environment",
+    ("场景", "公共设施"): "scene_environment",
+    ("场景", "奇幻幻想"): "scene_environment",
+    ("场景", "特殊场所"): "scene_environment",
+    ("场景", "交通载具"): "scene_environment",
+    ("场景", "其他"): "scene_environment",
     ("环境", "大自然"): "scene_environment",
     ("环境", "天气"): "scene_environment",
     ("环境", "氛围"): "scene_environment",

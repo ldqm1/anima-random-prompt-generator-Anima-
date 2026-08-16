@@ -406,6 +406,7 @@ def _build_config(
     dict[str, Any],
     dict[str, int],
     dict[str, Any],
+    dict[str, Any],
 ]:
     """合并命令行参数、默认生成器配置文件与自定义配置文件。"""
     gen_cfg = _load_generation_config()
@@ -445,6 +446,10 @@ def _build_config(
     # 创意锚点池配置（enabled / file）。
     creative_anchors_cfg = dict(gen_cfg.get("creative_anchors", {}))
     creative_anchors_cfg.update(user_cfg.get("creative_anchors", {}))
+
+    # 子类配额（表情情绪谱系/动作动静态/场景功能类的 min/max 控制）。
+    subcategory_quotas = dict(gen_cfg.get("subcategory_quotas", {}))
+    subcategory_quotas.update(user_cfg.get("subcategory_quotas", {}))
 
     max_rating = (
         args.max_rating
@@ -606,6 +611,7 @@ def _build_config(
         r18_topic_control,
         default_word_quota,
         creative_anchors_cfg,
+        subcategory_quotas,
     )
 
 
@@ -938,6 +944,7 @@ def main(argv: list[str] | None = None) -> int:
         r18_topic_control,
         default_word_quota,
         creative_anchors_cfg,
+        subcategory_quotas,
     ) = _build_config(args)
     api_key, api_base, model, profile_temperature = _resolve_api_profile(args)
     # API 配置文件可显式指定 temperature；null 表示不发送该参数（适配
@@ -1070,6 +1077,7 @@ def main(argv: list[str] | None = None) -> int:
                     multi_character_cfg=multi_character_cfg,
                     default_word_quota=default_word_quota,
                     creative_anchors=creative_anchors,
+                    subcategory_quotas=subcategory_quotas,
                 )
                 payload = assembler.build_prompt_payload(
                     sampled, max_rating=max_rating
@@ -1218,6 +1226,7 @@ def main(argv: list[str] | None = None) -> int:
                 multi_character_cfg=multi_character_cfg,
                 default_word_quota=default_word_quota,
                 creative_anchors=creative_anchors,
+                subcategory_quotas=subcategory_quotas,
             )
             payload = assembler.build_prompt_payload(sampled, max_rating=max_rating)
             sampled_text = assembler.format_tags_for_llm(payload)

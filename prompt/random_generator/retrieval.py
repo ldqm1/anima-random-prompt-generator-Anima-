@@ -929,6 +929,7 @@ def sample_from_knowledge_v1(
     multi_character_cfg: dict[str, Any] | None = None,
     default_word_quota: dict[str, int] | None = None,
     creative_anchors: dict[str, list[dict]] | None = None,
+    subcategory_quotas: dict[str, Any] | None = None,
 ) -> dict[str, list[dict]]:
     """从知识库 v1 中按类别抽样，并应用 R15 过滤与现有清洗规则。
 
@@ -1288,9 +1289,14 @@ def sample_from_knowledge_v1(
         tags = database.get(category, [])
         filtered = _filter_tags(tags, category=category)
         k = min(n, len(filtered))
-        sampled[category] = (
-            [_with_source(t) for t in random.sample(filtered, k)] if k > 0 else []
-        )
+        sub_quotas = (subcategory_quotas or {}).get(category)
+        if sub_quotas:
+            chosen = _sample_with_subcategory_quotas(filtered, k, sub_quotas)
+            sampled[category] = [_with_source(t) for t in chosen]
+        else:
+            sampled[category] = (
+                [_with_source(t) for t in random.sample(filtered, k)] if k > 0 else []
+            )
 
     if max_rating == "r18" and min_r18_tags > 0:
         _supplement_r18_tags(
@@ -1301,6 +1307,67 @@ def sample_from_knowledge_v1(
         _apply_default_word_quota(sampled, default_word_quota)
 
     return sampled
+
+
+def _sub_short(subcategory: str) -> str:
+    """取子类短名：'表情动作/微笑喜悦' -> '微笑喜悦'。"""
+    return (subcategory or "").rsplit("/", 1)[-1]
+
+
+def _sample_with_subcategory_quotas(
+    candidates: list[dict], k: int, quotas: dict[str, Any]
+) -> list[dict]:
+    """按子类配额抽样：先满足各子类 min，再从剩余候选（受 max 约束）补足 k 个。
+
+    Args:
+        candidates: 候选 item 列表（含 ``subcategory`` 字段）。
+        k: 目标抽样数量。
+        quotas: ``{子类短名: {"min": int, "max": int}}``；未列出的子类不设限。
+
+    Returns:
+        抽样结果列表（未做 _with_source 包装）。
+    """
+    if not quotas or k <= 0:
+        return list(candidates[:k])
+    groups: dict[str, list[dict]] = {}
+    for item in candidates:
+        groups.setdefault(_sub_short(item.get("subcategory", "")), []).append(item)
+
+    chosen: list[dict] = []
+    picked: set[int] = set()
+
+    # 1. 各子类 min 配额
+    for sc, q in quotas.items():
+        n_min = int(q.get("min", 0) or 0)
+        pool = [it for it in groups.get(sc, []) if id(it) not in picked]
+        take = random.sample(pool, min(n_min, len(pool)))
+        for it in take:
+            chosen.append(it)
+            picked.add(id(it))
+
+    # 2. 剩余名额（受 max 约束）
+    remaining = k - len(chosen)
+    if remaining > 0:
+        pool: list[dict] = []
+        for item in candidates:
+            if id(item) in picked:
+                continue
+            sc = _sub_short(item.get("subcategory", ""))
+            q = quotas.get(sc)
+            if q:
+                n_max = int(q.get("max", 1 << 30))
+                cur = sum(
+                    1
+                    for c in chosen
+                    if _sub_short(c.get("subcategory", "")) == sc
+                )
+                if cur >= n_max:
+                    continue
+            pool.append(item)
+        take = random.sample(pool, min(remaining, len(pool)))
+        chosen.extend(take)
+
+    return chosen
 
 
 def _sample_creative_anchors(
