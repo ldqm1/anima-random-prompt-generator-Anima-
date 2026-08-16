@@ -903,6 +903,7 @@ def sample_from_knowledge_v1(
     min_r18_tags: int = 0,
     r18_topic_control: dict[str, Any] | None = None,
     multi_character_cfg: dict[str, Any] | None = None,
+    default_word_quota: dict[str, int] | None = None,
 ) -> dict[str, list[dict]]:
     """从知识库 v1 中按类别抽样，并应用 R15 过滤与现有清洗规则。
 
@@ -1265,7 +1266,34 @@ def sample_from_knowledge_v1(
             sampled, database, rating_map, min_r18_tags, pre_filtered, r18_topic_ctx
         )
 
+    if default_word_quota:
+        _apply_default_word_quota(sampled, default_word_quota)
+
     return sampled
+
+
+def _apply_default_word_quota(
+    sampled: dict[str, list[dict]], quota: dict[str, int]
+) -> None:
+    """抽样侧默认词帽：同一批内默认词（如 soft lighting/blush/park）出现次数
+    超过配额时，随机丢弃多余的，避免同一批样本反复携带同几个默认词。
+
+    直接就地修改 ``sampled``。quota 形如 ``{"soft lighting": 1, "blush": 1, ...}``，
+    key 为小写 tag 精确名。
+    """
+    seen: dict[str, int] = {}
+    for category, items in sampled.items():
+        kept: list[dict] = []
+        for item in items:
+            tag = item.get("tag", "") if isinstance(item, dict) else str(item)
+            norm = tag.strip().lower()
+            limit = quota.get(norm)
+            if limit is not None:
+                if seen.get(norm, 0) >= limit:
+                    continue  # 超过配额，丢弃本批多余的默认词
+                seen[norm] = seen.get(norm, 0) + 1
+            kept.append(item)
+        sampled[category] = kept
 
 
 def _supplement_r18_tags(

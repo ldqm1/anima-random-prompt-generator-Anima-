@@ -107,6 +107,81 @@ _NOISE_META_TAGS: frozenset[str] = config.NOISE_META_TAGS
 #: 后缀规则（共享定义见 config.NOISE_META_SUFFIXES）。
 _NOISE_META_SUFFIXES: tuple[str, ...] = config.NOISE_META_SUFFIXES
 
+#: 反趋同校验词表（与 system_prompt.md §9.5 / user_prompt.jinja 保持一致）。
+#: 默认氛围词族：按子串匹配（blush 亦匹配 light blush / cheek blush 等变体）。
+_DEFAULT_MOOD_FAMILIES: tuple[str, ...] = (
+    "soft lighting",
+    "warm lighting",
+    "blush",
+    "cherry blossom",
+    "park",
+    "window",
+    "bokeh",
+    "petals",
+    "gentle breeze",
+    "golden hour",
+    "smile",
+)
+
+#: 景别词（shot size），用于构图完整性检查。
+_SHOT_SIZE_WORDS: tuple[str, ...] = (
+    "close-up", "upper body", "full body", "wide shot", "extreme close-up",
+    "headshot", "cowboy shot", "medium shot", "long shot", "waist-up",
+    "knee-high", "bust shot", "portrait", "torso", "three-quarter view",
+)
+
+#: 机位/角度词，用于构图完整性检查。
+_ANGLE_WORDS: tuple[str, ...] = (
+    "from above", "from below", "low angle", "high angle", "bird's-eye view",
+    "worm's-eye view", "dutch angle", "from side", "from front", "from behind",
+    "pov", "eye level", "over-the-shoulder", "top-down", "rear view", "back view",
+)
+
+#: 结构性构图法则词，用于构图完整性检查。
+_COMPOSITION_RULE_WORDS: tuple[str, ...] = (
+    "rule of thirds", "leading lines", "negative space", "frame-in-frame",
+    "midground", "foreground focus", "background focus", "symmetrical composition",
+    "diagonal composition", "vanishing point", "foreshortening", "deep focus",
+    "silhouette", "vignette",
+)
+
+#: 非默认情绪词（惊讶/冷淡/负面等），用于表情多样性检查。
+_NON_DEFAULT_EXPRESSION_WORDS: tuple[str, ...] = (
+    "surprised", "surprise", "confused", "puzzled", "sad", "angry", "sleepy",
+    "serious", "smug", "scared", "frightened", "pensive", "determined",
+    "flustered", "exasperated", "crying", "tears", "frown", "glare", "nervous",
+    "worried", "excited", "startled", "horrified", "depressed", "deadpan",
+    "expressionless", "unamused", "annoyed", "irritated", "embarrassed",
+    "sweatdrop", "tired", "yawning", "sigh", "flustered", "shy", "awkward",
+)
+
+
+def _check_anti_convergence(tags: list[str]) -> dict[str, Any]:
+    """反趋同软校验：默认词配额 / 构图完整性 / 表情多样性。
+
+    只记录检查结果（不自动删改），供上层决定是否重试。
+    """
+    text = " ".join(t.lower() for t in tags)
+    mood_count: dict[str, int] = {}
+    for fam in _DEFAULT_MOOD_FAMILIES:
+        mood_count[fam] = text.count(fam)
+    overused = [fam for fam, c in mood_count.items() if c > 1]
+
+    has_shot = any(w in text for w in _SHOT_SIZE_WORDS)
+    has_angle = any(w in text for w in _ANGLE_WORDS)
+    has_rule = any(w in text for w in _COMPOSITION_RULE_WORDS)
+    has_non_default = any(w in text for w in _NON_DEFAULT_EXPRESSION_WORDS)
+
+    return {
+        "default_word_overuse": overused,
+        "has_shot_size": has_shot,
+        "has_angle": has_angle,
+        "has_composition_rule": has_rule,
+        "has_non_default_expression": has_non_default,
+        "composition_ok": has_shot or has_angle or has_rule,
+        "ok": not overused,
+    }
+
 
 _TAG_REPLACEMENTS: dict[str, list[str]] = {
     "penis": ["erection", "visible bulge", "tented shorts", "bulge"],
@@ -696,6 +771,24 @@ def postprocess(
             tags, max_rating=max_rating
         )
         version_log["conflict_log"] = conflict_log
+
+        # 3.1 行内重复 tag 去重（安全操作）
+        seen_tags: set[str] = set()
+        deduped: list[str] = []
+        duplicates_removed: list[str] = []
+        for t in resolved_tags:
+            key = _normalize_tag(t)
+            if key in seen_tags:
+                duplicates_removed.append(t)
+                continue
+            seen_tags.add(key)
+            deduped.append(t)
+        resolved_tags = deduped
+        if duplicates_removed:
+            version_log["duplicates_removed"] = duplicates_removed
+
+        # 3.2 反趋同软校验（记录到 log，不自动删改）
+        version_log["anti_convergence"] = _check_anti_convergence(resolved_tags)
 
         final_prompt = _reconstruct_prompt(resolved_tags, nl_sentences)
         result[version] = final_prompt

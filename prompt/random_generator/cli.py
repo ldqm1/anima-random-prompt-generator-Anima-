@@ -403,6 +403,8 @@ def _build_config(
     dict[str, Any],
     int,
     str,
+    dict[str, Any],
+    dict[str, int],
 ]:
     """合并命令行参数、默认生成器配置文件与自定义配置文件。"""
     gen_cfg = _load_generation_config()
@@ -434,6 +436,10 @@ def _build_config(
 
     extra_requirements_pool = dict(gen_cfg.get("extra_requirements_pool", {}))
     extra_requirements_pool.update(user_cfg.get("extra_requirements_pool", {}))
+
+    # 反趋同：默认词配额（抽样侧词帽 + 模板注入 + postprocess 校验共用同一配置）。
+    default_word_quota = dict(gen_cfg.get("default_word_quota", {}))
+    default_word_quota.update(user_cfg.get("default_word_quota", {}))
 
     max_rating = (
         args.max_rating
@@ -593,6 +599,7 @@ def _build_config(
         min_r18_tags_per_sample,
         r18_instructions,
         r18_topic_control,
+        default_word_quota,
     )
 
 
@@ -897,6 +904,7 @@ def main(argv: list[str] | None = None) -> int:
         min_r18_tags_per_sample,
         r18_instructions,
         r18_topic_control,
+        default_word_quota,
     ) = _build_config(args)
     api_key, api_base, model, profile_temperature = _resolve_api_profile(args)
     # API 配置文件可显式指定 temperature；null 表示不发送该参数（适配
@@ -1013,6 +1021,7 @@ def main(argv: list[str] | None = None) -> int:
                     min_r18_tags=min_r18_tags_per_sample,
                     r18_topic_control=r18_topic_control,
                     multi_character_cfg=multi_character_cfg,
+                    default_word_quota=default_word_quota,
                 )
                 payload = assembler.build_prompt_payload(
                     sampled, max_rating=max_rating
@@ -1158,6 +1167,7 @@ def main(argv: list[str] | None = None) -> int:
                 min_r18_tags=min_r18_tags_per_sample,
                 r18_topic_control=r18_topic_control,
                 multi_character_cfg=multi_character_cfg,
+                default_word_quota=default_word_quota,
             )
             payload = assembler.build_prompt_payload(sampled, max_rating=max_rating)
             sampled_text = assembler.format_tags_for_llm(payload)

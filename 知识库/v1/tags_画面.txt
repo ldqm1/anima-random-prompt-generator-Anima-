@@ -5,7 +5,6 @@
 [DOMAIN:标签] [CAT:画面/背景] white_background | 白色背景
 [DOMAIN:标签] [CAT:画面/艺术类型] digital_media_(artwork) | 数字媒体（艺术作品）
 [DOMAIN:标签] [CAT:画面/画面量质] absurd_res | 超高分辨率
-[DOMAIN:标签] [CAT:画面/艺术家风格] photoshop_(medium) | Photoshop（软件）
 [DOMAIN:标签] [CAT:画面/颜色] monochrome | 单色
 [DOMAIN:标签] [CAT:画面/艺术类型] comic | 漫画
 [DOMAIN:标签] [CAT:画面/画面量质] dialogue | 对话
@@ -21,7 +20,6 @@
 [DOMAIN:标签] [CAT:画面/画面量质] dated | 过时
 [DOMAIN:标签] [CAT:画面/光照] shaded | 渐变阴影
 [DOMAIN:标签] [CAT:画面/艺术类型] digital_drawing_(artwork) | 数字绘画
-[DOMAIN:标签] [CAT:画面/画面量质] commission | 委托作品
 [DOMAIN:标签] [CAT:画面/艺术类型] 3d_(artwork) | 3D作品
 [DOMAIN:标签] [CAT:画面/艺术类型] sketch | 草图
 [DOMAIN:标签] [CAT:画面/艺术家风格] bar_censor | 条形码遮挡
@@ -33,7 +31,6 @@
 [DOMAIN:标签] [CAT:画面/背景] blue_background | 蓝色背景
 [DOMAIN:标签] [CAT:画面/光照] shadow | 阴影
 [DOMAIN:标签] [CAT:画面/光照] glistening | 光泽
-[DOMAIN:标签] [CAT:画面/画面量质] watermark | 水印
 [DOMAIN:标签] [CAT:画面/光照] glowing | 发光
 [DOMAIN:标签] [CAT:画面/艺术类型] 4koma | 四格漫画
 [DOMAIN:标签] [CAT:画面/画面量质] lowres | 低分辨率
@@ -92,7 +89,6 @@
 [DOMAIN:标签] [CAT:画面/颜色] blue_theme | 蓝色主题
 [DOMAIN:标签] [CAT:画面/光照] glint | 反光
 [DOMAIN:标签] [CAT:画面/光照] light_rays | 光线
-[DOMAIN:标签] [CAT:画面/画面量质] jpeg_artifacts | JPEG压缩痕迹
 [DOMAIN:标签] [CAT:画面/艺术类型] oekaki | お絵描き
 [DOMAIN:标签] [CAT:画面/艺术家风格] motion_blur | 动态模糊
 [DOMAIN:标签] [CAT:画面/艺术家风格] chromatic_aberration | 色差
@@ -115,7 +111,6 @@
 [DOMAIN:标签] [CAT:画面/艺术类型] silent_comic | 无声漫画
 [DOMAIN:标签] [CAT:画面/艺术风格] retro_artstyle | 复古画风
 [DOMAIN:标签] [CAT:画面/艺术家风格] heart_censor | 爱心打码
-[DOMAIN:标签] [CAT:画面/画面量质] huge_filesize | 超大文件
 [DOMAIN:标签] [CAT:画面/艺术类型] 3d | 3D
 [DOMAIN:标签] [CAT:画面/画面量质] text_focus | 文字聚焦
 [DOMAIN:标签] [CAT:画面/画面量质] silhouette | 剪影
@@ -124,7 +119,6 @@
 [DOMAIN:标签] [CAT:画面/颜色] limited_palette | 限色配色
 [DOMAIN:标签] [CAT:画面/艺术风格] animification | 动画化
 [DOMAIN:标签] [CAT:画面/画面量质] detailed | 细节丰富
-[DOMAIN:标签] [CAT:画面/画面量质] sample_watermark | 样本水印
 [DOMAIN:标签] [CAT:画面/艺术类型] 3koma | 四格漫画
 [DOMAIN:标签] [CAT:画面/画面量质] photo_(medium) | 照片（媒介）
 [DOMAIN:标签] [CAT:画面/光照] lighting | 光照
@@ -147,7 +141,6 @@
 [DOMAIN:标签] [CAT:画面/颜色] black_text | 黑色文字
 [DOMAIN:标签] [CAT:画面/画笔] halftone | 网点效果
 [DOMAIN:标签] [CAT:画面/画面量质] partially_colored | 部分上色
-[DOMAIN:标签] [CAT:画面/艺术家风格] painttool_sai_(medium) | 绘画工具SAI（媒介）
 [DOMAIN:标签] [CAT:画面/艺术类型] looping_animation | 循环动画
 [DOMAIN:标签] [CAT:画面/画笔] aura | 气场
 [DOMAIN:标签] [CAT:画面/画面量质] spoken_exclamation_mark | 对话感叹号
@@ -217,7 +210,6 @@
 [DOMAIN:标签] [CAT:画面/画面量质] cum_covered | 精液覆盖
 [DOMAIN:标签] [CAT:画面/艺术风格] 2000s_(style) | 2000年代（风格）
 [DOMAIN:标签] [CAT:画面/艺术类型] still_life | 静物画
-[DOMAIN:标签] [CAT:画面/艺术风格] ai-generated | AI生成
 [DOMAIN:标签] [CAT:画面/画面量质] photo-referenced | 照片参考
 [DOMAIN:标签] [CAT:画面/画面量质] romaji_text | 罗马字文本
 [DOMAIN:标签] [CAT:画面/颜色] muted_color | 哑光色
@@ -240,7 +232,6 @@
 [DOMAIN:标签] [CAT:画面/背景] argyle_background | 菱形格背景
 [DOMAIN:标签] [CAT:画面/背景] abstract_background | 抽象背景
 [DOMAIN:标签] [CAT:画面/画面量质] reference_inset | 参考插图
-[DOMAIN:标签] [CAT:画面/画面量质] resized | 尺寸调整
 [DOMAIN:标签] [CAT:画面/画面量质] directional_arrow | 方向箭头
 [DOMAIN:标签] [CAT:画面/画面量质] see-through_silhouette | 透光剪影
 [DOMAIN:标签] [CAT:画面/艺术类型] sketch_page | 草图页
@@ -260,7 +251,6 @@
 [DOMAIN:标签] [CAT:画面/画面量质] magazine_scan | 杂志扫描图
 [DOMAIN:标签] [CAT:画面/艺术类型] collage | 拼贴画
 [DOMAIN:标签] [CAT:画面/艺术风格] guro | 猎奇
-[DOMAIN:标签] [CAT:画面/画面量质] pixiv_sample | Pixiv示例
 [DOMAIN:标签] [CAT:画面/背景] sparkle_background | 闪光背景
 [DOMAIN:标签] [CAT:画面/艺术家风格] diffraction_spikes | 衍射星芒
 [DOMAIN:标签] [CAT:画面/艺术风格] deformed | 变形
@@ -271,7 +261,6 @@
 [DOMAIN:标签] [CAT:画面/画面量质] spill | 泼洒
 [DOMAIN:标签] [CAT:画面/艺术风格] fluffy | 毛茸茸
 [DOMAIN:标签] [CAT:画面/画笔] creepy | 毛骨悚然
-[DOMAIN:标签] [CAT:画面/艺术类型] procreate_(medium) | Procreate（软件）
 [DOMAIN:标签] [CAT:画面/背景] bloom | 绽放
 [DOMAIN:标签] [CAT:画面/画面量质] incredibly_absurdres | 极致荒诞分辨率
 [DOMAIN:标签] [CAT:画面/光照] ceiling_light | 顶灯
@@ -309,7 +298,6 @@
 [DOMAIN:标签] [CAT:画面/画面量质] different_reflection | 异常倒影
 [DOMAIN:标签] [CAT:画面/画面量质] fake_phone_screenshot | 伪造手机截图
 [DOMAIN:标签] [CAT:画面/艺术风格] toon_(style) | 卡通（风格）
-[DOMAIN:标签] [CAT:画面/艺术风格] ai-assisted | AI辅助
 [DOMAIN:标签] [CAT:画面/画面量质] text-only_page | 纯文本页面
 [DOMAIN:标签] [CAT:画面/画面量质] annotated | 注释说明
 [DOMAIN:标签] [CAT:画面/画面量质] screencap | 屏幕截图
@@ -331,11 +319,9 @@
 [DOMAIN:标签] [CAT:画面/颜色] aqua_theme | 水色主题
 [DOMAIN:标签] [CAT:画面/颜色] neon | 霓虹
 [DOMAIN:标签] [CAT:画面/画面量质] blank_censor | 空白遮挡
-[DOMAIN:标签] [CAT:画面/画面量质] downscaled | 比例缩小
 [DOMAIN:标签] [CAT:画面/画笔] millipen_(medium) | Millipen（中粗）
 [DOMAIN:标签] [CAT:画面/背景] plaid_background | 格子背景
 [DOMAIN:标签] [CAT:画面/颜色] rainbow_order | 彩虹排序
-[DOMAIN:标签] [CAT:画面/画面量质] upscaled | 高清化
 [DOMAIN:标签] [CAT:画面/光照] visible_air | 可见空气
 [DOMAIN:标签] [CAT:画面/画面量质] inset | 嵌入式
 [DOMAIN:标签] [CAT:画面/画面量质] photo_inset | 内嵌照片
@@ -469,7 +455,6 @@
 [DOMAIN:标签] [CAT:画面/艺术风格] ero_guro | 猎奇美学
 [DOMAIN:标签] [CAT:画面/背景] dotted_background | 点状背景
 [DOMAIN:标签] [CAT:画面/画面量质] isometric | 等轴测
-[DOMAIN:标签] [CAT:画面/艺术家风格] ibispaint_(medium) | Ibispaint（绘画软件）
 [DOMAIN:标签] [CAT:画面/艺术类型] card_parody | 卡片戏仿
 [DOMAIN:标签] [CAT:画面/艺术类型] box_art | 盒装封面
 [DOMAIN:标签] [CAT:画面/画面量质] oil_painting_(medium) | 油画（媒介）
@@ -527,12 +512,10 @@
 [DOMAIN:标签] [CAT:画面/画笔] watercolor_pencil_(medium) | 水彩铅笔（媒介）
 [DOMAIN:标签] [CAT:画面/艺术家风格] toriyama_akira_(style) | 鸟山明（风格）
 [DOMAIN:标签] [CAT:画面/画面量质] spiral | 螺旋
-[DOMAIN:标签] [CAT:画面/艺术类型] koikatsu_(medium) | 恋活（中等）
 [DOMAIN:标签] [CAT:画面/颜色] iridescent | 虹彩
 [DOMAIN:标签] [CAT:画面/画面量质] recurring_image | 重复图像
 [DOMAIN:标签] [CAT:画面/背景] hieroglyphics | 象形文字
 [DOMAIN:标签] [CAT:画面/艺术家风格] menacing_(jojo) | 杀气（JOJO的奇妙冒险）
-[DOMAIN:标签] [CAT:画面/画面量质] waifu2x | 图片放大算法
 [DOMAIN:标签] [CAT:画面/艺术类型] pixiv_fantasia_t | Pixiv幻想T
 [DOMAIN:标签] [CAT:画面/光照] melting_halo | 融化光环
 [DOMAIN:标签] [CAT:画面/艺术家风格] double_exposure | 双重曝光
@@ -567,7 +550,6 @@
 [DOMAIN:标签] [CAT:画面/光照] fallenshadow | 陨落之影
 [DOMAIN:标签] [CAT:画面/艺术风格] cartoonized | 卡通化
 [DOMAIN:标签] [CAT:画面/颜色] mint | 薄荷色
-[DOMAIN:标签] [CAT:画面/艺术类型] source_filmmaker_(medium) | Source Filmmaker（制作媒介）
 [DOMAIN:标签] [CAT:画面/艺术类型] comic_panel_redraw | 漫画格重绘
 [DOMAIN:标签] [CAT:画面/画面量质] paper_texture | 纸张纹理
 [DOMAIN:标签] [CAT:画面/画笔] fabulous | 绝妙华丽
@@ -596,7 +578,6 @@
 [DOMAIN:标签] [CAT:画面/画面量质] screenshot | 屏幕截图
 [DOMAIN:标签] [CAT:画面/颜色] purple_outline | 紫色轮廓
 [DOMAIN:标签] [CAT:画面/画面量质] blood_spray | 血液飞溅
-[DOMAIN:标签] [CAT:画面/画面量质] watermark_grid | 水印网格
 [DOMAIN:标签] [CAT:画面/艺术风格] art_shift | 画风转变
 [DOMAIN:标签] [CAT:画面/背景] food-themed_background | 食物主题背景
 [DOMAIN:标签] [CAT:画面/光照] bishie_sparkle | 美男闪光
@@ -676,7 +657,6 @@
 [DOMAIN:标签] [CAT:画面/背景] colored_smoke | 彩色烟雾
 [DOMAIN:标签] [CAT:画面/背景] canvas | 画布
 [DOMAIN:标签] [CAT:画面/背景] reflective_surface | 反光表面
-[DOMAIN:标签] [CAT:画面/画面量质] character_watermark | 角色水印
 [DOMAIN:标签] [CAT:画面/背景] colorful_background | 彩色背景
 [DOMAIN:标签] [CAT:画面/背景] eoduun_badaui_deungbul-i_doeeo | 黑暗中的灯塔
 [DOMAIN:标签] [CAT:画面/背景] gradient_halo | 渐变光环
@@ -698,7 +678,6 @@
 [DOMAIN:标签] [CAT:画面/艺术风格] ohisashiburi_(style) | 久别重逢（风格）
 [DOMAIN:标签] [CAT:画面/画面量质] cracked | 裂纹
 [DOMAIN:标签] [CAT:画面/画面量质] bisected | 躯体分割
-[DOMAIN:标签] [CAT:画面/画面量质] psd_available | 提供PSD文件
 [DOMAIN:标签] [CAT:画面/颜色] saturated | 饱和色
 [DOMAIN:标签] [CAT:画面/艺术类型] screencap_redraw | 截图重绘
 [DOMAIN:标签] [CAT:画面/光照] snow_halation | 雪色光晕
@@ -717,7 +696,6 @@
 [DOMAIN:标签] [CAT:画面/背景] stenciled_rose | 模版玫瑰
 [DOMAIN:标签] [CAT:画面/画面量质] moire | 摩尔纹
 [DOMAIN:标签] [CAT:画面/背景] blood_trail | 血迹
-[DOMAIN:标签] [CAT:画面/艺术风格] microsoft_paint_(medium) | 微软画图（媒介）
 [DOMAIN:标签] [CAT:画面/光照] face_filter | 面部滤镜
 [DOMAIN:标签] [CAT:画面/艺术派系] choujuu_gigaku | 鸟兽戏画
 [DOMAIN:标签] [CAT:画面/背景] sofmap_background | 软银地图背景
@@ -754,7 +732,6 @@
 [DOMAIN:标签] [CAT:画面/画面量质] semi-transparent | 半透明
 [DOMAIN:标签] [CAT:画面/颜色] marble | 大理石纹
 [DOMAIN:标签] [CAT:画面/画面量质] ai_assisted | AI辅助
-[DOMAIN:标签] [CAT:画面/画面量质] traced | 描图
 [DOMAIN:标签] [CAT:画面/艺术家风格] gyari_(imagesdawn)_(style) | Gyari（ImagesDawn）（风格）
 [DOMAIN:标签] [CAT:画面/画面量质] kizuato | 刻痕
 [DOMAIN:标签] [CAT:画面/光照] soft_focus | 柔焦
@@ -764,7 +741,6 @@
 [DOMAIN:标签] [CAT:画面/艺术类型] fake_box_art | 仿制包装图
 [DOMAIN:标签] [CAT:画面/画面量质] jiggle_physics | 抖动物理
 [DOMAIN:标签] [CAT:画面/背景] millennium_science_school_logo | 千年科学学校标志
-[DOMAIN:标签] [CAT:画面/艺术类型] zbrush_(medium) | ZBrush（软件）
 [DOMAIN:标签] [CAT:画面/光照] spoken_sparkle | 言语闪光
 [DOMAIN:标签] [CAT:画面/画面量质] equipment_layout | 装备布局
 [DOMAIN:标签] [CAT:画面/画面量质] ai_arctic_warfare | AI北极作战
@@ -774,7 +750,6 @@
 [DOMAIN:标签] [CAT:画面/艺术派系] ink_wash_painting | 水墨画
 [DOMAIN:标签] [CAT:画面/背景] red_curtains | 红色帷幕
 [DOMAIN:标签] [CAT:画面/颜色] hyper_blossom | 超级绽放
-[DOMAIN:标签] [CAT:画面/颜色] pixiv_red | 噗浪红
 [DOMAIN:标签] [CAT:画面/画笔] thick_lineart | 粗线条
 [DOMAIN:标签] [CAT:画面/画笔] healing | 治愈
 [DOMAIN:标签] [CAT:画面/颜色] rainbow_text | 彩虹文字
@@ -818,7 +793,6 @@
 [DOMAIN:标签] [CAT:画面/艺术派系] taishou | 大正
 [DOMAIN:标签] [CAT:画面/画面量质] remake | 重制版
 [DOMAIN:标签] [CAT:画面/艺术类型] pixiv_fantasia_wizard_and_knight | pixiv幻想曲巫师与骑士
-[DOMAIN:标签] [CAT:画面/艺术类型] krita_(medium) | Krita（软件）
 [DOMAIN:标签] [CAT:画面/背景] mural | 壁画
 [DOMAIN:标签] [CAT:画面/画面量质] color_halftone | 彩色半调
 [DOMAIN:标签] [CAT:画面/画笔] tremble_lines | 震颤线
@@ -836,7 +810,6 @@
 [DOMAIN:标签] [CAT:画面/画面量质] subsurface_scattering | 次表面散射
 [DOMAIN:标签] [CAT:画面/背景] in_bubble | 在气泡中
 [DOMAIN:标签] [CAT:画面/背景] floral_border | 花卉边框
-[DOMAIN:标签] [CAT:画面/艺术类型] painttool_sai | 绘画工具SAI
 [DOMAIN:标签] [CAT:画面/画面量质] blueprint_(medium) | 蓝图（中等）
 [DOMAIN:标签] [CAT:画面/艺术类型] ascii_art | 字符画
 [DOMAIN:标签] [CAT:画面/艺术家风格] omocat_(style) | Omocat（风格）
@@ -848,8 +821,6 @@
 [DOMAIN:标签] [CAT:画面/艺术类型] educational | 教育题材
 [DOMAIN:标签] [CAT:画面/背景] ominous_shadow | 不祥之影
 [DOMAIN:标签] [CAT:画面/光照] ultraviolet_light | 紫外线
-[DOMAIN:标签] [CAT:画面/艺术风格] medibang_paint_(medium) | MediBang绘画（软件）
-[DOMAIN:标签] [CAT:画面/画面量质] miyoushe_watermark | 米游社水印
 [DOMAIN:标签] [CAT:画面/艺术类型] world_masterpiece_theater | 世界名作剧场
 [DOMAIN:标签] [CAT:画面/艺术类型] lineage_2 | 天堂2
 [DOMAIN:标签] [CAT:画面/画面量质] detached_legs | 分离腿部
@@ -874,7 +845,6 @@
 [DOMAIN:标签] [CAT:画面/艺术家风格] clamp_(circle)_(style) | CLAMP（社团）（风格）
 [DOMAIN:标签] [CAT:画面/光照] headlight_beam | 头灯光束
 [DOMAIN:标签] [CAT:画面/艺术风格] scene_fashion | 场景时尚
-[DOMAIN:标签] [CAT:画面/艺术类型] mikumikudance | MikuMiku舞蹈
 [DOMAIN:标签] [CAT:画面/背景] flower_censor | 花朵打码
 [DOMAIN:标签] [CAT:画面/背景] stitching | 缝合
 [DOMAIN:标签] [CAT:画面/背景] animal_background | 动物背景
@@ -966,8 +936,6 @@
 [DOMAIN:标签] [CAT:画面/画面量质] crumbling | 崩坏
 [DOMAIN:标签] [CAT:画面/画面量质] negative | ネガティブ
 [DOMAIN:标签] [CAT:画面/画面量质] spoken_sound_effect | 语音拟声词
-[DOMAIN:标签] [CAT:画面/艺术类型] clip_studio_paint | Clip Studio Paint
-[DOMAIN:标签] [CAT:画面/艺术类型] autodesk_3ds_max_(medium) | 欧特克3ds Max（中等）
 [DOMAIN:标签] [CAT:画面/艺术风格] koiiro_soramoyou | 恋色空模样
 [DOMAIN:标签] [CAT:画面/艺术风格] cartoon_network | 卡通频道
 [DOMAIN:标签] [CAT:画面/背景] spider_web_background | 蜘蛛网背景
@@ -992,7 +960,6 @@
 [DOMAIN:标签] [CAT:画面/艺术家风格] takahashi_rumiko_(style) | 高桥留美子（风格）
 [DOMAIN:标签] [CAT:画面/颜色] color_wheel | 色轮
 [DOMAIN:标签] [CAT:画面/画面量质] canvas_texture | 画布纹理
-[DOMAIN:标签] [CAT:画面/画面量质] cleaned | 已清洁
 [DOMAIN:标签] [CAT:画面/背景] atmospheric_perspective | 空气透视
 [DOMAIN:标签] [CAT:画面/艺术类型] speedpaint | 速涂
 [DOMAIN:标签] [CAT:画面/画面量质] cutting_out_below_the_eyes_is_hot_(meme) | 眼部以下镂空很性感（梗）
@@ -1013,7 +980,6 @@
 [DOMAIN:标签] [CAT:画面/艺术派系] pieta | 圣殇
 [DOMAIN:标签] [CAT:画面/画面量质] compilation | 合集
 [DOMAIN:标签] [CAT:画面/艺术类型] title_screen | 标题画面
-[DOMAIN:标签] [CAT:画面/画面量质] png_file | PNG文件
 [DOMAIN:标签] [CAT:画面/画笔] ethereal | 缥缈
 [DOMAIN:标签] [CAT:画面/艺术风格] kirakira_huuuki | 闪闪发光风格
 [DOMAIN:标签] [CAT:画面/艺术风格] 1930s_(style) | 1930年代（风格）
@@ -1066,7 +1032,6 @@
 [DOMAIN:标签] [CAT:画面/背景] gingham_background | 方格背景
 [DOMAIN:标签] [CAT:画面/背景] macaron_background | 马卡龙背景
 [DOMAIN:标签] [CAT:画面/艺术类型] china_comic | 国漫
-[DOMAIN:标签] [CAT:画面/画面量质] twitter_screenshot | 推特截图
 [DOMAIN:标签] [CAT:画面/光照] murasaki_(lightsource) | 紫（光源）
 [DOMAIN:标签] [CAT:画面/艺术家风格] vincent_van_gogh_(style) | 文森特·梵高（风格）
 [DOMAIN:标签] [CAT:画面/艺术派系] kenran_butou_sai | 绚烂舞斗祭
@@ -1086,7 +1051,6 @@
 [DOMAIN:标签] [CAT:画面/画面量质] tileable | 可平铺
 [DOMAIN:标签] [CAT:画面/艺术派系] art_deco | 装饰艺术
 [DOMAIN:标签] [CAT:画面/背景] concentric_circles | 同心圆
-[DOMAIN:标签] [CAT:画面/艺术风格] adobe_illustrator_(medium) | Adobe Illustrator（媒介）
 [DOMAIN:标签] [CAT:画面/艺术类型] catherine_cover_parody | 凯瑟琳封面恶搞
 [DOMAIN:标签] [CAT:画面/画面量质] fake_text | 伪文本
 [DOMAIN:标签] [CAT:画面/画面量质] blurry_border | 模糊边框
@@ -1097,7 +1061,6 @@
 [DOMAIN:标签] [CAT:画面/艺术派系] napoleon_crossing_the_alps | 拿破仑跨越阿尔卑斯山
 [DOMAIN:标签] [CAT:画面/画面量质] shatter | 粉碎
 [DOMAIN:标签] [CAT:画面/艺术风格] 1bitheart | 1比特之心
-[DOMAIN:标签] [CAT:画面/画面量质] artist_watermark | 艺术家水印
 [DOMAIN:标签] [CAT:画面/艺术派系] neo-traditionalism_of_japan | 日本新传统主义
 [DOMAIN:标签] [CAT:画面/艺术风格] cool_cool_toon | 酷炫卡通
 [DOMAIN:标签] [CAT:画面/背景] rabbit_cutout | 兔子剪影
@@ -1109,12 +1072,10 @@
 [DOMAIN:标签] [CAT:画面/背景] mandala | 曼荼罗
 [DOMAIN:标签] [CAT:画面/艺术类型] vectors | 矢量图形
 [DOMAIN:标签] [CAT:画面/背景] blood_on_floor | 地面血迹
-[DOMAIN:标签] [CAT:画面/艺术风格] nijie | 二次元
 [DOMAIN:标签] [CAT:画面/颜色] duo_chromatic | 双色
 [DOMAIN:标签] [CAT:画面/画面量质] high_up | 高空
 [DOMAIN:标签] [CAT:画面/画面量质] upside-down_text | 倒置文字
 [DOMAIN:标签] [CAT:画面/背景] card_background | 卡片背景
-[DOMAIN:标签] [CAT:画面/光照] pixiv_shadow | Pixiv阴影
 [DOMAIN:标签] [CAT:画面/艺术家风格] studio_ghibli_(style) | 吉卜力工作室（风格）
 [DOMAIN:标签] [CAT:画面/艺术类型] triptych | 三联画
 [DOMAIN:标签] [CAT:画面/艺术派系] celtic | 凯尔特
@@ -1188,7 +1149,6 @@
 [DOMAIN:标签] [CAT:画面/艺术风格] stippling_(texture) | 点画（纹理）
 [DOMAIN:标签] [CAT:画面/画笔] mirai_nostalgia | 未来乡愁
 [DOMAIN:标签] [CAT:画面/艺术风格] game-style | 游戏风格
-[DOMAIN:标签] [CAT:画面/艺术类型] aseprite_(medium) | Aseprite（软件）
 [DOMAIN:标签] [CAT:画面/背景] cross_background | 十字背景
 [DOMAIN:标签] [CAT:画面/画面量质] zettai_shougeki | 绝对冲击
 [DOMAIN:标签] [CAT:画面/艺术派系] purple_haze_feedback | 紫色迷雾回响
@@ -1243,7 +1203,6 @@
 [DOMAIN:标签] [CAT:画面/背景] heart_border | 心之边界
 [DOMAIN:标签] [CAT:画面/画笔] natsu_no_iro_no_nostalgia | 夏色乡愁
 [DOMAIN:标签] [CAT:画面/艺术类型] tenchi_souzou | 天地创造
-[DOMAIN:标签] [CAT:画面/艺术风格] deviantart | 异艺术
 [DOMAIN:标签] [CAT:画面/颜色] aqua | 水色
 [DOMAIN:标签] [CAT:画面/画笔] illusion | 幻象
 [DOMAIN:标签] [CAT:画面/艺术类型] anata_no_risou_no_heroine | 你的理想女主角

@@ -4,10 +4,8 @@
 [DOMAIN:标签] [CAT:场景/室内] window | 窗户
 [DOMAIN:标签] [CAT:场景/室内] on_bed | 床上
 [DOMAIN:标签] [CAT:场景/室外] beach | 海滩
-[DOMAIN:标签] [CAT:场景/室内] internal | 体内
 [DOMAIN:标签] [CAT:场景/室内] curtains | 窗帘
 [DOMAIN:标签] [CAT:场景/城市] building | 建筑
-[DOMAIN:标签] [CAT:场景/室外] public | 公开场合
 [DOMAIN:标签] [CAT:场景/室内] couch | 长沙发
 [DOMAIN:标签] [CAT:场景/室内] sofa | 沙发
 [DOMAIN:标签] [CAT:场景/城市] halloween | 万圣节
