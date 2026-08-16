@@ -718,6 +718,7 @@ def postprocess(
     target_safety: str | None = None,
     max_rating: str = "r15",
     max_tags: int | None = None,
+    anchor_tags: list[str] | None = None,
 ) -> dict:
     """对 DeepSeek 输出结果执行后处理流水线。
 
@@ -733,6 +734,8 @@ def postprocess(
         max_rating: 内容分级上限；为 ``r18`` 时跳过禁词替换，保留成人内容词。
         max_tags: 可选最终 tag 数上限；超限时按顺序截断尾部多余 tag（保留
             前面的高权重 tag），并在 log 记录截断数量。None 表示不截断。
+        anchor_tags: 创意锚点核心 tag 列表；校验输出是否保留（丢失的锚点
+            记入 ``anti_convergence.missing_anchors``，供上层决定重试）。
 
     Returns:
         更新后的结果字典。
@@ -829,6 +832,15 @@ def postprocess(
 
         # 3.2 反趋同软校验（记录到 log，不自动删改）
         version_log["anti_convergence"] = _check_anti_convergence(resolved_tags)
+
+        # 3.3 创意锚点保留校验：锚点核心 tag 必须出现在最终输出中。
+        if anchor_tags:
+            tag_text = " ".join(_normalize_tag(t) for t in resolved_tags)
+            missing = [
+                t for t in anchor_tags if _normalize_tag(t) not in tag_text
+            ]
+            version_log["anti_convergence"]["missing_anchors"] = missing
+            version_log["anti_convergence"]["anchor_ok"] = not missing
 
         final_prompt = _reconstruct_prompt(resolved_tags, nl_sentences)
         result[version] = final_prompt

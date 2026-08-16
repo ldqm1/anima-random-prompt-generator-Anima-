@@ -672,40 +672,62 @@ def _generate_one_task(
     由主线程决定是否跳过。
     """
     try:
-        result = client.generate_single(
-            sampled_tags_text=task["sampled_text"],
-            safety=task["safety"],
-            min_tags=task["min_tags"],
-            max_tags=task["max_tags"],
-            theme_hint=task["theme_hint"],
-            focus_text=task["focus_text"],
-            temperature=task["temperature"],
-            max_tokens=task["max_tokens"],
-            timeout=task["timeout"],
-            max_parse_retries=task["max_parse_retries"],
-            subject_control=task["subject_control"],
-            forced_tags=task["forced_tags"],
-            forbidden_tags=task["forbidden_tags"],
-            character_tag=task["character_tag"],
-            max_rating=task["max_rating"],
-            extra_requirements=task["extra_requirements"],
-            character_pool_info=task["character_pool_info"],
-            placeholder_meanings=task.get("placeholder_meanings"),
-            r18_instructions=task["r18_instructions"],
-            reasoning_effort=task["reasoning_effort"],
-            creative_anchor_info=task.get("creative_anchor_info"),
-            api_key=api_key,
-            api_base=api_base,
-            model=model,
-        )
-        result = postprocess.postprocess(
-            result,
-            artist_blacklist,
-            database,
-            target_safety=task["safety"],
-            max_rating=task["max_rating"],
-            max_tags=task.get("max_tags"),
-        )
+        anchor_tags = [
+            a.get("tag", "") for a in (task.get("creative_anchor_info") or [])
+            if a.get("tag")
+        ]
+        # 创意锚点保留：若 LLM 丢弃锚点，追加一次带强制锚点的重试。
+        anchor_retry = False
+        max_anchor_attempts = 2 if anchor_tags else 1
+        for attempt in range(max_anchor_attempts):
+            result = client.generate_single(
+                sampled_tags_text=task["sampled_text"],
+                safety=task["safety"],
+                min_tags=task["min_tags"],
+                max_tags=task["max_tags"],
+                theme_hint=task["theme_hint"],
+                focus_text=task["focus_text"],
+                temperature=task["temperature"],
+                max_tokens=task["max_tokens"],
+                timeout=task["timeout"],
+                max_parse_retries=task["max_parse_retries"],
+                subject_control=task["subject_control"],
+                forced_tags=task["forced_tags"],
+                forbidden_tags=task["forbidden_tags"],
+                character_tag=task["character_tag"],
+                max_rating=task["max_rating"],
+                extra_requirements=task["extra_requirements"],
+                character_pool_info=task["character_pool_info"],
+                placeholder_meanings=task.get("placeholder_meanings"),
+                r18_instructions=task["r18_instructions"],
+                reasoning_effort=task["reasoning_effort"],
+                creative_anchor_info=task.get("creative_anchor_info"),
+                api_key=api_key,
+                api_base=api_base,
+                model=model,
+            )
+            result = postprocess.postprocess(
+                result,
+                artist_blacklist,
+                database,
+                target_safety=task["safety"],
+                max_rating=task["max_rating"],
+                max_tags=task.get("max_tags"),
+                anchor_tags=anchor_tags if attempt > 0 else None,
+            )
+            missing_anchors = (
+                result.get("postprocess_log", {})
+                .get("version_1", {})
+                .get("anti_convergence", {})
+                .get("missing_anchors", [])
+            )
+            if not missing_anchors:
+                break
+            if attempt + 1 < max_anchor_attempts:
+                anchor_retry = True
+                task["forced_tags"] = (
+                    (task.get("forced_tags") or "") + ", " + ", ".join(missing_anchors)
+                ).strip(", ")
         # r18 模式占位符：V2 精修保持占位符版本输入（避免 V2 模型按禁词规则改写露骨词），
         # 最后统一将占位符还原为真实 r18 tag。
         ph_map = task.get("r18_placeholder_map") or {}
@@ -737,6 +759,8 @@ def _generate_one_task(
                 )
         record = _record_to_jsonl(result, task["sampled"], v2_only, task["focus_text"])
         record["seed"] = task["seed"]
+        if anchor_retry:
+            record["anchor_retry"] = True
         return {"ok": True, "record": record, "idx": task["idx"]}
     except Exception as exc:  # noqa: BLE001
         return {"ok": False, "error": str(exc), "idx": task["idx"]}
