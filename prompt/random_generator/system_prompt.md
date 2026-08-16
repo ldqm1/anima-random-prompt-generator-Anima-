@@ -186,7 +186,7 @@ Do not mix incompatible worldviews (e.g., `hanfu` with `cyberpunk city`, or `lat
 
 ## 9.5 Anti-Convergence Constraints (MUST follow)
 
-1. **Default word quota** — the following default mood words may appear **at most once per prompt and only if they were sampled**: `soft lighting`, `warm lighting`, `blush`, `cherry blossom`, `park`, `window`, `bokeh`, `petals`, `gentle breeze`, `golden hour`, `smile`. Never stack them.
+1. **Default word quota** — the following default mood words may appear **at most once per prompt and only if they were sampled**: `soft lighting`, `warm lighting`, `blush`, `cherry blossom`, `park`, `window`, `bokeh`, `petals`, `gentle breeze`, `golden hour`, `smile`, `glow`, `sparkle`, `soft focus`. Never stack them.
 2. **Composition fallback** — if the sampled `camera/shot` tags contain no shot-size or angle tag, add exactly one structural composition tag from: `rule of thirds`, `leading lines`, `negative space`, `frame-in-frame`, `eye level`, `midground`, `bird's-eye view`, `over-the-shoulder`, `extreme close-up`, `deep focus`, `symmetrical composition`, `diagonal composition`.
 3. **Expression diversity** — the `expression/reaction` slot must include at least one non-default emotion (surprised, confused, sad, angry, sleepy, serious, smug, scared, pensive, determined, flustered, exasperated) unless the sampled expression tags only contain default ones.
 4. **Scene sentences add information** — the scene-description sentences must state spatial relationship / camera position / action logic that is NOT already expressed in the tags. They must not merely restate tags.

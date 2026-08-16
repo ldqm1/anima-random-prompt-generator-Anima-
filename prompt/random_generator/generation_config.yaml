@@ -104,14 +104,14 @@ subcategory_quotas:
     奇幻幻想: {min: 0, max: 5}
     特殊场所: {min: 0, max: 4}
     交通载具: {min: 0, max: 3}
-
-# 反趋同配额：构图子类（从 camera_shot 抽样结果中保证出现）
-# 每批保证以下每个子类至少 1 个 tag（从对应子类池优先抽，池子见 curated_tags.yaml 注释）
-camera_shot_quotas:
-  shot_size: 1        # 景别：close-up / upper body / full body / wide shot / extreme close-up ...
-  angle: 1            # 机位：from above / from below / from side / low angle / bird's-eye view ...
-  composition_rule: 1 # 结构性法则：rule of thirds / leading lines / negative space / frame-in-frame ...
-  layering: 1         # 层次：foreground / midground / background focus / blurry foreground ...
+  camera_shot:             # 镜头子类（结构性构图词必现，替代旧 camera_shot_quotas 死配置）
+    构图法则: {min: 1, max: 3}   # rule of thirds / leading lines / negative space / frame-in-frame 等
+    镜头角度: {min: 1, max: 4}   # from above / from below / dutch angle / pov 等机位
+    人物构图: {min: 1, max: 3}   # close-up / full body / wide shot / upper body 等景别
+    特写镜头: {min: 0, max: 3}
+    人物视觉朝向: {min: 0, max: 3}
+    效果: {min: 0, max: 2}
+    其他沟通: {min: 0, max: 2}
 
 # 反趋同配额：默认词上限（每行至多 1 次，注入模板 + postprocess 校验）
 default_word_quota:
@@ -126,10 +126,11 @@ default_word_quota:
   "gentle breeze": 1
   "golden hour": 1
   "smile": 1
-
-# 反趋同配额：表情多样性（每批至少 1 个非默认情绪 tag）
-expression_quota:
-  non_default_min: 1    # 从 惊讶/恐惧/冷淡/负面 情绪子类至少抽 1 个
+  "cat": 1
+  "flower": 1
+  "glow": 1
+  "sparkle": 1
+  "soft focus": 1
 
 # r18 模式专用抽样数量：仅 max_rating 为 r18/r18g 时覆盖上方的 sample_counts。
 # 用于减少每样本输入 tag 总量（约 120 → 约 84），降低 LLM 丢弃压力，
@@ -142,9 +143,10 @@ r18_sample_counts:
   clothing_state: 15
   pose_action_sex: 16
   expression_reaction: 15
-  camera_shot: 5
+  camera_shot: 8
   scene_environment: 14
   detail_mood: 6
+  creative_anchor: 2
 
 # r18 标签主题控制（仅 max_rating=r18/r18g 时生效）
 # 根据 r18_topics.yaml 的 17 个主题，逐类调节出现概率。每个主题支持：

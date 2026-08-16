@@ -121,6 +121,9 @@ _DEFAULT_MOOD_FAMILIES: tuple[str, ...] = (
     "gentle breeze",
     "golden hour",
     "smile",
+    "glow",
+    "sparkle",
+    "soft focus",
 )
 
 #: 景别词（shot size），用于构图完整性检查。

@@ -461,6 +461,7 @@ CATEGORY_MAPPINGS: dict[tuple[str, str], str] = {
     ("镜头", "镜头角度"): "camera_shot",
     ("镜头", "效果"): "camera_shot",
     ("镜头", "其他沟通"): "camera_shot",
+    ("镜头", "构图法则"): "camera_shot",
 
     # ---------- scene_environment ----------
     ("场景", "室内"): "scene_environment",
