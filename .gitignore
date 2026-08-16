@@ -18,7 +18,15 @@ output/
 .DS_Store
 Thumbs.db
 
-# 环境变量与密钥
+# 环境变量与密钥（api key 只允许通过命令行 --api-key 传入，禁止落盘）
 .env
+*.env
 archive/
 api_profiles/
+*.api_key
+*secret*
+!knowledge_base/
+
+# 提示词开发与批量生成产物（150MB 级，不进版本库）
+anima_prompt_develop/
+output_dev/
