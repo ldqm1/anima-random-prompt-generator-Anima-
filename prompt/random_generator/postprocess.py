@@ -472,6 +472,22 @@ def _looks_like_sentence(line: str) -> bool:
     return False
 
 
+def _split_inline_prompt(line: str) -> tuple[str, str]:
+    """将单行 "tag1, tag2, ... . Sentence1. Sentence2." 拆为 (tag_part, sent_part)。
+
+    规则：查找第一个 ``. ``（句点+空格+大写/数字）分隔；若句点前部分为逗号
+    分隔的 tag 列表则拆分，否则整行视为纯句子（返回 ``("", line)``）。
+    """
+    m = re.search(r"\.\s+(?=[A-Z0-9])", line)
+    if not m:
+        return "", line
+    tag_part = line[: m.start()].strip()
+    sent_part = line[m.end():].strip()
+    if "," not in tag_part:
+        return "", line
+    return tag_part, sent_part
+
+
 def _reconstruct_prompt(tags: list[str], nl_sentences: list[str]) -> str:
     """将 tag 列表与自然语言句子重新组装为 prompt 字符串。"""
     parts: list[str] = []
@@ -503,7 +519,22 @@ def split_prompt_sections(prompt: str) -> tuple[list[str], list[str]]:
         if not line:
             continue
         if _looks_like_sentence(line):
-            nl_sentences.append(line)
+            # 单行可能同时含 tag 区与句子区（system_prompt 要求单行输出：
+            # "tag1, tag2. Sentence1. Sentence2."），先尝试行内拆分。
+            tag_part, sent_part = _split_inline_prompt(line)
+            if tag_part:
+                for token in tag_part.split(","):
+                    token = token.strip()
+                    if token:
+                        tag_tokens.append(token)
+            if sent_part:
+                for s in re.split(r"(?<=[.!?])\s+", sent_part):
+                    s = s.strip()
+                    if s:
+                        nl_sentences.append(s)
+            else:
+                # 纯句子行（无内联 tag 区）
+                nl_sentences.append(line)
         else:
             for token in line.split(","):
                 token = token.strip()
@@ -686,11 +717,13 @@ def postprocess(
     database: dict,
     target_safety: str | None = None,
     max_rating: str = "r15",
+    max_tags: int | None = None,
 ) -> dict:
     """对 DeepSeek 输出结果执行后处理流水线。
 
-    依次对 ``version_1`` 与 ``version_2`` 执行：画师标签移除、过滤规则、冲突消解
-    与来源校验。结果字典会新增 ``postprocess_log`` 与 ``unknown_tags`` 键。
+    依次对 ``version_1`` 与 ``version_2`` 执行：画师标签移除、过滤规则、冲突消解、
+    长度截断（可选）、反趋同校验与来源校验。结果字典会新增 ``postprocess_log``
+    与 ``unknown_tags`` 键。
 
     Args:
         result: DeepSeek 输出字典，需包含 ``version_1`` 与 ``version_2``。
@@ -698,6 +731,8 @@ def postprocess(
         database: tag 数据库，用于来源校验。
         target_safety: 已废弃，保留仅为了兼容旧调用签名。
         max_rating: 内容分级上限；为 ``r18`` 时跳过禁词替换，保留成人内容词。
+        max_tags: 可选最终 tag 数上限；超限时按顺序截断尾部多余 tag（保留
+            前面的高权重 tag），并在 log 记录截断数量。None 表示不截断。
 
     Returns:
         更新后的结果字典。
@@ -786,6 +821,11 @@ def postprocess(
         resolved_tags = deduped
         if duplicates_removed:
             version_log["duplicates_removed"] = duplicates_removed
+
+        # 3.1.1 长度上限截断（可选）：超限时保留顺序靠前的高权重 tag。
+        if max_tags and len(resolved_tags) > max_tags:
+            version_log["truncated_to_max_tags"] = len(resolved_tags) - max_tags
+            resolved_tags = resolved_tags[:max_tags]
 
         # 3.2 反趋同软校验（记录到 log，不自动删改）
         version_log["anti_convergence"] = _check_anti_convergence(resolved_tags)

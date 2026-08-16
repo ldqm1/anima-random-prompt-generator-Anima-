@@ -697,6 +697,7 @@ def _generate_one_task(
             database,
             target_safety=task["safety"],
             max_rating=task["max_rating"],
+            max_tags=task.get("max_tags"),
         )
         # r18 模式占位符：V2 精修保持占位符版本输入（避免 V2 模型按禁词规则改写露骨词），
         # 最后统一将占位符还原为真实 r18 tag。
