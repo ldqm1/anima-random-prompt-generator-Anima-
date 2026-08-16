@@ -21,7 +21,7 @@ The final `prompt` field must obey all of the following:
 | Weight syntax | Forbidden: `(tag:1.2)`, `(tag:0.8)`, or any weighted-tag syntax. |
 | Quality words | Forbidden: `masterpiece`, `best quality`, `score_7`, `score_8`, `score_9`, `newest`, `highres`, `absurdres`, `ultra-detailed`, `wallpaper`, etc. |
 | Artist names | Forbidden: any artist name, `@artist`, or art-style attribution to a real person. |
-| Lighting / tone | Allowed: `sunlight`, `moonlight`, `rim light`, `warm lighting`, `cool lighting`, `backlighting`, `golden hour glow`, `soft lighting`, `neon light`, `candlelight`, `god rays`, `volumetric light`, `glowing`, `spotlight`, etc. Do not combine contradictory light sources (e.g., `sunlight` with `moonlight`, `backlighting` with `from front`). |
+| Lighting / tone | Use ONLY lighting tags that appear in the sampled tags. NEVER add `soft lighting`, `warm lighting`, `golden hour glow`, `god rays`, `volumetric light`, or `bokeh` on your own. If two contradictory light sources are sampled, keep only the first one in the sampled list. |
 | Weather | Allowed environmental weather tags: `rain`, `snow`, `fog`, `mist`, `steam`, `stormy`, `dust particles`, `underwater`. |
 | Rating tags | Forbidden: `safe`, `sensitive`, `nsfw`, `explicit`, `general`, `pg12`, `r15`, `r18`, `r18g`. |
 | Metadata tags | Drop software/artwork meta tags such as `adobe photoshop (artwork)`, `3d fluid sim`, `gummi art`. |
@@ -40,6 +40,7 @@ Before returning the JSON, verify the prompt against every item below. Fix any f
 4. **Scene plausibility** — Scene and action tags are physically compatible (e.g., no `underwater` with `cigarette`).
 5. **Lighting** — Lighting / tone tags are allowed, but no contradictory light sources appear together (e.g., `sunlight` with `moonlight`, `backlighting` with `from front`).
 6. **Tag count** — The leading tag block must contain at least `{{min_tags}}` tags and at most `{{max_tags}}` tags. Scene-description sentences at the end do not count toward this tag range. As a guideline: simple scenes ~16-30, standard scenes ~22-38, complex scenes ~30-48.
+7. **Default word quota** — no more than one of `soft lighting` / `warm lighting` / `blush` / `cherry blossom` / `park` / `window` / `bokeh` / `petals` / `gentle breeze` / `golden hour` / `smile` per prompt (see §9.5), and only if sampled.
 
 {% if max_rating not in ['r18', 'r18g'] %}
 ## 4. Conflict Table
@@ -105,13 +106,14 @@ Fill slots **strictly in this order**. Tags earlier in the prompt carry more wei
 | expression/reaction | 1 | 4 | Main expression + up to three physical reactions. |
 | camera/shot | 1 | 5 | Required shot size + angle / POV if needed. |
 | scene/environment | 2 | 6 | Main location + environmental element + time / weather. |
-| detail/mood | 1 | 3 | Texture, motion rendering, atmosphere, or digital effect. |
+| detail/mood | 1 | 3 | Texture, motion rendering, atmosphere, or digital effect. Use ONLY sampled tags; never pad with `soft lighting`, `warm lighting`, `bokeh`, or `golden hour`. |
 | natural language | 0 | 1 | Only when tags cannot express relationships, complex composition, or plot. Max 1 phrase (2 only for complex multi-character scenes). |
 
-## 6. Gaze Direction Default
+## 6. Gaze Direction
 
-- **Solo scene**: unless the user explicitly asks for a back view, side profile, or turning away, inject `direct eye contact, facing viewer`. Place these tags near the end of `expression/reaction` or the start of `camera/shot`.
-- **Two or more characters**: do not force `direct eye contact`. Choose relationship-appropriate gaze tags such as `looking at another`, `looking back`, or what the user requested.
+- Use gaze / eye-contact tags ONLY from the sampled `expression/reaction` or `camera/shot` tags (`looking at viewer`, `looking at another`, `looking away`, `looking down`, `averted gaze`, ...).
+- NEVER invent `looking at viewer`, `direct eye contact`, or `facing viewer` when they were not sampled.
+- If no gaze tag is sampled, describe the pose instead (head tilt, glancing sideways, eyes half-closed, eyes cast down).
 
 ## 7. Natural-Language Slot & Scene Description Sentences
 
@@ -134,7 +136,12 @@ For multi-character scenes, put each character's appearance and clothing into th
 - Do not exceed 4 sentences. Keep each sentence concise.
 - Do not add quality words, artist names, or content-rating tags in these sentences.
 
-Good example: `A gentle breeze lifts her hair as she looks toward the distant city lights.`
+Diverse examples (structure only — never reuse these words, scenes, or sentence shapes):
+- `The camera sits low behind a dripping maple branch, the girl's silhouette small against the misty shrine gate.`
+- `Rain beads on the window between her and the viewer; she traces a line through the fog with one finger.`
+- `A single hard spotlight from above isolates her on the stage, the rest of the hall falling into darkness.`
+- `Shot from a worm's-eye angle through a gap in the crowd, her raised hand catches the neon light.`
+- `She is almost lost in the frame, a tiny figure at the end of the long corridor, light at her back.`
 
 ## 8. Multi-Character Rules
 
@@ -153,7 +160,7 @@ Good: `2girls, raiden shogun, long purple hair, purple eyes, hair ornament, yae 
 
 - Every appearance or clothing tag must be clearly assignable to a specific character. Only genuinely shared features (e.g., both wear `sailor uniform`) may be placed in the shared tag area.
 - Do not merge per-character attributes into shared tags.
-- For multi-character scenes, emphasize the intimate bond between the characters: prefer relationship tags such as `hug`, `hand holding`, `cuddling`, `cheek against cheek`, `head on another's shoulder`, `embracing`, and write the `relationship/action phrase` plus the scene sentences to convey warmth and closeness.
+- For multi-character scenes, use relationship tags ONLY from the sampled pose tags. If no hugging/kissing/handholding tags were sampled, describe companionship instead (standing side by side, walking together, facing each other, one leading the other). Do not force intimacy.
 - For multi-character scenes, differentiate the characters' actions and expressions as much as possible: each character should have a distinct pose and facial expression (e.g., one smiling while the other looks away, one seated while the other stands), unless a shared pose is required by the scene.
 - Do not write list-style natural language such as `one girl with..., another girl with...`, `one with..., another with...`, or `the first..., the second...`. Put each character's appearance and clothing immediately after that character's name in the `[appearance]` and `[clothing/state]` slots.
 
@@ -174,6 +181,13 @@ Keep `clothing`, `scene`, and `detail/mood` coherent within one worldview:
 - Daily life: `school uniform`, `classroom`, `natural texture`, `soft focus`.
 
 Do not mix incompatible worldviews (e.g., `hanfu` with `cyberpunk city`, or `latex catsuit` with `ancient temple`).
+
+## 9.5 Anti-Convergence Constraints (MUST follow)
+
+1. **Default word quota** — the following default mood words may appear **at most once per prompt and only if they were sampled**: `soft lighting`, `warm lighting`, `blush`, `cherry blossom`, `park`, `window`, `bokeh`, `petals`, `gentle breeze`, `golden hour`, `smile`. Never stack them.
+2. **Composition fallback** — if the sampled `camera/shot` tags contain no shot-size or angle tag, add exactly one structural composition tag from: `rule of thirds`, `leading lines`, `negative space`, `frame-in-frame`, `eye level`, `midground`, `bird's-eye view`, `over-the-shoulder`, `extreme close-up`, `deep focus`, `symmetrical composition`, `diagonal composition`.
+3. **Expression diversity** — the `expression/reaction` slot must include at least one non-default emotion (surprised, confused, sad, angry, sleepy, serious, smug, scared, pensive, determined, flustered, exasperated) unless the sampled expression tags only contain default ones.
+4. **Scene sentences add information** — the scene-description sentences must state spatial relationship / camera position / action logic that is NOT already expressed in the tags. They must not merely restate tags.
 
 ## 10. Content Ceiling & DeepSeek Review Evasion
 

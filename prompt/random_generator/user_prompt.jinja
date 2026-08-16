@@ -55,18 +55,26 @@ Forbidden tags (must drop): {{ forbidden_tags }}
 
 The sampled tags above are theme seeds. You do NOT have to use all of them.
 Choose compatible tags from each category to fill the slots in the strict slot order.
-If the sampled tags are insufficient, you may add {{ fill_tag_phrase }} tags, but do not add quality words, artist names, or content-rating tags.
+You may add style-consistent tags ONLY to reach {{ min_tags }}, and ONLY from categories already present in the sampled tags. NEVER add default mood tags (`soft lighting`, `warm lighting`, `blush`, `cherry blossom`, `park`, `window`, `bokeh`, `petals`, `gentle breeze`, `golden hour`, `smile`) unless they were sampled — each of them may appear at most once per prompt. Do not add quality words, artist names, or content-rating tags.
 Respect `subject_control` when selecting `count/gender` tags; drop any tag that matches `forbidden_tags`; keep `forced_tags` in the proper slot unless they conflict with {% if max_rating not in ['r18', 'r18g'] %}the conflict table or {% endif %}content ceiling.
 
 Slot order: {{ slot_order }}
 
+Anti-convergence constraints (MUST follow):
+1. Default mood words may appear AT MOST ONCE per prompt and only if sampled:
+   `soft lighting`, `warm lighting`, `blush`, `cherry blossom`, `park`, `window`, `bokeh`, `petals`, `gentle breeze`, `golden hour`, `smile`.
+2. If the sampled camera tags contain no shot-size or angle tag, add exactly one structural composition tag:
+   `rule of thirds`, `leading lines`, `negative space`, `frame-in-frame`, `eye level`, `midground`, `bird's-eye view`, `over-the-shoulder`, `extreme close-up`, `deep focus`.
+3. The expression slot must include at least one non-default emotion (surprised, confused, sad, angry, sleepy, serious, smug, scared, pensive, determined, flustered) unless the sampled expression tags only contain default ones.
+4. The scene-description sentences must state spatial relationship / camera position / action logic NOT already in the tags.
+
 {% if max_rating in ['r18', 'r18g'] %}
 Style direction: Japanese anime illustration of a female subject. Avoid male characters, beast-men, furries, anthros, taurs, dark/black skin, and full non-human creatures. Only cute partial beast-girl features are allowed: cat ears, fox ears, dog ears, wolf ears, bunny ears, deer ears, generic animal ears, simple tails, horns, antlers, and small fangs. Reject monstrous wings, claws, paws, snouts, muzzles, beaks, scales, fur, webbed limbs, tentacle hair, and animal-specific tails/ears that look too feral (bear, panda, mouse, monkey, horse, snake, lizard, etc.).
 {% else %}
-Style direction: Japanese anime girl illustration — soft, youthful, beautiful, delicate. The prompt must describe one or more young anime girls. Avoid male characters, mature women, beast-men, furries, anthros, taurs, dark/black skin, and full non-human creatures. Drop any sampled tag that breaks this aesthetic, such as `owl girl`, `ghost`, `nonbinary bunny`, `avian feet`, `monotone arms`, `brown arms`, `old`, `huge mouth`, `pixel-butts`, `leaf hair`, `living hair`, `forked tail`, `evil eyes`, `vertical bar eyes`, `sharp fangs`, `paw shoes`, `bear ears`, `x eyes`, `sadistic smile`, `gummi art`, `3d fluid sim`, or software/artwork meta tags like `adobe photoshop (artwork)`. Only cute partial beast-girl features are allowed: cat ears, fox ears, dog ears, wolf ears, bunny ears, deer ears, generic animal ears, simple tails, horns, antlers, and small fangs. Reject monstrous wings, claws, paws, snouts, muzzles, beaks, scales, fur, webbed limbs, tentacle hair, and animal-specific tails/ears that look too feral (bear, panda, mouse, monkey, horse, snake, lizard, etc.).
+Style direction: Japanese anime girl illustration — soft, youthful, beautiful, delicate is ONE valid direction, but NOT the only one. If the sampled tags imply cool tones, hard light, dramatic shadows, melancholy, or action scenes, keep them instead of flattening everything into warm soft light. The prompt must describe one or more young anime girls. Avoid male characters, mature women, beast-men, furries, anthros, taurs, dark/black skin, and full non-human creatures. Drop any sampled tag that breaks this aesthetic, such as `owl girl`, `ghost`, `nonbinary bunny`, `avian feet`, `monotone arms`, `brown arms`, `old`, `huge mouth`, `pixel-butts`, `leaf hair`, `living hair`, `forked tail`, `evil eyes`, `vertical bar eyes`, `sharp fangs`, `paw shoes`, `bear ears`, `x eyes`, `sadistic smile`, `gummi art`, `3d fluid sim`, or software/artwork meta tags like `adobe photoshop (artwork)`. Only cute partial beast-girl features are allowed: cat ears, fox ears, dog ears, wolf ears, bunny ears, deer ears, generic animal ears, simple tails, horns, antlers, and small fangs. Reject monstrous wings, claws, paws, snouts, muzzles, beaks, scales, fur, webbed limbs, tentacle hair, and animal-specific tails/ears that look too feral (bear, panda, mouse, monkey, horse, snake, lizard, etc.).
 {% endif %}
 
-Length constraint: Produce a final prompt with at least {{ min_tags }} tags and at most {{ max_tags }} tags. Do not fall far below {{ min_tags }}. If you drop unsuitable sampled tags, compensate with other sampled tags or {{ fill_tag_phrase }} tags to stay above {{ min_tags }}.
+Length constraint: Produce a final prompt with at least {{ min_tags }} tags and at most {{ max_tags }} tags. Do not fall far below {{ min_tags }}. If you drop unsuitable sampled tags, compensate with OTHER sampled tags, or style-consistent tags from categories already sampled (never default mood tags such as soft lighting, warm lighting, blush, cherry blossom, park, window, bokeh, petals, gentle breeze, golden hour, smile).
 
 {% if character_pool_info %}
 Character pool instructions:
@@ -122,14 +130,14 @@ Generation focus: {{ focus_text }}
 Use this as a soft guide for how much emphasis to put on character description versus background/environment/lighting/objects. Do not add new tags that are not implied by the sampled tags.
 {% endif %}
 
-Scene description sentences: After the comma-separated tag block, append 1 to 4 short sentences describing the overall scene logic, atmosphere, lighting intent, or spatial relationship. These sentences must complement the Danbooru tags, not replace them.
+Scene description sentences: After the comma-separated tag block, append 1 to 2 short sentences describing the spatial relationship, camera position, or action logic of the scene. These sentences MUST add information that is not already in the tags (e.g. camera height, foreground element, direction of movement, spatial relation between characters and environment) — they must not merely restate tags like `warm light` or `cherry blossoms`.
 
 Rules for the scene-description block:
-- Write 1 to 4 sentences, no more.
+- Write 1 to 2 sentences, no more.
 - Use normal English sentence case (first word capitalized, end with a period).
 - Separate the last tag and the first sentence with a period and a space: `..., last_tag. First sentence. Second sentence.`
 - Keep each sentence concise.
 - Do not add quality words, artist names, or content-rating tags.
-- Example: `..., wind lifting hair. A gentle breeze lifts her hair as she looks toward the distant city lights.`
+- Do not reuse the sentence shapes from the examples (gentle breeze lifting hair, background fading into a blur, golden light wrapping around).
 
 Produce the JSON output now.

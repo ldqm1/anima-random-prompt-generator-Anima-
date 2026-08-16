@@ -55,9 +55,35 @@ sample_counts:
   clothing_state: 20      # 服装与穿着状态
   pose_action_sex: 20    # 姿势/动作/体位
   expression_reaction: 20 # 表情与反应
-  camera_shot: 5         # 镜头/景别/构图
+  camera_shot: 10         # 镜头/景别/构图（原 5，构图信息先天不足，提额）
   scene_environment: 20  # 场景与环境
   detail_mood: 9         # 画面质感/氛围
+
+# 反趋同配额：构图子类（从 camera_shot 抽样结果中保证出现）
+# 每批保证以下每个子类至少 1 个 tag（从对应子类池优先抽，池子见 curated_tags.yaml 注释）
+camera_shot_quotas:
+  shot_size: 1        # 景别：close-up / upper body / full body / wide shot / extreme close-up ...
+  angle: 1            # 机位：from above / from below / from side / low angle / bird's-eye view ...
+  composition_rule: 1 # 结构性法则：rule of thirds / leading lines / negative space / frame-in-frame ...
+  layering: 1         # 层次：foreground / midground / background focus / blurry foreground ...
+
+# 反趋同配额：默认词上限（每行至多 1 次，注入模板 + postprocess 校验）
+default_word_quota:
+  "soft lighting": 1
+  "warm lighting": 1
+  "blush": 1
+  "cherry blossom": 1
+  "park": 1
+  "window": 1
+  "bokeh": 1
+  "petals": 1
+  "gentle breeze": 1
+  "golden hour": 1
+  "smile": 1
+
+# 反趋同配额：表情多样性（每批至少 1 个非默认情绪 tag）
+expression_quota:
+  non_default_min: 1    # 从 惊讶/恐惧/冷淡/负面 情绪子类至少抽 1 个
 
 # r18 模式专用抽样数量：仅 max_rating 为 r18/r18g 时覆盖上方的 sample_counts。
 # 用于减少每样本输入 tag 总量（约 120 → 约 84），降低 LLM 丢弃压力，
@@ -350,8 +376,8 @@ extra_requirements_pool:
           weight: 4
         - text: "整体氛围偏向复古怀旧的陈设感。"
           weight: 3
-    # ---- E. 镜头构图组（70% 跳过）----
-    - skip_probability: 0.7
+    # ---- E. 镜头构图组（40% 跳过；多选项轮换避免构图趋同）----
+    - skip_probability: 0.4
       items:
         - text: "采用半身构图，聚焦角色的神情。"
           weight: 6
@@ -370,6 +396,28 @@ extra_requirements_pool:
           weight: 3
         - text: "采用远景构图，交代角色与环境的空间关系。"
           weight: 3
+        - text: "采用三分法构图，主体置于画面三分之一处，留出环境呼吸空间。"
+          weight: 3
+        - text: "利用场景中的线条（道路、栏杆、光线）形成引导线，汇聚到角色身上。"
+          weight: 3
+        - text: "画面留白，利用大量负空间衬托角色的孤独或宁静。"
+          weight: 3
+        - text: "用前景物体（门框、树枝、雨幕、玻璃）做框架，将角色框在画面内。"
+          weight: 3
+        - text: "采用鸟瞰视角，从高处俯瞰角色与环境的关系。"
+          weight: 2
+        - text: "采用过肩镜头，透过前景角色的肩头看向主体。"
+          weight: 2
+        - text: "采用大特写，聚焦眼睛或手部的细节。"
+          weight: 2
+        - text: "采用对称构图，画面左右形成平衡。"
+          weight: 2
+        - text: "采用对角线构图，让角色的动势沿对角线展开。"
+          weight: 2
+        - text: "采用低角度仰拍，配合硬光与高对比，强化戏剧张力。"
+          weight: 2
+        - text: "主体位于画面边缘，朝向画面中心，形成张力。"
+          weight: 2
     # ---- G. 服装穿搭组（60% 跳过，避免造型趋同）----
     - skip_probability: 0.6
       items:
