@@ -405,6 +405,7 @@ def _build_config(
     str,
     dict[str, Any],
     dict[str, int],
+    dict[str, Any],
 ]:
     """合并命令行参数、默认生成器配置文件与自定义配置文件。"""
     gen_cfg = _load_generation_config()
@@ -440,6 +441,10 @@ def _build_config(
     # 反趋同：默认词配额（抽样侧词帽 + 模板注入 + postprocess 校验共用同一配置）。
     default_word_quota = dict(gen_cfg.get("default_word_quota", {}))
     default_word_quota.update(user_cfg.get("default_word_quota", {}))
+
+    # 创意锚点池配置（enabled / file）。
+    creative_anchors_cfg = dict(gen_cfg.get("creative_anchors", {}))
+    creative_anchors_cfg.update(user_cfg.get("creative_anchors", {}))
 
     max_rating = (
         args.max_rating
@@ -600,6 +605,7 @@ def _build_config(
         r18_instructions,
         r18_topic_control,
         default_word_quota,
+        creative_anchors_cfg,
     )
 
 
@@ -687,6 +693,7 @@ def _generate_one_task(
             placeholder_meanings=task.get("placeholder_meanings"),
             r18_instructions=task["r18_instructions"],
             reasoning_effort=task["reasoning_effort"],
+            creative_anchor_info=task.get("creative_anchor_info"),
             api_key=api_key,
             api_base=api_base,
             model=model,
@@ -906,6 +913,7 @@ def main(argv: list[str] | None = None) -> int:
         r18_instructions,
         r18_topic_control,
         default_word_quota,
+        creative_anchors_cfg,
     ) = _build_config(args)
     api_key, api_base, model, profile_temperature = _resolve_api_profile(args)
     # API 配置文件可显式指定 temperature；null 表示不发送该参数（适配
@@ -977,6 +985,20 @@ def main(argv: list[str] | None = None) -> int:
     )
     print(f"知识库预过滤完成，共 {sum(len(v) for v in knowledge_database.values())} 条可用 tag。")
 
+    # 创意锚点池（高概念设定，打破场景/动作/道具趋同）。
+    creative_anchors: dict[str, list[dict]] = {}
+    if creative_anchors_cfg.get("enabled", True):
+        creative_anchors = retrieval.load_creative_anchors(
+            creative_anchors_cfg.get("file") or config.CREATIVE_ANCHORS_FILE
+        )
+    if creative_anchors:
+        print(
+            f"创意锚点池已加载：{sum(len(v) for v in creative_anchors.values())} "
+            f"个锚点 / {len(creative_anchors)} 类。"
+        )
+    else:
+        print("创意锚点池未启用或未找到，跳过 creative_anchor 抽样。")
+
     forced_tags = [
         tag.strip()
         for tag in (args.forced_tags or "").split(",")
@@ -1023,6 +1045,7 @@ def main(argv: list[str] | None = None) -> int:
                     r18_topic_control=r18_topic_control,
                     multi_character_cfg=multi_character_cfg,
                     default_word_quota=default_word_quota,
+                    creative_anchors=creative_anchors,
                 )
                 payload = assembler.build_prompt_payload(
                     sampled, max_rating=max_rating
@@ -1139,6 +1162,7 @@ def main(argv: list[str] | None = None) -> int:
                         if r18_placeholder_map
                         else None
                     ),
+                    creative_anchor_info=payload.get("creative_anchor_info"),
                 )
                 print(user_prompt)
                 print()
@@ -1169,6 +1193,7 @@ def main(argv: list[str] | None = None) -> int:
                 r18_topic_control=r18_topic_control,
                 multi_character_cfg=multi_character_cfg,
                 default_word_quota=default_word_quota,
+                creative_anchors=creative_anchors,
             )
             payload = assembler.build_prompt_payload(sampled, max_rating=max_rating)
             sampled_text = assembler.format_tags_for_llm(payload)
@@ -1256,6 +1281,7 @@ def main(argv: list[str] | None = None) -> int:
                     "timeout": deepseek_cfg.get("timeout", 120),
                     "max_parse_retries": deepseek_cfg.get("max_parse_retries", 2),
                     "reasoning_effort": deepseek_cfg.get("reasoning_effort"),
+                    "creative_anchor_info": payload.get("creative_anchor_info"),
                 }
             )
             if (idx + 1) % 500 == 0 or idx + 1 == args.count:

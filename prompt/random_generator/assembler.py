@@ -318,6 +318,7 @@ CATEGORY_DISPLAY_NAMES: dict[str, str] = {
     "scene_environment": "场景与环境",
     "detail_mood": "画面质感/氛围",
     "character_series": "二次元角色",
+    "creative_anchor": "创意锚点",
 }
 
 
@@ -556,11 +557,27 @@ def build_prompt_payload(
             if item.get("source") == "character_pool"
         ]
 
+    # 收集创意锚点元数据（核心名/配套 tag 组/叙事要点），供模板段强制保留。
+    creative_anchor_info: list[dict] | None = None
+    anchor_items = sampled_tags.get("creative_anchor", [])
+    if anchor_items:
+        creative_anchor_info = [
+            {
+                "tag": item.get("tag", ""),
+                "anchor_cn": item.get("anchor_cn", ""),
+                "anchor_tags": list(item.get("anchor_tags", [])),
+                "anchor_narrative": item.get("anchor_narrative", ""),
+            }
+            for item in anchor_items
+            if item.get("source") == "creative_anchor"
+        ]
+
     return {
         "resolved_tags": resolved_tags,
         "category_map": category_map,
         "conflict_log": conflict_log,
         "character_pool_info": character_pool_info,
+        "creative_anchor_info": creative_anchor_info,
     }
 
 

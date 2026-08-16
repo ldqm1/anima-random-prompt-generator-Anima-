@@ -58,6 +58,15 @@ sample_counts:
   camera_shot: 10         # 镜头/景别/构图（原 5，构图信息先天不足，提额）
   scene_environment: 20  # 场景与环境
   detail_mood: 9         # 画面质感/氛围
+  creative_anchor: 2     # 创意锚点（高概念设定，打破场景/动作/道具趋同）
+
+# 创意锚点池配置
+# 每次生成从 creative_anchors.yaml 的 7 类中随机抽 sample_counts.creative_anchor 个
+# 高概念设定（浮空岛/巨大化/魔法阵/时间停滞等），锚点 tag 走强制保留通道，
+# 叙事句必须解释锚点设定逻辑。锚点只改变世界观/场景层，不改变少女本身的 youthful 审美。
+creative_anchors:
+  enabled: true          # false 时跳过 creative_anchor 抽样（兼容旧行为）
+  file: null             # null 表示使用 config.CREATIVE_ANCHORS_FILE（creative_anchors.yaml）
 
 # 反趋同配额：构图子类（从 camera_shot 抽样结果中保证出现）
 # 每批保证以下每个子类至少 1 个 tag（从对应子类池优先抽，池子见 curated_tags.yaml 注释）

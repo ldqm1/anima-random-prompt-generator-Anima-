@@ -234,6 +234,7 @@ def render_user_prompt(
     extra_requirements: str = "",
     character_pool_info: dict | None = None,
     placeholder_meanings: dict[str, str] | None = None,
+    creative_anchor_info: list[dict] | None = None,
 ) -> str:
     """渲染用户提示词模板。
 
@@ -295,6 +296,7 @@ def render_user_prompt(
         character_pool_info=character_pool_info,
         is_multi_character=is_multi_character,
         placeholder_meanings=placeholder_meanings,
+        creative_anchor_info=creative_anchor_info,
     )
 
 
@@ -666,6 +668,7 @@ def generate_single(
     r18_instructions: str = "",
     character_pool_info: dict | None = None,
     placeholder_meanings: dict[str, str] | None = None,
+    creative_anchor_info: list[dict] | None = None,
     max_parse_retries: int = 2,
     reasoning_effort: str | None = None,
 ) -> dict:
@@ -733,6 +736,7 @@ def generate_single(
         extra_requirements=extra_requirements,
         character_pool_info=character_pool_info,
         placeholder_meanings=placeholder_meanings,
+        creative_anchor_info=creative_anchor_info,
     )
 
     last_parse_error: Exception | None = None

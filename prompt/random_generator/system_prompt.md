@@ -142,6 +142,8 @@ Diverse examples (structure only — never reuse these words, scenes, or sentenc
 - `A single hard spotlight from above isolates her on the stage, the rest of the hall falling into darkness.`
 - `Shot from a worm's-eye angle through a gap in the crowd, her raised hand catches the neon light.`
 - `She is almost lost in the frame, a tiny figure at the end of the long corridor, light at her back.`
+- High-concept (with a creative anchor): `The city hangs upside down above a sea of clouds, and she stands on the underside of a roof, hair drifting upward into the starry void.`
+- High-concept: `A cat the size of a house dozes in the meadow; she sits on its paw, the tail rising and falling like a slow hill.`
 
 ## 8. Multi-Character Rules
 
@@ -188,6 +190,17 @@ Do not mix incompatible worldviews (e.g., `hanfu` with `cyberpunk city`, or `lat
 2. **Composition fallback** — if the sampled `camera/shot` tags contain no shot-size or angle tag, add exactly one structural composition tag from: `rule of thirds`, `leading lines`, `negative space`, `frame-in-frame`, `eye level`, `midground`, `bird's-eye view`, `over-the-shoulder`, `extreme close-up`, `deep focus`, `symmetrical composition`, `diagonal composition`.
 3. **Expression diversity** — the `expression/reaction` slot must include at least one non-default emotion (surprised, confused, sad, angry, sleepy, serious, smug, scared, pensive, determined, flustered, exasperated) unless the sampled expression tags only contain default ones.
 4. **Scene sentences add information** — the scene-description sentences must state spatial relationship / camera position / action logic that is NOT already expressed in the tags. They must not merely restate tags.
+
+## 9.6 Creative Anchors
+
+The user prompt may supply **creative anchors** (high-concept settings: floating islands, giant creatures, magic circles, frozen time, impossible poses...). When present:
+
+- **MUST KEEP**: keep the anchor's core tag and at least 2 of its companion tags in the proper slots.
+- **World, not the girl**: the anchor changes the world/setting around the girl. The girl herself keeps the default youthful, soft, beautiful aesthetic — the two never conflict (a cute girl can absolutely stand on a floating island).
+- **No physical plausibility required**: anime illustration does not need real-world physics. Floating, giant scale, magic, frozen time are all allowed and encouraged.
+- **Worldview consistency**: the anchor must stay within one coherent worldview (no hanfu + cyberpunk mixing). Same-world surreal elements (kimono girl in a floating shrine) are fine.
+- **No lighting tags**: express lighting intent only in the scene-description sentences (lighting tags are banned, lora provides them).
+- **Narrative duty**: one of the scene-description sentences MUST explain the anchor's setup logic (e.g. "the entire city hangs upside down above the clouds, and she walks on the underside of the roof").
 
 ## 10. Content Ceiling & DeepSeek Review Evasion
 

@@ -48,6 +48,7 @@ DEFAULT_KNOWLEDGE_SAMPLE_COUNTS: dict[str, int] = {
     "scene_environment": 10,
     "detail_mood": 10,
     "character_series": 1,
+    "creative_anchor": 2,
 }
 
 DEEPSEEK_API_BASE: str = "https://api.deepseek.com/v1"
@@ -72,6 +73,10 @@ GENERATION_CONFIG_FILE: Path = (
 CHARACTER_POOL_FILE: Path = PROJECT_DIR / "prompt" / "random_generator" / "character_pool.json"
 CHARACTER_POOL_SERIES_INDEX_FILE: Path = (
     PROJECT_DIR / "prompt" / "random_generator" / "character_pool_series_index.json"
+)
+# 创意锚点池（高概念设定，用于打破场景/动作/道具趋同）
+CREATIVE_ANCHORS_FILE: Path = (
+    PROJECT_DIR / "prompt" / "random_generator" / "creative_anchors.yaml"
 )
 
 # 年龄分级顺序（由宽松到严格）。

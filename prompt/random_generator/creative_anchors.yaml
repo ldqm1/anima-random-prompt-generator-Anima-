@@ -1,0 +1,418 @@
+# 创意锚点池（Creative Anchors）
+# 用途: 每次生成从本池随机抽取 1-2 个"高概念设定"注入提示词, 打破场景/动作/道具的默认组合趋同。
+# 设计原则(对齐项目铁律):
+#   1. 保留 youthful/唯美/可爱的少女向审美——锚点只是"设定层"的创意, 不改变角色与风格基调;
+#   2. 不跨世界观混搭(对齐 Anima_prompt_template §4.1 风格一致性铁律)——锚点均为"同一世界观内的超现实/幻想元素";
+#   3. 不含光影 tag(光影由 lora 内置, 光影意图只通过叙事句表达);
+#   4. 二次元插画无需物理合理性, 锚点可大胆使用漂浮/巨大化/魔法/时间停滞等设定。
+#
+# 每个锚点字段:
+#   id:        唯一标识
+#   name:      英文核心 tag(必须出现在最终 prompt)
+#   cn:        中文说明
+#   tags:      配套 tag 组(3-5 个, 相互关联, 一起注入才构成完整设定)
+#   narrative: 叙事句要点(机位/空间/设定逻辑, 供叙事句参考)
+
+surreal_scene:            # 1. 超现实场景(同世界观内)
+- id: inverted_city
+  name: inverted city
+  cn: 倒悬的城市(天空与大地颠倒)
+  tags: [inverted city, gravity defying, floating debris, upside-down skyline]
+  narrative: 整座城市倒悬在云海之上, 她从天台边缘探身, 发丝向上飘向星空
+- id: floating_islands
+  name: floating islands
+  cn: 云海上的浮空岛群
+  tags: [floating islands, sky archipelago, waterfalls from clouds, hanging gardens]
+  narrative: 镜头仰视穿过浮岛间隙, 瀑布从云层边缘倾泻而下, 她在最上方的岛屿
+- id: dream_layers
+  name: dreamlike layered world
+  cn: 梦境层叠的世界(现实与梦境交叠)
+  tags: [dreamlike, layered world, translucent reality, floating fragments]
+  narrative: 现实场景在边缘溶解成半透明的梦境碎片, 两层世界同时可见
+- id: mirror_world
+  name: mirror world
+  cn: 镜面反转空间(倒影成为实体)
+  tags: [mirror world, reflection becomes real, mirrored architecture, water-like sky]
+  narrative: 地面是水面, 倒影里的城市才是真实的, 她行走在倒影之上
+- id: frozen_time
+  name: frozen moment
+  cn: 时间停滞(凝固的瞬间)
+  tags: [frozen time, suspended droplets, paused motion, floating dust still]
+  narrative: 雨滴停在半空, 扬起的裙摆凝固, 只有她是画面中唯一在动的存在
+- id: starry_sea
+  name: starry underwater palace
+  cn: 星空海底宫殿
+  tags: [underwater palace, starry sea, bioluminescent marine life, bubbles rising like stars]
+  narrative: 海底宫殿与星空在视野尽头相接, 光点如星辰般在海水中上升
+- id: endless_corridor
+  name: endless corridor
+  cn: 无限循环的走廊
+  tags: [endless corridor, infinite mirror hallway, repeating doors, vanishing perspective]
+  narrative: 走廊向两端无限延伸, 门在两侧重复出现, 她在尽头被光笼罩
+- id: reversed_gravity_room
+  name: gravity-reversed room
+  cn: 重力反转的房间
+  tags: [reversed gravity, furniture on ceiling, floating objects, upside-down tea set]
+  narrative: 茶具与书本悬浮在头顶, 她倒坐在天花板上垂下的吊灯旁
+- id: cloud_palace
+  name: palace above the clouds
+  cn: 云海之上的宫殿
+  tags: [palace above clouds, cloud sea, golden spires, sky bridges]
+  narrative: 宫殿矗立在云海之上, 金色尖塔刺破晨光, 她站在连接宫殿的云桥上
+- id: giant_flora
+  name: oversized flora world
+  cn: 巨型植物世界(行走在叶片与花瓣之间)
+  tags: [oversized flowers, giant leaves, colossal mushrooms, petal as umbrella]
+  narrative: 花朵如房屋般高大, 她坐在一片巨大花瓣的边缘, 花瓣遮住半片天空
+- id: sunken_temple
+  name: temple rising from the sea
+  cn: 从海中升起的神殿
+  tags: [sunken temple, water cascading off roofs, ancient torii in the sea, mist over waves]
+  narrative: 古老的神殿缓缓浮出水面, 海水从屋檐倾泻, 她站在最高的鸟居上
+- id: celestial_garden
+  name: garden floating in the sky
+  cn: 漂浮在空中的花园
+  tags: [sky garden, floating flower beds, drifting vines, hanging lanterns]
+  narrative: 花圃与藤蔓悬浮在天空中, 灯笼在花丛间漂浮, 她提着裙摆穿过浮空花径
+
+scale_shift:              # 2. 尺度反转(巨大化/微缩化)
+- id: giant_pet
+  name: giant fluffy pet
+  cn: 巨型毛茸茸宠物
+  tags: [giant cat, oversized animal, fluffy tail as bed, tiny girl on giant paw]
+  narrative: 一只房子大小的猫趴卧着, 她坐在它的爪子上, 猫尾像山丘一样起伏
+- id: giant_food
+  name: giant food landscape
+  cn: 巨大化的食物
+  tags: [giant fruit, oversized dessert, mountain of cake, candy cane trees]
+  narrative: 草莓比她的人还高, 她坐在一颗草莓上, 远处是棉花糖云朵
+- id: miniature_city
+  name: miniature world
+  cn: 微缩世界(缩小后身处日常物件间)
+  tags: [miniature world, oversized stationery, giant teacup, pencil as pillar]
+  narrative: 她缩小到手掌大小, 站在翻开的书本上, 铅笔如立柱般立在身侧
+- id: palm_city
+  name: city on her palm
+  cn: 掌心上的迷你城市
+  tags: [tiny city, city in her palm, miniature buildings, glowing windows like stars]
+  narrative: 一座发光的迷你城市托在她掌心, 她低头凝视, 眼中映出城市的灯火
+- id: giant_moon
+  name: colossal moon
+  cn: 占据半边天空的巨月
+  tags: [colossal moon, moon fills the sky, lunar surface details, low horizon glow]
+  narrative: 月亮巨大到填满半边天幕, 她站在天台边缘, 月面环形山清晰可辨
+- id: giant_statue
+  name: colossal statue
+  cn: 巨神像
+  tags: [colossal statue, ancient colossus, statue's hand as platform, moss-covered giant]
+  narrative: 远古巨像静立千年, 她站在巨像摊开的掌中, 与它一同望向远方
+- id: giant_umbrella
+  name: giant umbrella
+  cn: 遮天蔽日的巨伞
+  tags: [giant umbrella, umbrella as shelter, rain on canopy, tiny figure beneath]
+  narrative: 一柄巨大的伞撑开在雨中, 她站在伞柄下, 伞面如天幕般遮住暴雨
+- id: giant_flower_umbrella
+  name: flower as umbrella
+  cn: 花瓣作伞
+  tags: [petal umbrella, giant bloom, flower petal shelter, drifting pollen]
+  narrative: 她举着一片巨大的花瓣作伞, 花粉如金粉般飘落
+- id: tiny_companion
+  name: tiny companion
+  cn: 掌心大小的伙伴
+  tags: [tiny companion, miniature familiar, fairy-sized friend, sitting on shoulder]
+  narrative: 一个只有掌心大小的伙伴坐在她肩头, 与她一起望着远方
+- id: giant_clock
+  name: giant clockwork
+  cn: 巨大的机械钟表
+  tags: [giant clock, clockwork gears, oversized watch face, timepiece landscape]
+  narrative: 巨大的齿轮与钟面构成风景, 她行走在秒针的阴影下
+
+magic_ritual:             # 3. 魔法/仪式/幻想元素
+- id: summoning_circle
+  name: glowing summoning circle
+  cn: 发光的召唤魔法阵
+  tags: [glowing magic circle, summoning circle, floating runes, magical aura]
+  narrative: 魔法阵在她脚下亮起, 符文绕着她旋转上升, 光粒汇聚于她指尖
+- id: floating_runes
+  name: floating runes
+  cn: 漂浮的符文与咒文
+  tags: [floating runes, magical script, glowing symbols, arcane text]
+  narrative: 发光的符文如萤火般绕着她漂浮, 咒文在空气中书写又消散
+- id: elemental_manifest
+  name: elemental manifestation
+  cn: 元素具象化(风之刃/火之蝶/水之环)
+  tags: [elemental magic, manifested elements, wind blades, fire butterflies]
+  narrative: 风在她手中凝成透明的利刃, 火蝶从她发梢振翅飞出
+- id: glowing_tattoo
+  name: activating glowing tattoo
+  cn: 激活的发光纹身
+  tags: [glowing tattoo, activated markings, luminous patterns on skin, magic circuits]
+  narrative: 她手臂上的纹身亮起蓝光, 图案如电路般蔓延到指尖
+- id: crystal_resonance
+  name: crystal resonance
+  cn: 水晶共鸣
+  tags: [floating crystals, crystal resonance, shattering light, gemstone glow]
+  narrative: 水晶在她周围悬浮并共振, 光线被折射成七彩的棱镜
+- id: time_magic
+  name: time magic
+  cn: 时间魔法(冻结/倒流)
+  tags: [time magic, frozen clock hands, reversed waterfall, hourglass light]
+  narrative: 沙漏的光晕笼罩四周, 坠落的沙粒与时针一同凝固又倒转
+- id: magical_ink
+  name: living ink
+  cn: 具象化的墨迹/画笔
+  tags: [living ink, ink becomes real, painted world, brush strokes in air]
+  narrative: 她挥动画笔, 墨迹在空中变成真实的飞鸟与山峦
+- id: paper_spirit
+  name: paper spirits
+  cn: 纸片式神/纸艺精灵
+  tags: [paper spirits, origami companions, paper birds, dancing paper dolls]
+  narrative: 折纸的鸟与小人绕着她飞舞, 纸翼在光中微微透亮
+- id: aurora_shards
+  name: aurora fragments
+  cn: 极光碎片
+  tags: [aurora fragments, sky shards, flowing light ribbons, northern lights]
+  narrative: 极光如缎带般垂落, 光之碎片在她身周缓缓飘浮
+- id: shadow_entity
+  name: shadow familiar
+  cn: 影子化作的精灵
+  tags: [shadow familiar, living shadow, silhouette creature, shadow tendrils]
+  narrative: 她的影子脱离地面, 化作一只黑猫般的精灵蹲在脚边
+- id: lantern_spirits
+  name: spirit lanterns
+  cn: 提着魂火的灯灵
+  tags: [spirit lanterns, will-o-wisps, floating flames, ghostly lights]
+  narrative: 一团团魂火如提灯般悬浮, 在夜色里连成一条光的河流
+- id: gilded_aura
+  name: gilded aura
+  cn: 金色神性光晕
+  tags: [golden aura, holy light halo, floating gold particles, radiant presence]
+  narrative: 金色的光粒如尘埃般悬浮, 在她身周形成一圈淡淡的神性光晕
+
+anime_expression:         # 4. 二次元专属表达(不需要物理合理性)
+- id: chibi_mix
+  name: chibi companion
+  cn: Q版本体混入正比例画面
+  tags: [chibi, chibi companion, mini version, exaggerated head]
+  narrative: 一个 Q 版的她趴在正比例她的头顶, 两人动作同步
+- id: expression_diff
+  name: expression lineup
+  cn: 表情差分(三联/多联)
+  tags: [expression lineup, multiple expressions, three-panel, face chart]
+  narrative: 同一姿态下三格表情差分并列, 从淡定到慌乱逐格变化
+- id: panel_focus
+  name: manga panel moment
+  cn: 分镜式瞬间(速度线/集中线)
+  tags: [speed lines, focus lines, panel composition, dramatic moment]
+  narrative: 背景铺满放射状集中线, 把她框在唯一清晰的中心
+- id: pixel_intrusion
+  name: pixel intrusion
+  cn: 像素元素闯入
+  tags: [pixel art, 8-bit elements, retro game sprites, blocky effects]
+  narrative: 一角画面碎裂成像素块, 复古游戏元素从裂口涌出
+- id: chibi_inset
+  name: chibi inset
+  cn: 角落的 Q 版小剧场
+  tags: [chibi inset, mini illustration, corner cameo, small self]
+  narrative: 画面角落有个小气泡, 里面是 Q 版的她在闹别扭
+- id: game_ui
+  name: game UI elements
+  cn: 游戏界面元素拟人/共存
+  tags: [game ui, health bar, dialogue box, quest marker]
+  narrative: 血条与对话框悬在她身边, 像是从 RPG 界面里走出来
+- id: comic_style
+  name: comic panel layout
+  cn: 漫画分格排布
+  tags: [comic panel, panel layout, page composition, sequential art]
+  narrative: 画面分成几格漫画, 每一格是动作的下一步
+- id: emoticon_aura
+  name: emoticon effects
+  cn: 表情符号特效(怒筋/爱心/汗滴具象化)
+  tags: [anger vein, heart symbol, sweatdrop, symbol effects]
+  narrative: 愤怒的青筋、飘出的爱心、具象化的汗滴在她身边飘浮
+- id: mini_self
+  name: mini version crowd
+  cn: 一群迷你版自己
+  tags: [mini clones, many small selves, crowd of tiny figures, waving minis]
+  narrative: 一群掌心大小的她自己围绕着她, 有的挥手有的偷懒
+- id: chibi_pet
+  name: chibi mascot
+  cn: Q版吉祥物
+  tags: [chibi mascot, round mascot, mascot companion, adorable sidekick]
+  narrative: 一个圆滚滚的 Q 版吉祥物挂在她手臂上荡来荡去
+
+narrative_contrast:       # 5. 叙事反差(打破氛围一致性, 制造张力)
+- id: snack_in_battle
+  name: snacking mid-battle
+  cn: 战斗中吃甜点
+  tags: [battlefield, eating dessert, calm amid chaos, explosion behind]
+  narrative: 身后是爆炸与硝烟, 她坐在断墙上若无其事地吃着一块蛋糕
+- id: sunny_in_rain
+  name: sunny umbrella in rain
+  cn: 雨中撑开"阳光"
+  tags: [rain, glowing umbrella, warm light inside, dry circle of light]
+  narrative: 雨幕中她撑开一柄散发暖光的伞, 伞下是唯一干燥明亮的一小圈
+- id: tea_in_ruins
+  name: tea party in ruins
+  cn: 废墟里的茶会
+  tags: [ruins, tea party, porcelain cups, rubble garden]
+  narrative: 坍塌的石柱间摆着完整的茶具, 她跪坐沏茶, 仿佛世界从未崩塌
+- id: childish_in_ceremony
+  name: childish joy in solemn rite
+  cn: 庄严仪式中的孩子气
+  tags: [solemn ceremony, traditional ritual, playful pose, hidden grin]
+  narrative: 祭典的烛火与香雾中, 她偷偷朝镜头比了个 V 字
+- id: solo_stage
+  name: solo spotlight
+  cn: 独处时的盛大舞台
+  tags: [empty stage, spotlight, single figure, grand curtain]
+  narrative: 无人的剧场里, 一束追光打在她身上, 她为空气谢幕
+- id: everyday_fantasy
+  name: magic in everyday life
+  cn: 日常里的魔法
+  tags: [everyday scene, magic sparkle, ordinary kitchen, floating groceries]
+  narrative: 她在厨房做饭, 锅铲挥动时食材自己漂浮到砧板上
+- id: formal_chaos
+  name: chaos behind formal dress
+  cn: 盛装下的狼狈
+  tags: [formal dress, messy hair, torn hem, champagne spilled]
+  narrative: 她穿着精致礼服却发丝凌乱, 裙摆沾着泥点, 手里还攥着摔碎的酒杯
+- id: quiet_crowd
+  name: quiet inside the crowd
+  cn: 喧嚣人群中的安静
+  tags: [crowd, motion blur, still figure, closed eyes]
+  narrative: 人流在她身边虚化成光带, 只有她静止不动, 闭着眼聆听
+- id: snow_and_flower
+  name: snow with blossoms
+  cn: 雪与花同框(季节交错)
+  tags: [snow, falling petals, season mix, frost on flowers]
+  narrative: 雪花与樱花同时飘落, 花瓣上凝着薄霜, 两种季节在画面里交汇
+- id: lonely_party
+  name: lonely celebration
+  cn: 一个人的庆典
+  tags: [party decorations, confetti, single candle, empty chairs]
+  narrative: 彩带与气球仍在, 长桌只坐了她一个人, 蜡烛快要燃尽
+- id: gentle_in_storm
+  name: gentle amid storm
+  cn: 暴风雨中的温柔
+  tags: [storm, dark clouds, calm expression, wind-blown hair]
+  narrative: 雷云压境, 她在风中护住一盏不灭的灯, 表情平静
+- id: school_night_sky
+  name: night sky in classroom
+  cn: 教室里的星空(天花板变成夜空)
+  tags: [classroom, starry ceiling, galaxy classroom, floating desks]
+  narrative: 教室天花板化作旋转的星空, 课桌微微漂浮, 她仰面躺在课桌上
+
+impossible_action:        # 6. 反常识动作(物理不合理的姿态)
+- id: walk_on_air
+  name: walking on air
+  cn: 空中行走
+  tags: [walking on air, floating steps, stepping stones of light, aerial walkway]
+  narrative: 她在半空一步步行走, 每踩一步脚下便亮起一块光的踏板
+- id: water_walk
+  name: walking on water
+  cn: 踏水而行
+  tags: [walking on water, ripples underfoot, calm surface, glowing footprints]
+  narrative: 她踏过水面, 每一步都在水面漾开发光的涟漪
+- id: wind_carried
+  name: carried by the wind
+  cn: 被风托起
+  tags: [wind lifted, floating skirt, airborne pose, hair streaming upward]
+  narrative: 一阵风把她轻轻托离地面, 裙摆和发丝向上飘起
+- id: upside_down_reading
+  name: reading upside down
+  cn: 倒立阅读
+  tags: [upside down, reading book, inverted pose, dangling hair]
+  narrative: 她倒挂在树枝上翻书, 长发垂向地面, 表情悠然
+- id: floating_tea
+  name: floating tea party
+  cn: 悬浮茶会
+  tags: [floating tea set, levitating cups, hovering seats, weightless tea]
+  narrative: 茶杯与椅子都悬在半空, 她盘腿坐在漂浮的坐垫上端起茶杯
+- id: weightless
+  name: weightless drift
+  cn: 失重漂浮
+  tags: [weightless, floating pose, drifting hair, suspended objects]
+  narrative: 房间里的物件全部失重悬浮, 她蜷着身体在光里缓缓漂过
+- id: jump_above_clouds
+  name: jumping above clouds
+  cn: 一跃越过云层
+  tags: [jumping, above clouds, sky high leap, wind against face]
+  narrative: 她奋力一跃, 视线越过云海, 城市在云层下方缩成光点
+- id: climb_vertical
+  name: walking up a wall
+  cn: 沿墙壁垂直行走
+  tags: [wall walking, perpendicular walk, vertical path, gravity shifted]
+  narrative: 重力似乎偏转了方向, 她沿着墙面垂直走向窗口
+- id: thread_dance
+  name: dancing on a thread
+  cn: 悬丝上起舞
+  tags: [tightrope, balancing on thread, floating ribbons, graceful pose]
+  narrative: 一根几乎看不见的丝线横跨两座建筑, 她赤足在其上旋转
+- id: tea_pour_up
+  name: pouring tea upward
+  cn: 茶水倒流
+  tags: [reversed liquid, tea flowing upward, floating droplets, gravity defied]
+  narrative: 茶壶倾斜, 茶水却向上流入悬空的杯中, 一滴不漏
+
+fantastical_element:      # 7. 奇幻元素/材质(无需合理性的设定)
+- id: object_personification
+  name: personified object
+  cn: 拟人化的物件(会说话的伞/书)
+  tags: [personified object, talking umbrella, living object, expressive prop]
+  narrative: 她撑着的一把旧伞突然睁开眼, 与她并肩走着, 伞尖还撑着地面
+- id: light_wing
+  name: wings of light
+  cn: 光之翼
+  tags: [light wings, radiant wings, feathered light, luminous flight]
+  narrative: 由光线凝成的羽翼在她背后展开, 光羽缓缓飘落
+- id: glass_creature
+  name: glass creature
+  cn: 玻璃质感的生物
+  tags: [glass creature, crystalline animal, translucent companion, refracting light]
+  narrative: 一只通体透明的玻璃小兽卧在她膝上, 光线在它体内折射
+- id: clockwork_bird
+  name: clockwork birds
+  cn: 机械发条鸟
+  tags: [clockwork bird, mechanical animal, brass feathers, winding key]
+  narrative: 发条驱动的机械鸟群从她肩头起飞, 齿轮声与振翅声交织
+- id: paper_lantern_sea
+  name: sea of paper lanterns
+  cn: 漫天纸灯
+  tags: [paper lanterns, floating lights, lantern sea, warm glow]
+  narrative: 数以千计的纸灯悬浮在空中, 连成一片光的海洋
+- id: candy_world
+  name: confectionary world
+  cn: 甜点世界(家具是食物)
+  tags: [candy world, dessert furniture, cookie house, chocolate floor]
+  narrative: 房间里的家具都是点心做的, 她坐在一块马卡龙上喝奶茶
+- id: ink_world
+  name: ink-wash world
+  cn: 水墨世界(现实化成水墨)
+  tags: [ink wash style, sumi-e world, monochrome landscape, brush stroke edges]
+  narrative: 周围的世界化作水墨, 只有她保留着色彩, 像画布上唯一的落笔
+- id: moss_golem
+  name: moss golem
+  cn: 苔藓石像
+  tags: [moss golem, stone creature, living statue, overgrown guardian]
+  narrative: 一座覆满苔藓的石像缓缓抬手, 把她轻轻托到肩头
+- id: ribbon_sea
+  name: endless ribbons
+  cn: 无穷的丝带
+  tags: [endless ribbons, flowing fabric, ribbon sky, silk waves]
+  narrative: 无数丝带如潮水般从地平线涌来, 在她身边打着旋
+- id: constellation_veil
+  name: constellation veil
+  cn: 星座纱幕
+  tags: [constellation pattern, star-linked lines, luminous dots, sky veil]
+  narrative: 星点之间连出细线, 在她头顶织成一片星座的纱幕
+- id: snow_lantern
+  name: snow lanterns
+  cn: 雪中烛火
+  tags: [snow, candle flames in snow, glowing snowflakes, warm ice]
+  narrative: 雪地里立着一排蜡烛, 火焰在雪花中不灭, 融出一个个暖色的小坑
+- id: autumn_storm
+  name: storm of leaves
+  cn: 漫天红叶的旋涡
+  tags: [autumn leaves, leaf vortex, swirling foliage, red sky]
+  narrative: 红叶如风暴般在她身边旋转上升, 与晚霞连成一色

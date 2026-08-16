@@ -595,6 +595,30 @@ def load_character_pool(path: str | Path | None = None) -> list[dict[str, Any]]:
     return data
 
 
+def load_creative_anchors(path: str | Path | None = None) -> dict[str, list[dict[str, Any]]]:
+    """加载创意锚点池 YAML。
+
+    Args:
+        path: 锚点池 YAML 路径。为 ``None`` 时使用 ``config.CREATIVE_ANCHORS_FILE``。
+
+    Returns:
+        按类别分组的锚点字典，形如 ``{"surreal_scene": [{"id", "name", "cn",
+        "tags", "narrative"}, ...], ...}``。
+    """
+    path = Path(path or config.CREATIVE_ANCHORS_FILE)
+    if not path.exists():
+        return {}
+    import yaml
+
+    with path.open("r", encoding="utf-8") as f:
+        data = yaml.safe_load(f) or {}
+    out: dict[str, list[dict[str, Any]]] = {}
+    for cat, items in data.items():
+        if isinstance(items, list):
+            out[str(cat)] = [dict(i) for i in items if isinstance(i, dict)]
+    return out
+
+
 def load_character_pool_series_index(path: str | Path | None = None) -> list[dict[str, Any]]:
     """加载角色池 IP 级索引。
 
@@ -904,6 +928,7 @@ def sample_from_knowledge_v1(
     r18_topic_control: dict[str, Any] | None = None,
     multi_character_cfg: dict[str, Any] | None = None,
     default_word_quota: dict[str, int] | None = None,
+    creative_anchors: dict[str, list[dict]] | None = None,
 ) -> dict[str, list[dict]]:
     """从知识库 v1 中按类别抽样，并应用 R15 过滤与现有清洗规则。
 
@@ -1233,6 +1258,12 @@ def sample_from_knowledge_v1(
         if category in ("count_gender", "character_series"):
             continue
 
+        # 创意锚点：从锚点池随机抽 1-2 个高概念设定（展开 name+tags），
+        # 走"forced"语义——LLM 必须保留（模板段另做强制说明）。
+        if category == "creative_anchor":
+            sampled[category] = _sample_creative_anchors(creative_anchors, n)
+            continue
+
         # 优先使用通用类别白名单池（若已启用且当前类别 pool 非空）。
         whitelist_pool = cat_whitelist_pools.get(category, [])
         if whitelist_pool:
@@ -1270,6 +1301,46 @@ def sample_from_knowledge_v1(
         _apply_default_word_quota(sampled, default_word_quota)
 
     return sampled
+
+
+def _sample_creative_anchors(
+    anchors: dict[str, list[dict]] | None, k: int
+) -> list[dict]:
+    """从创意锚点池随机抽取 k 个锚点（跨类别不重复），展开为 tag 条目。
+
+    每个条目包含 ``tag``（锚点核心名）、``anchor_id``/``anchor_cn``/
+    ``anchor_tags``/``anchor_narrative`` 元数据，供模板段强制保留与叙事句参考。
+    """
+    if not anchors or k <= 0:
+        return []
+    cats = list(anchors.keys())
+    chosen: list[dict] = []
+    used_ids: set[str] = set()
+    attempts = 0
+    while len(chosen) < k and attempts < k * 20:
+        attempts += 1
+        cat = random.choice(cats)
+        pool = anchors.get(cat, [])
+        if not pool:
+            continue
+        cand = [a for a in pool if a.get("id") not in used_ids]
+        if not cand:
+            continue
+        a = random.choice(cand)
+        used_ids.add(a.get("id", ""))
+        tags = [t for t in ([a.get("name", "")] + list(a.get("tags", []))) if t]
+        chosen.append(
+            {
+                "tag": tags[0] if tags else str(a.get("id", "")),
+                "category": "creative_anchor",
+                "source": "creative_anchor",
+                "anchor_id": a.get("id", ""),
+                "anchor_cn": a.get("cn", ""),
+                "anchor_tags": tags,
+                "anchor_narrative": a.get("narrative", ""),
+            }
+        )
+    return chosen
 
 
 def _apply_default_word_quota(
