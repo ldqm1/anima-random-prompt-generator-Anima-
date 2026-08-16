@@ -37245,9 +37245,6 @@ expression_reaction:
 - tag: angry
   rating: general
   chinese: 生气
-- tag: blood on face
-  rating: r15
-  chinese: 脸上血迹
 - tag: crying with eyes open
   rating: general
   chinese: 睁眼哭泣
@@ -37272,9 +37269,6 @@ expression_reaction:
 - tag: eye roll
   rating: general
   chinese: 翻白眼
-- tag: red lips
-  rating: general
-  chinese: 红唇
 - tag: full-face blush
   rating: general
   chinese: 满脸通红
@@ -37374,9 +37368,6 @@ expression_reaction:
 - tag: thinking
   rating: general
   chinese: 思考
-- tag: screen face
-  rating: general
-  chinese: 屏幕脸
 - tag: puckered lips
   rating: general
   chinese: 噘嘴
@@ -37395,12 +37386,6 @@ expression_reaction:
 - tag: smug grin
   rating: general
   chinese: 得意笑容
-- tag: gaping mouth
-  rating: general
-  chinese: 张嘴呆滞
-- tag: smiley face
-  rating: general
-  chinese: 笑脸
 - tag: shading eyes
   rating: general
   chinese: 遮眼
@@ -37542,9 +37527,6 @@ expression_reaction:
 - tag: forced smile
   rating: general
   chinese: 强颜欢笑
-- tag: eye black
-  rating: general
-  chinese: 眼部黑妆
 - tag: evil face
   rating: general
   chinese: 邪恶面容
@@ -37575,9 +37557,6 @@ expression_reaction:
 - tag: zipper mouth
   rating: general
   chinese: 拉链嘴
-- tag: can't be this cute
-  rating: general
-  chinese: 不可能这么可爱
 - tag: scared face
   rating: general
   chinese: 惊恐表情
@@ -37617,9 +37596,6 @@ expression_reaction:
 - tag: slight smile
   rating: general
   chinese: 浅笑
-- tag: green mouth
-  rating: general
-  chinese: 绿色嘴巴
 - tag: full mouth
   rating: general
   chinese: 满口
@@ -37728,9 +37704,6 @@ expression_reaction:
 - tag: kiss mark on face
   rating: general
   chinese: 脸上吻痕
-- tag: small mouth
-  rating: general
-  chinese: 小巧嘴型
 - tag: mouth scar
   rating: general
   chinese: 嘴部疤痕
@@ -37899,12 +37872,6 @@ expression_reaction:
 - tag: mouth pussy
   rating: r18
   chinese: 口穴
-- tag: chest mouth
-  rating: general
-  chinese: 胸嘴
-- tag: squiggle mouth
-  rating: general
-  chinese: 波浪嘴
 - tag: hole in face
   rating: general
   chinese: 面部孔洞
@@ -38001,9 +37968,6 @@ expression_reaction:
 - tag: biting lower lip
   rating: general
   chinese: 咬下唇
-- tag: too many in mouth
-  rating: general
-  chinese: 口中过多
 - tag: innocent smile
   rating: general
   chinese: 无辜微笑
@@ -38100,9 +38064,6 @@ expression_reaction:
 - tag: happy sub
   rating: general
   chinese: 快乐服从
-- tag: expression print
-  rating: general
-  chinese: 表情印花
 - tag: smegma on face
   rating: general
   chinese: 包皮垢涂面
@@ -38118,21 +38079,12 @@ expression_reaction:
 - tag: sheath mouth
   rating: general
   chinese: 鞘状口
-- tag: ear mouth
-  rating: general
-  chinese: 耳口
 - tag: shit eating grin
   rating: general
   chinese: 得意奸笑
-- tag: flustered face emoji
-  rating: general
-  chinese: 慌张表情符号
 - tag: frowney face
   rating: general
   chinese: 皱眉表情
-- tag: cheek gills
-  rating: general
-  chinese: 颊鳃
 - tag: lustful eyes
   rating: general
   chinese: 情欲眼神
@@ -38178,12 +38130,6 @@ expression_reaction:
 - tag: cheek spot
   rating: general
   chinese: 颊斑
-- tag: my eyes are up here
-  rating: general
-  chinese: 眼睛在这上面
-- tag: spoken smile
-  rating: general
-  chinese: 言语微笑
 - tag: tongue on face
   rating: general
   chinese: 舔脸
@@ -38262,9 +38208,6 @@ expression_reaction:
 - tag: salty eyes
   rating: general
   chinese: 咸泪
-- tag: feces from mouth
-  rating: r18g
-  chinese: 口中排粪
 - tag: unusual mouth
   rating: general
   chinese: 异形嘴部
@@ -38286,9 +38229,6 @@ expression_reaction:
 - tag: heart mouth
   rating: general
   chinese: 心形嘴
-- tag: packed mouth
-  rating: general
-  chinese: 满塞口腔
 - tag: crying eye
   rating: general
   chinese: 泪眼
@@ -38322,9 +38262,6 @@ expression_reaction:
 - tag: snowflake in eye
   rating: general
   chinese: 眼中雪花
-- tag: eye gouge
-  rating: general
-  chinese: 挖眼
 - tag: fake tears
   rating: general
   chinese: 虚假眼泪
@@ -38340,9 +38277,6 @@ expression_reaction:
 - tag: pouty lip
   rating: general
   chinese: 嘟唇
-- tag: smile emoji
-  rating: general
-  chinese: 微笑表情
 - tag: open grin
   rating: general
   chinese: 咧嘴笑
@@ -38352,18 +38286,12 @@ expression_reaction:
 - tag: cleave gag
   rating: r18
   chinese: 劈叉堵嘴
-- tag: looking at pussy
-  rating: r18
-  chinese: 注视阴部
 - tag: aroused
   rating: r18
   chinese: 情欲高涨
 - tag: cum drool
   rating: r18
   chinese: 精液垂涎
-- tag: cum from nose
-  rating: r18
-  chinese: 鼻泄精液
 - tag: imminent death
   rating: r18g
   chinese: 濒死
@@ -38406,9 +38334,6 @@ expression_reaction:
 - tag: bleeding from forehead
   rating: r18g
   chinese: 额头流血
-- tag: blood drip
-  rating: r18g
-  chinese: 滴血
 - tag: blowhole
   rating: general
   chinese: 喷水孔
@@ -38445,9 +38370,6 @@ expression_reaction:
 - tag: dragon horns
   rating: general
   chinese: 龙角
-- tag: drawn ears
-  rating: general
-  chinese: 绘制耳朵
 - tag: drawn whiskers
   rating: general
   chinese: 画上去的胡须
@@ -38484,9 +38406,6 @@ expression_reaction:
 - tag: flushed
   rating: general
   chinese: 脸红
-- tag: forehead
-  rating: general
-  chinese: 额头
 - tag: ganguro
   rating: general
   chinese: 辣妹妆
@@ -38520,24 +38439,15 @@ expression_reaction:
 - tag: large ears
   rating: general
   chinese: 大耳朵
-- tag: leopard ears
-  rating: general
-  chinese: 豹耳
 - tag: lips
   rating: general
   chinese: 嘴唇
 - tag: lipstick
   rating: general
   chinese: 唇彩
-- tag: lipstick mark
-  rating: general
-  chinese: 唇印
 - tag: lipstick mark on neck
   rating: r15
   chinese: 颈间唇印
-- tag: long earlobes
-  rating: general
-  chinese: 长耳垂
 - tag: long pointy ears
   rating: general
   chinese: 长尖耳
@@ -38550,9 +38460,6 @@ expression_reaction:
 - tag: mechanical horns
   rating: general
   chinese: 机械角
-- tag: mismatched animal ear colors
-  rating: general
-  chinese: 异色兽耳
 - tag: mole
   rating: general
   chinese: 痣
@@ -38625,18 +38532,12 @@ expression_reaction:
 - tag: pink eyeshadow
   rating: general
   chinese: 粉色眼影
-- tag: pink lipstick
-  rating: general
-  chinese: 粉色唇膏
 - tag: pointy ears
   rating: general
   chinese: 尖耳朵
 - tag: puffy cheeks
   rating: general
   chinese: 鼓腮
-- tag: purple lipstick
-  rating: general
-  chinese: 紫色唇彩
 - tag: red lipstick
   rating: general
   chinese: 红色唇膏
@@ -38664,18 +38565,12 @@ expression_reaction:
 - tag: scar across eye
   rating: general
   chinese: 眼部伤疤
-- tag: scar on cheek
-  rating: general
-  chinese: 脸颊伤疤
 - tag: scar on chin
   rating: general
   chinese: 下巴疤痕
 - tag: scar on face
   rating: general
   chinese: 面部伤疤
-- tag: scar on forehead
-  rating: general
-  chinese: 额头伤疤
 - tag: scar on neck
   rating: general
   chinese: 颈部伤疤
@@ -38730,9 +38625,6 @@ expression_reaction:
 - tag: uvula
   rating: general
   chinese: 小舌
-- tag: visible ears
-  rating: general
-  chinese: 可见耳朵
 - tag: weasel ears
   rating: general
   chinese: 鼬耳
@@ -38745,9 +38637,6 @@ expression_reaction:
 - tag: wrong hand
   rating: general
   chinese: 错误的手
-- tag: x scar
-  rating: general
-  chinese: X形疤痕
 - tag: zebra ears
   rating: general
   chinese: 斑马耳
@@ -38760,9 +38649,6 @@ expression_reaction:
 - tag: affectionate
   rating: general
   chinese: 深情款款
-- tag: ahegao
-  rating: r18
-  chinese: 阿嘿颜
 - tag: akanbe
   rating: general
   chinese: 阿坎贝
@@ -38865,9 +38751,6 @@ expression_reaction:
 - tag: expressionless
   rating: general
   chinese: 面无表情
-- tag: expressions
-  rating: general
-  chinese: 表情
 - tag: eye contact
   rating: general
   chinese: 眼神接触
@@ -38910,9 +38793,6 @@ expression_reaction:
 - tag: glaring
   rating: general
   chinese: 怒视
-- tag: glitter makeup
-  rating: general
-  chinese: 闪粉妆容
 - tag: glowing ears
   rating: general
   chinese: 发光耳
@@ -38940,9 +38820,6 @@ expression_reaction:
 - tag: kiss
   rating: pg12
   chinese: 亲吻
-- tag: l hand
-  rating: general
-  chinese: L手
 - tag: lemur ears
   rating: general
   chinese: 狐猴耳
@@ -38979,12 +38856,6 @@ expression_reaction:
 - tag: love
   rating: general
   chinese: 爱
-- tag: mascara smear
-  rating: general
-  chinese: 睫毛膏晕染
-- tag: milk mustache
-  rating: general
-  chinese: 牛奶胡子
 - tag: moan
   rating: r15
   chinese: 呻吟
@@ -39072,9 +38943,6 @@ expression_reaction:
 - tag: scar on ear
   rating: general
   chinese: 耳部疤痕
-- tag: scar on head
-  rating: general
-  chinese: 头部伤疤
 - tag: scowl
   rating: general
   chinese: 怒视
@@ -39129,18 +38997,9 @@ expression_reaction:
 - tag: spiked horns
   rating: general
   chinese: 尖刺角
-- tag: spoken blush
-  rating: general
-  chinese: 言语性脸红
-- tag: spoken ellipsis
-  rating: general
-  chinese: 说话省略
 - tag: spoken heart
   rating: general
   chinese: 口述心声
-- tag: spoken interrobang
-  rating: general
-  chinese: 语气惊叹
 - tag: staring
   rating: general
   chinese: 凝视
@@ -39171,9 +39030,6 @@ expression_reaction:
 - tag: tearing up
   rating: general
   chinese: 含泪
-- tag: tears of pleasure
-  rating: r15
-  chinese: 欢愉之泪
 - tag: teeth print
   rating: r15
   chinese: 齿痕
@@ -39189,9 +39045,6 @@ expression_reaction:
 - tag: too many hands
   rating: general
   chinese: 过多的手
-- tag: torn ear
-  rating: general
-  chinese: 撕裂耳
 - tag: torogao
   rating: r18
   chinese: 鸟颜
@@ -39291,9 +39144,6 @@ expression_reaction:
 - tag: begging for more
   rating: r15
   chinese: 渴求更多
-- tag: begging to stop
-  rating: r15
-  chinese: 乞求停止
 - tag: betrayal
   rating: general
   chinese: 背叛
@@ -39417,9 +39267,6 @@ expression_reaction:
 - tag: ecstasy
   rating: r15
   chinese: 狂喜
-- tag: ei ei mun!
-  rating: general
-  chinese: 诶诶门！
 - tag: emotionless
   rating: general
   chinese: 面无表情
@@ -39693,9 +39540,6 @@ expression_reaction:
 - tag: shiteyan'yo
   rating: general
   chinese: 才不要呢
-- tag: shout lines
-  rating: general
-  chinese: 呐喊线
 - tag: slurping
   rating: general
   chinese: 吸溜声
@@ -39723,15 +39567,9 @@ expression_reaction:
 - tag: spoken expression
   rating: general
   chinese: 口语化表达
-- tag: spoken flying sweatdrops
-  rating: general
-  chinese: 口述飞溅汗珠
 - tag: spoken venus symbol
   rating: general
   chinese: 口述金星符号
-- tag: spoken zzz
-  rating: general
-  chinese: 语音ZZZ
 - tag: stare down
   rating: general
   chinese: 凝视对峙
@@ -39807,9 +39645,6 @@ expression_reaction:
 - tag: unhappy
   rating: general
   chinese: 不悦
-- tag: usotsuki
-  rating: general
-  chinese: 说谎者
 - tag: usseewa
   rating: general
   chinese: 吵死了
@@ -39885,9 +39720,6 @@ expression_reaction:
 - tag: gagging
   rating: general
   chinese: 作呕
-- tag: hidoi
-  rating: general
-  chinese: 残酷
 - tag: looking at doll
   rating: general
   chinese: 凝视人偶
@@ -39988,15 +39820,9 @@ camera_shot:
 - tag: wide shot
   rating: general
   chinese: 广角镜头
-- tag: butt from the front
-  rating: general
-  chinese: 正面臀视图
 - tag: side-by-side
   rating: general
   chinese: 并肩排列
-- tag: mouth shot
-  rating: general
-  chinese: 口腔特写
 - tag: perspective
   rating: general
   chinese: 透视
@@ -40012,33 +39838,15 @@ camera_shot:
 - tag: sideways
   rating: general
   chinese: 侧身
-- tag: genital close-up
-  rating: r18
-  chinese: 生殖器特写
-- tag: genital shot
-  rating: r18
-  chinese: 生殖器镜头
 - tag: very wide shot
   rating: general
   chinese: 超广角镜头
-- tag: pussy close-up
-  rating: r18
-  chinese: 阴部特写
 - tag: torso shot
   rating: general
   chinese: 躯干镜头
 - tag: side by side
   rating: general
   chinese: 并排
-- tag: waterline view
-  rating: general
-  chinese: 吃水线视角
-- tag: pussy shot
-  rating: r18
-  chinese: 私处特写
-- tag: zoom in
-  rating: general
-  chinese: 放大镜头
 - tag: lens flare abuse
   rating: general
   chinese: 滥用镜头光晕
@@ -40057,24 +39865,12 @@ camera_shot:
 - tag: reaction shot
   rating: general
   chinese: 反应镜头
-- tag: viewed from above
-  rating: general
-  chinese: 俯视视角
-- tag: zoom lines
-  rating: general
-  chinese: 速度线
-- tag: zoom
-  rating: general
-  chinese: 变焦
 - tag: full body view
   rating: general
   chinese: 全身视角
 - tag: panorama
   rating: general
   chinese: 全景
-- tag: side
-  rating: general
-  chinese: 侧面
 - tag: looking at back
   rating: general
   chinese: 注视背部
@@ -40084,117 +39880,42 @@ camera_shot:
 - tag: under view
   rating: general
   chinese: 仰视视角
-- tag: zoom out
-  rating: general
-  chinese: 镜头拉远
 - tag: eye shot
   rating: general
   chinese: 眼部特写
-- tag: butt close-up
-  rating: general
-  chinese: 臀部特写
-- tag: front and back
-  rating: general
-  chinese: 正面与背面
-- tag: cervix view
-  rating: general
-  chinese: 宫颈视角
 - tag: behind cover
   rating: general
   chinese: 掩体后方
-- tag: upskirt view
-  rating: r15
-  chinese: 裙底视角
 - tag: looking from above
   rating: general
   chinese: 俯视
 - tag: extreme close-up
   rating: general
   chinese: 极致特写
-- tag: eye behind hair
-  rating: general
-  chinese: 发隙藏眸
 - tag: group in panel
   rating: general
   chinese: 面板群像
 - tag: reflection in eyes
   rating: general
   chinese: 眼中倒影
-- tag: above
-  rating: general
-  chinese: 上方
-- tag: view from back
-  rating: general
-  chinese: 后视视角
-- tag: rotating view
-  rating: general
-  chinese: 旋转视图
 - tag: anamorphic lens flare
   rating: general
   chinese: 变形镜头光晕
-- tag: down view
-  rating: general
-  chinese: 俯视图
 - tag: upward angle
   rating: general
   chinese: 仰视角度
-- tag: back side
-  rating: general
-  chinese: 背面
 - tag: from behind angle
   rating: general
   chinese: 后方视角
-- tag: butt view
-  rating: general
-  chinese: 臀部视角
 - tag: outside view
   rating: general
   chinese: 外部视角
-- tag: group shot
-  rating: general
-  chinese: 群像
-- tag: angle view
-  rating: general
-  chinese: 视角
-- tag: penetrating pov
-  rating: r18
-  chinese: 侵入视角
-- tag: pussy focus
-  rating: r18
-  chinese: 私处特写
-- tag: viewer holding leash
-  rating: r18
-  chinese: 观众牵绳
-- tag: viewer on leash
-  rating: r18
-  chinese: 牵绳观众
-- tag: fellatio pov
-  rating: r18
-  chinese: 口交视角
-- tag: 2others
-  rating: general
-  chinese: 其他两人
-- tag: 3others
-  rating: general
-  chinese: 其他3人
-- tag: 5others
-  rating: general
-  chinese: 5人其他
-- tag: anus focus
-  rating: r18
-  chinese: 肛门特写
 - tag: arm out of frame
   rating: general
   chinese: 画面外手臂
 - tag: armpit focus
   rating: general
   chinese: 腋下特写
-- tag: ass focus
-  rating: general
-  chinese: 臀部特写
-- tag: ass visible through thighs
-  rating: r15
-  chinese: 股间见臀
 - tag: back focus
   rating: general
   chinese: 背景虚化
@@ -40207,30 +39928,9 @@ camera_shot:
 - tag: behind another
   rating: general
   chinese: 身后躲藏
-- tag: being watched
-  rating: general
-  chinese: 被注视
-- tag: blur censor
-  rating: r15
-  chinese: 模糊打码
 - tag: breast focus
   rating: general
   chinese: 胸部特写
-- tag: butt focus
-  rating: general
-  chinese: 臀部特写
-- tag: butt shot
-  rating: general
-  chinese: 臀部特写
-- tag: camera view
-  rating: general
-  chinese: 镜头视角
-- tag: censored
-  rating: r15
-  chinese: 打码
-- tag: censored by text
-  rating: r15
-  chinese: 文字遮挡
 - tag: chibi on shoulder
   rating: general
   chinese: 肩上的Q版角色
@@ -40264,30 +39964,15 @@ camera_shot:
 - tag: cropped torso
   rating: general
   chinese: 截断躯干
-- tag: crotch focus
-  rating: r15
-  chinese: 胯部特写
 - tag: cut-in
   rating: general
   chinese: 切入画面
-- tag: duo
-  rating: general
-  chinese: 双人
 - tag: duo focus
   rating: general
   chinese: 双人焦点
 - tag: ear focus
   rating: general
   chinese: 耳部聚焦
-- tag: emoji censor
-  rating: r15
-  chinese: 表情符号遮挡
-- tag: extended downblouse
-  rating: r15
-  chinese: 延伸式领口窥视
-- tag: extended upskirt
-  rating: r15
-  chinese: 扩展裙底视角
 - tag: eye focus
   rating: general
   chinese: 视线聚焦
@@ -40297,9 +39982,6 @@ camera_shot:
 - tag: eyes in shadow
   rating: general
   chinese: 阴影中的眼睛
-- tag: eyes out of frame
-  rating: general
-  chinese: 视线出框
 - tag: eyes visible through eyewear
   rating: general
   chinese: 透过眼镜可见双眼
@@ -40330,9 +40012,6 @@ camera_shot:
 - tag: facing viewer
   rating: general
   chinese: 面向观众
-- tag: fake censor
-  rating: r15
-  chinese: 伪打码
 - tag: family portrait
   rating: general
   chinese: 全家福
@@ -40390,15 +40069,6 @@ camera_shot:
 - tag: full composition
   rating: general
   chinese: 全身构图
-- tag: group
-  rating: general
-  chinese: 群体
-- tag: group picture
-  rating: general
-  chinese: 集体照片
-- tag: group profile
-  rating: general
-  chinese: 团体档案
 - tag: hair focus
   rating: general
   chinese: 头发特写
@@ -40423,12 +40093,6 @@ camera_shot:
 - tag: human pov
   rating: general
   chinese: 人类视角
-- tag: id photo
-  rating: general
-  chinese: 证件照
-- tag: implied pantyshot
-  rating: r15
-  chinese: 暗示性内裤视角
 - tag: in the face
   rating: general
   chinese: 脸上
@@ -40447,9 +40111,6 @@ camera_shot:
 - tag: lens flare
   rating: general
   chinese: 镜头光晕
-- tag: lineup
-  rating: general
-  chinese: 队列
 - tag: looking at another
   rating: general
   chinese: 注视他人
@@ -40492,9 +40153,6 @@ camera_shot:
 - tag: mouth focus
   rating: general
   chinese: 唇部特写
-- tag: mugshot
-  rating: general
-  chinese: 面部特写
 - tag: multiple angles
   rating: general
   chinese: 多视角
@@ -40513,9 +40171,6 @@ camera_shot:
 - tag: obscured face
   rating: general
   chinese: 面容遮蔽
-- tag: offscreen character
-  rating: general
-  chinese: 画外角色
 - tag: on front
   rating: general
   chinese: 正面视角
@@ -40531,12 +40186,6 @@ camera_shot:
 - tag: over shoulder
   rating: general
   chinese: 过肩视角
-- tag: panty shot
-  rating: r15
-  chinese: 底裤走光
-- tag: pantyshot
-  rating: r15
-  chinese: 底裤走光
 - tag: partially shaded face
   rating: general
   chinese: 部分遮脸
@@ -40546,12 +40195,6 @@ camera_shot:
 - tag: photo shoot
   rating: general
   chinese: 摄影
-- tag: photobomb
-  rating: general
-  chinese: 照片炸弹
-- tag: pillarboxed
-  rating: general
-  chinese: 柱箱式构图
 - tag: plant focus
   rating: general
   chinese: 植物特写
@@ -40570,36 +40213,15 @@ camera_shot:
 - tag: pov adoring
   rating: general
   chinese: 仰慕视角
-- tag: pov breasts
-  rating: r15
-  chinese: 视角胸部
-- tag: pov crotch
-  rating: r15
-  chinese: 胯部视角
 - tag: pov dating
   rating: general
   chinese: 主观视角约会
 - tag: pov doorway
   rating: general
   chinese: 视角门口
-- tag: pov hands
-  rating: general
-  chinese: 视角手部
-- tag: pov legs
-  rating: general
-  chinese: 腿部主观视角
-- tag: pov peephole
-  rating: r15
-  chinese: 主观视角窥视孔
-- tag: presenting anus
-  rating: r18
-  chinese: 肛部特写
 - tag: reflection focus
   rating: general
   chinese: 倒影焦点
-- tag: screen zoom
-  rating: general
-  chinese: 屏幕缩放
 - tag: selfie
   rating: general
   chinese: 自拍
@@ -40609,9 +40231,6 @@ camera_shot:
 - tag: shoulder peek
   rating: general
   chinese: 肩头探视
-- tag: size comparison
-  rating: general
-  chinese: 尺寸对比
 - tag: solo
   rating: general
   chinese: 单人
@@ -40624,12 +40243,6 @@ camera_shot:
 - tag: surrounded
   rating: general
   chinese: 被包围
-- tag: tail censor
-  rating: r15
-  chinese: 尾部遮挡
-- tag: taker pov
-  rating: general
-  chinese: 拍摄者视角
 - tag: talking to viewer
   rating: general
   chinese: 对观众说话
@@ -40642,21 +40255,9 @@ camera_shot:
 - tag: three-quarter portrait
   rating: general
   chinese: 四分之三侧面肖像
-- tag: through medium
-  rating: general
-  chinese: 透过介质
 - tag: through screen
   rating: general
   chinese: 穿透屏幕
-- tag: top-down bottom-up
-  rating: general
-  chinese: 自上而下自下而上
-- tag: trio
-  rating: general
-  chinese: 三人组
-- tag: under skirt
-  rating: r15
-  chinese: 裙底
 - tag: unusually visible
   rating: general
   chinese: 异常显眼
@@ -40666,42 +40267,12 @@ camera_shot:
 - tag: upside-down
   rating: general
   chinese: 倒置
-- tag: upskirt
-  rating: r15
-  chinese: 裙底视角
-- tag: view
-  rating: general
-  chinese: 视野
-- tag: view between legs
-  rating: r15
-  chinese: 胯下视角
 - tag: vignetting
   rating: general
   chinese: 暗角效果
-- tag: wing censor
-  rating: r15
-  chinese: 翼部审查
 - tag: worm's-eye view
   rating: general
   chinese: 虫视角
-- tag: x-ray
-  rating: r15
-  chinese: X光透视
-- tag: x-ray vision
-  rating: r15
-  chinese: X射线视觉
-- tag: zoom layer
-  rating: general
-  chinese: 缩放图层
-- tag: zooming in
-  rating: general
-  chinese: 镜头推进
-- tag: angle
-  rating: general
-  chinese: 角度
-- tag: cuckold pov
-  rating: r18
-  chinese: 绿帽视角
 - tag: distant
   rating: general
   chinese: 远方
@@ -40726,15 +40297,6 @@ camera_shot:
 - tag: head to head
   rating: general
   chinese: 头对头
-- tag: height comparison
-  rating: general
-  chinese: 身高对比
-- tag: lens
-  rating: general
-  chinese: 镜头
-- tag: mouth out of frame
-  rating: general
-  chinese: 画面外嘴巴
 - tag: mouth visible through hair
   rating: general
   chinese: 发间可见嘴
@@ -40747,15 +40309,6 @@ camera_shot:
 - tag: off screen
   rating: general
   chinese: 画外
-- tag: pantyshot through reflection
-  rating: r15
-  chinese: 反射内裤走光
-- tag: red-eye effect
-  rating: general
-  chinese: 红眼效应
-- tag: split depth
-  rating: general
-  chinese: 分镜景深
 - tag: thigh peek
   rating: r15
   chinese: 大腿微露
@@ -40768,6 +40321,57 @@ camera_shot:
 - tag: wind chime focus
   rating: general
   chinese: 风铃特写
+- tag: rule of thirds
+  rating: general
+  chinese: 三分法构图
+- tag: leading lines
+  rating: general
+  chinese: 引导线构图
+- tag: negative space
+  rating: general
+  chinese: 负空间留白
+- tag: frame-in-frame
+  rating: general
+  chinese: 框景构图
+- tag: eye level
+  rating: general
+  chinese: 平视机位
+- tag: midground
+  rating: general
+  chinese: 中景层次
+- tag: foreground focus
+  rating: general
+  chinese: 前景对焦
+- tag: background focus
+  rating: general
+  chinese: 背景对焦
+- tag: bird's-eye view
+  rating: general
+  chinese: 鸟瞰视角
+- tag: over-the-shoulder
+  rating: general
+  chinese: 过肩镜头
+- tag: deep focus
+  rating: general
+  chinese: 深焦
+- tag: symmetrical composition
+  rating: general
+  chinese: 对称构图
+- tag: diagonal composition
+  rating: general
+  chinese: 对角线构图
+- tag: shallow depth of field
+  rating: general
+  chinese: 浅景深
+- tag: wide-angle shot
+  rating: general
+  chinese: 广角镜头
+- tag: telephoto shot
+  rating: general
+  chinese: 长焦镜头
+- tag: long exposure
+  rating: general
+  chinese: 长曝光
 scene_environment:
 - tag: flower
   rating: general
@@ -42332,9 +41936,6 @@ scene_environment:
 - tag: single handcuff
   rating: r18
   chinese: 单手铐
-- tag: stationary restraints
-  rating: r18
-  chinese: 固定束缚
 - tag: stripper pole
   rating: r18
   chinese: 钢管舞杆
@@ -42392,9 +41993,6 @@ scene_environment:
 - tag: entrails
   rating: r18g
   chinese: 内脏
-- tag: gore
-  rating: r18g
-  chinese: 血腥
 - tag: pile of corpses
   rating: r18g
   chinese: 尸堆
@@ -42815,9 +42413,6 @@ scene_environment:
 - tag: wading pool
   rating: general
   chinese: 涉水池
-- tag: walk-in
-  rating: general
-  chinese: 步入式空间
 - tag: war
   rating: r15
   chinese: 战争
@@ -44099,9 +43694,6 @@ scene_environment:
 - tag: shopping district
   rating: general
   chinese: 商店街
-- tag: silent hill 1
-  rating: general
-  chinese: 寂静岭1
 - tag: sill plain
   rating: general
   chinese: 窗台平原
@@ -44144,9 +43736,6 @@ scene_environment:
 - tag: storm drain
   rating: general
   chinese: 雨水渠
-- tag: suiyou dou de shou
-  rating: general
-  chinese: 水曜堂书店
 - tag: suspension bridge
   rating: general
   chinese: 悬索桥
@@ -44861,9 +44450,6 @@ scene_environment:
 - tag: universal studios
   rating: general
   chinese: 环球影城
-- tag: urine
-  rating: r18
-  chinese: 尿液
 - tag: vacation
   rating: general
   chinese: 假期
@@ -46238,9 +45824,6 @@ scene_environment:
 - tag: intravenous drip
   rating: general
   chinese: 静脉滴注
-- tag: inverted cross
-  rating: general
-  chinese: 逆十字
 - tag: japanese flag
   rating: general
   chinese: 日本国旗
@@ -46616,9 +46199,6 @@ scene_environment:
 - tag: ankh
   rating: general
   chinese: 安卡
-- tag: april fools
-  rating: general
-  chinese: 愚人节
 - tag: art tools in frame
   rating: general
   chinese: 画框内的美术工具
@@ -46922,9 +46502,6 @@ scene_environment:
 - tag: napkin
   rating: general
   chinese: 餐巾
-- tag: noose
-  rating: r15
-  chinese: 绞索
 - tag: novel cover
   rating: general
   chinese: 小说封面
@@ -48116,9 +47693,6 @@ scene_environment:
 - tag: locomotive
   rating: general
   chinese: 火车头
-- tag: log pose
-  rating: general
-  chinese: 记录指针
 - tag: makeup brush
   rating: general
   chinese: 化妆刷
@@ -48161,9 +47735,6 @@ scene_environment:
 - tag: nintendo 3ds
   rating: general
   chinese: 任天堂3DS
-- tag: nissan
-  rating: general
-  chinese: 日产
 - tag: oar
   rating: general
   chinese: 船桨
@@ -50204,9 +49775,6 @@ scene_environment:
 - tag: stuffed octopus
   rating: general
   chinese: 章鱼玩偶
-- tag: symbiote
-  rating: general
-  chinese: 共生体
 - tag: tabby cat
   rating: general
   chinese: 虎斑猫
@@ -50366,9 +49934,6 @@ scene_environment:
 - tag: ceiling fan
   rating: general
   chinese: 吊扇
-- tag: censored food
-  rating: general
-  chinese: 打码食物
 - tag: chain chomp
   rating: general
   chinese: 汪汪链球
@@ -50516,9 +50081,6 @@ scene_environment:
 - tag: heavy metal
   rating: general
   chinese: 重金属
-- tag: hina ningyou
-  rating: general
-  chinese: 雏人偶
 - tag: hoe
   rating: general
   chinese: 锄头
@@ -50864,9 +50426,6 @@ scene_environment:
 - tag: unworn armor
   rating: general
   chinese: 未穿着盔甲
-- tag: urine meter
-  rating: r18
-  chinese: 尿液计量器
 - tag: vanity table
   rating: general
   chinese: 梳妆台
@@ -52073,9 +51632,6 @@ scene_environment:
 - tag: shiruko (food)
   rating: general
   chinese: 红豆汤（食物）
-- tag: shounen jump
-  rating: general
-  chinese: 少年Jump
 - tag: side-view mirror
   rating: general
   chinese: 后视镜
@@ -53453,9 +53009,6 @@ scene_environment:
 - tag: tsuka-ito
   rating: general
   chinese: 柄卷
-- tag: twitch.tv
-  rating: general
-  chinese: Twitch直播平台
 - tag: umbrella octopus
   rating: general
   chinese: 伞章鱼
@@ -53495,9 +53048,6 @@ scene_environment:
 - tag: windows 7
   rating: general
   chinese: Windows 7
-- tag: windows 95
-  rating: general
-  chinese: Windows 95
 - tag: writing on wall
   rating: general
   chinese: 墙上涂鸦
@@ -53855,9 +53405,6 @@ scene_environment:
 - tag: microscope
   rating: general
   chinese: 显微镜
-- tag: miiverse
-  rating: general
-  chinese: 米iverse
 - tag: milk tea
   rating: general
   chinese: 奶茶
@@ -53960,9 +53507,6 @@ scene_environment:
 - tag: rolled up paper
   rating: general
   chinese: 卷纸
-- tag: sawsbuck
-  rating: general
-  chinese: 芽吹鹿
 - tag: scream tail
   rating: general
   chinese: 嘶鸣尾
@@ -54299,9 +53843,6 @@ scene_environment:
 - tag: cracked phone
   rating: general
   chinese: 碎裂手机
-- tag: cradily
-  rating: general
-  chinese: 摇篮百合
 - tag: crib
   rating: general
   chinese: 克里布
@@ -54716,12 +54257,6 @@ scene_environment:
 - tag: sushi geta
   rating: general
   chinese: 寿司木屐
-- tag: susuwatari
-  rating: general
-  chinese: 煤煤虫
-- tag: swellow
-  rating: general
-  chinese: 大王燕
 - tag: table knife
   rating: general
   chinese: 餐刀
@@ -54740,9 +54275,6 @@ scene_environment:
 - tag: toilet symbol
   rating: general
   chinese: 厕所标识
-- tag: too many chicks
-  rating: general
-  chinese: 雏鸟过多
 - tag: torn umbrella
   rating: general
   chinese: 破损雨伞
@@ -54908,9 +54440,6 @@ scene_environment:
 - tag: cookie cutter
   rating: general
   chinese: 饼干模具
-- tag: copyright logo
-  rating: general
-  chinese: 版权标识
 - tag: cotton ball
   rating: general
   chinese: 棉球
@@ -55094,9 +54623,6 @@ scene_environment:
 - tag: larva
   rating: general
   chinese: 幼虫
-- tag: lego brick
-  rating: general
-  chinese: 乐高积木
 - tag: longcat
   rating: general
   chinese: 长猫
@@ -55271,9 +54797,6 @@ scene_environment:
 - tag: reversi
   rating: general
   chinese: 黑白棋
-- tag: roomba
-  rating: general
-  chinese: 扫地机器人
 - tag: rugby ball
   rating: general
   chinese: 橄榄球
@@ -55961,9 +55484,6 @@ scene_environment:
 - tag: star color pen
   rating: general
   chinese: 星彩色笔
-- tag: star guardian pet
-  rating: general
-  chinese: 星之守护者宠物
 - tag: stargazy pie
   rating: general
   chinese: 观星派
@@ -57206,9 +56726,6 @@ scene_environment:
 - tag: thunder stone
   rating: general
   chinese: 雷之石
-- tag: timeline
-  rating: general
-  chinese: 时间线
 - tag: toilet paper tube
   rating: general
   chinese: 卫生纸卷筒
@@ -57935,9 +57452,6 @@ scene_environment:
 - tag: witcher medallion
   rating: general
   chinese: 猎魔人徽章
-- tag: zero one driver
-  rating: general
-  chinese: 零一驱动器
 - tag: advent deck
   rating: general
   chinese: 降临卡组
@@ -58112,9 +57626,6 @@ scene_environment:
 - tag: east japan railway company
   rating: general
   chinese: 东日本旅客铁道
-- tag: ehomaki
-  rating: general
-  chinese: 惠方卷
 - tag: fanbox
   rating: general
   chinese: 粉丝盒
@@ -59546,9 +59057,6 @@ scene_environment:
 - tag: season connection
   rating: general
   chinese: 季节联结
-- tag: seasons
-  rating: general
-  chinese: 季节
 - tag: september
   rating: general
   chinese: 九月
@@ -59675,9 +59183,6 @@ scene_environment:
 - tag: weather
   rating: general
   chinese: 天气
-- tag: weather report
-  rating: general
-  chinese: 天气预报
 - tag: wet ground
   rating: general
   chinese: 潮湿地面
@@ -59765,9 +59270,6 @@ scene_environment:
 - tag: blood on flower
   rating: r15
   chinese: 血溅花蕊
-- tag: blood splatter
-  rating: r15
-  chinese: 血迹喷溅
 - tag: blood trail
   rating: r15
   chinese: 血迹
@@ -60074,9 +59576,6 @@ scene_environment:
 - tag: maroon background
   rating: general
   chinese: 栗色背景
-- tag: midd night
-  rating: general
-  chinese: 午夜
 - tag: millennium science school logo
   rating: general
   chinese: 千年科学学校标志
@@ -60471,15 +59970,9 @@ detail_mood:
 - tag: colorful
   rating: general
   chinese: 多彩
-- tag: sketch page
-  rating: general
-  chinese: 草图页
 - tag: surreal
   rating: general
   chinese: 超现实
-- tag: collage
-  rating: general
-  chinese: 拼贴画
 - tag: painting
   rating: general
   chinese: 绘画
@@ -60501,9 +59994,6 @@ detail_mood:
 - tag: white theme
   rating: general
   chinese: 白色主题
-- tag: comic panel
-  rating: general
-  chinese: 漫画分格
 - tag: cyberpunk
   rating: general
   chinese: 赛博朋克
@@ -60546,12 +60036,6 @@ detail_mood:
 - tag: steampunk
   rating: general
   chinese: 蒸汽朋克
-- tag: manga cover
-  rating: general
-  chinese: 漫画封面
-- tag: official alternate color
-  rating: general
-  chinese: 官方异色
 - tag: pastel theme
   rating: general
   chinese: 柔色主题
@@ -60624,9 +60108,6 @@ detail_mood:
 - tag: right-to-left comic
   rating: general
   chinese: 从右至左漫画
-- tag: 5 panel comic
-  rating: general
-  chinese: 五格漫画
 - tag: iridescent
   rating: general
   chinese: 虹彩
@@ -60639,12 +60120,6 @@ detail_mood:
 - tag: green and white
   rating: general
   chinese: 绿白相间
-- tag: 6 panel comic
-  rating: general
-  chinese: 六格漫画
-- tag: comic cover
-  rating: general
-  chinese: 漫画封面
 - tag: blue glow
   rating: general
   chinese: 蓝色辉光
@@ -60657,9 +60132,6 @@ detail_mood:
 - tag: black line art
   rating: general
   chinese: 黑色线稿
-- tag: art study
-  rating: general
-  chinese: 绘画练习
 - tag: yellow spots
   rating: general
   chinese: 黄色斑点
@@ -60669,9 +60141,6 @@ detail_mood:
 - tag: brown and white
   rating: general
   chinese: 棕白相间
-- tag: art shift
-  rating: general
-  chinese: 画风转变
 - tag: split color
   rating: general
   chinese: 分割色
@@ -60687,9 +60156,6 @@ detail_mood:
 - tag: comic sans
   rating: general
   chinese: 漫画 sans
-- tag: one page comic
-  rating: general
-  chinese: 单页漫画
 - tag: red light
   rating: general
   chinese: 红灯
@@ -60765,9 +60231,6 @@ detail_mood:
 - tag: shaded line art
   rating: general
   chinese: 阴影线稿
-- tag: pixiv red
-  rating: general
-  chinese: 噗浪红
 - tag: kusagami style
   rating: general
   chinese: 草上风格
@@ -60798,9 +60261,6 @@ detail_mood:
 - tag: kinmedai pink
   rating: general
   chinese: 金目鲷粉
-- tag: 8 panel comic
-  rating: general
-  chinese: 八格漫画
 - tag: kamaboko red
   rating: general
   chinese: 鱼糕红
@@ -60819,9 +60279,6 @@ detail_mood:
 - tag: wet and messy
   rating: general
   chinese: 湿漉与凌乱
-- tag: one panel comic
-  rating: general
-  chinese: 单格漫画
 - tag: orange glow
   rating: general
   chinese: 橙辉
@@ -60966,12 +60423,6 @@ detail_mood:
 - tag: purple light
   rating: general
   chinese: 紫光
-- tag: alternate art style
-  rating: general
-  chinese: 替代艺术风格
-- tag: noise
-  rating: general
-  chinese: 噪音
 - tag: monochrome kg
   rating: general
   chinese: 单色KG
@@ -61074,9 +60525,6 @@ detail_mood:
 - tag: orange light
   rating: general
   chinese: 橙色灯光
-- tag: art jam
-  rating: general
-  chinese: 艺术即兴
 - tag: metallic rouge
   rating: general
   chinese: 金属胭脂
@@ -61146,9 +60594,6 @@ detail_mood:
 - tag: black and white and blue
   rating: general
   chinese: 黑白与蓝
-- tag: comic book cover
-  rating: general
-  chinese: 漫画封面
 - tag: glaucous grey
   rating: general
   chinese: 青灰
@@ -61185,12 +60630,6 @@ detail_mood:
 - tag: comic
   rating: general
   chinese: 漫画
-- tag: commission
-  rating: general
-  chinese: 委托作品
-- tag: dated
-  rating: general
-  chinese: 过时
 - tag: dialogue
   rating: general
   chinese: 对话
@@ -61224,39 +60663,21 @@ detail_mood:
 - tag: 2d animation
   rating: general
   chinese: 2D动画
-- tag: 2koma
-  rating: general
-  chinese: 四格漫画
 - tag: 3d
   rating: general
   chinese: 3D
 - tag: 3d animation
   rating: general
   chinese: 3D动画
-- tag: 3koma
-  rating: general
-  chinese: 四格漫画
 - tag: 4k
   rating: general
   chinese: 4K分辨率
-- tag: 4koma
-  rating: general
-  chinese: 四格漫画
 - tag: abstract
   rating: general
   chinese: 抽象
 - tag: afterimage
   rating: general
   chinese: 残影
-- tag: ai-assisted
-  rating: general
-  chinese: AI辅助
-- tag: ai-generated
-  rating: general
-  chinese: AI生成
-- tag: alternate color
-  rating: general
-  chinese: 异色版
 - tag: animated
   rating: general
   chinese: 动画风格
@@ -61320,12 +60741,6 @@ detail_mood:
 - tag: cellphone photo
   rating: general
   chinese: 手机拍摄
-- tag: character profile
-  rating: general
-  chinese: 角色简介
-- tag: chibi inset
-  rating: general
-  chinese: Q版插画
 - tag: chibi only
   rating: general
   chinese: 仅Q版
@@ -61335,9 +60750,6 @@ detail_mood:
 - tag: circle
   rating: general
   chinese: 圆形
-- tag: clip studio paint (medium)
-  rating: general
-  chinese: Clip Studio Paint（绘画媒介）
 - tag: color connection
   rating: general
   chinese: 色彩联结
@@ -61353,18 +60765,9 @@ detail_mood:
 - tag: colorized
   rating: general
   chinese: 彩色化
-- tag: column lineup
-  rating: general
-  chinese: 柱状排列
 - tag: contemporary
   rating: general
   chinese: 当代风格
-- tag: cover image
-  rating: general
-  chinese: 封面图片
-- tag: cover page
-  rating: general
-  chinese: 封面页
 - tag: crack
   rating: general
   chinese: 裂缝
@@ -61374,9 +60777,6 @@ detail_mood:
 - tag: cropped
   rating: general
   chinese: 裁剪过的
-- tag: cross-section
-  rating: general
-  chinese: 横截面
 - tag: dark persona
   rating: general
   chinese: 暗黑人格面具
@@ -61401,9 +60801,6 @@ detail_mood:
 - tag: dirty
   rating: general
   chinese: 污浊
-- tag: doujin cover
-  rating: general
-  chinese: 同人志封面
 - tag: dripping
   rating: general
   chinese: 滴落效果
@@ -61416,12 +60813,6 @@ detail_mood:
 - tag: engrish text
   rating: general
   chinese: 错误英文文本
-- tag: fake phone screenshot
-  rating: general
-  chinese: 伪造手机截图
-- tag: fake screenshot
-  rating: general
-  chinese: 伪造截图
 - tag: faux traditional media
   rating: general
   chinese: 仿传统媒介
@@ -61437,9 +60828,6 @@ detail_mood:
 - tag: frame by frame
   rating: general
   chinese: 逐帧绘制
-- tag: game cg
-  rating: general
-  chinese: 游戏CG
 - tag: glint
   rating: general
   chinese: 反光
@@ -61458,18 +60846,12 @@ detail_mood:
 - tag: halftone
   rating: general
   chinese: 网点效果
-- tag: has bad revision
-  rating: general
-  chinese: 存在劣质修改
 - tag: high contrast
   rating: general
   chinese: 高对比度
 - tag: highlights (coloring)
   rating: general
   chinese: 高光（着色）
-- tag: huge filesize
-  rating: general
-  chinese: 超大文件
 - tag: icon
   rating: general
   chinese: 图标
@@ -61482,9 +60864,6 @@ detail_mood:
 - tag: jaggy lines
   rating: general
   chinese: 锯齿线
-- tag: jpeg artifacts
-  rating: general
-  chinese: JPEG压缩痕迹
 - tag: left-to-right manga
   rating: general
   chinese: 左翻漫画
@@ -61530,9 +60909,6 @@ detail_mood:
 - tag: lowres
   rating: general
   chinese: 低分辨率
-- tag: magazine scan
-  rating: general
-  chinese: 杂志扫描图
 - tag: marker (medium)
   rating: general
   chinese: 马克笔
@@ -61563,9 +60939,6 @@ detail_mood:
 - tag: notice lines
   rating: general
   chinese: 注意线
-- tag: novel illustration
-  rating: general
-  chinese: 小说插画
 - tag: oekaki
   rating: general
   chinese: お絵描き
@@ -61575,9 +60948,6 @@ detail_mood:
 - tag: official wallpaper
   rating: general
   chinese: 官方壁纸
-- tag: one-hour drawing challenge
-  rating: general
-  chinese: 一小时绘画挑战
 - tag: onomatopoeia
   rating: general
   chinese: 拟声词
@@ -61599,12 +60969,6 @@ detail_mood:
 - tag: painting (medium)
   rating: general
   chinese: 画作（中号）
-- tag: painttool sai (medium)
-  rating: general
-  chinese: 绘画工具SAI（媒介）
-- tag: parody
-  rating: general
-  chinese: 戏仿作品
 - tag: partially colored
   rating: general
   chinese: 部分上色
@@ -61626,60 +60990,27 @@ detail_mood:
 - tag: pixiv fantasia
   rating: general
   chinese: pixiv幻想编年史
-- tag: pixiv sample
-  rating: general
-  chinese: Pixiv示例
-- tag: procreate (medium)
-  rating: general
-  chinese: Procreate（软件）
-- tag: promotional art
-  rating: general
-  chinese: 宣传图
 - tag: real life insert
   rating: general
   chinese: 现实插入
-- tag: redesign
-  rating: general
-  chinese: 重新设计
-- tag: reference inset
-  rating: general
-  chinese: 参考插图
-- tag: resized
-  rating: general
-  chinese: 尺寸调整
 - tag: restricted palette
   rating: general
   chinese: 受限配色
 - tag: retro artstyle
   rating: general
   chinese: 复古画风
-- tag: revision
-  rating: general
-  chinese: 修订
 - tag: romaji text
   rating: general
   chinese: 罗马字文本
 - tag: russian text
   rating: general
   chinese: 俄文文本
-- tag: sample watermark
-  rating: general
-  chinese: 样本水印
-- tag: scan
-  rating: general
-  chinese: 扫描图
-- tag: scan artifacts
-  rating: general
-  chinese: 扫描伪影
 - tag: scene reference
   rating: general
   chinese: 场景参照
 - tag: science fiction
   rating: general
   chinese: 科幻
-- tag: screencap
-  rating: general
-  chinese: 屏幕截图
 - tag: screenshot redraw
   rating: general
   chinese: 截图重绘
@@ -61719,9 +61050,6 @@ detail_mood:
 - tag: sound effects
   rating: general
   chinese: 音效文字
-- tag: source larger
-  rating: general
-  chinese: 源文件更大
 - tag: sparkles
   rating: general
   chinese: 闪光
@@ -61749,27 +61077,15 @@ detail_mood:
 - tag: still life
   rating: general
   chinese: 静物画
-- tag: style parody
-  rating: general
-  chinese: 风格模仿
-- tag: subtitled
-  rating: general
-  chinese: 字幕
 - tag: symmetry
   rating: general
   chinese: 对称
-- tag: tachi-e
-  rating: general
-  chinese: 立绘
 - tag: tall image
   rating: general
   chinese: 高画幅
 - tag: text focus
   rating: general
   chinese: 文字聚焦
-- tag: text-only page
-  rating: general
-  chinese: 纯文本页面
 - tag: textless version
   rating: general
   chinese: 无文字版
@@ -61803,9 +61119,6 @@ detail_mood:
 - tag: watercolor (medium)
   rating: general
   chinese: 水彩画
-- tag: watermark
-  rating: general
-  chinese: 水印
 - tag: white border
   rating: general
   chinese: 白边
@@ -61818,9 +61131,6 @@ detail_mood:
 - tag: acrylic paint (medium)
   rating: general
   chinese: 丙烯颜料（媒介）
-- tag: album cover redraw
-  rating: general
-  chinese: 专辑封面重绘
 - tag: aliasing
   rating: general
   chinese: 锯齿
@@ -61845,9 +61155,6 @@ detail_mood:
 - tag: bad perspective
   rating: general
   chinese: 透视错误
-- tag: before and after
-  rating: general
-  chinese: 前后对比
 - tag: big head
   rating: general
   chinese: 大头模式
@@ -61884,9 +61191,6 @@ detail_mood:
 - tag: blue outline
   rating: general
   chinese: 蓝色轮廓线
-- tag: borderless panels
-  rating: general
-  chinese: 无边框分镜
 - tag: borrowed design
   rating: general
   chinese: 借用人设
@@ -61899,9 +61203,6 @@ detail_mood:
 - tag: candlelight
   rating: general
   chinese: 烛光
-- tag: card parody
-  rating: general
-  chinese: 卡片戏仿
 - tag: cartoonized
   rating: general
   chinese: 卡通化
@@ -61920,12 +61221,6 @@ detail_mood:
 - tag: colored shadow
   rating: general
   chinese: 彩色阴影
-- tag: comic panel redraw
-  rating: general
-  chinese: 漫画格重绘
-- tag: comparison
-  rating: general
-  chinese: 对比
 - tag: contrast
   rating: general
   chinese: 对比
@@ -61953,9 +61248,6 @@ detail_mood:
 - tag: distortion
   rating: general
   chinese: 扭曲变形
-- tag: doodle inset
-  rating: general
-  chinese: 涂鸦插画
 - tag: dotted line
   rating: general
   chinese: 虚线
@@ -61965,21 +61257,9 @@ detail_mood:
 - tag: double fox shadow puppet
   rating: general
   chinese: 双狐影偶
-- tag: downscaled
-  rating: general
-  chinese: 比例缩小
 - tag: emoticon
   rating: general
   chinese: 表情符号
-- tag: end card
-  rating: general
-  chinese: 片尾贺图
-- tag: expression chart
-  rating: general
-  chinese: 表情图表
-- tag: eyecatch
-  rating: general
-  chinese: "eyecatch: 过场画面"
 - tag: f-ism
   rating: general
   chinese: F主义
@@ -61992,12 +61272,6 @@ detail_mood:
 - tag: fading border
   rating: general
   chinese: 褪色边框
-- tag: fake cover
-  rating: general
-  chinese: 伪封面
-- tag: fake video
-  rating: general
-  chinese: 伪造视频
 - tag: fallenshadow
   rating: general
   chinese: 陨落之影
@@ -62019,18 +61293,9 @@ detail_mood:
 - tag: furigana
   rating: general
   chinese: 注音假名
-- tag: game screenshot
-  rating: general
-  chinese: 游戏截图
-- tag: game screenshot inset
-  rating: general
-  chinese: 游戏截图插画
 - tag: ghibli
   rating: general
   chinese: 吉卜力
-- tag: gift art
-  rating: general
-  chinese: 赠图
 - tag: gigantamax
   rating: general
   chinese: 超极巨化
@@ -62052,18 +61317,6 @@ detail_mood:
 - tag: handprint
   rating: general
   chinese: 手印
-- tag: height chart
-  rating: general
-  chinese: 身高对比图
-- tag: ibispaint (medium)
-  rating: general
-  chinese: Ibispaint（绘画软件）
-- tag: inset
-  rating: general
-  chinese: 嵌入式
-- tag: inset border
-  rating: general
-  chinese: 内嵌边框
 - tag: invisible
   rating: general
   chinese: 隐形
@@ -62073,12 +61326,6 @@ detail_mood:
 - tag: juxtaposition
   rating: general
   chinese: 并置
-- tag: key visual
-  rating: general
-  chinese: 主视觉图
-- tag: koikatsu (medium)
-  rating: general
-  chinese: 恋活（中等）
 - tag: kuso miso technique
   rating: general
   chinese: 臭味增技法
@@ -62094,12 +61341,6 @@ detail_mood:
 - tag: lineless
   rating: general
   chinese: 无线条
-- tag: live2d
-  rating: general
-  chinese: Live2D
-- tag: logo parody
-  rating: general
-  chinese: 标识戏仿
 - tag: lossy-lossless
   rating: general
   chinese: 有损-无损
@@ -62109,9 +61350,6 @@ detail_mood:
 - tag: low poly
   rating: general
   chinese: 低多边形
-- tag: making-of
-  rating: general
-  chinese: 制作花絮
 - tag: medieval
   rating: general
   chinese: 中世纪
@@ -62127,9 +61365,6 @@ detail_mood:
 - tag: mochi trail
   rating: general
   chinese: 麻糬轨迹
-- tag: multiple drawing challenge
-  rating: general
-  chinese: 多重绘画挑战
 - tag: multiple monochrome
   rating: general
   chinese: 多重单色
@@ -62148,15 +61383,9 @@ detail_mood:
 - tag: nihonga
   rating: general
   chinese: 日本画
-- tag: numbered panels
-  rating: general
-  chinese: 编号画格
 - tag: nyantype
   rating: general
   chinese: 喵音类型
-- tag: official art inset
-  rating: general
-  chinese: 官方美术插图
 - tag: oil
   rating: general
   chinese: 油光质感
@@ -62184,9 +61413,6 @@ detail_mood:
 - tag: pc-98 (style)
   rating: general
   chinese: PC-98（风格）
-- tag: photo inset
-  rating: general
-  chinese: 内嵌照片
 - tag: photorealistic
   rating: general
   chinese: 照片级真实
@@ -62226,12 +61452,6 @@ detail_mood:
 - tag: preview
   rating: general
   chinese: 预览
-- tag: production art
-  rating: general
-  chinese: 制作美术
-- tag: projected inset
-  rating: general
-  chinese: 投影插画
 - tag: prototype design
   rating: general
   chinese: 原型设计
@@ -62259,9 +61479,6 @@ detail_mood:
 - tag: red outline
   rating: general
   chinese: 红色轮廓线
-- tag: redrawn
-  rating: general
-  chinese: 重绘版
 - tag: refraction
   rating: general
   chinese: 折射
@@ -62289,12 +61506,6 @@ detail_mood:
 - tag: screen light
   rating: general
   chinese: 屏幕光
-- tag: screenshot
-  rating: general
-  chinese: 屏幕截图
-- tag: screenshot inset
-  rating: general
-  chinese: 截图插画
 - tag: scribble
   rating: general
   chinese: 涂鸦笔迹
@@ -62325,9 +61536,6 @@ detail_mood:
 - tag: sound effects only
   rating: general
   chinese: 仅音效
-- tag: source filmmaker (medium)
-  rating: general
-  chinese: Source Filmmaker（制作媒介）
 - tag: spanish text
   rating: general
   chinese: 西班牙文
@@ -62340,9 +61548,6 @@ detail_mood:
 - tag: splatter
   rating: general
   chinese: 飞溅污渍
-- tag: split screen
-  rating: general
-  chinese: 分屏画面
 - tag: square
   rating: general
   chinese: 正方形
@@ -62370,9 +61575,6 @@ detail_mood:
 - tag: thrust lines
   rating: general
   chinese: 推进线
-- tag: thumbnail
-  rating: general
-  chinese: 缩略图
 - tag: to be continued
   rating: general
   chinese: 未完待续
@@ -62403,9 +61605,6 @@ detail_mood:
 - tag: underlighting
   rating: general
   chinese: 底光照明
-- tag: upscaled
-  rating: general
-  chinese: 高清化
 - tag: vanishing point
   rating: general
   chinese: 消失点
@@ -62418,15 +61617,9 @@ detail_mood:
 - tag: visual novel
   rating: general
   chinese: 视觉小说
-- tag: waifu2x
-  rating: general
-  chinese: 图片放大算法
 - tag: watercolor pencil (medium)
   rating: general
   chinese: 水彩铅笔（媒介）
-- tag: watermark grid
-  rating: general
-  chinese: 水印网格
 - tag: western
   rating: general
   chinese: 西部风格
@@ -62457,9 +61650,6 @@ detail_mood:
 - tag: action pizazz
   rating: general
   chinese: 动感炫彩
-- tag: adobe photoshop
-  rating: general
-  chinese: Adobe Photoshop
 - tag: ai arctic warfare
   rating: general
   chinese: AI北极作战
@@ -62469,15 +61659,6 @@ detail_mood:
 - tag: akira movie poster
   rating: general
   chinese: 阿基拉电影海报
-- tag: alternate design
-  rating: general
-  chinese: 替代设计
-- tag: alternate element
-  rating: general
-  chinese: 替代元素
-- tag: alternate size
-  rating: general
-  chinese: 异版尺寸
 - tag: animated png
   rating: general
   chinese: 动态PNG
@@ -62544,9 +61725,6 @@ detail_mood:
 - tag: caption
   rating: general
   chinese: 文字说明
-- tag: character watermark
-  rating: general
-  chinese: 角色水印
 - tag: charles schulz (style)
   rating: general
   chinese: 查尔斯·舒尔茨（风格）
@@ -62589,9 +61767,6 @@ detail_mood:
 - tag: comic unreal
   rating: general
   chinese: 漫画非现实
-- tag: costume chart
-  rating: general
-  chinese: 服装图表
 - tag: countdown illustration
   rating: general
   chinese: 倒计时插画
@@ -62604,9 +61779,6 @@ detail_mood:
 - tag: crystallization
   rating: r15
   chinese: 结晶化
-- tag: cut-here line
-  rating: general
-  chinese: 剪切线
 - tag: damage numbers
   rating: general
   chinese: 伤害数值
@@ -62637,9 +61809,6 @@ detail_mood:
 - tag: dots
   rating: general
   chinese: 点状图案
-- tag: draw this in your style challenge
-  rating: general
-  chinese: 仿画挑战
 - tag: dripping blood
   rating: r15
   chinese: 滴血
@@ -62667,12 +61836,6 @@ detail_mood:
 - tag: face in shadow
   rating: general
   chinese: 面部阴影
-- tag: fake photograph
-  rating: general
-  chinese: 虚假照片
-- tag: fake transparency
-  rating: general
-  chinese: 伪透明
 - tag: filter
   rating: general
   chinese: 过滤器
@@ -62694,9 +61857,6 @@ detail_mood:
 - tag: fuwafuwa time
   rating: general
   chinese: 蓬蓬时间
-- tag: game model
-  rating: general
-  chinese: 游戏模型
 - tag: gold border
   rating: general
   chinese: 金边框
@@ -62718,9 +61878,6 @@ detail_mood:
 - tag: hare hare yukai
   rating: general
   chinese: 晴朗愉悦
-- tag: has cropped revision
-  rating: general
-  chinese: 已裁剪修订
 - tag: headlight beam
   rating: general
   chinese: 头灯光束
@@ -62730,9 +61887,6 @@ detail_mood:
 - tag: heian
   rating: general
   chinese: 平安
-- tag: height mark
-  rating: general
-  chinese: 身高标记
 - tag: holoadvent
   rating: general
   chinese: 全息降临
@@ -62778,9 +61932,6 @@ detail_mood:
 - tag: keikenchi (style)
   rating: general
   chinese: 经验值（风格）
-- tag: key frame
-  rating: general
-  chinese: 关键帧
 - tag: kirigami
   rating: general
   chinese: 剪纸
@@ -62793,24 +61944,15 @@ detail_mood:
 - tag: koufuku graffiti
   rating: general
   chinese: 幸福涂鸦
-- tag: krita (medium)
-  rating: general
-  chinese: Krita（软件）
 - tag: kubo tite (style)
   rating: general
   chinese: 久保带人（风格）
 - tag: kurokw (style)
   rating: general
   chinese: 黑KW（风格）
-- tag: length markings
-  rating: general
-  chinese: 长度标记
 - tag: lineage 2
   rating: general
   chinese: 天堂2
-- tag: loading screen
-  rating: general
-  chinese: 加载画面
 - tag: magical halloween
   rating: general
   chinese: 魔法万圣节
@@ -62820,27 +61962,12 @@ detail_mood:
 - tag: masanori sato (style)
   rating: general
   chinese: 佐藤正纪（风格）
-- tag: medibang paint (medium)
-  rating: general
-  chinese: MediBang绘画（软件）
-- tag: microsoft paint (medium)
-  rating: general
-  chinese: 微软画图（媒介）
-- tag: mikumikudance
-  rating: general
-  chinese: MikuMiku舞蹈
-- tag: minecraft (style)
-  rating: general
-  chinese: 我的世界（风格）
 - tag: minimalism
   rating: general
   chinese: 极简主义
 - tag: mirrored text
   rating: general
   chinese: 镜像文字
-- tag: miyoushe watermark
-  rating: general
-  chinese: 米游社水印
 - tag: modeling
   rating: general
   chinese: 造型摆拍
@@ -62862,9 +61989,6 @@ detail_mood:
 - tag: ohisashiburi (style)
   rating: general
   chinese: 久别重逢（风格）
-- tag: omake
-  rating: general
-  chinese: 特典
 - tag: omocat (style)
   rating: general
   chinese: Omocat（风格）
@@ -62892,9 +62016,6 @@ detail_mood:
 - tag: paint stains
   rating: general
   chinese: 油漆污渍
-- tag: painttool sai
-  rating: general
-  chinese: 绘画工具SAI
 - tag: paper cutout
   rating: general
   chinese: 剪纸
@@ -62928,63 +62049,36 @@ detail_mood:
 - tag: portrait of exotic girls
   rating: general
   chinese: 异域少女肖像
-- tag: poster parody
-  rating: general
-  chinese: 海报恶搞
 - tag: production kawaii
   rating: general
   chinese: 制作可爱
 - tag: profile picture
   rating: general
   chinese: 头像图片
-- tag: progress bar
-  rating: general
-  chinese: 进度条
 - tag: projectile trail
   rating: general
   chinese: 弹道轨迹
-- tag: psd available
-  rating: general
-  chinese: 提供PSD文件
 - tag: psychedelic
   rating: r15
   chinese: 迷幻
-- tag: quality
-  rating: general
-  chinese: 品质
 - tag: rainbow text
   rating: general
   chinese: 彩虹文字
-- tag: recolored
-  rating: general
-  chinese: 重新上色
 - tag: rectangle
   rating: general
   chinese: 矩形
-- tag: remake
-  rating: general
-  chinese: 重制版
 - tag: reminiscence
   rating: general
   chinese: 追忆
-- tag: reversed
-  rating: general
-  chinese: 反转
 - tag: rhapsody
   rating: general
   chinese: 狂想曲
-- tag: rotated
-  rating: general
-  chinese: 已旋转
 - tag: saturated
   rating: general
   chinese: 饱和色
 - tag: scene fashion
   rating: general
   chinese: 场景时尚
-- tag: screencap redraw
-  rating: general
-  chinese: 截图重绘
 - tag: script
   rating: general
   chinese: 手写体
@@ -63069,24 +62163,9 @@ detail_mood:
 - tag: through painting
   rating: general
   chinese: 穿透画作
-- tag: thumbnail collage
-  rating: general
-  chinese: 缩略图拼贴
-- tag: thumbnail surprise
-  rating: general
-  chinese: 拇指惊喜
-- tag: time lapse
-  rating: general
-  chinese: 时光流逝
-- tag: title page
-  rating: general
-  chinese: 扉页
 - tag: torso flash
   rating: general
   chinese: 躯干闪光
-- tag: traced
-  rating: general
-  chinese: 描图
 - tag: tremble lines
   rating: general
   chinese: 震颤线
@@ -63123,9 +62202,6 @@ detail_mood:
 - tag: wrinkled fabric
   rating: general
   chinese: 褶皱布料
-- tag: zbrush (medium)
-  rating: general
-  chinese: ZBrush（软件）
 - tag: 16bit sensation
   rating: general
   chinese: 16位感官
@@ -63150,21 +62226,12 @@ detail_mood:
 - tag: acid trip
   rating: r15
   chinese: 迷幻之旅
-- tag: adobe illustrator (medium)
-  rating: general
-  chinese: Adobe Illustrator（媒介）
 - tag: airbrush (medium)
   rating: general
   chinese: 喷枪（媒介）
 - tag: akai maho
   rating: general
   chinese: 赤红魔法
-- tag: alternate
-  rating: general
-  chinese: 替代版本
-- tag: alternative
-  rating: general
-  chinese: 另类风格
 - tag: alternative facts in eastern utopia
   rating: general
   chinese: 东方乌托邦的另类事实
@@ -63189,18 +62256,9 @@ detail_mood:
 - tag: aqua streaks
   rating: general
   chinese: 水色条纹
-- tag: artist watermark
-  rating: general
-  chinese: 艺术家水印
-- tag: aseprite (medium)
-  rating: general
-  chinese: Aseprite（软件）
 - tag: asymmetry
   rating: general
   chinese: 非对称
-- tag: autodesk 3ds max (medium)
-  rating: general
-  chinese: 欧特克3ds Max（中等）
 - tag: backwards text
   rating: general
   chinese: 反向文字
@@ -63228,9 +62286,6 @@ detail_mood:
 - tag: blurry vision
   rating: general
   chinese: 视线模糊
-- tag: book cover redraw
-  rating: general
-  chinese: 书籍封面重绘
 - tag: brush (medium)
   rating: general
   chinese: 画笔（中号）
@@ -63255,18 +62310,9 @@ detail_mood:
 - tag: celtic
   rating: general
   chinese: 凯尔特
-- tag: character chart
-  rating: general
-  chinese: 角色关系图
 - tag: charcoal (medium)
   rating: general
   chinese: 炭笔（中号）
-- tag: cleaned
-  rating: general
-  chinese: 已清洁
-- tag: clip studio paint
-  rating: general
-  chinese: Clip Studio Paint
 - tag: color banding
   rating: general
   chinese: 色带
@@ -63285,9 +62331,6 @@ detail_mood:
 - tag: comic cune
   rating: general
   chinese: 漫画楔
-- tag: compilation
-  rating: general
-  chinese: 合集
 - tag: cool cool toon
   rating: general
   chinese: 酷炫卡通
@@ -63312,9 +62355,6 @@ detail_mood:
 - tag: detail
   rating: general
   chinese: 细节
-- tag: deviantart
-  rating: general
-  chinese: 异艺术
 - tag: domain expansion
   rating: general
   chinese: 领域展开
@@ -63327,18 +62367,12 @@ detail_mood:
 - tag: duo chromatic
   rating: general
   chinese: 双色
-- tag: end roll
-  rating: general
-  chinese: 终幕
 - tag: evanescent existence
   rating: general
   chinese: 转瞬即逝的存在
 - tag: eyed silhouette
   rating: general
   chinese: 眼睛轮廓
-- tag: fake text
-  rating: general
-  chinese: 伪文本
 - tag: festa!! hyper girls pop
   rating: general
   chinese: 庆典!! 超活跃女孩流行
@@ -63363,9 +62397,6 @@ detail_mood:
 - tag: futuregraph
   rating: general
   chinese: 未来绘
-- tag: game cover
-  rating: general
-  chinese: 游戏封面
 - tag: game-style
   rating: general
   chinese: 游戏风格
@@ -63408,9 +62439,6 @@ detail_mood:
 - tag: hallucination
   rating: general
   chinese: 幻觉
-- tag: has watermarked revision
-  rating: general
-  chinese: 含水印修订版
 - tag: head swap
   rating: general
   chinese: 头部替换
@@ -63447,9 +62475,6 @@ detail_mood:
 - tag: in shadow
   rating: general
   chinese: 暗影之中
-- tag: interlude
-  rating: general
-  chinese: 间奏曲
 - tag: ishikawa ken (style)
   rating: general
   chinese: 石川贤（风格）
@@ -63486,9 +62511,6 @@ detail_mood:
 - tag: kurumada masami (style)
   rating: general
   chinese: 车田正美（风格）
-- tag: laserdisc cover
-  rating: general
-  chinese: 激光影碟封面
 - tag: long shadow
   rating: general
   chinese: 长影
@@ -63510,9 +62532,6 @@ detail_mood:
 - tag: mizuiro
   rating: general
   chinese: 水色
-- tag: montage
-  rating: general
-  chinese: 蒙太奇
 - tag: mosaic
   rating: general
   chinese: 马赛克
@@ -63528,9 +62547,6 @@ detail_mood:
 - tag: natsu no iro no nostalgia
   rating: general
   chinese: 夏色乡愁
-- tag: negative
-  rating: general
-  chinese: ネガティブ
 - tag: negative frames
   rating: general
   chinese: 负片帧
@@ -63543,21 +62559,12 @@ detail_mood:
 - tag: night vision
   rating: general
   chinese: 夜视
-- tag: nijie
-  rating: general
-  chinese: 二次元
-- tag: noise reduction
-  rating: general
-  chinese: 降噪
 - tag: nomura tetsuya (style)
   rating: general
   chinese: 野村哲也（风格）
 - tag: object and personification
   rating: general
   chinese: 物象拟人化
-- tag: official alternate design
-  rating: general
-  chinese: 官方替代设计
 - tag: overhead lights
   rating: general
   chinese: 顶灯
@@ -63588,15 +62595,9 @@ detail_mood:
 - tag: pixel text
   rating: general
   chinese: 像素文字
-- tag: pixiv shadow
-  rating: general
-  chinese: Pixiv阴影
 - tag: plain
   rating: general
   chinese: 素色
-- tag: png file
-  rating: general
-  chinese: PNG文件
 - tag: polygonal
   rating: general
   chinese: 多边形
@@ -63648,9 +62649,6 @@ detail_mood:
 - tag: sinister
   rating: general
   chinese: 阴邪
-- tag: sketch inset
-  rating: general
-  chinese: 草图插画
 - tag: smudge
   rating: general
   chinese: 污迹
@@ -63663,21 +62661,12 @@ detail_mood:
 - tag: speed
   rating: general
   chinese: 速度
-- tag: speedpaint
-  rating: general
-  chinese: 速涂
 - tag: spiritual
   rating: general
   chinese: 精神性
-- tag: split image
-  rating: general
-  chinese: 分像
 - tag: spoken sound effect
   rating: general
   chinese: 语音拟声词
-- tag: sprite sheet
-  rating: general
-  chinese: 精灵表
 - tag: srw battle screen
   rating: general
   chinese: 机战战斗画面
@@ -63687,9 +62676,6 @@ detail_mood:
 - tag: stereogram
   rating: general
   chinese: 立体图
-- tag: storyboard
-  rating: general
-  chinese: 分镜脚本
 - tag: studio ghibli (style)
   rating: general
   chinese: 吉卜力工作室（风格）
@@ -63726,21 +62712,12 @@ detail_mood:
 - tag: tileable
   rating: general
   chinese: 可平铺
-- tag: title screen
-  rating: general
-  chinese: 标题画面
 - tag: towering
   rating: general
   chinese: 高耸
-- tag: triptych
-  rating: general
-  chinese: 三联画
 - tag: trypophobia
   rating: general
   chinese: 密集恐惧症
-- tag: twitter screenshot
-  rating: general
-  chinese: 推特截图
 - tag: unbalance unbalance
   rating: general
   chinese: 失衡失衡
@@ -63759,9 +62736,6 @@ detail_mood:
 - tag: vectors
   rating: general
   chinese: 矢量图形
-- tag: video game cover redraw
-  rating: general
-  chinese: 电子游戏封面重绘
 - tag: vincent van gogh (style)
   rating: general
   chinese: 文森特·梵高（风格）
