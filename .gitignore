@@ -30,3 +30,6 @@ api_profiles/
 # 提示词开发与批量生成产物（150MB 级，不进版本库）
 anima_prompt_develop/
 output_dev/
+
+# Trae IDE 规格文档（本地开发需求，不进版本库）
+.trae/
