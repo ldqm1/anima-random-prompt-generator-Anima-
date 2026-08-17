@@ -228,7 +228,7 @@
 [DOMAIN:标签] [CAT:服饰/日常便服] t-shirt | T恤
 [DOMAIN:标签] [CAT:服饰/配饰] tassel | 流苏
 [DOMAIN:标签] [CAT:服饰/配饰] gem | 宝石
-[DOMAIN:标签] [CAT:服饰/泳装内衣] underwear_only | 仅着内衣
+[DOMAIN:标签] [CAT:排除/其他] underwear_only | 仅着内衣
 [DOMAIN:标签] [CAT:服饰/鞋袜] knee_boots | 及膝靴
 [DOMAIN:标签] [CAT:服饰/军装战斗] shoulder_armor | 肩甲
 [DOMAIN:标签] [CAT:服饰/鞋袜] sneakers | 运动鞋
@@ -653,7 +653,7 @@
 [DOMAIN:标签] [CAT:服饰/日常便服] yellow_clothing | 黄色衣物
 [DOMAIN:标签] [CAT:服饰/日常便服] blue_bottomwear | 蓝色下装
 [DOMAIN:标签] [CAT:服饰/配饰] mittens | 连指手套
-[DOMAIN:标签] [CAT:服饰/泳装内衣] male_underwear | 男式内裤
+[DOMAIN:标签] [CAT:排除/男性雄性] male_underwear | 男式内裤
 [DOMAIN:标签] [CAT:服饰/头饰] cow_horns | 牛角
 [DOMAIN:标签] [CAT:服饰/鞋袜] high_heeled_boots | 高跟靴
 [DOMAIN:标签] [CAT:服饰/头饰] green_hat | 绿色帽子
@@ -761,7 +761,7 @@
 [DOMAIN:标签] [CAT:服饰/日常便服] green_topwear | 绿色上装
 [DOMAIN:标签] [CAT:服饰/配饰] white_handwear | 白色手部服饰
 [DOMAIN:标签] [CAT:服饰/其他] facial_tattoo | 面部纹身
-[DOMAIN:标签] [CAT:服饰/泳装内衣] bottomless_male | 下空男性
+[DOMAIN:标签] [CAT:排除/男性雄性] bottomless_male | 下空男性
 [DOMAIN:标签] [CAT:服饰/日常便服] brown_sweater | 棕色毛衣
 [DOMAIN:标签] [CAT:服饰/头饰] leaf_hair_ornament | 叶片发饰
 [DOMAIN:标签] [CAT:服饰/头饰] tilted_headwear | 歪戴头饰
@@ -932,7 +932,7 @@
 [DOMAIN:标签] [CAT:服饰/运动休闲] jumpsuit | 连体衣
 [DOMAIN:标签] [CAT:服饰/军装战斗] bikini_armor | 比基尼铠甲
 [DOMAIN:标签] [CAT:服饰/头饰] aqua_bow | 水色蝴蝶结
-[DOMAIN:标签] [CAT:服饰/泳装内衣] male_swimwear | 男性泳装
+[DOMAIN:标签] [CAT:排除/男性雄性] male_swimwear | 男性泳装
 [DOMAIN:标签] [CAT:服饰/配饰] arm_ribbon | 臂饰缎带
 [DOMAIN:标签] [CAT:服饰/制服校服] shoulder_pads | 垫肩
 [DOMAIN:标签] [CAT:服饰/日常便服] pink_topwear | 粉色上装
@@ -1323,7 +1323,7 @@
 [DOMAIN:标签] [CAT:服饰/和风民族] okobo | 厚底木屐
 [DOMAIN:标签] [CAT:服饰/洋装礼服] sideless_outfit | 露侧服装
 [DOMAIN:标签] [CAT:服饰/制服校服] aqua_bowtie | 水色领结
-[DOMAIN:标签] [CAT:服饰/泳装内衣] swimsuit_aside | 泳装褪下
+[DOMAIN:标签] [CAT:排除/其他] swimsuit_aside | 泳装褪下
 [DOMAIN:标签] [CAT:服饰/鞋袜] grey_socks | 灰色短袜
 [DOMAIN:标签] [CAT:服饰/日常便服] green_bottomwear | 绿色下装
 [DOMAIN:标签] [CAT:服饰/头饰] pom_pom_hair_ornament | 绒球发饰
@@ -1692,13 +1692,13 @@
 [DOMAIN:标签] [CAT:服饰/配饰] star_choker | 星星颈链
 [DOMAIN:标签] [CAT:服饰/制服校服] brown_necktie | 棕色领带
 [DOMAIN:标签] [CAT:服饰/制服校服] naoetsu_high_school_uniform | 直江津高中校服
-[DOMAIN:标签] [CAT:服饰/泳装内衣] white_male_underwear | 白色男式内裤
+[DOMAIN:标签] [CAT:排除/男性雄性] white_male_underwear | 白色男式内裤
 [DOMAIN:标签] [CAT:服饰/泳装内衣] frilly_underwear | 蕾丝内衣
 [DOMAIN:标签] [CAT:服饰/头饰] fish_hair_ornament | 鱼形发饰
 [DOMAIN:标签] [CAT:服饰/外套大衣] bomber_jacket | 轰炸机夹克
 [DOMAIN:标签] [CAT:服饰/鞋袜] horizontal-striped_thighhighs | 横条纹大腿袜：长筒袜：过膝袜
 [DOMAIN:标签] [CAT:服饰/配饰] gloves_only | 仅戴手套
-[DOMAIN:标签] [CAT:服饰/配饰] pink_fur | 粉色毛皮
+[DOMAIN:标签] [CAT:排除/兽化非人] pink_fur | 粉色毛皮
 [DOMAIN:标签] [CAT:服饰/配饰] magatama_necklace | 勾玉项链
 [DOMAIN:标签] [CAT:服饰/配饰] ankle_cuffs | 脚踝铐饰
 [DOMAIN:标签] [CAT:服饰/配饰] snakebite_piercing | 蛇咬穿孔
@@ -1777,7 +1777,7 @@
 [DOMAIN:标签] [CAT:服饰/外套大衣] pink_coat | 粉色外套
 [DOMAIN:标签] [CAT:服饰/配饰] sleeve_garter | 袖箍
 [DOMAIN:标签] [CAT:服饰/和风民族] ancient_greek_clothes | 古希腊服装
-[DOMAIN:标签] [CAT:服饰/泳装内衣] black_male_underwear | 黑色男式内裤
+[DOMAIN:标签] [CAT:排除/男性雄性] black_male_underwear | 黑色男式内裤
 [DOMAIN:标签] [CAT:服饰/军装战斗] single_gauntlet | 单臂护手
 [DOMAIN:标签] [CAT:服饰/配饰] orange_choker | 橙色颈链
 [DOMAIN:标签] [CAT:服饰/配饰] grey_scarf | 灰色围巾
@@ -1958,7 +1958,7 @@
 [DOMAIN:标签] [CAT:服饰/军装战斗] st._gloriana's_military_uniform | 圣葛罗莉安娜军服
 [DOMAIN:标签] [CAT:服饰/制服校服] square-end_necktie | 方端领带
 [DOMAIN:标签] [CAT:服饰/洋装礼服] frilled_shorts | 荷叶边短裤
-[DOMAIN:标签] [CAT:服饰/泳装内衣] male_playboy_bunny | 男性兔女郎
+[DOMAIN:标签] [CAT:排除/男性雄性] male_playboy_bunny | 男性兔女郎
 [DOMAIN:标签] [CAT:服饰/军装战斗] crest | 纹章
 [DOMAIN:标签] [CAT:服饰/洋装礼服] fur-trimmed_skirt | 毛边短裙
 [DOMAIN:标签] [CAT:服饰/外套大衣] multicolored_coat | 多彩外套
@@ -2069,7 +2069,7 @@
 [DOMAIN:标签] [CAT:服饰/泳装内衣] micro_panties | 微型内裤
 [DOMAIN:标签] [CAT:服饰/日常便服] cowboy_western | 西部牛仔
 [DOMAIN:标签] [CAT:服饰/日常便服] red_tank_top | 红色背心
-[DOMAIN:标签] [CAT:服饰/日常便服] cow_boy | 牛仔
+[DOMAIN:标签] [CAT:排除/男性雄性] cow_boy | 牛仔
 [DOMAIN:标签] [CAT:服饰/外套大衣] print_jacket | 印花夹克
 [DOMAIN:标签] [CAT:服饰/泳装内衣] single_strap | 单肩带
 [DOMAIN:标签] [CAT:服饰/配饰] ankle_strap | 踝带
@@ -2213,7 +2213,7 @@
 [DOMAIN:标签] [CAT:服饰/鞋袜] aqua_footwear | 水色鞋履
 [DOMAIN:标签] [CAT:服饰/日常便服] orange_sweater | 橙色毛衣
 [DOMAIN:标签] [CAT:服饰/配饰] rider_belt | 骑士腰带
-[DOMAIN:标签] [CAT:服饰/洋装礼服] button_eyes | 纽扣眼睛
+[DOMAIN:标签] [CAT:排除/兽化非人] button_eyes | 纽扣眼睛
 [DOMAIN:标签] [CAT:服饰/日常便服] white_tube_top | 白色抹胸
 [DOMAIN:标签] [CAT:服饰/鞋袜] gradient_legwear | 渐变裤袜
 [DOMAIN:标签] [CAT:服饰/配饰] heart_collar | 心形衣领
@@ -2456,7 +2456,7 @@
 [DOMAIN:标签] [CAT:服饰/头饰] single_hair_tube | 单束发管
 [DOMAIN:标签] [CAT:服饰/其他] bandaged_chest | 绷带缠胸
 [DOMAIN:标签] [CAT:服饰/头饰] plaid_hat | 格子呢帽
-[DOMAIN:标签] [CAT:服饰/其他] living_clothes | 活体服装
+[DOMAIN:标签] [CAT:排除/其他] living_clothes | 活体服装
 [DOMAIN:标签] [CAT:服饰/配饰] linked_piercing | 串联穿孔
 [DOMAIN:标签] [CAT:服饰/其他] no_eyepatch | 未戴眼罩
 [DOMAIN:标签] [CAT:服饰/鞋袜] two-tone_legwear | 双色腿饰
@@ -2689,7 +2689,7 @@
 [DOMAIN:标签] [CAT:服饰/配饰] rubber_gloves | 橡胶手套
 [DOMAIN:标签] [CAT:服饰/日常便服] cargo_pants | 工装裤
 [DOMAIN:标签] [CAT:服饰/头饰] rabbit_hat | 兔耳帽
-[DOMAIN:标签] [CAT:服饰/泳装内衣] male_underwear_pull | 男士内裤拉扯
+[DOMAIN:标签] [CAT:排除/男性雄性] male_underwear_pull | 男士内裤拉扯
 [DOMAIN:标签] [CAT:服饰/泳装内衣] dress_swimsuit | 连衣裙式泳装
 [DOMAIN:标签] [CAT:服饰/配饰] skull_necklace | 骷髅项链
 [DOMAIN:标签] [CAT:服饰/日常便服] skeleton_print | 骨骼印花
@@ -2746,7 +2746,7 @@
 [DOMAIN:标签] [CAT:服饰/头饰] star-shaped_eyewear | 星形眼镜
 [DOMAIN:标签] [CAT:服饰/制服校服] shimokitazawa_high_school_uniform | 下北泽高中校服
 [DOMAIN:标签] [CAT:服饰/头饰] hat_tassel | 帽穗
-[DOMAIN:标签] [CAT:服饰/泳装内衣] black_male_swimwear | 黑色男性泳装
+[DOMAIN:标签] [CAT:排除/男性雄性] black_male_swimwear | 黑色男性泳装
 [DOMAIN:标签] [CAT:服饰/其他] gag_harness | 口枷束带
 [DOMAIN:标签] [CAT:服饰/制服校服] youtou_high_school_uniform | 洋东高中校服
 [DOMAIN:标签] [CAT:服饰/头饰] red_crown | 红色王冠
@@ -2957,10 +2957,10 @@
 [DOMAIN:标签] [CAT:服饰/泳装内衣] one-piece_thong | 连体丁字裤
 [DOMAIN:标签] [CAT:服饰/头饰] hexagon_hair_ornament | 六边形发饰
 [DOMAIN:标签] [CAT:服饰/运动休闲] taut_leotard | 紧身体操服
-[DOMAIN:标签] [CAT:服饰/泳装内衣] male_underwear_peek | 男性内裤窥视
+[DOMAIN:标签] [CAT:排除/男性雄性] male_underwear_peek | 男性内裤窥视
 [DOMAIN:标签] [CAT:服饰/日常便服] single-shoulder_shirt | 单肩衬衫
 [DOMAIN:标签] [CAT:服饰/和风民族] han'eri | 半襟
-[DOMAIN:标签] [CAT:服饰/泳装内衣] red_male_underwear | 红色男式内裤
+[DOMAIN:标签] [CAT:排除/男性雄性] red_male_underwear | 红色男式内裤
 [DOMAIN:标签] [CAT:服饰/头饰] ski_goggles | 滑雪护目镜
 [DOMAIN:标签] [CAT:服饰/泳装内衣] black_babydoll | 黑色娃娃裙
 [DOMAIN:标签] [CAT:服饰/其他] naked_cloak | 裸体斗篷
@@ -3004,7 +3004,7 @@
 [DOMAIN:标签] [CAT:服饰/鞋袜] white_leggings | 白色打底裤
 [DOMAIN:标签] [CAT:服饰/配饰] fur_cuffs | 毛皮袖口
 [DOMAIN:标签] [CAT:服饰/头饰] panda_hood | 熊猫兜帽
-[DOMAIN:标签] [CAT:服饰/其他] muzzle_(mask) | 口笼（面具）
+[DOMAIN:标签] [CAT:排除/其他] muzzle_(mask) | 口笼（面具）
 [DOMAIN:标签] [CAT:服饰/外套大衣] torn_cloak | 破损披风
 [DOMAIN:标签] [CAT:服饰/头饰] yellow_headwear | 黄色头饰
 [DOMAIN:标签] [CAT:服饰/制服校服] st._chronica_academy_school_uniform | 圣克罗尼卡学园校服
@@ -3121,7 +3121,7 @@
 [DOMAIN:标签] [CAT:服饰/头饰] animal_helmet | 动物头盔
 [DOMAIN:标签] [CAT:服饰/头饰] fake_halo | 人造光环
 [DOMAIN:标签] [CAT:服饰/军装战斗] exoskeleton | 外骨骼
-[DOMAIN:标签] [CAT:服饰/其他] muzzle_gag | 口塞禁言
+[DOMAIN:标签] [CAT:排除/其他] muzzle_gag | 口塞禁言
 [DOMAIN:标签] [CAT:服饰/洋装礼服] wedding_veil | 婚纱头纱
 [DOMAIN:标签] [CAT:服饰/泳装内衣] print_swimsuit | 印花泳装
 [DOMAIN:标签] [CAT:服饰/和风民族] cassock | 教士袍
@@ -3150,7 +3150,7 @@
 [DOMAIN:标签] [CAT:服饰/运动休闲] white_jumpsuit | 白色连体裤
 [DOMAIN:标签] [CAT:服饰/和风民族] indian_clothes | 印度服饰
 [DOMAIN:标签] [CAT:服饰/日常便服] purple_apron | 紫色围裙
-[DOMAIN:标签] [CAT:服饰/泳装内衣] blue_male_underwear | 蓝色男式内裤
+[DOMAIN:标签] [CAT:排除/男性雄性] blue_male_underwear | 蓝色男式内裤
 [DOMAIN:标签] [CAT:服饰/其他] clown_nose | 小丑鼻
 [DOMAIN:标签] [CAT:服饰/配饰] neck_garter | 颈圈
 [DOMAIN:标签] [CAT:服饰/头饰] propeller_hair_ornament | 螺旋桨发饰
@@ -3162,10 +3162,10 @@
 [DOMAIN:标签] [CAT:服饰/日常便服] orange_apron | 橙色围裙
 [DOMAIN:标签] [CAT:服饰/头饰] letter_hair_ornament | 字母发饰
 [DOMAIN:标签] [CAT:服饰/日常便服] aqua_trim | 水色镶边
-[DOMAIN:标签] [CAT:服饰/泳装内衣] blue_male_swimwear | 蓝色男性泳装
+[DOMAIN:标签] [CAT:排除/男性雄性] blue_male_swimwear | 蓝色男性泳装
 [DOMAIN:标签] [CAT:服饰/配饰] waist_ribbon | 腰饰缎带
 [DOMAIN:标签] [CAT:服饰/配饰] ring_necklace | 圆环项链
-[DOMAIN:标签] [CAT:服饰/军装战斗] scale_armor | 鳞甲
+[DOMAIN:标签] [CAT:排除/兽化非人] scale_armor | 鳞甲
 [DOMAIN:标签] [CAT:服饰/配饰] heart-shaped_gem | 心形宝石
 [DOMAIN:标签] [CAT:服饰/日常便服] shirt_partially_tucked_in | 衬衫半塞
 [DOMAIN:标签] [CAT:服饰/配饰] blue_wrist_cuffs | 蓝色腕饰
@@ -3327,7 +3327,7 @@
 [DOMAIN:标签] [CAT:服饰/头饰] xiao_guan_(headdress) | 小冠（头饰）
 [DOMAIN:标签] [CAT:服饰/头饰] wide_brim | 宽檐
 [DOMAIN:标签] [CAT:服饰/和风民族] brown_robe | 棕色长袍
-[DOMAIN:标签] [CAT:服饰/泳装内衣] grey_male_underwear | 灰色男内裤
+[DOMAIN:标签] [CAT:排除/男性雄性] grey_male_underwear | 灰色男内裤
 [DOMAIN:标签] [CAT:服饰/头饰] kamina_shades | 卡米那墨镜
 [DOMAIN:标签] [CAT:服饰/配饰] heart_belt | 心形腰带
 [DOMAIN:标签] [CAT:服饰/头饰] whale_hair_ornament | 鲸鱼发饰
@@ -3735,7 +3735,7 @@
 [DOMAIN:标签] [CAT:服饰/头饰] gold_circlet | 金色头环
 [DOMAIN:标签] [CAT:服饰/运动休闲] archery_shooting_glove | 射箭手套
 [DOMAIN:标签] [CAT:服饰/军装战斗] spiked_gauntlets | 尖刺护手
-[DOMAIN:标签] [CAT:服饰/其他] penis_ribbon | 阴茎缎带
+[DOMAIN:标签] [CAT:排除/性行为] penis_ribbon | 阴茎缎带
 [DOMAIN:标签] [CAT:服饰/鞋袜] frilled_garter | 荷叶边吊袜带
 [DOMAIN:标签] [CAT:服饰/其他] sign_around_neck | 颈挂标牌
 [DOMAIN:标签] [CAT:服饰/军装战斗] grey_armor | 灰色盔甲
@@ -3760,14 +3760,14 @@
 [DOMAIN:标签] [CAT:服饰/制服校服] reien_girl's_academy_school_uniform | 玲园女学院校服
 [DOMAIN:标签] [CAT:服饰/日常便服] wave_print | 波浪纹
 [DOMAIN:标签] [CAT:服饰/运动休闲] green_buruma | 绿色运动短裤
-[DOMAIN:标签] [CAT:服饰/泳装内衣] no_male_underwear | 无男性内衣
+[DOMAIN:标签] [CAT:排除/男性雄性] no_male_underwear | 无男性内衣
 [DOMAIN:标签] [CAT:服饰/其他] no_cape | 无披风
 [DOMAIN:标签] [CAT:服饰/配饰] sweater_around_neck | 毛衣围颈
 [DOMAIN:标签] [CAT:服饰/其他] naked_suspenders | 裸体吊带袜
 [DOMAIN:标签] [CAT:服饰/配饰] heart_halo | 心形光环
 [DOMAIN:标签] [CAT:服饰/外套大衣] fur_capelet | 毛皮短斗篷
 [DOMAIN:标签] [CAT:服饰/日常便服] orange_trim | 橙色镶边
-[DOMAIN:标签] [CAT:服饰/泳装内衣] red_male_swimwear | 红色男性泳装
+[DOMAIN:标签] [CAT:排除/男性雄性] red_male_swimwear | 红色男性泳装
 [DOMAIN:标签] [CAT:服饰/运动休闲] print_bodysuit | 印花连体衣
 [DOMAIN:标签] [CAT:服饰/运动休闲] purple_sports_bra | 紫色运动内衣
 [DOMAIN:标签] [CAT:服饰/日常便服] torn_sleeve | 撕裂袖管
@@ -3797,7 +3797,7 @@
 [DOMAIN:标签] [CAT:服饰/日常便服] gaiters | 绑腿
 [DOMAIN:标签] [CAT:服饰/洋装礼服] frilly_dress | 荷叶边连衣裙
 [DOMAIN:标签] [CAT:服饰/日常便服] calvin_klein | 卡尔文·克莱恩
-[DOMAIN:标签] [CAT:服饰/泳装内衣] green_male_underwear | 绿色男式内裤
+[DOMAIN:标签] [CAT:排除/男性雄性] green_male_underwear | 绿色男式内裤
 [DOMAIN:标签] [CAT:服饰/鞋袜] lace_legwear | 蕾丝腿袜
 [DOMAIN:标签] [CAT:服饰/泳装内衣] double_strap_slip | 双肩带衬裙
 [DOMAIN:标签] [CAT:服饰/泳装内衣] lace-trimmed_bikini | 蕾丝边比基尼
@@ -3812,7 +3812,7 @@
 [DOMAIN:标签] [CAT:服饰/制服校服] hoto_cocoa's_school_uniform | 保登心爱校服
 [DOMAIN:标签] [CAT:服饰/日常便服] shirt_partially_removed | 衬衫半褪
 [DOMAIN:标签] [CAT:服饰/泳装内衣] cupless_bikini | 无罩杯比基尼
-[DOMAIN:标签] [CAT:服饰/泳装内衣] male_swimwear_challenge | 男性泳装挑战
+[DOMAIN:标签] [CAT:排除/男性雄性] male_swimwear_challenge | 男性泳装挑战
 [DOMAIN:标签] [CAT:服饰/配饰] spiked_gloves | 尖刺手套
 [DOMAIN:标签] [CAT:服饰/鞋袜] miru_tights | 美瑠紧身裤
 [DOMAIN:标签] [CAT:服饰/泳装内衣] aqua_one-piece_swimsuit | 蓝色连体泳衣
@@ -3848,11 +3848,11 @@
 [DOMAIN:标签] [CAT:服饰/日常便服] pleated_shorts | 百慕达短裤
 [DOMAIN:标签] [CAT:服饰/鞋袜] frilled_footwear | 褶边鞋类
 [DOMAIN:标签] [CAT:服饰/头饰] heterochromatic_eyewear | 异色眼镜
-[DOMAIN:标签] [CAT:服饰/其他] fake_beard | 假胡须
+[DOMAIN:标签] [CAT:排除/男性雄性] fake_beard | 假胡须
 [DOMAIN:标签] [CAT:服饰/日常便服] arrow_print | 箭头图案
 [DOMAIN:标签] [CAT:服饰/其他] bdsm_outfit | BDSM装束
 [DOMAIN:标签] [CAT:服饰/头饰] lemon_hair_ornament | 柠檬发饰
-[DOMAIN:标签] [CAT:服饰/洋装礼服] werewolf_costume | 狼人装束
+[DOMAIN:标签] [CAT:排除/兽化非人] werewolf_costume | 狼人装束
 [DOMAIN:标签] [CAT:服饰/泳装内衣] polka_dot_camisole | 波点吊带衫
 [DOMAIN:标签] [CAT:服饰/配饰] crossed_belts | 交叉腰带
 [DOMAIN:标签] [CAT:服饰/泳装内衣] bra_down | 解开的胸罩
@@ -3933,7 +3933,7 @@
 [DOMAIN:标签] [CAT:服饰/配饰] chain_around_arm | 手臂锁链
 [DOMAIN:标签] [CAT:服饰/日常便服] red_sweater_vest | 红色针织背心
 [DOMAIN:标签] [CAT:服饰/洋装礼服] skirt_rolled_up | 卷起裙摆
-[DOMAIN:标签] [CAT:服饰/泳装内衣] male_underwear_aside | 男式内裤侧移
+[DOMAIN:标签] [CAT:排除/男性雄性] male_underwear_aside | 男式内裤侧移
 [DOMAIN:标签] [CAT:服饰/其他] purple_latex | 紫色乳胶
 [DOMAIN:标签] [CAT:服饰/运动休闲] workout_clothes | 运动服
 [DOMAIN:标签] [CAT:服饰/和风民族] red_hanfu | 红色汉服
@@ -3951,7 +3951,7 @@
 [DOMAIN:标签] [CAT:服饰/头饰] teardrop-framed_glasses | 泪滴形眼镜
 [DOMAIN:标签] [CAT:服饰/运动休闲] striped_leggings | 条纹打底裤
 [DOMAIN:标签] [CAT:服饰/鞋袜] spiked_boots | 钉刺靴
-[DOMAIN:标签] [CAT:服饰/其他] panties_on_penis | 阴茎穿内裤
+[DOMAIN:标签] [CAT:排除/性行为] panties_on_penis | 阴茎穿内裤
 [DOMAIN:标签] [CAT:服饰/日常便服] square_print | 方格纹
 [DOMAIN:标签] [CAT:服饰/鞋袜] spats | 鞋罩
 [DOMAIN:标签] [CAT:服饰/配饰] cherry_earrings | 樱桃耳环
@@ -3978,7 +3978,7 @@
 [DOMAIN:标签] [CAT:服饰/头饰] grape_hat_ornament | 葡萄帽饰
 [DOMAIN:标签] [CAT:服饰/配饰] loose_neck_ribbon | 宽松颈饰带
 [DOMAIN:标签] [CAT:服饰/配饰] fastener | 扣件
-[DOMAIN:标签] [CAT:服饰/泳装内衣] white_male_swimwear | 白色男性泳装
+[DOMAIN:标签] [CAT:排除/男性雄性] white_male_swimwear | 白色男性泳装
 [DOMAIN:标签] [CAT:服饰/配饰] plaid_collar | 格纹领
 [DOMAIN:标签] [CAT:服饰/泳装内衣] tailcoat_playboy_bunny | 燕尾服兔女郎
 [DOMAIN:标签] [CAT:服饰/鞋袜] single_legwear_garter | 单边袜带
@@ -4001,7 +4001,7 @@
 [DOMAIN:标签] [CAT:服饰/运动休闲] aqua_hoodie | 水色连帽衫
 [DOMAIN:标签] [CAT:服饰/泳装内衣] frilled_babydoll | 荷叶边娃娃裙
 [DOMAIN:标签] [CAT:服饰/洋装礼服] spirit_blossom_(league_of_legends) | 灵魂莲华（英雄联盟）
-[DOMAIN:标签] [CAT:服饰/制服校服] necktie_between_pectorals | 乳沟间的领带
+[DOMAIN:标签] [CAT:排除/男性雄性] necktie_between_pectorals | 乳沟间的领带
 [DOMAIN:标签] [CAT:服饰/头饰] screw_hair_ornament | 螺丝发饰
 [DOMAIN:标签] [CAT:服饰/其他] unworn_belt | 未使用腰带
 [DOMAIN:标签] [CAT:服饰/鞋袜] white_high_heels | 白色高跟鞋
@@ -4065,7 +4065,7 @@
 [DOMAIN:标签] [CAT:服饰/其他] latex_dress | 乳胶连衣裙
 [DOMAIN:标签] [CAT:服饰/军装战斗] camouflage_shorts | 迷彩短裤
 [DOMAIN:标签] [CAT:服饰/制服校服] st._lucia_academy_school_uniform | 圣卢西亚学院校服
-[DOMAIN:标签] [CAT:服饰/泳装内衣] print_male_underwear | 印花男式内裤
+[DOMAIN:标签] [CAT:排除/男性雄性] print_male_underwear | 印花男式内裤
 [DOMAIN:标签] [CAT:服饰/配饰] collar_x_malice | 项圈x恶意
 [DOMAIN:标签] [CAT:服饰/泳装内衣] bikini_down | 比基尼垂落
 [DOMAIN:标签] [CAT:服饰/运动休闲] orange_sports_bra | 橙色运动内衣
@@ -4122,7 +4122,7 @@
 [DOMAIN:标签] [CAT:服饰/头饰] print_eyepatch | 印花眼罩
 [DOMAIN:标签] [CAT:服饰/和风民族] shiromuku | 白无垢
 [DOMAIN:标签] [CAT:服饰/配饰] laces | 蕾絲
-[DOMAIN:标签] [CAT:服饰/泳装内衣] wet_male_underwear | 潮湿男式内裤
+[DOMAIN:标签] [CAT:排除/男性雄性] wet_male_underwear | 潮湿男式内裤
 [DOMAIN:标签] [CAT:服饰/头饰] crystal_hair_ornament | 水晶发饰
 [DOMAIN:标签] [CAT:服饰/头饰] heart_glasses | 心形眼镜
 [DOMAIN:标签] [CAT:服饰/日常便服] plum_blossom_print | 梅花纹样
@@ -4338,7 +4338,7 @@
 [DOMAIN:标签] [CAT:服饰/头饰] cheetah_ears | 猎豹耳
 [DOMAIN:标签] [CAT:服饰/日常便服] shirt_on_shoulders | 肩披衬衫
 [DOMAIN:标签] [CAT:服饰/泳装内衣] gris_swimsuit | 格莉斯泳装
-[DOMAIN:标签] [CAT:服饰/泳装内衣] yellow_male_underwear | 黄色男性内裤
+[DOMAIN:标签] [CAT:排除/男性雄性] yellow_male_underwear | 黄色男性内裤
 [DOMAIN:标签] [CAT:服饰/制服校服] raizen_high_school_uniform | 来禅高中校服
 [DOMAIN:标签] [CAT:服饰/日常便服] triforce_print | 三角力量印花
 [DOMAIN:标签] [CAT:服饰/头饰] aqua_eyeshadow | 水色眼影
@@ -4425,7 +4425,7 @@
 [DOMAIN:标签] [CAT:服饰/泳装内衣] pink_nightgown | 粉色睡裙
 [DOMAIN:标签] [CAT:服饰/配饰] cow_print_armwear | 奶牛纹臂饰
 [DOMAIN:标签] [CAT:服饰/配饰] ankle_scrunchie | 脚踝发圈
-[DOMAIN:标签] [CAT:服饰/洋装礼服] mermaid_costume | 人鱼装
+[DOMAIN:标签] [CAT:排除/兽化非人] mermaid_costume | 人鱼装
 [DOMAIN:标签] [CAT:服饰/配饰] o-ring_strap | O形环挂绳
 [DOMAIN:标签] [CAT:服饰/日常便服] ribbon-trimmed_apron | 缎带边围裙
 [DOMAIN:标签] [CAT:服饰/其他] sticker_on_arm | 手臂贴纸
@@ -4509,7 +4509,7 @@
 [DOMAIN:标签] [CAT:服饰/洋装礼服] fishnet_fabric | 网眼布料
 [DOMAIN:标签] [CAT:服饰/鞋袜] multicolored_pantyhose | 彩色连裤袜
 [DOMAIN:标签] [CAT:服饰/鞋袜] mismatched_thighhighs | 不对称过膝袜
-[DOMAIN:标签] [CAT:服饰/泳装内衣] green_male_swimwear | 绿色男式泳装
+[DOMAIN:标签] [CAT:排除/男性雄性] green_male_swimwear | 绿色男式泳装
 [DOMAIN:标签] [CAT:服饰/配饰] strawberry_earrings | 草莓耳环
 [DOMAIN:标签] [CAT:服饰/军装战斗] mobile_trace_suit | 机动追踪服
 [DOMAIN:标签] [CAT:服饰/泳装内衣] metal_bikini | 金属比基尼
@@ -4724,7 +4724,7 @@
 [DOMAIN:标签] [CAT:服饰/配饰] argyle_scarf | 菱形格纹围巾
 [DOMAIN:标签] [CAT:服饰/配饰] winged_bag | 翅膀包
 [DOMAIN:标签] [CAT:服饰/制服校服] motteke!_serafuku | 拿来吧！制服
-[DOMAIN:标签] [CAT:服饰/泳装内衣] orange_male_underwear | 橙色男式内裤
+[DOMAIN:标签] [CAT:排除/男性雄性] orange_male_underwear | 橙色男式内裤
 [DOMAIN:标签] [CAT:服饰/泳装内衣] camisole_pull | 吊带衫拉扯
 [DOMAIN:标签] [CAT:服饰/外套大衣] multicolored_cloak | 七彩斗篷
 [DOMAIN:标签] [CAT:服饰/鞋袜] asics | 亚瑟士
@@ -4814,7 +4814,7 @@
 [DOMAIN:标签] [CAT:服饰/日常便服] crown_print | 皇冠印花
 [DOMAIN:标签] [CAT:服饰/外套大衣] off-shoulder_coat | 露肩上衣
 [DOMAIN:标签] [CAT:服饰/制服校服] argyle_skirt | 菱形格纹裙
-[DOMAIN:标签] [CAT:服饰/泳装内衣] brown_male_underwear | 棕色男式内裤
+[DOMAIN:标签] [CAT:排除/男性雄性] brown_male_underwear | 棕色男式内裤
 [DOMAIN:标签] [CAT:服饰/日常便服] goldfish_print | 金鱼印花
 [DOMAIN:标签] [CAT:服饰/头饰] semi-circular_eyewear | 半圆形眼镜
 [DOMAIN:标签] [CAT:服饰/配饰] grey_shawl | 灰色披肩
@@ -5026,7 +5026,7 @@
 [DOMAIN:标签] [CAT:服饰/运动休闲] buruma_under_skirt | 运动短裤裙底
 [DOMAIN:标签] [CAT:服饰/运动休闲] hooded_jumpsuit | 连帽工装服
 [DOMAIN:标签] [CAT:服饰/和风民族] skirt_under_kimono | 和服内衬裙
-[DOMAIN:标签] [CAT:服饰/泳装内衣] yellow_male_swimwear | 黄色男性泳装
+[DOMAIN:标签] [CAT:排除/男性雄性] yellow_male_swimwear | 黄色男性泳装
 [DOMAIN:标签] [CAT:服饰/头饰] pom_pom_hat_ornament | 绒球帽饰
 [DOMAIN:标签] [CAT:服饰/配饰] gold_anklet | 金脚链
 [DOMAIN:标签] [CAT:服饰/军装战斗] safety_vest | 安全背心
@@ -5116,7 +5116,7 @@
 [DOMAIN:标签] [CAT:服饰/鞋袜] single_leg_warmer | 单腿保暖套
 [DOMAIN:标签] [CAT:服饰/头饰] bunny_headphones | 兔耳耳机
 [DOMAIN:标签] [CAT:服饰/运动休闲] sports_bra_pull | 运动胸罩拉扯
-[DOMAIN:标签] [CAT:服饰/其他] cum_on_gloves | 手套上的精液
+[DOMAIN:标签] [CAT:排除/性行为] cum_on_gloves | 手套上的精液
 [DOMAIN:标签] [CAT:服饰/鞋袜] shiny_pantyhose | 闪亮连裤袜
 [DOMAIN:标签] [CAT:服饰/日常便服] fold-over_collar | 翻折领
 [DOMAIN:标签] [CAT:服饰/日常便服] pleated_pants | 百褶裤
@@ -5207,7 +5207,7 @@
 [DOMAIN:标签] [CAT:服饰/日常便服] fur-trimmed_sweater | 毛边毛衣
 [DOMAIN:标签] [CAT:服饰/和风民族] dotera_(clothes) | 道帔（服装）
 [DOMAIN:标签] [CAT:服饰/其他] impossible_vest | 不可能背心
-[DOMAIN:标签] [CAT:服饰/洋装礼服] mermaid_dress | 人鱼连衣裙
+[DOMAIN:标签] [CAT:排除/兽化非人] mermaid_dress | 人鱼连衣裙
 [DOMAIN:标签] [CAT:服饰/鞋袜] fila | 斐乐
 [DOMAIN:标签] [CAT:服饰/外套大衣] shared_coat | 共享外套
 [DOMAIN:标签] [CAT:服饰/制服校服] soviet_school_uniform | 苏联学生制服
@@ -5275,8 +5275,8 @@
 [DOMAIN:标签] [CAT:服饰/配饰] snake_armband | 蛇形臂环
 [DOMAIN:标签] [CAT:服饰/泳装内衣] vertical-striped_pajamas | 竖条纹睡衣
 [DOMAIN:标签] [CAT:服饰/头饰] reindeer_hood | 驯鹿兜帽
-[DOMAIN:标签] [CAT:服饰/泳装内衣] print_male_swimwear | 印花男式泳装
-[DOMAIN:标签] [CAT:服饰/泳装内衣] purple_male_underwear | 紫色男式内裤
+[DOMAIN:标签] [CAT:排除/男性雄性] print_male_swimwear | 印花男式泳装
+[DOMAIN:标签] [CAT:排除/男性雄性] purple_male_underwear | 紫色男式内裤
 [DOMAIN:标签] [CAT:服饰/配饰] sticker_on_leg | 腿部贴纸
 [DOMAIN:标签] [CAT:服饰/鞋袜] blood_on_shoes | 鞋上血迹
 [DOMAIN:标签] [CAT:服饰/日常便服] asymmetrical_shirt | 不对称衬衫
@@ -5342,7 +5342,7 @@
 [DOMAIN:标签] [CAT:服饰/军装战斗] blood_on_armor | 盔甲染血
 [DOMAIN:标签] [CAT:服饰/日常便服] polka_dot_sleeves | 波点袖
 [DOMAIN:标签] [CAT:服饰/日常便服] denim_vest | 牛仔背心
-[DOMAIN:标签] [CAT:服饰/鞋袜] hoof_shoes | 蹄形鞋
+[DOMAIN:标签] [CAT:排除/兽化非人] hoof_shoes | 蹄形鞋
 [DOMAIN:标签] [CAT:服饰/和风民族] torn_robe | 破损长袍
 [DOMAIN:标签] [CAT:服饰/配饰] round_bag | 圆形包
 [DOMAIN:标签] [CAT:服饰/日常便服] white_blouse | 白色衬衫
@@ -5362,12 +5362,12 @@
 [DOMAIN:标签] [CAT:服饰/运动休闲] two-sided_hoodie | 双面连帽衫
 [DOMAIN:标签] [CAT:服饰/外套大衣] padded_cloak | 填充斗篷
 [DOMAIN:标签] [CAT:服饰/和风民族] indonesian_clothes | 印尼传统服饰
-[DOMAIN:标签] [CAT:服饰/泳装内衣] male_swimwear_pull | 男性泳装上衣
+[DOMAIN:标签] [CAT:排除/男性雄性] male_swimwear_pull | 男性泳装上衣
 [DOMAIN:标签] [CAT:服饰/鞋袜] torn_tights | 破损连裤袜
 [DOMAIN:标签] [CAT:服饰/洋装礼服] cross_cutout | 十字镂空
 [DOMAIN:标签] [CAT:服饰/运动休闲] hooded_top | 连帽上衣
 [DOMAIN:标签] [CAT:服饰/泳装内衣] zipper_panties | 拉链内裤
-[DOMAIN:标签] [CAT:服饰/泳装内衣] orange_male_swimwear | 橙色男性泳装
+[DOMAIN:标签] [CAT:排除/男性雄性] orange_male_swimwear | 橙色男性泳装
 [DOMAIN:标签] [CAT:服饰/头饰] antlers_through_hood | 兜帽穿鹿角
 [DOMAIN:标签] [CAT:服饰/洋装礼服] belted_skirt | 束腰半身裙
 [DOMAIN:标签] [CAT:服饰/制服校服] yellow_serafuku | 黄色水手服
@@ -5473,7 +5473,7 @@
 [DOMAIN:标签] [CAT:服饰/泳装内衣] double_bikini | 双层比基尼
 [DOMAIN:标签] [CAT:服饰/配饰] gauze_on_leg | 腿部绷带
 [DOMAIN:标签] [CAT:服饰/军装战斗] camouflage_tank_top | 迷彩背心
-[DOMAIN:标签] [CAT:服饰/其他] sock_on_penis | 阴茎袜套
+[DOMAIN:标签] [CAT:排除/性行为] sock_on_penis | 阴茎袜套
 [DOMAIN:标签] [CAT:服饰/军装战斗] kettle_helm | 壶形盔
 [DOMAIN:标签] [CAT:服饰/泳装内衣] see-through_babydoll | 透视睡裙
 [DOMAIN:标签] [CAT:服饰/洋装礼服] holding_veil | 手持面纱
@@ -5489,7 +5489,7 @@
 [DOMAIN:标签] [CAT:服饰/制服校服] s4_uniform | S4制服
 [DOMAIN:标签] [CAT:服饰/日常便服] loose_pants | 宽松长裤
 [DOMAIN:标签] [CAT:服饰/鞋袜] no-show_socks | 船袜
-[DOMAIN:标签] [CAT:服饰/泳装内衣] pink_male_underwear | 粉色男式内裤
+[DOMAIN:标签] [CAT:排除/男性雄性] pink_male_underwear | 粉色男式内裤
 [DOMAIN:标签] [CAT:服饰/外套大衣] argyle_coat | 菱形花纹外套
 [DOMAIN:标签] [CAT:服饰/和风民族] chinese_wedding | 中式婚礼
 [DOMAIN:标签] [CAT:服饰/运动休闲] open_leotard | 开襟体操服
@@ -5500,7 +5500,7 @@
 [DOMAIN:标签] [CAT:服饰/日常便服] union_jack_print | 英国国旗印花
 [DOMAIN:标签] [CAT:服饰/洋装礼服] gingham_dress | 格子连衣裙
 [DOMAIN:标签] [CAT:服饰/日常便服] vertical-striped_apron | 竖条纹围裙
-[DOMAIN:标签] [CAT:服饰/其他] cum_on_skirt | 裙上精渍
+[DOMAIN:标签] [CAT:排除/性行为] cum_on_skirt | 裙上精渍
 [DOMAIN:标签] [CAT:服饰/泳装内衣] bow_camisole | 蝴蝶结吊带衫
 [DOMAIN:标签] [CAT:服饰/日常便服] polka_dot_pants | 波点裤
 [DOMAIN:标签] [CAT:服饰/鞋袜] heel | 高跟鞋
@@ -5874,7 +5874,7 @@
 [DOMAIN:标签] [CAT:服饰/军装战斗] black_gauntlets | 黑色臂铠
 [DOMAIN:标签] [CAT:服饰/其他] pink_pasties | 粉色乳贴
 [DOMAIN:标签] [CAT:服饰/配饰] necklace_between_breasts | 乳间项链
-[DOMAIN:标签] [CAT:服饰/军装战斗] meat_armor | 肉甲
+[DOMAIN:标签] [CAT:排除/猎奇血腥] meat_armor | 肉甲
 [DOMAIN:标签] [CAT:服饰/其他] latex_shorts | 乳胶短裤
 [DOMAIN:标签] [CAT:服饰/配饰] waist_hold | 腰部固定
 [DOMAIN:标签] [CAT:服饰/鞋袜] shoes_on | 穿鞋
@@ -5989,7 +5989,7 @@
 [DOMAIN:标签] [CAT:服饰/配饰] too_many_bows | 过多蝴蝶结
 [DOMAIN:标签] [CAT:服饰/配饰] orange_brooch | 橙色胸针
 [DOMAIN:标签] [CAT:服饰/头饰] two-tone_eyewear | 双色眼镜
-[DOMAIN:标签] [CAT:服饰/其他] object_on_pectorals | 胸前物体
+[DOMAIN:标签] [CAT:排除/男性雄性] object_on_pectorals | 胸前物体
 [DOMAIN:标签] [CAT:服饰/泳装内衣] nipple_ribbon | 乳首丝带
 [DOMAIN:标签] [CAT:服饰/配饰] brown_bridal_gauntlets | 棕色新娘臂铠
 [DOMAIN:标签] [CAT:服饰/运动休闲] two-tone_jumpsuit | 双色连体服
@@ -6022,7 +6022,7 @@
 [DOMAIN:标签] [CAT:服饰/头饰] knife_hair_ornament | 发簪刀
 [DOMAIN:标签] [CAT:服饰/泳装内衣] pink_negligee | 粉色睡裙
 [DOMAIN:标签] [CAT:服饰/制服校服] osafune_girls_academy_school_uniform | 长船女学院校服
-[DOMAIN:标签] [CAT:服饰/泳装内衣] grey_male_swimwear | 灰色男性泳装
+[DOMAIN:标签] [CAT:排除/男性雄性] grey_male_swimwear | 灰色男性泳装
 [DOMAIN:标签] [CAT:服饰/头饰] lollipop_hair_ornament | 棒棒糖发饰
 [DOMAIN:标签] [CAT:服饰/制服校服] meister_otome_uniform | 女主人偶制服
 [DOMAIN:标签] [CAT:服饰/配饰] heart_ribbon | 心之缎带
@@ -6070,7 +6070,7 @@
 [DOMAIN:标签] [CAT:服饰/配饰] snowflake_necklace | 雪花项链
 [DOMAIN:标签] [CAT:服饰/制服校服] undone_ascot | 松散阿斯科特领巾
 [DOMAIN:标签] [CAT:服饰/外套大衣] fur_shirt | 毛皮衬衫
-[DOMAIN:标签] [CAT:服饰/泳装内衣] striped_male_underwear | 条纹男式内裤
+[DOMAIN:标签] [CAT:排除/男性雄性] striped_male_underwear | 条纹男式内裤
 [DOMAIN:标签] [CAT:服饰/鞋袜] nike_air_force_1 | 耐克空军一号
 [DOMAIN:标签] [CAT:服饰/配饰] saddlebags | 鞍囊
 [DOMAIN:标签] [CAT:服饰/运动休闲] tennis_skirt | 网球裙
@@ -6135,7 +6135,7 @@
 [DOMAIN:标签] [CAT:服饰/配饰] acorn_pendant | 橡果吊坠
 [DOMAIN:标签] [CAT:服饰/头饰] frilled_hood | 褶边兜帽
 [DOMAIN:标签] [CAT:服饰/泳装内衣] fishnet_panties | 网纱内裤
-[DOMAIN:标签] [CAT:服饰/其他] penis_ornament | 阴茎饰物
+[DOMAIN:标签] [CAT:排除/性行为] penis_ornament | 阴茎饰物
 [DOMAIN:标签] [CAT:服饰/配饰] mismatched_arm_warmers | 不对称臂套
 [DOMAIN:标签] [CAT:服饰/日常便服] spring_onion_print | 青葱印花
 [DOMAIN:标签] [CAT:服饰/洋装礼服] sweater_under_dress | 连衣裙内搭毛衣
@@ -6180,7 +6180,7 @@
 [DOMAIN:标签] [CAT:服饰/和风民族] tibetan_clothes | 藏服
 [DOMAIN:标签] [CAT:服饰/外套大衣] windbreaker | 防风外套
 [DOMAIN:标签] [CAT:服饰/洋装礼服] chipmunk_costume | 花栗鼠服装
-[DOMAIN:标签] [CAT:服饰/洋装礼服] iron_man_(cosplay) | 钢铁侠（Cosplay）
+[DOMAIN:标签] [CAT:排除/男性雄性] iron_man_(cosplay) | 钢铁侠（Cosplay）
 [DOMAIN:标签] [CAT:服饰/鞋袜] pantyhose_under_buruma | 运动短裤下的连裤袜
 [DOMAIN:标签] [CAT:服饰/运动休闲] angel_leotard | 天使连体衣
 [DOMAIN:标签] [CAT:服饰/头饰] torn_veil | 撕裂面纱
@@ -6307,7 +6307,7 @@
 [DOMAIN:标签] [CAT:服饰/泳装内衣] argyle_bikini | 菱形格比基尼
 [DOMAIN:标签] [CAT:服饰/头饰] clock_hair_ornament | 时钟发饰
 [DOMAIN:标签] [CAT:服饰/头饰] gold_diadem | 黄金头饰
-[DOMAIN:标签] [CAT:服饰/泳装内衣] purple_male_swimwear | 紫色男性泳装
+[DOMAIN:标签] [CAT:排除/男性雄性] purple_male_swimwear | 紫色男性泳装
 [DOMAIN:标签] [CAT:服饰/军装战斗] bone_armor | 骨甲
 [DOMAIN:标签] [CAT:服饰/制服校服] jojifuku | 常服
 [DOMAIN:标签] [CAT:服饰/运动休闲] dobok | 道服
@@ -6451,7 +6451,7 @@
 [DOMAIN:标签] [CAT:服饰/配饰] metal_wrist_cuffs | 金属腕铐
 [DOMAIN:标签] [CAT:服饰/军装战斗] ss_uniform | 党卫军制服
 [DOMAIN:标签] [CAT:服饰/其他] unworn_bloomers | 未穿着灯笼裤
-[DOMAIN:标签] [CAT:服饰/泳装内衣] brown_male_swimwear | 棕色男性泳装
+[DOMAIN:标签] [CAT:排除/男性雄性] brown_male_swimwear | 棕色男性泳装
 [DOMAIN:标签] [CAT:服饰/洋装礼服] teal_dress | 青绿色连衣裙
 [DOMAIN:标签] [CAT:服饰/制服校服] seisen_school_uniform | 圣泉学园校服
 [DOMAIN:标签] [CAT:服饰/头饰] trilby | 特里比帽
@@ -6612,7 +6612,7 @@
 [DOMAIN:标签] [CAT:服饰/其他] head_wreath_removed | 移除头冠
 [DOMAIN:标签] [CAT:服饰/运动休闲] striped_jumpsuit | 条纹连体裤
 [DOMAIN:标签] [CAT:服饰/头饰] lion_hood | 狮头兜帽
-[DOMAIN:标签] [CAT:服饰/泳装内衣] wet_male_swimwear | 湿身男泳装
+[DOMAIN:标签] [CAT:排除/男性雄性] wet_male_swimwear | 湿身男泳装
 [DOMAIN:标签] [CAT:服饰/泳装内衣] bra_tug | 胸罩拉扯
 [DOMAIN:标签] [CAT:服饰/配饰] elbow_cuffs | 肘部袖扣
 [DOMAIN:标签] [CAT:服饰/泳装内衣] red_bustier | 红色紧身胸衣
@@ -6800,7 +6800,7 @@
 [DOMAIN:标签] [CAT:服饰/日常便服] pantaloons | 灯笼裤
 [DOMAIN:标签] [CAT:服饰/鞋袜] brown_garter_straps | 棕色吊带袜
 [DOMAIN:标签] [CAT:服饰/泳装内衣] brown_tube_top | 棕色抹胸
-[DOMAIN:标签] [CAT:服饰/泳装内衣] pink_male_swimwear | 粉色男性泳装
+[DOMAIN:标签] [CAT:排除/男性雄性] pink_male_swimwear | 粉色男性泳装
 [DOMAIN:标签] [CAT:服饰/日常便服] sleevejob | 袖部特写
 [DOMAIN:标签] [CAT:服饰/外套大衣] mantle | 斗篷
 [DOMAIN:标签] [CAT:服饰/军装战斗] ribbon_of_saint_george | 圣乔治丝带
@@ -6813,7 +6813,7 @@
 [DOMAIN:标签] [CAT:服饰/头饰] skullcap | 无檐便帽
 [DOMAIN:标签] [CAT:服饰/配饰] pumpkin_earrings | 南瓜耳环
 [DOMAIN:标签] [CAT:服饰/配饰] yellow_neckwear | 黄色颈饰
-[DOMAIN:标签] [CAT:服饰/洋装礼服] zombie_costume | 僵尸装
+[DOMAIN:标签] [CAT:排除/猎奇血腥] zombie_costume | 僵尸装
 [DOMAIN:标签] [CAT:服饰/头饰] kendo_mask | 剑道面具
 [DOMAIN:标签] [CAT:服饰/鞋袜] long_stockings | 长筒袜
 [DOMAIN:标签] [CAT:服饰/头饰] flower_on_mouth | 口衔花
@@ -6845,7 +6845,7 @@
 [DOMAIN:标签] [CAT:服饰/运动休闲] strapless_bodysuit | 无肩带连体衣
 [DOMAIN:标签] [CAT:服饰/头饰] cheese_hair_ornament | 奶酪发饰
 [DOMAIN:标签] [CAT:服饰/日常便服] yellow_sleeve_cuffs | 黄色袖口
-[DOMAIN:标签] [CAT:服饰/洋装礼服] power_(chainsaw_man)_(cosplay) | 帕瓦（链锯人）（角色扮演）
+[DOMAIN:标签] [CAT:排除/其他] power_(chainsaw_man)_(cosplay) | 帕瓦（链锯人）（角色扮演）
 [DOMAIN:标签] [CAT:服饰/洋装礼服] oikawa_shizuku_(cosplay) | 及川雫（Cosplay）
 [DOMAIN:标签] [CAT:服饰/洋装礼服] frilly_shirt | 荷叶边衬衫
 [DOMAIN:标签] [CAT:服饰/制服校服] st._liliana's_academy_school_uniform | 圣莉莉安娜学院校服
@@ -7012,13 +7012,13 @@
 [DOMAIN:标签] [CAT:服饰/头饰] torn_hood | 破损兜帽
 [DOMAIN:标签] [CAT:服饰/鞋袜] legwear_cutout | 袜裤镂空
 [DOMAIN:标签] [CAT:服饰/和风民族] pink_haori | 粉色羽织
-[DOMAIN:标签] [CAT:服饰/其他] kemono_fabric | 兽织物
+[DOMAIN:标签] [CAT:排除/兽化非人] kemono_fabric | 兽织物
 [DOMAIN:标签] [CAT:服饰/其他] blood_on_hat | 帽上血迹
 [DOMAIN:标签] [CAT:服饰/日常便服] two-tone_sleeve_cuffs | 双色袖口
 [DOMAIN:标签] [CAT:服饰/洋装礼服] bib_bb_bib | 围兜BB围兜
-[DOMAIN:标签] [CAT:服饰/泳装内衣] multicolored_male_swimwear | 多色男式泳装
+[DOMAIN:标签] [CAT:排除/男性雄性] multicolored_male_swimwear | 多色男式泳装
 [DOMAIN:标签] [CAT:服饰/配饰] pearl_belt | 珍珠腰带
-[DOMAIN:标签] [CAT:服饰/泳装内衣] aqua_male_swimwear | 水色男士泳装
+[DOMAIN:标签] [CAT:排除/男性雄性] aqua_male_swimwear | 水色男士泳装
 [DOMAIN:标签] [CAT:服饰/泳装内衣] aqua_pajamas | 水色睡衣
 [DOMAIN:标签] [CAT:服饰/鞋袜] frilled_suspenders | 褶边吊带袜
 [DOMAIN:标签] [CAT:服饰/洋装礼服] angewomon_(cosplay) | 天使兽（Cosplay）
@@ -7039,7 +7039,7 @@
 [DOMAIN:标签] [CAT:服饰/日常便服] embroidered | 刺绣
 [DOMAIN:标签] [CAT:服饰/日常便服] dinosaur_print | 恐龙印花
 [DOMAIN:标签] [CAT:服饰/配饰] posture_collar | 姿势项圈
-[DOMAIN:标签] [CAT:服饰/泳装内衣] male_swimwear_aside | 男性泳装除外
+[DOMAIN:标签] [CAT:排除/男性雄性] male_swimwear_aside | 男性泳装除外
 [DOMAIN:标签] [CAT:服饰/配饰] two-tone_arm_warmers | 双色臂套
 [DOMAIN:标签] [CAT:服饰/配饰] white_neckwear | 白色颈饰
 [DOMAIN:标签] [CAT:服饰/外套大衣] pinstripe_coat | 细条纹外套
@@ -7065,7 +7065,7 @@
 [DOMAIN:标签] [CAT:服饰/配饰] white_string | 白色细带
 [DOMAIN:标签] [CAT:服饰/制服校服] dress_uniform | 礼服制服
 [DOMAIN:标签] [CAT:服饰/头饰] funeral_veil | 葬礼面纱
-[DOMAIN:标签] [CAT:服饰/泳装内衣] striped_male_swimwear | 条纹男式泳装
+[DOMAIN:标签] [CAT:排除/男性雄性] striped_male_swimwear | 条纹男式泳装
 [DOMAIN:标签] [CAT:服饰/洋装礼服] american_flag_skirt | 美国国旗裙
 [DOMAIN:标签] [CAT:服饰/其他] gag_under_mask | 口衔物面具
 [DOMAIN:标签] [CAT:服饰/外套大衣] green_raincoat | 绿色雨衣
@@ -7124,7 +7124,7 @@
 [DOMAIN:标签] [CAT:服饰/头饰] eyewear_visible_through_hair | 透发可见眼镜
 [DOMAIN:标签] [CAT:服饰/头饰] pixel_sunglasses | 像素太阳镜
 [DOMAIN:标签] [CAT:服饰/和风民族] print_haori | 印花羽织
-[DOMAIN:标签] [CAT:服饰/泳装内衣] plaid_male_underwear | 格纹男式内裤
+[DOMAIN:标签] [CAT:排除/男性雄性] plaid_male_underwear | 格纹男式内裤
 [DOMAIN:标签] [CAT:服饰/日常便服] pink_blouse | 粉色上衣
 [DOMAIN:标签] [CAT:服饰/配饰] shirt_ribbon | 衬衫缎带
 [DOMAIN:标签] [CAT:服饰/鞋袜] heel-less_legwear | 无跟腿袜

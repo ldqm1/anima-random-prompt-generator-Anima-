@@ -441,10 +441,31 @@ def _tag_passes_filters(
     category: str | None,
     rating_map: dict[str, str],
     max_rating: str,
+    classified_kb: bool = False,
 ) -> bool:
-    """判断单个 tag 是否通过采样前的全部清洗规则。"""
+    """判断单个 tag 是否通过采样前的全部清洗规则。
+
+    Args:
+        classified_kb: 为 True 表示 tag 来自已人工分类的知识库 v1
+            （排除项已改写为 ``排除/<子类>`` CAT，保留项按子类正常保留），
+            此时跳过旧正则/精确串/语义清单检查——分类即排除，避免
+            ``facial mark``/``cat paws``/``feathered wings`` 等误杀；
+            仅保留年龄评级与人数限定。curated 池/旧库等未分类来源仍走旧检查。
+    """
     if not _rating_ok(tag, rating_map, max_rating):
         return False
+    # 已人工分类的知识库 v1：不再套用旧正则/噪音/语义清单（分类已接管）。
+    if classified_kb:
+        # 括号消歧检查是精确白名单判定（非模糊正则），保留——
+        # 角色/作品 cosplay（如 x (kancolle) (cosplay)）仍须排除。
+        if not _is_paren_disambiguated(_normalize_tag(tag)):
+            return False
+        if (
+            category == "count_gender"
+            and _normalize_tag(tag) not in config.DEFAULT_COUNT_GENDER_TAGS
+        ):
+            return False
+        return True
     # 介质/噪音 meta tag 无条件排除（对已入池的 curated 池 tag 同样生效，
     # 不依赖「是否入池」判定——噪音词混入 curated 池时会直接进 LLM 输入）。
     if config.is_noise_meta_tag(_normalize_tag(tag)):
@@ -476,29 +497,44 @@ def build_filtered_knowledge_database(
     """预过滤知识库，每个类别只保留符合当前分级与清洗规则的 tag。
 
     该函数应在批量生成前调用一次，避免在每次抽样时重复遍历全部 tag。
+
+    知识库 v1 主池（appearance/clothing/detail/pose/expression/camera/scene
+    /count_gender）已人工细粒度分类，排除项改写为 ``排除/<子类>`` CAT，
+    分类即排除——此处不再套用旧正则/语义清单（``classified_kb=True``）。
+    ``character_series`` 由角色池独立管理（用户确认角色不分类），保留旧检查兜底。
     """
     rating_map = _build_rating_map(curated_tags)
     filtered: dict[str, list[dict]] = {}
     for category, tags in database.items():
+        classified_kb = category != "character_series"
         if category == "character_series":
             role_tags = [
                 t
                 for t in tags
                 if t.get("subcategory") == "角色"
-                and _tag_passes_filters(t.get("tag", ""), category, rating_map, max_rating)
+                and _tag_passes_filters(
+                    t.get("tag", ""), category, rating_map, max_rating,
+                    classified_kb=classified_kb,
+                )
             ]
             series_tags = [
                 t
                 for t in tags
                 if t.get("subcategory") == "作品"
-                and _tag_passes_filters(t.get("tag", ""), category, rating_map, max_rating)
+                and _tag_passes_filters(
+                    t.get("tag", ""), category, rating_map, max_rating,
+                    classified_kb=classified_kb,
+                )
             ]
             filtered[category] = role_tags + series_tags
         else:
             filtered[category] = [
                 t
                 for t in tags
-                if _tag_passes_filters(t.get("tag", ""), category, rating_map, max_rating)
+                if _tag_passes_filters(
+                    t.get("tag", ""), category, rating_map, max_rating,
+                    classified_kb=classified_kb,
+                )
             ]
     return filtered
 
@@ -1064,17 +1100,18 @@ def sample_from_knowledge_v1(
                 if _normalize_tag(item.get("tag", "")) not in excluded_norms
             ]
         if pre_filtered:
-            # 预过滤库虽已通过清洗规则，但介质/噪音 meta tag 仍须排除
-            # （pre_filtered 跳过 _tag_passes_filters，噪音词会直接进 LLM 输入）。
-            return [
-                item
-                for item in tags
-                if not config.is_noise_meta_tag(_normalize_tag(item.get("tag", "")))
-            ]
+            # 预过滤库已按「分类即排除」构建（排除项为 排除/<子类> CAT，保留项
+            # 已恢复子类）；此处仅按 r18 主题排除，不再套用噪音黑名单——
+            # 噪音/元数据词已由 detail 分类（画面/元数据 配额）与人工保留判定接管。
+            return list(tags)
+        # 非预过滤路径：知识库 v1 已人工分类，跳过旧正则/语义清单（分类已接管）。
         return [
             item
             for item in tags
-            if _tag_passes_filters(item.get("tag", ""), category, rating_map, max_rating)
+            if _tag_passes_filters(
+                item.get("tag", ""), category, rating_map, max_rating,
+                classified_kb=category != "character_series",
+            )
         ]
 
     def _with_source(item: dict) -> dict:
@@ -1827,6 +1864,21 @@ def _normalize_artist_tag(tag: str) -> str:
     return normalized
 
 
+def _is_paren_disambiguated(normalized: str) -> bool:
+    """判断尾括号是否为常见消歧义词（True=可保留）。
+
+    括号内若不是常见消歧义词（或含 ``/``），视为角色/作品名而丢弃。
+    该检查是精确白名单判定（非模糊正则），对已人工分类的知识库 v1 同样生效，
+    避免 ``z3 max schultz (kancolle) (cosplay)`` 等角色 cosplay 混入池中。
+    """
+    paren_match = re.search(r"\(([^)]+)\)$", normalized)
+    if paren_match:
+        inner = paren_match.group(1).lower().strip()
+        if "/" in inner or inner not in config.PAREN_DISAMBIGUATION_OK:
+            return False
+    return True
+
+
 def is_noisy_tag(tag: str, blacklist: set[str] | None = None) -> bool:
     """判断 tag 是否为噪声（画师名、梗、随机字符、角色名等）。
 
@@ -1861,11 +1913,8 @@ def is_noisy_tag(tag: str, blacklist: set[str] | None = None) -> bool:
             return True
 
     # 括号内若不是常见消歧义词，则视为角色/作品名而丢弃。
-    paren_match = re.search(r"\(([^)]+)\)$", normalized)
-    if paren_match:
-        inner = paren_match.group(1).lower().strip()
-        if "/" in inner or inner not in config.PAREN_DISAMBIGUATION_OK:
-            return True
+    if not _is_paren_disambiguated(normalized):
+        return True
 
     return False
 

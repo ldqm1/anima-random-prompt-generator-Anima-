@@ -94,6 +94,7 @@ EXCLUDED_CATEGORIES: set[str] = {
     "二次元角色",  # 角色/作品名
     "艺术家",     # 画师名与元数据
     "无法分类",   # 大多为噪声元数据
+    "排除",       # 人工分类排除项（排除/<子类>，分类即排除，见 map_exclude_*.txt）
 }
 
 # 直接丢弃的 (category, subcategory) 对。
@@ -557,6 +558,7 @@ PAREN_DISAMBIGUATION_OK: set[str] = {
     "coloring", "hair", "body_type", "expression", "action", "nonsexual",
     "sexual", "restraint", "cheerleading", "basic", "projectile", "tool",
     "lore", "mtf", "ftm", "gvh", "bhp", "psg", "kari", "season", "temperature",
+    "hairstyle",  # 发型消歧（twintails (hairstyle) / feixianji (hairstyle)）
 }
 
 # 特定 tag 覆盖映射：解决 subcategory 粒度不够的问题。

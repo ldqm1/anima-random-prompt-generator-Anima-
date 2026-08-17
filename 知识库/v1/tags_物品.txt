@@ -4,7 +4,7 @@
 [DOMAIN:标签] [CAT:物品/动物] canine | 犬类
 [DOMAIN:标签] [CAT:物品/动物] canis | 犬属
 [DOMAIN:标签] [CAT:物品/动物] felid | 猫科动物
-[DOMAIN:标签] [CAT:物品/动物] feral | 野生
+[DOMAIN:标签] [CAT:排除/兽化非人] feral | 野生
 [DOMAIN:标签] [CAT:物品/植物] flower | 花朵
 [DOMAIN:标签] [CAT:物品/武器] weapon | 武器
 [DOMAIN:标签] [CAT:物品/其他物品] heart | 心形
@@ -20,7 +20,7 @@
 [DOMAIN:标签] [CAT:物品/动物] lagomorph | 兔形目
 [DOMAIN:标签] [CAT:物品/动物] paws | 兽爪
 [DOMAIN:标签] [CAT:物品/武器] sword | 刀剑
-[DOMAIN:标签] [CAT:物品/动物] reptile | 爬行类
+[DOMAIN:标签] [CAT:排除/兽化非人] reptile | 爬行类
 [DOMAIN:标签] [CAT:物品/动物] leporid | 兔科
 [DOMAIN:标签] [CAT:物品/其他物品] bag | 包
 [DOMAIN:标签] [CAT:物品/动物] pantherine | 豹亚科
@@ -44,7 +44,7 @@
 [DOMAIN:标签] [CAT:物品/数码设备] phone | 手机
 [DOMAIN:标签] [CAT:物品/其他物品] bed_sheet | 床单
 [DOMAIN:标签] [CAT:物品/其他物品] bandages | 绷带
-[DOMAIN:标签] [CAT:物品/其他物品] japanese_text | 日语文本
+[DOMAIN:标签] [CAT:排除/媒体噪音] japanese_text | 日语文本
 [DOMAIN:标签] [CAT:物品/植物] white_flower | 白花
 [DOMAIN:标签] [CAT:物品/其他物品] chair | 椅子
 [DOMAIN:标签] [CAT:物品/其他物品] umbrella | 雨伞
@@ -87,7 +87,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] vehicle | 载具
 [DOMAIN:标签] [CAT:物品/动物] eulipotyphlan | 劳亚食虫目
 [DOMAIN:标签] [CAT:物品/动物] mouse | 老鼠
-[DOMAIN:标签] [CAT:物品/其他物品] logo | 商标
+[DOMAIN:标签] [CAT:排除/媒体噪音] logo | 商标
 [DOMAIN:标签] [CAT:物品/其他物品] o-ring | O形环
 [DOMAIN:标签] [CAT:物品/其他物品] motor_vehicle | 机动车辆
 [DOMAIN:标签] [CAT:物品/餐具] plate | 餐盘
@@ -159,7 +159,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] sign | 标志
 [DOMAIN:标签] [CAT:物品/其他物品] asian_mythology | 亚洲神话
 [DOMAIN:标签] [CAT:物品/其他物品] unworn_hat | 未戴着的帽子
-[DOMAIN:标签] [CAT:物品/其他物品] korean_text | 韩文
+[DOMAIN:标签] [CAT:排除/媒体噪音] korean_text | 韩文
 [DOMAIN:标签] [CAT:物品/餐具] spoon | 勺子
 [DOMAIN:标签] [CAT:物品/动物] tree_squirrel | 树松鼠
 [DOMAIN:标签] [CAT:物品/其他物品] east_asian_mythology | 东亚神话
@@ -174,7 +174,7 @@
 [DOMAIN:标签] [CAT:物品/食物] chocolate | 巧克力
 [DOMAIN:标签] [CAT:物品/餐具] fork | 叉子
 [DOMAIN:标签] [CAT:物品/武器] bow_(weapon) | 弓（武器）
-[DOMAIN:标签] [CAT:物品/学习用品] page_number | 页码
+[DOMAIN:标签] [CAT:排除/媒体噪音] page_number | 页码
 [DOMAIN:标签] [CAT:物品/其他物品] ofuda | 御札
 [DOMAIN:标签] [CAT:物品/成人玩具] dildo_insertion | 假阳具插入
 [DOMAIN:标签] [CAT:物品/其他物品] dakimakura_(medium) | 等身抱枕（中号）
@@ -230,7 +230,7 @@
 [DOMAIN:标签] [CAT:物品/武器] cannon | 加农炮
 [DOMAIN:标签] [CAT:物品/其他物品] hitodama | 人魂
 [DOMAIN:标签] [CAT:物品/其他物品] bench | 长凳
-[DOMAIN:标签] [CAT:物品/其他物品] patreon_logo | Patreon标志
+[DOMAIN:标签] [CAT:排除/媒体噪音] patreon_logo | Patreon标志
 [DOMAIN:标签] [CAT:物品/餐具] disposable_cup | 一次性纸杯
 [DOMAIN:标签] [CAT:物品/其他物品] beachball | 沙滩球
 [DOMAIN:标签] [CAT:物品/成人玩具] buttplug | 肛塞
@@ -263,7 +263,7 @@
 [DOMAIN:标签] [CAT:物品/成人玩具] used_condom | 使用过的避孕套
 [DOMAIN:标签] [CAT:物品/武器] scabbard | 刀鞘
 [DOMAIN:标签] [CAT:物品/其他物品] rigging | 索具装置
-[DOMAIN:标签] [CAT:物品/动物] larger_feral | 大型野兽
+[DOMAIN:标签] [CAT:排除/兽化非人] larger_feral | 大型野兽
 [DOMAIN:标签] [CAT:物品/成人玩具] condom_wrapper | 避孕套包装
 [DOMAIN:标签] [CAT:物品/其他物品] string | 细绳
 [DOMAIN:标签] [CAT:物品/动物] bat_(animal) | 蝙蝠（动物）
@@ -366,10 +366,10 @@
 [DOMAIN:标签] [CAT:物品/其他物品] robot_joints | 机器人关节
 [DOMAIN:标签] [CAT:物品/其他物品] american_flag | 美国国旗
 [DOMAIN:标签] [CAT:物品/植物] lily_(flower) | 百合花
-[DOMAIN:标签] [CAT:物品/食物] meat | 肉类
+[DOMAIN:标签] [CAT:排除/猎奇血腥] meat | 肉类
 [DOMAIN:标签] [CAT:物品/其他物品] utility_pole | 电线杆
 [DOMAIN:标签] [CAT:物品/数码设备] laptop | 笔记本电脑
-[DOMAIN:标签] [CAT:物品/其他物品] weibo_logo | 微博标识
+[DOMAIN:标签] [CAT:排除/媒体噪音] weibo_logo | 微博标识
 [DOMAIN:标签] [CAT:物品/其他物品] orb | 光球
 [DOMAIN:标签] [CAT:物品/其他物品] broken | 破损
 [DOMAIN:标签] [CAT:物品/其他物品] vase | 花瓶
@@ -408,7 +408,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] water_gun | 水枪
 [DOMAIN:标签] [CAT:物品/餐具] beer_mug | 啤酒杯
 [DOMAIN:标签] [CAT:物品/食物] grapes | 葡萄
-[DOMAIN:标签] [CAT:物品/动物] snout | 动物口鼻部
+[DOMAIN:标签] [CAT:排除/兽化非人] snout | 动物口鼻部
 [DOMAIN:标签] [CAT:物品/其他物品] poster_(object) | 海报（物品）
 [DOMAIN:标签] [CAT:物品/其他物品] bone | 骨骼
 [DOMAIN:标签] [CAT:物品/餐具] coffee_mug | 咖啡杯
@@ -434,7 +434,7 @@
 [DOMAIN:标签] [CAT:物品/武器] machine_gun | 机枪
 [DOMAIN:标签] [CAT:物品/其他物品] starfish | 海星
 [DOMAIN:标签] [CAT:物品/动物] chick | 雏鸟
-[DOMAIN:标签] [CAT:物品/其他物品] text_box | 文本框
+[DOMAIN:标签] [CAT:排除/媒体噪音] text_box | 文本框
 [DOMAIN:标签] [CAT:物品/动物] crow | 乌鸦
 [DOMAIN:标签] [CAT:物品/食物] spring_onion | 大葱
 [DOMAIN:标签] [CAT:物品/其他物品] statue | 雕像
@@ -458,7 +458,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] stand_(jojo) | 替身（JoJo）
 [DOMAIN:标签] [CAT:物品/其他物品] trading_card | 集换式卡牌
 [DOMAIN:标签] [CAT:物品/其他物品] painting_(object) | 画作（物品）
-[DOMAIN:标签] [CAT:物品/其他物品] album_cover | 专辑封面
+[DOMAIN:标签] [CAT:排除/媒体噪音] album_cover | 专辑封面
 [DOMAIN:标签] [CAT:物品/数码设备] computer_keyboard | 电脑键盘
 [DOMAIN:标签] [CAT:物品/数码设备] viewfinder | 取景器
 [DOMAIN:标签] [CAT:物品/其他物品] hose | 软管
@@ -489,7 +489,7 @@
 [DOMAIN:标签] [CAT:物品/食物] lemon | 柠檬
 [DOMAIN:标签] [CAT:物品/其他物品] improvised_gag | 临时口塞
 [DOMAIN:标签] [CAT:物品/武器] command_spell | 令咒
-[DOMAIN:标签] [CAT:物品/动物] beak | 鸟喙
+[DOMAIN:标签] [CAT:排除/兽化非人] beak | 鸟喙
 [DOMAIN:标签] [CAT:物品/武器] trident | 三叉戟
 [DOMAIN:标签] [CAT:物品/其他物品] tomoe_(symbol) | 巴纹（符号）
 [DOMAIN:标签] [CAT:物品/食物] tomato | 番茄
@@ -510,7 +510,7 @@
 [DOMAIN:标签] [CAT:物品/乐器] violin | 小提琴
 [DOMAIN:标签] [CAT:物品/动物] tiger | 老虎
 [DOMAIN:标签] [CAT:物品/动物] octopus | 章鱼
-[DOMAIN:标签] [CAT:物品/其他物品] cum_pool | 精液池
+[DOMAIN:标签] [CAT:排除/性行为] cum_pool | 精液池
 [DOMAIN:标签] [CAT:物品/其他物品] fishing_rod | 钓鱼竿
 [DOMAIN:标签] [CAT:物品/食物] pizza | 披萨
 [DOMAIN:标签] [CAT:物品/其他物品] paper_bag | 纸袋
@@ -520,7 +520,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] spacecraft | 航天器
 [DOMAIN:标签] [CAT:物品/乐器] drum | 鼓
 [DOMAIN:标签] [CAT:物品/武器] scope | 瞄准镜
-[DOMAIN:标签] [CAT:物品/其他物品] non-humanoid_robot | 非人形机器人
+[DOMAIN:标签] [CAT:排除/兽化非人] non-humanoid_robot | 非人形机器人
 [DOMAIN:标签] [CAT:物品/其他物品] cage | 笼子
 [DOMAIN:标签] [CAT:物品/食物] chewing_gum | 口香糖
 [DOMAIN:标签] [CAT:物品/武器] rapier | 刺剑
@@ -549,7 +549,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] wrench | 扳手
 [DOMAIN:标签] [CAT:物品/其他物品] map | 地图
 [DOMAIN:标签] [CAT:物品/数码设备] energy_gun | 能量枪
-[DOMAIN:标签] [CAT:物品/数码设备] twitter_logo | 推特标志
+[DOMAIN:标签] [CAT:排除/媒体噪音] twitter_logo | 推特标志
 [DOMAIN:标签] [CAT:物品/其他物品] kiseru | 烟管
 [DOMAIN:标签] [CAT:物品/食物] pancake | 松饼
 [DOMAIN:标签] [CAT:物品/其他物品] briefcase | 公文包
@@ -559,7 +559,7 @@
 [DOMAIN:标签] [CAT:物品/成人玩具] animal_penis | 动物阴茎
 [DOMAIN:标签] [CAT:物品/其他物品] lifebuoy | 救生圈
 [DOMAIN:标签] [CAT:物品/动物] eevee | 伊布
-[DOMAIN:标签] [CAT:物品/其他物品] banner | 横幅
+[DOMAIN:标签] [CAT:排除/媒体噪音] banner | 横幅
 [DOMAIN:标签] [CAT:物品/食物] cupcake | 纸杯蛋糕
 [DOMAIN:标签] [CAT:物品/学习用品] calligraphy_brush | 毛笔
 [DOMAIN:标签] [CAT:物品/数码设备] stylus | 触控笔
@@ -608,7 +608,7 @@
 [DOMAIN:标签] [CAT:物品/武器] grenade | 手榴弹
 [DOMAIN:标签] [CAT:物品/动物] grizzly_bear | 灰熊
 [DOMAIN:标签] [CAT:物品/数码设备] binoculars | 双筒望远镜
-[DOMAIN:标签] [CAT:物品/其他物品] magazine_cover | 杂志封面
+[DOMAIN:标签] [CAT:排除/媒体噪音] magazine_cover | 杂志封面
 [DOMAIN:标签] [CAT:物品/食物] ramen | 拉面
 [DOMAIN:标签] [CAT:物品/其他物品] pill | 药片
 [DOMAIN:标签] [CAT:物品/其他物品] shikishi | 色纸
@@ -895,7 +895,7 @@
 [DOMAIN:标签] [CAT:物品/武器] breath_weapon | 吐息武器
 [DOMAIN:标签] [CAT:物品/其他物品] inverted_cross | 逆十字
 [DOMAIN:标签] [CAT:物品/其他物品] wheel | 车轮
-[DOMAIN:标签] [CAT:物品/数码设备] twitter | 推特
+[DOMAIN:标签] [CAT:排除/媒体噪音] twitter | 推特
 [DOMAIN:标签] [CAT:物品/学习用品] notepad | 记事本
 [DOMAIN:标签] [CAT:物品/其他物品] pussy_juice_puddle | 爱液水洼
 [DOMAIN:标签] [CAT:物品/成人玩具] artificial_vagina | 人工阴道
@@ -945,7 +945,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] potion | 药水
 [DOMAIN:标签] [CAT:物品/武器] magical_musket | 魔弹
 [DOMAIN:标签] [CAT:物品/其他物品] soap | 肥皂
-[DOMAIN:标签] [CAT:物品/数码设备] instagram_logo | Instagram标志
+[DOMAIN:标签] [CAT:排除/媒体噪音] instagram_logo | Instagram标志
 [DOMAIN:标签] [CAT:物品/其他物品] raising_heart | 旭日之心
 [DOMAIN:标签] [CAT:物品/其他物品] drill | 钻头
 [DOMAIN:标签] [CAT:物品/其他物品] tablecloth | 桌布
@@ -962,7 +962,7 @@
 [DOMAIN:标签] [CAT:物品/学习用品] mechanical_pencil | 自动铅笔
 [DOMAIN:标签] [CAT:物品/食物] ramune | 波子汽水
 [DOMAIN:标签] [CAT:物品/数码设备] battery_indicator | 电量指示器
-[DOMAIN:标签] [CAT:物品/其他物品] chart | 图表
+[DOMAIN:标签] [CAT:排除/媒体噪音] chart | 图表
 [DOMAIN:标签] [CAT:物品/其他物品] japanese_flag | 日本国旗
 [DOMAIN:标签] [CAT:物品/食物] juice | 果汁
 [DOMAIN:标签] [CAT:物品/食物] ketchup | 番茄酱
@@ -976,12 +976,12 @@
 [DOMAIN:标签] [CAT:物品/其他物品] cat_teaser | 逗猫棒
 [DOMAIN:标签] [CAT:物品/动物] fireflies | 萤火虫
 [DOMAIN:标签] [CAT:物品/餐具] kitchen_knife | 厨刀
-[DOMAIN:标签] [CAT:物品/食物] boned_meat | 带骨肉
+[DOMAIN:标签] [CAT:排除/猎奇血腥] boned_meat | 带骨肉
 [DOMAIN:标签] [CAT:物品/其他物品] venus_symbol | 金星符号
 [DOMAIN:标签] [CAT:物品/食物] cucumber | 黄瓜
 [DOMAIN:标签] [CAT:物品/武器] spear_the_gungnir | 永恒之枪
 [DOMAIN:标签] [CAT:物品/其他物品] white_umbrella | 白色阳伞
-[DOMAIN:标签] [CAT:物品/动物] horse_penis | 马阴茎
+[DOMAIN:标签] [CAT:排除/性行为] horse_penis | 马阴茎
 [DOMAIN:标签] [CAT:物品/其他物品] laser | 激光
 [DOMAIN:标签] [CAT:物品/动物] eagle | 鹰
 [DOMAIN:标签] [CAT:物品/武器] halberd | 戟
@@ -1045,11 +1045,11 @@
 [DOMAIN:标签] [CAT:物品/动物] pokemon_on_shoulder | 肩上宝可梦
 [DOMAIN:标签] [CAT:物品/食物] sausage | 香肠
 [DOMAIN:标签] [CAT:物品/餐具] coffee_cup | 咖啡杯
-[DOMAIN:标签] [CAT:物品/学习用品] novel_cover | 小说封面
+[DOMAIN:标签] [CAT:排除/媒体噪音] novel_cover | 小说封面
 [DOMAIN:标签] [CAT:物品/其他物品] broken_chain | 断裂锁链
 [DOMAIN:标签] [CAT:物品/其他物品] origami | 折纸
 [DOMAIN:标签] [CAT:物品/动物] western_dragon | 西方龙
-[DOMAIN:标签] [CAT:物品/其他物品] german_text | 德语文字
+[DOMAIN:标签] [CAT:排除/媒体噪音] german_text | 德语文字
 [DOMAIN:标签] [CAT:物品/其他物品] handcuffed | 戴手铐
 [DOMAIN:标签] [CAT:物品/其他物品] dowsing_rod | 探矿杖
 [DOMAIN:标签] [CAT:物品/餐具] mixing_bowl | 搅拌碗
@@ -1139,7 +1139,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] sorcerer's_sutra_scroll | 咒术卷轴
 [DOMAIN:标签] [CAT:物品/其他物品] yin_yang_orb | 阴阳玉
 [DOMAIN:标签] [CAT:物品/动物] glowing_butterfly | 发光蝴蝶
-[DOMAIN:标签] [CAT:物品/动物] robot_animal | 机械动物
+[DOMAIN:标签] [CAT:排除/兽化非人] robot_animal | 机械动物
 [DOMAIN:标签] [CAT:物品/其他物品] analog_clock | 模拟时钟
 [DOMAIN:标签] [CAT:物品/其他物品] bishamonten's_pagoda | 毗沙门天宝塔
 [DOMAIN:标签] [CAT:物品/其他物品] rolling_suitcase | 滚轮行李箱
@@ -1171,14 +1171,14 @@
 [DOMAIN:标签] [CAT:物品/其他物品] folding_chair | 折叠椅
 [DOMAIN:标签] [CAT:物品/其他物品] androgyne_symbol | 双性符号
 [DOMAIN:标签] [CAT:物品/其他物品] washing_machine | 洗衣机
-[DOMAIN:标签] [CAT:物品/其他物品] circled_9 | 圆圈数字9
+[DOMAIN:标签] [CAT:排除/媒体噪音] circled_9 | 圆圈数字9
 [DOMAIN:标签] [CAT:物品/其他物品] noose | 绞索
 [DOMAIN:标签] [CAT:物品/食物] chocolate_on_breasts | 胸部巧克力
 [DOMAIN:标签] [CAT:物品/其他物品] propeller | 螺旋桨
 [DOMAIN:标签] [CAT:物品/其他物品] butterfly_net | 捕虫网
 [DOMAIN:标签] [CAT:物品/食物] watermelon_bar | 西瓜冰棍
 [DOMAIN:标签] [CAT:物品/学习用品] ruler | 尺子
-[DOMAIN:标签] [CAT:物品/其他物品] sperm_cell | 精子细胞
+[DOMAIN:标签] [CAT:排除/性行为] sperm_cell | 精子细胞
 [DOMAIN:标签] [CAT:物品/动物] leafeon | 叶伊布
 [DOMAIN:标签] [CAT:物品/食物] box_of_chocolates | 巧克力礼盒
 [DOMAIN:标签] [CAT:物品/其他物品] eye_of_horus | 荷鲁斯之眼
@@ -1280,7 +1280,7 @@
 [DOMAIN:标签] [CAT:物品/成人玩具] condom_box | 避孕套包装盒
 [DOMAIN:标签] [CAT:物品/其他物品] warning_sign | 警示标志
 [DOMAIN:标签] [CAT:物品/其他物品] pool_of_blood | 血泊
-[DOMAIN:标签] [CAT:物品/其他物品] chaldea_logo | 迦勒底标志
+[DOMAIN:标签] [CAT:排除/媒体噪音] chaldea_logo | 迦勒底标志
 [DOMAIN:标签] [CAT:物品/武器] wakizashi | 胁差
 [DOMAIN:标签] [CAT:物品/食物] berry_(pokemon) | 树果（宝可梦）
 [DOMAIN:标签] [CAT:物品/武器] light_machine_gun | 轻机枪
@@ -1370,7 +1370,7 @@
 [DOMAIN:标签] [CAT:物品/植物] peony_(flower) | 牡丹（花）
 [DOMAIN:标签] [CAT:物品/动物] clownfish | 小丑鱼
 [DOMAIN:标签] [CAT:物品/食物] ice_cream_float | 冰淇淋汽水
-[DOMAIN:标签] [CAT:物品/其他物品] tentacles_on_male | 男性触手
+[DOMAIN:标签] [CAT:排除/性行为] tentacles_on_male | 男性触手
 [DOMAIN:标签] [CAT:物品/其他物品] king_(chess) | 王（国际象棋）
 [DOMAIN:标签] [CAT:物品/其他物品] nata_(tool) | 砍刀（工具）
 [DOMAIN:标签] [CAT:物品/其他物品] crane_game | 抓娃娃机
@@ -1399,7 +1399,7 @@
 [DOMAIN:标签] [CAT:物品/数码设备] nintendo_ds | 任天堂DS
 [DOMAIN:标签] [CAT:物品/其他物品] cat_bag | 猫包
 [DOMAIN:标签] [CAT:物品/食物] onion | 洋葱
-[DOMAIN:标签] [CAT:物品/动物] dog_penis | 犬阴茎
+[DOMAIN:标签] [CAT:排除/性行为] dog_penis | 犬阴茎
 [DOMAIN:标签] [CAT:物品/其他物品] energy_beam | 能量光束
 [DOMAIN:标签] [CAT:物品/食物] bubble_tea_challenge | 奶茶挑战
 [DOMAIN:标签] [CAT:物品/其他物品] survey_corps_(emblem) | 调查兵团（徽章）
@@ -1412,7 +1412,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] maneki-neko | 招财猫
 [DOMAIN:标签] [CAT:物品/食物] swiss_roll | 瑞士卷
 [DOMAIN:标签] [CAT:物品/其他物品] paper_crane | 纸鹤
-[DOMAIN:标签] [CAT:物品/动物] crocodilian | 鳄目动物
+[DOMAIN:标签] [CAT:排除/兽化非人] crocodilian | 鳄目动物
 [DOMAIN:标签] [CAT:物品/动物] lizard | 蜥蜴
 [DOMAIN:标签] [CAT:物品/其他物品] tape_measure | 卷尺
 [DOMAIN:标签] [CAT:物品/其他物品] license_plate | 车牌
@@ -1468,7 +1468,7 @@
 [DOMAIN:标签] [CAT:物品/武器] caliburn_(fate) | 石中剑（Fate）
 [DOMAIN:标签] [CAT:物品/动物] butterfly_sitting | 停落的蝴蝶
 [DOMAIN:标签] [CAT:物品/其他物品] crowbar | 撬棍
-[DOMAIN:标签] [CAT:物品/其他物品] dvd_cover | DVD封面
+[DOMAIN:标签] [CAT:排除/媒体噪音] dvd_cover | DVD封面
 [DOMAIN:标签] [CAT:物品/植物] purple_butterfly | 紫蝴蝶
 [DOMAIN:标签] [CAT:物品/乐器] note | 音符
 [DOMAIN:标签] [CAT:物品/动物] crane_(animal) | 鹤（动物）
@@ -1587,7 +1587,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] wanted_poster | 悬赏令
 [DOMAIN:标签] [CAT:物品/其他物品] volleyball_net | 排球网
 [DOMAIN:标签] [CAT:物品/餐具] tea_set | 茶具套装
-[DOMAIN:标签] [CAT:物品/其他物品] fake_magazine_cover | 假杂志封面
+[DOMAIN:标签] [CAT:排除/媒体噪音] fake_magazine_cover | 假杂志封面
 [DOMAIN:标签] [CAT:物品/食物] roasted_sweet_potato | 烤红薯
 [DOMAIN:标签] [CAT:物品/其他物品] frilled_umbrella | 荷叶边伞
 [DOMAIN:标签] [CAT:物品/食物] kagami_mochi | 镜饼
@@ -1794,7 +1794,7 @@
 [DOMAIN:标签] [CAT:物品/数码设备] night_vision_device | 夜视仪
 [DOMAIN:标签] [CAT:物品/其他物品] fish_hook | 鱼钩
 [DOMAIN:标签] [CAT:物品/其他物品] jump_rope | 跳绳
-[DOMAIN:标签] [CAT:物品/其他物品] rhine_lab_logo | 莱茵实验室标志
+[DOMAIN:标签] [CAT:排除/媒体噪音] rhine_lab_logo | 莱茵实验室标志
 [DOMAIN:标签] [CAT:物品/餐具] print_mug | 印花马克杯
 [DOMAIN:标签] [CAT:物品/动物] centipede | 蜈蚣
 [DOMAIN:标签] [CAT:物品/其他物品] gingerbread_man | 姜饼人
@@ -1814,7 +1814,7 @@
 [DOMAIN:标签] [CAT:物品/成人玩具] plug | 塞子
 [DOMAIN:标签] [CAT:物品/食物] banana_peel | 香蕉皮
 [DOMAIN:标签] [CAT:物品/动物] metroid_(creature) | 密特罗德（生物）
-[DOMAIN:标签] [CAT:物品/其他物品] facebook_logo | Facebook标识
+[DOMAIN:标签] [CAT:排除/媒体噪音] facebook_logo | Facebook标识
 [DOMAIN:标签] [CAT:物品/动物] undersized_animal | 小型动物
 [DOMAIN:标签] [CAT:物品/动物] worm | 蠕虫
 [DOMAIN:标签] [CAT:物品/武器] stakes_of_purgatory | 炼狱之桩
@@ -1920,7 +1920,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] windsock | 风向袋
 [DOMAIN:标签] [CAT:物品/其他物品] multiple_unit_train | 多单元列车
 [DOMAIN:标签] [CAT:物品/其他物品] map_(object) | 地图（物品）
-[DOMAIN:标签] [CAT:物品/数码设备] video_game_cover | 电子游戏封面
+[DOMAIN:标签] [CAT:排除/媒体噪音] video_game_cover | 电子游戏封面
 [DOMAIN:标签] [CAT:物品/动物] rooster | 公鸡
 [DOMAIN:标签] [CAT:物品/食物] daikon | 白萝卜
 [DOMAIN:标签] [CAT:物品/其他物品] signpost | 路标
@@ -1996,11 +1996,11 @@
 [DOMAIN:标签] [CAT:物品/其他物品] stuffed_frog | 毛绒青蛙
 [DOMAIN:标签] [CAT:物品/成人玩具] enema | 灌肠
 [DOMAIN:标签] [CAT:物品/其他物品] print_ribbon | 打印色带
-[DOMAIN:标签] [CAT:物品/其他物品] cum_on_glasses | 精液溅眼镜
+[DOMAIN:标签] [CAT:排除/性行为] cum_on_glasses | 精液溅眼镜
 [DOMAIN:标签] [CAT:物品/食物] tomato_slice | 番茄切片
 [DOMAIN:标签] [CAT:物品/数码设备] digital_thermometer | 电子体温计
 [DOMAIN:标签] [CAT:物品/其他物品] pin | 别针
-[DOMAIN:标签] [CAT:物品/其他物品] cum_bubble | 精液气泡
+[DOMAIN:标签] [CAT:排除/性行为] cum_bubble | 精液气泡
 [DOMAIN:标签] [CAT:物品/其他物品] yellow_umbrella | 黄色雨伞
 [DOMAIN:标签] [CAT:物品/食物] waffle | 华夫饼
 [DOMAIN:标签] [CAT:物品/其他物品] trowel | 泥刀
@@ -2026,7 +2026,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] nightstand | 床头柜
 [DOMAIN:标签] [CAT:物品/数码设备] usb | USB接口
 [DOMAIN:标签] [CAT:物品/其他物品] koinobori | 鲤鱼旗
-[DOMAIN:标签] [CAT:物品/武器] arrow_in_body | 体内箭矢
+[DOMAIN:标签] [CAT:排除/猎奇血腥] arrow_in_body | 体内箭矢
 [DOMAIN:标签] [CAT:物品/植物] twig | 细枝
 [DOMAIN:标签] [CAT:物品/其他物品] wall_lamp | 壁灯
 [DOMAIN:标签] [CAT:物品/其他物品] shakujou | 锡杖
@@ -2050,7 +2050,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] ikea_shark | 宜家鲨鱼
 [DOMAIN:标签] [CAT:物品/动物] luvdisc | 爱心鱼
 [DOMAIN:标签] [CAT:物品/食物] cream_puff | 奶油泡芙
-[DOMAIN:标签] [CAT:物品/数码设备] twitter_x_logo | 推特X标志
+[DOMAIN:标签] [CAT:排除/媒体噪音] twitter_x_logo | 推特X标志
 [DOMAIN:标签] [CAT:物品/成人玩具] public_vibrator | 公共振动棒
 [DOMAIN:标签] [CAT:物品/其他物品] greek_cross | 希腊十字
 [DOMAIN:标签] [CAT:物品/成人玩具] yellow_cum | 黄色精液
@@ -2078,7 +2078,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] toolbox | 工具箱
 [DOMAIN:标签] [CAT:物品/其他物品] mousepad_(object) | 鼠标垫（物品）
 [DOMAIN:标签] [CAT:物品/其他物品] hoshi_no_tsue | 星之杖
-[DOMAIN:标签] [CAT:物品/其他物品] cum_in_cup | 杯中精液
+[DOMAIN:标签] [CAT:排除/性行为] cum_in_cup | 杯中精液
 [DOMAIN:标签] [CAT:物品/植物] nemophila_(flower) | 喜林草（花）
 [DOMAIN:标签] [CAT:物品/食物] turkey_(food) | 火鸡（食物）
 [DOMAIN:标签] [CAT:物品/植物] iris_(flower) | 鸢尾花
@@ -2325,12 +2325,12 @@
 [DOMAIN:标签] [CAT:物品/其他物品] engine | 发动机
 [DOMAIN:标签] [CAT:物品/其他物品] empty_picture_frame | 空画框
 [DOMAIN:标签] [CAT:物品/其他物品] poker | 扑克
-[DOMAIN:标签] [CAT:物品/数码设备] youtube_logo | YouTube标识
+[DOMAIN:标签] [CAT:排除/媒体噪音] youtube_logo | YouTube标识
 [DOMAIN:标签] [CAT:物品/成人玩具] okamoto_condoms | 冈本避孕套
 [DOMAIN:标签] [CAT:物品/动物] caterpillar | 毛毛虫
 [DOMAIN:标签] [CAT:物品/动物] wild_tiger | 野生虎
 [DOMAIN:标签] [CAT:物品/其他物品] eagle_union_(emblem) | 白鹰联盟（徽章）
-[DOMAIN:标签] [CAT:物品/其他物品] latin_text | 拉丁文字
+[DOMAIN:标签] [CAT:排除/媒体噪音] latin_text | 拉丁文字
 [DOMAIN:标签] [CAT:物品/餐具] champagne_glass | 香槟杯
 [DOMAIN:标签] [CAT:物品/其他物品] moriya's_iron_rings | 守矢铁环
 [DOMAIN:标签] [CAT:物品/其他物品] knitting_needle | 编织针
@@ -2452,7 +2452,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] kuromorimine_(emblem) | 黑森峰（徽章）
 [DOMAIN:标签] [CAT:物品/其他物品] cold_pack | 冷敷包
 [DOMAIN:标签] [CAT:物品/动物] animal_skeleton | 动物骨架
-[DOMAIN:标签] [CAT:物品/其他物品] trinity_general_school_logo | 三一综合学校校徽
+[DOMAIN:标签] [CAT:排除/媒体噪音] trinity_general_school_logo | 三一综合学校校徽
 [DOMAIN:标签] [CAT:物品/动物] red_panda_tail | 小熊猫尾巴
 [DOMAIN:标签] [CAT:物品/数码设备] camera_flash | 相机闪光灯
 [DOMAIN:标签] [CAT:物品/动物] bakeneko | 化猫
@@ -2560,7 +2560,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] lit_fuse | 点燃引信
 [DOMAIN:标签] [CAT:物品/食物] christian_louboutin_(brand) | 克里斯提·鲁布托（品牌）
 [DOMAIN:标签] [CAT:物品/其他物品] gauge | 量表
-[DOMAIN:标签] [CAT:物品/学习用品] pages | 书页
+[DOMAIN:标签] [CAT:排除/媒体噪音] pages | 书页
 [DOMAIN:标签] [CAT:物品/其他物品] koban_(gold) | 小判（金币）
 [DOMAIN:标签] [CAT:物品/餐具] nabe | 锅
 [DOMAIN:标签] [CAT:物品/武器] shield_module | 护盾模块
@@ -2577,7 +2577,7 @@
 [DOMAIN:标签] [CAT:物品/成人玩具] too_many_sex_toys | 过多情趣玩具
 [DOMAIN:标签] [CAT:物品/其他物品] ability_card_(touhou) | 能力卡（东方）
 [DOMAIN:标签] [CAT:物品/武器] ha-class_destroyer | 哈级驱逐舰
-[DOMAIN:标签] [CAT:物品/其他物品] penguin_logistics_logo | 企鹅物流标志
+[DOMAIN:标签] [CAT:排除/媒体噪音] penguin_logistics_logo | 企鹅物流标志
 [DOMAIN:标签] [CAT:物品/其他物品] white_car | 白色汽车
 [DOMAIN:标签] [CAT:物品/其他物品] bmw | 宝马
 [DOMAIN:标签] [CAT:物品/动物] piglet | 猪崽
@@ -2714,7 +2714,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] crosier | 权杖
 [DOMAIN:标签] [CAT:物品/食物] loaf_of_bread | 面包条
 [DOMAIN:标签] [CAT:物品/其他物品] splat_roller_(splatoon) | 斯普拉滚筒（斯普拉遁）
-[DOMAIN:标签] [CAT:物品/其他物品] greek_text | 希腊文字
+[DOMAIN:标签] [CAT:排除/媒体噪音] greek_text | 希腊文字
 [DOMAIN:标签] [CAT:物品/其他物品] plants_vs_zombies | 植物大战僵尸
 [DOMAIN:标签] [CAT:物品/其他物品] reichsadler | 帝国之鹰
 [DOMAIN:标签] [CAT:物品/其他物品] armored_personnel_carrier | 装甲运兵车
@@ -2818,7 +2818,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] nissan_skyline | 日产天际线
 [DOMAIN:标签] [CAT:物品/其他物品] lever_action | 杠杆式
 [DOMAIN:标签] [CAT:物品/其他物品] mercedes-benz | 梅赛德斯-奔驰
-[DOMAIN:标签] [CAT:物品/其他物品] indonesian_text | 印尼语文本
+[DOMAIN:标签] [CAT:排除/媒体噪音] indonesian_text | 印尼语文本
 [DOMAIN:标签] [CAT:物品/武器] gunshot | 枪击
 [DOMAIN:标签] [CAT:物品/植物] antarcticite | 南极石
 [DOMAIN:标签] [CAT:物品/其他物品] hydro_symbol_(genshin_impact) | 水元素标志（原神）
@@ -2849,7 +2849,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] string_phone | 绳线电话
 [DOMAIN:标签] [CAT:物品/武器] bomber | 轰炸机
 [DOMAIN:标签] [CAT:物品/其他物品] horizontal_bar | 单杠
-[DOMAIN:标签] [CAT:物品/其他物品] gumroad_logo | Gumroad标识
+[DOMAIN:标签] [CAT:排除/媒体噪音] gumroad_logo | Gumroad标识
 [DOMAIN:标签] [CAT:物品/其他物品] toy_car | 玩具车
 [DOMAIN:标签] [CAT:物品/武器] slingshot_(weapon) | 弹弓（武器）
 [DOMAIN:标签] [CAT:物品/其他物品] walking_stick | 手杖
@@ -2883,7 +2883,7 @@
 [DOMAIN:标签] [CAT:物品/动物] volcarona | 火神蛾
 [DOMAIN:标签] [CAT:物品/动物] toxtricity | 颤弦蝾螈
 [DOMAIN:标签] [CAT:物品/动物] lurantis | 兰螳花
-[DOMAIN:标签] [CAT:物品/其他物品] robot_dragon | 机器龙
+[DOMAIN:标签] [CAT:排除/兽化非人] robot_dragon | 机器龙
 [DOMAIN:标签] [CAT:物品/其他物品] drainpipe | 排水管
 [DOMAIN:标签] [CAT:物品/其他物品] pokemon_on_back | 背负宝可梦
 [DOMAIN:标签] [CAT:物品/其他物品] mosquito_coil | 蚊香
@@ -2978,7 +2978,7 @@
 [DOMAIN:标签] [CAT:物品/食物] beef | 牛肉
 [DOMAIN:标签] [CAT:物品/其他物品] green_innertube | 绿色游泳圈
 [DOMAIN:标签] [CAT:物品/动物] sabotender | 仙人刺
-[DOMAIN:标签] [CAT:物品/武器] knife_in_head | 头插刀
+[DOMAIN:标签] [CAT:排除/猎奇血腥] knife_in_head | 头插刀
 [DOMAIN:标签] [CAT:物品/武器] mine_(weapon) | 地雷（武器）
 [DOMAIN:标签] [CAT:物品/成人玩具] nipple_press | 乳头夹
 [DOMAIN:标签] [CAT:物品/食物] leek | 韭葱
@@ -3055,7 +3055,7 @@
 [DOMAIN:标签] [CAT:物品/动物] cteno | 栉水母
 [DOMAIN:标签] [CAT:物品/其他物品] no_smoking | 禁止吸烟
 [DOMAIN:标签] [CAT:物品/其他物品] selection_university_(emblem) | 选拔大学（徽章）
-[DOMAIN:标签] [CAT:物品/食物] raw_meat | 生肉
+[DOMAIN:标签] [CAT:排除/猎奇血腥] raw_meat | 生肉
 [DOMAIN:标签] [CAT:物品/动物] hermit_crab | 寄居蟹
 [DOMAIN:标签] [CAT:物品/其他物品] ouroboros | 衔尾蛇
 [DOMAIN:标签] [CAT:物品/武器] jian_(weapon) | 剑（武器）
@@ -3106,7 +3106,7 @@
 [DOMAIN:标签] [CAT:物品/武器] h&k_g36 | H&K G36步枪
 [DOMAIN:标签] [CAT:物品/其他物品] stepladder | 活梯
 [DOMAIN:标签] [CAT:物品/食物] french_cruller | 法式糖霜麻花卷
-[DOMAIN:标签] [CAT:物品/食物] cum_on_food | 精液沾染食物
+[DOMAIN:标签] [CAT:排除/性行为] cum_on_food | 精液沾染食物
 [DOMAIN:标签] [CAT:物品/武器] splat_charger_(splatoon) | 斯普拉蓄力狙击枪（斯普拉遁）
 [DOMAIN:标签] [CAT:物品/乐器] double_bass | 低音提琴
 [DOMAIN:标签] [CAT:物品/动物] sphinx | 斯芬克斯
@@ -3174,7 +3174,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] luggage | 行囊
 [DOMAIN:标签] [CAT:物品/其他物品] itasha | 痛车
 [DOMAIN:标签] [CAT:物品/其他物品] firewood | 柴火
-[DOMAIN:标签] [CAT:物品/武器] arrow_in_head | 头部中箭
+[DOMAIN:标签] [CAT:排除/猎奇血腥] arrow_in_head | 头部中箭
 [DOMAIN:标签] [CAT:物品/其他物品] black_car | 黑色汽车
 [DOMAIN:标签] [CAT:物品/武器] ka-class_submarine | Ka级潜艇
 [DOMAIN:标签] [CAT:物品/动物] nakigitsune's_fox | 鸣狐的狐狸
@@ -3245,7 +3245,7 @@
 [DOMAIN:标签] [CAT:物品/武器] rebellion_(sword) | 叛逆（剑）
 [DOMAIN:标签] [CAT:物品/食物] roe | 鱼子
 [DOMAIN:标签] [CAT:物品/动物] pomeranian_(dog) | 博美犬
-[DOMAIN:标签] [CAT:物品/其他物品] portuguese_text | 葡萄牙语文本
+[DOMAIN:标签] [CAT:排除/媒体噪音] portuguese_text | 葡萄牙语文本
 [DOMAIN:标签] [CAT:物品/其他物品] bagua | 八卦
 [DOMAIN:标签] [CAT:物品/武器] excalibur_(fate/prototype) | 誓约胜利之剑（命运/原型）
 [DOMAIN:标签] [CAT:物品/武器] ember_celica_(rwby) | 灰烬天堂（RWBY）
@@ -3311,13 +3311,13 @@
 [DOMAIN:标签] [CAT:物品/武器] yari | 枪
 [DOMAIN:标签] [CAT:物品/其他物品] gymnastics_ribbon | 体操彩带
 [DOMAIN:标签] [CAT:物品/食物] burnt_food | 烧焦的食物
-[DOMAIN:标签] [CAT:物品/其他物品] twitch_logo | Twitch标志
+[DOMAIN:标签] [CAT:排除/媒体噪音] twitch_logo | Twitch标志
 [DOMAIN:标签] [CAT:物品/武器] turret | 炮塔
 [DOMAIN:标签] [CAT:物品/成人玩具] spiked_dildo | 带刺假阳具
 [DOMAIN:标签] [CAT:物品/其他物品] philosopher's_stone | 贤者之石
 [DOMAIN:标签] [CAT:物品/食物] wendy's | 温蒂汉堡
 [DOMAIN:标签] [CAT:物品/食物] dorayaki | 铜锣烧
-[DOMAIN:标签] [CAT:物品/其他物品] nasa_logo | NASA标志
+[DOMAIN:标签] [CAT:排除/媒体噪音] nasa_logo | NASA标志
 [DOMAIN:标签] [CAT:物品/武器] akm | AKM
 [DOMAIN:标签] [CAT:物品/食物] iced_coffee | 冰咖啡
 [DOMAIN:标签] [CAT:物品/其他物品] pepper_shaker | 胡椒摇瓶
@@ -3347,7 +3347,7 @@
 [DOMAIN:标签] [CAT:物品/数码设备] internet_explorer | 网络浏览器
 [DOMAIN:标签] [CAT:物品/学习用品] shounen_jump | 少年Jump
 [DOMAIN:标签] [CAT:物品/动物] mouse_on_head | 头顶老鼠
-[DOMAIN:标签] [CAT:物品/动物] robot_dog | 机器狗
+[DOMAIN:标签] [CAT:排除/兽化非人] robot_dog | 机器狗
 [DOMAIN:标签] [CAT:物品/其他物品] news | 新闻
 [DOMAIN:标签] [CAT:物品/其他物品] primogem | 原石
 [DOMAIN:标签] [CAT:物品/其他物品] scuba_tank | 潜水气瓶
@@ -3390,7 +3390,7 @@
 [DOMAIN:标签] [CAT:物品/数码设备] wi-fi_symbol | Wi-Fi符号
 [DOMAIN:标签] [CAT:物品/数码设备] akg | AKG
 [DOMAIN:标签] [CAT:物品/数码设备] mobile | 移动设备
-[DOMAIN:标签] [CAT:物品/学习用品] blank_page | 空白页
+[DOMAIN:标签] [CAT:排除/媒体噪音] blank_page | 空白页
 [DOMAIN:标签] [CAT:物品/其他物品] project_bunny | 兔子计划
 [DOMAIN:标签] [CAT:物品/其他物品] treadmill | 跑步机
 [DOMAIN:标签] [CAT:物品/武器] military_truck | 军用卡车
@@ -3485,7 +3485,7 @@
 [DOMAIN:标签] [CAT:物品/武器] ornate_weapon | 华丽武器
 [DOMAIN:标签] [CAT:物品/食物] watermelon_seeds | 西瓜籽
 [DOMAIN:标签] [CAT:物品/其他物品] ironwork | 铁艺
-[DOMAIN:标签] [CAT:物品/其他物品] subscribestar_logo | 订阅之星标识
+[DOMAIN:标签] [CAT:排除/媒体噪音] subscribestar_logo | 订阅之星标识
 [DOMAIN:标签] [CAT:物品/其他物品] tricycle | 三轮车
 [DOMAIN:标签] [CAT:物品/其他物品] equation | 方程式
 [DOMAIN:标签] [CAT:物品/其他物品] biohazard_symbol | 生化危机标志
@@ -3503,7 +3503,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] ink_stamp | 墨印
 [DOMAIN:标签] [CAT:物品/其他物品] buying_condoms | 购买避孕套
 [DOMAIN:标签] [CAT:物品/数码设备] virtual_reality | 虚拟现实
-[DOMAIN:标签] [CAT:物品/其他物品] gehenna_academy_logo | 格黑娜学园标志
+[DOMAIN:标签] [CAT:排除/媒体噪音] gehenna_academy_logo | 格黑娜学园标志
 [DOMAIN:标签] [CAT:物品/植物] lisianthus | 洋桔梗
 [DOMAIN:标签] [CAT:物品/其他物品] rebreather | 循环呼吸器
 [DOMAIN:标签] [CAT:物品/其他物品] cable_tie | 扎带
@@ -3580,7 +3580,7 @@
 [DOMAIN:标签] [CAT:物品/动物] winged_animal | 有翼动物
 [DOMAIN:标签] [CAT:物品/武器] nail_(hollow_knight) | 钉（空洞骑士）
 [DOMAIN:标签] [CAT:物品/数码设备] e-liter_4k_(splatoon) | 精英4K（喷射战士）
-[DOMAIN:标签] [CAT:物品/其他物品] razor_blade | 剃须刀片
+[DOMAIN:标签] [CAT:排除/其他] razor_blade | 剃须刀片
 [DOMAIN:标签] [CAT:物品/其他物品] automail | 自动机械义肢
 [DOMAIN:标签] [CAT:物品/武器] iwi_tavor | 塔沃尔步枪
 [DOMAIN:标签] [CAT:物品/武器] minecraft_sword | 我的世界剑
@@ -3625,7 +3625,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] blender_(object) | 搅拌机（物品）
 [DOMAIN:标签] [CAT:物品/动物] pillbug | 鼠妇
 [DOMAIN:标签] [CAT:物品/其他物品] dark_magic | 黑暗魔法
-[DOMAIN:标签] [CAT:物品/数码设备] tiktok_logo | 抖音标识
+[DOMAIN:标签] [CAT:排除/媒体噪音] tiktok_logo | 抖音标识
 [DOMAIN:标签] [CAT:物品/其他物品] party_horn | 派对喇叭
 [DOMAIN:标签] [CAT:物品/其他物品] action_figure | 可动人偶
 [DOMAIN:标签] [CAT:物品/食物] char-siu | 叉烧
@@ -3636,9 +3636,9 @@
 [DOMAIN:标签] [CAT:物品/动物] pterosaur | 翼龙
 [DOMAIN:标签] [CAT:物品/其他物品] pedestal | 基座
 [DOMAIN:标签] [CAT:物品/其他物品] coconut_cup | 椰子杯
-[DOMAIN:标签] [CAT:物品/其他物品] company_logo | 企业标识
+[DOMAIN:标签] [CAT:排除/媒体噪音] company_logo | 企业标识
 [DOMAIN:标签] [CAT:物品/其他物品] laundry_pole | 晾衣杆
-[DOMAIN:标签] [CAT:物品/其他物品] facebook | 脸书
+[DOMAIN:标签] [CAT:排除/媒体噪音] facebook | 脸书
 [DOMAIN:标签] [CAT:物品/其他物品] duck_innertube | 鸭子游泳圈
 [DOMAIN:标签] [CAT:物品/餐具] electric_kettle | 电水壶
 [DOMAIN:标签] [CAT:物品/数码设备] game_boy_color | Game Boy Color
@@ -3655,7 +3655,7 @@
 [DOMAIN:标签] [CAT:物品/数码设备] n-zap_(splatoon) | N-ZAP（斯普拉遁）
 [DOMAIN:标签] [CAT:物品/其他物品] scoreboard | 记分牌
 [DOMAIN:标签] [CAT:物品/数码设备] digimoji | 数码文字
-[DOMAIN:标签] [CAT:物品/数码设备] blu-ray_cover | 蓝光光盘封面
+[DOMAIN:标签] [CAT:排除/媒体噪音] blu-ray_cover | 蓝光光盘封面
 [DOMAIN:标签] [CAT:物品/食物] fanta | 芬达
 [DOMAIN:标签] [CAT:物品/其他物品] plastic_wrap | 保鲜膜
 [DOMAIN:标签] [CAT:物品/乐器] tuba | 大号
@@ -3717,7 +3717,7 @@
 [DOMAIN:标签] [CAT:物品/武器] h&k_mp5k | H&K MP5K冲锋枪
 [DOMAIN:标签] [CAT:物品/数码设备] vf-25 | VF-25战机
 [DOMAIN:标签] [CAT:物品/食物] hanging_food | 悬挂食物
-[DOMAIN:标签] [CAT:物品/其他物品] cum_in_bowl | 碗中精液
+[DOMAIN:标签] [CAT:排除/性行为] cum_in_bowl | 碗中精液
 [DOMAIN:标签] [CAT:物品/餐具] sugar_bowl | 糖碗
 [DOMAIN:标签] [CAT:物品/成人玩具] implied_vibrator | 暗示振动棒
 [DOMAIN:标签] [CAT:物品/动物] long-tailed_tit | 银喉长尾山雀
@@ -3741,7 +3741,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] leo_(symbol) | 狮子座（符号）
 [DOMAIN:标签] [CAT:物品/其他物品] animate_object | 动画物体
 [DOMAIN:标签] [CAT:物品/其他物品] cross_mirage | 十字幻象
-[DOMAIN:标签] [CAT:物品/动物] meowstic_(male) | 超能妙喵（雄性）
+[DOMAIN:标签] [CAT:排除/其他] meowstic_(male) | 超能妙喵（雄性）
 [DOMAIN:标签] [CAT:物品/餐具] on_plate | 在餐盘上
 [DOMAIN:标签] [CAT:物品/武器] panzerfaust | 铁拳火箭筒
 [DOMAIN:标签] [CAT:物品/其他物品] jet_ski | 水上摩托
@@ -3788,12 +3788,12 @@
 [DOMAIN:标签] [CAT:物品/其他物品] red_stone_of_aja | 艾哲红石
 [DOMAIN:标签] [CAT:物品/其他物品] rebar | 钢筋
 [DOMAIN:标签] [CAT:物品/植物] rice_(plant) | 水稻（植物）
-[DOMAIN:标签] [CAT:物品/数码设备] desktop | 桌面
+[DOMAIN:标签] [CAT:排除/媒体噪音] desktop | 桌面
 [DOMAIN:标签] [CAT:物品/武器] broken_helmet | 破损头盔
 [DOMAIN:标签] [CAT:物品/其他物品] vinyl_record | 黑胶唱片
 [DOMAIN:标签] [CAT:物品/成人玩具] broken_condom | 破损避孕套
 [DOMAIN:标签] [CAT:物品/其他物品] coffee_grinder | 咖啡研磨机
-[DOMAIN:标签] [CAT:物品/数码设备] playstation_logo | PlayStation标识
+[DOMAIN:标签] [CAT:排除/媒体噪音] playstation_logo | PlayStation标识
 [DOMAIN:标签] [CAT:物品/武器] hilt | 剑柄
 [DOMAIN:标签] [CAT:物品/武器] s&w_m&p | S&W M&P
 [DOMAIN:标签] [CAT:物品/其他物品] spilled_liquid | 泼洒液体
@@ -3896,7 +3896,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] water_wheel | 水车
 [DOMAIN:标签] [CAT:物品/食物] roasting | 烘烤
 [DOMAIN:标签] [CAT:物品/食物] gunkanmaki | 军舰卷
-[DOMAIN:标签] [CAT:物品/数码设备] twitch.tv | Twitch直播平台
+[DOMAIN:标签] [CAT:排除/媒体噪音] twitch.tv | Twitch直播平台
 [DOMAIN:标签] [CAT:物品/植物] white_spider_lily | 白色彼岸花
 [DOMAIN:标签] [CAT:物品/其他物品] cocoon | 茧
 [DOMAIN:标签] [CAT:物品/其他物品] orange_umbrella | 橙色雨伞
@@ -3924,7 +3924,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] carving | 雕刻
 [DOMAIN:标签] [CAT:物品/其他物品] nail_clippers | 指甲刀
 [DOMAIN:标签] [CAT:物品/武器] ak-74m | AK-74M突击步枪
-[DOMAIN:标签] [CAT:物品/其他物品] pixiv_fantasia_scepter_of_zeraldia | pixiv幻想曲 泽拉尔迪亚权杖
+[DOMAIN:标签] [CAT:排除/媒体噪音] pixiv_fantasia_scepter_of_zeraldia | pixiv幻想曲 泽拉尔迪亚权杖
 [DOMAIN:标签] [CAT:物品/其他物品] rolling_bubbles | 滚动泡泡
 [DOMAIN:标签] [CAT:物品/动物] zigzagoon | 蛇纹熊
 [DOMAIN:标签] [CAT:物品/数码设备] windows_95 | Windows 95
@@ -3961,7 +3961,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] filing_cabinet | 文件柜
 [DOMAIN:标签] [CAT:物品/其他物品] marriage_certificate_(object) | 结婚证（物品）
 [DOMAIN:标签] [CAT:物品/其他物品] snow_sculpture | 雪雕
-[DOMAIN:标签] [CAT:物品/其他物品] kingdom_of_kazimierz_logo | 卡西米尔王国徽标
+[DOMAIN:标签] [CAT:排除/媒体噪音] kingdom_of_kazimierz_logo | 卡西米尔王国徽标
 [DOMAIN:标签] [CAT:物品/其他物品] dance_dance_revolution | 热舞革命
 [DOMAIN:标签] [CAT:物品/动物] alolan_meowth | 阿罗拉喵喵
 [DOMAIN:标签] [CAT:物品/武器] wolf's_gravestone_(genshin_impact) | 狼的末路（原神）
@@ -3970,7 +3970,7 @@
 [DOMAIN:标签] [CAT:物品/数码设备] duolingo | 多邻国
 [DOMAIN:标签] [CAT:物品/其他物品] receipt | 收据
 [DOMAIN:标签] [CAT:物品/数码设备] broken_screen | 碎屏
-[DOMAIN:标签] [CAT:物品/其他物品] guillotine | 断头台
+[DOMAIN:标签] [CAT:排除/猎奇血腥] guillotine | 断头台
 [DOMAIN:标签] [CAT:物品/武器] cz_75 | CZ 75手枪
 [DOMAIN:标签] [CAT:物品/其他物品] the_bible | 圣经
 [DOMAIN:标签] [CAT:物品/其他物品] grand_sphere | 宏界
@@ -4050,7 +4050,7 @@
 [DOMAIN:标签] [CAT:物品/数码设备] super_famicom_gamepad | 超级任天堂手柄
 [DOMAIN:标签] [CAT:物品/其他物品] reunion_logo_(arknights) | 重逢徽标（明日方舟）
 [DOMAIN:标签] [CAT:物品/动物] larvesta | 燃烧虫
-[DOMAIN:标签] [CAT:物品/其他物品] fanbox_logo | Fanbox标识
+[DOMAIN:标签] [CAT:排除/媒体噪音] fanbox_logo | Fanbox标识
 [DOMAIN:标签] [CAT:物品/其他物品] wash_cloth | 洗面巾
 [DOMAIN:标签] [CAT:物品/其他物品] zippo_lighter | 之宝打火机
 [DOMAIN:标签] [CAT:物品/动物] moorish_idol | 马夫鱼
@@ -4077,12 +4077,12 @@
 [DOMAIN:标签] [CAT:物品/植物] herb_bundle | 草药束
 [DOMAIN:标签] [CAT:物品/其他物品] blue_towel | 蓝色毛巾
 [DOMAIN:标签] [CAT:物品/其他物品] chloroform | 氯仿
-[DOMAIN:标签] [CAT:物品/数码设备] artstation_logo | ArtStation标识
+[DOMAIN:标签] [CAT:排除/媒体噪音] artstation_logo | ArtStation标识
 [DOMAIN:标签] [CAT:物品/其他物品] urn | 骨灰瓮
 [DOMAIN:标签] [CAT:物品/动物] lillipup | 小约克
 [DOMAIN:标签] [CAT:物品/武器] double-sided_axe | 双面斧
 [DOMAIN:标签] [CAT:物品/植物] mandragora | 曼德拉草
-[DOMAIN:标签] [CAT:物品/其他物品] youtube_creator_award | YouTube创作者奖
+[DOMAIN:标签] [CAT:排除/媒体噪音] youtube_creator_award | YouTube创作者奖
 [DOMAIN:标签] [CAT:物品/动物] shoebill | 鲸头鹳
 [DOMAIN:标签] [CAT:物品/其他物品] ten_of_hearts | 红心十
 [DOMAIN:标签] [CAT:物品/武器] grappling_hook | 抓钩
@@ -4091,12 +4091,12 @@
 [DOMAIN:标签] [CAT:物品/数码设备] dualsense | DualSense手柄
 [DOMAIN:标签] [CAT:物品/植物] mimosa_(flower) | 含羞草（花）
 [DOMAIN:标签] [CAT:物品/其他物品] nu-class_light_aircraft_carrier | 努级轻型航空母舰
-[DOMAIN:标签] [CAT:物品/武器] living_weapon | 活体武器
+[DOMAIN:标签] [CAT:排除/兽化非人] living_weapon | 活体武器
 [DOMAIN:标签] [CAT:物品/其他物品] pushcart | 手推车
 [DOMAIN:标签] [CAT:物品/食物] hot_drink | 热饮
 [DOMAIN:标签] [CAT:物品/武器] cross_(weapon) | 十字架（武器）
 [DOMAIN:标签] [CAT:物品/食物] avocado | 鳄梨
-[DOMAIN:标签] [CAT:物品/其他物品] file | 档案
+[DOMAIN:标签] [CAT:排除/媒体噪音] file | 档案
 [DOMAIN:标签] [CAT:物品/食物] inarizushi | 稻荷寿司
 [DOMAIN:标签] [CAT:物品/其他物品] star_rod | 星星法杖
 [DOMAIN:标签] [CAT:物品/其他物品] entrails | 内脏
@@ -4112,7 +4112,7 @@
 [DOMAIN:标签] [CAT:物品/武器] tri-stringer_(splatoon) | 三发猎弓（斯普拉遁）
 [DOMAIN:标签] [CAT:物品/其他物品] behelit | 贝黑利特
 [DOMAIN:标签] [CAT:物品/其他物品] gardening_shears | 园艺剪
-[DOMAIN:标签] [CAT:物品/动物] dog_(shiba_inu)_(kemono_friends) | 狗（柴犬）（兽娘动物园）
+[DOMAIN:标签] [CAT:排除/兽化非人] dog_(shiba_inu)_(kemono_friends) | 狗（柴犬）（兽娘动物园）
 [DOMAIN:标签] [CAT:物品/食物] zunda_mochi | 毛豆麻糬
 [DOMAIN:标签] [CAT:物品/其他物品] nijihara_ink | 虹原墨水
 [DOMAIN:标签] [CAT:物品/动物] healing_animal | 治愈动物
@@ -4254,13 +4254,13 @@
 [DOMAIN:标签] [CAT:物品/其他物品] print_mask | 打印蒙版
 [DOMAIN:标签] [CAT:物品/武器] panther_(tank) | 黑豹（坦克）
 [DOMAIN:标签] [CAT:物品/食物] cream_on_breasts | 胸部奶油
-[DOMAIN:标签] [CAT:物品/武器] sword_in_head | 头插剑
+[DOMAIN:标签] [CAT:排除/猎奇血腥] sword_in_head | 头插剑
 [DOMAIN:标签] [CAT:物品/动物] braviary | 勇士雄鹰
 [DOMAIN:标签] [CAT:物品/植物] snail_shell | 蜗牛壳
 [DOMAIN:标签] [CAT:物品/武器] king_saw | 国王电锯
 [DOMAIN:标签] [CAT:物品/动物] doge | 神烦狗
 [DOMAIN:标签] [CAT:物品/其他物品] model_ship | 船模
-[DOMAIN:标签] [CAT:物品/食物] meat_day | 食肉日
+[DOMAIN:标签] [CAT:排除/猎奇血腥] meat_day | 食肉日
 [DOMAIN:标签] [CAT:物品/餐具] cutlery | 餐具
 [DOMAIN:标签] [CAT:物品/武器] elden_ring_(object) | 艾尔登法环（物品）
 [DOMAIN:标签] [CAT:物品/其他物品] missing_poster | 寻人启事
@@ -4365,7 +4365,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] horseshoe_print | 马蹄印
 [DOMAIN:标签] [CAT:物品/食物] melon_slice | 西瓜切片
 [DOMAIN:标签] [CAT:物品/其他物品] duck_hunt | 打鸭
-[DOMAIN:标签] [CAT:物品/其他物品] tumblr_logo | Tumblr标志
+[DOMAIN:标签] [CAT:排除/媒体噪音] tumblr_logo | Tumblr标志
 [DOMAIN:标签] [CAT:物品/其他物品] blue_rope | 蓝色绳索
 [DOMAIN:标签] [CAT:物品/其他物品] holy_ring | 神圣指环
 [DOMAIN:标签] [CAT:物品/武器] sword_of_kusanagi | 草薙剑
@@ -4387,7 +4387,7 @@
 [DOMAIN:标签] [CAT:物品/学习用品] paperwork | 文书工作
 [DOMAIN:标签] [CAT:物品/其他物品] dumpster | 垃圾箱
 [DOMAIN:标签] [CAT:物品/其他物品] nissan_skyline_r34 | 日产天际线R34
-[DOMAIN:标签] [CAT:物品/武器] blood_sword | 血剑
+[DOMAIN:标签] [CAT:排除/猎奇血腥] blood_sword | 血剑
 [DOMAIN:标签] [CAT:物品/其他物品] zener_card | 齐纳卡
 [DOMAIN:标签] [CAT:物品/武器] ibaraki_douji's_arm | 茨木童子之臂
 [DOMAIN:标签] [CAT:物品/其他物品] karuta_(card_game) | 歌牌（卡牌游戏）
@@ -4414,7 +4414,7 @@
 [DOMAIN:标签] [CAT:物品/数码设备] ios_(os) | iOS（操作系统）
 [DOMAIN:标签] [CAT:物品/食物] invincible_candy | 无敌糖果
 [DOMAIN:标签] [CAT:物品/其他物品] matchbox | 火柴盒
-[DOMAIN:标签] [CAT:物品/其他物品] ursus_empire_logo | 乌萨斯帝国标志
+[DOMAIN:标签] [CAT:排除/媒体噪音] ursus_empire_logo | 乌萨斯帝国标志
 [DOMAIN:标签] [CAT:物品/武器] slosher_(splatoon) | 泼桶（喷射战士）
 [DOMAIN:标签] [CAT:物品/食物] dim_sum | 点心
 [DOMAIN:标签] [CAT:物品/植物] flowers_(innocent_grey) | 花朵（无辜灰色）
@@ -4486,7 +4486,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] jack-o'-lantern_head | 南瓜头
 [DOMAIN:标签] [CAT:物品/植物] peach_blossom | 桃花
 [DOMAIN:标签] [CAT:物品/其他物品] honey_dipper | 蜂蜜勺
-[DOMAIN:标签] [CAT:物品/其他物品] arabic_text | 阿拉伯文字
+[DOMAIN:标签] [CAT:排除/媒体噪音] arabic_text | 阿拉伯文字
 [DOMAIN:标签] [CAT:物品/其他物品] bowling_pin | 保龄球瓶
 [DOMAIN:标签] [CAT:物品/动物] goat_(dungeon_meshi) | 山羊（迷宫饭）
 [DOMAIN:标签] [CAT:物品/动物] triceratops | 三角龙
@@ -4532,7 +4532,7 @@
 [DOMAIN:标签] [CAT:物品/数码设备] game_boy_advance_sp | Game Boy Advance SP
 [DOMAIN:标签] [CAT:物品/武器] mjolnir_(marvel) | 雷神之锤（漫威）
 [DOMAIN:标签] [CAT:物品/动物] pikmin_2 | 皮克敏2
-[DOMAIN:标签] [CAT:物品/武器] butcher_knife | 屠刀
+[DOMAIN:标签] [CAT:排除/猎奇血腥] butcher_knife | 屠刀
 [DOMAIN:标签] [CAT:物品/成人玩具] aneros | 阿内罗斯
 [DOMAIN:标签] [CAT:物品/乐器] metronome | 节拍器
 [DOMAIN:标签] [CAT:物品/餐具] glass_teacup | 玻璃茶杯
@@ -4583,7 +4583,7 @@
 [DOMAIN:标签] [CAT:物品/武器] centurion_(tank) | 百夫长（坦克）
 [DOMAIN:标签] [CAT:物品/其他物品] aquila_(symbol) | 天鹰座（符号）
 [DOMAIN:标签] [CAT:物品/动物] border_collie | 边境牧羊犬
-[DOMAIN:标签] [CAT:物品/其他物品] kessoku_band_logo | 结束乐队标志
+[DOMAIN:标签] [CAT:排除/媒体噪音] kessoku_band_logo | 结束乐队标志
 [DOMAIN:标签] [CAT:物品/其他物品] signal_flag | 信号旗
 [DOMAIN:标签] [CAT:物品/武器] blue_rose_sword | 蓝蔷薇之剑
 [DOMAIN:标签] [CAT:物品/武器] planted_spear | 插入地面的长矛
@@ -4597,7 +4597,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] unicycle | 独轮车
 [DOMAIN:标签] [CAT:物品/其他物品] crib | 克里布
 [DOMAIN:标签] [CAT:物品/其他物品] boom_microphone | 吊杆麦克风
-[DOMAIN:标签] [CAT:物品/动物] jellicent_(male) | 胖嘟嘟（雄性）
+[DOMAIN:标签] [CAT:排除/其他] jellicent_(male) | 胖嘟嘟（雄性）
 [DOMAIN:标签] [CAT:物品/学习用品] set_square | 三角尺
 [DOMAIN:标签] [CAT:物品/动物] omastar | 多刺菊石兽
 [DOMAIN:标签] [CAT:物品/动物] pansear | 爆香猴
@@ -4634,7 +4634,7 @@
 [DOMAIN:标签] [CAT:物品/武器] liquid_weapon | 液体武器
 [DOMAIN:标签] [CAT:物品/武器] colt_9mm_smg | 柯尔特9毫米冲锋枪
 [DOMAIN:标签] [CAT:物品/其他物品] carro_armato_p40 | P40坦克
-[DOMAIN:标签] [CAT:物品/动物] twitter_bird | 推特小鸟
+[DOMAIN:标签] [CAT:排除/媒体噪音] twitter_bird | 推特小鸟
 [DOMAIN:标签] [CAT:物品/武器] energy_spear | 能量矛
 [DOMAIN:标签] [CAT:物品/武器] lahti-saloranta_m/26 | 拉赫蒂-萨洛兰塔M/26
 [DOMAIN:标签] [CAT:物品/其他物品] revice_driver | Revice驱动器
@@ -4738,9 +4738,9 @@
 [DOMAIN:标签] [CAT:物品/其他物品] minecart | 矿车
 [DOMAIN:标签] [CAT:物品/武器] flanged_mace | 凸缘钉头锤
 [DOMAIN:标签] [CAT:物品/食物] spaghetti_and_meatballs | 意式肉丸面
-[DOMAIN:标签] [CAT:物品/其他物品] cum_on_sheets | 精液沾染床单
+[DOMAIN:标签] [CAT:排除/性行为] cum_on_sheets | 精液沾染床单
 [DOMAIN:标签] [CAT:物品/其他物品] yamaha_vino | 雅马哈Vino
-[DOMAIN:标签] [CAT:物品/其他物品] kjerag_logo | 谢拉格徽标
+[DOMAIN:标签] [CAT:排除/媒体噪音] kjerag_logo | 谢拉格徽标
 [DOMAIN:标签] [CAT:物品/动物] slugcat | 蛞蝓猫
 [DOMAIN:标签] [CAT:物品/其他物品] open_drawer | 打开的抽屉
 [DOMAIN:标签] [CAT:物品/食物] morinaga_(brand) | 森永（品牌）
@@ -4818,7 +4818,7 @@
 [DOMAIN:标签] [CAT:物品/食物] mustard_seeds | 芥菜籽
 [DOMAIN:标签] [CAT:物品/动物] fantastic_beasts_and_where_to_find_them | 神奇动物在哪里
 [DOMAIN:标签] [CAT:物品/其他物品] fire_elemental | 火元素
-[DOMAIN:标签] [CAT:物品/其他物品] superman_logo | 超人标志
+[DOMAIN:标签] [CAT:排除/媒体噪音] superman_logo | 超人标志
 [DOMAIN:标签] [CAT:物品/武器] makarov_pm | 马卡洛夫PM
 [DOMAIN:标签] [CAT:物品/动物] insect_on_finger | 指尖昆虫
 [DOMAIN:标签] [CAT:物品/其他物品] ten'inkou_korin | 天印光轮
@@ -4850,12 +4850,12 @@
 [DOMAIN:标签] [CAT:物品/其他物品] grey_gemstone | 灰色宝石
 [DOMAIN:标签] [CAT:物品/动物] ferret_tail | 雪貂尾
 [DOMAIN:标签] [CAT:物品/食物] almond | 杏仁
-[DOMAIN:标签] [CAT:物品/武器] blood_on_axe | 斧上血迹
+[DOMAIN:标签] [CAT:排除/猎奇血腥] blood_on_axe | 斧上血迹
 [DOMAIN:标签] [CAT:物品/其他物品] excavator | 挖掘机
 [DOMAIN:标签] [CAT:物品/其他物品] glowing_heart | 发光的心
 [DOMAIN:标签] [CAT:物品/武器] ptrd-41 | PTRD-41反坦克步枪
 [DOMAIN:标签] [CAT:物品/动物] longcat | 长猫
-[DOMAIN:标签] [CAT:物品/其他物品] eye_chart | 视力表
+[DOMAIN:标签] [CAT:排除/媒体噪音] eye_chart | 视力表
 [DOMAIN:标签] [CAT:物品/其他物品] wisdom_cube_(azur_lane) | 心智魔方（碧蓝航线）
 [DOMAIN:标签] [CAT:物品/武器] ak74m_(girls'_frontline) | AK-74M（少女前线）
 [DOMAIN:标签] [CAT:物品/动物] beagle | 比格犬
@@ -4914,7 +4914,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] clippers | 快船
 [DOMAIN:标签] [CAT:物品/食物] strawberry_pocky | 草莓百奇
 [DOMAIN:标签] [CAT:物品/其他物品] bisexual_flag | 双性恋旗帜
-[DOMAIN:标签] [CAT:物品/其他物品] copyright_logo | 版权标识
+[DOMAIN:标签] [CAT:排除/媒体噪音] copyright_logo | 版权标识
 [DOMAIN:标签] [CAT:物品/武器] matchlock | 火绳枪
 [DOMAIN:标签] [CAT:物品/其他物品] rugby_ball | 橄榄球
 [DOMAIN:标签] [CAT:物品/武器] m16a4 | M16A4步枪
@@ -4983,7 +4983,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] infinity_gauntlet | 无限手套
 [DOMAIN:标签] [CAT:物品/武器] sword_hilt | 剑柄
 [DOMAIN:标签] [CAT:物品/其他物品] cradle | 摇篮
-[DOMAIN:标签] [CAT:物品/数码设备] media_player_interface | 媒体播放器界面
+[DOMAIN:标签] [CAT:排除/媒体噪音] media_player_interface | 媒体播放器界面
 [DOMAIN:标签] [CAT:物品/成人玩具] food_dildo | 食物假阳具
 [DOMAIN:标签] [CAT:物品/其他物品] reversi | 黑白棋
 [DOMAIN:标签] [CAT:物品/其他物品] okamochi_(container) | 冈持（容器）
@@ -5007,12 +5007,12 @@
 [DOMAIN:标签] [CAT:物品/其他物品] tractor | 拖拉机
 [DOMAIN:标签] [CAT:物品/其他物品] neon_sign | 霓虹灯招牌
 [DOMAIN:标签] [CAT:物品/其他物品] double_driver | 双重驱动器
-[DOMAIN:标签] [CAT:物品/其他物品] super_smash_bros._logo | 任天堂明星大乱斗标志
+[DOMAIN:标签] [CAT:排除/媒体噪音] super_smash_bros._logo | 任天堂明星大乱斗标志
 [DOMAIN:标签] [CAT:物品/其他物品] against_locker | 对抗储物柜
 [DOMAIN:标签] [CAT:物品/动物] afghan_hound | 阿富汗猎犬
-[DOMAIN:标签] [CAT:物品/其他物品] bilibili_logo | Bilibili标志
+[DOMAIN:标签] [CAT:排除/媒体噪音] bilibili_logo | Bilibili标志
 [DOMAIN:标签] [CAT:物品/其他物品] tape_censor | 贴条审查
-[DOMAIN:标签] [CAT:物品/其他物品] swedish_text | 瑞典语文本
+[DOMAIN:标签] [CAT:排除/媒体噪音] swedish_text | 瑞典语文本
 [DOMAIN:标签] [CAT:物品/其他物品] supermarine_spitfire | 超级海事喷火战斗机
 [DOMAIN:标签] [CAT:物品/食物] buri_hamachi | 鰤鱼与魬鱼
 [DOMAIN:标签] [CAT:物品/数码设备] hayabusa_(spacecraft) | 隼鸟号（航天器）
@@ -5037,14 +5037,14 @@
 [DOMAIN:标签] [CAT:物品/其他物品] powder_puff | 粉扑
 [DOMAIN:标签] [CAT:物品/其他物品] house_of_cards | 纸牌屋
 [DOMAIN:标签] [CAT:物品/其他物品] facehugger | 抱脸虫
-[DOMAIN:标签] [CAT:物品/其他物品] discord_logo | Discord标志
+[DOMAIN:标签] [CAT:排除/媒体噪音] discord_logo | Discord标志
 [DOMAIN:标签] [CAT:物品/其他物品] taxidermy | 动物标本剥制术
 [DOMAIN:标签] [CAT:物品/其他物品] playstation_symbols | PlayStation符号
 [DOMAIN:标签] [CAT:物品/其他物品] shoe_print | 鞋印
 [DOMAIN:标签] [CAT:物品/动物] anteater | 食蚁兽
 [DOMAIN:标签] [CAT:物品/其他物品] car_keys | 车钥匙
 [DOMAIN:标签] [CAT:物品/武器] chain_whip | 链鞭
-[DOMAIN:标签] [CAT:物品/其他物品] the_hanged_man_(tarot) | 倒吊人（塔罗牌）
+[DOMAIN:标签] [CAT:排除/其他] the_hanged_man_(tarot) | 倒吊人（塔罗牌）
 [DOMAIN:标签] [CAT:物品/食物] tonkatsu | 炸猪排
 [DOMAIN:标签] [CAT:物品/动物] pelican | 鹈鹕
 [DOMAIN:标签] [CAT:物品/其他物品] nissan_gt-r | 日产GT-R
@@ -5064,7 +5064,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] host_(obj_shep) | 宿主（obj谢普）
 [DOMAIN:标签] [CAT:物品/其他物品] sagittarius_(zodiac) | 射手座（星座）
 [DOMAIN:标签] [CAT:物品/其他物品] medium_tank | 中型坦克
-[DOMAIN:标签] [CAT:物品/动物] robot_fish | 机器鱼
+[DOMAIN:标签] [CAT:排除/兽化非人] robot_fish | 机器鱼
 [DOMAIN:标签] [CAT:物品/武器] stylet | 短剑
 [DOMAIN:标签] [CAT:物品/其他物品] candy_jar | 糖果罐
 [DOMAIN:标签] [CAT:物品/其他物品] umbilical_cord | 脐带
@@ -5094,7 +5094,7 @@
 [DOMAIN:标签] [CAT:物品/动物] mammoth | 猛犸象
 [DOMAIN:标签] [CAT:物品/武器] r-99_smg | R-99冲锋枪
 [DOMAIN:标签] [CAT:物品/其他物品] leaf_fan | 葉扇
-[DOMAIN:标签] [CAT:物品/动物] robot_bird | 机器鸟
+[DOMAIN:标签] [CAT:排除/兽化非人] robot_bird | 机器鸟
 [DOMAIN:标签] [CAT:物品/武器] adaptive_combat_rifle | 自适应战斗步枪
 [DOMAIN:标签] [CAT:物品/植物] dead_plants | 枯死植物
 [DOMAIN:标签] [CAT:物品/成人玩具] otn_gag | OTN口塞
@@ -5134,7 +5134,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] gas_pump | 汽油泵
 [DOMAIN:标签] [CAT:物品/其他物品] drawn_crown | 手绘王冠
 [DOMAIN:标签] [CAT:物品/动物] shiinotic | 灯罩夜菇
-[DOMAIN:标签] [CAT:物品/食物] sliced_meat | 肉片
+[DOMAIN:标签] [CAT:排除/猎奇血腥] sliced_meat | 肉片
 [DOMAIN:标签] [CAT:物品/食物] amazake_(drink) | 甘酒（饮品）
 [DOMAIN:标签] [CAT:物品/动物] moose | 驼鹿
 [DOMAIN:标签] [CAT:物品/其他物品] oversized_spoon | 超大勺子
@@ -5313,7 +5313,7 @@
 [DOMAIN:标签] [CAT:物品/食物] happy_meal | 开心乐园餐
 [DOMAIN:标签] [CAT:物品/武器] gal_gun_(series) | 电击枪（系列）
 [DOMAIN:标签] [CAT:物品/其他物品] napkin_holder | 纸巾架
-[DOMAIN:标签] [CAT:物品/其他物品] ukrainian_text | 乌克兰语文字
+[DOMAIN:标签] [CAT:排除/媒体噪音] ukrainian_text | 乌克兰语文字
 [DOMAIN:标签] [CAT:物品/武器] tasouken | 太薙刀
 [DOMAIN:标签] [CAT:物品/武器] aim-9_sidewinder | 响尾蛇导弹
 [DOMAIN:标签] [CAT:物品/其他物品] externally_piloted_mecha | 外部操控机甲
@@ -5500,8 +5500,8 @@
 [DOMAIN:标签] [CAT:物品/其他物品] aquamarine_(gemstone) | 海蓝宝石（宝石）
 [DOMAIN:标签] [CAT:物品/食物] golden_shrimp_balls_(genshin_impact) | 金丝虾球（原神）
 [DOMAIN:标签] [CAT:物品/其他物品] wire_cutters | 钢丝钳
-[DOMAIN:标签] [CAT:物品/其他物品] radar_chart | 雷达图
-[DOMAIN:标签] [CAT:物品/其他物品] xiaohongshu_logo | 小红书标志
+[DOMAIN:标签] [CAT:排除/媒体噪音] radar_chart | 雷达图
+[DOMAIN:标签] [CAT:排除/媒体噪音] xiaohongshu_logo | 小红书标志
 [DOMAIN:标签] [CAT:物品/植物] insect_on_head | 头顶昆虫
 [DOMAIN:标签] [CAT:物品/植物] rafflesia_(flower) | 大王花（花卉）
 [DOMAIN:标签] [CAT:物品/其他物品] laser_beam | 激光束
@@ -5532,7 +5532,7 @@
 [DOMAIN:标签] [CAT:物品/动物] lion_cub | 幼狮
 [DOMAIN:标签] [CAT:物品/其他物品] torn_curtains | 撕裂窗帘
 [DOMAIN:标签] [CAT:物品/数码设备] audio_cable | 音频线
-[DOMAIN:标签] [CAT:物品/其他物品] cum_on_mask | 精液面罩
+[DOMAIN:标签] [CAT:排除/性行为] cum_on_mask | 精液面罩
 [DOMAIN:标签] [CAT:物品/其他物品] beyblade_(object) | 陀螺（物体）
 [DOMAIN:标签] [CAT:物品/动物] stuffed_monkey | 毛绒猴子
 [DOMAIN:标签] [CAT:物品/动物] swarm | 虫群
@@ -5680,7 +5680,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] police_tape | 警戒带
 [DOMAIN:标签] [CAT:物品/其他物品] rider_watch | 骑士手表
 [DOMAIN:标签] [CAT:物品/其他物品] hearts_of_iron | 钢铁雄心
-[DOMAIN:标签] [CAT:物品/其他物品] ko-fi_logo | Ko-Fi标识
+[DOMAIN:标签] [CAT:排除/媒体噪音] ko-fi_logo | Ko-Fi标识
 [DOMAIN:标签] [CAT:物品/其他物品] fake_trading_card | 伪造集换卡
 [DOMAIN:标签] [CAT:物品/其他物品] dragon_ornament | 龙形饰物
 [DOMAIN:标签] [CAT:物品/学习用品] genkou_youshi | 原稿用纸
@@ -5727,7 +5727,7 @@
 [DOMAIN:标签] [CAT:物品/动物] jaws | 大白鲨
 [DOMAIN:标签] [CAT:物品/武器] handgun_cartridge | 手枪弹
 [DOMAIN:标签] [CAT:物品/武器] straight_razor | 直剃刀
-[DOMAIN:标签] [CAT:物品/数码设备] video_game_cover_(object) | 游戏封面（物品）
+[DOMAIN:标签] [CAT:排除/媒体噪音] video_game_cover_(object) | 游戏封面（物品）
 [DOMAIN:标签] [CAT:物品/其他物品] mast_(a_pirate's_heart)_(nikke) | 桅杆（海盗之心）（NIKKE）
 [DOMAIN:标签] [CAT:物品/其他物品] ribbon_cable | 排线
 [DOMAIN:标签] [CAT:物品/动物] farigiraf | 奇麒麟
@@ -5769,7 +5769,7 @@
 [DOMAIN:标签] [CAT:物品/武器] transparent_weapon | 透明武器
 [DOMAIN:标签] [CAT:物品/其他物品] party_whistle | 派对哨子
 [DOMAIN:标签] [CAT:物品/学习用品] fountain_pen | 钢笔
-[DOMAIN:标签] [CAT:物品/其他物品] windows_logo | Windows徽标
+[DOMAIN:标签] [CAT:排除/媒体噪音] windows_logo | Windows徽标
 [DOMAIN:标签] [CAT:物品/数码设备] anaheim_electronics | 阿纳海姆电子
 [DOMAIN:标签] [CAT:物品/成人玩具] clitoris_leash | 阴蒂牵绳
 [DOMAIN:标签] [CAT:物品/其他物品] demon_core | 恶魔核心
@@ -5798,12 +5798,12 @@
 [DOMAIN:标签] [CAT:物品/武器] imi_galil | IMI 加利尔步枪
 [DOMAIN:标签] [CAT:物品/武器] zaku_ii_fz_kai | 扎古II FZ改
 [DOMAIN:标签] [CAT:物品/其他物品] time_bomb | 定时炸弹
-[DOMAIN:标签] [CAT:物品/其他物品] great_lungmen_logo | 大龙门标志
+[DOMAIN:标签] [CAT:排除/媒体噪音] great_lungmen_logo | 大龙门标志
 [DOMAIN:标签] [CAT:物品/动物] wyrm | 蠕虫
 [DOMAIN:标签] [CAT:物品/武器] karambit | 爪刀
 [DOMAIN:标签] [CAT:物品/食物] kafei | 咖啡
 [DOMAIN:标签] [CAT:物品/食物] beer_crate | 啤酒箱
-[DOMAIN:标签] [CAT:物品/食物] chocolate_on_penis | 阴茎巧克力
+[DOMAIN:标签] [CAT:排除/性行为] chocolate_on_penis | 阴茎巧克力
 [DOMAIN:标签] [CAT:物品/其他物品] bmw_m3 | 宝马M3
 [DOMAIN:标签] [CAT:物品/食物] cranberry | 蔓越莓
 [DOMAIN:标签] [CAT:物品/其他物品] blitzball | 闪电球
@@ -5811,12 +5811,12 @@
 [DOMAIN:标签] [CAT:物品/食物] fondue | 奶酪火锅
 [DOMAIN:标签] [CAT:物品/其他物品] recipe_(object) | 食谱（物品）
 [DOMAIN:标签] [CAT:物品/其他物品] bidet | 净身器
-[DOMAIN:标签] [CAT:物品/其他物品] lofter_logo | 乐乎标识
+[DOMAIN:标签] [CAT:排除/媒体噪音] lofter_logo | 乐乎标识
 [DOMAIN:标签] [CAT:物品/武器] sig_sg550 | SIG SG550步枪
 [DOMAIN:标签] [CAT:物品/其他物品] austrian_flag | 奥地利国旗
 [DOMAIN:标签] [CAT:物品/其他物品] nazi_flag | 纳粹旗帜
 [DOMAIN:标签] [CAT:物品/食物] cream_puff_cookie | 奶油泡芙饼干
-[DOMAIN:标签] [CAT:物品/其他物品] robot_neoanthropinae_polynian | 新人类机器人波莉尼安
+[DOMAIN:标签] [CAT:排除/兽化非人] robot_neoanthropinae_polynian | 新人类机器人波莉尼安
 [DOMAIN:标签] [CAT:物品/其他物品] score | 比分
 [DOMAIN:标签] [CAT:物品/食物] rare_candy | 神奇糖果
 [DOMAIN:标签] [CAT:物品/武器] bloblobber_(splatoon) | 泡泡爆破枪（斯普拉遁）
@@ -5827,7 +5827,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] massager | 按摩器
 [DOMAIN:标签] [CAT:物品/食物] madeleine_cookie | 玛德琳饼干
 [DOMAIN:标签] [CAT:物品/其他物品] devil_fruit | 恶魔果实
-[DOMAIN:标签] [CAT:物品/其他物品] pig_penis | 猪阴茎
+[DOMAIN:标签] [CAT:排除/性行为] pig_penis | 猪阴茎
 [DOMAIN:标签] [CAT:物品/武器] destroid | 毁灭机甲
 [DOMAIN:标签] [CAT:物品/武器] strike_cannon | 突击加农炮
 [DOMAIN:标签] [CAT:物品/动物] arrokuda | 刺梭鱼
@@ -5895,7 +5895,7 @@
 [DOMAIN:标签] [CAT:物品/武器] dragon_quest_swords | 勇者斗恶龙之剑
 [DOMAIN:标签] [CAT:物品/其他物品] wipers | 雨刷
 [DOMAIN:标签] [CAT:物品/植物] gracidea | 葛拉西蒂亚
-[DOMAIN:标签] [CAT:物品/动物] stoat_(kemono_friends) | 白鼬（兽娘动物园）
+[DOMAIN:标签] [CAT:排除/兽化非人] stoat_(kemono_friends) | 白鼬（兽娘动物园）
 [DOMAIN:标签] [CAT:物品/武器] kinzoku_bat | 金属球棒
 [DOMAIN:标签] [CAT:物品/武器] kel-tec_ksg | 凯尔泰克KSG
 [DOMAIN:标签] [CAT:物品/其他物品] monopoly | 大富翁
@@ -6003,7 +6003,7 @@
 [DOMAIN:标签] [CAT:物品/成人玩具] nipple_vibrator | 乳头震动器
 [DOMAIN:标签] [CAT:物品/其他物品] sloshing_machine_(splatoon) | 泼溅机（斯普拉遁）
 [DOMAIN:标签] [CAT:物品/武器] saiga-12 | 赛嘎-12
-[DOMAIN:标签] [CAT:物品/食物] chocolate_on_pectorals | 胸肌上的巧克力
+[DOMAIN:标签] [CAT:排除/男性雄性] chocolate_on_pectorals | 胸肌上的巧克力
 [DOMAIN:标签] [CAT:物品/其他物品] too_many_stickers | 过多贴纸
 [DOMAIN:标签] [CAT:物品/食物] salad_bowl | 沙拉碗
 [DOMAIN:标签] [CAT:物品/其他物品] iroha_karuta | 伊吕波歌牌
@@ -6150,7 +6150,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] heart_pirates_jolly_roger | 心脏海盗团旗帜
 [DOMAIN:标签] [CAT:物品/其他物品] ad-6-0001a | AD-6-0001A型
 [DOMAIN:标签] [CAT:物品/其他物品] v-22_osprey | V-22鱼鹰
-[DOMAIN:标签] [CAT:物品/动物] unfezant_(male) | 高傲雉鸡（雄性）
+[DOMAIN:标签] [CAT:排除/其他] unfezant_(male) | 高傲雉鸡（雄性）
 [DOMAIN:标签] [CAT:物品/其他物品] servo-skull | 伺服颅骨
 [DOMAIN:标签] [CAT:物品/其他物品] papel | 纸片
 [DOMAIN:标签] [CAT:物品/武器] star_destroyer | 星际驱逐舰
@@ -6230,7 +6230,7 @@
 [DOMAIN:标签] [CAT:物品/餐具] wooden_plate | 木盘
 [DOMAIN:标签] [CAT:物品/武器] capital_ship_(eve_online) | 主力舰（星战前夜）
 [DOMAIN:标签] [CAT:物品/其他物品] lightstick | 荧光棒
-[DOMAIN:标签] [CAT:物品/其他物品] bowser_logo | 库巴标志
+[DOMAIN:标签] [CAT:排除/媒体噪音] bowser_logo | 库巴标志
 [DOMAIN:标签] [CAT:物品/其他物品] lace-trimmed_umbrella | 蕾丝边伞
 [DOMAIN:标签] [CAT:物品/其他物品] yellow_star | 黄色星星
 [DOMAIN:标签] [CAT:物品/其他物品] monowire | 单丝线
@@ -6336,14 +6336,14 @@
 [DOMAIN:标签] [CAT:物品/食物] fish_cake | 鱼糕
 [DOMAIN:标签] [CAT:物品/其他物品] coronavirus | 冠状病毒
 [DOMAIN:标签] [CAT:物品/武器] bakunetsu_god_finger | 爆热神手指
-[DOMAIN:标签] [CAT:物品/其他物品] lobotomy_corporation_logo | 脑叶公司标志
+[DOMAIN:标签] [CAT:排除/媒体噪音] lobotomy_corporation_logo | 脑叶公司标志
 [DOMAIN:标签] [CAT:物品/其他物品] doguu | 土偶
 [DOMAIN:标签] [CAT:物品/其他物品] monument | 纪念碑
 [DOMAIN:标签] [CAT:物品/其他物品] leather_chair | 皮革椅
 [DOMAIN:标签] [CAT:物品/武器] energy_whip | 能量鞭
 [DOMAIN:标签] [CAT:物品/其他物品] f-14 | F-14战斗机
 [DOMAIN:标签] [CAT:物品/其他物品] d-wheel | D轮
-[DOMAIN:标签] [CAT:物品/其他物品] dutch_text | 荷兰语文本
+[DOMAIN:标签] [CAT:排除/媒体噪音] dutch_text | 荷兰语文本
 [DOMAIN:标签] [CAT:物品/其他物品] blackjack_table | 二十一点牌桌
 [DOMAIN:标签] [CAT:物品/武器] bardiche_(weapon) | 钺（武器）
 [DOMAIN:标签] [CAT:物品/武器] daewoo_k1 | 大宇K1步枪
@@ -6413,7 +6413,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] pink_curtains | 粉色窗帘
 [DOMAIN:标签] [CAT:物品/植物] amulet_spade | 护符黑桃
 [DOMAIN:标签] [CAT:物品/武器] little_armory | 小小军火库
-[DOMAIN:标签] [CAT:物品/其他物品] fanbox | 粉丝盒
+[DOMAIN:标签] [CAT:排除/媒体噪音] fanbox | 粉丝盒
 [DOMAIN:标签] [CAT:物品/其他物品] five_pebbles | 五卵石
 [DOMAIN:标签] [CAT:物品/武器] the_sword_sharpened_with_tears_(e.g.o) | 泪磨利剑（自我）
 [DOMAIN:标签] [CAT:物品/其他物品] web_shooter | 蛛网发射器
@@ -6479,7 +6479,7 @@
 [DOMAIN:标签] [CAT:物品/动物] killer_bee | 杀人蜂
 [DOMAIN:标签] [CAT:物品/武器] air-to-air_missile | 空对空导弹
 [DOMAIN:标签] [CAT:物品/其他物品] polyhedral_dice | 多面骰子
-[DOMAIN:标签] [CAT:物品/动物] pyroar_(male) | 炎狮（雄性）
+[DOMAIN:标签] [CAT:排除/其他] pyroar_(male) | 炎狮（雄性）
 [DOMAIN:标签] [CAT:物品/其他物品] pee_puddle | 尿渍
 [DOMAIN:标签] [CAT:物品/其他物品] dodge_viper | 道奇蝰蛇
 [DOMAIN:标签] [CAT:物品/成人玩具] orgasm_counter | 高潮计数器
@@ -6590,7 +6590,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] food_delivery_box | 外卖箱
 [DOMAIN:标签] [CAT:物品/武器] glock_17 | 格洛克17
 [DOMAIN:标签] [CAT:物品/其他物品] holding_kiseru | 手持烟管
-[DOMAIN:标签] [CAT:物品/其他物品] tentacle_on_male | 男性触手
+[DOMAIN:标签] [CAT:排除/性行为] tentacle_on_male | 男性触手
 [DOMAIN:标签] [CAT:物品/植物] inteyvat_flower_(genshin_impact) | 因提瓦特花（原神）
 [DOMAIN:标签] [CAT:物品/其他物品] btr-80 | BTR-80装甲车
 [DOMAIN:标签] [CAT:物品/武器] anti-tank_missile | 反坦克导弹
@@ -6649,7 +6649,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] toriko_no_kusari | 俘虏锁链
 [DOMAIN:标签] [CAT:物品/武器] sniper_scope | 狙击镜
 [DOMAIN:标签] [CAT:物品/动物] chimpanzee | 黑猩猩
-[DOMAIN:标签] [CAT:物品/其他物品] gundam_perfect_file | 高达完美档案
+[DOMAIN:标签] [CAT:排除/媒体噪音] gundam_perfect_file | 高达完美档案
 [DOMAIN:标签] [CAT:物品/其他物品] green_curtains | 绿色窗帘
 [DOMAIN:标签] [CAT:物品/其他物品] gym_equipment | 健身器材
 [DOMAIN:标签] [CAT:物品/食物] slice_of_cake | 蛋糕切片

@@ -594,7 +594,7 @@
 [DOMAIN:标签] [CAT:场景/其他] steeple | 尖顶
 [DOMAIN:标签] [CAT:场景/公共设施] dance_studio | 舞蹈工作室
 [DOMAIN:标签] [CAT:场景/其他] falconry | 鹰猎术
-[DOMAIN:标签] [CAT:场景/奇幻幻想] pixiv_fantasia_mountain_of_heaven | Pixiv幻想曲：天之山
+[DOMAIN:标签] [CAT:排除/媒体噪音] pixiv_fantasia_mountain_of_heaven | Pixiv幻想曲：天之山
 [DOMAIN:标签] [CAT:场景/其他] otome_domain | 乙女领域
 [DOMAIN:标签] [CAT:场景/公共设施] pet_shop | 宠物店
 [DOMAIN:标签] [CAT:场景/其他] farming | 农耕
@@ -857,6 +857,6 @@
 [DOMAIN:标签] [CAT:场景/公共设施] gakkou_no_seiiki | 学校圣域
 [DOMAIN:标签] [CAT:场景/室内家居] on_cushion | 在坐垫上
 [DOMAIN:标签] [CAT:场景/奇幻幻想] fields_of_mistria | 米斯特里亚田野
-[DOMAIN:标签] [CAT:场景/奇幻幻想] trouble_trap_laboratory | 故障陷阱实验室
+[DOMAIN:标签] [CAT:排除/其他] trouble_trap_laboratory | 故障陷阱实验室
 [DOMAIN:标签] [CAT:场景/其他] sakusei_byoutou | 榨精病房
 [DOMAIN:标签] [CAT:场景/自然户外] kakouen | 花园
