@@ -42,3 +42,9 @@ prompt/random_generator/tools/classify_work/appear_*.txt
 prompt/random_generator/tools/classify_work/detail_*.txt
 prompt/random_generator/tools/classify_work/clothing_*.txt
 prompt/random_generator/tools/classify_work/exclude_*.txt
+shot_*.txt
+env_*.txt
+bkg_*.txt
+face_*.txt
+pose_*.txt
+item_*.txt
