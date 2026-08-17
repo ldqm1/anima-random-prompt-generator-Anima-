@@ -2368,7 +2368,7 @@
 [DOMAIN:标签] [CAT:物品/武器] crystal_sword | 水晶剑
 [DOMAIN:标签] [CAT:物品/食物] sakura_mochi | 樱饼
 [DOMAIN:标签] [CAT:物品/食物] ikayaki | 烤鱿鱼
-[DOMAIN:标签] [CAT:排除/性行为] breast_mousepad | 胸部鼠标垫
+[DOMAIN:标签] [CAT:物品/擦边] breast_mousepad | 胸部鼠标垫
 [DOMAIN:标签] [CAT:物品/玩具玩偶] stuffed_lion | 毛绒狮子
 [DOMAIN:标签] [CAT:物品/食物] hotpot | 火锅
 [DOMAIN:标签] [CAT:物品/其他物品] in_bag | 在包内
@@ -2697,7 +2697,7 @@
 [DOMAIN:标签] [CAT:物品/食物] stew | 炖菜
 [DOMAIN:标签] [CAT:物品/食物] breakfast | 早餐
 [DOMAIN:标签] [CAT:物品/食物] fried_egg_on_toast | 吐司煎蛋
-[DOMAIN:标签] [CAT:排除/性行为] cream_on_body | 身体奶油
+[DOMAIN:标签] [CAT:物品/擦边] cream_on_body | 身体奶油
 [DOMAIN:标签] [CAT:物品/植物] baby's-breath | 满天星
 [DOMAIN:标签] [CAT:物品/其他物品] yamaha | 雅马哈
 [DOMAIN:标签] [CAT:物品/动物] pokemon_egg | 宝可梦蛋
@@ -3501,7 +3501,7 @@
 [DOMAIN:标签] [CAT:物品/动物] prehistoric_animal | 史前动物
 [DOMAIN:标签] [CAT:物品/植物] orange_tulip | 橙色郁金香
 [DOMAIN:标签] [CAT:物品/装饰摆件] ink_stamp | 墨印
-[DOMAIN:标签] [CAT:排除/性行为] buying_condoms | 购买避孕套
+[DOMAIN:标签] [CAT:物品/擦边] buying_condoms | 购买避孕套
 [DOMAIN:标签] [CAT:物品/数码设备] virtual_reality | 虚拟现实
 [DOMAIN:标签] [CAT:排除/媒体噪音] gehenna_academy_logo | 格黑娜学园标志
 [DOMAIN:标签] [CAT:物品/植物] lisianthus | 洋桔梗
@@ -4187,7 +4187,7 @@
 [DOMAIN:标签] [CAT:物品/动物] small_dragon | 小龙
 [DOMAIN:标签] [CAT:物品/食物] too_many_scoops | 冰淇淋球过多
 [DOMAIN:标签] [CAT:物品/食物] malasada | 玛拉萨达
-[DOMAIN:标签] [CAT:排除/性行为] chocolate_on_foot | 足上巧克力
+[DOMAIN:标签] [CAT:物品/擦边] chocolate_on_foot | 足上巧克力
 [DOMAIN:标签] [CAT:物品/装饰摆件] chou_shittou_caduceus | 超失途神杖
 [DOMAIN:标签] [CAT:物品/数码设备] arc_reactor | 电弧反应堆
 [DOMAIN:标签] [CAT:物品/数码设备] radar_dish | 雷达天线
@@ -4253,7 +4253,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] hip_flask | 随身酒壶
 [DOMAIN:标签] [CAT:物品/工具机械] print_mask | 打印蒙版
 [DOMAIN:标签] [CAT:物品/武器] panther_(tank) | 黑豹（坦克）
-[DOMAIN:标签] [CAT:排除/性行为] cream_on_breasts | 胸部奶油
+[DOMAIN:标签] [CAT:物品/擦边] cream_on_breasts | 胸部奶油
 [DOMAIN:标签] [CAT:排除/猎奇血腥] sword_in_head | 头插剑
 [DOMAIN:标签] [CAT:物品/动物] braviary | 勇士雄鹰
 [DOMAIN:标签] [CAT:物品/动物] snail_shell | 蜗牛壳
@@ -4881,7 +4881,7 @@
 [DOMAIN:标签] [CAT:物品/武器] bullet_casing | 弹壳
 [DOMAIN:标签] [CAT:物品/装饰摆件] statuette | 小雕像
 [DOMAIN:标签] [CAT:物品/装饰摆件] alphabet | 字母表
-[DOMAIN:标签] [CAT:排除/性行为] teddy_(lingerie) | 泰迪（内衣）
+[DOMAIN:标签] [CAT:物品/擦边] teddy_(lingerie) | 泰迪（内衣）
 [DOMAIN:标签] [CAT:物品/其他物品] lost_technology | 失落科技
 [DOMAIN:标签] [CAT:物品/动物] platypus | 鸭嘴兽
 [DOMAIN:标签] [CAT:物品/武器] f-35_lightning_ii | F-35闪电II
@@ -5741,7 +5741,7 @@
 [DOMAIN:标签] [CAT:物品/玩具玩偶] monster_collection | 怪物收藏
 [DOMAIN:标签] [CAT:物品/其他物品] smoke_ring | 烟圈
 [DOMAIN:标签] [CAT:物品/其他物品] timeline | 时间线
-[DOMAIN:标签] [CAT:排除/性行为] ass_mousepad | 臀形鼠标垫
+[DOMAIN:标签] [CAT:物品/擦边] ass_mousepad | 臀形鼠标垫
 [DOMAIN:标签] [CAT:物品/装饰摆件] rotating_light | 旋转灯
 [DOMAIN:标签] [CAT:物品/其他物品] washtub | 洗衣盆
 [DOMAIN:标签] [CAT:物品/食物] character_cookie | 角色饼干
@@ -5824,7 +5824,7 @@
 [DOMAIN:标签] [CAT:物品/食物] poke_puff | 宝可泡芙
 [DOMAIN:标签] [CAT:物品/武器] red_queen_(sword) | 红皇后（剑）
 [DOMAIN:标签] [CAT:物品/食物] ice_cream_sandwich | 冰淇淋三明治
-[DOMAIN:标签] [CAT:排除/性行为] massager | 按摩器
+[DOMAIN:标签] [CAT:物品/擦边] massager | 按摩器
 [DOMAIN:标签] [CAT:物品/食物] madeleine_cookie | 玛德琳饼干
 [DOMAIN:标签] [CAT:物品/装饰摆件] devil_fruit | 恶魔果实
 [DOMAIN:标签] [CAT:排除/性行为] pig_penis | 猪阴茎
@@ -6575,7 +6575,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] loudspeaker | 扩音器
 [DOMAIN:标签] [CAT:物品/玩具玩偶] sock_puppet | 手偶
 [DOMAIN:标签] [CAT:物品/食物] mint_chocolate_chip | 薄荷巧克力碎
-[DOMAIN:标签] [CAT:排除/性行为] positive_pregnancy_test | 验孕阳性
+[DOMAIN:标签] [CAT:物品/擦边] positive_pregnancy_test | 验孕阳性
 [DOMAIN:标签] [CAT:物品/武器] cracked_helmet | 破裂头盔
 [DOMAIN:标签] [CAT:物品/动物] cephalopod | 头足纲动物
 [DOMAIN:标签] [CAT:物品/植物] catnip | 猫薄荷

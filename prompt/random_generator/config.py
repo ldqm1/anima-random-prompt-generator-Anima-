@@ -445,6 +445,7 @@ CATEGORY_MAPPINGS: dict[tuple[str, str], str] = {
     ("表情动作", "动态动作"): "pose_action_sex",
     ("表情动作", "人物交互"): "pose_action_sex",
     ("表情动作", "职业活动"): "pose_action_sex",
+    ("表情动作", "擦边"): "pose_action_sex",  # 擦边软色情档（低配额入池，见 map_pose_edge.txt）
 
     # ---------- clothing_state ----------
     ("服饰", "上半身服装"): "clothing_state",
@@ -537,6 +538,7 @@ CATEGORY_MAPPINGS: dict[tuple[str, str], str] = {
     ("物品", "布料织品"): "scene_environment",
     ("物品", "其他"): "scene_environment",
     ("物品", ""): "scene_environment",
+    ("物品", "擦边"): "scene_environment",  # 擦边软色情档（低配额入池，见 map_item_edge.txt）
 
     # ---------- detail_mood ----------
     ("画面", "画面量质"): "detail_mood",
@@ -576,6 +578,7 @@ PAREN_DISAMBIGUATION_OK: set[str] = {
     "sexual", "restraint", "cheerleading", "basic", "projectile", "tool",
     "lore", "mtf", "ftm", "gvh", "bhp", "psg", "kari", "season", "temperature",
     "hairstyle",  # 发型消歧（twintails (hairstyle) / feixianji (hairstyle)）
+    "lingerie",  # 服装款式消歧（teddy (lingerie) 泰迪内衣款）
 }
 
 # 特定 tag 覆盖映射：解决 subcategory 粒度不够的问题。
