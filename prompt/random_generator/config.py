@@ -54,6 +54,85 @@ DEFAULT_KNOWLEDGE_SAMPLE_COUNTS: dict[str, int] = {
 DEEPSEEK_API_BASE: str = "https://api.deepseek.com/v1"
 DEEPSEEK_MODEL: str = "deepseek-chat"
 
+# ---- 画面美感约束（postprocess 层，输出侧兜底） ----
+# 1) 排版/分镜类词：把单幅插画变成"漫画分格/表情表"，与唯美少女插画定位冲突。
+#    锚点侧已禁用 comic_style/expression_diff/panel_focus；本清单兜底剔除 LLM 自创的排版词
+#    （speed lines/focus lines 为插画效果线，保留不列入）。
+LAYOUT_FRAGMENT_TAGS: frozenset[str] = frozenset({
+    "comic panel layout", "panel layout", "page composition", "sequential art",
+    "comic panel", "face chart", "expression lineup", "three-panel",
+    "manga panel moment", "panel composition", "storyboard", "multi-panel",
+    "paneling", "comic format", "panel sequence", "multi-panel layout",
+    "multiple expressions", "panel wall", "four-panel", "two-panel",
+})
+
+# 2) 现实具体场所词：同一画面最多保留 1 个（"公交+绿洲+火星"/"帐篷+机场+书店"式
+#    乱炖场景直接拉低画面统一性）。自然/水域/天空/幻境词不受限——"水中森林/浮空岛"
+#    类跨组组合是二次元创意，应保留。
+SCENE_PLACE_TAGS: frozenset[str] = frozenset({
+    "airport", "bus interior", "train interior", "subway", "classroom", "hospital",
+    "office", "library", "bookstore", "restaurant", "cafe", "arcade", "gym",
+    "hotel", "hotel room", "hotel corridor", "kitchen", "supermarket",
+    "convenience store", "station", "subway platform", "shopping mall", "theater",
+    "movie theater", "concert hall", "stadium", "post office", "museum",
+    "bank", "factory", "laboratory", "church", "vet appointment room",
+    "dental clinic", "school hallway", "school rooftop", "meeting room",
+    "autopsy room", "deep sea research lab", "space station", "server room",
+})
+
+# 3) 表情词族：同族表情只保留 1 个 + 全样本表情词总计 ≤ 3。
+#    避免"scared+jitome+furious"式表情分裂导致面部神态失真；害羞+惊讶等跨族组合仍允许。
+EMOTION_GROUP_TAGS: dict[str, frozenset[str]] = {
+    "微笑": frozenset({"smile", "gentle smile", "sweet smile", "wide smile", "happy smile",
+                     "cheerful", "delighted", "happy", "smiling"}),
+    "大笑": frozenset({"laughing", "laugh", "giggling", "giggles", "laughing softly",
+                     "grinning", "grin"}),
+    "哭泣": frozenset({"crying", "tears", "crying with eyes open", "crying with closed eyes",
+                     "sobbing", "in tears", "tearful", "shedding tears", "wailing"}),
+    "愤怒": frozenset({"angry", "anger", "furious", "annoyed", "irritated", "mad",
+                     "anger vein", "jitome", "glaring", "death glare", "glowering",
+                     "grumpy"}),
+    "惊讶": frozenset({"surprised", "surprised face", "shocked", "astonished", "eye pop",
+                     "wide-eyed", "startled", "shocked face"}),
+    "恐惧": frozenset({"scared", "frightened", "afraid", "horrified", "distressed",
+                     "terrified", "panicked", "fear", "afraid of ghosts", "desperate",
+                     "desperation", "disbelief", "worried", "anxious", "panic",
+                     "dread"}),
+    "悲伤": frozenset({"sad", "lonely", "melancholic", "gloomy", "depressed",
+                     "sorrowful", "mournful"}),
+    "害羞": frozenset({"shy", "embarrassed", "blushing", "blush", "flustered",
+                     "bashful", "shy smile"}),
+    "冷静": frozenset({"calm", "composed", "serene", "peaceful", "relaxed", "tranquil",
+                     "at ease", "unperturbed"}),
+    "无聊": frozenset({"bored", "uninterested", "fed up", "unamused", "apathetic",
+                     "not listening"}),
+    "困倦": frozenset({"sleepy", "sleeping", "dozing", "drowsy", "tired", "half-asleep"}),
+    "得意": frozenset({"smug", "confident", "cocky", "self-satisfied", "arrogant",
+                     "haughty", "cocked eyebrow"}),
+    "挑逗": frozenset({"sneer", "smirk", "evil grin", "sly smile", "seductive smile",
+                     "teasing", "seductive", "temptation"}),
+    "傲娇": frozenset({"tsundere", "pout", "hmph", "cheeky"}),
+    "无表情": frozenset({"blank stare", "blank expression", "emotionless", "deadpan",
+                      "expressionless"}),
+}
+
+# 4) 风格/画风画面词：同一画面最多保留 1 个，避免"ethereal+realistic+spiritual"
+#    "greyscale+colorful" 等风格漂移。注：风格描述与 画风画派 子类配额互为补充，
+#    此清单只收敛最"互斥"的画风词。
+STYLE_VISUAL_TAGS: frozenset[str] = frozenset({
+    "ethereal", "realistic", "photorealistic", "spiritual", "aqua", "painterly",
+    "ukiyo-e", "vivid", "monochrome", "greyscale", "grayscale", "watercolor",
+    "cel shading", "flat color", "3d", "2d", "pixel art", "8-bit", "8-bit elements",
+    "semi-realistic", "impressionist", "art nouveau", "pop art", "minimalist",
+    "surreal", "glassy", "chiaroscuro", "synthwave", "retro", "vaporwave",
+    "oil painting", "sketch", "lineart", "chibi", "kawaii", "gothic", "steampunk",
+    # 复合/后缀形式（LLM 常用"xxx animation/art/background"式风格词）
+    "3d animation", "2d animation", "sepia", "sepia background", "vhs artifacts",
+    "vhs", "pixelated", "blurry", "limited palette", "dot-matrix", "crayon drawing",
+    "isometric", "duo chromatic", "digital dissolve", "pastel", "kirigami",
+    "pink outline", "color drain", "lens flare", "anime screencap",
+})
+
 ARTIST_BLACKLIST_FILES: list[Path] = [
     SOURCE_DIR / "animadex_index.csv",
     SOURCE_DIR / "artists.csv",

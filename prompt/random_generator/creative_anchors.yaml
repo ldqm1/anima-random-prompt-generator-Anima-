@@ -197,11 +197,13 @@ anime_expression:         # 4. 二次元专属表达(不需要物理合理性)
   narrative: 一个 Q 版的她趴在正比例她的头顶, 两人动作同步
 - id: expression_diff
   name: expression lineup
+  enabled: false  # 禁用: 表情差分三联 -> 画面变"表情表", 非插画语言
   cn: 表情差分(三联/多联)
   tags: [expression lineup, multiple expressions, three-panel, face chart]
   narrative: 同一姿态下三格表情差分并列, 从淡定到慌乱逐格变化
 - id: panel_focus
   name: manga panel moment
+  enabled: false  # 禁用: 分镜速度线/集中线 -> 漫画排版, 与唯美插画冲突
   cn: 分镜式瞬间(速度线/集中线)
   tags: [speed lines, focus lines, panel composition, dramatic moment]
   narrative: 背景铺满放射状集中线, 把她框在唯一清晰的中心
@@ -222,6 +224,7 @@ anime_expression:         # 4. 二次元专属表达(不需要物理合理性)
   narrative: 血条与对话框悬在她身边, 像是从 RPG 界面里走出来
 - id: comic_style
   name: comic panel layout
+  enabled: false  # 禁用: 漫画分格排布 -> 画面切碎为多格, 非单幅插画
   cn: 漫画分格排布
   tags: [comic panel, panel layout, page composition, sequential art]
   narrative: 画面分成几格漫画, 每一格是动作的下一步

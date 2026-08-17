@@ -651,7 +651,10 @@ def load_creative_anchors(path: str | Path | None = None) -> dict[str, list[dict
     out: dict[str, list[dict[str, Any]]] = {}
     for cat, items in data.items():
         if isinstance(items, list):
-            out[str(cat)] = [dict(i) for i in items if isinstance(i, dict)]
+            out[str(cat)] = [
+                dict(i) for i in items
+                if isinstance(i, dict) and i.get("enabled", True) is not False
+            ]
     return out
 
 

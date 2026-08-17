@@ -409,6 +409,72 @@ def _normalize_tag(tag: str) -> str:
     return tag.strip().replace("_", " ").lower()
 
 
+def _apply_aesthetic_constraints(tags: list[str]) -> tuple[list[str], list[tuple[str, str]]]:
+    """画面美感约束（输出侧兜底）：
+
+    - 排版/分镜类词（LAYOUT_FRAGMENT_TAGS）：剔除——会把单幅插画变成漫画分格/表情表；
+    - 风格/画风画面词（STYLE_VISUAL_TAGS）：同一画面最多保留 1 个，防风格漂移；
+    - 表情词族（EMOTION_GROUP_TAGS）：同族只保留 1 个、全样本表情词 ≤ 3，防表情分裂；
+    - 现实场所词（SCENE_PLACE_TAGS）：同一画面最多保留 1 个，防"机场+书店+火车站"式场景乱炖
+      （自然/水域/天空/幻境词不设限，水中森林/浮空岛等跨组创意保留）。
+
+    返回 ``(过滤后tags, [(原因, 被移除tag)])``；保留顺序遵循原列表（靠前的优先）。
+    """
+    removed: list[tuple[str, str]] = []
+    norm = _normalize_tag
+
+    # 1) 排版词剔除
+    kept: list[str] = []
+    for t in tags:
+        if norm(t) in config.LAYOUT_FRAGMENT_TAGS:
+            removed.append(("layout", t))
+        else:
+            kept.append(t)
+
+    # 2) 风格画面词限 1（保留第一个）
+    style_seen = False
+    after_style: list[str] = []
+    for t in kept:
+        if norm(t) in config.STYLE_VISUAL_TAGS:
+            if style_seen:
+                removed.append(("style", t))
+                continue
+            style_seen = True
+        after_style.append(t)
+
+    # 3) 表情词族互斥（同族只留 1）+ 全样本表情词上限 3
+    emotion_groups = config.EMOTION_GROUP_TAGS
+    group_used: set[str] = set()
+    emotion_total = 0
+    after_emotion: list[str] = []
+    for t in after_style:
+        n = norm(t)
+        g = next((g for g, s in emotion_groups.items() if n in s), None)
+        if g is not None:
+            if g in group_used:
+                removed.append(("emotion", t))
+                continue
+            group_used.add(g)
+            emotion_total += 1
+            if emotion_total > 3:
+                removed.append(("emotion_over", t))
+                continue
+        after_emotion.append(t)
+
+    # 4) 现实场所词限 1（保留第一个）
+    place_seen = False
+    final: list[str] = []
+    for t in after_emotion:
+        if norm(t) in config.SCENE_PLACE_TAGS:
+            if place_seen:
+                removed.append(("scene", t))
+                continue
+            place_seen = True
+        final.append(t)
+
+    return final, removed
+
+
 def _filter_natural_language(
     prompt: str,
     db_tags: set[str],
@@ -827,6 +893,14 @@ def postprocess(
         resolved_tags = deduped
         if duplicates_removed:
             version_log["duplicates_removed"] = duplicates_removed
+
+        # 3.1.0 画面美感约束（输出侧兜底）：
+        # 排版词剔除 / 风格词限1 / 表情族互斥+上限 / 现实场所词限1。
+        resolved_tags, aesthetic_removed = _apply_aesthetic_constraints(resolved_tags)
+        if aesthetic_removed:
+            version_log["aesthetic_removed"] = [
+                {"rule": rule, "tag": tag} for rule, tag in aesthetic_removed
+            ]
 
         # 3.1.1 长度上限截断（可选）：超限时保留顺序靠前的高权重 tag。
         if max_tags and len(resolved_tags) > max_tags:
