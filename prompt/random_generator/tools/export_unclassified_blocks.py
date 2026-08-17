@@ -29,7 +29,7 @@ WORK.mkdir(parents=True, exist_ok=True)
 
 BLOCK_SIZE = 130
 
-# 已有人工分类映射族 -> 对应 KB 文件
+# 已有人工分类映射族 -> 对应 KB 文件（旧格式：行号|子类）
 _MAP_FAMILIES = {
     "tags_人物.txt": ("map_appear_*.txt",),
     "tags_画面.txt": ("map_detail_*.txt",),
@@ -64,6 +64,15 @@ POOLS: dict[str, tuple[str, dict]] = {
 
 def load_covered() -> dict[str, set[int]]:
     covered: dict[str, set[int]] = defaultdict(set)
+    # 新格式 map（文件短名|行号|目标CAT，如 map_shot/map_bkg/map_env/map_face/map_pose/map_item）
+    for fam in ("map_shot_*.txt", "map_bkg_*.txt", "map_env_*.txt",
+                "map_face_*.txt", "map_pose_*.txt", "map_item_*.txt"):
+        for p in sorted(WORK.glob(fam)):
+            for ln in p.read_text(encoding="utf-8").splitlines():
+                parts = ln.split("|")
+                if len(parts) >= 2:
+                    covered[parts[0]].add(int(parts[1]))
+    # 旧格式 map（行号|子类，如 map_appear/map_detail/map_clothing/map_expr/map_action/map_scene）
     for fname, fams in _MAP_FAMILIES.items():
         for fam in fams:
             for p in sorted(WORK.glob(fam)):

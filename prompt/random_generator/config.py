@@ -526,6 +526,16 @@ CATEGORY_MAPPINGS: dict[tuple[str, str], str] = {
     ("物品", "乐器"): "scene_environment",
     ("物品", "餐具"): "scene_environment",
     ("物品", "学习用品"): "scene_environment",
+    ("物品", "家具"): "scene_environment",
+    ("物品", "箱包容器"): "scene_environment",
+    ("物品", "玩具玩偶"): "scene_environment",
+    ("物品", "工具机械"): "scene_environment",
+    ("物品", "装饰摆件"): "scene_environment",
+    ("物品", "运动器材"): "scene_environment",
+    ("物品", "医疗用品"): "scene_environment",
+    ("物品", "卫生用品"): "scene_environment",
+    ("物品", "布料织品"): "scene_environment",
+    ("物品", "其他"): "scene_environment",
     ("物品", ""): "scene_environment",
 
     # ---------- detail_mood ----------
