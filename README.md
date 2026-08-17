@@ -106,9 +106,7 @@ anima-rag-knowledge/
 │   ├── tests/                        # 单元测试
 │   └── tools/                        # 构建/维护脚本
 │       ├── apply_unclassified_maps.py    # 人工分类映射回写知识库（分类即排除）
-│       ├── apply_r18_tier.py             # r18 两档分类应用（擦边降级 + KB 改写）
-│       ├── merge_r18_classify.py         # r18 分类结果汇总校验
-│       └── classify_work/                # 分类审计数据（map_*.txt / 切片 / 结果 JSON）
+│       └── classify_work/                # 分类审计映射（map_*.txt）
 │
 ├── output/                           # 生成结果输出目录
 │   ├── random_prompts.jsonl          # 生成结果（默认输出）

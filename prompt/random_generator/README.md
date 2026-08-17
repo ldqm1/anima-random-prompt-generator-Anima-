@@ -526,8 +526,6 @@ category_whitelists:
 | 文件 | 功能 |
 |------|------|
 | `tools/apply_unclassified_maps.py` | 将 `classify_work/map_*.txt` 人工分类映射回写知识库 v1（分类即排除；支持 `表情动作/擦边`、`物品/擦边`、`人物/擦边` 目标）。 |
-| `tools/apply_r18_tier.py` | 应用 r18 两档分类结果：擦边档 rating r18→r15 + 不可见子类 KB 改写；含不上浮保护（触手/血腥等维持硬排除）。 |
-| `tools/merge_r18_classify.py` | 汇总校验 6 组分片 r18 分类结果（零遗漏零冲突），输出 `r18_classify_summary.json`。 |
 | `tools/build_curated_tags.py` | 从 CSV 自动构建带年龄分级的 `curated_tags.yaml`。可直接运行：`python -m prompt.random_generator.tools.build_curated_tags`。 |
 | `tools/build_curated_pools.py` | 从 `curated_tags.yaml` 构建旧版 `curated_pools.json`。 |
 | `tools/build_character_pool.py` | 从 Excel 角色表构建 `character_pool.json` 与 `character_pool_series_index.json`。 |
