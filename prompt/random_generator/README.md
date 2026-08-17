@@ -14,6 +14,17 @@
 
 模块默认面向"可爱少女向"二次元插画，已内置大量过滤规则，会自动丢弃男性、成熟女性、纯兽人、深肤/非人肤色、暴力血腥、元数据噪声等不适合的 tag。
 
+**分类体系（分类即排除 + 两档制）**：
+
+- `知识库/v1` 已逐条人工细粒度分类，越界内容改写为 `排除/<子类>` 整类丢弃（含 r18 模式）；
+- `排除/性行为` 与 rating=r18 的 tag 均按两档拆分：**擦边软色情**（`表情动作/擦边`/`物品/擦边`/`人物/擦边`，
+  低配额入池，r15 可偶尔出现）与**直接暴露**（显性性器官/体液词，维持硬排除或 r18）；
+- 出现频率由 `subcategory_quotas` 子类配额控制，**未列入配额表的子类=不设限（趋同放大器），新增子类必须列入**；
+- 输出侧 `_apply_aesthetic_constraints`（postprocess）：排版/分镜词剔除、风格词≤1、表情词族互斥≤3、
+  现实场所词≤1；锚点池 `creative_anchors.yaml` 支持 `enabled: false` 禁用排版类设定；
+- 构图类子类（构图法则/构图氛围）默认 `max:0`（无显式构图），高频姿态池/背景样式类降 max——
+  目标为每天 1200 张量级不产生"既视感"（500 批模拟：构图词 0、高频姿态 0.8%、灰底 0）。
+
 通过 `--max-rating r18` / `r18g` 可开启成人内容模式，支持 r18 主题控制（17 类主题独立开关/概率/权重/联动）、单人场景主题限制（`solo`）、r18 内容占比提示（`r18_focus_weights`）与每样本最少 r18 tag 数（`min_r18_tags_per_sample`），相关配置详见下文与 `generation_config.yaml`。
 
 ## 快速开始
@@ -506,14 +517,17 @@ category_whitelists:
 | `retrieval.py` | 知识库加载、画师黑名单构建、分类抽样、年龄分级过滤、r18 主题控制、噪音过滤、来源校验。 |
 | `assembler.py` | 将抽样 tag 组装为请求载荷，执行冲突检测与消解，并格式化为 LLM 可读的文本。 |
 | `client.py` | 加载系统提示词与用户模板，调用 DeepSeek API，解析 JSON 响应，还原 r18 占位符。 |
-| `postprocess.py` | 对 API 输出执行画师过滤、禁词替换、冲突消解、来源校验，生成处理日志。 |
-| `config.py` | 项目路径、默认抽样数量、分类映射、黑名单、噪音 meta tag 黑名单（约 380 项）、年龄分级顺序等常量配置。 |
+| `postprocess.py` | 对 API 输出执行画师过滤、禁词替换、冲突消解、来源校验，生成处理日志；含画面美感约束（排版词剔除/风格词≤1/表情词族互斥/现实场所词≤1）。 |
+| `config.py` | 项目路径、默认抽样数量、分类映射、黑名单、噪音 meta tag 黑名单（约 380 项）、年龄分级顺序、美感约束词表（LAYOUT_FRAGMENT_TAGS/STYLE_VISUAL_TAGS/EMOTION_GROUP_TAGS/SCENE_PLACE_TAGS）等常量配置。 |
 | `tag_classification_rules.py` | tag 年龄分级规则（general / pg12 / r15 / r18 / r18g）。 |
 
 ### 维护脚本
 
 | 文件 | 功能 |
 |------|------|
+| `tools/apply_unclassified_maps.py` | 将 `classify_work/map_*.txt` 人工分类映射回写知识库 v1（分类即排除；支持 `表情动作/擦边`、`物品/擦边`、`人物/擦边` 目标）。 |
+| `tools/apply_r18_tier.py` | 应用 r18 两档分类结果：擦边档 rating r18→r15 + 不可见子类 KB 改写；含不上浮保护（触手/血腥等维持硬排除）。 |
+| `tools/merge_r18_classify.py` | 汇总校验 6 组分片 r18 分类结果（零遗漏零冲突），输出 `r18_classify_summary.json`。 |
 | `tools/build_curated_tags.py` | 从 CSV 自动构建带年龄分级的 `curated_tags.yaml`。可直接运行：`python -m prompt.random_generator.tools.build_curated_tags`。 |
 | `tools/build_curated_pools.py` | 从 `curated_tags.yaml` 构建旧版 `curated_pools.json`。 |
 | `tools/build_character_pool.py` | 从 Excel 角色表构建 `character_pool.json` 与 `character_pool_series_index.json`。 |

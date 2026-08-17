@@ -39,12 +39,37 @@
 
 默认面向"可爱少女向"二次元插画，已内置过滤规则，自动丢弃男性、纯兽人、深肤/非人肤色、明确性行为/性器官/暴力血腥等 tag，并在**输入侧**排除无画面语义的介质/噪音 meta tag（共享黑名单约 380 项 + 后缀规则，见 `config.NOISE_META_TAGS`）。
 
+### 知识库人工细粒度分类与两档制
+
+`知识库/v1` 的 tag 已逐条人工细粒度分类（见 `prompt/random_generator/tools/classify_work/` 下的映射文件与报告）：
+
+- **排除项分类即排除**：所有越界内容改写为 `排除/<子类>`（性行为/猎奇血腥/男性雄性/兽化非人/媒体噪音等），
+  `config.EXCLUDED_CATEGORIES` 整类丢弃，任何模式（含 r18）均不可见；
+- **`排除/性行为` 两档拆分**：拆为"直接暴露档"（显性性器官/精液/体液词，维持硬排除）与
+  **"擦边软色情档"**（`表情动作/擦边`、`物品/擦边`、`人物/擦边` 子类，低配额入池，r15 可偶尔出现）；
+- **r18 评级两档拆分**：995 条 rating=r18 的 tag 按同一标准细分——263 条擦边软色情降级 r15
+  （低配额入池，`表情动作/擦边` 等），732 条直接暴露维持 r18（仅成人模式经 `_supplement_r18_tags` 供给）；
+- **子类配额抽样**（`subcategory_quotas`）：每个内部类别按子类配置 min/max 配额，
+  **未列入配额表的子类=不设限（unlisted），是趋同放大器，新增子类必须显式列入**。
+
 通过 `--max-rating r18` / `r18g` 可开启成人内容模式，支持：
 
 - **r18 主题控制**：17 类成人主题独立开关/概率/权重/联动，未激活主题的 tag 全链路排除；
 - **单人场景限制**：1girl 等单人画面强制不激活需要双人配合的主题（口交/插入/体位）；
 - **r18 内容占比**：r18 模式覆盖 focus_weights，提示 LLM 成人内容占 20%、背景压缩至 20%；
 - **最小 r18 tag 数**：每样本至少补充若干 r18 评级 tag（可配置）。
+
+### 画面美感约束与大规模趋同收敛
+
+- **输出侧美感约束**（`postprocess._apply_aesthetic_constraints`）：排版/分镜类词剔除
+  （comic panel/face chart 等，锚点侧同步禁用 3 个排版锚点）、风格画面词每样本限 1、
+  表情词族互斥（同族 1 个 + 全样本 ≤3）、现实场所词每画面限 1；
+- **趋同收敛**（`generation_config.yaml`）：构图类子类（构图法则/构图氛围）默认 `max:0`
+  （无显式构图，交由模型自由发挥）、灰底滤镜等风格化背景排除、高频姿态池
+  （`表情动作/其他动作`）限 `max:1`、背景样式类子类降 max——目标是每天 1200 张量级
+  下不产生"既视感"（500 批模拟：构图词 0、高频姿态 0.8%、灰底 0）。
+- **随机性保证**：未指定 `--seed` 时每条任务独立随机种子（`random.randint(0, 2**32-1)`），
+  实测相邻批 tag 相似度 Jaccard≈0.022，角色池 8940 角色单角色最高 1.3%。
 
 ***
 
@@ -73,12 +98,17 @@ anima-rag-knowledge/
 │   ├── r18_topics.yaml               # r18 主题分类定义
 │   ├── r18_euphemisms.yaml           # r18 委婉语/替代表达
 │   ├── semantic_exclude.yaml         # 语义排除规则
-│   ├── generation_config.yaml        # 生成参数配置（含 r18 主题控制）
+│   ├── generation_config.yaml        # 生成参数配置（含 r18 主题控制 + subcategory_quotas 子类配额）
+│   ├── creative_anchors.yaml         # 创意锚点池（高概念设定；含 enabled 开关）
 │   ├── character_pool.json           # 角色池缓存（build_character_pool 生成）
 │   ├── character_pool_series_index.json  # IP 级角色池索引
 │   ├── requirements.txt              # Python 依赖
 │   ├── tests/                        # 单元测试
 │   └── tools/                        # 构建/维护脚本
+│       ├── apply_unclassified_maps.py    # 人工分类映射回写知识库（分类即排除）
+│       ├── apply_r18_tier.py             # r18 两档分类应用（擦边降级 + KB 改写）
+│       ├── merge_r18_classify.py         # r18 分类结果汇总校验
+│       └── classify_work/                # 分类审计数据（map_*.txt / 切片 / 结果 JSON）
 │
 ├── output/                           # 生成结果输出目录
 │   ├── random_prompts.jsonl          # 生成结果（默认输出）
@@ -429,6 +459,31 @@ category_whitelists:
     二次元角色: []
 ```
 
+### 子类配额抽样（subcategory_quotas）
+
+每个内部类别下的子类配额，控制各子类每批抽样数量（人工细分类后替代均匀抽样）：
+
+```yaml
+subcategory_quotas:
+  pose_action_sex:            # 姿势/动作/体位
+    静止姿态: {min: 1, max: 4}   # min: 每批至少抽到的数量（保证冷门子类出现）
+    动态动作: {min: 1, max: 5}
+    其他动作: {min: 0, max: 1}   # 高频姿态池限流（趋同收敛）
+    擦边: {min: 0, max: 1}      # 擦边软色情档：偶尔出现
+    性爱动作: {min: 0, max: 0}   # r15 默认完全排除；r18 模式由补充抽样供给
+  camera_shot:
+    构图法则: {min: 0, max: 0}   # 默认无显式构图，交由模型自由发挥（趋同收敛）
+```
+
+规则：
+
+- `min` 先满足，再在 `max` 约束下随机补足到 `sample_counts` 的数量；
+- **未列入配额表的子类 = 不设限（unlisted）**——补足阶段会高概率抽取，是"高频趋同"的放大器，
+  新增子类必须显式列入配额表并设置 max；
+- 擦边软色情档（`表情动作/擦边`/`物品/擦边`/`人物/擦边`）与直接暴露档
+  （`排除/性行为` 与维持 r18 的 tag）由分类体系（`config.CATEGORY_MAPPINGS` +
+  `curated_tags.yaml` 评级）驱动，配额仅控制出现频率。
+
 ### 配置项说明
 
 | 配置项                     | 说明                 | 调整建议                                             |
@@ -439,6 +494,7 @@ category_whitelists:
 | `sample_counts`         | 每个内部类别抽样数量         | 总计建议 ≥ 50，以便 LLM 丢弃不适合 tag 后仍满足 `min_tags`       |
 | `r18_sample_counts`     | r18 模式专用抽样数量        | 仅 r18/r18g 模式覆盖 `sample_counts`，非 r18 模式不受影响       |
 | `r18_topic_control`     | r18 主题控制             | 17 类主题独立开关/模式/数量/权重/联动；`solo` 限制单人场景主题     |
+| `subcategory_quotas`    | 子类配额抽样（min/max）     | 控制各子类出现频率；**未列入的子类=不设限（趋同放大器），新增子类必须列入** |
 | `min_tags` / `max_tags` | 最终 prompt tag 数量区间 | 需要更简短时同时调低                                       |
 | `focus_weights`         | 角色/背景/细节占比         | 提高 `character` 让人物更突出，提高 `background` 让场景更突出     |
 | `r18_focus_weights`     | r18 模式专用占比          | 仅 r18/r18g 模式覆盖；r18 占 20%、背景压缩至 20%，不改变抽样数量   |
@@ -691,8 +747,10 @@ python -m prompt.random_generator.tools.build_curated_pools
 2. **API 费用**：每次生成调用 DeepSeek API，建议将 `deepseek.reasoning_effort` 设为 `"none"` 以关闭推理 token 消耗；请按需控制生成数量。
 3. **内容合规**：默认配置已过滤大量越界内容（男性、纯兽人、非人肤色、武器、酒精、暴力血腥等），并在**输入侧**排除无画面语义的介质/噪音 meta tag（`config.NOISE_META_TAGS`，约 380 项）。r18/r18g 模式会启用主题控制与单人场景限制，但 LLM 仍可能输出越界描述，请按实际合规要求使用。
 4. **自然语言短语**：后处理已过滤清单体和过长短语，但仍建议人工抽查最终 prompt。
-5. **.env 安全**：`.env` 文件包含 API 密钥，已加入 `.gitignore`，请勿提交到公共仓库或保存明文密钥副本。
+5. **.env 安全**：`.env` 文件包含 API 密钥，已加入 `.gitignore`，请勿提交到公共仓库或保存明文密钥副本。**临时 `--api-key` 传入的密钥也只会存在于当前进程，不会写入任何文件。**
 6. **归档目录**：`archive/` 目录存放历史临时文件，不影响项目运行，可定期清理。
+7. **配额表纪律**：`subcategory_quotas` 未列入的子类=不设限（unlisted），补足阶段会被高概率抽取，是"高频趋同"的放大器——新增子类（含擦边档）必须显式列入配额表。
+8. **美感约束**：输出侧 `postprocess._apply_aesthetic_constraints` 会剔除排版/分镜类词、限制风格词（≤1）、表情词族互斥（≤3）、现实场所词（≤1）；若需完全自定义画面语言，请同步调整 `config.LAYOUT_FRAGMENT_TAGS` / `STYLE_VISUAL_TAGS` / `EMOTION_GROUP_TAGS` / `SCENE_PLACE_TAGS` 与锚点池 `creative_anchors.yaml`。
 
 ***
 
