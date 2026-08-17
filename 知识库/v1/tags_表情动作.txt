@@ -1,4 +1,4 @@
-[DOMAIN:标签] [CAT:表情动作/笑] smile | 微笑
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] smile | 微笑
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding | 手持
 [DOMAIN:标签] [CAT:表情动作/静止姿态] sitting | 坐姿
 [DOMAIN:标签] [CAT:表情动作/静止姿态] standing | 站姿
@@ -21,8 +21,8 @@
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_weapon | 持械
 [DOMAIN:标签] [CAT:表情动作/腿部动作] spread_legs | 分腿站立
 [DOMAIN:标签] [CAT:表情动作/静止姿态] on_back | 背负
-[DOMAIN:标签] [CAT:表情动作/哭] tears | 眼泪
-[DOMAIN:标签] [CAT:表情动作/笑] grin | 咧嘴笑
+[DOMAIN:标签] [CAT:表情动作/悲伤哭泣] tears | 眼泪
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] grin | 咧嘴笑
 [DOMAIN:标签] [CAT:表情动作/性爱动作] anthro_on_anthro | 人形互交
 [DOMAIN:标签] [CAT:表情动作/状态反应] sweatdrop | 汗珠
 [DOMAIN:标签] [CAT:表情动作/微笑喜悦] looking_pleasured | 愉悦表情
@@ -46,7 +46,7 @@
 [DOMAIN:标签] [CAT:表情动作/静止姿态] head_tilt | 歪头
 [DOMAIN:标签] [CAT:表情动作/性爱动作] submissive | 顺从姿态
 [DOMAIN:标签] [CAT:表情动作/性爱动作] anthro_penetrating_anthro | 人形插入人形
-[DOMAIN:标签] [CAT:表情动作/笑] open_smile | 露齿笑
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] open_smile | 露齿笑
 [DOMAIN:标签] [CAT:表情动作/性爱动作] presenting_hindquarters | 展示后躯
 [DOMAIN:标签] [CAT:表情动作/人物交互] hug | 拥抱
 [DOMAIN:标签] [CAT:表情动作/冷淡思考] expressionless | 面无表情
@@ -54,7 +54,7 @@
 [DOMAIN:标签] [CAT:表情动作/性爱动作] cumshot | 射精
 [DOMAIN:标签] [CAT:表情动作/静止姿态] leaning_forward | 前倾
 [DOMAIN:标签] [CAT:表情动作/性爱动作] on_top | 上位
-[DOMAIN:标签] [CAT:表情动作/笑] ^_^ | ^ ^
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] ^_^ | ^ ^
 [DOMAIN:标签] [CAT:表情动作/不开心] frown | 皱眉
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_sword | 持剑
 [DOMAIN:标签] [CAT:表情动作/性爱动作] cum_in_pussy | 体内射精
@@ -66,15 +66,15 @@
 [DOMAIN:标签] [CAT:表情动作/基础动作] arm_support | 手臂支撑
 [DOMAIN:标签] [CAT:表情动作/性爱动作] cum_on_body | 精液在身上
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_food | 手持食物
-[DOMAIN:标签] [CAT:表情动作/笑] happy | 开心
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] happy | 开心
 [DOMAIN:标签] [CAT:表情动作/性爱动作] penis_in_ass | 肛内阴茎
 [DOMAIN:标签] [CAT:表情动作/静止姿态] on_side | 侧身姿势
 [DOMAIN:标签] [CAT:表情动作/性爱动作] cum_on_face | 颜射
-[DOMAIN:标签] [CAT:表情动作/手抓着某物] hand_on_butt | 抚臀
+[DOMAIN:标签] [CAT:表情动作/手放在某地] hand_on_butt | 抚臀
 [DOMAIN:标签] [CAT:表情动作/性爱动作] human_on_anthro | 人类骑乘兽人
 [DOMAIN:标签] [CAT:表情动作/状态反应] flying_sweatdrops | 飞溅汗珠
 [DOMAIN:标签] [CAT:表情动作/静止姿态] arms_behind_back | 背后手臂
-[DOMAIN:标签] [CAT:表情动作/手抓着某物] groping | 摸索
+[DOMAIN:标签] [CAT:表情动作/手部动作] groping | 摸索
 [DOMAIN:标签] [CAT:表情动作/腿部动作] squatting | 蹲姿
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] eating | 进食
 [DOMAIN:标签] [CAT:表情动作/静止姿态] crossed_arms | 交叉手臂
@@ -89,10 +89,10 @@
 [DOMAIN:标签] [CAT:表情动作/性爱动作] bound | 被缚
 [DOMAIN:标签] [CAT:表情动作/手部动作] own_hands_together | 双手合拢
 [DOMAIN:标签] [CAT:表情动作/动态动作] trembling | 颤抖
-[DOMAIN:标签] [CAT:表情动作/哭] crying | 哭泣
+[DOMAIN:标签] [CAT:表情动作/悲伤哭泣] crying | 哭泣
 [DOMAIN:标签] [CAT:表情动作/手放在某地] hand_on_breast | 抚胸
 [DOMAIN:标签] [CAT:表情动作/腿部动作] crossed_legs | 翘腿
-[DOMAIN:标签] [CAT:表情动作/笑] light_smile | 浅笑
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] light_smile | 浅笑
 [DOMAIN:标签] [CAT:表情动作/手部动作] skirt_lift | 提裙摆
 [DOMAIN:标签] [CAT:表情动作/基础动作] sleeping | 睡眠
 [DOMAIN:标签] [CAT:表情动作/状态反应] looking_up | 仰视
@@ -102,8 +102,8 @@
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_cup | 手持杯子
 [DOMAIN:标签] [CAT:表情动作/基础动作] outstretched_arms | 张开双臂
 [DOMAIN:标签] [CAT:表情动作/性爱动作] fellatio | 口交
-[DOMAIN:标签] [CAT:表情动作/笑] ;d | ；d
-[DOMAIN:标签] [CAT:表情动作/基础动作] lifting_own_clothes | 掀起衣物
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] ;d | ；d
+[DOMAIN:标签] [CAT:表情动作/手部动作] lifting_own_clothes | 掀起衣物
 [DOMAIN:标签] [CAT:表情动作/性爱动作] sex_from_behind | 后入式性爱
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_gun | 持枪
 [DOMAIN:标签] [CAT:表情动作/静止姿态] on_stomach | 俯卧姿势
@@ -114,7 +114,7 @@
 [DOMAIN:标签] [CAT:表情动作/手放在某地] hand_on_own_chest | 手抚胸口
 [DOMAIN:标签] [CAT:表情动作/静止姿态] bent_over | 弯腰
 [DOMAIN:标签] [CAT:表情动作/害羞脸红] blush_lines | 脸红线条
-[DOMAIN:标签] [CAT:表情动作/笑] kiss | 亲吻
+[DOMAIN:标签] [CAT:表情动作/其他表情] kiss | 亲吻
 [DOMAIN:标签] [CAT:表情动作/手部动作] clenched_hand | 握拳
 [DOMAIN:标签] [CAT:表情动作/性爱动作] breast_play | 胸部玩弄
 [DOMAIN:标签] [CAT:表情动作/基础动作] all_fours | 四肢着地
@@ -157,7 +157,7 @@
 [DOMAIN:标签] [CAT:表情动作/状态反应] eye_contact | 眼神接触
 [DOMAIN:标签] [CAT:表情动作/基础动作] carrying | 搬运
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_book | 手持书本
-[DOMAIN:标签] [CAT:表情动作/哭] tearing_up | 含泪
+[DOMAIN:标签] [CAT:表情动作/悲伤哭泣] tearing_up | 含泪
 [DOMAIN:标签] [CAT:表情动作/生气] angry | 生气
 [DOMAIN:标签] [CAT:表情动作/基础动作] clothing_aside | 衣物拨开
 [DOMAIN:标签] [CAT:表情动作/性爱动作] big_dom_small_sub | 大主小从
@@ -174,7 +174,7 @@
 [DOMAIN:标签] [CAT:表情动作/手部动作] clenched_hands | 握拳
 [DOMAIN:标签] [CAT:表情动作/性爱动作] cum_on_breasts | 乳上精液
 [DOMAIN:标签] [CAT:表情动作/腿部动作] knee_up | 抬膝
-[DOMAIN:标签] [CAT:表情动作/笑] smiling_at_viewer | 对观众微笑
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] smiling_at_viewer | 对观众微笑
 [DOMAIN:标签] [CAT:表情动作/性爱动作] cowgirl_position | 骑乘位
 [DOMAIN:标签] [CAT:表情动作/其他动作] bite | 咬痕
 [DOMAIN:标签] [CAT:表情动作/其他动作] saliva_string | 唾液拉丝
@@ -194,7 +194,7 @@
 [DOMAIN:标签] [CAT:表情动作/性爱动作] handjob | 手交
 [DOMAIN:标签] [CAT:表情动作/性爱动作] clothed_sex | 着衣性爱
 [DOMAIN:标签] [CAT:表情动作/性爱动作] masturbation | 自慰
-[DOMAIN:标签] [CAT:表情动作/哭] crying_with_eyes_open | 睁眼哭泣
+[DOMAIN:标签] [CAT:表情动作/悲伤哭泣] crying_with_eyes_open | 睁眼哭泣
 [DOMAIN:标签] [CAT:表情动作/手部动作] hands_behind_back | 背后交握
 [DOMAIN:标签] [CAT:表情动作/基础动作] arm_behind_head | 手臂枕头
 [DOMAIN:标签] [CAT:表情动作/腿部动作] legs_up | 抬腿
@@ -203,7 +203,7 @@
 [DOMAIN:标签] [CAT:表情动作/其他表情] spoken_ellipsis | 说话省略
 [DOMAIN:标签] [CAT:表情动作/蔑视] jitome | 冷眼
 [DOMAIN:标签] [CAT:表情动作/手放在某地] hand_in_pocket | 手插口袋
-[DOMAIN:标签] [CAT:表情动作/手抓着某物] hand_in_own_hair | 手抓自己头发
+[DOMAIN:标签] [CAT:表情动作/手放在某地] hand_in_own_hair | 手抓自己头发
 [DOMAIN:标签] [CAT:表情动作/腿部动作] legs_apart | 分腿站立
 [DOMAIN:标签] [CAT:表情动作/手放在某地] hand_on_another's_head | 手放他人头上
 [DOMAIN:标签] [CAT:表情动作/性爱动作] vaginal_masturbation | 阴道自慰
@@ -239,14 +239,14 @@
 [DOMAIN:标签] [CAT:表情动作/微笑喜悦] naughty_face | 调皮表情
 [DOMAIN:标签] [CAT:表情动作/性爱动作] spread_butt | 张开臀部
 [DOMAIN:标签] [CAT:表情动作/冷淡思考] serious | 严肃
-[DOMAIN:标签] [CAT:表情动作/腿部动作] tailwag | 摇尾
+[DOMAIN:标签] [CAT:表情动作/动态动作] tailwag | 摇尾
 [DOMAIN:标签] [CAT:表情动作/性爱动作] pants_down | 褪下裤子
 [DOMAIN:标签] [CAT:表情动作/性爱动作] female_on_feral | 女性对兽形
 [DOMAIN:标签] [CAT:表情动作/其他表情] brown_nose | 谄媚
 [DOMAIN:标签] [CAT:表情动作/手部动作] double_v | 双V手势
 [DOMAIN:标签] [CAT:表情动作/性爱动作] female_masturbation | 女性自慰
 [DOMAIN:标签] [CAT:表情动作/手部动作] paw_pose | 爪式手势
-[DOMAIN:标签] [CAT:表情动作/笑] smirk | 得意笑
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] smirk | 得意笑
 [DOMAIN:标签] [CAT:表情动作/手放在某地] hand_behind_head | 手放脑后
 [DOMAIN:标签] [CAT:表情动作/性爱动作] nipple_play | 乳头玩弄
 [DOMAIN:标签] [CAT:表情动作/手放在某地] hand_between_legs | 手夹腿间
@@ -258,7 +258,7 @@
 [DOMAIN:标签] [CAT:表情动作/静止姿态] arms_at_sides | 手臂垂放
 [DOMAIN:标签] [CAT:表情动作/状态反应] panting | 喘息
 [DOMAIN:标签] [CAT:表情动作/人物交互] hug_from_behind | 背后拥抱
-[DOMAIN:标签] [CAT:表情动作/手放在某地] on_floor | 在地面上
+[DOMAIN:标签] [CAT:表情动作/静止姿态] on_floor | 在地面上
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_flower | 手持花朵
 [DOMAIN:标签] [CAT:表情动作/性爱动作] object_insertion | 物体插入
 [DOMAIN:标签] [CAT:表情动作/性爱动作] pout | 噘嘴
@@ -278,7 +278,7 @@
 [DOMAIN:标签] [CAT:表情动作/性爱动作] balls_deep | 深根入底
 [DOMAIN:标签] [CAT:表情动作/惊讶恐惧] o_o | O O
 [DOMAIN:标签] [CAT:表情动作/人物交互] slap | 掌掴
-[DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_breast | 握乳
+[DOMAIN:标签] [CAT:表情动作/手放在某地] holding_breast | 握乳
 [DOMAIN:标签] [CAT:表情动作/动态动作] fighting_stance | 战斗姿态
 [DOMAIN:标签] [CAT:表情动作/静止姿态] sitting_on_person | 坐在他人身上
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] smoking | 吸烟
@@ -296,7 +296,7 @@
 [DOMAIN:标签] [CAT:表情动作/性爱动作] small_dom_big_sub | 小主导大服从
 [DOMAIN:标签] [CAT:表情动作/蔑视] smug | 得意表情
 [DOMAIN:标签] [CAT:表情动作/手部动作] heart_hands | 爱心手势
-[DOMAIN:标签] [CAT:表情动作/手部动作] licking_lips | 舔唇
+[DOMAIN:标签] [CAT:表情动作/基础动作] licking_lips | 舔唇
 [DOMAIN:标签] [CAT:表情动作/性爱动作] arms_tied | 绑臂
 [DOMAIN:标签] [CAT:排除/性行为] hand_on_penis | 手扶阴茎
 [DOMAIN:标签] [CAT:表情动作/人物交互] talking_to_another | 与人交谈
@@ -313,7 +313,7 @@
 [DOMAIN:标签] [CAT:表情动作/其他表情] food_on_face | 脸上食物
 [DOMAIN:标签] [CAT:表情动作/性爱动作] inviting | 诱人姿态
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_bottle | 持瓶
-[DOMAIN:标签] [CAT:表情动作/笑] ahegao | 阿嘿颜
+[DOMAIN:标签] [CAT:排除/性行为] ahegao | 阿嘿颜
 [DOMAIN:标签] [CAT:表情动作/性爱动作] facesitting | 坐脸
 [DOMAIN:标签] [CAT:表情动作/腿部动作] yokozuwari | 正座
 [DOMAIN:标签] [CAT:表情动作/其他表情] saliva_trail | 唾液痕迹
@@ -358,7 +358,7 @@
 [DOMAIN:标签] [CAT:表情动作/手部动作] open_hand | 张开的手
 [DOMAIN:标签] [CAT:表情动作/基础动作] salute | 敬礼
 [DOMAIN:标签] [CAT:表情动作/手放在某地] hand_on_own_head | 手放在头上
-[DOMAIN:标签] [CAT:表情动作/笑] laughing | 大笑
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] laughing | 大笑
 [DOMAIN:标签] [CAT:表情动作/基础动作] stretching | 伸展
 [DOMAIN:标签] [CAT:表情动作/状态反应] looking_afar | 眺望远方
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_animal | 怀抱动物
@@ -369,7 +369,7 @@
 [DOMAIN:标签] [CAT:表情动作/惊讶恐惧] wince | 皱眉退缩
 [DOMAIN:标签] [CAT:表情动作/性爱动作] cum_in_ass | 肛内射精
 [DOMAIN:标签] [CAT:表情动作/性爱动作] incest | 近亲相奸
-[DOMAIN:标签] [CAT:表情动作/笑] evil_smile | 邪笑
+[DOMAIN:标签] [CAT:表情动作/其他表情] evil_smile | 邪笑
 [DOMAIN:标签] [CAT:表情动作/性爱动作] futa_with_female | 扶她与女性
 [DOMAIN:标签] [CAT:表情动作/手部动作] arm_under_breasts | 手臂托胸
 [DOMAIN:标签] [CAT:表情动作/基础动作] presenting | 呈递姿势
@@ -400,7 +400,7 @@
 [DOMAIN:标签] [CAT:表情动作/性爱动作] standing_sex | 站立性交
 [DOMAIN:标签] [CAT:表情动作/性爱动作] leaking_precum | 漏出先走液
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_plate | 端盘子
-[DOMAIN:标签] [CAT:表情动作/手部动作] french_kiss | 法式接吻
+[DOMAIN:标签] [CAT:表情动作/基础动作] french_kiss | 法式接吻
 [DOMAIN:标签] [CAT:表情动作/手部动作] thumbs_up | 竖大拇指
 [DOMAIN:标签] [CAT:表情动作/手抓着某物] grabbing_another's_ass | 抓臀
 [DOMAIN:标签] [CAT:表情动作/性爱动作] public_indecency | 公共场所猥亵
@@ -411,7 +411,7 @@
 [DOMAIN:标签] [CAT:表情动作/腿部动作] on_one_knee | 单膝跪地
 [DOMAIN:标签] [CAT:表情动作/不开心] annoyed | 不悦
 [DOMAIN:标签] [CAT:表情动作/性爱动作] mmf_threesome | 男女男3P
-[DOMAIN:标签] [CAT:表情动作/笑] laugh | 大笑
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] laugh | 大笑
 [DOMAIN:标签] [CAT:表情动作/手部动作] hands_on_hips | 叉腰站立
 [DOMAIN:标签] [CAT:表情动作/状态反应] nervous_sweating | 紧张流汗
 [DOMAIN:标签] [CAT:表情动作/性爱动作] male_penetrated | 男性受交
@@ -432,11 +432,11 @@
 [DOMAIN:标签] [CAT:表情动作/性爱动作] feral_penetrating_human | 兽类穿透人类
 [DOMAIN:标签] [CAT:表情动作/手放在某地] hand_on_own_knee | 手搭膝盖
 [DOMAIN:标签] [CAT:表情动作/状态反应] nervous | 紧张不安
-[DOMAIN:标签] [CAT:表情动作/不开心] sad | 悲伤
+[DOMAIN:标签] [CAT:表情动作/悲伤哭泣] sad | 悲伤
 [DOMAIN:标签] [CAT:表情动作/性爱动作] spreading_own_pussy | 自掰阴户
 [DOMAIN:标签] [CAT:表情动作/基础动作] singing | 歌唱
 [DOMAIN:标签] [CAT:表情动作/腿部动作] kicking | 踢腿动作
-[DOMAIN:标签] [CAT:表情动作/手部动作] biting | 啃咬
+[DOMAIN:标签] [CAT:表情动作/基础动作] biting | 啃咬
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_gift | 手持礼物
 [DOMAIN:标签] [CAT:表情动作/性爱动作] breast_sucking | 吮乳
 [DOMAIN:标签] [CAT:表情动作/性爱动作] petplay | 宠物扮演
@@ -461,7 +461,7 @@
 [DOMAIN:标签] [CAT:表情动作/性爱动作] cunnilingus | 舔阴
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_spoon | 手持勺子
 [DOMAIN:标签] [CAT:表情动作/静止姿态] folded | 折叠状
-[DOMAIN:标签] [CAT:表情动作/笑] seductive_smile | 诱惑微笑
+[DOMAIN:标签] [CAT:表情动作/其他表情] seductive_smile | 诱惑微笑
 [DOMAIN:标签] [CAT:表情动作/其他动作] peeing | 排尿
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_fork | 手持叉子
 [DOMAIN:标签] [CAT:表情动作/性爱动作] cum_everywhere | 精液四溅
@@ -557,8 +557,8 @@
 [DOMAIN:标签] [CAT:表情动作/性爱动作] internal_cumshot | 内射
 [DOMAIN:标签] [CAT:表情动作/状态反应] tired | 疲惫
 [DOMAIN:标签] [CAT:表情动作/基础动作] playing_games | 玩游戏
-[DOMAIN:标签] [CAT:表情动作/哭] streaming_tears | 泪流满面
-[DOMAIN:标签] [CAT:表情动作/笑] xd | XD表情
+[DOMAIN:标签] [CAT:表情动作/悲伤哭泣] streaming_tears | 泪流满面
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] xd | XD表情
 [DOMAIN:标签] [CAT:表情动作/手部动作] pinky_out | 翘起小指
 [DOMAIN:标签] [CAT:表情动作/人物交互] hugging_another | 相拥
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_lollipop | 手持棒棒糖
@@ -569,7 +569,7 @@
 [DOMAIN:标签] [CAT:表情动作/性爱动作] breast_milking | 挤奶
 [DOMAIN:标签] [CAT:表情动作/手部动作] \m/ | 金属礼手势
 [DOMAIN:标签] [CAT:表情动作/性爱动作] nipple_pinch | 捏乳头
-[DOMAIN:标签] [CAT:表情动作/哭] teardrop | 泪珠
+[DOMAIN:标签] [CAT:表情动作/悲伤哭泣] teardrop | 泪珠
 [DOMAIN:标签] [CAT:表情动作/手部动作] covering_face | 遮脸
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_removed_eyewear | 手持摘下的眼镜
 [DOMAIN:标签] [CAT:表情动作/性爱动作] breast_fondling | 揉胸
@@ -595,7 +595,7 @@
 [DOMAIN:标签] [CAT:表情动作/基础动作] dressing | 更衣中
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_bowl | 手持碗
 [DOMAIN:标签] [CAT:表情动作/手部动作] bra_pull | 拉扯胸罩
-[DOMAIN:标签] [CAT:表情动作/笑] nervous_smile | 紧张笑容
+[DOMAIN:标签] [CAT:表情动作/其他表情] nervous_smile | 紧张笑容
 [DOMAIN:标签] [CAT:表情动作/基础动作] carrying_person | 搬运人物
 [DOMAIN:标签] [CAT:表情动作/手放在某地] elbow_rest | 肘部支撑
 [DOMAIN:标签] [CAT:表情动作/基础动作] waking_up | 睡醒
@@ -624,7 +624,7 @@
 [DOMAIN:标签] [CAT:排除/性行为] looking_at_penis | 注视阴茎
 [DOMAIN:标签] [CAT:表情动作/性爱动作] after_orgasm | 高潮之后
 [DOMAIN:标签] [CAT:表情动作/性爱动作] double_handjob | 双手爱抚
-[DOMAIN:标签] [CAT:表情动作/笑] evil_grin | 邪恶笑容
+[DOMAIN:标签] [CAT:表情动作/其他表情] evil_grin | 邪恶笑容
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_towel | 手持毛巾
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_box | 手持盒子
 [DOMAIN:标签] [CAT:表情动作/手部动作] pointing_up | 向上指
@@ -634,7 +634,7 @@
 [DOMAIN:标签] [CAT:表情动作/基础动作] arm_around_shoulder | 搭肩
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_pom_poms | 手持彩球
 [DOMAIN:标签] [CAT:表情动作/其他动作] hypnosis | 催眠
-[DOMAIN:标签] [CAT:表情动作/笑] kissing_cheek | 亲吻脸颊
+[DOMAIN:标签] [CAT:表情动作/其他表情] kissing_cheek | 亲吻脸颊
 [DOMAIN:标签] [CAT:表情动作/性爱动作] male_masturbation | 男性自慰
 [DOMAIN:标签] [CAT:表情动作/手部动作] arms_around_neck | 环抱脖颈
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] reverse_grip | 反手握刀
@@ -796,7 +796,7 @@
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_paintbrush | 手持画笔
 [DOMAIN:标签] [CAT:表情动作/状态反应] looking_over_eyewear | 眼镜下瞥
 [DOMAIN:标签] [CAT:表情动作/手放在某地] hand_on_another's_waist | 扶腰
-[DOMAIN:标签] [CAT:表情动作/笑] smiling_at_another | 相视而笑
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] smiling_at_another | 相视而笑
 [DOMAIN:标签] [CAT:表情动作/性爱动作] cum_through | 贯穿射精
 [DOMAIN:标签] [CAT:表情动作/悲伤哭泣] u_u | 呜呜
 [DOMAIN:标签] [CAT:表情动作/手部动作] head_grab | 抓头
@@ -812,14 +812,14 @@
 [DOMAIN:标签] [CAT:表情动作/动态动作] twitching | 抽搐
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_arrow | 手持箭矢
 [DOMAIN:标签] [CAT:表情动作/手部动作] arm_held_back | 手臂后拉
-[DOMAIN:标签] [CAT:表情动作/不开心] unimpressed | 无动于衷
+[DOMAIN:标签] [CAT:表情动作/冷淡思考] unimpressed | 无动于衷
 [DOMAIN:标签] [CAT:表情动作/手部动作] lifting_another's_clothes | 掀起他人衣物
 [DOMAIN:标签] [CAT:表情动作/其他动作] peeing_self | 失禁
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_sign | 举牌
 [DOMAIN:标签] [CAT:表情动作/手部动作] finger_in_another's_mouth | 手指伸入他人嘴中
 [DOMAIN:标签] [CAT:表情动作/手部动作] pinching | 捏
 [DOMAIN:标签] [CAT:表情动作/性爱动作] after_kiss | 亲吻之后
-[DOMAIN:标签] [CAT:表情动作/哭] tears_of_pleasure | 欢愉之泪
+[DOMAIN:标签] [CAT:表情动作/其他表情] tears_of_pleasure | 欢愉之泪
 [DOMAIN:标签] [CAT:表情动作/动态动作] duel | 决斗
 [DOMAIN:标签] [CAT:表情动作/基础动作] head_on_pillow | 枕上首
 [DOMAIN:标签] [CAT:表情动作/性爱动作] reverse_upright_straddle | 反向骑乘位
@@ -874,7 +874,7 @@
 [DOMAIN:标签] [CAT:表情动作/腿部动作] kick | 踢击
 [DOMAIN:标签] [CAT:表情动作/性爱动作] twitching_penis | 抽搐阴茎
 [DOMAIN:标签] [CAT:表情动作/动态动作] suspension | 悬浮
-[DOMAIN:标签] [CAT:表情动作/笑] smug_grin | 得意笑容
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] smug_grin | 得意笑容
 [DOMAIN:标签] [CAT:表情动作/其他表情] grimace | 鬼脸
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_sack | 手持麻袋
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_panties | 手持内裤
@@ -913,7 +913,7 @@
 [DOMAIN:标签] [CAT:表情动作/性爱动作] anal_fingering | 肛指交
 [DOMAIN:标签] [CAT:表情动作/手部动作] pulling_hair | 拉扯头发
 [DOMAIN:标签] [CAT:表情动作/基础动作] flexing | 肌肉展示
-[DOMAIN:标签] [CAT:表情动作/笑] smiley_face | 笑脸
+[DOMAIN:标签] [CAT:表情动作/其他表情] smiley_face | 笑脸
 [DOMAIN:标签] [CAT:表情动作/基础动作] counter | 反击姿势
 [DOMAIN:标签] [CAT:表情动作/性爱动作] asphyxiation | 窒息
 [DOMAIN:标签] [CAT:表情动作/性爱动作] parallel_sex | 平行性交
@@ -971,7 +971,7 @@
 [DOMAIN:标签] [CAT:表情动作/微笑喜悦] teasing | 挑逗
 [DOMAIN:标签] [CAT:表情动作/其他动作] stuck | 卡住
 [DOMAIN:标签] [CAT:表情动作/手部动作] cheek_poking | 戳脸颊
-[DOMAIN:标签] [CAT:表情动作/哭] happy_tears | 喜悦之泪
+[DOMAIN:标签] [CAT:表情动作/其他表情] happy_tears | 喜悦之泪
 [DOMAIN:标签] [CAT:表情动作/基础动作] head_on_another's_shoulder | 倚靠他人肩膀
 [DOMAIN:标签] [CAT:表情动作/其他表情] brainwashing | 洗脑
 [DOMAIN:标签] [CAT:表情动作/手抓着某物] neckwear_grab | 抓颈饰
@@ -1018,7 +1018,7 @@
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_glass | 手持玻璃杯
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_ice_cream | 手持冰淇淋
 [DOMAIN:标签] [CAT:表情动作/动态动作] chasing | 追逐
-[DOMAIN:标签] [CAT:表情动作/笑] smiling_at_partner | 对伴侣微笑
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] smiling_at_partner | 对伴侣微笑
 [DOMAIN:标签] [CAT:表情动作/手部动作] suggestive_gesture | 暗示性手势
 [DOMAIN:标签] [CAT:表情动作/人物交互] wrestling | 摔跤
 [DOMAIN:标签] [CAT:表情动作/状态反应] small_sweatdrop | 小汗滴
@@ -1097,7 +1097,7 @@
 [DOMAIN:标签] [CAT:表情动作/静止姿态] head_down | 低头
 [DOMAIN:标签] [CAT:表情动作/其他动作] spitting | 吐口水
 [DOMAIN:标签] [CAT:表情动作/性爱动作] imminent_fellatio | 即将口交
-[DOMAIN:标签] [CAT:表情动作/手部动作] caressing_testicles | 抚摸睾丸
+[DOMAIN:标签] [CAT:排除/性行为] caressing_testicles | 抚摸睾丸
 [DOMAIN:标签] [CAT:表情动作/性爱动作] romantic_sex | 浪漫性爱
 [DOMAIN:标签] [CAT:表情动作/性爱动作] ribbon_bondage | 缎带缚
 [DOMAIN:标签] [CAT:表情动作/基础动作] chewing | 咀嚼
@@ -1269,7 +1269,7 @@
 [DOMAIN:标签] [CAT:表情动作/手部动作] kimono_pull | 和服前襟
 [DOMAIN:标签] [CAT:表情动作/性爱动作] groping_from_behind | 背后摸索
 [DOMAIN:标签] [CAT:表情动作/微笑喜悦] enjoying | 享受中
-[DOMAIN:标签] [CAT:表情动作/手部动作] underwear_sniffing | 嗅闻内裤
+[DOMAIN:标签] [CAT:排除/性行为] underwear_sniffing | 嗅闻内裤
 [DOMAIN:标签] [CAT:表情动作/性爱动作] stealth_sex | 隐秘性行为
 [DOMAIN:标签] [CAT:表情动作/手部动作] hat_tip | 帽檐轻抬
 [DOMAIN:标签] [CAT:表情动作/手部动作] kissing_hand | 亲吻手背
@@ -1292,7 +1292,7 @@
 [DOMAIN:标签] [CAT:表情动作/基础动作] jojo_pose | JOJO立
 [DOMAIN:标签] [CAT:表情动作/性爱动作] full_nelson_(legs_held) | 全身压制（锁腿式）
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_jewelry | 手持珠宝
-[DOMAIN:标签] [CAT:表情动作/不开心] bored | 无聊
+[DOMAIN:标签] [CAT:表情动作/冷淡思考] bored | 无聊
 [DOMAIN:标签] [CAT:表情动作/性爱动作] rimming_male | 男性舔肛
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_letter | 手持信件
 [DOMAIN:标签] [CAT:表情动作/基础动作] drying_hair | 吹头发
@@ -1304,7 +1304,7 @@
 [DOMAIN:标签] [CAT:表情动作/手放在某地] ruffling_hair | 揉头发
 [DOMAIN:标签] [CAT:表情动作/手放在某地] breasts_on_table | 胸部置于桌上
 [DOMAIN:标签] [CAT:表情动作/动态动作] henshin | 变身
-[DOMAIN:标签] [CAT:表情动作/不开心] broken_heart | 心碎
+[DOMAIN:标签] [CAT:表情动作/悲伤哭泣] broken_heart | 心碎
 [DOMAIN:标签] [CAT:表情动作/动态动作] peeping | 窥视
 [DOMAIN:标签] [CAT:表情动作/动态动作] struggling | 挣扎
 [DOMAIN:标签] [CAT:表情动作/手势肢体] covering_one_eye | 遮单眼
@@ -1326,7 +1326,7 @@
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_branch | 手持树枝
 [DOMAIN:标签] [CAT:表情动作/其他表情] crazy | 疯狂
 [DOMAIN:标签] [CAT:表情动作/基础动作] washing | 清洗
-[DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_sex_toy | 手持性玩具
+[DOMAIN:标签] [CAT:排除/性行为] holding_sex_toy | 手持性玩具
 [DOMAIN:标签] [CAT:表情动作/性爱动作] consensual_tentacles | 合意触手
 [DOMAIN:标签] [CAT:表情动作/手部动作] tail_hug | 尾巴环绕
 [DOMAIN:标签] [CAT:表情动作/手抓着某物] holding_another's_leg | 握他人腿
@@ -1376,7 +1376,7 @@
 [DOMAIN:标签] [CAT:表情动作/手放在某地] hand_on_another's_hand | 叠手
 [DOMAIN:标签] [CAT:表情动作/静止姿态] on_stool | 坐于凳上
 [DOMAIN:标签] [CAT:表情动作/手放在某地] hand_on_wall | 扶墙
-[DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_detached_head | 手持断首
+[DOMAIN:标签] [CAT:排除/猎奇血腥] holding_detached_head | 手持断首
 [DOMAIN:标签] [CAT:表情动作/性爱动作] breastfeeding | 哺乳
 [DOMAIN:标签] [CAT:表情动作/手部动作] facepalm | 扶额
 [DOMAIN:标签] [CAT:表情动作/手部动作] phone_call | 通话中
@@ -1417,9 +1417,9 @@
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_plectrum | 持拨片
 [DOMAIN:标签] [CAT:表情动作/性爱动作] forced_orgasm | 强制高潮
 [DOMAIN:标签] [CAT:表情动作/手放在某地] arm_on_knee | 搭膝手臂
-[DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_dildo | 手持假阳具
+[DOMAIN:标签] [CAT:排除/性行为] holding_dildo | 手持假阳具
 [DOMAIN:标签] [CAT:表情动作/静止姿态] sitting_on_table | 坐于桌上
-[DOMAIN:标签] [CAT:表情动作/手部动作] licking_armpit | 舔腋窝
+[DOMAIN:标签] [CAT:排除/性行为] licking_armpit | 舔腋窝
 [DOMAIN:标签] [CAT:表情动作/状态反应] relieved | 释然
 [DOMAIN:标签] [CAT:表情动作/职业活动] playing_sports | 运动
 [DOMAIN:标签] [CAT:表情动作/性爱动作] bound_together | 捆绑在一起
@@ -1498,7 +1498,7 @@
 [DOMAIN:标签] [CAT:表情动作/其他动作] peeing_together | 一起小便
 [DOMAIN:标签] [CAT:表情动作/其他动作] skirt_flip | 翻飞裙摆
 [DOMAIN:标签] [CAT:表情动作/其他动作] clothes_tug | 拉扯衣服
-[DOMAIN:标签] [CAT:表情动作/手部动作] hand_in_own_panties | 手入内裤
+[DOMAIN:标签] [CAT:排除/性行为] hand_in_own_panties | 手入内裤
 [DOMAIN:标签] [CAT:表情动作/性爱动作] younger_dom_older_sub | 年下主导年下服从
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_fish | 手持鱼
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_briefcase | 手持公文包
@@ -1523,7 +1523,7 @@
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_burger | 手持汉堡
 [DOMAIN:标签] [CAT:排除/性行为] testicle_grab | 抓握睾丸
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] flower_in_mouth | 衔花
-[DOMAIN:标签] [CAT:表情动作/手抓着某物] nipple_pull | 拉扯乳头
+[DOMAIN:标签] [CAT:排除/性行为] nipple_pull | 拉扯乳头
 [DOMAIN:标签] [CAT:表情动作/手部动作] holding_with_feet | 用脚持物
 [DOMAIN:标签] [CAT:表情动作/动态动作] fidgeting | 坐立不安
 [DOMAIN:标签] [CAT:表情动作/手部动作] double_\m/ | 双\m/手势
@@ -1554,10 +1554,10 @@
 [DOMAIN:标签] [CAT:表情动作/手部动作] covering_another's_eyes | 遮住他人眼睛
 [DOMAIN:标签] [CAT:表情动作/性爱动作] penis_between_breasts | 乳间阴茎
 [DOMAIN:标签] [CAT:表情动作/手部动作] noses_touching | 鼻尖相触
-[DOMAIN:标签] [CAT:表情动作/手部动作] tweaking_own_nipple | 揉捏自己乳头
+[DOMAIN:标签] [CAT:排除/性行为] tweaking_own_nipple | 揉捏自己乳头
 [DOMAIN:标签] [CAT:表情动作/手部动作] licking_ear | 舔耳
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] teeth_hold | 齿间衔物
-[DOMAIN:标签] [CAT:表情动作/手部动作] hand_on_pussy | 手抚阴部
+[DOMAIN:标签] [CAT:排除/性行为] hand_on_pussy | 手抚阴部
 [DOMAIN:标签] [CAT:表情动作/其他表情] spoken_expression | 口语化表达
 [DOMAIN:标签] [CAT:表情动作/基础动作] self_hug | 自我拥抱
 [DOMAIN:标签] [CAT:表情动作/基础动作] child_carry | 抱孩子
@@ -1582,7 +1582,7 @@
 [DOMAIN:标签] [CAT:表情动作/手放在某地] hands_on_another's_chest | 手放他人胸前
 [DOMAIN:标签] [CAT:表情动作/手部动作] breast_poke | 戳胸
 [DOMAIN:标签] [CAT:表情动作/性爱动作] handsfree_paizuri | 悬空乳交
-[DOMAIN:标签] [CAT:表情动作/手部动作] hand_on_crotch | 手抚胯部
+[DOMAIN:标签] [CAT:排除/性行为] hand_on_crotch | 手抚胯部
 [DOMAIN:标签] [CAT:表情动作/性爱动作] amazon_position | 亚马逊体位
 [DOMAIN:标签] [CAT:表情动作/手部动作] hand_on_foot | 手扶脚部
 [DOMAIN:标签] [CAT:表情动作/手部动作] presenting_breasts | 捧胸
@@ -1609,11 +1609,11 @@
 [DOMAIN:标签] [CAT:表情动作/基础动作] shrugging | 耸肩
 [DOMAIN:标签] [CAT:表情动作/手部动作] holding_leg | 抱腿
 [DOMAIN:标签] [CAT:表情动作/基础动作] undressing_self | 自行脱衣
-[DOMAIN:标签] [CAT:表情动作/手部动作] crotch_grab | 抓裆
+[DOMAIN:标签] [CAT:排除/性行为] crotch_grab | 抓裆
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_key | 手持钥匙
-[DOMAIN:标签] [CAT:表情动作/笑] cat_smile | 猫咪微笑
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] cat_smile | 猫咪微笑
 [DOMAIN:标签] [CAT:表情动作/手部动作] hands_in_pocket | 手插口袋
-[DOMAIN:标签] [CAT:表情动作/哭] single_tear | 单边眼泪
+[DOMAIN:标签] [CAT:表情动作/悲伤哭泣] single_tear | 单边眼泪
 [DOMAIN:标签] [CAT:表情动作/手抓着某物] horn_grab | 抓角
 [DOMAIN:标签] [CAT:表情动作/手部动作] scratching_head | 挠头
 [DOMAIN:标签] [CAT:表情动作/性爱动作] bisexual_sandwich | 双性三明治
@@ -1661,7 +1661,7 @@
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_bra | 手托胸罩
 [DOMAIN:标签] [CAT:表情动作/性爱动作] tying | 系绑动作
 [DOMAIN:标签] [CAT:表情动作/愤怒不满] gesugao | 凶恶脸
-[DOMAIN:标签] [CAT:表情动作/笑] forced_smile | 强颜欢笑
+[DOMAIN:标签] [CAT:表情动作/其他表情] forced_smile | 强颜欢笑
 [DOMAIN:标签] [CAT:表情动作/人物交互] entangled | 纠缠
 [DOMAIN:标签] [CAT:表情动作/性爱动作] object_in_pussy | 阴道内物体
 [DOMAIN:标签] [CAT:表情动作/动态动作] flapping | 飘动
@@ -1699,7 +1699,7 @@
 [DOMAIN:标签] [CAT:表情动作/手部动作] licking_another's_neck | 舔舐他人脖颈
 [DOMAIN:标签] [CAT:表情动作/性爱动作] male_on_futa | 男跨扶她
 [DOMAIN:标签] [CAT:表情动作/其他动作] drowning | 溺水
-[DOMAIN:标签] [CAT:表情动作/手抓着某物] bulge_grab | 抓握裆部
+[DOMAIN:标签] [CAT:排除/性行为] bulge_grab | 抓握裆部
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_egg | 手持鸡蛋
 [DOMAIN:标签] [CAT:表情动作/性爱动作] tape_bondage | 胶带缚绑
 [DOMAIN:标签] [CAT:表情动作/手部动作] hand_in_hair | 手挽发丝
@@ -1728,9 +1728,9 @@
 [DOMAIN:标签] [CAT:表情动作/状态反应] eyes_rolling_back | 翻白眼
 [DOMAIN:标签] [CAT:表情动作/人物交互] tickling_feet | 挠脚心
 [DOMAIN:标签] [CAT:表情动作/手放在某地] umbrella_over_shoulder | 肩扛伞
-[DOMAIN:标签] [CAT:表情动作/手放在某地] hand_on_own_crotch | 手抚胯部
+[DOMAIN:标签] [CAT:排除/性行为] hand_on_own_crotch | 手抚胯部
 [DOMAIN:标签] [CAT:表情动作/性爱动作] rubbing_penis | 摩擦阴茎
-[DOMAIN:标签] [CAT:表情动作/手部拿着某物] sucking_tip | 吮吸顶端
+[DOMAIN:标签] [CAT:排除/性行为] sucking_tip | 吮吸顶端
 [DOMAIN:标签] [CAT:表情动作/性爱动作] reverse_gangbang | 反向群交
 [DOMAIN:标签] [CAT:表情动作/手抓着某物] grabbing_another's_ear | 抓他人耳朵
 [DOMAIN:标签] [CAT:表情动作/性爱动作] paizuri_invitation | 乳交邀请
@@ -1796,7 +1796,7 @@
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] fruit_on_head | 头顶水果
 [DOMAIN:标签] [CAT:表情动作/基础动作] gun_on_back | 背枪
 [DOMAIN:标签] [CAT:表情动作/性爱动作] saliva_on_penis | 阴茎唾液
-[DOMAIN:标签] [CAT:表情动作/笑] uchi_emiri | 内笑
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] uchi_emiri | 内笑
 [DOMAIN:标签] [CAT:表情动作/性爱动作] assisted_rape | 协助强奸
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_flask | 手持烧瓶
 [DOMAIN:标签] [CAT:表情动作/手部动作] thumbs_down | 拇指向下
@@ -1816,7 +1816,7 @@
 [DOMAIN:标签] [CAT:表情动作/基础动作] washing_hair | 洗头发
 [DOMAIN:标签] [CAT:表情动作/性爱动作] oyakodon_(sex) | 亲子丼（性意味）
 [DOMAIN:标签] [CAT:表情动作/基础动作] wiping | 擦拭
-[DOMAIN:标签] [CAT:表情动作/手部动作] presenting_removed_panties | 展示脱下的内裤
+[DOMAIN:标签] [CAT:排除/性行为] presenting_removed_panties | 展示脱下的内裤
 [DOMAIN:标签] [CAT:表情动作/静止姿态] sitting_on_bench | 坐于长椅
 [DOMAIN:标签] [CAT:表情动作/手部动作] mask_lift | 面具抬起
 [DOMAIN:标签] [CAT:表情动作/不开心] ;( | 悲伤
@@ -1828,7 +1828,7 @@
 [DOMAIN:标签] [CAT:表情动作/性爱动作] penis_measuring | 测量阴茎
 [DOMAIN:标签] [CAT:表情动作/手部动作] hand_over_another's_mouth | 捂他人嘴
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] food_on_hand | 手持食物
-[DOMAIN:标签] [CAT:表情动作/哭] sobbing | 啜泣
+[DOMAIN:标签] [CAT:表情动作/悲伤哭泣] sobbing | 啜泣
 [DOMAIN:标签] [CAT:表情动作/惊讶恐惧] startled | 受惊
 [DOMAIN:标签] [CAT:表情动作/性爱动作] implied_after_sex | 事后暗示
 [DOMAIN:标签] [CAT:表情动作/性爱动作] immobilization | 束缚固定
@@ -1873,7 +1873,7 @@
 [DOMAIN:标签] [CAT:排除/猎奇血腥] glasgow_smile | 格拉斯哥微笑
 [DOMAIN:标签] [CAT:表情动作/性爱动作] biting_neck | 咬颈
 [DOMAIN:标签] [CAT:表情动作/手部动作] headphones_removed | 耳机摘下
-[DOMAIN:标签] [CAT:表情动作/手部动作] nipple_rub | 摩擦乳头
+[DOMAIN:标签] [CAT:排除/性行为] nipple_rub | 摩擦乳头
 [DOMAIN:标签] [CAT:表情动作/性爱动作] penis_on_pussy | 阴户上的阴茎
 [DOMAIN:标签] [CAT:表情动作/动态动作] bouncing | 弹动
 [DOMAIN:标签] [CAT:表情动作/职业活动] suikawari | 劈西瓜
@@ -1908,7 +1908,7 @@
 [DOMAIN:标签] [CAT:表情动作/静止姿态] clinging | 紧贴
 [DOMAIN:标签] [CAT:表情动作/性爱动作] defeat_sex | 败北性爱
 [DOMAIN:标签] [CAT:表情动作/害羞脸红] shy_(series) | 害羞（系列）
-[DOMAIN:标签] [CAT:表情动作/手部动作] presenting_panties | 呈现内裤
+[DOMAIN:标签] [CAT:排除/性行为] presenting_panties | 呈现内裤
 [DOMAIN:标签] [CAT:表情动作/腿部动作] foot_dangle | 悬垂双足
 [DOMAIN:标签] [CAT:表情动作/手部动作] pulling_pants_down | 褪下裤子
 [DOMAIN:标签] [CAT:表情动作/手部动作] brushing_own_hair | 梳自己的头发
@@ -1928,8 +1928,8 @@
 [DOMAIN:标签] [CAT:表情动作/手部动作] arm_on_own_head | 手臂搭头
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_shower_head | 手持花洒
 [DOMAIN:标签] [CAT:表情动作/其他动作] trapped | 被困
-[DOMAIN:标签] [CAT:表情动作/笑] natsuiro_egao_de_1_2_jump! | 夏色笑颜1、2、跳！
-[DOMAIN:标签] [CAT:表情动作/笑] happiness! | 幸福！
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] natsuiro_egao_de_1_2_jump! | 夏色笑颜1、2、跳！
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] happiness! | 幸福！
 [DOMAIN:标签] [CAT:排除/性行为] penis_over_one_eye | 单眼遮挡
 [DOMAIN:标签] [CAT:表情动作/性爱动作] food_insertion | 食物插入
 [DOMAIN:标签] [CAT:表情动作/其他动作] dying | 濒死
@@ -1978,10 +1978,10 @@
 [DOMAIN:标签] [CAT:表情动作/动态动作] rubbing | 摩擦
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] cat's_cradle | 翻花绳
 [DOMAIN:标签] [CAT:表情动作/手放在某地] arm_on_table | 搭桌手臂
-[DOMAIN:标签] [CAT:表情动作/笑] mischievous_smile | 坏笑
+[DOMAIN:标签] [CAT:表情动作/其他表情] mischievous_smile | 坏笑
 [DOMAIN:标签] [CAT:表情动作/微笑喜悦] mischievous | 调皮
 [DOMAIN:标签] [CAT:表情动作/其他动作] crucifixion | 十字架刑
-[DOMAIN:标签] [CAT:表情动作/笑] slight_smile | 浅笑
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] slight_smile | 浅笑
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_pregnancy_test | 手持验孕棒
 [DOMAIN:标签] [CAT:表情动作/微笑喜悦] cocky | 傲慢
 [DOMAIN:标签] [CAT:表情动作/人物交互] hiding_behind_another | 躲在他人身后
@@ -2014,7 +2014,7 @@
 [DOMAIN:标签] [CAT:表情动作/静止姿态] head_on_table | 头伏桌面
 [DOMAIN:标签] [CAT:表情动作/手部动作] covering_chest | 遮掩胸部
 [DOMAIN:标签] [CAT:表情动作/基础动作] walking_away | walking away: 离去
-[DOMAIN:标签] [CAT:表情动作/笑] nico_nico_nii | 妮可妮可妮
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] nico_nico_nii | 妮可妮可妮
 [DOMAIN:标签] [CAT:表情动作/性爱动作] spreading_another's_pussy | 扒开他人阴部
 [DOMAIN:标签] [CAT:表情动作/基础动作] relaxing | 放松
 [DOMAIN:标签] [CAT:表情动作/职业活动] boxing | 拳击
@@ -2036,7 +2036,7 @@
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_lightsaber | 持光剑
 [DOMAIN:标签] [CAT:表情动作/基础动作] apologizing | 道歉
 [DOMAIN:标签] [CAT:表情动作/手抓着某物] collar_grab | 抓衣领
-[DOMAIN:标签] [CAT:表情动作/笑] anya's_heh_face_(meme) | 阿尼亚的嘿嘿表情（梗）
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] anya's_heh_face_(meme) | 阿尼亚的嘿嘿表情（梗）
 [DOMAIN:标签] [CAT:表情动作/动态动作] smelling_flower | 嗅花
 [DOMAIN:标签] [CAT:表情动作/其他动作] accidental_pervert | 意外性骚扰
 [DOMAIN:标签] [CAT:表情动作/手部动作] cracking_knuckles | 掰指关节
@@ -2107,7 +2107,7 @@
 [DOMAIN:标签] [CAT:表情动作/其他动作] sexual_harassment | 性骚扰
 [DOMAIN:标签] [CAT:表情动作/性爱动作] bound_thighs | 大腿被缚
 [DOMAIN:标签] [CAT:表情动作/手部动作] peeking_through_fingers | 指缝窥视
-[DOMAIN:标签] [CAT:表情动作/手部拿着某物] pussy_juice_on_fingers | 指间爱液
+[DOMAIN:标签] [CAT:排除/性行为] pussy_juice_on_fingers | 指间爱液
 [DOMAIN:标签] [CAT:表情动作/不开心] distressed | 痛苦状
 [DOMAIN:标签] [CAT:表情动作/悲伤哭泣] uu~ | 呜~
 [DOMAIN:标签] [CAT:表情动作/基础动作] listen!! | 聆听！！
@@ -2202,7 +2202,7 @@
 [DOMAIN:标签] [CAT:表情动作/性爱动作] scissorhold | 剪刀固定
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_string | 手持细绳
 [DOMAIN:标签] [CAT:表情动作/动态动作] throwing_needles | 投掷针
-[DOMAIN:标签] [CAT:表情动作/手放在某地] hand_under_swimsuit | 手在泳装下
+[DOMAIN:标签] [CAT:排除/性行为] hand_under_swimsuit | 手在泳装下
 [DOMAIN:标签] [CAT:表情动作/性爱动作] food_between_breasts | 乳间食物
 [DOMAIN:标签] [CAT:表情动作/其他动作] bike_shorts_pull | 自行车短裤拉扯
 [DOMAIN:标签] [CAT:表情动作/性爱动作] autoarousal | 自我唤醒
@@ -2241,7 +2241,7 @@
 [DOMAIN:标签] [CAT:表情动作/基础动作] tossing | 抛掷动作
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_calligraphy_brush | 执毛笔
 [DOMAIN:标签] [CAT:表情动作/基础动作] putting_on_footwear | 穿鞋
-[DOMAIN:标签] [CAT:表情动作/手放在某地] hand_on_another's_crotch | 手放他人胯部
+[DOMAIN:标签] [CAT:排除/性行为] hand_on_another's_crotch | 手放他人胯部
 [DOMAIN:标签] [CAT:表情动作/静止姿态] standing_on_object | 站立于物体上
 [DOMAIN:标签] [CAT:表情动作/其他动作] zanshomimai | 斩首舞
 [DOMAIN:标签] [CAT:表情动作/性爱动作] power_bottom | 强势零
@@ -2326,7 +2326,7 @@
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_chalk | 手持粉笔
 [DOMAIN:标签] [CAT:表情动作/手部动作] arm_wrestling | 掰手腕
 [DOMAIN:标签] [CAT:表情动作/基础动作] turning_around | 转身
-[DOMAIN:标签] [CAT:表情动作/笑] giggling | 咯咯笑
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] giggling | 咯咯笑
 [DOMAIN:标签] [CAT:表情动作/基础动作] lion_dance | 舞狮
 [DOMAIN:标签] [CAT:表情动作/动态动作] landing | 着陆
 [DOMAIN:标签] [CAT:表情动作/其他表情] spoken_flying_sweatdrops | 口述飞溅汗珠
@@ -2418,7 +2418,7 @@
 [DOMAIN:标签] [CAT:表情动作/其他动作] ripping | 撕裂
 [DOMAIN:标签] [CAT:表情动作/性爱动作] pectoral_squeeze | 胸部挤压
 [DOMAIN:标签] [CAT:表情动作/手部动作] eyewear_lift | 眼镜提拉
-[DOMAIN:标签] [CAT:表情动作/哭] crying_emoji | 哭泣表情
+[DOMAIN:标签] [CAT:表情动作/悲伤哭泣] crying_emoji | 哭泣表情
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_hair_dryer | 手持吹风机
 [DOMAIN:标签] [CAT:表情动作/手部动作] double_thumbs_up | 双手点赞
 [DOMAIN:标签] [CAT:表情动作/性爱动作] cum_on_armpit | 腋窝射精
@@ -2429,7 +2429,7 @@
 [DOMAIN:标签] [CAT:表情动作/手放在某地] hands_on_another's_arms | 手搭他人手臂
 [DOMAIN:标签] [CAT:表情动作/性爱动作] grinding_on_penis | 磨蹭阴茎
 [DOMAIN:标签] [CAT:表情动作/职业活动] examination | 检查
-[DOMAIN:标签] [CAT:表情动作/手部动作] groping_chest | 揉捏胸部
+[DOMAIN:标签] [CAT:排除/性行为] groping_chest | 揉捏胸部
 [DOMAIN:标签] [CAT:表情动作/基础动作] lifting_covers | 掀开被子
 [DOMAIN:标签] [CAT:表情动作/静止姿态] lying_on_another | 相互依偎
 [DOMAIN:标签] [CAT:表情动作/基础动作] double_biceps_pose | 双二头肌姿势
@@ -2482,7 +2482,7 @@
 [DOMAIN:标签] [CAT:表情动作/其他表情] irony | 反讽
 [DOMAIN:标签] [CAT:表情动作/腿部动作] heel_pop | 提踵动作
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_unworn_dress | 手持未穿着的连衣裙
-[DOMAIN:标签] [CAT:表情动作/笑] stifled_laugh | 忍笑
+[DOMAIN:标签] [CAT:表情动作/其他表情] stifled_laugh | 忍笑
 [DOMAIN:标签] [CAT:表情动作/性爱动作] tentaclejob | 触手行为
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] incoming_pocky_kiss | 即将到来的百奇吻
 [DOMAIN:标签] [CAT:表情动作/性爱动作] constriction | 束缚
@@ -2524,7 +2524,7 @@
 [DOMAIN:标签] [CAT:表情动作/性爱动作] pony_play | 小马扮演
 [DOMAIN:标签] [CAT:表情动作/性爱动作] human_chair | 人椅
 [DOMAIN:标签] [CAT:表情动作/动态动作] tackle | 擒抱
-[DOMAIN:标签] [CAT:表情动作/基础动作] skinny_dipping | 裸泳
+[DOMAIN:标签] [CAT:排除/性行为] skinny_dipping | 裸泳
 [DOMAIN:标签] [CAT:表情动作/基础动作] humming | 哼唱
 [DOMAIN:标签] [CAT:表情动作/手部动作] hand_to_forehead | 扶额
 [DOMAIN:标签] [CAT:表情动作/基础动作] searching | 搜寻中
@@ -2559,7 +2559,7 @@
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_bomb | 手持炸弹
 [DOMAIN:标签] [CAT:表情动作/手部动作] wiping_forehead | 拭额
 [DOMAIN:标签] [CAT:表情动作/害羞脸红] shy_(character) | 害羞（角色性格）
-[DOMAIN:标签] [CAT:表情动作/手部拿着某物] panties_in_mouth | 口含内裤
+[DOMAIN:标签] [CAT:排除/性行为] panties_in_mouth | 口含内裤
 [DOMAIN:标签] [CAT:表情动作/性爱动作] nipple_torture | 乳头折磨
 [DOMAIN:标签] [CAT:表情动作/基础动作] battoujutsu_stance | 拔刀术架势
 [DOMAIN:标签] [CAT:表情动作/动态动作] german_suplex | 德国式背摔
@@ -2611,7 +2611,7 @@
 [DOMAIN:标签] [CAT:表情动作/性爱动作] head_on_butt | 头顶臀部
 [DOMAIN:标签] [CAT:表情动作/其他动作] eating_hair | 食发
 [DOMAIN:标签] [CAT:表情动作/其他动作] snoring | 打鼾
-[DOMAIN:标签] [CAT:表情动作/手部动作] cunnilingus_gesture | 舔阴手势
+[DOMAIN:标签] [CAT:排除/性行为] cunnilingus_gesture | 舔阴手势
 [DOMAIN:标签] [CAT:表情动作/其他动作] arrest | 逮捕
 [DOMAIN:标签] [CAT:表情动作/性爱动作] intravaginal_futanari | 阴道内双性
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_candy_apple | 手持苹果糖
@@ -2698,12 +2698,12 @@
 [DOMAIN:标签] [CAT:表情动作/职业活动] teleport | 瞬间移动
 [DOMAIN:标签] [CAT:表情动作/职业活动] applying_pedicure | 美甲护理
 [DOMAIN:标签] [CAT:表情动作/其他动作] cheating_(competitive) | 作弊（竞技）
-[DOMAIN:标签] [CAT:表情动作/手部动作] nipple_tweak_through_clothes | 隔衣捏乳头
+[DOMAIN:标签] [CAT:排除/性行为] nipple_tweak_through_clothes | 隔衣捏乳头
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] weapon_in_mouth | 口衔武器
 [DOMAIN:标签] [CAT:表情动作/性爱动作] iya_na_kao_sare_nagara_opantsu_misete_moraitai | 一边被嫌弃一边被要求看胖次
 [DOMAIN:标签] [CAT:表情动作/动态动作] belly_dancing | 肚皮舞
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_crayon | 持蜡笔
-[DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_eyeball | 手持眼球
+[DOMAIN:标签] [CAT:排除/猎奇血腥] holding_eyeball | 手持眼球
 [DOMAIN:标签] [CAT:表情动作/状态反应] steam_from_mouth | 口吐蒸汽
 [DOMAIN:标签] [CAT:表情动作/性爱动作] penis_squeeze | 阴茎挤压
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] flipping_food | 颠勺
@@ -2779,7 +2779,7 @@
 [DOMAIN:标签] [CAT:表情动作/性爱动作] after_footjob | 足交之后
 [DOMAIN:标签] [CAT:表情动作/手部动作] licking_blood | 舔血
 [DOMAIN:标签] [CAT:表情动作/性爱动作] feet_on_penis | 足部触碰阴茎
-[DOMAIN:标签] [CAT:表情动作/笑] crazy_grin | 狂笑
+[DOMAIN:标签] [CAT:表情动作/其他表情] crazy_grin | 狂笑
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_snowball | 手持雪球
 [DOMAIN:标签] [CAT:表情动作/人物交互] leg_hug | 抱腿
 [DOMAIN:标签] [CAT:表情动作/生气] taunting | 挑衅
@@ -2863,7 +2863,7 @@
 [DOMAIN:标签] [CAT:表情动作/性爱动作] nude_modeling | 裸体模特
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] cigarette_kiss | 香烟吻
 [DOMAIN:标签] [CAT:表情动作/性爱动作] implied_ejaculation | 暗示射精
-[DOMAIN:标签] [CAT:表情动作/哭] crying_aqua_(meme) | 哭泣阿夸（梗）
+[DOMAIN:标签] [CAT:表情动作/悲伤哭泣] crying_aqua_(meme) | 哭泣阿夸（梗）
 [DOMAIN:标签] [CAT:表情动作/人物交互] shoulder_massage | 肩部按摩
 [DOMAIN:标签] [CAT:表情动作/性爱动作] blowjob_face | 口交脸
 [DOMAIN:标签] [CAT:表情动作/手部动作] holding_hair_ornament | 手持发饰
@@ -2960,8 +2960,8 @@
 [DOMAIN:标签] [CAT:表情动作/手部动作] chin_grab | 捏下巴
 [DOMAIN:标签] [CAT:表情动作/手部动作] tipping_hat | 轻触帽檐
 [DOMAIN:标签] [CAT:表情动作/性爱动作] after_insertion | 插入后
-[DOMAIN:标签] [CAT:表情动作/笑] kissing_nose | 亲吻鼻子
-[DOMAIN:标签] [CAT:表情动作/笑] nose_kiss | 鼻尖亲吻
+[DOMAIN:标签] [CAT:表情动作/其他表情] kissing_nose | 亲吻鼻子
+[DOMAIN:标签] [CAT:表情动作/其他表情] nose_kiss | 鼻尖亲吻
 [DOMAIN:标签] [CAT:表情动作/基础动作] running_towards_viewer | 奔向观众
 [DOMAIN:标签] [CAT:表情动作/动态动作] pillow_fight | 枕头大战
 [DOMAIN:标签] [CAT:表情动作/其他动作] swimsuit_tug | 泳装拉扯
@@ -3009,7 +3009,7 @@
 [DOMAIN:标签] [CAT:表情动作/其他动作] spitting_blood | 吐血
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] giving_food | 喂食
 [DOMAIN:标签] [CAT:表情动作/静止姿态] sitting_on_fence | 骑墙姿势
-[DOMAIN:标签] [CAT:表情动作/笑] rejected_kiss | 被拒绝的吻
+[DOMAIN:标签] [CAT:表情动作/其他表情] rejected_kiss | 被拒绝的吻
 [DOMAIN:标签] [CAT:表情动作/其他表情] dirty_talk | 污言秽语
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] blood_writing | 血书
 [DOMAIN:标签] [CAT:表情动作/其他动作] eavesdropping | 偷听
@@ -3131,7 +3131,7 @@
 [DOMAIN:标签] [CAT:表情动作/性爱动作] breast_biting | 咬胸
 [DOMAIN:标签] [CAT:表情动作/基础动作] sipping | 啜饮
 [DOMAIN:标签] [CAT:表情动作/性爱动作] unwanted_creampie | 非自愿内射
-[DOMAIN:标签] [CAT:表情动作/笑] wink_star | 眨眼星星
+[DOMAIN:标签] [CAT:表情动作/其他表情] wink_star | 眨眼星星
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_id_card | 手持身份证
 [DOMAIN:标签] [CAT:表情动作/性爱动作] imminent_bestiality | 即将发生的兽行
 [DOMAIN:标签] [CAT:表情动作/腿部动作] standing_on_three_legs | 三足站立
@@ -3158,7 +3158,7 @@
 [DOMAIN:标签] [CAT:表情动作/腿部动作] legs_on_table | 双腿搭桌
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_telescope | 手持望远镜
 [DOMAIN:标签] [CAT:表情动作/手部动作] squeezing_cheeks | 捏脸颊
-[DOMAIN:标签] [CAT:表情动作/哭] tears_from_one_eye | 单眼流泪
+[DOMAIN:标签] [CAT:表情动作/悲伤哭泣] tears_from_one_eye | 单眼流泪
 [DOMAIN:标签] [CAT:表情动作/手部动作] covering_another's_breasts | 遮掩他人胸部
 [DOMAIN:标签] [CAT:表情动作/性爱动作] ear_sex | 耳部情色
 [DOMAIN:标签] [CAT:表情动作/手部动作] wrist_extended | 手腕伸展
@@ -3227,7 +3227,7 @@
 [DOMAIN:标签] [CAT:表情动作/基础动作] hair_wagging | 摇摆头发
 [DOMAIN:标签] [CAT:表情动作/手部动作] animal_on_chest | 胸前动物
 [DOMAIN:标签] [CAT:表情动作/手放在某地] lap | 膝上
-[DOMAIN:标签] [CAT:表情动作/笑] ecstasy | 狂喜
+[DOMAIN:标签] [CAT:表情动作/其他表情] ecstasy | 狂喜
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_razor | 持剃刀
 [DOMAIN:标签] [CAT:表情动作/静止姿态] standing_on_chair | 站立于椅上
 [DOMAIN:标签] [CAT:表情动作/基础动作] waking_another | 唤醒他人
@@ -3274,13 +3274,13 @@
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] eat_me | 吃掉我
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_bandages | 手持绷带
 [DOMAIN:标签] [CAT:表情动作/性爱动作] kissing_shoulder | 亲吻肩膀
-[DOMAIN:标签] [CAT:表情动作/基础动作] shaving_crotch | 剃除阴毛
+[DOMAIN:标签] [CAT:排除/性行为] shaving_crotch | 剃除阴毛
 [DOMAIN:标签] [CAT:表情动作/其他动作] shorts_lift | 短裤上掀
 [DOMAIN:标签] [CAT:表情动作/其他表情] simulated_facial | 模拟面部
 [DOMAIN:标签] [CAT:表情动作/手部动作] double_finger_heart | 双指爱心
 [DOMAIN:标签] [CAT:表情动作/手放在某地] hand_on_goggles | 手扶护目镜
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_charm | 手持护符
-[DOMAIN:标签] [CAT:表情动作/笑] deathsmiles | 死亡微笑
+[DOMAIN:标签] [CAT:表情动作/其他表情] deathsmiles | 死亡微笑
 [DOMAIN:标签] [CAT:排除/性行为] pubes_in_mouth | 阴毛入口
 [DOMAIN:标签] [CAT:表情动作/其他动作] hitchhiking | 搭便车
 [DOMAIN:标签] [CAT:表情动作/人物交互] standing_on_another's_head | 站立头顶
@@ -3318,7 +3318,7 @@
 [DOMAIN:标签] [CAT:表情动作/手部动作] hover_hand | 悬停之手
 [DOMAIN:标签] [CAT:表情动作/性爱动作] double_insertion | 双重插入
 [DOMAIN:标签] [CAT:表情动作/基础动作] dribbling_(basketball) | 运球（篮球）
-[DOMAIN:标签] [CAT:表情动作/笑] tropical_kiss | 热带之吻
+[DOMAIN:标签] [CAT:表情动作/其他表情] tropical_kiss | 热带之吻
 [DOMAIN:标签] [CAT:表情动作/基础动作] me!me!me!_dance_(meme) | 我！我！我！舞（迷因）
 [DOMAIN:标签] [CAT:表情动作/手抓着某物] grabbing_another's_stomach | 抓握他人腹部
 [DOMAIN:标签] [CAT:表情动作/动态动作] umbrella_riding | 乘伞
@@ -3355,7 +3355,7 @@
 [DOMAIN:标签] [CAT:表情动作/性爱动作] breasts_on_face | 面部乳房
 [DOMAIN:标签] [CAT:表情动作/动态动作] launching | 发射
 [DOMAIN:标签] [CAT:表情动作/其他动作] punched | 穿孔
-[DOMAIN:标签] [CAT:表情动作/手部动作] hand_in_bikini | 手伸进比基尼
+[DOMAIN:标签] [CAT:排除/性行为] hand_in_bikini | 手伸进比基尼
 [DOMAIN:标签] [CAT:排除/猎奇血腥] gun_in_mouth | 口含枪管
 [DOMAIN:标签] [CAT:表情动作/动态动作] slam | 猛击
 [DOMAIN:标签] [CAT:表情动作/动态动作] sword_clash | 剑刃交击
@@ -3372,7 +3372,7 @@
 [DOMAIN:标签] [CAT:表情动作/性爱动作] kneeling_on_liquid | 跪于液体上
 [DOMAIN:标签] [CAT:表情动作/手部动作] smelling_feet | 闻脚
 [DOMAIN:标签] [CAT:表情动作/基础动作] climbing_tree | 攀爬树
-[DOMAIN:标签] [CAT:表情动作/手部动作] finger_under_clothes | 衣下探指
+[DOMAIN:标签] [CAT:排除/性行为] finger_under_clothes | 衣下探指
 [DOMAIN:标签] [CAT:表情动作/基础动作] cheek-to-breast | 脸颊贴胸
 [DOMAIN:标签] [CAT:表情动作/基础动作] dive!_(love_live!) | 跳水！（Love Live!）
 [DOMAIN:标签] [CAT:表情动作/手部动作] tying_necktie | 系领带
@@ -3401,7 +3401,7 @@
 [DOMAIN:标签] [CAT:表情动作/基础动作] patting_back | 轻拍后背
 [DOMAIN:标签] [CAT:表情动作/性爱动作] male_prostitution | 男性卖淫
 [DOMAIN:标签] [CAT:表情动作/性爱动作] licking_own_nipple | 舔自己乳头
-[DOMAIN:标签] [CAT:表情动作/笑] bad_end_happy | 坏结局快乐
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] bad_end_happy | 坏结局快乐
 [DOMAIN:标签] [CAT:表情动作/动态动作] running_on_liquid | 液体奔流
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] pen_to_mouth | 衔笔
 [DOMAIN:标签] [CAT:表情动作/腿部动作] ass_lift | 提臀姿势
@@ -3428,7 +3428,7 @@
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_tool | 持握工具
 [DOMAIN:标签] [CAT:表情动作/基础动作] ga_rune_pose | 风符文姿势
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_pan | 持平底锅
-[DOMAIN:标签] [CAT:表情动作/手部动作] imminent_fingering | 迫近指法
+[DOMAIN:标签] [CAT:排除/性行为] imminent_fingering | 迫近指法
 [DOMAIN:标签] [CAT:表情动作/手放在某地] hand_on_own_hat | 手按自己帽子
 [DOMAIN:标签] [CAT:表情动作/基础动作] run_elsie_jewelria | 奔跑的艾尔西·朱艾莉亚
 [DOMAIN:标签] [CAT:表情动作/其他动作] family_guy_death_pose_(meme) | 恶搞之家死亡姿势（梗）
@@ -3442,12 +3442,12 @@
 [DOMAIN:标签] [CAT:表情动作/基础动作] pretzel_pose | 椒盐卷饼姿势
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_dustpan | 持簸箕
 [DOMAIN:标签] [CAT:表情动作/性爱动作] testicles_touching | 睾丸接触
-[DOMAIN:标签] [CAT:表情动作/笑] smiles | 微笑
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] smiles | 微笑
 [DOMAIN:标签] [CAT:表情动作/腿部动作] incoming_kick | 来袭飞踢
 [DOMAIN:标签] [CAT:表情动作/动态动作] gunparade_march | 阅兵行进
 [DOMAIN:标签] [CAT:表情动作/手部动作] nursing_fingering | 护理指法
 [DOMAIN:标签] [CAT:表情动作/手部动作] forehead_kiss | 额头吻
-[DOMAIN:标签] [CAT:表情动作/笑] \(^o^)/ | owata
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] \(^o^)/ | owata
 [DOMAIN:标签] [CAT:表情动作/其他动作] blood_sucking | 吸血
 [DOMAIN:标签] [CAT:表情动作/基础动作] face_hug | 贴面拥抱
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_coffee_pot | 手持咖啡壶
@@ -3517,14 +3517,14 @@
 [DOMAIN:标签] [CAT:表情动作/手部动作] leash_in_mouth | 衔牵绳
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_planet | 托举星球
 [DOMAIN:标签] [CAT:表情动作/基础动作] rice_planting | 插秧
-[DOMAIN:标签] [CAT:表情动作/手部动作] hand_in_pantyhose | 手入裤袜
+[DOMAIN:标签] [CAT:排除/性行为] hand_in_pantyhose | 手入裤袜
 [DOMAIN:标签] [CAT:表情动作/基础动作] observing | 观察中
 [DOMAIN:标签] [CAT:表情动作/性爱动作] fingers_in_pussy | 指探阴部
 [DOMAIN:标签] [CAT:表情动作/其他动作] attempted_suicide | 自杀未遂
 [DOMAIN:标签] [CAT:表情动作/腿部动作] lotus_position | 莲花坐姿
 [DOMAIN:标签] [CAT:表情动作/性爱动作] licking_another's_lips | 舔舐他人嘴唇
 [DOMAIN:标签] [CAT:表情动作/状态反应] drowsy | 昏沉欲睡
-[DOMAIN:标签] [CAT:表情动作/手部动作] hand_in_another's_clothes | 手伸他人衣内
+[DOMAIN:标签] [CAT:排除/性行为] hand_in_another's_clothes | 手伸他人衣内
 [DOMAIN:标签] [CAT:表情动作/性爱动作] implied_penetration | 暗示插入
 [DOMAIN:标签] [CAT:表情动作/性爱动作] erection_under_towel | 毛巾下勃起
 [DOMAIN:标签] [CAT:表情动作/其他动作] watashi_no_tame_ni_nuginasai! | 为我脱掉！
@@ -3620,7 +3620,7 @@
 [DOMAIN:标签] [CAT:表情动作/人物交互] mat_play | 垫上游戏
 [DOMAIN:标签] [CAT:表情动作/性爱动作] pussy_sandwich | 阴部三明治
 [DOMAIN:标签] [CAT:表情动作/动态动作] rock_balancing | 岩石平衡术
-[DOMAIN:标签] [CAT:表情动作/笑] atsuko's_grin_(meme) | 敦子的坏笑（网络梗）
+[DOMAIN:标签] [CAT:表情动作/其他表情] atsuko's_grin_(meme) | 敦子的坏笑（网络梗）
 [DOMAIN:标签] [CAT:表情动作/手部动作] book_to_mouth | 衔书姿势
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] staff_riding | 骑乘法杖
 [DOMAIN:标签] [CAT:表情动作/其他表情] betrayal | 背叛
@@ -3658,7 +3658,7 @@
 [DOMAIN:标签] [CAT:表情动作/手部动作] waving_flag | 挥旗
 [DOMAIN:标签] [CAT:表情动作/性爱动作] cum_on_crotch | 裆部射精
 [DOMAIN:标签] [CAT:表情动作/其他动作] imminent_spanking | 即将打屁股
-[DOMAIN:标签] [CAT:表情动作/手部动作] touching_nipples | 抚触乳头
+[DOMAIN:标签] [CAT:排除/性行为] touching_nipples | 抚触乳头
 [DOMAIN:标签] [CAT:表情动作/其他动作] kaikan_change | 快感变换
 [DOMAIN:标签] [CAT:表情动作/基础动作] praise_the_sun | 赞美太阳
 [DOMAIN:标签] [CAT:表情动作/手部动作] finger_in_ear | 手指入耳
@@ -3687,7 +3687,7 @@
 [DOMAIN:标签] [CAT:表情动作/不开心] wrinkled_frown_(detective_pikachu) | 蹙额皱纹（名侦探皮卡丘）
 [DOMAIN:标签] [CAT:表情动作/性爱动作] penis_between_feet | 脚间阴茎
 [DOMAIN:标签] [CAT:表情动作/性爱动作] nipple_bondage | 乳头缚束
-[DOMAIN:标签] [CAT:表情动作/手部拿着某物] licking_dildo | 舔舐假阳具
+[DOMAIN:标签] [CAT:排除/性行为] licking_dildo | 舔舐假阳具
 [DOMAIN:标签] [CAT:表情动作/手部动作] finger_twirl | 手指旋转
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_sock | 手持袜子
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_lyre | 手持里拉琴
@@ -3696,13 +3696,13 @@
 [DOMAIN:标签] [CAT:表情动作/基础动作] removing_helmet | 摘下头盔
 [DOMAIN:标签] [CAT:表情动作/手部动作] hand_wave | 挥手
 [DOMAIN:标签] [CAT:表情动作/人物交互] surprise_hug | 惊喜拥抱
-[DOMAIN:标签] [CAT:表情动作/笑] kissing_eye | 亲吻之眼
+[DOMAIN:标签] [CAT:表情动作/其他表情] kissing_eye | 亲吻之眼
 [DOMAIN:标签] [CAT:表情动作/人物交互] arm_around_another | 环抱他人
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_thermos | 手持保温杯
 [DOMAIN:标签] [CAT:表情动作/腿部动作] leg_on_another's_shoulder | 腿搭他人肩
 [DOMAIN:标签] [CAT:表情动作/手部动作] hand_out | 伸手递出
 [DOMAIN:标签] [CAT:表情动作/其他动作] covering_anus | 遮蔽臀部
-[DOMAIN:标签] [CAT:表情动作/手部动作] licking_self | 自舔
+[DOMAIN:标签] [CAT:排除/性行为] licking_self | 自舔
 [DOMAIN:标签] [CAT:表情动作/手放在某地] against_desk | 倚靠书桌
 [DOMAIN:标签] [CAT:表情动作/动态动作] under_fire | 遭受攻击
 [DOMAIN:标签] [CAT:表情动作/基础动作] darling_dance_(vocaloid) | 亲爱的舞（VOCALOID）
@@ -3765,7 +3765,7 @@
 [DOMAIN:标签] [CAT:表情动作/手抓着某物] holding_another's_finger | 握住他人手指
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_lightning_bolt | 手持闪电
 [DOMAIN:标签] [CAT:表情动作/手部动作] holding_to_chest | 捧在胸前
-[DOMAIN:标签] [CAT:表情动作/手部动作] touching_own_breast | 触摸自身乳房
+[DOMAIN:标签] [CAT:排除/性行为] touching_own_breast | 触摸自身乳房
 [DOMAIN:标签] [CAT:表情动作/性爱动作] quickie_(tales) | 速战（传说系列）
 [DOMAIN:标签] [CAT:表情动作/手部动作] pointing_with_thumb | 拇指指向
 [DOMAIN:标签] [CAT:表情动作/手放在某地] hand_on_another's_hat | 手按他人帽
@@ -4005,7 +4005,7 @@
 [DOMAIN:标签] [CAT:表情动作/性爱动作] tail_bondage | 尾巴束缚
 [DOMAIN:标签] [CAT:表情动作/手部动作] wringing_hair | 绞拧头发
 [DOMAIN:标签] [CAT:表情动作/性爱动作] futari_ecchi | 二人H
-[DOMAIN:标签] [CAT:表情动作/笑] smile_(.flow) | 微笑（.flow）
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] smile_(.flow) | 微笑（.flow）
 [DOMAIN:标签] [CAT:表情动作/性爱动作] self_exposure | 自我暴露
 [DOMAIN:标签] [CAT:表情动作/微笑喜悦] love_je_t'aime | 爱 我爱你
 [DOMAIN:标签] [CAT:表情动作/职业活动] picking_fruit | 采摘水果
@@ -4041,10 +4041,10 @@
 [DOMAIN:标签] [CAT:表情动作/静止姿态] leaning_on_bed | 倚靠床铺
 [DOMAIN:标签] [CAT:表情动作/性爱动作] pantyjob | 内裤服务
 [DOMAIN:标签] [CAT:表情动作/其他表情] lenny_face | 滑稽脸
-[DOMAIN:标签] [CAT:表情动作/笑] doya | 得意
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] doya | 得意
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_dart | 手持飞镖
 [DOMAIN:标签] [CAT:表情动作/性爱动作] weighing_breasts | 称量乳房
-[DOMAIN:标签] [CAT:表情动作/手部动作] pulling_panties_down | 褪下内裤
+[DOMAIN:标签] [CAT:排除/性行为] pulling_panties_down | 褪下内裤
 [DOMAIN:标签] [CAT:表情动作/动态动作] snow_angel | 雪天使
 [DOMAIN:标签] [CAT:表情动作/性爱动作] forced_exposure | 强制暴露
 [DOMAIN:标签] [CAT:表情动作/手部动作] sheet_bite | 被单咬痕
@@ -4052,7 +4052,7 @@
 [DOMAIN:标签] [CAT:表情动作/性爱动作] spanking_self | 自我打屁股
 [DOMAIN:标签] [CAT:表情动作/性爱动作] sweaty_sex | 汗湿性爱
 [DOMAIN:标签] [CAT:表情动作/性爱动作] pelvic_thrust | 骨盆前挺
-[DOMAIN:标签] [CAT:表情动作/手部动作] hand_in_underwear | 手伸入内裤
+[DOMAIN:标签] [CAT:排除/性行为] hand_in_underwear | 手伸入内裤
 [DOMAIN:标签] [CAT:表情动作/性爱动作] jerking | 手淫
 [DOMAIN:标签] [CAT:表情动作/手部动作] double_inward_v | 双内V手势
 [DOMAIN:标签] [CAT:表情动作/其他表情] hidoi | 残酷
@@ -4152,7 +4152,7 @@
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_trombone | 持长号
 [DOMAIN:标签] [CAT:表情动作/性爱动作] pussy_grip | 女性紧握
 [DOMAIN:标签] [CAT:表情动作/状态反应] looks_to_the_moon | 望月
-[DOMAIN:标签] [CAT:表情动作/手部动作] hand_in_another's_pants | 手伸入他人裤内
+[DOMAIN:标签] [CAT:排除/性行为] hand_in_another's_pants | 手伸入他人裤内
 [DOMAIN:标签] [CAT:表情动作/手放在某地] hands_on_knee | 双手扶膝
 [DOMAIN:标签] [CAT:表情动作/性爱动作] penetration_from_behind | 后入式
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] servants_holding_aphrodite's_breasts_(meme) | 捧握阿佛洛狄忒胸部的侍从（梗图）
@@ -4224,7 +4224,7 @@
 [DOMAIN:标签] [CAT:表情动作/手部动作] te_to_te_try_on | 手牵手试穿
 [DOMAIN:标签] [CAT:表情动作/性爱动作] jk_bitch_ni_shiboraretai | 想被女高中生榨干
 [DOMAIN:标签] [CAT:表情动作/其他动作] diaper_changing | 尿布更换
-[DOMAIN:标签] [CAT:表情动作/笑] spoken_smile | 言语微笑
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] spoken_smile | 言语微笑
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_dog_tags | 持有狗牌
 [DOMAIN:标签] [CAT:表情动作/静止姿态] sitting_on_railing | 坐栏杆
 [DOMAIN:标签] [CAT:表情动作/微笑喜悦] energetic | 精力充沛
@@ -4239,18 +4239,18 @@
 [DOMAIN:标签] [CAT:表情动作/基础动作] look_back | 蓦然回首
 [DOMAIN:标签] [CAT:表情动作/性爱动作] sitting_on_chest | 坐胸
 [DOMAIN:标签] [CAT:表情动作/腿部动作] leg_on_another's_leg | 腿叠腿
-[DOMAIN:标签] [CAT:表情动作/不开心] uninterested | 不感兴趣
+[DOMAIN:标签] [CAT:表情动作/冷淡思考] uninterested | 不感兴趣
 [DOMAIN:标签] [CAT:表情动作/其他表情] horny_face | 情欲面容
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] vaping | 电子烟
 [DOMAIN:标签] [CAT:表情动作/其他动作] digestion | 消化
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_paint_roller | 手持滚筒刷
-[DOMAIN:标签] [CAT:表情动作/笑] ear-to-ear | 咧嘴笑
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] ear-to-ear | 咧嘴笑
 [DOMAIN:标签] [CAT:表情动作/手部动作] clipping_fingernails | 剪指甲
 [DOMAIN:标签] [CAT:表情动作/动态动作] throat_grab | 锁喉
 [DOMAIN:标签] [CAT:表情动作/基础动作] chugging | 畅饮
 [DOMAIN:标签] [CAT:表情动作/手部动作] circle_hands | 环形手势
 [DOMAIN:标签] [CAT:表情动作/性爱动作] navel_penetration | 肚脐穿透
-[DOMAIN:标签] [CAT:表情动作/手部动作] hand_on_breasts | 手抚胸
+[DOMAIN:标签] [CAT:排除/性行为] hand_on_breasts | 手抚胸
 [DOMAIN:标签] [CAT:表情动作/性爱动作] imminent_bukkake | 即将颜射
 [DOMAIN:标签] [CAT:表情动作/性爱动作] mutual_penetration | 相互穿透
 [DOMAIN:标签] [CAT:表情动作/手部动作] licking_eye | 舔眼睛
@@ -4331,7 +4331,7 @@
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_remote | 手持遥控器
 [DOMAIN:标签] [CAT:表情动作/其他动作] forced_dressing | 强制换装
 [DOMAIN:标签] [CAT:表情动作/手放在某地] hand_on_another's_forehead | 手贴他人额头
-[DOMAIN:标签] [CAT:表情动作/笑] satisfied | 满意
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] satisfied | 满意
 [DOMAIN:标签] [CAT:表情动作/冷淡思考] confident | 自信
 [DOMAIN:标签] [CAT:表情动作/职业活动] playing_doctor | 医生扮演
 [DOMAIN:标签] [CAT:表情动作/性爱动作] two-handed_masturbation | 双手自慰
@@ -4341,7 +4341,7 @@
 [DOMAIN:标签] [CAT:表情动作/性爱动作] cooperative_naizuri | 合作内刷
 [DOMAIN:标签] [CAT:排除/男性雄性] manspreading | 跨坐姿势
 [DOMAIN:标签] [CAT:表情动作/动态动作] float | 漂浮
-[DOMAIN:标签] [CAT:表情动作/手部动作] touching_another's_crotch | 触碰他人裆部
+[DOMAIN:标签] [CAT:排除/性行为] touching_another's_crotch | 触碰他人裆部
 [DOMAIN:标签] [CAT:表情动作/性爱动作] breathplay | 呼吸游戏
 [DOMAIN:标签] [CAT:表情动作/腿部动作] foot_on_wall | 踏墙
 [DOMAIN:标签] [CAT:表情动作/性爱动作] plow_pose | 犁式体位
@@ -4360,7 +4360,7 @@
 [DOMAIN:标签] [CAT:表情动作/性爱动作] cum_under_clothes | 衣内射精
 [DOMAIN:标签] [CAT:表情动作/性爱动作] guided_handjob | 引导式手交
 [DOMAIN:标签] [CAT:表情动作/基础动作] wash | 清洗
-[DOMAIN:标签] [CAT:表情动作/笑] open-mouth_smile | 咧嘴笑
+[DOMAIN:标签] [CAT:表情动作/微笑喜悦] open-mouth_smile | 咧嘴笑
 [DOMAIN:标签] [CAT:表情动作/手部动作] arm_holding | 手臂托举
 [DOMAIN:标签] [CAT:表情动作/职业活动] dog_walking | 遛狗
 [DOMAIN:标签] [CAT:表情动作/性爱动作] kinbaku | 紧缚
