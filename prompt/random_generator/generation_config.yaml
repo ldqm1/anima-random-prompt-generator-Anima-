@@ -83,6 +83,15 @@ subcategory_quotas:
     悲伤哭泣: {min: 0, max: 2}
     冷淡思考: {min: 0, max: 3}
     状态反应: {min: 0, max: 4}
+    # ---- 收编 unlisted 表情子类（防高频趋同，报告13）----
+    其他表情: {min: 0, max: 2}   # 136 候选，防"意外色狼/彩虹呕吐"式猎奇表情高频
+    嘴巴: {min: 0, max: 2}       # 46 候选（open mouth/parted lips 等嘴部形态）
+    不开心: {min: 0, max: 1}
+    面部: {min: 0, max: 1}
+    生气: {min: 0, max: 1}
+    蔑视: {min: 0, max: 1}
+    笑: {min: 0, max: 1}
+    哭: {min: 0, max: 1}
   pose_action_sex:         # 动作动静态（保证动态动作/交互出现）
     静止姿态: {min: 1, max: 4}
     基础动作: {min: 0, max: 4}
@@ -97,6 +106,7 @@ subcategory_quotas:
     手抓着某物: {min: 0, max: 3}
     性爱动作: {min: 0, max: 0}   # r15 默认完全排除；r18 模式可覆盖
     擦边: {min: 0, max: 1}       # 擦边软色情档：暗示性但不含显性性器官/体液词，偶尔出现
+    其他动作: {min: 0, max: 1}   # 收编 unlisted 高频姿态池（172 候选，报告13：单tag出现率 8%→0.6%）
   scene_environment:       # 场景功能类（保证自然/奇幻等分布）
     自然户外: {min: 1, max: 6}
     城市街景: {min: 0, max: 5}
@@ -113,14 +123,15 @@ subcategory_quotas:
     氛围: {min: 0, max: 3}
     季节: {min: 0, max: 2}
     云: {min: 0, max: 2}
-    # ---- 画面背景池（人工补判第1批）----
-    简单模糊背景: {min: 0, max: 2}
-    纯色背景: {min: 0, max: 2}
-    渐变多彩背景: {min: 0, max: 2}
-    图案背景: {min: 0, max: 2}
-    主题元素背景: {min: 0, max: 3}
+    # ---- 画面背景池（人工补判第1批；报告13：样式类背景词候选池小→高频，降 max 压制）----
+    简单模糊背景: {min: 0, max: 1}   # 仅 3 候选(simple/blurry/blurred)，原 max2 致 ~12% 出现率
+    纯色背景: {min: 0, max: 1}
+    渐变多彩背景: {min: 0, max: 1}   # 7 候选(rainbow/colorful/gradient 等)
+    图案背景: {min: 0, max: 1}
+    主题元素背景: {min: 0, max: 2}
     实景背景: {min: 0, max: 3}
-    特效氛围背景: {min: 0, max: 2}
+    特效氛围背景: {min: 0, max: 1}
+    背景: {min: 0, max: 1}        # 收编 unlisted 唯一候选(colored with greyscale background), 原 ~19% 出现率
     # ---- 物品池（人工补判第2批，19 子类）----
     其他物品: {min: 0, max: 4}
     动物: {min: 0, max: 3}
@@ -142,8 +153,8 @@ subcategory_quotas:
     布料织品: {min: 0, max: 2}
     其他: {min: 0, max: 1}
     擦边: {min: 0, max: 1}       # 擦边软色情档：色气周边/身体奶油等，偶尔出现
-  camera_shot:             # 镜头子类（结构性构图词必现，替代旧 camera_shot_quotas 死配置）
-    构图法则: {min: 1, max: 3}   # rule of thirds / leading lines / negative space / frame-in-frame 等
+  camera_shot:             # 镜头子类（报告13：构图法则仅9词且结构性高频 → 默认无构图，改由场景句/机位自然构图）
+    构图法则: {min: 0, max: 0}   # 完全不抽 rule of thirds/leading lines 等--画面构图交由模型自由发挥
     镜头角度: {min: 1, max: 4}   # from above / from below / dutch angle / pov 等机位
     人物构图: {min: 1, max: 3}   # close-up / full body / wide shot / upper body 等景别
     特写镜头: {min: 0, max: 3}
@@ -182,7 +193,7 @@ subcategory_quotas:
     画风画派: {min: 1, max: 4}
     颜色风格: {min: 1, max: 4}
     质感特效: {min: 0, max: 3}
-    构图氛围: {min: 0, max: 3}
+    构图氛围: {min: 0, max: 0}   # 构图类词(negative space/居中构图等 26 候选)默认无构图, 交由模型自由发挥
     氛围光影: {min: 0, max: 0}   # 用户禁光影 tag（Anima 光影由 lora 提供），完全剔除
     元数据: {min: 0, max: 0}     # 质量词/媒体词/画师风格残留，完全剔除
 

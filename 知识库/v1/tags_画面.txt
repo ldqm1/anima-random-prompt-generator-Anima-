@@ -1206,7 +1206,7 @@
 [DOMAIN:标签] [CAT:画面/颜色风格] aqua | 水色
 [DOMAIN:标签] [CAT:画面/构图氛围] illusion | 幻象
 [DOMAIN:标签] [CAT:画面/元数据] anata_no_risou_no_heroine | 你的理想女主角
-[DOMAIN:标签] [CAT:画面/背景] colored_with_greyscale_background | 灰度背景上色
+[DOMAIN:标签] [CAT:排除/媒体噪音] colored_with_greyscale_background | 灰度背景上色
 [DOMAIN:标签] [CAT:画面/画风画派] futuregraph | 未来绘
 [DOMAIN:标签] [CAT:画面/画风画派] green_green | 翠色幻想
 [DOMAIN:标签] [CAT:画面/画风画派] vector_art | 矢量艺术
