@@ -112,6 +112,40 @@ subcategory_quotas:
     人物视觉朝向: {min: 0, max: 3}
     效果: {min: 0, max: 2}
     其他沟通: {min: 0, max: 2}
+  appearance:              # 外貌细分子类（保证发色/发型/眼睛基础词，限制胸部/标记/状态占比）
+    发色: {min: 1, max: 4}
+    发型: {min: 1, max: 5}
+    眼睛: {min: 1, max: 4}
+    身材体态: {min: 0, max: 2}
+    胸部: {min: 0, max: 2}
+    皮肤肤色: {min: 0, max: 3}
+    肢体: {min: 0, max: 3}
+    面部细节: {min: 0, max: 2}
+    非人特征: {min: 0, max: 4}
+    身体标记: {min: 0, max: 2}
+    体型年龄: {min: 0, max: 2}
+    身体状态: {min: 0, max: 2}
+    其他: {min: 0, max: 0}    # 断首/悬浮头颅等猎奇残留，完全不抽
+  clothing_state:          # 服装款式细分子类（保证日常便服/鞋袜基础词，控制泳装内衣占比）
+    日常便服: {min: 1, max: 6}
+    制服校服: {min: 0, max: 4}
+    泳装内衣: {min: 0, max: 3}
+    和风民族: {min: 0, max: 4}
+    洋装礼服: {min: 0, max: 4}
+    外套大衣: {min: 0, max: 4}
+    运动休闲: {min: 0, max: 4}
+    军装战斗: {min: 0, max: 4}
+    鞋袜: {min: 1, max: 5}
+    头饰: {min: 0, max: 4}
+    配饰: {min: 0, max: 4}
+    其他: {min: 0, max: 1}
+  detail_mood:             # 画面质感细分子类（画风/配色基础词必现；光影/元数据按用户禁令剔除）
+    画风画派: {min: 1, max: 4}
+    颜色风格: {min: 1, max: 4}
+    质感特效: {min: 0, max: 3}
+    构图氛围: {min: 0, max: 3}
+    氛围光影: {min: 0, max: 0}   # 用户禁光影 tag（Anima 光影由 lora 提供），完全剔除
+    元数据: {min: 0, max: 0}     # 质量词/媒体词/画师风格残留，完全剔除
 
 # 反趋同配额：默认词上限（每行至多 1 次，注入模板 + postprocess 校验）
 default_word_quota:

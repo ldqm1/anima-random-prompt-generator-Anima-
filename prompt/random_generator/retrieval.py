@@ -1348,22 +1348,28 @@ def _sample_with_subcategory_quotas(
     # 2. 剩余名额（受 max 约束）
     remaining = k - len(chosen)
     if remaining > 0:
-        pool: list[dict] = []
-        for item in candidates:
-            if id(item) in picked:
+        # 每个受配额子类最多再贡献 (max - 已选) 个，保证 max 硬约束；
+        # 未列入配额的子类不设限。
+        capped_pool: list[dict] = []
+        for sc, q in quotas.items():
+            n_max = int(q.get("max", 1 << 30))
+            cur = sum(
+                1
+                for c in chosen
+                if _sub_short(c.get("subcategory", "")) == sc
+            )
+            cap = max(0, n_max - cur)
+            if cap <= 0:
                 continue
-            sc = _sub_short(item.get("subcategory", ""))
-            q = quotas.get(sc)
-            if q:
-                n_max = int(q.get("max", 1 << 30))
-                cur = sum(
-                    1
-                    for c in chosen
-                    if _sub_short(c.get("subcategory", "")) == sc
-                )
-                if cur >= n_max:
-                    continue
-            pool.append(item)
+            pool = [it for it in groups.get(sc, []) if id(it) not in picked]
+            capped_pool.extend(random.sample(pool, min(cap, len(pool))))
+        unlisted = [
+            it
+            for it in candidates
+            if id(it) not in picked
+            and _sub_short(it.get("subcategory", "")) not in quotas
+        ]
+        pool = capped_pool + unlisted
         take = random.sample(pool, min(remaining, len(pool)))
         chosen.extend(take)
 

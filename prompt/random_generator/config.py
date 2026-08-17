@@ -393,6 +393,17 @@ CATEGORY_MAPPINGS: dict[tuple[str, str], str] = {
     ("人物", "舌头"): "appearance",
     ("人物", "年龄"): "appearance",
     ("人物", "非人特征"): "appearance",
+    # 外貌细分子类（人工分类 v2）
+    ("人物", "发色"): "appearance",
+    ("人物", "发型"): "appearance",
+    ("人物", "身材体态"): "appearance",
+    ("人物", "皮肤肤色"): "appearance",
+    ("人物", "肢体"): "appearance",
+    ("人物", "面部细节"): "appearance",
+    ("人物", "身体标记"): "appearance",
+    ("人物", "体型年龄"): "appearance",
+    ("人物", "身体状态"): "appearance",
+    ("人物", "其他"): "appearance",
 
     # ---------- expression_reaction ----------
     ("人物", "面部"): "expression_reaction",
@@ -453,6 +464,19 @@ CATEGORY_MAPPINGS: dict[tuple[str, str], str] = {
     ("服饰", "围巾"): "clothing_state",
     ("服饰", "其他装饰物"): "clothing_state",
     ("服饰", ""): "clothing_state",
+    # 服装款式细分子类（人工分类 v2：按款式风格跨部位重分）
+    ("服饰", "日常便服"): "clothing_state",
+    ("服饰", "制服校服"): "clothing_state",
+    ("服饰", "泳装内衣"): "clothing_state",
+    ("服饰", "和风民族"): "clothing_state",
+    ("服饰", "洋装礼服"): "clothing_state",
+    ("服饰", "外套大衣"): "clothing_state",
+    ("服饰", "运动休闲"): "clothing_state",
+    ("服饰", "军装战斗"): "clothing_state",
+    ("服饰", "鞋袜"): "clothing_state",
+    ("服饰", "头饰"): "clothing_state",
+    ("服饰", "配饰"): "clothing_state",
+    ("服饰", "其他"): "clothing_state",
 
     # ---------- camera_shot ----------
     ("镜头", "人物构图"): "camera_shot",
@@ -506,6 +530,13 @@ CATEGORY_MAPPINGS: dict[tuple[str, str], str] = {
     ("画面", "艺术派系"): "detail_mood",
     ("画面", "艺术家风格"): "detail_mood",
     ("画面", ""): "detail_mood",
+    # 画面质感细分子类（人工分类 v2；氛围光影/元数据 通过配额 max 0 剔除）
+    ("画面", "画风画派"): "detail_mood",
+    ("画面", "颜色风格"): "detail_mood",
+    ("画面", "质感特效"): "detail_mood",
+    ("画面", "氛围光影"): "detail_mood",
+    ("画面", "构图氛围"): "detail_mood",
+    ("画面", "元数据"): "detail_mood",
 }
 
 DEFAULT_INTERNAL_CATEGORY: str = "detail_mood"

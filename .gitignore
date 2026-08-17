@@ -38,3 +38,6 @@ output_dev/
 prompt/random_generator/tools/classify_work/expr_*.txt
 prompt/random_generator/tools/classify_work/action_*.txt
 prompt/random_generator/tools/classify_work/scene_*.txt
+prompt/random_generator/tools/classify_work/appear_*.txt
+prompt/random_generator/tools/classify_work/detail_*.txt
+prompt/random_generator/tools/classify_work/clothing_*.txt
