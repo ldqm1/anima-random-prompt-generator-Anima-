@@ -60,7 +60,7 @@
 [DOMAIN:标签] [CAT:人物/发色] red_hair | 红发
 [DOMAIN:标签] [CAT:人物/肢体] fingers | 手指
 [DOMAIN:标签] [CAT:人物/性器官] humanoid_genitalia | 人形生殖器
-[DOMAIN:标签] [CAT:人物/对象] nude | 裸体
+[DOMAIN:标签] [CAT:人物/擦边] nude | 裸体
 [DOMAIN:标签] [CAT:人物/胸部] small_breasts | 贫乳
 [DOMAIN:标签] [CAT:人物/嘴巴] parted_lips | 微张嘴唇
 [DOMAIN:标签] [CAT:人物/面部细节] teeth | 牙齿
@@ -128,7 +128,7 @@
 [DOMAIN:标签] [CAT:人物/皮肤肤色] tan_body | 褐色身体
 [DOMAIN:标签] [CAT:人物/发型] parted_bangs | 中分刘海
 [DOMAIN:标签] [CAT:排除/非人肤色] two_tone_body | 双色身体
-[DOMAIN:标签] [CAT:人物/对象] completely_nude | 全裸
+[DOMAIN:标签] [CAT:人物/擦边] completely_nude | 全裸
 [DOMAIN:标签] [CAT:人物/眼睛] grey_eyes | 灰色眼睛
 [DOMAIN:标签] [CAT:人物/发型] twin_braids | 双辫
 [DOMAIN:标签] [CAT:人物/肢体] fingernails | 指甲
@@ -183,7 +183,7 @@
 [DOMAIN:标签] [CAT:排除/兽化非人] two_tone_fur | 双色皮毛
 [DOMAIN:标签] [CAT:人物/发型] floating_hair | 飘浮发丝
 [DOMAIN:标签] [CAT:人物/发型] double_bun | 双丸子头
-[DOMAIN:标签] [CAT:人物/对象] mostly_nude | 半裸
+[DOMAIN:标签] [CAT:人物/擦边] mostly_nude | 半裸
 [DOMAIN:标签] [CAT:人物/皮肤肤色] shiny_skin | 光泽肌肤
 [DOMAIN:标签] [CAT:人物/面部细节] makeup | 妆容
 [DOMAIN:标签] [CAT:排除/男性雄性] overweight_male | 超重男性
@@ -461,7 +461,7 @@
 [DOMAIN:标签] [CAT:人物/身份（职业）] dog_girl | 犬娘
 [DOMAIN:标签] [CAT:人物/发型] braided_hair | 编发
 [DOMAIN:标签] [CAT:人物/体型年龄] aged_up | 年龄增长
-[DOMAIN:标签] [CAT:人物/对象] nude_female | 女性裸体
+[DOMAIN:标签] [CAT:人物/擦边] nude_female | 女性裸体
 [DOMAIN:标签] [CAT:人物/性器官] multi_penis | 多重阴茎
 [DOMAIN:标签] [CAT:人物/对象] injury | 受伤
 [DOMAIN:标签] [CAT:人物/眼睛] short_eyebrows | 短眉
@@ -805,7 +805,7 @@
 [DOMAIN:标签] [CAT:人物/身份（职业）] tomboy | 假小子
 [DOMAIN:标签] [CAT:人物/身份（职业）] rabbit_humanoid | 兔人形
 [DOMAIN:标签] [CAT:人物/对象] wetting | 潮湿
-[DOMAIN:标签] [CAT:人物/对象] pregnant | 怀孕
+[DOMAIN:标签] [CAT:人物/擦边] pregnant | 怀孕
 [DOMAIN:标签] [CAT:人物/发型] curtained_hair | 帘式发型
 [DOMAIN:标签] [CAT:人物/非人特征] tail_fin | 尾鳍
 [DOMAIN:标签] [CAT:人物/非人特征] multi_head | 多头
@@ -991,7 +991,7 @@
 [DOMAIN:标签] [CAT:人物/对象] harpy | 鹰身女妖
 [DOMAIN:标签] [CAT:人物/身体标记] breast_tattoo | 胸部纹身
 [DOMAIN:标签] [CAT:人物/胸部] unaligned_breasts | 不对称乳房
-[DOMAIN:标签] [CAT:人物/其他] armpit_fetish | 腋窝崇拜
+[DOMAIN:标签] [CAT:人物/擦边] armpit_fetish | 腋窝崇拜
 [DOMAIN:标签] [CAT:人物/肢体] big_hands | 巨手
 [DOMAIN:标签] [CAT:人物/非人特征] small_horns | 小角
 [DOMAIN:标签] [CAT:人物/性器官] hairy_balls | 毛绒阴囊
@@ -1130,7 +1130,7 @@
 [DOMAIN:标签] [CAT:人物/身体标记] face_paint | 面部彩绘
 [DOMAIN:标签] [CAT:排除/男性雄性] full_beard | 浓密胡须
 [DOMAIN:标签] [CAT:人物/眼睛] hypnotic_eyes | 催眠眼
-[DOMAIN:标签] [CAT:人物/对象] mostly_nude_female | 近全裸女性
+[DOMAIN:标签] [CAT:人物/擦边] mostly_nude_female | 近全裸女性
 [DOMAIN:标签] [CAT:人物/身份（职业）] pirate | 海盗
 [DOMAIN:标签] [CAT:人物/非人特征] yellow_horns | 黄色犄角
 [DOMAIN:标签] [CAT:人物/肢体] bad_feet | 足部缺陷
@@ -1332,7 +1332,7 @@
 [DOMAIN:标签] [CAT:人物/嘴巴] rectangular_mouth | 矩形嘴
 [DOMAIN:标签] [CAT:人物/非人特征] brown_wings | 棕色翅膀
 [DOMAIN:标签] [CAT:人物/身份（职业）] nerd | 书呆子
-[DOMAIN:标签] [CAT:人物/对象] half_naked | 半裸
+[DOMAIN:标签] [CAT:人物/擦边] half_naked | 半裸
 [DOMAIN:标签] [CAT:人物/眼睛] white_eyelashes | 白色睫毛
 [DOMAIN:标签] [CAT:人物/对象] spirit | 精灵
 [DOMAIN:标签] [CAT:人物/性器官] penis_size_difference | 阴茎尺寸差异
@@ -1458,7 +1458,7 @@
 [DOMAIN:标签] [CAT:人物/对象] monkey_ears | 猴耳
 [DOMAIN:标签] [CAT:人物/身体标记] mole_above_mouth | 上唇痣
 [DOMAIN:标签] [CAT:人物/面部细节] uvula | 小舌
-[DOMAIN:标签] [CAT:人物/其他] musky_butt | 麝香臀
+[DOMAIN:标签] [CAT:人物/擦边] musky_butt | 麝香臀
 [DOMAIN:标签] [CAT:人物/对象] heartbeat | 心跳
 [DOMAIN:标签] [CAT:人物/身体标记] star_tattoo | 星形纹身
 [DOMAIN:标签] [CAT:人物/身体状态] breast_expansion | 胸部膨胀
@@ -1812,7 +1812,7 @@
 [DOMAIN:标签] [CAT:人物/身份（职业）] in_heat | 发情期
 [DOMAIN:标签] [CAT:人物/对象] monkey_girl | 猴女
 [DOMAIN:标签] [CAT:人物/肢体] quadruple_amputee | 四肢截肢
-[DOMAIN:标签] [CAT:人物/对象] implied_pregnancy | 暗示怀孕
+[DOMAIN:标签] [CAT:人物/擦边] implied_pregnancy | 暗示怀孕
 [DOMAIN:标签] [CAT:人物/身份（职业）] mechanic | 机械师
 [DOMAIN:标签] [CAT:人物/身体标记] ass_tattoo | 臀部纹身
 [DOMAIN:标签] [CAT:人物/面部细节] missing_tooth | 缺齿
@@ -2625,7 +2625,7 @@
 [DOMAIN:标签] [CAT:人物/对象] lekku_(anatomy) | 列库（解剖学）
 [DOMAIN:标签] [CAT:人物/身份（职业）] medjed_(fate)_(cosplay) | 梅杰德（Fate）（COSPLAY）
 [DOMAIN:标签] [CAT:人物/身份（职业）] princess_peach_(cosplay) | 桃花公主（角色扮演）
-[DOMAIN:标签] [CAT:人物/其他] bimbofication | 花瓶化
+[DOMAIN:标签] [CAT:人物/擦边] bimbofication | 花瓶化
 [DOMAIN:标签] [CAT:人物/性器官] implied_erection | 暗示勃起
 [DOMAIN:标签] [CAT:排除/猎奇血腥] broken_rape_victim | 受创的强奸受害者
 [DOMAIN:标签] [CAT:人物/眼睛] dripping_eye | 滴泪眼

@@ -1,0 +1,902 @@
+[
+ {
+  "tag": "bare breasts",
+  "cn": "裸露胸部",
+  "topic": "nudity_exposure",
+  "kb": "tags_人物.txt|1399",
+  "cat": "人物/身体状态",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "bottomless female",
+  "cn": "无下装女性",
+  "topic": "nudity_exposure",
+  "kb": "tags_服饰.txt|894",
+  "cat": "服饰/其他",
+  "internal": "clothing_state",
+  "r15_visible": true,
+  "curated_cat": "clothing_state"
+ },
+ {
+  "tag": "breasts out",
+  "cn": "胸部裸露",
+  "topic": "nudity_exposure",
+  "kb": "tags_人物.txt|285",
+  "cat": "人物/身体状态",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "breasts out of clothes",
+  "cn": "衣衫外的乳房",
+  "topic": "nudity_exposure",
+  "kb": "tags_人物.txt|3742",
+  "cat": "人物/身体状态",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "completely nude",
+  "cn": "全裸",
+  "topic": "nudity_exposure",
+  "kb": "tags_人物.txt|131",
+  "cat": "人物/对象",
+  "internal": "count_gender",
+  "r15_visible": true,
+  "curated_cat": "count_gender"
+ },
+ {
+  "tag": "exposed belly",
+  "cn": "裸露腹部",
+  "topic": "nudity_exposure",
+  "kb": "tags_人物.txt|1915",
+  "cat": "人物/身材体态",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "exposed breasts",
+  "cn": "裸露乳房",
+  "topic": "nudity_exposure",
+  "kb": "tags_人物.txt|519",
+  "cat": "人物/身体状态",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "exposed chest",
+  "cn": "胸膛袒露",
+  "topic": "nudity_exposure",
+  "kb": "tags_人物.txt|2390",
+  "cat": "人物/身体状态",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "exposed shoulder",
+  "cn": "露肩",
+  "topic": "nudity_exposure",
+  "kb": "tags_人物.txt|2277",
+  "cat": "人物/身材体态",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "half naked",
+  "cn": "半裸",
+  "topic": "nudity_exposure",
+  "kb": "tags_人物.txt|1335",
+  "cat": "人物/对象",
+  "internal": "count_gender",
+  "r15_visible": true,
+  "curated_cat": "count_gender"
+ },
+ {
+  "tag": "mostly nude",
+  "cn": "半裸",
+  "topic": "nudity_exposure",
+  "kb": "tags_人物.txt|186",
+  "cat": "人物/对象",
+  "internal": "count_gender",
+  "r15_visible": true,
+  "curated_cat": "count_gender"
+ },
+ {
+  "tag": "mostly nude female",
+  "cn": "近全裸女性",
+  "topic": "nudity_exposure",
+  "kb": "tags_人物.txt|1133",
+  "cat": "人物/对象",
+  "internal": "count_gender",
+  "r15_visible": true,
+  "curated_cat": "count_gender"
+ },
+ {
+  "tag": "nude",
+  "cn": "裸体",
+  "topic": "nudity_exposure",
+  "kb": "tags_人物.txt|63",
+  "cat": "人物/对象",
+  "internal": "count_gender",
+  "r15_visible": true,
+  "curated_cat": "clothing_state"
+ },
+ {
+  "tag": "nude female",
+  "cn": "女性裸体",
+  "topic": "nudity_exposure",
+  "kb": "tags_人物.txt|464",
+  "cat": "人物/对象",
+  "internal": "count_gender",
+  "r15_visible": true,
+  "curated_cat": "count_gender"
+ },
+ {
+  "tag": "one breast out",
+  "cn": "单侧露乳",
+  "topic": "nudity_exposure",
+  "kb": "tags_人物.txt|644",
+  "cat": "人物/身体状态",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "topless",
+  "cn": "裸上身",
+  "topic": "nudity_exposure",
+  "kb": "tags_人物.txt|264",
+  "cat": "人物/身体状态",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "clothing_state"
+ },
+ {
+  "tag": "topless female",
+  "cn": "女性裸上身",
+  "topic": "nudity_exposure",
+  "kb": "tags_人物.txt|909",
+  "cat": "人物/身体状态",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "areola",
+  "cn": "乳晕",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|74",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "areola slip",
+  "cn": "乳晕滑露",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|342",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "ass expansion",
+  "cn": "臀部扩张",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|3462",
+  "cat": "人物/身体状态",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "back boob",
+  "cn": "背侧乳房",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|934",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "backboob",
+  "cn": "背沟",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|870",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "belly expansion",
+  "cn": "腹部膨胀",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|959",
+  "cat": "人物/身体状态",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "belly inflation",
+  "cn": "腹部膨胀",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|1019",
+  "cat": "人物/身体状态",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "black nipples",
+  "cn": "黑色乳首",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|3028",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "blue areola",
+  "cn": "蓝色乳晕",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|687",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "blue nipples",
+  "cn": "蓝色乳首",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|2018",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "breast slip",
+  "cn": "露胸",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|1151",
+  "cat": "人物/身体状态",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "carried breast rest",
+  "cn": "托乳姿势",
+  "topic": "body_features",
+  "kb": "tags_表情动作.txt|1854",
+  "cat": "表情动作/手部动作",
+  "internal": "pose_action_sex",
+  "r15_visible": true,
+  "curated_cat": "pose_action_sex"
+ },
+ {
+  "tag": "colored nipples",
+  "cn": "有色乳头",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|1504",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "dark areola",
+  "cn": "深色乳晕",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|1124",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "dark areolae",
+  "cn": "深色乳晕",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|1496",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "dark nipples",
+  "cn": "暗色乳头",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|955",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "erect nipples",
+  "cn": "勃起乳头",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|311",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "glands of montgomery",
+  "cn": "蒙哥马利腺",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|1922",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "glowing nipples",
+  "cn": "发光乳头",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|3111",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "green nipples",
+  "cn": "绿色乳头",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|2693",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "grey nipples",
+  "cn": "灰乳头",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|3169",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "hair over crotch",
+  "cn": "遮裆发",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|2501",
+  "cat": "人物/发型",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "high waist sideboob",
+  "cn": "高腰侧乳",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|2666",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "inverted nipples",
+  "cn": "内陷乳头",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|600",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "leaking nipples",
+  "cn": "泌乳乳头",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|3721",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "light areolae",
+  "cn": "浅色乳晕",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|1395",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "lipstick mark on pussy",
+  "cn": "阴部唇印",
+  "topic": "body_features",
+  "kb": "tags_表情动作.txt|4141",
+  "cat": "表情动作/性爱动作",
+  "internal": "pose_action_sex",
+  "r15_visible": false,
+  "curated_cat": "pose_action_sex"
+ },
+ {
+  "tag": "long nipples",
+  "cn": "长乳头",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|2361",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "mole on areola",
+  "cn": "乳晕痣",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|2842",
+  "cat": "人物/身体标记",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "musky butt",
+  "cn": "麝香臀",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|1461",
+  "cat": "人物/其他",
+  "internal": "appearance",
+  "r15_visible": false,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "nipple indents",
+  "cn": "乳尖凹陷",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|2346",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "nipple outline",
+  "cn": "乳头轮廓",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|303",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "nipple slip",
+  "cn": "走光",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|587",
+  "cat": "人物/身体状态",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "nipple tag",
+  "cn": "乳首标签",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|2537",
+  "cat": "人物/其他",
+  "internal": "appearance",
+  "r15_visible": false,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "nipple to nipple",
+  "cn": "乳头相连",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|1862",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "nipples",
+  "cn": "乳头",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|38",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "nipples touching",
+  "cn": "乳头相触",
+  "topic": "body_features",
+  "kb": "tags_表情动作.txt|1724",
+  "cat": "表情动作/性爱动作",
+  "internal": "pose_action_sex",
+  "r15_visible": false,
+  "curated_cat": "pose_action_sex"
+ },
+ {
+  "tag": "nipples visible through clothing",
+  "cn": "透衣可见乳头",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|2562",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "no nipples",
+  "cn": "无乳头",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|948",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "non mammal breasts",
+  "cn": "非哺乳类乳房",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|182",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "pink areola",
+  "cn": "粉色乳晕",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|302",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "pink nipples",
+  "cn": "粉色乳头",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|214",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "pubic tattoo through clothing",
+  "cn": "透衣阴部纹身",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|3338",
+  "cat": "人物/身体标记",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "puffy areola",
+  "cn": "肿胀乳晕",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|715",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "puffy nipples",
+  "cn": "凸起乳头",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|400",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "purple nipples",
+  "cn": "紫色乳头",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|2295",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "red nipples",
+  "cn": "红色乳首",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|3430",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "rope marks",
+  "cn": "绳痕",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|2379",
+  "cat": "人物/身体标记",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "sideboob",
+  "cn": "侧乳",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|197",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "single inverted nipple",
+  "cn": "单侧内陷乳头",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|3329",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "small nipples",
+  "cn": "小乳头",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|1868",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "spank marks",
+  "cn": "拍打痕迹",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|1006",
+  "cat": "人物/身体状态",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "stomach bulge",
+  "cn": "腹部凸起",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|769",
+  "cat": "人物/身材体态",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "teal nipples",
+  "cn": "青绿色乳头",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|2110",
+  "cat": "人物/胸部",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "underboob",
+  "cn": "露下乳",
+  "topic": "body_features",
+  "kb": "tags_服饰.txt|166",
+  "cat": "服饰/泳装内衣",
+  "internal": "clothing_state",
+  "r15_visible": true,
+  "curated_cat": "clothing_state"
+ },
+ {
+  "tag": "whip marks",
+  "cn": "鞭痕",
+  "topic": "body_features",
+  "kb": "tags_人物.txt|1810",
+  "cat": "人物/身体状态",
+  "internal": "appearance",
+  "r15_visible": true,
+  "curated_cat": "appearance"
+ },
+ {
+  "tag": "aroused",
+  "cn": "情欲高涨",
+  "topic": "reactions",
+  "kb": "tags_表情动作.txt|990",
+  "cat": "表情动作/其他表情",
+  "internal": "expression_reaction",
+  "r15_visible": true,
+  "curated_cat": "expression_reaction"
+ },
+ {
+  "tag": "blowjob face",
+  "cn": "口交脸",
+  "topic": "reactions",
+  "kb": "tags_表情动作.txt|2868",
+  "cat": "表情动作/性爱动作",
+  "internal": "pose_action_sex",
+  "r15_visible": false,
+  "curated_cat": "pose_action_sex"
+ },
+ {
+  "tag": "cum drool",
+  "cn": "精液垂涎",
+  "topic": "reactions",
+  "kb": "tags_表情动作.txt|1435",
+  "cat": "排除/性行为",
+  "internal": null,
+  "r15_visible": false,
+  "curated_cat": "expression_reaction"
+ },
+ {
+  "tag": "fucked silly",
+  "cn": "神志不清",
+  "topic": "reactions",
+  "kb": "tags_表情动作.txt|539",
+  "cat": "表情动作/性爱动作",
+  "internal": "pose_action_sex",
+  "r15_visible": false,
+  "curated_cat": "pose_action_sex"
+ },
+ {
+  "tag": "kissing while penetrated",
+  "cn": "插入时接吻",
+  "topic": "reactions",
+  "kb": "tags_表情动作.txt|1918",
+  "cat": "表情动作/性爱动作",
+  "internal": "pose_action_sex",
+  "r15_visible": false,
+  "curated_cat": "pose_action_sex"
+ },
+ {
+  "tag": "melty+",
+  "cn": "融化+",
+  "topic": "reactions",
+  "kb": "tags_表情动作.txt|4051",
+  "cat": "表情动作/其他表情",
+  "internal": "expression_reaction",
+  "r15_visible": true,
+  "curated_cat": "expression_reaction"
+ },
+ {
+  "tag": "mind break",
+  "cn": "精神崩溃",
+  "topic": "reactions",
+  "kb": "tags_表情动作.txt|2349",
+  "cat": "表情动作/其他表情",
+  "internal": "expression_reaction",
+  "r15_visible": true,
+  "curated_cat": "expression_reaction"
+ },
+ {
+  "tag": "mouthful mode",
+  "cn": "满口模式",
+  "topic": "reactions",
+  "kb": "tags_表情动作.txt|3426",
+  "cat": "表情动作/性爱动作",
+  "internal": "pose_action_sex",
+  "r15_visible": false,
+  "curated_cat": "pose_action_sex"
+ },
+ {
+  "tag": "orgasm face",
+  "cn": "高潮表情",
+  "topic": "reactions",
+  "kb": "tags_表情动作.txt|226",
+  "cat": "表情动作/其他表情",
+  "internal": "expression_reaction",
+  "r15_visible": true,
+  "curated_cat": "expression_reaction"
+ },
+ {
+  "tag": "plap",
+  "cn": "拍打声",
+  "topic": "reactions",
+  "kb": "tags_表情动作.txt|1494",
+  "cat": "表情动作/性爱动作",
+  "internal": "pose_action_sex",
+  "r15_visible": false,
+  "curated_cat": "pose_action_sex"
+ },
+ {
+  "tag": "sadism",
+  "cn": "施虐癖",
+  "topic": "reactions",
+  "kb": "tags_表情动作.txt|1482",
+  "cat": "表情动作/其他表情",
+  "internal": "expression_reaction",
+  "r15_visible": true,
+  "curated_cat": "expression_reaction"
+ },
+ {
+  "tag": "sloppy",
+  "cn": "凌乱交合",
+  "topic": "reactions",
+  "kb": "tags_表情动作.txt|2412",
+  "cat": "表情动作/性爱动作",
+  "internal": "pose_action_sex",
+  "r15_visible": false,
+  "curated_cat": "pose_action_sex"
+ },
+ {
+  "tag": "spitting cum",
+  "cn": "吐精",
+  "topic": "reactions",
+  "kb": "tags_表情动作.txt|4373",
+  "cat": "表情动作/性爱动作",
+  "internal": "pose_action_sex",
+  "r15_visible": false,
+  "curated_cat": "pose_action_sex"
+ },
+ {
+  "tag": "throbbing",
+  "cn": "脉动",
+  "topic": "reactions",
+  "kb": "tags_表情动作.txt|355",
+  "cat": "表情动作/性爱动作",
+  "internal": "pose_action_sex",
+  "r15_visible": false,
+  "curated_cat": "pose_action_sex"
+ },
+ {
+  "tag": "torogao",
+  "cn": "鸟颜",
+  "topic": "reactions",
+  "kb": "tags_表情动作.txt|521",
+  "cat": "表情动作/其他表情",
+  "internal": "expression_reaction",
+  "r15_visible": true,
+  "curated_cat": "expression_reaction"
+ },
+ {
+  "tag": "tsuyokiss",
+  "cn": "强吻",
+  "topic": "reactions",
+  "kb": "tags_表情动作.txt|2806",
+  "cat": "表情动作/性爱动作",
+  "internal": "pose_action_sex",
+  "r15_visible": false,
+  "curated_cat": "pose_action_sex"
+ },
+ {
+  "tag": "vomiting cum",
+  "cn": "吐精",
+  "topic": "reactions",
+  "kb": "tags_表情动作.txt|3051",
+  "cat": "排除/性行为",
+  "internal": null,
+  "r15_visible": false,
+  "curated_cat": "pose_action_sex"
+ }
+]

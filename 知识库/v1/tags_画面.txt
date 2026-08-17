@@ -677,7 +677,7 @@
 [DOMAIN:标签] [CAT:画面/质感特效] vhs_artifacts | VHS噪点
 [DOMAIN:标签] [CAT:画面/元数据] ohisashiburi_(style) | 久别重逢（风格）
 [DOMAIN:标签] [CAT:画面/质感特效] cracked | 裂纹
-[DOMAIN:标签] [CAT:画面/元数据] bisected | 躯体分割
+[DOMAIN:标签] [CAT:排除/猎奇血腥] bisected | 躯体分割
 [DOMAIN:标签] [CAT:画面/颜色风格] saturated | 饱和色
 [DOMAIN:标签] [CAT:画面/元数据] screencap_redraw | 截图重绘
 [DOMAIN:标签] [CAT:画面/氛围光影] snow_halation | 雪色光晕

@@ -51,7 +51,7 @@ count_gender:
   rating: general
   chinese: 四胞胎
 - tag: completely nude
-  rating: r18
+  rating: r15
   chinese: 全裸
 - tag: corpse
   rating: r18g
@@ -60,28 +60,28 @@ count_gender:
   rating: r18g
   chinese: 裸露骨骼
 - tag: half naked
-  rating: r18
+  rating: r15
   chinese: 半裸
 - tag: headless
   rating: r18g
   chinese: 无头
 - tag: implied pregnancy
-  rating: r18
+  rating: r15
   chinese: 暗示怀孕
 - tag: mostly nude
-  rating: r18
+  rating: r15
   chinese: 半裸
 - tag: mostly nude female
-  rating: r18
+  rating: r15
   chinese: 近全裸女性
 - tag: mutilation
   rating: r18g
   chinese: 肢体残缺
 - tag: nude female
-  rating: r18
+  rating: r15
   chinese: 女性裸体
 - tag: pregnant
-  rating: r18
+  rating: r15
   chinese: 怀孕
 - tag: severed torso
   rating: r18g
@@ -1561,19 +1561,19 @@ appearance:
   rating: general
   chinese: 奶油色头发
 - tag: armpit fetish
-  rating: r18
+  rating: r15
   chinese: 腋窝崇拜
 - tag: exposed belly
-  rating: r18
+  rating: r15
   chinese: 裸露腹部
 - tag: exposed breasts
-  rating: r18
+  rating: r15
   chinese: 裸露乳房
 - tag: exposed chest
-  rating: r18
+  rating: r15
   chinese: 胸膛袒露
 - tag: exposed shoulder
-  rating: r18
+  rating: r15
   chinese: 露肩
 - tag: nipple outline
   rating: r18
@@ -1591,7 +1591,7 @@ appearance:
   rating: r18
   chinese: 年长受入方
 - tag: topless female
-  rating: r18
+  rating: r15
   chinese: 女性裸上身
 - tag: whip marks
   rating: r18
@@ -1615,7 +1615,7 @@ appearance:
   rating: r18
   chinese: 腿间精液
 - tag: excessive lactation
-  rating: r18
+  rating: r15
   chinese: 泌乳过量
 - tag: exposed brain
   rating: r18g
@@ -1627,19 +1627,19 @@ appearance:
   rating: r18g
   chinese: 肠
 - tag: lactating
-  rating: r18
+  rating: r15
   chinese: 泌乳
 - tag: lactation
-  rating: r18
+  rating: r15
   chinese: 泌乳
 - tag: lactation through clothes
-  rating: r18
+  rating: r15
   chinese: 透衣泌乳
 - tag: missing eye
   rating: r18g
   chinese: 缺失的眼睛
 - tag: pregnancy mark
-  rating: r18
+  rating: r15
   chinese: 孕纹
 - tag: rope marks
   rating: r18
@@ -1741,7 +1741,7 @@ appearance:
   rating: general
   chinese: 编织马尾
 - tag: breasts out
-  rating: r18
+  rating: r15
   chinese: 胸部裸露
 - tag: bright pupils
   rating: general
@@ -1915,7 +1915,7 @@ appearance:
   rating: r18
   chinese: 乳头
 - tag: non-mammal breasts
-  rating: r18
+  rating: r15
   chinese: 非哺乳类乳房
 - tag: official alternate hairstyle
   rating: general
@@ -1978,7 +1978,7 @@ appearance:
   rating: general
   chinese: 侧马尾
 - tag: sideboob
-  rating: r18
+  rating: r15
   chinese: 侧乳
 - tag: skin fang
   rating: general
@@ -2050,7 +2050,7 @@ appearance:
   rating: general
   chinese: 吐舌
 - tag: topless
-  rating: r18
+  rating: r15
   chinese: 裸上身
 - tag: tsurime
   rating: general
@@ -2185,13 +2185,13 @@ appearance:
   rating: general
   chinese: 婴儿
 - tag: back boob
-  rating: r18
+  rating: r15
   chinese: 背侧乳房
 - tag: back tattoo
   rating: general
   chinese: 背部纹身
 - tag: backboob
-  rating: r18
+  rating: r15
   chinese: 背沟
 - tag: bald
   rating: general
@@ -2218,7 +2218,7 @@ appearance:
   rating: general
   chinese: 裸背
 - tag: bare breasts
-  rating: r18
+  rating: r15
   chinese: 裸露胸部
 - tag: bare hips
   rating: r15
@@ -2236,10 +2236,10 @@ appearance:
   rating: general
   chinese: 腹部
 - tag: belly expansion
-  rating: r18
+  rating: r15
   chinese: 腹部膨胀
 - tag: belly inflation
-  rating: r18
+  rating: r15
   chinese: 腹部膨胀
 - tag: biceps
   rating: general
@@ -2353,13 +2353,13 @@ appearance:
   rating: general
   chinese: 胸部艳羡
 - tag: breast milk
-  rating: r18
+  rating: r15
   chinese: 母乳
 - tag: breast size difference
   rating: general
   chinese: 乳房大小差异
 - tag: breast slip
-  rating: r18
+  rating: r15
   chinese: 露胸
 - tag: breast tattoo
   rating: general
@@ -3019,7 +3019,7 @@ appearance:
   rating: general
   chinese: 粗壮大腿
 - tag: musky butt
-  rating: r18
+  rating: r15
   chinese: 麝香臀
 - tag: nail art
   rating: general
@@ -3085,7 +3085,7 @@ appearance:
   rating: general
   chinese: 年长女性
 - tag: one breast out
-  rating: r18
+  rating: r15
   chinese: 单侧露乳
 - tag: one-eyed
   rating: general
@@ -3421,7 +3421,7 @@ appearance:
   rating: general
   chinese: 缝合痕迹
 - tag: stomach bulge
-  rating: r18
+  rating: r15
   chinese: 腹部凸起
 - tag: stomach growling
   rating: general
@@ -4222,7 +4222,7 @@ appearance:
   rating: general
   chinese: 胸肌之间
 - tag: bimbofication
-  rating: r18
+  rating: r15
   chinese: 花瓶化
 - tag: bite mark on arm
   rating: r15
@@ -4279,7 +4279,7 @@ appearance:
   rating: general
   chinese: 乳房垂落
 - tag: breastmilk
-  rating: r18
+  rating: r15
   chinese: 母乳
 - tag: broken leg
   rating: r15
@@ -4477,7 +4477,7 @@ appearance:
   rating: general
   chinese: 爱心脸颊
 - tag: high-waist sideboob
-  rating: r18
+  rating: r15
   chinese: 高腰侧乳
 - tag: huge tongue
   rating: general
@@ -4555,7 +4555,7 @@ appearance:
   rating: general
   chinese: 腰腹纹身
 - tag: milk leaking
-  rating: r18
+  rating: r15
   chinese: 漏奶
 - tag: mismatched irises
   rating: general
@@ -4867,7 +4867,7 @@ appearance:
   rating: pg12
   chinese: 臀晕
 - tag: ass expansion
-  rating: r18
+  rating: r15
   chinese: 臀部扩张
 - tag: badger tail
   rating: general
@@ -4945,7 +4945,7 @@ appearance:
   rating: general
   chinese: 缚翼
 - tag: breasts out of clothes
-  rating: r18
+  rating: r15
   chinese: 衣衫外的乳房
 - tag: broken skin
   rating: r18g
@@ -5537,7 +5537,7 @@ clothing_state:
   rating: general
   chinese: 百褶裙
 - tag: nude
-  rating: r18
+  rating: r15
   chinese: 裸体
 - tag: hairband
   rating: general
@@ -5663,7 +5663,7 @@ clothing_state:
   rating: general
   chinese: 耳环
 - tag: no bra
-  rating: r18
+  rating: r15
   chinese: 无胸罩
 - tag: witch hat
   rating: general
@@ -5729,7 +5729,7 @@ clothing_state:
   rating: general
   chinese: 粉色蝴蝶结
 - tag: topless
-  rating: r18
+  rating: r15
   chinese: 裸上身
 - tag: red shirt
   rating: general
@@ -6107,7 +6107,7 @@ clothing_state:
   rating: r15
   chinese: 内裤褪至一旁
 - tag: naked shirt
-  rating: r18
+  rating: r15
   chinese: 真空衬衫
 - tag: blue cape
   rating: general
@@ -6869,7 +6869,7 @@ clothing_state:
   rating: general
   chinese: 未塞入下装的衬衫
 - tag: naked coat
-  rating: r18
+  rating: r15
   chinese: 裸身穿外套
 - tag: cropped vest
   rating: general
@@ -7010,19 +7010,19 @@ clothing_state:
   rating: r18
   chinese: 股绳
 - tag: cummerbund
-  rating: r18
+  rating: r15
   chinese: 腰封
 - tag: exposed panties
-  rating: r18
+  rating: r15
   chinese: 内裤走光
 - tag: exposed pocket
-  rating: r18
+  rating: r15
   chinese: 外露口袋
 - tag: exposed underwear
-  rating: r18
+  rating: r15
   chinese: 暴露内裤
 - tag: fetish wear
-  rating: r18
+  rating: r15
   chinese: 恋物服饰
 - tag: gag around neck
   rating: r18
@@ -7040,94 +7040,94 @@ clothing_state:
   rating: r18
   chinese: 乳间系带
 - tag: naked apron
-  rating: r18
+  rating: r15
   chinese: 裸体围裙
 - tag: naked armor
-  rating: r18
+  rating: r15
   chinese: 裸体盔甲
 - tag: naked bandage
-  rating: r18
+  rating: r15
   chinese: 裸体绷带
 - tag: naked belt
-  rating: r18
+  rating: r15
   chinese: 裸身腰带
 - tag: naked bowtie
-  rating: r18
+  rating: r15
   chinese: 裸体领结
 - tag: naked cape
-  rating: r18
+  rating: r15
   chinese: 裸体披风
 - tag: naked capelet
-  rating: r18
+  rating: r15
   chinese: 裸肩短斗篷
 - tag: naked cardigan
-  rating: r18
+  rating: r15
   chinese: 真空开衫
 - tag: naked cloak
-  rating: r18
+  rating: r15
   chinese: 裸体斗篷
 - tag: naked costume
-  rating: r18
+  rating: r15
   chinese: 裸体装
 - tag: naked gloves
-  rating: r18
+  rating: r15
   chinese: 裸手手套
 - tag: naked hood
-  rating: r18
+  rating: r15
   chinese: 裸体兜帽
 - tag: naked hoodie
-  rating: r18
+  rating: r15
   chinese: 真空连帽衫
 - tag: naked jacket
-  rating: r18
+  rating: r15
   chinese: 真空夹克
 - tag: naked kimono
-  rating: r18
+  rating: r15
   chinese: 裸体和服
 - tag: naked necktie
-  rating: r18
+  rating: r15
   chinese: 裸体领带
 - tag: naked overalls
-  rating: r18
+  rating: r15
   chinese: 裸体背带裤
 - tag: naked poncho
-  rating: r18
+  rating: r15
   chinese: 裸体斗篷
 - tag: naked raincoat
-  rating: r18
+  rating: r15
   chinese: 透明雨衣
 - tag: naked ribbon
-  rating: r18
+  rating: r15
   chinese: 裸体缎带
 - tag: naked robe
-  rating: r18
+  rating: r15
   chinese: 裸体长袍
 - tag: naked scarf
-  rating: r18
+  rating: r15
   chinese: 裸体围巾
 - tag: naked sheet
-  rating: r18
+  rating: r15
   chinese: 裸身床单
 - tag: naked skirt
-  rating: r18
+  rating: r15
   chinese: 裸裙
 - tag: naked suspenders
-  rating: r18
+  rating: r15
   chinese: 裸体吊带袜
 - tag: naked sweater
-  rating: r18
+  rating: r15
   chinese: 真空毛衣
 - tag: naked tabard
-  rating: r18
+  rating: r15
   chinese: 裸身罩袍
 - tag: naked towel
-  rating: r18
+  rating: r15
   chinese: 浴巾裸身
 - tag: naked vest
-  rating: r18
+  rating: r15
   chinese: 裸体背心
 - tag: nearly naked apron
-  rating: r18
+  rating: r15
   chinese: 半裸围裙
 - tag: nipple bar
   rating: r18
@@ -7139,7 +7139,7 @@ clothing_state:
   rating: r18
   chinese: 乳链
 - tag: nipple covers
-  rating: r18
+  rating: r15
   chinese: 乳贴
 - tag: nipple cutout
   rating: r18
@@ -7160,10 +7160,10 @@ clothing_state:
   rating: r18
   chinese: 乳环
 - tag: nipple tape
-  rating: r18
+  rating: r15
   chinese: 乳贴
 - tag: nipple tassels
-  rating: r18
+  rating: r15
   chinese: 乳饰流苏
 - tag: nipple weights
   rating: r18
@@ -7172,7 +7172,7 @@ clothing_state:
   rating: r18
   chinese: 无眼罩
 - tag: no panties
-  rating: r18
+  rating: r15
   chinese: 无内裤
 - tag: over the mouth gag
   rating: r18
@@ -7181,7 +7181,7 @@ clothing_state:
   rating: r18
   chinese: 内裤封口
 - tag: partially undressed
-  rating: r18
+  rating: r15
   chinese: 半褪衣衫
 - tag: pussy piercing
   rating: r18
@@ -7196,7 +7196,7 @@ clothing_state:
   rating: r18
   chinese: 单侧乳环
 - tag: spread cleavage
-  rating: r18
+  rating: r15
   chinese: 敞开领口
 - tag: torn blindfold
   rating: r18
@@ -7208,7 +7208,7 @@ clothing_state:
   rating: r18
   chinese: 白色眼罩
 - tag: bottomless female
-  rating: r18
+  rating: r15
   chinese: 无下装女性
 - tag: bound wrists
   rating: r18
@@ -7694,7 +7694,7 @@ clothing_state:
   rating: pg12
   chinese: 分体泳装
 - tag: underboob
-  rating: r18
+  rating: r15
   chinese: 露下乳
 - tag: variant set
   rating: general
@@ -8585,7 +8585,7 @@ clothing_state:
   rating: pg12
   chinese: 部分解开纽扣
 - tag: pasties
-  rating: r18
+  rating: r15
   chinese: 乳贴
 - tag: petticoat
   rating: general
@@ -9638,7 +9638,7 @@ clothing_state:
   rating: general
   chinese: 心形项链
 - tag: heart pasties
-  rating: r18
+  rating: r15
   chinese: 心形乳贴
 - tag: heart-shaped eyewear
   rating: general
@@ -9914,7 +9914,7 @@ clothing_state:
   rating: general
   chinese: 双色夹克
 - tag: underboob cutout
-  rating: r18
+  rating: r15
   chinese: 露乳沟镂空
 - tag: unworn clothes
   rating: general
@@ -9929,13 +9929,13 @@ clothing_state:
   rating: general
   chinese: V字遮眼
 - tag: wearing condom
-  rating: r18
+  rating: r15
   chinese: 佩戴安全套
 - tag: wedgie
   rating: r15
   chinese: 内裤勒痕
 - tag: wet panties
-  rating: r18
+  rating: r15
   chinese: 湿内裤
 - tag: white bloomers
   rating: general
@@ -9992,7 +9992,7 @@ clothing_state:
   rating: general
   chinese: 单眼绷带
 - tag: bandaids on nipples
-  rating: r18
+  rating: r15
   chinese: 乳贴创可贴
 - tag: bat hair ornament
   rating: general
@@ -11264,7 +11264,7 @@ clothing_state:
   rating: general
   chinese: 胯部护甲
 - tag: cupless bra
-  rating: r18
+  rating: r15
   chinese: 无罩杯胸罩
 - tag: cutout above navel
   rating: pg12
@@ -11438,7 +11438,7 @@ clothing_state:
   rating: general
   chinese: 解开腰带
 - tag: open bra
-  rating: r18
+  rating: r15
   chinese: 敞开式胸罩
 - tag: open pants
   rating: r15
@@ -11828,7 +11828,7 @@ clothing_state:
   rating: r15
   chinese: 平角裤
 - tag: breast cutout
-  rating: r18
+  rating: r15
   chinese: 胸部镂空
 - tag: brown apron
   rating: general
@@ -12626,7 +12626,7 @@ clothing_state:
   rating: general
   chinese: 战斗靴
 - tag: condom belt
-  rating: r18
+  rating: r15
   chinese: 安全套腰带
 - tag: cowboy boots
   rating: general
@@ -12638,7 +12638,7 @@ clothing_state:
   rating: general
   chinese: 十字架颈链
 - tag: cross pasties
-  rating: r18
+  rating: r15
   chinese: 十字乳贴
 - tag: cross-laced sleeves
   rating: general
@@ -13826,7 +13826,7 @@ clothing_state:
   rating: general
   chinese: 污渍
 - tag: star pasties
-  rating: r18
+  rating: r15
   chinese: 星形乳贴
 - tag: star-shaped eyewear
   rating: general
@@ -14150,7 +14150,7 @@ clothing_state:
   rating: r15
   chinese: 前扣式文胸
 - tag: frontless outfit
-  rating: r18
+  rating: r15
   chinese: 前空服装
 - tag: fruit hat ornament
   rating: general
@@ -15227,7 +15227,7 @@ clothing_state:
   rating: general
   chinese: 桑德斯校服
 - tag: see-through panties
-  rating: r18
+  rating: r15
   chinese: 透明内裤
 - tag: see-through sarong
   rating: r15
@@ -15338,7 +15338,7 @@ clothing_state:
   rating: general
   chinese: 腰间毛巾
 - tag: translucent bunnysuit
-  rating: r18
+  rating: r15
   chinese: 透明兔女郎装
 - tag: turtleneck bodysuit
   rating: general
@@ -15518,7 +15518,7 @@ clothing_state:
   rating: general
   chinese: 黑色睡裙
 - tag: black pasties
-  rating: r18
+  rating: r15
   chinese: 黑色乳贴
 - tag: black trim
   rating: general
@@ -15560,7 +15560,7 @@ clothing_state:
   rating: general
   chinese: 蝴蝶耳环
 - tag: c-string
-  rating: r18
+  rating: r15
   chinese: C字裤
 - tag: captive bead ring
   rating: general
@@ -16328,7 +16328,7 @@ clothing_state:
   rating: general
   chinese: 交叉背带
 - tag: cupless bikini
-  rating: r18
+  rating: r15
   chinese: 无罩杯比基尼
 - tag: cycling uniform
   rating: general
@@ -16559,7 +16559,7 @@ clothing_state:
   rating: general
   chinese: 无披风
 - tag: nudist beach uniform
-  rating: r18
+  rating: r15
   chinese: 裸体海滩制服
 - tag: o-ring collar
   rating: general
@@ -16604,7 +16604,7 @@ clothing_state:
   rating: general
   chinese: 牛角
 - tag: panties around ankles
-  rating: r18
+  rating: r15
   chinese: 内裤褪至脚踝
 - tag: paper on head
   rating: general
@@ -16835,7 +16835,7 @@ clothing_state:
   rating: r15
   chinese: 内裤写字
 - tag: undone bra
-  rating: r18
+  rating: r15
   chinese: 解开胸罩
 - tag: undone neckerchief
   rating: general
@@ -17000,7 +17000,7 @@ clothing_state:
   rating: r15
   chinese: 蓝色抹胸
 - tag: bra down
-  rating: r18
+  rating: r15
   chinese: 解开的胸罩
 - tag: brown overalls
   rating: general
@@ -17345,7 +17345,7 @@ clothing_state:
   rating: general
   chinese: 熊猫发饰
 - tag: panties around one ankle
-  rating: r18
+  rating: r15
   chinese: 内裤挂脚踝
 - tag: pink armor
   rating: general
@@ -17465,7 +17465,7 @@ clothing_state:
   rating: r15
   chinese: 透视比基尼
 - tag: see-through bra
-  rating: r18
+  rating: r15
   chinese: 透视文胸
 - tag: see-through raincoat
   rating: general
@@ -17816,7 +17816,7 @@ clothing_state:
   rating: general
   chinese: 压缩袖套
 - tag: condom skirt
-  rating: r18
+  rating: r15
   chinese: 避孕套裙
 - tag: corset piercing
   rating: general
@@ -18521,7 +18521,7 @@ clothing_state:
   rating: general
   chinese: 立领斗篷
 - tag: condom thigh strap
-  rating: r18
+  rating: r15
   chinese: 避孕套腿环
 - tag: cow print armwear
   rating: general
@@ -19598,7 +19598,7 @@ clothing_state:
   rating: general
   chinese: 熊猫图案
 - tag: panties removed
-  rating: r18
+  rating: r15
   chinese: 内裤褪下
 - tag: panties visible through clothes
   rating: r15
@@ -19640,7 +19640,7 @@ clothing_state:
   rating: general
   chinese: 紫色面具
 - tag: purple pasties
-  rating: r18
+  rating: r15
   chinese: 紫色乳贴
 - tag: quilted clothes
   rating: general
@@ -20309,7 +20309,7 @@ clothing_state:
   rating: general
   chinese: 调色板套装
 - tag: panties around ankle
-  rating: r18
+  rating: r15
   chinese: 内裤褪至脚踝
 - tag: pearl clan outfit
   rating: general
@@ -20747,7 +20747,7 @@ clothing_state:
   rating: general
   chinese: 交叉系带裤
 - tag: cupless babydoll
-  rating: r18
+  rating: r15
   chinese: 无罩杯吊带裙
 - tag: daxiushan
   rating: general
@@ -21884,7 +21884,7 @@ clothing_state:
   rating: general
   chinese: 侦察兵制服
 - tag: see-through babydoll
-  rating: r18
+  rating: r15
   chinese: 透视睡裙
 - tag: sengoku kamuri
   rating: general
@@ -21989,7 +21989,7 @@ clothing_state:
   rating: general
   chinese: 解开纽扣的夹克
 - tag: underwear around one leg
-  rating: r18
+  rating: r15
   chinese: 内裤挂在腿上
 - tag: union jack print
   rating: general
@@ -22523,7 +22523,7 @@ clothing_state:
   rating: r15
   chinese: 粉色吊带袜
 - tag: pink pasties
-  rating: r18
+  rating: r15
   chinese: 粉色乳贴
 - tag: pioneer neckerchief
   rating: general
@@ -22934,7 +22934,7 @@ clothing_state:
   rating: general
   chinese: 堆堆袜
 - tag: condom on head
-  rating: r18
+  rating: r15
   chinese: 头戴避孕套
 - tag: cookie hair ornament
   rating: general
@@ -23240,7 +23240,7 @@ clothing_state:
   rating: general
   chinese: 豹纹
 - tag: panties around thighs
-  rating: r18
+  rating: r15
   chinese: 大腿缠内裤
 - tag: panties around toe
   rating: r15
@@ -23324,7 +23324,7 @@ clothing_state:
   rating: general
   chinese: 红色无檐帽
 - tag: red pasties
-  rating: r18
+  rating: r15
   chinese: 红色乳贴
 - tag: red undershirt
   rating: general
@@ -23495,7 +23495,7 @@ clothing_state:
   rating: general
   chinese: 未扣好
 - tag: underwear removed
-  rating: r18
+  rating: r15
   chinese: 内衣移除
 - tag: undone ascot
   rating: general
@@ -24362,7 +24362,7 @@ clothing_state:
   rating: general
   chinese: 蓝色新娘臂铠
 - tag: blue pasties
-  rating: r18
+  rating: r15
   chinese: 蓝色乳贴
 - tag: blue wristband
   rating: general
@@ -25733,7 +25733,7 @@ clothing_state:
   rating: general
   chinese: 白色浴袍
 - tag: white pasties
-  rating: r18
+  rating: r15
   chinese: 白色乳贴
 - tag: white petticoat
   rating: r15
@@ -25835,7 +25835,7 @@ clothing_state:
   rating: general
   chinese: 蓝色头饰
 - tag: boobies uniform
-  rating: r18
+  rating: r15
   chinese: 露胸制服
 - tag: bow gloves
   rating: general
@@ -26357,7 +26357,7 @@ clothing_state:
   rating: general
   chinese: 笑脸帽饰
 - tag: stained underwear
-  rating: r18
+  rating: r15
   chinese: 污渍内裤
 - tag: strapless jumpsuit
   rating: general
@@ -26486,7 +26486,7 @@ clothing_state:
   rating: general
   chinese: 黄色背包
 - tag: yellow pasties
-  rating: r18
+  rating: r15
   chinese: 黄色乳贴
 - tag: yellow sandals
   rating: general
@@ -27831,7 +27831,7 @@ pose_action_sex:
   rating: general
   chinese: 坐于鸟居之上
 - tag: sleeping nude
-  rating: r18
+  rating: r15
   chinese: 裸睡
 - tag: writing on arm
   rating: general
@@ -28011,19 +28011,19 @@ pose_action_sex:
   rating: general
   chinese: 褪裤
 - tag: after cunnilingus
-  rating: r18
+  rating: r15
   chinese: 口交后
 - tag: after ejaculation
-  rating: r18
+  rating: r15
   chinese: 射精后
 - tag: after fingering
-  rating: r18
+  rating: r15
   chinese: 指交后
 - tag: after masturbation
-  rating: r18
+  rating: r15
   chinese: 自慰后
 - tag: after orgasm
-  rating: r18
+  rating: r15
   chinese: 高潮之后
 - tag: assisted masturbation
   rating: r18
@@ -28050,7 +28050,7 @@ pose_action_sex:
   rating: r18
   chinese: 阴蒂拨弄
 - tag: clothed female nude female
-  rating: r18
+  rating: r15
   chinese: 衣装女性与裸体女性
 - tag: clothed masturbation
   rating: r18
@@ -28143,7 +28143,7 @@ pose_action_sex:
   rating: r18
   chinese: 指探阴部
 - tag: foot fetish
-  rating: r18
+  rating: r15
   chinese: 足癖
 - tag: forced masturbation
   rating: r18
@@ -28185,7 +28185,7 @@ pose_action_sex:
   rating: r18
   chinese: 濒临高潮
 - tag: implied after masturbation
-  rating: r18
+  rating: r15
   chinese: 暗示自慰后
 - tag: implied cunnilingus
   rating: r18
@@ -28251,7 +28251,7 @@ pose_action_sex:
   rating: r18
   chinese: 共同高潮
 - tag: naked dogeza
-  rating: r18
+  rating: r15
   chinese: 全裸土下座
 - tag: navel fingering
   rating: r18
@@ -28293,7 +28293,7 @@ pose_action_sex:
   rating: r18
   chinese: 隔衣捏乳头
 - tag: nude modeling
-  rating: r18
+  rating: r15
   chinese: 裸体模特
 - tag: nursing fingering
   rating: r18
@@ -28395,7 +28395,7 @@ pose_action_sex:
   rating: r18
   chinese: 衣下肛扩
 - tag: spread armpit
-  rating: r18
+  rating: r15
   chinese: 展开腋窝
 - tag: spread ass
   rating: r18
@@ -28404,7 +28404,7 @@ pose_action_sex:
   rating: r18
   chinese: 张开臀部
 - tag: spread legs
-  rating: r18
+  rating: r15
   chinese: 分腿站立
 - tag: spread pussy
   rating: r18
@@ -28458,16 +28458,16 @@ pose_action_sex:
   rating: r18
   chinese: 双手自慰
 - tag: undressing
-  rating: r18
+  rating: r15
   chinese: 脱衣
 - tag: undressing another
-  rating: r18
+  rating: r15
   chinese: 为他人脱衣
 - tag: undressing partner
-  rating: r18
+  rating: r15
   chinese: 为伴侣脱衣
 - tag: undressing self
-  rating: r18
+  rating: r15
   chinese: 自行脱衣
 - tag: urethral fingering
   rating: r18
@@ -28485,19 +28485,19 @@ pose_action_sex:
   rating: r18
   chinese: 鞭打
 - tag: after fellatio
-  rating: r18
+  rating: r15
   chinese: 口交后
 - tag: after handjob
-  rating: r18
+  rating: r15
   chinese: 事后手交
 - tag: after insertion
-  rating: r18
+  rating: r15
   chinese: 插入后
 - tag: after sex
-  rating: r18
+  rating: r15
   chinese: 事后
 - tag: after vaginal
-  rating: r18
+  rating: r15
   chinese: 事后
 - tag: ambiguous penetration
   rating: r18
@@ -28572,7 +28572,7 @@ pose_action_sex:
   rating: r18
   chinese: 事后口交
 - tag: clothed after sex
-  rating: r18
+  rating: r15
   chinese: 事后穿衣
 - tag: clothed sex
   rating: r18
@@ -28923,10 +28923,10 @@ pose_action_sex:
   rating: r18g
   chinese: 穿刺
 - tag: implied after fellatio
-  rating: r18
+  rating: r15
   chinese: 暗示口交后
 - tag: implied after sex
-  rating: r18
+  rating: r15
   chinese: 事后暗示
 - tag: implied fellatio
   rating: r18
@@ -28950,7 +28950,7 @@ pose_action_sex:
   rating: r18
   chinese: 膝窝性爱
 - tag: lactating into container
-  rating: r18
+  rating: r15
   chinese: 挤奶入容器
 - tag: leaking cum
   rating: r18
@@ -29247,16 +29247,16 @@ pose_action_sex:
   rating: r15
   chinese: 被缚
 - tag: breast grab
-  rating: r18
+  rating: r15
   chinese: 抓胸
 - tag: breast play
-  rating: r18
+  rating: r15
   chinese: 胸部玩弄
 - tag: breast press
-  rating: r18
+  rating: r15
   chinese: 胸部挤压
 - tag: butt grab
-  rating: r18
+  rating: r15
   chinese: 抓臀
 - tag: claw pose
   rating: general
@@ -29346,19 +29346,19 @@ pose_action_sex:
   rating: r18
   chinese: 上位女性
 - tag: grabbing another's breast
-  rating: r18
+  rating: r15
   chinese: 抓他人胸部
 - tag: grabbing from behind
-  rating: r18
+  rating: r15
   chinese: 背后环抱
 - tag: groping
-  rating: r18
+  rating: r15
   chinese: 摸索
 - tag: hand behind head
   rating: general
   chinese: 手放脑后
 - tag: hand between legs
-  rating: r18
+  rating: r15
   chinese: 手夹腿间
 - tag: hand gesture
   rating: general
@@ -29376,7 +29376,7 @@ pose_action_sex:
   rating: general
   chinese: 搭肩
 - tag: hand on breast
-  rating: r18
+  rating: r15
   chinese: 抚胸
 - tag: hand on headwear
   rating: general
@@ -29400,7 +29400,7 @@ pose_action_sex:
   rating: general
   chinese: 持瓶
 - tag: holding breast
-  rating: r18
+  rating: r15
   chinese: 握乳
 - tag: holding flower
   rating: general
@@ -29460,7 +29460,7 @@ pose_action_sex:
   rating: r15
   chinese: 抬腿
 - tag: licking
-  rating: r18
+  rating: r15
   chinese: 舔舐
 - tag: licking lips
   rating: general
@@ -29517,7 +29517,7 @@ pose_action_sex:
   rating: r18
   chinese: 内裤拨开
 - tag: pants down
-  rating: r18
+  rating: r15
   chinese: 褪下裤子
 - tag: panty pull
   rating: r15
@@ -29538,7 +29538,7 @@ pose_action_sex:
   rating: general
   chinese: 噘嘴
 - tag: presenting hindquarters
-  rating: r18
+  rating: r15
   chinese: 展示后躯
 - tag: raised arm
   rating: general
@@ -29595,7 +29595,7 @@ pose_action_sex:
   rating: r18
   chinese: 跨坐
 - tag: sucking
-  rating: r18
+  rating: r15
   chinese: 吮吸
 - tag: tailwag
   rating: general
@@ -29625,7 +29625,7 @@ pose_action_sex:
   rating: general
   chinese: 正座
 - tag: yuri
-  rating: r18
+  rating: r15
   chinese: 百合
 - tag: 69 position
   rating: r18
@@ -29682,16 +29682,16 @@ pose_action_sex:
   rating: r15
   chinese: 拉扯胸罩
 - tag: breast fondling
-  rating: r18
+  rating: r15
   chinese: 揉胸
 - tag: breast milking
-  rating: r18
+  rating: r15
   chinese: 挤奶
 - tag: breast rest
   rating: r15
   chinese: 搁胸
 - tag: breast squeeze
-  rating: r18
+  rating: r15
   chinese: 胸部挤压
 - tag: breast suck
   rating: r18
@@ -29712,7 +29712,7 @@ pose_action_sex:
   rating: general
   chinese: 搬运人物
 - tag: caught in the act
-  rating: r18
+  rating: r15
   chinese: 现场被抓
 - tag: choking
   rating: r18
@@ -29778,7 +29778,7 @@ pose_action_sex:
   rating: general
   chinese: 折叠状
 - tag: foot lick
-  rating: r18
+  rating: r15
   chinese: 舔足
 - tag: foursome
   rating: general
@@ -29796,7 +29796,7 @@ pose_action_sex:
   rating: r18
   chinese: 少女夹心
 - tag: grabbing own breast
-  rating: r18
+  rating: r15
   chinese: 抓握自身胸部
 - tag: hand on own stomach
   rating: general
@@ -29886,7 +29886,7 @@ pose_action_sex:
   rating: general
   chinese: 抬腿
 - tag: m legs
-  rating: r18
+  rating: r15
   chinese: M字开腿
 - tag: midair
   rating: general
@@ -30042,7 +30042,7 @@ pose_action_sex:
   rating: r15
   chinese: 抓握大腿
 - tag: throbbing
-  rating: r18
+  rating: r15
   chinese: 脉动
 - tag: thrusting
   rating: r18
@@ -30060,7 +30060,7 @@ pose_action_sex:
   rating: general
   chinese: 扭转躯干
 - tag: underwear pull
-  rating: r18
+  rating: r15
   chinese: 内裤拉扯
 - tag: upside down
   rating: general
@@ -30087,7 +30087,7 @@ pose_action_sex:
   rating: pg12
   chinese: 亲吻之后
 - tag: after oral
-  rating: r18
+  rating: r15
   chinese: 口交后
 - tag: anus peek
   rating: r18
@@ -30120,7 +30120,7 @@ pose_action_sex:
   rating: r15
   chinese: 托胸
 - tag: breast suppress
-  rating: r18
+  rating: r15
   chinese: 压胸
 - tag: carrying over shoulder
   rating: general
@@ -30243,7 +30243,7 @@ pose_action_sex:
   rating: general
   chinese: 手捂嘴
 - tag: hand under clothes
-  rating: r18
+  rating: r15
   chinese: 衣下手
 - tag: hands above head
   rating: general
@@ -30306,7 +30306,7 @@ pose_action_sex:
   rating: general
   chinese: 手持剪贴板
 - tag: holding condom
-  rating: r18
+  rating: r15
   chinese: 手持避孕套
 - tag: holding controller
   rating: general
@@ -30381,7 +30381,7 @@ pose_action_sex:
   rating: general
   chinese: 抱膝坐姿
 - tag: leg lock
-  rating: r18
+  rating: r15
   chinese: 腿锁
 - tag: leotard aside
   rating: r15
@@ -30474,7 +30474,7 @@ pose_action_sex:
   rating: r18
   chinese: 公开暴露
 - tag: public nudity
-  rating: r18
+  rating: r15
   chinese: 公共裸体
 - tag: pulling another's clothes
   rating: r15
@@ -30483,7 +30483,7 @@ pose_action_sex:
   rating: general
   chinese: 兔子姿势
 - tag: reach around
-  rating: r18
+  rating: r15
   chinese: 背后环抱
 - tag: reverse stand and carry position
   rating: r18
@@ -30498,10 +30498,10 @@ pose_action_sex:
   rating: general
   chinese: 揉眼睛
 - tag: self fondle
-  rating: r18
+  rating: r15
   chinese: 自我爱抚
 - tag: shaking butt
-  rating: r18
+  rating: r15
   chinese: 摇臀
 - tag: shirt tug
   rating: r15
@@ -30681,7 +30681,7 @@ pose_action_sex:
   rating: general
   chinese: 飞吻
 - tag: bouncing ass
-  rating: r18
+  rating: r15
   chinese: 臀部弹动
 - tag: bowing
   rating: general
@@ -30690,7 +30690,7 @@ pose_action_sex:
   rating: r15
   chinese: 胸部晃动
 - tag: breast smother
-  rating: r18
+  rating: r15
   chinese: 胸部挤压
 - tag: breasts on glass
   rating: r15
@@ -30822,7 +30822,7 @@ pose_action_sex:
   rating: general
   chinese: 灵魂出窍
 - tag: guided breast grab
-  rating: r18
+  rating: r15
   chinese: 引导式揉胸
 - tag: guiding hand
   rating: general
@@ -30846,7 +30846,7 @@ pose_action_sex:
   rating: general
   chinese: 扶眼镜
 - tag: hand on own breast
-  rating: r18
+  rating: r15
   chinese: 手放自身胸部
 - tag: hand on own forehead
   rating: general
@@ -31155,7 +31155,7 @@ pose_action_sex:
   rating: r15
   chinese: 垂直劈叉
 - tag: voyeurism
-  rating: r18
+  rating: r15
   chinese: 窥视癖
 - tag: waist grab
   rating: general
@@ -31218,10 +31218,10 @@ pose_action_sex:
   rating: general
   chinese: 腿间夹臂
 - tag: ass clapping
-  rating: r18
+  rating: r15
   chinese: 臀瓣拍击
 - tag: ass shake
-  rating: r18
+  rating: r15
   chinese: 抖臀
 - tag: ass support
   rating: r15
@@ -31356,7 +31356,7 @@ pose_action_sex:
   rating: r18
   chinese: 饮精
 - tag: groping from behind
-  rating: r18
+  rating: r15
   chinese: 背后摸索
 - tag: group hug
   rating: general
@@ -31386,7 +31386,7 @@ pose_action_sex:
   rating: general
   chinese: 手触头
 - tag: hand under shirt
-  rating: r18
+  rating: r15
   chinese: 手在衬衫下
 - tag: hands on another's hips
   rating: general
@@ -31398,7 +31398,7 @@ pose_action_sex:
   rating: general
   chinese: 手撑地面
 - tag: hands on own breasts
-  rating: r18
+  rating: r15
   chinese: 双手自抚胸
 - tag: hands on own stomach
   rating: general
@@ -31539,7 +31539,7 @@ pose_action_sex:
   rating: general
   chinese: 膝枕邀请
 - tag: legs over head
-  rating: r18
+  rating: r15
   chinese: 腿举过头
 - tag: levitation
   rating: general
@@ -31605,7 +31605,7 @@ pose_action_sex:
   rating: r15
   chinese: 被按住
 - tag: plap
-  rating: r18
+  rating: r15
   chinese: 拍打声
 - tag: playing sports
   rating: general
@@ -31620,7 +31620,7 @@ pose_action_sex:
   rating: general
   chinese: 倾洒自身
 - tag: presenting ass
-  rating: r18
+  rating: r15
   chinese: 翘臀姿势
 - tag: ready to draw
   rating: general
@@ -31776,7 +31776,7 @@ pose_action_sex:
   rating: general
   chinese: 身体互换
 - tag: breast poke
-  rating: r18
+  rating: r15
   chinese: 戳胸
 - tag: bridal carry
   rating: general
@@ -31851,7 +31851,7 @@ pose_action_sex:
   rating: general
   chinese: 耳朵抽动
 - tag: egg laying
-  rating: r18
+  rating: r15
   chinese: 产卵
 - tag: elbow on knee
   rating: general
@@ -31902,7 +31902,7 @@ pose_action_sex:
   rating: general
   chinese: 飘动
 - tag: flat chest grab
-  rating: r18
+  rating: r15
   chinese: 抓平胸
 - tag: flirting with viewer
   rating: general
@@ -31914,7 +31914,7 @@ pose_action_sex:
   rating: general
   chinese: 足部崇拜
 - tag: foreplay
-  rating: r18
+  rating: r15
   chinese: 前戏
 - tag: fruit on head
   rating: general
@@ -32127,7 +32127,7 @@ pose_action_sex:
   rating: general
   chinese: 恶作剧
 - tag: presenting breasts
-  rating: r18
+  rating: r15
   chinese: 捧胸
 - tag: presenting removed panties
   rating: r15
@@ -32232,7 +32232,7 @@ pose_action_sex:
   rating: general
   chinese: 擦嘴
 - tag: writing on breasts
-  rating: r18
+  rating: r15
   chinese: 胸部书写
 - tag: wrong foot
   rating: general
@@ -32289,7 +32289,7 @@ pose_action_sex:
   rating: general
   chinese: 桌上托臂
 - tag: ass press
-  rating: r18
+  rating: r15
   chinese: 臀部挤压
 - tag: bikini top pull
   rating: r15
@@ -32331,7 +32331,7 @@ pose_action_sex:
   rating: general
   chinese: 焦糖舞
 - tag: carried breast rest
-  rating: r18
+  rating: r15
   chinese: 托乳姿势
 - tag: carrying overhead
   rating: general
@@ -32445,13 +32445,13 @@ pose_action_sex:
   rating: general
   chinese: 手上举过头
 - tag: hand milking
-  rating: r18
+  rating: r15
   chinese: 手工挤奶
 - tag: hand over face
   rating: general
   chinese: 手遮脸
 - tag: hands between legs
-  rating: r18
+  rating: r15
   chinese: 双腿间的手
 - tag: hands on another's stomach
   rating: general
@@ -32631,10 +32631,10 @@ pose_action_sex:
   rating: r15
   chinese: 呈现内裤
 - tag: pressing breasts together
-  rating: r18
+  rating: r15
   chinese: 挤乳沟
 - tag: pulling pants down
-  rating: r18
+  rating: r15
   chinese: 褪下裤子
 - tag: reaching towards another
   rating: general
@@ -32742,7 +32742,7 @@ pose_action_sex:
   rating: general
   chinese: 团队协作
 - tag: thigh straddling
-  rating: r18
+  rating: r15
   chinese: 跨坐大腿
 - tag: thumb in ass
   rating: r18
@@ -32832,10 +32832,10 @@ pose_action_sex:
   rating: general
   chinese: 辅助拉伸
 - tag: autoarousal
-  rating: r18
+  rating: r15
   chinese: 自我唤醒
 - tag: bed invitation
-  rating: r18
+  rating: r15
   chinese: 床邀
 - tag: begging
   rating: general
@@ -33198,7 +33198,7 @@ pose_action_sex:
   rating: general
   chinese: 后仰
 - tag: removing bra
-  rating: r18
+  rating: r15
   chinese: 解开胸罩
 - tag: ripping
   rating: r15
@@ -33540,7 +33540,7 @@ pose_action_sex:
   rating: general
   chinese: 捞金鱼
 - tag: groping motion
-  rating: r18
+  rating: r15
   chinese: 摸索动作
 - tag: half-heart hands
   rating: general
@@ -33576,7 +33576,7 @@ pose_action_sex:
   rating: r15
   chinese: 头部被按住
 - tag: head under skirt
-  rating: r18
+  rating: r15
   chinese: 裙底探头
 - tag: headscissor
   rating: general
@@ -33660,7 +33660,7 @@ pose_action_sex:
   rating: pg12
   chinese: 间接接吻
 - tag: iya na kao sare nagara opantsu misete moraitai
-  rating: r18
+  rating: r15
   chinese: 一边被嫌弃一边被要求看胖次
 - tag: jacket tug
   rating: general
@@ -33714,7 +33714,7 @@ pose_action_sex:
   rating: general
   chinese: 点头
 - tag: nyotaimori
-  rating: r18
+  rating: r15
   chinese: 女体盛
 - tag: offering food
   rating: general
@@ -33738,7 +33738,7 @@ pose_action_sex:
   rating: general
   chinese: 驾驶
 - tag: pinned to bed
-  rating: r18
+  rating: r15
   chinese: 禁锢于床
 - tag: poking belly
   rating: general
@@ -34116,7 +34116,7 @@ pose_action_sex:
   rating: general
   chinese: 手抚心口
 - tag: hand under shorts
-  rating: r18
+  rating: r15
   chinese: 手在短裤下
 - tag: hands on another's arm
   rating: general
@@ -34230,7 +34230,7 @@ pose_action_sex:
   rating: r18g
   chinese: 舔血
 - tag: licking stomach
-  rating: r18
+  rating: r15
   chinese: 舔腹
 - tag: lounging
   rating: general
@@ -34368,7 +34368,7 @@ pose_action_sex:
   rating: r15
   chinese: 闻腋窝
 - tag: smelling ass
-  rating: r18
+  rating: r15
   chinese: 闻屁股
 - tag: smelling underwear
   rating: r15
@@ -34413,7 +34413,7 @@ pose_action_sex:
   rating: pg12
   chinese: 踮脚吻
 - tag: toe sucking
-  rating: r18
+  rating: r15
   chinese: 吮吸脚趾
 - tag: trample
   rating: r15
@@ -34422,7 +34422,7 @@ pose_action_sex:
   rating: r18
   chinese: 隔衣摩擦
 - tag: tsuyokiss
-  rating: r18
+  rating: r15
   chinese: 强吻
 - tag: tube top lift
   rating: r15
@@ -34761,7 +34761,7 @@ pose_action_sex:
   rating: general
   chinese: 手持槲寄生
 - tag: holding own breasts
-  rating: r18
+  rating: r15
   chinese: 自握双乳
 - tag: holding paper airplane
   rating: general
@@ -34821,13 +34821,13 @@ pose_action_sex:
   rating: general
   chinese: 悬停之手
 - tag: hug and suck
-  rating: r18
+  rating: r15
   chinese: 拥抱与吮吸
 - tag: i want you
   rating: general
   chinese: 我需要你
 - tag: imminent breast grab
-  rating: r18
+  rating: r15
   chinese: 即将抓胸
 - tag: imminent hand holding
   rating: pg12
@@ -34866,13 +34866,13 @@ pose_action_sex:
   rating: r15
   chinese: 双腿环腰
 - tag: legs behind head
-  rating: r18
+  rating: r15
   chinese: 腿绕头后
 - tag: legs grab
   rating: general
   chinese: 抓腿
 - tag: legs held open
-  rating: r18
+  rating: r15
   chinese: 双腿张开
 - tag: legs on shoulders
   rating: r15
@@ -34911,7 +34911,7 @@ pose_action_sex:
   rating: r18
   chinese: 母系支配
 - tag: motorboating
-  rating: r18
+  rating: r15
   chinese: 摩托艇式埋胸
 - tag: mouth beam
   rating: general
@@ -34971,7 +34971,7 @@ pose_action_sex:
   rating: general
   chinese: 说唱
 - tag: removing bra under shirt
-  rating: r18
+  rating: r15
   chinese: 衬衫下脱除胸罩
 - tag: removing coat
   rating: general
@@ -34992,7 +34992,7 @@ pose_action_sex:
   rating: general
   chinese: 骑乘鸟
 - tag: saliva on breasts
-  rating: r18
+  rating: r15
   chinese: 胸上唾液
 - tag: samba
   rating: general
@@ -35001,7 +35001,7 @@ pose_action_sex:
   rating: general
   chinese: 拽围巾
 - tag: sexting
-  rating: r18
+  rating: r15
   chinese: 色情短信
 - tag: sexy no jutsu
   rating: r15
@@ -35757,7 +35757,7 @@ pose_action_sex:
   rating: general
   chinese: 整理衬衫
 - tag: after anilingus
-  rating: r18
+  rating: r15
   chinese: 肛吻后
 - tag: against desk
   rating: general
@@ -36192,7 +36192,7 @@ pose_action_sex:
   rating: general
   chinese: 隔窗眺望
 - tag: milking breasts
-  rating: r18
+  rating: r15
   chinese: 榨乳胸部
 - tag: mochi mochi dance
   rating: general
@@ -36279,7 +36279,7 @@ pose_action_sex:
   rating: general
   chinese: 挠肚子
 - tag: self milking
-  rating: r18
+  rating: r15
   chinese: 自行挤奶
 - tag: senjougahara pose
   rating: general
@@ -36891,7 +36891,7 @@ pose_action_sex:
   rating: r18
   chinese: 褪下内裤
 - tag: putting on condom
-  rating: r18
+  rating: r15
   chinese: 佩戴安全套
 - tag: putting on jacket
   rating: general
@@ -38287,7 +38287,7 @@ expression_reaction:
   rating: r18
   chinese: 劈叉堵嘴
 - tag: aroused
-  rating: r18
+  rating: r15
   chinese: 情欲高涨
 - tag: cum drool
   rating: r18
@@ -39415,7 +39415,7 @@ expression_reaction:
   rating: general
   chinese: 做鬼脸
 - tag: mind break
-  rating: r18
+  rating: r15
   chinese: 精神崩溃
 - tag: moe moe kyun!
   rating: general
@@ -40292,7 +40292,7 @@ camera_shot:
   rating: general
   chinese: 水果特写
 - tag: full frontal
-  rating: r18
+  rating: r15
   chinese: 全正面
 - tag: head to head
   rating: general
@@ -41916,10 +41916,10 @@ scene_environment:
   rating: r18
   chinese: 牵绳
 - tag: naked chocolate
-  rating: r18
+  rating: r15
   chinese: 生巧克力
 - tag: nude beach
-  rating: r18
+  rating: r15
   chinese: 裸体海滩
 - tag: open mouth gag
   rating: r18
@@ -41952,7 +41952,7 @@ scene_environment:
   rating: r18
   chinese: 鞭子
 - tag: whipped cream
-  rating: r18
+  rating: r15
   chinese: 搅打奶油
 - tag: bath of blood
   rating: r18g
@@ -42159,7 +42159,7 @@ scene_environment:
   rating: general
   chinese: 作品内地点
 - tag: indoor nudity
-  rating: r18
+  rating: r15
   chinese: 室内裸体
 - tag: indoors
   rating: general
@@ -43344,7 +43344,7 @@ scene_environment:
   rating: general
   chinese: 英格兰
 - tag: ero condo
-  rating: r18
+  rating: r15
   chinese: 情色公寓
 - tag: expo2025
   rating: general
@@ -44235,7 +44235,7 @@ scene_environment:
   rating: general
   chinese: 纽约
 - tag: nudist beach ni shuugakuryokou de!!
-  rating: r18
+  rating: r15
   chinese: 裸体海滩修学旅行！！
 - tag: o-ring
   rating: general
@@ -44376,7 +44376,7 @@ scene_environment:
   rating: general
   chinese: 智能手机
 - tag: soap school
-  rating: r18
+  rating: r15
   chinese: 肥皂学校
 - tag: south korea
   rating: general
@@ -44424,7 +44424,7 @@ scene_environment:
   rating: general
   chinese: 天涯魔境
 - tag: tentacles
-  rating: r18
+  rating: r15
   chinese: 触手
 - tag: terrace
   rating: general
@@ -47028,7 +47028,7 @@ scene_environment:
   rating: general
   chinese: 墓碑
 - tag: green tentacles
-  rating: r18
+  rating: r15
   chinese: 绿色触手
 - tag: grey flower
   rating: general
@@ -50511,7 +50511,7 @@ scene_environment:
   rating: general
   chinese: 牛肉
 - tag: bible black
-  rating: r18
+  rating: r15
   chinese: 黑暗圣经
 - tag: bitten apple
   rating: general
@@ -57996,7 +57996,7 @@ scene_environment:
   rating: general
   chinese: 酿虾
 - tag: succubus prison
-  rating: r18
+  rating: r15
   chinese: 梦魔监狱
 - tag: sugar skull
   rating: r15

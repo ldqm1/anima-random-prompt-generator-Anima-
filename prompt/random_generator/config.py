@@ -402,6 +402,7 @@ CATEGORY_MAPPINGS: dict[tuple[str, str], str] = {
     ("人物", "肢体"): "appearance",
     ("人物", "面部细节"): "appearance",
     ("人物", "身体标记"): "appearance",
+    ("人物", "擦边"): "appearance",  # 擦边软色情档（低配额入池，见 map_face_r18_edge.txt）
     ("人物", "体型年龄"): "appearance",
     ("人物", "身体状态"): "appearance",
     ("人物", "其他"): "appearance",
