@@ -558,16 +558,20 @@ def _split_inline_prompt(line: str) -> tuple[str, str]:
 
 
 def _reconstruct_prompt(tags: list[str], nl_sentences: list[str]) -> str:
-    """将 tag 列表与自然语言句子重新组装为 prompt 字符串。
+    """将 tag 列表与自然语言句子重新组装为 prompt 字符串（单行）。
 
-    所有段用 ``, `` 连接为**单行**（不再以换行分隔 tag 区与场景句），
-    以便纯文本逐行读取时 prompt 不被截断（见报告：输出单行化）。
+    分隔规则：
+    - ``tag`` 区内部用 ``, `` 连接；
+    - ``tag`` 区与首个自然语言句之间用 ``, `` 分隔；
+    - 自然语言句之间**只加空格**（每句以句号结尾，天然起分隔作用，不再插入逗号）。
+
+    例如：``1girl, solo, white dress, She smiles gently. Petals drift past.``
     """
-    parts: list[str] = []
-    if tags:
-        parts.append(", ".join(tags))
-    parts.extend(nl_sentences)
-    return ", ".join(parts)
+    tag_part = ", ".join(tags) if tags else ""
+    nl_part = " ".join(nl_sentences) if nl_sentences else ""
+    if tag_part and nl_part:
+        return tag_part + ", " + nl_part
+    return tag_part or nl_part
 
 
 def split_prompt_sections(prompt: str) -> tuple[list[str], list[str]]:
