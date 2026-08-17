@@ -128,7 +128,7 @@
 [DOMAIN:标签] [CAT:画面/元数据] black_border | 黑色边框
 [DOMAIN:标签] [CAT:画面/元数据] tall_image | 高画幅
 [DOMAIN:标签] [CAT:画面/元数据] style_parody | 风格模仿
-[DOMAIN:标签] [CAT:画面/背景] gore | 血腥
+[DOMAIN:标签] [CAT:排除/猎奇血腥] gore | 血腥
 [DOMAIN:标签] [CAT:画面/氛围光影] shade | 阴影
 [DOMAIN:标签] [CAT:画面/元数据] derivative_work | 衍生作品
 [DOMAIN:标签] [CAT:画面/元数据] pointless_censoring | 无意义打码
@@ -250,7 +250,7 @@
 [DOMAIN:标签] [CAT:画面/元数据] character_profile | 角色简介
 [DOMAIN:标签] [CAT:画面/元数据] magazine_scan | 杂志扫描图
 [DOMAIN:标签] [CAT:画面/画风画派] collage | 拼贴画
-[DOMAIN:标签] [CAT:画面/元数据] guro | 猎奇
+[DOMAIN:标签] [CAT:排除/猎奇血腥] guro | 猎奇
 [DOMAIN:标签] [CAT:画面/背景] sparkle_background | 闪光背景
 [DOMAIN:标签] [CAT:画面/氛围光影] diffraction_spikes | 衍射星芒
 [DOMAIN:标签] [CAT:画面/元数据] deformed | 变形
@@ -452,7 +452,7 @@
 [DOMAIN:标签] [CAT:画面/元数据] end_card | 片尾贺图
 [DOMAIN:标签] [CAT:画面/元数据] censored_text | 文字打码
 [DOMAIN:标签] [CAT:画面/元数据] araki_hirohiko_(style) | 荒木飞吕彦（风格）
-[DOMAIN:标签] [CAT:画面/元数据] ero_guro | 猎奇美学
+[DOMAIN:标签] [CAT:排除/猎奇血腥] ero_guro | 猎奇美学
 [DOMAIN:标签] [CAT:画面/背景] dotted_background | 点状背景
 [DOMAIN:标签] [CAT:画面/构图氛围] isometric | 等轴测
 [DOMAIN:标签] [CAT:画面/元数据] card_parody | 卡片戏仿

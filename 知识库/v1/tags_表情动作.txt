@@ -1250,7 +1250,7 @@
 [DOMAIN:标签] [CAT:表情动作/基础动作] balancing | 平衡动作
 [DOMAIN:标签] [CAT:表情动作/手部动作] brushing_another's_hair | 为他人梳发
 [DOMAIN:标签] [CAT:表情动作/基础动作] dropping | 坠落
-[DOMAIN:标签] [CAT:表情动作/其他动作] farting_on_face | 面部放屁
+[DOMAIN:标签] [CAT:排除/其他] farting_on_face | 面部放屁
 [DOMAIN:标签] [CAT:表情动作/基础动作] looking_outside | 眺望窗外
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_riding_crop | 手持马鞭
 [DOMAIN:标签] [CAT:表情动作/性爱动作] just_the_tip | 仅尖端进入
@@ -1533,7 +1533,7 @@
 [DOMAIN:标签] [CAT:表情动作/其他动作] torture | 拷问
 [DOMAIN:标签] [CAT:表情动作/基础动作] holding_breath | 屏息
 [DOMAIN:标签] [CAT:表情动作/性爱动作] emotionless_sex | 无感情性行为
-[DOMAIN:标签] [CAT:表情动作/其他动作] decapitation | 斩首
+[DOMAIN:标签] [CAT:排除/猎奇血腥] decapitation | 斩首
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_shovel | 手持铲子
 [DOMAIN:标签] [CAT:表情动作/人物交互] lap_pillow_invitation | 膝枕邀请
 [DOMAIN:标签] [CAT:表情动作/手部动作] looking_at_hand | 注视手部
@@ -1870,7 +1870,7 @@
 [DOMAIN:标签] [CAT:表情动作/基础动作] sway_back | 反弓背
 [DOMAIN:标签] [CAT:表情动作/静止姿态] sitting_on_water | 水上坐姿
 [DOMAIN:标签] [CAT:表情动作/手部动作] hand_on_another's_knee | 手搭他人膝盖
-[DOMAIN:标签] [CAT:表情动作/笑] glasgow_smile | 格拉斯哥微笑
+[DOMAIN:标签] [CAT:排除/猎奇血腥] glasgow_smile | 格拉斯哥微笑
 [DOMAIN:标签] [CAT:表情动作/性爱动作] biting_neck | 咬颈
 [DOMAIN:标签] [CAT:表情动作/手部动作] headphones_removed | 耳机摘下
 [DOMAIN:标签] [CAT:表情动作/手部动作] nipple_rub | 摩擦乳头
@@ -1924,7 +1924,7 @@
 [DOMAIN:标签] [CAT:表情动作/性爱动作] whistling | 吹口哨
 [DOMAIN:标签] [CAT:表情动作/手部动作] polearm_behind_back | 背后长柄武器
 [DOMAIN:标签] [CAT:表情动作/动态动作] imitating | 模仿动作
-[DOMAIN:标签] [CAT:表情动作/状态反应] vomiting | 呕吐
+[DOMAIN:标签] [CAT:排除/其他] vomiting | 呕吐
 [DOMAIN:标签] [CAT:表情动作/手部动作] arm_on_own_head | 手臂搭头
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_shower_head | 手持花洒
 [DOMAIN:标签] [CAT:表情动作/其他动作] trapped | 被困
@@ -1963,7 +1963,7 @@
 [DOMAIN:标签] [CAT:排除/性行为] cum_on_fingers | 指上精液
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_club | 手持棍棒
 [DOMAIN:标签] [CAT:表情动作/基础动作] typing | 打字中
-[DOMAIN:标签] [CAT:表情动作/性爱动作] cum_vomit | 呕吐精液
+[DOMAIN:标签] [CAT:排除/性行为] cum_vomit | 呕吐精液
 [DOMAIN:标签] [CAT:表情动作/性爱动作] cum_on_chin | 下巴精液
 [DOMAIN:标签] [CAT:表情动作/基础动作] hand_above_head | 手上举过头
 [DOMAIN:标签] [CAT:表情动作/性爱动作] face_in_ass | 臀压脸
@@ -2091,7 +2091,7 @@
 [DOMAIN:标签] [CAT:表情动作/笑] happy_facial | 愉悦表情
 [DOMAIN:标签] [CAT:表情动作/手部动作] pinky_swear | 拉钩约定
 [DOMAIN:标签] [CAT:表情动作/手部动作] hand_milking | 手工挤奶
-[DOMAIN:标签] [CAT:表情动作/状态反应] vomit | 呕吐
+[DOMAIN:标签] [CAT:排除/其他] vomit | 呕吐
 [DOMAIN:标签] [CAT:表情动作/动态动作] spraying | 喷射
 [DOMAIN:标签] [CAT:表情动作/手部动作] drawing_on_another's_face | 在他人脸上涂画
 [DOMAIN:标签] [CAT:表情动作/其他动作] skirt_caught_on_object | 裙子勾住物体
@@ -2396,7 +2396,7 @@
 [DOMAIN:标签] [CAT:表情动作/手部动作] mode_aim | 模式瞄准
 [DOMAIN:标签] [CAT:表情动作/手部动作] fanning_crotch | 扇风胯部
 [DOMAIN:标签] [CAT:表情动作/基础动作] late_for_school | 上学迟到
-[DOMAIN:标签] [CAT:表情动作/其他动作] fart | 放屁
+[DOMAIN:标签] [CAT:排除/其他] fart | 放屁
 [DOMAIN:标签] [CAT:表情动作/冷淡思考] focused | 专注
 [DOMAIN:标签] [CAT:表情动作/手放在某地] hands_on_wall | 扶墙
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_goggles | 手持护目镜
@@ -2638,7 +2638,7 @@
 [DOMAIN:标签] [CAT:表情动作/动态动作] mixed-sex_combat | 男女混战
 [DOMAIN:标签] [CAT:表情动作/性爱动作] penis_between_toes | 脚趾夹阴茎
 [DOMAIN:标签] [CAT:表情动作/基础动作] calling | 呼唤
-[DOMAIN:标签] [CAT:表情动作/其他动作] dismemberment | 肢解
+[DOMAIN:标签] [CAT:排除/猎奇血腥] dismemberment | 肢解
 [DOMAIN:标签] [CAT:表情动作/手部动作] arm_on_shoulder | 搭肩
 [DOMAIN:标签] [CAT:表情动作/手抓着某物] holding_collar | 抓着衣领
 [DOMAIN:标签] [CAT:表情动作/手部动作] smelling_hair | 嗅闻头发
@@ -2808,7 +2808,7 @@
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] playing_bass_guitar | 弹奏低音吉他
 [DOMAIN:标签] [CAT:表情动作/手部动作] hand_around_waist | 搂腰
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_legwear | 手持腿袜
-[DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_heart_(organ) | 手持心脏（器官）
+[DOMAIN:标签] [CAT:排除/猎奇血腥] holding_heart_(organ) | 手持心脏（器官）
 [DOMAIN:标签] [CAT:表情动作/性爱动作] whipping | 鞭打
 [DOMAIN:标签] [CAT:表情动作/基础动作] dishwashing | 洗碗
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_nail | 持钉
@@ -3048,7 +3048,7 @@
 [DOMAIN:标签] [CAT:表情动作/基础动作] head_turn | 头部转向
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_nunchaku | 持双节棍
 [DOMAIN:标签] [CAT:表情动作/手部动作] card_between_fingers | 指间卡牌
-[DOMAIN:标签] [CAT:表情动作/性爱动作] vomiting_cum | 吐精
+[DOMAIN:标签] [CAT:排除/性行为] vomiting_cum | 吐精
 [DOMAIN:标签] [CAT:表情动作/基础动作] tiptoe_kiss | 踮脚吻
 [DOMAIN:标签] [CAT:表情动作/其他动作] z3_max_schultz_(kancolle)_(cosplay) | Z3马克斯·舒尔茨（舰队Collection）（角色扮演）
 [DOMAIN:标签] [CAT:表情动作/其他动作] kuroe_shizuku_(cosplay) | 黑江雫（角色扮演）
@@ -3548,7 +3548,7 @@
 [DOMAIN:标签] [CAT:表情动作/手部动作] wringing | 拧干
 [DOMAIN:标签] [CAT:表情动作/手部动作] adjusting_hair_ornament | 整理发饰
 [DOMAIN:标签] [CAT:表情动作/静止姿态] lying_on_animal | 倚靠动物
-[DOMAIN:标签] [CAT:表情动作/手部拿着某物] holding_organ | 手持器官
+[DOMAIN:标签] [CAT:排除/猎奇血腥] holding_organ | 手持器官
 [DOMAIN:标签] [CAT:表情动作/手部拿着某物] plectrum_in_mouth | 口含拨片
 [DOMAIN:标签] [CAT:表情动作/静止姿态] sitting_on_drum | 坐于鼓上
 [DOMAIN:标签] [CAT:表情动作/性爱动作] biting_shoulder | 咬肩

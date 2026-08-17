@@ -436,7 +436,7 @@
 [DOMAIN:标签] [CAT:场景/公共设施] arena | 竞技场
 [DOMAIN:标签] [CAT:场景/特殊场所] in_crane_game | 在抓娃娃机内
 [DOMAIN:标签] [CAT:场景/公共设施] cafe_(cafe-chan_to_break_time) | 咖啡馆（咖啡酱与休息时间）
-[DOMAIN:标签] [CAT:场景/其他] pile_of_corpses | 尸堆
+[DOMAIN:标签] [CAT:排除/猎奇血腥] pile_of_corpses | 尸堆
 [DOMAIN:标签] [CAT:场景/奇幻幻想] colosseum | 大斗兽场
 [DOMAIN:标签] [CAT:场景/奇幻幻想] hakugyokurou | 白玉楼
 [DOMAIN:标签] [CAT:场景/自然户外] stepping_stones | 踏脚石

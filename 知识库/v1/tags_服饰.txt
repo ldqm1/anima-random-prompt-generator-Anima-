@@ -6064,7 +6064,7 @@
 [DOMAIN:标签] [CAT:服饰/配饰] padded_gloves | 填充手套
 [DOMAIN:标签] [CAT:服饰/军装战斗] camouflage_hat | 迷彩帽
 [DOMAIN:标签] [CAT:服饰/配饰] silver_gloves | 银色手套
-[DOMAIN:标签] [CAT:服饰/其他] intestine_clothing | 肠道服装
+[DOMAIN:标签] [CAT:排除/猎奇血腥] intestine_clothing | 肠道服装
 [DOMAIN:标签] [CAT:服饰/军装战斗] plate_carrier | 战术背心
 [DOMAIN:标签] [CAT:服饰/泳装内衣] striped_underwear | 条纹内衣
 [DOMAIN:标签] [CAT:服饰/配饰] snowflake_necklace | 雪花项链

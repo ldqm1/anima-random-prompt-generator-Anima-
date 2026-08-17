@@ -1149,7 +1149,7 @@
 [DOMAIN:标签] [CAT:人物/肢体] fewer_digits | 少指畸形
 [DOMAIN:标签] [CAT:人物/发型] buzz_cut | 板寸头
 [DOMAIN:标签] [CAT:人物/身体状态] breast_slip | 露胸
-[DOMAIN:标签] [CAT:人物/对象] corpse | 尸体
+[DOMAIN:标签] [CAT:排除/猎奇血腥] corpse | 尸体
 [DOMAIN:标签] [CAT:人物/面部] mechanical_horns | 机械角
 [DOMAIN:标签] [CAT:人物/性器官] bandaid_on_pussy | 私处创可贴
 [DOMAIN:标签] [CAT:人物/发型] arched_bangs | 拱形刘海
@@ -1160,7 +1160,7 @@
 [DOMAIN:标签] [CAT:人物/性器官] urethra | 尿道
 [DOMAIN:标签] [CAT:排除/男性雄性] futa_with_male | 扶她与男性
 [DOMAIN:标签] [CAT:人物/对象] human_only | 仅人类
-[DOMAIN:标签] [CAT:人物/其他] disembodied_head | 悬浮头颅
+[DOMAIN:标签] [CAT:排除/猎奇血腥] disembodied_head | 悬浮头颅
 [DOMAIN:标签] [CAT:人物/性器官] big_pussy | 巨阴
 [DOMAIN:标签] [CAT:人物/身材体态] flat_ass | 扁平臀部
 [DOMAIN:标签] [CAT:人物/对象] monsterification | 怪物化
@@ -1353,7 +1353,7 @@
 [DOMAIN:标签] [CAT:人物/胸部] natural_breasts | 天然乳房
 [DOMAIN:标签] [CAT:人物/身份（职业）] bat_girl | 蝙蝠女孩
 [DOMAIN:标签] [CAT:人物/身份（职业）] adventurer_(ff11) | 冒险者（最终幻想11）
-[DOMAIN:标签] [CAT:人物/其他] severed_head | 断首
+[DOMAIN:标签] [CAT:排除/猎奇血腥] severed_head | 断首
 [DOMAIN:标签] [CAT:排除/兽化非人] large_hands | 巨手
 [DOMAIN:标签] [CAT:人物/性器官] girthy_penis | 粗大阴茎
 [DOMAIN:标签] [CAT:人物/非人特征] no_wings | 无翼
@@ -1643,14 +1643,14 @@
 [DOMAIN:标签] [CAT:人物/性器官] covered_testicles | 遮盖睾丸
 [DOMAIN:标签] [CAT:人物/身份（职业）] stripper | 脱衣舞者
 [DOMAIN:标签] [CAT:人物/身材体态] top_heavy | 上围丰满
-[DOMAIN:标签] [CAT:人物/身体状态] severed_limb | 断肢
+[DOMAIN:标签] [CAT:排除/猎奇血腥] severed_limb | 断肢
 [DOMAIN:标签] [CAT:人物/对象] ear_birthmark | 耳朵胎记
 [DOMAIN:标签] [CAT:人物/对象] blood_on_bandages | 绷带上的血迹
 [DOMAIN:标签] [CAT:人物/身体标记] leg_scar | 腿部疤痕
 [DOMAIN:标签] [CAT:人物/皮肤肤色] stomach_hair | 腹毛
 [DOMAIN:标签] [CAT:人物/身份（职业）] track_and_field | 田径
 [DOMAIN:标签] [CAT:人物/面部] otter_ears | 水獭耳
-[DOMAIN:标签] [CAT:人物/其他] intestines | 肠
+[DOMAIN:标签] [CAT:排除/猎奇血腥] intestines | 肠
 [DOMAIN:标签] [CAT:人物/身体标记] scar_on_hand | 手部伤疤
 [DOMAIN:标签] [CAT:人物/身体标记] joestar_birthmark | 乔斯达家星形胎记
 [DOMAIN:标签] [CAT:人物/身体标记] stitched_arm | 缝合手臂
@@ -1753,7 +1753,7 @@
 [DOMAIN:标签] [CAT:人物/肢体] long_toenails | 长趾甲
 [DOMAIN:标签] [CAT:人物/面部] single_ear_down | 单耳下垂
 [DOMAIN:标签] [CAT:人物/眼睛] star_pupils | 星形瞳孔
-[DOMAIN:标签] [CAT:人物/面部] mutton_chops | 络腮胡
+[DOMAIN:标签] [CAT:排除/男性雄性] mutton_chops | 络腮胡
 [DOMAIN:标签] [CAT:人物/对象] alternate_species | 异种生物
 [DOMAIN:标签] [CAT:人物/发型] medium_sideburns | 中长鬓角
 [DOMAIN:标签] [CAT:人物/身份（职业）] magician | 魔术师
@@ -1839,7 +1839,7 @@
 [DOMAIN:标签] [CAT:人物/皮肤肤色] shorts_tan | 短裤晒痕
 [DOMAIN:标签] [CAT:人物/身体状态] bandaged_foot | 绷带缠足
 [DOMAIN:标签] [CAT:人物/面部细节] very_long_tongue | 超长舌
-[DOMAIN:标签] [CAT:人物/眼睛] disembodied_eye | 悬浮眼球
+[DOMAIN:标签] [CAT:排除/猎奇血腥] disembodied_eye | 悬浮眼球
 [DOMAIN:标签] [CAT:人物/身体标记] scar_on_back | 背部伤疤
 [DOMAIN:标签] [CAT:人物/身份（职业）] female_butler | 女管家
 [DOMAIN:标签] [CAT:人物/非人特征] two-tone_wings | 双色羽翼
@@ -1875,7 +1875,7 @@
 [DOMAIN:标签] [CAT:人物/皮肤肤色] wide_face | 宽脸
 [DOMAIN:标签] [CAT:人物/性器官] large_horns | 大型犄角
 [DOMAIN:标签] [CAT:人物/肢体] asymmetrical_arms | 不对称手臂
-[DOMAIN:标签] [CAT:人物/嘴巴] blowhole | 喷水孔
+[DOMAIN:标签] [CAT:排除/兽化非人] blowhole | 喷水孔
 [DOMAIN:标签] [CAT:排除/男性雄性] reptile_boy | 爬行类少年
 [DOMAIN:标签] [CAT:人物/性器官] purple_pubic_hair | 紫色阴毛
 [DOMAIN:标签] [CAT:人物/胸部] inconvenient_breasts | 不便胸部
@@ -1906,7 +1906,7 @@
 [DOMAIN:标签] [CAT:人物/身材体态] spread_navel | 敞开的肚脐
 [DOMAIN:标签] [CAT:人物/非人特征] tied_ears | 系绑耳朵
 [DOMAIN:标签] [CAT:排除/猎奇血腥] skeletal_arm | 骸骨手臂
-[DOMAIN:标签] [CAT:人物/眼睛] extra_pupils | 多重瞳孔
+[DOMAIN:标签] [CAT:排除/兽化非人] extra_pupils | 多重瞳孔
 [DOMAIN:标签] [CAT:人物/眼睛] orange_sclera | 橙色巩膜
 [DOMAIN:标签] [CAT:人物/身份（职业）] cheating_wife | 出轨人妻
 [DOMAIN:标签] [CAT:人物/发型] hairstyle_switch | 发型切换
@@ -2077,7 +2077,7 @@
 [DOMAIN:标签] [CAT:人物/发型] nihongami | 日式发髻
 [DOMAIN:标签] [CAT:人物/身体状态] single_bare_arm | 单臂裸露
 [DOMAIN:标签] [CAT:人物/身份（职业）] dolphin_girl | 海豚女孩
-[DOMAIN:标签] [CAT:人物/肢体] amputation | 截肢
+[DOMAIN:标签] [CAT:排除/猎奇血腥] amputation | 截肢
 [DOMAIN:标签] [CAT:人物/非人特征] mismatched_wings | 不对称翅膀
 [DOMAIN:标签] [CAT:人物/对象] battle_damage | 战斗损伤
 [DOMAIN:标签] [CAT:人物/身体标记] finger_tattoo | 手指纹身
@@ -2197,7 +2197,7 @@
 [DOMAIN:标签] [CAT:人物/身份（职业）] yakuza | 极道
 [DOMAIN:标签] [CAT:人物/身份（职业）] cashier | 收银员
 [DOMAIN:标签] [CAT:人物/身体状态] full_stomach | 饱腹感
-[DOMAIN:标签] [CAT:人物/对象] flesh | 血肉
+[DOMAIN:标签] [CAT:排除/猎奇血腥] flesh | 血肉
 [DOMAIN:标签] [CAT:人物/身份（职业）] oiran | 花魁
 [DOMAIN:标签] [CAT:人物/身体标记] bite_mark_on_shoulder | 肩部咬痕
 [DOMAIN:标签] [CAT:人物/非人特征] black_claws | 黑色爪子
@@ -2394,7 +2394,7 @@
 [DOMAIN:标签] [CAT:人物/其他] oppai_mochi | 欧派麻糬
 [DOMAIN:标签] [CAT:人物/身份（职业）] fighter_(dungeon_and_fighter) | 格斗家（地下城与勇士）
 [DOMAIN:标签] [CAT:人物/身材体态] pear_shaped_figure | 梨形身材
-[DOMAIN:标签] [CAT:人物/其他] floating_breasts | 悬浮胸部
+[DOMAIN:标签] [CAT:排除/猎奇血腥] floating_breasts | 悬浮胸部
 [DOMAIN:标签] [CAT:人物/身份（职业）] sheep_boy | 绵羊少年
 [DOMAIN:标签] [CAT:人物/身份（职业）] komainu_girl | 狛犬少女
 [DOMAIN:标签] [CAT:人物/皮肤肤色] shirt_tan | 衬衫晒痕
@@ -2416,7 +2416,7 @@
 [DOMAIN:标签] [CAT:人物/眼睛] paw-shaped_pupils | 爪形瞳孔
 [DOMAIN:标签] [CAT:人物/其他] gachimuchi | ガチムチ
 [DOMAIN:标签] [CAT:人物/发型] super_saiyan_3 | 超级赛亚人3
-[DOMAIN:标签] [CAT:人物/肢体] extra_digits | 多余脚趾
+[DOMAIN:标签] [CAT:排除/兽化非人] extra_digits | 多余脚趾
 [DOMAIN:标签] [CAT:人物/性器官] vaginal_prolapse | 阴道脱垂
 [DOMAIN:标签] [CAT:人物/肢体] forearms | 前臂
 [DOMAIN:标签] [CAT:人物/对象] chameleon_tail | 变色龙尾巴
@@ -2514,7 +2514,7 @@
 [DOMAIN:标签] [CAT:人物/身份（职业）] necromancer | 死灵法师
 [DOMAIN:标签] [CAT:人物/皮肤肤色] hairy_hands | 多毛双手
 [DOMAIN:标签] [CAT:人物/身体标记] irezumi | 刺青
-[DOMAIN:标签] [CAT:人物/胸部] extra_breasts | 额外乳房
+[DOMAIN:标签] [CAT:排除/兽化非人] extra_breasts | 额外乳房
 [DOMAIN:标签] [CAT:人物/对象] watashi_(jintai) | 私（人体）
 [DOMAIN:标签] [CAT:人物/身份（职业）] rider | 骑手
 [DOMAIN:标签] [CAT:人物/其他] oppai_challenge | 欧派挑战
@@ -2708,7 +2708,7 @@
 [DOMAIN:标签] [CAT:人物/性器官] steamy_penis | 蒸腾阴茎
 [DOMAIN:标签] [CAT:人物/对象] fetus | 胎儿
 [DOMAIN:标签] [CAT:人物/对象] dinosaur_girl | 恐龙女孩
-[DOMAIN:标签] [CAT:人物/对象] severed_torso | 断躯
+[DOMAIN:标签] [CAT:排除/猎奇血腥] severed_torso | 断躯
 [DOMAIN:标签] [CAT:人物/面部细节] aqua_tongue | 水色舌头
 [DOMAIN:标签] [CAT:人物/身份（职业）] monk_(sekaiju) | 武僧（世界树）
 [DOMAIN:标签] [CAT:人物/发色] kurokami_medaka | 黑发目高
@@ -2749,7 +2749,7 @@
 [DOMAIN:标签] [CAT:人物/发型] wilted_ahoge | 枯萎呆毛
 [DOMAIN:标签] [CAT:人物/对象] check_gender | 性别确认
 [DOMAIN:标签] [CAT:人物/对象] giraffe_girl | 长颈鹿女孩
-[DOMAIN:标签] [CAT:人物/面部细节] extra_teeth | 额外牙齿
+[DOMAIN:标签] [CAT:排除/兽化非人] extra_teeth | 额外牙齿
 [DOMAIN:标签] [CAT:人物/发型] cable_hair | 电缆头发
 [DOMAIN:标签] [CAT:人物/性器官] penis_and_testicles_touching | 阴茎与睾丸接触
 [DOMAIN:标签] [CAT:人物/身材体态] jiggly_girls | 摇摆女孩
@@ -2871,7 +2871,7 @@
 [DOMAIN:标签] [CAT:人物/性器官] misplaced_genitals | 错位生殖器
 [DOMAIN:标签] [CAT:人物/其他] shoulder_angel | 肩头天使
 [DOMAIN:标签] [CAT:人物/身份（职业）] siscon | 妹控
-[DOMAIN:标签] [CAT:人物/身体状态] severed_finger | 断指
+[DOMAIN:标签] [CAT:排除/猎奇血腥] severed_finger | 断指
 [DOMAIN:标签] [CAT:人物/性器官] exposed_balls | 裸露睾丸
 [DOMAIN:标签] [CAT:人物/身份（职业）] plague_doctor | 瘟疫医生
 [DOMAIN:标签] [CAT:人物/对象] chinchilla_girl | 龙猫女孩
@@ -2964,7 +2964,7 @@
 [DOMAIN:标签] [CAT:人物/身体标记] flower_facial_mark | 花面纹
 [DOMAIN:标签] [CAT:人物/肢体] large_feet | 巨足
 [DOMAIN:标签] [CAT:人物/身体标记] scar_across_eyebrow | 眉间疤痕
-[DOMAIN:标签] [CAT:人物/其他] stomach_(organ) | 胃（器官）
+[DOMAIN:标签] [CAT:排除/猎奇血腥] stomach_(organ) | 胃（器官）
 [DOMAIN:标签] [CAT:人物/身份（职业）] princess_royale | 皇家公主
 [DOMAIN:标签] [CAT:人物/肢体] silver_nails | 银色指甲
 [DOMAIN:标签] [CAT:人物/身份（职业）] medic | 医疗兵
@@ -2980,8 +2980,8 @@
 [DOMAIN:标签] [CAT:人物/对象] body_modification | 身体改造
 [DOMAIN:标签] [CAT:人物/肢体] grey_fingernails | 灰色指甲
 [DOMAIN:标签] [CAT:人物/肢体] bound_feet | 缠足
-[DOMAIN:标签] [CAT:人物/嘴巴] chest_mouth | 胸嘴
-[DOMAIN:标签] [CAT:人物/其他] disembodied_tongue | 悬浮舌头
+[DOMAIN:标签] [CAT:排除/猎奇血腥] chest_mouth | 胸嘴
+[DOMAIN:标签] [CAT:排除/猎奇血腥] disembodied_tongue | 悬浮舌头
 [DOMAIN:标签] [CAT:人物/非人特征] tail_around_waist | 绕腰尾巴
 [DOMAIN:标签] [CAT:人物/身份（职业）] hikikomori | 蛰居族
 [DOMAIN:标签] [CAT:人物/眼睛] single_eyebrow | 单边眉毛
@@ -3076,7 +3076,7 @@
 [DOMAIN:标签] [CAT:人物/眼睛] tsurime-chan | 吊眼梢酱
 [DOMAIN:标签] [CAT:人物/身份（职业）] scorpio_(zodiac) | 天蝎座（星座）
 [DOMAIN:标签] [CAT:人物/身份（职业）] hostage | 人质
-[DOMAIN:标签] [CAT:人物/其他] extra_tongue | 额外舌头
+[DOMAIN:标签] [CAT:排除/兽化非人] extra_tongue | 额外舌头
 [DOMAIN:标签] [CAT:人物/身份（职业）] pharaoh | 法老
 [DOMAIN:标签] [CAT:人物/身体状态] blood_on_teeth | 牙齿上的血
 [DOMAIN:标签] [CAT:人物/眼睛] fish-shaped_pupils | 鱼形瞳孔
@@ -3115,7 +3115,7 @@
 [DOMAIN:标签] [CAT:人物/身份（职业）] assassin | 刺客
 [DOMAIN:标签] [CAT:人物/皮肤肤色] pale-skinned_female | 浅肤色女性
 [DOMAIN:标签] [CAT:人物/身份（职业）] kaban_(kemono_friends)_(cosplay) | 小鞄（兽娘动物园）（角色扮演）
-[DOMAIN:标签] [CAT:人物/对象] disembodied_torso | 无身躯干
+[DOMAIN:标签] [CAT:排除/猎奇血腥] disembodied_torso | 无身躯干
 [DOMAIN:标签] [CAT:人物/身份（职业）] mars_people | 火星人
 [DOMAIN:标签] [CAT:人物/身份（职业）] monkey_d._luffy_(cosplay) | 蒙奇·D·路飞（Cosplay）
 [DOMAIN:标签] [CAT:人物/面部细节] broken_teeth | 碎牙
@@ -3187,7 +3187,7 @@
 [DOMAIN:标签] [CAT:人物/身份（职业）] cavewoman | 穴居女子
 [DOMAIN:标签] [CAT:人物/眼睛] blonde_eyebrows | 金色眉毛
 [DOMAIN:标签] [CAT:人物/其他] kyonyuu_fantasy | 巨乳幻想
-[DOMAIN:标签] [CAT:人物/嘴巴] stomach_mouth | 腹口
+[DOMAIN:标签] [CAT:排除/猎奇血腥] stomach_mouth | 腹口
 [DOMAIN:标签] [CAT:人物/身份（职业）] phantom_thief_(kkmomo67) | 怪盗（KKMOMO67）
 [DOMAIN:标签] [CAT:人物/身份（职业）] demon_king_(in) | 魔王（in）
 [DOMAIN:标签] [CAT:人物/身体标记] stitched_fingers | 缝合手指
@@ -3348,7 +3348,7 @@
 [DOMAIN:标签] [CAT:人物/身份（职业）] toramaru_shou_(cosplay) | 虎丸翔（Cosplay）
 [DOMAIN:标签] [CAT:人物/肢体] glowing_nails | 发光指甲
 [DOMAIN:标签] [CAT:人物/眼睛] contact_lens | 隐形眼镜
-[DOMAIN:标签] [CAT:人物/面部] disembodied_mouth | 悬浮之口
+[DOMAIN:标签] [CAT:排除/猎奇血腥] disembodied_mouth | 悬浮之口
 [DOMAIN:标签] [CAT:人物/身份（职业）] surgeon | 外科医生
 [DOMAIN:标签] [CAT:人物/身份（职业）] mime | 默剧
 [DOMAIN:标签] [CAT:人物/对象] head_tail | 头尾
@@ -3367,7 +3367,7 @@
 [DOMAIN:标签] [CAT:人物/身份（职业）] scout | 侦察兵
 [DOMAIN:标签] [CAT:人物/非人特征] possum_tail | 负鼠尾巴
 [DOMAIN:标签] [CAT:人物/胸部] long_breasts | 长乳房
-[DOMAIN:标签] [CAT:人物/对象] mutilation | 肢体残缺
+[DOMAIN:标签] [CAT:排除/猎奇血腥] mutilation | 肢体残缺
 [DOMAIN:标签] [CAT:人物/对象] blood_vessels | 血管
 [DOMAIN:标签] [CAT:人物/对象] sulong_form | 月狮形态
 [DOMAIN:标签] [CAT:人物/对象] imp | 小恶魔
@@ -3441,7 +3441,7 @@
 [DOMAIN:标签] [CAT:人物/面部] forehead_scar | 额前伤疤
 [DOMAIN:标签] [CAT:人物/身份（职业）] heavily_armed_high_school_girls | 重武装女高中生
 [DOMAIN:标签] [CAT:人物/身份（职业）] pope | 教皇
-[DOMAIN:标签] [CAT:人物/胸部] extra_nipples | 额外乳头
+[DOMAIN:标签] [CAT:排除/兽化非人] extra_nipples | 额外乳头
 [DOMAIN:标签] [CAT:人物/发型] upright_ahoge | 直立呆毛
 [DOMAIN:标签] [CAT:人物/身体状态] sweaty_foot | 汗湿脚部
 [DOMAIN:标签] [CAT:人物/身体状态] bare_skin | 裸露肌肤
@@ -3474,7 +3474,7 @@
 [DOMAIN:标签] [CAT:排除/男性雄性] short_male | 矮个子男性
 [DOMAIN:标签] [CAT:人物/身份（职业）] train_attendant | 列车乘务员
 [DOMAIN:标签] [CAT:人物/其他] dark_angels | 黑暗天使
-[DOMAIN:标签] [CAT:人物/其他] hole_in_stomach | 胃部穿孔
+[DOMAIN:标签] [CAT:排除/猎奇血腥] hole_in_stomach | 胃部穿孔
 [DOMAIN:标签] [CAT:人物/身份（职业）] spy | 间谍
 [DOMAIN:标签] [CAT:人物/发型] fade_(haircut) | 渐变式发型
 [DOMAIN:标签] [CAT:人物/面部细节] chin_spike | 下巴尖刺

@@ -245,7 +245,7 @@
 [DOMAIN:标签] [CAT:物品/动物] paw_print | 爪印
 [DOMAIN:标签] [CAT:物品/其他物品] invisible_chair | 隐形椅子
 [DOMAIN:标签] [CAT:物品/武器] dagger | 匕首
-[DOMAIN:标签] [CAT:物品/其他物品] disembodied_hand | 断手
+[DOMAIN:标签] [CAT:排除/猎奇血腥] disembodied_hand | 断手
 [DOMAIN:标签] [CAT:物品/学习用品] randoseru | 硬式书包
 [DOMAIN:标签] [CAT:物品/食物] bread | 面包
 [DOMAIN:标签] [CAT:物品/其他物品] unworn_eyewear | 未佩戴眼镜
@@ -2773,7 +2773,7 @@
 [DOMAIN:标签] [CAT:物品/武器] barrett_m82 | 巴雷特M82
 [DOMAIN:标签] [CAT:物品/其他物品] mojo | 摩咒
 [DOMAIN:标签] [CAT:物品/食物] spicy | 辛辣
-[DOMAIN:标签] [CAT:物品/其他物品] severed_hand | 断手
+[DOMAIN:标签] [CAT:排除/猎奇血腥] severed_hand | 断手
 [DOMAIN:标签] [CAT:物品/其他物品] cardboard | 纸板箱
 [DOMAIN:标签] [CAT:物品/乐器] band | 乐队
 [DOMAIN:标签] [CAT:物品/其他物品] feather_fan | 羽扇
@@ -4099,7 +4099,7 @@
 [DOMAIN:标签] [CAT:排除/媒体噪音] file | 档案
 [DOMAIN:标签] [CAT:物品/食物] inarizushi | 稻荷寿司
 [DOMAIN:标签] [CAT:物品/其他物品] star_rod | 星星法杖
-[DOMAIN:标签] [CAT:物品/其他物品] entrails | 内脏
+[DOMAIN:标签] [CAT:排除/猎奇血腥] entrails | 内脏
 [DOMAIN:标签] [CAT:物品/其他物品] chariot | 战车
 [DOMAIN:标签] [CAT:物品/成人玩具] anal_ball_wear | 肛珠穿戴
 [DOMAIN:标签] [CAT:物品/餐具] dish | 餐盘
@@ -6273,7 +6273,7 @@
 [DOMAIN:标签] [CAT:物品/其他物品] patio_umbrella | 庭院遮阳伞
 [DOMAIN:标签] [CAT:物品/武器] foil_(fencing) | 花剑（击剑）
 [DOMAIN:标签] [CAT:物品/数码设备] tokumei_radio | 特命电台
-[DOMAIN:标签] [CAT:物品/动物] carcass | 动物尸体
+[DOMAIN:标签] [CAT:排除/猎奇血腥] carcass | 动物尸体
 [DOMAIN:标签] [CAT:物品/其他物品] blue_flag | 蓝旗
 [DOMAIN:标签] [CAT:物品/其他物品] east_japan_railway_company | 东日本旅客铁道
 [DOMAIN:标签] [CAT:物品/其他物品] ink_bottle | 墨水瓶
