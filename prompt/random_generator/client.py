@@ -235,6 +235,7 @@ def render_user_prompt(
     character_pool_info: dict | None = None,
     placeholder_meanings: dict[str, str] | None = None,
     creative_anchor_info: list[dict] | None = None,
+    sampled_position: str | None = None,
 ) -> str:
     """渲染用户提示词模板。
 
@@ -279,7 +280,10 @@ def render_user_prompt(
         raise FileNotFoundError(f"User prompt template not found: {template_path}") from exc
 
     is_multi_character = _is_multi_character(sampled_tags_text)
+    if sampled_position is None:
+        sampled_position = _load_sampled_position()
     return template.render(
+        sampled_position=sampled_position,
         sampled_tags_text=sampled_tags_text,
         safety=safety,
         min_tags=min_tags,
@@ -298,6 +302,23 @@ def render_user_prompt(
         placeholder_meanings=placeholder_meanings,
         creative_anchor_info=creative_anchor_info,
     )
+
+
+def _load_sampled_position() -> str:
+    """读取 ``sampled_position`` 配置（head=sampled 放开头 / tail=sampled 放末尾）。
+
+    从 ``generation_config.yaml`` 的 ``prompt_sampled_position`` 读取；缺省回退 ``head``。
+    """
+    import yaml as _yaml
+
+    try:
+        data = _yaml.safe_load(
+            config.GENERATION_CONFIG_FILE.read_text(encoding="utf-8")
+        ) or {}
+    except Exception:
+        return "head"
+    val = (data.get("prompt_sampled_position") or "head").strip().lower()
+    return val if val in ("head", "tail") else "head"
 
 
 def _is_multi_character(sampled_tags_text: str) -> bool:
