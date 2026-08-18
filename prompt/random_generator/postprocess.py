@@ -423,11 +423,14 @@ def _apply_aesthetic_constraints(tags: list[str]) -> tuple[list[str], list[tuple
     removed: list[tuple[str, str]] = []
     norm = _normalize_tag
 
-    # 1) 排版词剔除
+    # 1) 排版词剔除 + 构图法则词剔除（输出侧兜底，防 LLM 自创）
     kept: list[str] = []
     for t in tags:
-        if norm(t) in config.LAYOUT_FRAGMENT_TAGS:
+        n = norm(t)
+        if n in config.LAYOUT_FRAGMENT_TAGS:
             removed.append(("layout", t))
+        elif n in config.CAMERA_COMPOSITION_TAGS:
+            removed.append(("composition", t))
         else:
             kept.append(t)
 

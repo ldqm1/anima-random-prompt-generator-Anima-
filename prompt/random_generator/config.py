@@ -66,6 +66,15 @@ LAYOUT_FRAGMENT_TAGS: frozenset[str] = frozenset({
     "multiple expressions", "panel wall", "four-panel", "two-panel",
 })
 
+# 1b) 构图法则类词（构图范式，非必要镜头语言）：抽样层已 max:0，输出侧兜底剔除——
+#     避免 LLM 自创 rule of thirds/leading lines 等（system_prompt 已禁 fallback，此处防透传）。
+#     机位/景别词（eye level/bird's-eye view/close-up/upper body 等）不在此列，保留正常镜头语言。
+CAMERA_COMPOSITION_TAGS: frozenset[str] = frozenset({
+    "rule of thirds", "leading lines", "negative space", "frame-in-frame",
+    "midground", "foreground focus", "background focus",
+    "symmetrical composition", "diagonal composition",
+})
+
 # 2) 现实具体场所词：同一画面最多保留 1 个（"公交+绿洲+火星"/"帐篷+机场+书店"式
 #    乱炖场景直接拉低画面统一性）。自然/水域/天空/幻境词不受限——"水中森林/浮空岛"
 #    类跨组组合是二次元创意，应保留。
