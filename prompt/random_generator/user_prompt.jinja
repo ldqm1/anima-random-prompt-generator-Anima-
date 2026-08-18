@@ -20,13 +20,6 @@ Name: {{ name.strip() }}
 Character / series seed: {{ character_tag }}
 {% endif %}
 
-{% if sampled_position != 'tail' %}
-Sampled tags:
-```
-{{ sampled_tags_text }}
-```
-{% endif %}
-
 {% if creative_anchor_info %}
 Creative anchors (MUST KEEP):
 {% for a in creative_anchor_info %}
@@ -63,7 +56,7 @@ Forced tags (must keep if compatible): {{ forced_tags }}
 Forbidden tags (must drop): {{ forbidden_tags }}
 {% endif %}
 
-The sampled tags {% if sampled_position == 'tail' %}at the end of this prompt{% else %}above{% endif %} are your theme seeds. You do NOT have to use all of them.
+The sampled tags at the end of this prompt are your theme seeds. You do NOT have to use all of them.
 Choose compatible tags from each category to fill the slots in the strict slot order.
 You may add style-consistent tags ONLY to reach {{ min_tags }}, and ONLY from categories already present in the sampled tags. NEVER add default mood tags (`soft lighting`, `warm lighting`, `blush`, `cherry blossom`, `park`, `window`, `bokeh`, `petals`, `gentle breeze`, `golden hour`, `smile`) unless they were sampled — each of them may appear at most once per prompt. Do not add quality words, artist names, or content-rating tags.
 Respect `subject_control` when selecting `count/gender` tags; drop any tag that matches `forbidden_tags`; keep `forced_tags` in the proper slot unless they conflict with {% if max_rating not in ['r18', 'r18g'] %}the conflict table or {% endif %}content ceiling.
@@ -149,11 +142,9 @@ Rules for the scene-description block:
 - Do not add quality words, artist names, or content-rating tags.
 - Do not reuse the sentence shapes from the examples (gentle breeze lifting hair, background fading into a blur, golden light wrapping around).
 
-{% if sampled_position == 'tail' %}
 Sampled tags (THEME SEEDS — the primary source of this image; read them carefully and fill the slots from them):
 ```
 {{ sampled_tags_text }}
 ```
-{% endif %}
 
 Produce the JSON output now.

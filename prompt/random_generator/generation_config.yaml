@@ -3,12 +3,6 @@
 # 允许抽样的最大年龄分级（general / pg12 / r15 / r18 / r18g）
 max_rating: r15
 
-# sampled tags 在 user prompt 中的摆放位置：
-#   head = 放在提示词开头（LLM 采用率/输出质量更优，实测 final 来源率 0.554、unknown 10/条）
-#   tail = 放在提示词末尾（若变量可控则 DeepSeek 前缀缓存命中率更高，实测 69.8% vs 30.3%；
-#         但真实批量中角色/seed 各异会削弱公共前缀；且 LLM 采用率略降：final 来源率 0.431）
-prompt_sampled_position: head
-
 # r18 模式下每个样本至少抽到的 r18 评级 tag 数量（0 表示不强制；仅 max_rating=r18 时生效）。
 # 补充抽样仍会通过全部清洗规则，不会绕过男性/扶她/福瑞/r18g 等禁用类别过滤。
 min_r18_tags_per_sample: 15
