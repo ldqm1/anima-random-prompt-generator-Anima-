@@ -20,10 +20,7 @@ Name: {{ name.strip() }}
 Character / series seed: {{ character_tag }}
 {% endif %}
 
-Sampled tags:
-```
-{{ sampled_tags_text }}
-```
+(The sampled theme seeds are printed at the very end of this prompt — read them closely.)
 
 {% if creative_anchor_info %}
 Creative anchors (MUST KEEP):
@@ -61,7 +58,7 @@ Forced tags (must keep if compatible): {{ forced_tags }}
 Forbidden tags (must drop): {{ forbidden_tags }}
 {% endif %}
 
-The sampled tags above are theme seeds. You do NOT have to use all of them.
+The sampled tags at the end of this prompt are your theme seeds. You do NOT have to use all of them.
 Choose compatible tags from each category to fill the slots in the strict slot order.
 You may add style-consistent tags ONLY to reach {{ min_tags }}, and ONLY from categories already present in the sampled tags. NEVER add default mood tags (`soft lighting`, `warm lighting`, `blush`, `cherry blossom`, `park`, `window`, `bokeh`, `petals`, `gentle breeze`, `golden hour`, `smile`) unless they were sampled — each of them may appear at most once per prompt. Do not add quality words, artist names, or content-rating tags.
 Respect `subject_control` when selecting `count/gender` tags; drop any tag that matches `forbidden_tags`; keep `forced_tags` in the proper slot unless they conflict with {% if max_rating not in ['r18', 'r18g'] %}the conflict table or {% endif %}content ceiling.
@@ -71,8 +68,7 @@ Slot order: {{ slot_order }}
 Anti-convergence constraints (MUST follow):
 1. Default mood words may appear AT MOST ONCE per prompt and only if sampled:
    `soft lighting`, `warm lighting`, `blush`, `cherry blossom`, `park`, `window`, `bokeh`, `petals`, `gentle breeze`, `golden hour`, `smile`, `glow`, `sparkle`, `soft focus`.
-2. If the sampled camera tags contain no shot-size or angle tag, add exactly one structural composition tag:
-   `rule of thirds`, `leading lines`, `negative space`, `frame-in-frame`, `eye level`, `midground`, `bird's-eye view`, `over-the-shoulder`, `extreme close-up`, `deep focus`.
+2. If the sampled camera tags contain no shot-size or angle tag, you may add at most one shot/angle word (`eye level`, `bird's-eye view`, `over-the-shoulder`, `extreme close-up`, `deep focus`, `close-up`, `upper body`, `full body`). Never add composition-rule words (`rule of thirds`, `leading lines`, `negative space`, `frame-in-frame`, `symmetrical composition`, `diagonal composition`, `midground`, `foreground focus`, `background focus`) — leave the composition to the visual style.
 3. The expression slot must include at least one non-default emotion (surprised, confused, sad, angry, sleepy, serious, smug, scared, pensive, determined, flustered) unless the sampled expression tags only contain default ones.
 4. The scene-description sentences must state spatial relationship / camera position / action logic NOT already in the tags.
 
@@ -147,5 +143,10 @@ Rules for the scene-description block:
 - Keep each sentence concise.
 - Do not add quality words, artist names, or content-rating tags.
 - Do not reuse the sentence shapes from the examples (gentle breeze lifting hair, background fading into a blur, golden light wrapping around).
+
+Sampled tags (THEME SEEDS — the primary source of this image; read them carefully and fill the slots from them):
+```
+{{ sampled_tags_text }}
+```
 
 Produce the JSON output now.
