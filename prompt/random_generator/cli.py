@@ -9,6 +9,7 @@ import random
 import re
 import sys
 import threading
+import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import Any
@@ -799,6 +800,8 @@ def _generate_one_task(
     database: Any,
     v2_only: bool,
     v2_enhance: bool = False,
+    fail_handle: Any = None,
+    lock: Any = None,
 ) -> dict[str, Any]:
     """在线程中执行单条 API 调用与后处理。
 
@@ -905,7 +908,67 @@ def _generate_one_task(
             record["__audit__"] = {"schema_version": 1, "error": str(exc)}
         return {"ok": True, "record": record, "idx": task["idx"]}
     except Exception as exc:  # noqa: BLE001
+        _log_generation_failure(fail_handle, lock, task, exc)
         return {"ok": False, "error": str(exc), "idx": task["idx"]}
+
+
+def _log_generation_failure(
+    fail_handle: Any,
+    lock: Any,
+    task: dict[str, Any],
+    exc: Exception,
+) -> None:
+    """把一次生成失败（含模型原始输出）落盘，便于排查。
+
+    优先从 ``ResponseParseError``（作为异常 ``__cause__``）取出模型原始输出：
+    content / reasoning_content / finish_reason / usage。同时记录本次输入。
+    """
+    if fail_handle is None:
+        return
+    cause = getattr(exc, "__cause__", None)
+    if isinstance(cause, client.ResponseParseError):
+        raw = cause.raw if isinstance(cause.raw, dict) else {}
+        msg = cause.raw.get("choices", [{}])[0].get("message", {}) if isinstance(
+            cause.raw, dict
+        ) and cause.raw.get("choices") else {}
+        record = {
+            "type": "generate_failure",
+            "ts": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
+            "idx": task.get("idx"),
+            "seed": task.get("seed"),
+            "max_rating": task.get("max_rating"),
+            "error": str(exc),
+            "input_sampled_text": task.get("sampled_text", ""),
+            "model_output": {
+                "content": cause.content,
+                "reasoning_content": msg.get("reasoning_content"),
+                "finish_reason": cause.finish_reason,
+                "usage": cause.usage,
+            },
+        }
+    else:
+        record = {
+            "type": "generate_failure",
+            "ts": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
+            "idx": task.get("idx"),
+            "seed": task.get("seed"),
+            "error": str(exc),
+            "input_sampled_text": task.get("sampled_text", ""),
+        }
+    line = json.dumps(record, ensure_ascii=False, default=str)
+    if lock is not None:
+        with lock:
+            try:
+                fail_handle.write(line + "\n")
+                fail_handle.flush()
+            except (OSError, ValueError, TypeError):
+                pass
+    else:
+        try:
+            fail_handle.write(line + "\n")
+            fail_handle.flush()
+        except (OSError, ValueError, TypeError):
+            pass
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -1187,6 +1250,7 @@ def main(argv: list[str] | None = None) -> int:
     jsonl_handle = None
     txt_handle = None
     audit_handle = None
+    fail_handle = None
     if not args.dry_run:
         out_dir = os.path.dirname(output_path)
         if out_dir:
@@ -1201,6 +1265,13 @@ def main(argv: list[str] | None = None) -> int:
         except OSError as exc:
             print(f"警告：无法打开审计日志 {audit_path}（{exc}），本次跳过审计输出。")
             audit_handle = None
+        # 失败日志（含模型原始输出），供排查解析/内容失败。
+        fail_path = str(Path(output_path).with_name("failures_log.jsonl"))
+        try:
+            fail_handle = Path(fail_path).open("a", encoding="utf-8")
+        except OSError as exc:
+            print(f"警告：无法打开失败日志 {fail_path}（{exc}），本次跳过失败落盘。")
+            fail_handle = None
 
     try:
         # dry-run 仅做抽样与提示词渲染，不走并发。
@@ -1502,6 +1573,8 @@ def main(argv: list[str] | None = None) -> int:
                 database,
                 args.v2_only,
                 v2_enhance,
+                fail_handle,
+                write_lock,
             )
             for task in tasks
         ]
@@ -1558,6 +1631,8 @@ def main(argv: list[str] | None = None) -> int:
             txt_handle.close()
         if audit_handle is not None:
             audit_handle.close()
+        if fail_handle is not None:
+            fail_handle.close()
 
     if not args.dry_run:
         print(f"\n已追加保存 {len(records)} 条提示词到 {output_path}")

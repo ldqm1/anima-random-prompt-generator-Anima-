@@ -567,6 +567,32 @@ def _describe_response_state(response: dict) -> str:
     )
 
 
+class ResponseParseError(ValueError):
+    """解析响应失败；携带模型原始输出，便于上层（cli）落盘分析。
+
+    Attributes:
+        content:     模型输出文本（可能为空/非 JSON，正是排查对象）。
+        raw:         原始原始响应字典（含 choices/message/usage 等）。
+        finish_reason: 该次响应的结束原因（stop/length/content_filter 等）。
+        usage:       该次响应的 token 用量。
+    """
+
+    def __init__(
+        self,
+        message: str,
+        *,
+        content: Any = None,
+        raw: Any = None,
+        finish_reason: str | None = None,
+        usage: Any = None,
+    ) -> None:
+        super().__init__(message)
+        self.content = content
+        self.raw = raw
+        self.finish_reason = finish_reason
+        self.usage = usage
+
+
 def parse_response(response: dict | str) -> dict:
     """解析 DeepSeek 返回的响应。
 
@@ -585,6 +611,7 @@ def parse_response(response: dict | str) -> dict:
         choices = response.get("choices")
         finish_reason: str | None = None
         refusal: str | None = None
+        usage = response.get("usage")
         if isinstance(choices, list) and choices:
             first_choice = choices[0]
             if isinstance(first_choice, dict):
@@ -599,9 +626,10 @@ def parse_response(response: dict | str) -> dict:
         if content is None:
             content = response.get("content")
         if not isinstance(content, str):
-            raise ValueError(
+            raise ResponseParseError(
                 f"Could not extract content from response. "
-                f"{_describe_response_state(response)}"
+                f"{_describe_response_state(response)}",
+                raw=response, finish_reason=finish_reason, usage=usage,
             )
         if not content.strip():
             state = _describe_response_state(response)
@@ -613,11 +641,14 @@ def parse_response(response: dict | str) -> dict:
                 )
             if refusal:
                 detail += f"; refusal={refusal}"
-            raise ValueError(detail)
+            raise ResponseParseError(
+                detail, content=content, raw=response,
+                finish_reason=finish_reason, usage=usage,
+            )
     elif isinstance(response, str):
         content = response
         if not content.strip():
-            raise ValueError("DeepSeek returned empty content string.")
+            raise ResponseParseError("DeepSeek returned empty content string.", content=content)
     else:
         raise TypeError(f"Response must be dict or str, got {type(response)}")
 
@@ -629,12 +660,18 @@ def parse_response(response: dict | str) -> dict:
         try:
             parsed = json.loads(_extract_json_object(content))
         except (ValueError, json.JSONDecodeError) as extraction_error:
-            raise ValueError(
-                f"Failed to parse response as JSON: {decode_error}"
+            raise ResponseParseError(
+                f"Failed to parse response as JSON: {decode_error}",
+                content=content, raw=response if isinstance(response, dict) else None,
+                finish_reason=finish_reason, usage=usage if isinstance(response, dict) else None,
             ) from extraction_error
 
     if not isinstance(parsed, dict):
-        raise ValueError(f"Parsed response is not a dict: {type(parsed)}")
+        raise ResponseParseError(
+            f"Parsed response is not a dict: {type(parsed)}",
+            content=content, raw=response if isinstance(response, dict) else None,
+            finish_reason=finish_reason, usage=usage if isinstance(response, dict) else None,
+        )
 
     # 新格式：模型只返回一个 prompt 字段（当前 system_prompt 只要求输出单个
     # 版本）。不再复制一份 version_2——v1/v2 完全相同没有生成价值，v2 已关闭。
