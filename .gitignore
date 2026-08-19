@@ -34,6 +34,9 @@ output_dev/
 # opencode 本地调用脚本与密钥（含 MiMo API key，严禁进版本库）
 opencode/
 
+# 七牛云 AI 推理 API 调用代码（含 API key，严禁进版本库）
+qiniu_api/
+
 # Trae IDE 规格文档（本地开发需求，不进版本库）
 .trae/
 

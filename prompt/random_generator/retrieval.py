@@ -620,8 +620,17 @@ def load_character_pool(path: str | Path | None = None) -> list[dict[str, Any]]:
         角色记录列表，每条记录包含 ``character_tag``、``series_tag``、
         ``trigger_tags``、``core_appearance_tags``、``core_clothing_tags``。
         记录还可能包含 ``is_male`` 字段，用于男性角色过滤。
+
+    该 loader 被 ``sample_from_knowledge_v1`` 每条抽样调用一次，且 character_pool.json
+    可达数 MB；用 lru_cache 使同一路径只读盘+解析一次，避免每次抽样重复 I/O。
+    调用方只读本返回值，不改动其结构。
     """
     path = Path(path or config.CHARACTER_POOL_FILE)
+    return _load_character_pool_cached(path)
+
+
+@functools.lru_cache(maxsize=8)
+def _load_character_pool_cached(path: Path) -> list[dict[str, Any]]:
     if not path.exists():
         return []
     with path.open("r", encoding="utf-8") as f:
@@ -667,8 +676,15 @@ def load_character_pool_series_index(path: str | Path | None = None) -> list[dic
     Returns:
         索引条目列表，条目包含 ``series_tag``、``enabled``、``allow_male`` 等字段。
         若文件不存在或格式错误，返回空列表。
+
+    与 ``load_character_pool`` 相同：抽样每条调用，故用 lru_cache 只读一次。
     """
     path = Path(path or config.CHARACTER_POOL_SERIES_INDEX_FILE)
+    return _load_series_index_cached(path)
+
+
+@functools.lru_cache(maxsize=8)
+def _load_series_index_cached(path: Path) -> list[dict[str, Any]]:
     if not path.exists():
         return []
     try:
@@ -761,6 +777,7 @@ def _sample_character_pool(
     series_index: list[dict[str, Any]] | None = None,
     strict_same_ip: bool = False,
     exclude_male: bool = False,
+    rng: random.Random | None = None,
 ) -> list[dict[str, Any]]:
     """从角色池中抽样指定数量的角色。
 
@@ -774,10 +791,13 @@ def _sample_character_pool(
         strict_same_ip: 为 ``True`` 时，多角色场景必须来自同一 IP；
             若无法在同 IP 中凑齐 ``num_chars`` 个角色，则返回空列表。
         exclude_male: 为 ``True`` 时，全局排除男性角色（例如单少女场景）。
+        rng: 随机数生成器；为 ``None`` 时使用模块级全局 ``random``。
 
     Returns:
         抽中的角色记录（含 ``source`` 等附加字段）。
     """
+    if rng is None:
+        rng = random
     # 先按 enabled 过滤 IP
     if series_index:
         enabled_series = {
@@ -862,17 +882,17 @@ def _sample_character_pool(
                 weights = [_series_weight(s) for s in eligible_series]
                 if not any(weights):
                     return []
-                series_tag = random.choices(eligible_series, weights=weights, k=1)[0]
+                series_tag = rng.choices(eligible_series, weights=weights, k=1)[0]
             else:
                 all_series = list(by_series.keys())
                 weights = [_series_weight(s) for s in all_series]
                 if not any(weights):
                     return []
-                series_tag = random.choices(all_series, weights=weights, k=1)[0]
+                series_tag = rng.choices(all_series, weights=weights, k=1)[0]
 
             series_roles = by_series[series_tag]
             k = min(num_chars, len(series_roles))
-            chosen.extend(random.sample(series_roles, k))
+            chosen.extend(rng.sample(series_roles, k))
 
             # 非严格模式下，若该作品角色不足，从剩余角色中补充。
             if not strict_same_ip:
@@ -886,11 +906,11 @@ def _sample_character_pool(
                     ]
                     k_rest = min(remaining, len(rest))
                     if k_rest > 0:
-                        chosen.extend(random.sample(rest, k_rest))
+                        chosen.extend(rng.sample(rest, k_rest))
     else:
         k = min(num_chars, len(pool))
         if k > 0:
-            chosen.extend(random.sample(pool, k))
+            chosen.extend(rng.sample(pool, k))
 
     # 转换为统一的抽样结果格式
     result: list[dict[str, Any]] = []
@@ -969,6 +989,7 @@ def sample_from_knowledge_v1(
     default_word_quota: dict[str, int] | None = None,
     creative_anchors: dict[str, list[dict]] | None = None,
     subcategory_quotas: dict[str, Any] | None = None,
+    rng: random.Random | None = None,
 ) -> dict[str, list[dict]]:
     """从知识库 v1 中按类别抽样，并应用 R15 过滤与现有清洗规则。
 
@@ -1030,8 +1051,10 @@ def sample_from_knowledge_v1(
     )
     prefer_same_ip = bool(character_pool.get("prefer_same_ip_for_multiple", True))
 
+    if rng is None:
+        rng = random
     if seed is not None:
-        random.seed(seed)
+        rng.seed(seed)
 
     # 双人/多人角色频率：enabled 关闭 → 恒 1girl；否则按 probability 掷骰决定
     # 本条样本是多人（2girls）还是单人（1girl）——probability 即多人占比。
@@ -1040,7 +1063,7 @@ def sample_from_knowledge_v1(
     multi_probability = min(
         1.0, max(0.0, float(multi_character_cfg.get("probability", 0.5)))
     )
-    use_multi = multi_enabled and random.random() < multi_probability
+    use_multi = multi_enabled and rng.random() < multi_probability
     _allowed_count_gender: frozenset[str] = (
         frozenset({"2girls"}) if use_multi else frozenset({"1girl"})
     )
@@ -1084,7 +1107,7 @@ def sample_from_knowledge_v1(
             r18_topic_control, sampled.get("count_gender", [])
         )
         activated, fixed_quotas, excluded_norms = _decide_r18_topic_activation(
-            r18_topics_cfg, topic_tag_map, disabled_topics=solo_disabled
+            r18_topics_cfg, topic_tag_map, disabled_topics=solo_disabled, rng=rng
         )
         r18_topic_ctx = {
             "enabled": True,
@@ -1160,7 +1183,7 @@ def sample_from_knowledge_v1(
                     "subcategory": "whitelist",
                     "source": "category_whitelist",
                 }
-                for tag in (random.sample(pool, k) if k > 0 else [])
+                for tag in (rng.sample(pool, k) if k > 0 else [])
             ]
             continue
 
@@ -1183,6 +1206,7 @@ def sample_from_knowledge_v1(
                         exclude_male=not _scene_allows_male_character(
                             sampled.get("count_gender", [])
                         ),
+                        rng=rng,
                     )
                     if len(chosen) < num_chars:
                         # 同 IP 角色不足，降级为单角色场景。
@@ -1202,6 +1226,7 @@ def sample_from_knowledge_v1(
                             whitelist=whitelist,
                             series_index=series_index,
                             exclude_male=True,
+                            rng=rng,
                         )
                     sampled[category] = chosen
                 else:
@@ -1214,6 +1239,7 @@ def sample_from_knowledge_v1(
                         exclude_male=not _scene_allows_male_character(
                             sampled.get("count_gender", [])
                         ),
+                        rng=rng,
                     )
                 continue
 
@@ -1236,7 +1262,7 @@ def sample_from_knowledge_v1(
                             "subcategory": "角色",
                             "source": "character_whitelist",
                         }
-                        for role in random.sample(pool, k)
+                        for role in rng.sample(pool, k)
                     )
                 sampled[category] = chosen
                 continue
@@ -1257,7 +1283,7 @@ def sample_from_knowledge_v1(
             chosen = []
             k_role = min(n, len(role_tags))
             if k_role:
-                chosen.extend(_with_source(t) for t in random.sample(role_tags, k_role))
+                chosen.extend(_with_source(t) for t in rng.sample(role_tags, k_role))
 
             remaining = n - len(chosen)
             if remaining > 0:
@@ -1269,7 +1295,7 @@ def sample_from_knowledge_v1(
                 k_series = min(remaining, len(available))
                 if k_series:
                     chosen.extend(
-                        _with_source(t) for t in random.sample(available, k_series)
+                        _with_source(t) for t in rng.sample(available, k_series)
                     )
             sampled[category] = chosen
         else:
@@ -1283,7 +1309,7 @@ def sample_from_knowledge_v1(
                 ]
             k = min(n, len(filtered))
             sampled[category] = (
-                [_with_source(t) for t in random.sample(filtered, k)] if k > 0 else []
+                [_with_source(t) for t in rng.sample(filtered, k)] if k > 0 else []
             )
 
     # 激活决策：依据最终人数/性别刷新 r18 主题激活状态。
@@ -1302,7 +1328,7 @@ def sample_from_knowledge_v1(
         # 创意锚点：从锚点池随机抽 1-2 个高概念设定（展开 name+tags），
         # 走"forced"语义——LLM 必须保留（模板段另做强制说明）。
         if category == "creative_anchor":
-            sampled[category] = _sample_creative_anchors(creative_anchors, n)
+            sampled[category] = _sample_creative_anchors(creative_anchors, n, rng=rng)
             continue
 
         # 优先使用通用类别白名单池（若已启用且当前类别 pool 非空）。
@@ -1322,7 +1348,7 @@ def sample_from_knowledge_v1(
                     "subcategory": "whitelist",
                     "source": "category_whitelist",
                 }
-                for tag in (random.sample(pool, k) if k > 0 else [])
+                for tag in (rng.sample(pool, k) if k > 0 else [])
             ]
             continue
 
@@ -1331,16 +1357,17 @@ def sample_from_knowledge_v1(
         k = min(n, len(filtered))
         sub_quotas = (subcategory_quotas or {}).get(category)
         if sub_quotas:
-            chosen = _sample_with_subcategory_quotas(filtered, k, sub_quotas)
+            chosen = _sample_with_subcategory_quotas(filtered, k, sub_quotas, rng=rng)
             sampled[category] = [_with_source(t) for t in chosen]
         else:
             sampled[category] = (
-                [_with_source(t) for t in random.sample(filtered, k)] if k > 0 else []
+                [_with_source(t) for t in rng.sample(filtered, k)] if k > 0 else []
             )
 
     if max_rating == "r18" and min_r18_tags > 0:
         _supplement_r18_tags(
-            sampled, database, rating_map, min_r18_tags, pre_filtered, r18_topic_ctx
+            sampled, database, rating_map, min_r18_tags, pre_filtered,
+            r18_topic_ctx, rng=rng,
         )
 
     if default_word_quota:
@@ -1355,7 +1382,7 @@ def _sub_short(subcategory: str) -> str:
 
 
 def _sample_with_subcategory_quotas(
-    candidates: list[dict], k: int, quotas: dict[str, Any]
+    candidates: list[dict], k: int, quotas: dict[str, Any], rng: random.Random | None = None
 ) -> list[dict]:
     """按子类配额抽样：先满足各子类 min，再从剩余候选（受 max 约束）补足 k 个。
 
@@ -1363,10 +1390,13 @@ def _sample_with_subcategory_quotas(
         candidates: 候选 item 列表（含 ``subcategory`` 字段）。
         k: 目标抽样数量。
         quotas: ``{子类短名: {"min": int, "max": int}}``；未列出的子类不设限。
+        rng: 随机数生成器；为 ``None`` 时使用模块级全局 ``random``。
 
     Returns:
         抽样结果列表（未做 _with_source 包装）。
     """
+    if rng is None:
+        rng = random
     if not quotas or k <= 0:
         return list(candidates[:k])
     groups: dict[str, list[dict]] = {}
@@ -1380,7 +1410,7 @@ def _sample_with_subcategory_quotas(
     for sc, q in quotas.items():
         n_min = int(q.get("min", 0) or 0)
         pool = [it for it in groups.get(sc, []) if id(it) not in picked]
-        take = random.sample(pool, min(n_min, len(pool)))
+        take = rng.sample(pool, min(n_min, len(pool)))
         for it in take:
             chosen.append(it)
             picked.add(id(it))
@@ -1402,7 +1432,7 @@ def _sample_with_subcategory_quotas(
             if cap <= 0:
                 continue
             pool = [it for it in groups.get(sc, []) if id(it) not in picked]
-            capped_pool.extend(random.sample(pool, min(cap, len(pool))))
+            capped_pool.extend(rng.sample(pool, min(cap, len(pool))))
         unlisted = [
             it
             for it in candidates
@@ -1410,20 +1440,27 @@ def _sample_with_subcategory_quotas(
             and _sub_short(it.get("subcategory", "")) not in quotas
         ]
         pool = capped_pool + unlisted
-        take = random.sample(pool, min(remaining, len(pool)))
+        take = rng.sample(pool, min(remaining, len(pool)))
         chosen.extend(take)
 
     return chosen
 
 
 def _sample_creative_anchors(
-    anchors: dict[str, list[dict]] | None, k: int
+    anchors: dict[str, list[dict]] | None, k: int, rng: random.Random | None = None
 ) -> list[dict]:
     """从创意锚点池随机抽取 k 个锚点（跨类别不重复），展开为 tag 条目。
 
     每个条目包含 ``tag``（锚点核心名）、``anchor_id``/``anchor_cn``/
     ``anchor_tags``/``anchor_narrative`` 元数据，供模板段强制保留与叙事句参考。
+
+    Args:
+        anchors: 创意锚点池。
+        k: 抽取数量。
+        rng: 随机数生成器；为 ``None`` 时使用模块级全局 ``random``。
     """
+    if rng is None:
+        rng = random
     if not anchors or k <= 0:
         return []
     cats = list(anchors.keys())
@@ -1432,14 +1469,14 @@ def _sample_creative_anchors(
     attempts = 0
     while len(chosen) < k and attempts < k * 20:
         attempts += 1
-        cat = random.choice(cats)
+        cat = rng.choice(cats)
         pool = anchors.get(cat, [])
         if not pool:
             continue
         cand = [a for a in pool if a.get("id") not in used_ids]
         if not cand:
             continue
-        a = random.choice(cand)
+        a = rng.choice(cand)
         used_ids.add(a.get("id", ""))
         tags = [t for t in ([a.get("name", "")] + list(a.get("tags", []))) if t]
         chosen.append(
@@ -1487,6 +1524,7 @@ def _supplement_r18_tags(
     min_r18_tags: int,
     pre_filtered: bool,
     r18_topic_ctx: dict[str, Any] | None = None,
+    rng: random.Random | None = None,
 ) -> None:
     """在 r18 模式下补充指定数量的 r18 评级 tag。
 
@@ -1501,6 +1539,9 @@ def _supplement_r18_tags(
       即使主抽样已满足 ``min_r18_tags`` 也会补齐缺口；
     - 其余激活主题先各分配 1 个保证名额，再按各自 ``weight`` 加权补足。
     """
+    if rng is None:
+        rng = random
+
     def _is_r18_tag(item: dict) -> bool:
         norm = _normalize_tag(item.get("tag", ""))
         return rating_map.get(norm, "general") == "r18"
@@ -1577,10 +1618,11 @@ def _supplement_r18_tags(
             fixed_quotas=r18_topic_ctx.get("fixed_quotas", {}),
             topic_tag_map=topic_tag_map,
             current_by_topic=current_by_topic,
+            rng=rng,
         )
     else:
         k = min(need, len(candidates))
-        picked = random.sample(candidates, k)
+        picked = rng.sample(candidates, k)
 
     for category, item in picked:
         copied = dict(item)
@@ -1690,6 +1732,7 @@ def _decide_r18_topic_activation(
     topics_cfg: dict[str, dict[str, Any]],
     topic_tag_map: dict[str, str],
     disabled_topics: set[str] | None = None,
+    rng: random.Random | None = None,
 ) -> tuple[set[str], dict[str, int], set[str]]:
     """在抽样前一次性掷骰，决定本次样本的主题激活结果。
 
@@ -1705,6 +1748,8 @@ def _decide_r18_topic_activation(
     Returns:
         ``(激活主题集合, fixed 主题配额, 未激活主题的全部 tag 规范化集合)``。
     """
+    if rng is None:
+        rng = random
     all_topics = set(topic_tag_map.values())
     hard_disabled = set(disabled_topics or set())
     activated: set[str] = set()
@@ -1720,7 +1765,7 @@ def _decide_r18_topic_activation(
             activated.add(topic)
             fixed_quotas[topic] = cfg.get("count", 1)
         elif mode == "probabilistic":
-            if random.random() < cfg.get("probability", 0.5):
+            if rng.random() < cfg.get("probability", 0.5):
                 activated.add(topic)
         else:
             activated.add(topic)
@@ -1728,7 +1773,7 @@ def _decide_r18_topic_activation(
     # 联动激活（仅在目标主题已激活时生效）。
     for topic in list(activated):
         cfg = topics_cfg.get(topic, {})
-        if random.random() >= cfg.get("link_probability", 0.8):
+        if rng.random() >= cfg.get("link_probability", 0.8):
             continue
         for linked in cfg.get("linked_topics", []):
             if linked in all_topics and linked not in activated:
@@ -1743,16 +1788,22 @@ def _decide_r18_topic_activation(
 
 
 def _weighted_sample_without_replacement(
-    pool: list[Any], weights: list[float], k: int
+    pool: list[Any], weights: list[float], k: int, rng: random.Random | None = None
 ) -> list[Any]:
-    """按权重不放回抽样 k 个元素（轮盘实现，适用于小规模候选池）。"""
+    """按权重不放回抽样 k 个元素（轮盘实现，适用于小规模候选池）。
+
+    Args:
+        rng: 随机数生成器；为 ``None`` 时使用模块级全局 ``random``。
+    """
+    if rng is None:
+        rng = random
     indices = list(range(len(pool)))
     picked: list[Any] = []
     for _ in range(min(k, len(pool))):
         total = sum(weights[i] for i in indices)
         if total <= 0:
             break
-        r = random.random() * total
+        r = rng.random() * total
         acc = 0.0
         idx = indices[-1]
         for i in indices:
@@ -1773,6 +1824,7 @@ def _sample_r18_by_topic_control(
     fixed_quotas: dict[str, int],
     topic_tag_map: dict[str, str],
     current_by_topic: dict[str, int],
+    rng: random.Random | None = None,
 ) -> list[tuple[str, dict]]:
     """按激活主题与配额从 r18 候选池中抽样（不放回）。
 
@@ -1781,6 +1833,8 @@ def _sample_r18_by_topic_control(
       （主题类可配置 count>1 集中出现，非主题类固定小数量）；
     - 剩余名额从所有激活主题的剩余候选按主题 ``weight`` 加权补足。
     """
+    if rng is None:
+        rng = random
     if need <= 0 or not candidates:
         return []
 
@@ -1814,7 +1868,7 @@ def _sample_r18_by_topic_control(
         k = min(quota, len(available), need - len(selected))
         if k <= 0:
             continue
-        _mark(random.sample(available, k))
+        _mark(rng.sample(available, k))
 
     # 2) 为激活主题（非 fixed）按各自 count 分配名额：按主题权重从高到低
     #    依次满足，使主题类（如 bondage count=3）可以作为 r18 主题集中出现，
@@ -1837,7 +1891,7 @@ def _sample_r18_by_topic_control(
             k = min(quota, len(available))
             if k <= 0:
                 continue
-            _mark(random.sample(available, k))
+            _mark(rng.sample(available, k))
             remaining = need - len(selected)
 
     # 3) 剩余名额按主题权重补足。
@@ -1852,9 +1906,9 @@ def _sample_r18_by_topic_control(
         k = min(remaining, len(pool))
         if k > 0:
             if len(set(weights)) <= 1:
-                picked = random.sample(pool, k)
+                picked = rng.sample(pool, k)
             else:
-                picked = _weighted_sample_without_replacement(pool, weights, k)
+                picked = _weighted_sample_without_replacement(pool, weights, k, rng=rng)
             _mark(picked)
 
     return selected

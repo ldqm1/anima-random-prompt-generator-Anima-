@@ -347,6 +347,7 @@ def _try_openai_chat_completion(
     max_tokens: int,
     timeout: float = 60.0,
     reasoning_effort: str | None = None,
+    extra_body: dict | None = None,
 ) -> dict:
     """尝试使用 ``openai`` 库调用聊天补全接口。"""
     # 延迟导入，避免未安装 openai 时直接报错。
@@ -364,6 +365,8 @@ def _try_openai_chat_completion(
     }
     if reasoning_effort:
         kwargs["reasoning_effort"] = reasoning_effort
+    if extra_body:
+        kwargs["extra_body"] = extra_body
     response = client.chat.completions.create(**kwargs)
     return response.model_dump()
 
@@ -378,6 +381,7 @@ def _requests_chat_completion(
     max_tokens: int,
     timeout: float = 60.0,
     reasoning_effort: str | None = None,
+    extra_body: dict | None = None,
 ) -> dict:
     """使用 ``requests`` 库直接调用 DeepSeek 聊天补全接口。"""
     import requests
@@ -397,6 +401,8 @@ def _requests_chat_completion(
     }
     if reasoning_effort:
         payload["reasoning_effort"] = reasoning_effort
+    if extra_body:
+        payload.update(extra_body)
 
     url = f"{api_base.rstrip('/')}/chat/completions"
     response = requests.post(url, headers=headers, json=payload, timeout=timeout)
@@ -414,6 +420,7 @@ def call_deepseek(
     max_tokens: int = 2000,
     timeout: float = 60.0,
     reasoning_effort: str | None = None,
+    extra_body: dict | None = None,
 ) -> dict:
     """调用 DeepSeek API 并返回原始响应字典。
 
@@ -434,6 +441,8 @@ def call_deepseek(
         reasoning_effort: 模型思考模式（``"none"`` / ``"low"`` / ``"medium"`` /
             ``"high"``）；为 ``None`` 时不发送该参数。``"none"`` 关闭推理，
             输出更快且不占用 ``max_tokens``。
+        extra_body: 额外透传到请求体的顶层字段（如 ``{"thinking": {"type":
+            "disabled"}}`` 用于部分平台关闭深度思考）；为 ``None`` 时不发送。
 
     Returns:
         API 返回的原始响应字典。
@@ -474,6 +483,7 @@ def call_deepseek(
                     max_tokens=max_tokens,
                     timeout=timeout,
                     reasoning_effort=reasoning_effort,
+                    extra_body=extra_body,
                 )
             return _requests_chat_completion(
                 system_prompt=system_prompt,
@@ -485,6 +495,7 @@ def call_deepseek(
                 max_tokens=max_tokens,
                 timeout=timeout,
                 reasoning_effort=reasoning_effort,
+                extra_body=extra_body,
             )
         except Exception as exc:  # noqa: BLE001
             last_exception = exc
@@ -671,6 +682,7 @@ def generate_single(
     creative_anchor_info: list[dict] | None = None,
     max_parse_retries: int = 2,
     reasoning_effort: str | None = None,
+    extra_body: dict | None = None,
 ) -> dict:
     """生成单条随机提示词。
 
@@ -751,6 +763,7 @@ def generate_single(
             max_tokens=max_tokens,
             timeout=timeout,
             reasoning_effort=reasoning_effort,
+            extra_body=extra_body,
         )
         try:
             parsed = parse_response(raw_response)
@@ -786,6 +799,7 @@ def generate_v2_enhance(
     system_prompt_path: str | Path | None = None,
     max_parse_retries: int = 1,
     reasoning_effort: str | None = None,
+    extra_body: dict | None = None,
 ) -> dict:
     """对 v1 提示词执行 V2 震撼美化精修（单独一次 API 调用）。
 
@@ -830,6 +844,7 @@ def generate_v2_enhance(
             max_tokens=max_tokens,
             timeout=timeout,
             reasoning_effort=reasoning_effort,
+            extra_body=extra_body,
         )
         try:
             parsed = parse_response(raw_response)

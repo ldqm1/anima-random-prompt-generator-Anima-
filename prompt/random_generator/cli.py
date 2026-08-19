@@ -129,21 +129,19 @@ def _item_conflicts(
     return False
 
 
-def sample_extra_requirements(pool: dict[str, Any]) -> str:
+def sample_extra_requirements(pool: dict[str, Any], rng: random.Random | None = None) -> str:
     """从 extra_requirements_pool 中抽样额外要求文本。
 
     Args:
         pool: extra_requirements_pool 配置块。
+        rng: 随机数生成器；为 ``None`` 时使用模块级全局 ``random``
+            （多线程抽样时传入每 worker 独立的随机源以保证隔离）。
 
     Returns:
         抽样得到的文本，多条以换行符连接；未启用或为空时返回空字符串。
-
-    行为说明：
-    - mutex_groups：每组按 weight 加权抽 1 项；skip_probability 表示整组跳过。
-    - optional_items：每项按自身 probability 独立决定是否加入。
-    - 条目级互斥：条目可通过 ``excludes`` 声明与已抽中的其他条目互斥，
-      冲突候选会被过滤；互斥组内全部候选冲突时整组跳过。
     """
+    if rng is None:
+        rng = random
     if not pool or not pool.get("enabled"):
         return ""
 
@@ -152,7 +150,7 @@ def sample_extra_requirements(pool: dict[str, Any]) -> str:
 
     for group in pool.get("mutex_groups") or []:
         skip_probability = group.get("skip_probability", 0.0)
-        if random.random() < skip_probability:
+        if rng.random() < skip_probability:
             continue
         items = group.get("items", [])
         if not items:
@@ -165,12 +163,12 @@ def sample_extra_requirements(pool: dict[str, Any]) -> str:
         if not candidates:
             continue
         weights = [item.get("weight", 1) for item in candidates]
-        chosen = random.choices(candidates, weights=weights, k=1)[0]
+        chosen = rng.choices(candidates, weights=weights, k=1)[0]
         selected.append(chosen["text"])
 
     for item in pool.get("optional_items") or []:
         probability = item.get("probability", 1.0)
-        if random.random() >= probability:
+        if rng.random() >= probability:
             continue
         if _item_conflicts(exclude_map, item["text"], selected):
             continue
@@ -837,6 +835,7 @@ def _generate_one_task(
                 placeholder_meanings=task.get("placeholder_meanings"),
                 r18_instructions=task["r18_instructions"],
                 reasoning_effort=task["reasoning_effort"],
+                extra_body=task.get("extra_body"),
                 creative_anchor_info=task.get("creative_anchor_info"),
                 api_key=api_key,
                 api_base=api_base,
@@ -880,6 +879,7 @@ def _generate_one_task(
                 max_parse_retries=task["max_parse_retries"],
                 max_rating=task["max_rating"],
                 reasoning_effort=task["reasoning_effort"],
+                extra_body=task.get("extra_body"),
             )
             result["version_2"] = v2_res["version_2"]
             result["reasoning"] = v2_res["reasoning"]
@@ -1345,21 +1345,25 @@ def main(argv: list[str] | None = None) -> int:
                 _print_progress(idx + 1, args.count, dry_run=True)
             return 0
 
-        # 在线程外顺序完成抽样，避免 random 模块竞争并保证结果可复现。
-        tasks: list[dict[str, Any]] = []
-        for idx in range(args.count):
-            # 每条样本使用独立随机种子，便于复现与调试。
-            # 单条且显式 --seed 时使用指定值，否则为每条生成独立种子。
-            if args.count == 1 and args.seed is not None:
-                task_seed = args.seed
-            else:
-                task_seed = random.randint(0, 2**32 - 1)
-            random.seed(task_seed)
+        # ---------- 多线程并行抽样 ----------
+        # 每个 worker 使用独立的 random.Random(task_seed) 并通过 rng 参数透传给
+        # 抽样/组装（如 sample_from_knowledge_v1、sample_extra_requirements），
+        # 杜绝线程间共享全局 random 的竞争，同时保持每条样本按种子可复现。
+        # 种子列表在主线程预生成，保证唯一且写入顺序确定。
+        if args.count == 1 and args.seed is not None:
+            seeds: list[int] = [args.seed]
+        else:
+            seeds = [random.randint(0, 2**32 - 1) for _ in range(args.count)]
+
+        def _build_task(idx: int) -> dict[str, Any]:
+            task_seed = seeds[idx]
+            rng = random.Random(task_seed)  # 每 worker 独立随机源
             sampled = retrieval.sample_from_knowledge_v1(
                 knowledge_database,
                 knowledge_sample_counts,
                 curated_tags,
-                seed=None,  # 已由上方 random.seed(task_seed) 控制本条随机性
+                seed=None,
+                rng=rng,
                 max_rating=max_rating,
                 character_whitelist=character_whitelist,
                 category_whitelists=category_whitelists,
@@ -1401,7 +1405,7 @@ def main(argv: list[str] | None = None) -> int:
                 and character_pool.get("use_core_appearance", True)
             ):
                 probability = float(character_pool.get("use_core_clothing_probability", 0.5))
-                clothing_strategy = "core_mixed" if random.random() < probability else "sampled_only"
+                clothing_strategy = "core_mixed" if rng.random() < probability else "sampled_only"
                 character_pool_info = {
                         "characters": [
                             {
@@ -1424,56 +1428,66 @@ def main(argv: list[str] | None = None) -> int:
             safety = _determine_safety(sampled)
 
             if args.extra_requirements is None and extra_requirements_pool.get("enabled", False):
-                current_extra_requirements = sample_extra_requirements(extra_requirements_pool)
+                current_extra_requirements = sample_extra_requirements(
+                    extra_requirements_pool, rng=rng
+                )
             else:
                 current_extra_requirements = extra_requirements
 
-            tasks.append(
-                {
-                    "idx": idx,
-                    "seed": task_seed,
-                    "sampled": sampled,
-                    "sampled_text": sampled_text,
-                    "character_tag": character_tag,
-                    "character_pool_info": character_pool_info,
-                    "safety": safety,
-                    "extra_requirements": current_extra_requirements,
-                    "min_tags": eff_min_tags,
-                    "max_tags": eff_max_tags,
-                    "theme_hint": args.theme_hint,
-                    "focus_text": eff_focus_text,
-                    "subject_control": args.subject_control,
-                    "forced_tags": forced_tags,
-                    "forbidden_tags": forbidden_tags,
-                    "max_rating": max_rating,
-                    "r18_instructions": r18_instructions,
-                    "r18_placeholder_map": r18_placeholder_map,
-                    "placeholder_meanings": (
-                        client.build_placeholder_meanings(r18_placeholder_map)
-                        if r18_placeholder_map
-                        else None
-                    ),
-                    "temperature": deepseek_cfg.get("temperature", 0.7),
-                    "max_tokens": deepseek_cfg.get("max_tokens", 2000),
-                    "timeout": deepseek_cfg.get("timeout", 120),
-                    "max_parse_retries": deepseek_cfg.get("max_parse_retries", 2),
-                    "reasoning_effort": deepseek_cfg.get("reasoning_effort"),
-                    "creative_anchor_info": payload.get("creative_anchor_info"),
-                    "config_snapshot": {
-                        "output_file": output_path,
-                        "sample_counts": knowledge_sample_counts,
-                        "subcategory_quotas": subcategory_quotas,
-                        "default_word_quota": default_word_quota,
-                        "multi_character": multi_character_cfg,
-                        "focus_weights": focus_weights,
-                        "creative_anchors_enabled": bool(creative_anchors_cfg.get("enabled", True)),
-                    },
-                }
-            )
-            if (idx + 1) % 500 == 0 or idx + 1 == args.count:
-                print(f"已准备 {idx + 1}/{args.count} 条抽样任务...")
+            return {
+                "idx": idx,
+                "seed": task_seed,
+                "sampled": sampled,
+                "sampled_text": sampled_text,
+                "character_tag": character_tag,
+                "character_pool_info": character_pool_info,
+                "safety": safety,
+                "extra_requirements": current_extra_requirements,
+                "min_tags": eff_min_tags,
+                "max_tags": eff_max_tags,
+                "theme_hint": args.theme_hint,
+                "focus_text": eff_focus_text,
+                "subject_control": args.subject_control,
+                "forced_tags": forced_tags,
+                "forbidden_tags": forbidden_tags,
+                "max_rating": max_rating,
+                "r18_instructions": r18_instructions,
+                "r18_placeholder_map": r18_placeholder_map,
+                "placeholder_meanings": (
+                    client.build_placeholder_meanings(r18_placeholder_map)
+                    if r18_placeholder_map
+                    else None
+                ),
+                "temperature": deepseek_cfg.get("temperature", 0.7),
+                "max_tokens": deepseek_cfg.get("max_tokens", 2000),
+                "timeout": deepseek_cfg.get("timeout", 120),
+                "max_parse_retries": deepseek_cfg.get("max_parse_retries", 2),
+                "reasoning_effort": deepseek_cfg.get("reasoning_effort"),
+                "extra_body": deepseek_cfg.get("extra_body"),
+                "creative_anchor_info": payload.get("creative_anchor_info"),
+                "config_snapshot": {
+                    "output_file": output_path,
+                    "sample_counts": knowledge_sample_counts,
+                    "subcategory_quotas": subcategory_quotas,
+                    "default_word_quota": default_word_quota,
+                    "multi_character": multi_character_cfg,
+                    "focus_weights": focus_weights,
+                    "creative_anchors_enabled": bool(creative_anchors_cfg.get("enabled", True)),
+                },
+            }
 
-        # 并发调用 API 与后处理；抽样已在主线程完成，避免线程安全问题。
+        tasks: list[dict[str, Any]] = []
+        sampler = ThreadPoolExecutor(max_workers=args.workers)
+        try:
+            futures = [sampler.submit(_build_task, idx) for idx in range(args.count)]
+            for idx, fut in enumerate(futures):
+                tasks.append(fut.result())
+                if (idx + 1) % 500 == 0 or idx + 1 == args.count:
+                    print(f"已准备 {idx + 1}/{args.count} 条抽样任务...")
+        finally:
+            sampler.shutdown(wait=True)
+
+        # 并发调用 API 与后处理；抽样已在上面并行完成（结果写入 tasks）。
         write_lock = threading.Lock()
         failed_count = 0
         executor = ThreadPoolExecutor(max_workers=args.workers)
