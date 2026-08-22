@@ -1,6 +1,8 @@
 # 源文件（过大，属上游项目，通过 README 中链接获取）
 source/
 *.csv
+# 知识库构建所需的原始标签 CSV 随库入库（git clone 后可直接 build_curated_tags 运行）
+!知识库/danbooru_e261_updated.csv
 
 # Python
 __pycache__/
