@@ -25,7 +25,7 @@ The final `prompt` field must obey all of the following:
 | Weather | Allowed environmental weather tags: `rain`, `snow`, `fog`, `mist`, `steam`, `stormy`, `dust particles`, `underwater`. |
 | Rating tags | Forbidden: `safe`, `sensitive`, `nsfw`, `explicit`, `general`, `pg12`, `r15`, `r18`, `r18g`. |
 | Metadata tags | Drop software/artwork meta tags such as `adobe photoshop (artwork)`, `3d fluid sim`, `gummi art`. |
-| Scene description | At the very end of the prompt, you may append 1-4 short sentences describing overall atmosphere, spatial relationship, lighting intent, or scene logic. These sentences complement the tags and are written in normal English sentence case. |
+| Scene description | At the very end of the prompt, you may append 1-4 short sentences describing concrete visible objects in the scene, their arrangement, position, or motion. Avoid generic mood fillers (soft light, mist, wind, petals, glow) unless they are actual scene elements. These sentences complement the tags and are written in normal English sentence case. |
 | Natural-language slot | Also written as lowercase comma-separated short tags. Do not write full sentences. |
 
 ## 3. Final Self-Check
@@ -40,7 +40,7 @@ Before returning the JSON, verify the prompt against every item below. Fix any f
 4. **Scene plausibility** — Scene and action tags are physically compatible (e.g., no `underwater` with `cigarette`).
 5. **Lighting** — Lighting / tone tags are allowed, but no contradictory light sources appear together (e.g., `sunlight` with `moonlight`, `backlighting` with `from front`).
 6. **Tag count** — The leading tag block must contain at least `{{min_tags}}` tags and at most `{{max_tags}}` tags. Scene-description sentences at the end do not count toward this tag range. As a guideline: simple scenes ~16-30, standard scenes ~22-38, complex scenes ~30-48.
-7. **Default word quota** — no more than one of `soft lighting` / `warm lighting` / `blush` / `cherry blossom` / `park` / `window` / `bokeh` / `petals` / `gentle breeze` / `golden hour` / `smile` per prompt (see §9.5), and only if sampled.
+7. **Default word quota** — common mood fillers (soft/warm lighting, glow, petals, gentle breeze, golden hour, bloom and the like) may appear at most once per prompt and ONLY if they were sampled (see §9.5). Never stack them.
 
 {% if max_rating not in ['r18', 'r18g'] %}
 ## 4. Conflict Table
@@ -125,25 +125,27 @@ Fill slots **strictly in this order**. Tags earlier in the prompt carry more wei
 - Keep it short: **at most 1 phrase per prompt** (2 only for complex multi-character scenes). Each phrase must be **8 words or fewer**.
 - Do not write full sentences. **Never** use list structures such as `one with..., another with...`, `one girl..., another girl...`, `the first..., the second...`, or `one hand..., while the other...`.
 
-Good examples: `wind lifting hair`, `holding a lantern`, `one reaches toward the viewer`, `girl sitting on boy's lap facing him`, `left panel dressed right panel nude`.
+Good examples: `reaching for a dropped pencil`, `holding a worn book`, `one reaches toward the viewer`, `leaning on the counter`, `left panel dressed right panel nude`.
 
 For multi-character scenes, put each character's appearance and clothing into the Danbooru tag slots, not into list-style sentences. Good: `2girls, raiden shogun with long purple hair and purple eyes, yae miko with long pink hair and fox ears, shrine, skirt lift, one playfully lifting the other's skirt.` Bad: `2girls, raiden shogun, yae miko, one girl with long purple hair, the other with long pink hair, standing in a shrine.`
 
 ### 7.2 Scene Description Sentences
 
-- After all tags and the natural-language slot, you may append **1 to 4 short sentences** describing the overall scene logic, atmosphere, lighting intent, or spatial relationship.
+- After all tags and the natural-language slot, you may append **1 to 4 short sentences** describing the scene: concrete visible objects, their arrangement, position, size, or motion relative to the character(s). Prefer specific, ordinary, or unusual things that are actually present in the frame (an old bicycle, torn pages, a half-open gate) over generic mood fillers.
+- Avoid generic atmosphere words — soft light, glow, mist, wind, petals, stars, rain, snow, cherry blossoms, lanterns — **unless they are genuinely part of the scene** (e.g. the sampled tags or the layout imply them). Do not add them just to make the sentence "atmospheric".
 - These sentences must **complement** the Danbooru tags, not replace them. They are written in normal English sentence case and end with a period.
 - Do not exceed 4 sentences. Keep each sentence concise.
 - Do not add quality words, artist names, or content-rating tags in these sentences.
 
-Diverse examples (structure only — never reuse these words, scenes, or sentence shapes):
-- `The camera sits low behind a dripping maple branch, the girl's silhouette small against the misty shrine gate.`
-- `Rain beads on the window between her and the viewer; she traces a line through the fog with one finger.`
-- `A single hard spotlight from above isolates her on the stage, the rest of the hall falling into darkness.`
-- `Shot from a worm's-eye angle through a gap in the crowd, her raised hand catches the neon light.`
-- `She is almost lost in the frame, a tiny figure at the end of the long corridor, light at her back.`
-- High-concept (with a creative anchor): `The city hangs upside down above a sea of clouds, and she stands on the underside of a roof, hair drifting upward into the starry void.`
-- High-concept: `A cat the size of a house dozes in the meadow; she sits on its paw, the tail rising and falling like a slow hill.`
+Diverse examples (structure only — never reuse these exact scenes or sentence shapes):
+- `A rusted bicycle leans against the cracked wall, its front wheel still slowly spinning.`
+- `Torn pages of an old ledger scatter across the stone floor, one caught on the hem of her skirt.`
+- `The folded paper crane on the desk tips and falls as she reaches for it.`
+- `A wooden cart stands half-sunken in the marsh, rope trailing into the reeds.`
+- `A single moth rests on the rim of an empty jar on the shelf.`
+- `The iron gate is half open, its chains coiled on the ground where grass has grown through.`
+- High-concept (with a creative anchor): `The city hangs upside down above a sea of clouds, and she stands on the underside of a roof, her hair drifting upward.`
+- High-concept: `A crane the size of a house stands in the meadow; she sits on its folded wing, its head lowered to look at her.`
 
 ## 8. Multi-Character Rules
 
@@ -186,10 +188,10 @@ Do not mix incompatible worldviews (e.g., `hanfu` with `cyberpunk city`, or `lat
 
 ## 9.5 Anti-Convergence Constraints (MUST follow)
 
-1. **Default word quota** — the following default mood words may appear **at most once per prompt and only if they were sampled**: `soft lighting`, `warm lighting`, `blush`, `cherry blossom`, `park`, `window`, `bokeh`, `petals`, `gentle breeze`, `golden hour`, `smile`, `glow`, `sparkle`, `soft focus`. Never stack them.
+1. **Default word quota** — generic mood fillers (soft/warm lighting, glow, sparkle, petals, gentle breeze, golden hour, bloom, soft focus, bokeh and the like) may appear **at most once per prompt and ONLY if they were sampled**. Never stack them.
 2. **Composition fallback** — if the sampled `camera/shot` tags contain no shot-size or angle tag, you may add at most one **shot/angle** word (e.g. `eye level`, `bird's-eye view`, `over-the-shoulder`, `extreme close-up`, `deep focus`, `close-up`, `upper body`, `full body`). **Never** add composition-rule words (`rule of thirds`, `leading lines`, `negative space`, `frame-in-frame`, `symmetrical composition`, `diagonal composition`, `midground`, `foreground focus`, `background focus`) — leave the composition to the visual style, do not force a framing rule.
 3. **Expression diversity** — the `expression/reaction` slot must include at least one non-default emotion (surprised, confused, sad, angry, sleepy, serious, smug, scared, pensive, determined, flustered, exasperated) unless the sampled expression tags only contain default ones.
-4. **Scene sentences add information** — the scene-description sentences must state spatial relationship / camera position / action logic that is NOT already expressed in the tags. They must not merely restate tags.
+4. **Scene sentences add information** — the scene-description sentences must state what is concretely visible (objects, their arrangement, position or motion) that is NOT already expressed in the tags. They must not merely restate tags, and must not add generic mood fillers (light, mist, wind, petals) that are not actual scene elements.
 5. **Scene sentence variety** — do not open every scene-description sentence with `the camera ...`; vary how you describe the viewpoint (position, contrast, foreground element, direction of movement, depth) so the same camera opener is not reused across prompts.
 
 ## 9.6 Creative Anchors
