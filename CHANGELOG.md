@@ -1,6 +1,27 @@
 # Changelog — Anima 随机提示词生成器
 
-> 更新日志区间：`b0e72ae`(上次 release) → `HEAD`。关于版本：本次发布 v2.0.0。
+> 更新日志区间：`b0e72ae`(上次 release) → `HEAD`。最新版本：v2.0.1。
+
+## v2.0.1 (2026-08-22)
+
+基于 v2.0.0 的增量：提示词引导去套路化、缓存/运行优化、数据入库与仓库精简。
+
+### 提示词与生成质量
+
+- **场景句引导去套路化**：移除 "lighting intent / atmosphere / camera position" 等诱导词与 `gentle breeze / golden light / misty shrine` 等点名示例，改为引导"具体可见物象与布局"；`default word quota` 点名词笼统化（`f550896`）
+- **sampled 分歧点后置**：固定指令前置 + 变量集中于尾部 SOURCE MATERIAL 段，DeepSeek 前缀缓存稳定命中 64% → 73%（单条最高 86.5%），生成质量不劣化（`0127fe2`）
+- **NL 场景句具体意象趋同治理**：完成 mimo/ox 批次意象归因（猫/花瓣/雾多为 LLM 自创、月/云/雪/灯笼多为抽样），确定"抽样频率帽 + LLM 引导"分治方向
+
+### 数据与仓库
+
+- **原始标签 CSV 入库**：`danbooru_e261_updated.csv` 移入 `知识库/` 并随库分发——`git clone` 后即可直接运行 `build_curated_tags`，`TAG_SOURCE_FILE` 同步指向新路径（`bee386f`、`cb85798`）
+- **移除推送中的审计与文档**：分类审计 `map_*.txt`（188 个）与 `反趋同改造方案.md` 移出版本库、归档至本地 `archive/`，README 同步（`93102ac`）
+- `.gitignore` 补 `openrouter/` 保护（含 key 的本地 API 工具）
+
+### 验证
+
+- 全链路验证通过：模块导入 / 知识库加载（10 类、r15 预过滤 38681）/ 角色池 8940 / 锚点 75 / `generate --dry-run` exit 0
+- 仓库推送目录精简至 50 个文件，无冗余、无 key、无临时产物
 
 ## v2.0.0 (2026-08-19)
 
