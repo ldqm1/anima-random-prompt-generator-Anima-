@@ -147,7 +147,7 @@ ARTIST_BLACKLIST_FILES: list[Path] = [
     SOURCE_DIR / "artists.csv",
 ]
 
-TAG_SOURCE_FILE: Path = SOURCE_DIR / "danbooru_e261_updated.csv"
+TAG_SOURCE_FILE: Path = KNOWLEDGE_BASE_DIR / "danbooru_e261_updated.csv"
 CURATED_POOLS_FILE: Path = OUTPUT_DIR / "curated_pools.json"
 CURATED_TAGS_FILE: Path = PROJECT_DIR / "prompt" / "random_generator" / "curated_tags.yaml"
 SEMANTIC_EXCLUDE_FILE: Path = (
