@@ -41,7 +41,7 @@
 
 ### 知识库人工细粒度分类与两档制
 
-`知识库/v1` 的 tag 已逐条人工细粒度分类（见 `prompt/random_generator/tools/classify_work/` 下的映射文件与报告）：
+`知识库/v1` 的 tag 已逐条人工细粒度分类（分类映射已归档至本地 `archive/classify_work_maps/`，分类结果固化在知识库 CAT 中）：
 
 - **排除项分类即排除**：所有越界内容改写为 `排除/<子类>`（性行为/猎奇血腥/男性雄性/兽化非人/媒体噪音等），
   `config.EXCLUDED_CATEGORIES` 整类丢弃，任何模式（含 r18）均不可见；
@@ -106,7 +106,7 @@ anima-rag-knowledge/
 │   ├── tests/                        # 单元测试
 │   └── tools/                        # 构建/维护脚本
 │       ├── apply_unclassified_maps.py    # 人工分类映射回写知识库（分类即排除）
-│       └── classify_work/                # 分类审计映射（map_*.txt）
+│       └── classify_work/                # 分类工作目录（历史映射已归档，保留工具链）
 │
 ├── output/                           # 生成结果输出目录
 │   ├── random_prompts.jsonl          # 生成结果（默认输出）

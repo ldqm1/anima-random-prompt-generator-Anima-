@@ -45,7 +45,7 @@ qiniu_api/
 # Trae IDE 规格文档（本地开发需求，不进版本库）
 .trae/
 
-# 人工分类中间产物（分块文件；map_* 分类映射保留为审计记录）
+# 人工分类中间产物（分块文件；map_* 审计映射已归档至 archive/classify_work_maps/，不再入库）
 prompt/random_generator/tools/classify_work/expr_*.txt
 prompt/random_generator/tools/classify_work/action_*.txt
 prompt/random_generator/tools/classify_work/scene_*.txt
@@ -53,9 +53,13 @@ prompt/random_generator/tools/classify_work/appear_*.txt
 prompt/random_generator/tools/classify_work/detail_*.txt
 prompt/random_generator/tools/classify_work/clothing_*.txt
 prompt/random_generator/tools/classify_work/exclude_*.txt
+prompt/random_generator/tools/classify_work/map_*.txt
 shot_*.txt
 env_*.txt
 bkg_*.txt
 face_*.txt
 pose_*.txt
 item_*.txt
+
+# 历史设计文档（已归档至 archive/docs/，不再入库）
+prompt/random_generator/反趋同改造方案.md
