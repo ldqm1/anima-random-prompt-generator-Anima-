@@ -1,6 +1,35 @@
 # Changelog — Anima 随机提示词生成器
 
-> 更新日志区间：`b0e72ae`(上次 release) → `HEAD`。最新版本：v2.0.1。
+> 更新日志区间：`b0e72ae`(上次 release) → `HEAD`。最新版本：v2.1.0。
+
+## v2.1.0 (当前发布候选)
+
+基于 v2.0.1 的增量：提示词模板 V2（规则优先级与角色硬特征）、审计溯源扩展、概率性创作火花。
+
+### 提示词模板 V2（规则优先级与角色硬特征）
+
+- **RULE PRIORITY（P0–P4）置顶**：P0 安全 → P1 角色硬特征 → P2 外部控制 → P3 结构 → P4 创意；消除"几十条 MUST 平铺、模型自行裁决冲突"导致的批量漂移
+- **CHARACTER_TRAITS / INPUT TYPES**：角色核心（CHARACTER_CORE）必须保留；`loli` 作为角色/年龄描述词全局豁免（`shota`/非自愿/胁迫等其余禁令不变）；输入按 CHARACTER_CORE / FORCED / FORBIDDEN / CREATIVE_ANCHOR / SAMPLED 打标签，优先级由标签而非语气推断
+- **CREATIVE COMPLETION**：sampled 由"theme seeds"改为**候选池**（可丢弃多数），允许有限新增 tag 仅用于语义/构图/关系补全
+- 场景描述句统一 **2–4 句**（消除原先 system 1–4 与 user 1–2 的矛盾）；新增**温和构图多样性**一条
+- **CREATIVE SPARK**：约 40% 样本概率注入 1 个惊喜点指令，置于输入**尾部**以保持前缀缓存命中
+
+### 审计 / 溯源（schema_version 1 → 2）
+
+- 新增 `eval_input`：渲染后 system/user 原文 + `template_version`（system_prompt.md + user_prompt.jinja 内容指纹）
+- 新增 `model_raw_output`：后处理前模型原始输出
+- `params` 补 `forced_tags` / `forbidden_tags`；`creative_spark` 标记
+- 旧 `schema_version: 1` 记录仍可读
+
+### 运行与数据
+
+- 运行时抽样 tag 合计 123 个/条（10 类），最终 prompt 保持 40–60 tags 硬约束
+- 多线程抽样（每 worker 独立 RNG，线程安全）+ 角色池文件缓存（4.7MB JSON 每样本只读一次）
+
+### 验证
+
+- dry-run / 真实生成（mimo-v2.5, thinking none, 固定角色 deepseek 50 条）全通过；特征保留率 deepseek/cetacean tail 50/50、loli 49/50
+- 单测 51 项通过 50（1 项既有无关失败：`test_reads_min_r18_tags_and_instructions` 涉及 cli `_build_config` 合并，与本次改动无关）
 
 ## v2.0.1 (2026-08-22)
 
