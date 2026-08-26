@@ -26,10 +26,10 @@ Length constraint: Produce a final prompt with at least {{ min_tags }} tags and 
 
 Interaction requirement: Make the girl(s) feel embedded in the environment, but prefer using existing pose/action/scene tags first (e.g. reaching for something on a shelf, adjusting a collar, leaning on a railing). Only add a natural-language phrase when sampled tags cannot express the interaction. Use at most ONE phrase, max 8 words, no list structures. Do not invent long phrases just to reach the tag count.
 
-Scene description sentences: After the comma-separated tag block, append 1 to 2 short sentences describing the scene through concrete visible objects: what is actually in the frame, their arrangement, position, size, or motion relative to the character(s). Avoid generic mood fillers — soft light, glow, mist, wind, petals, stars, rain — unless they are genuinely part of the scene. These sentences MUST add information that is not already in the tags; they must not merely restate tags like `warm light` or `cherry blossoms`.
+Scene description sentences: After the comma-separated tag block, append 2 to 4 short sentences describing the scene through concrete visible objects: what is actually in the frame, their arrangement, position, size, or motion relative to the character(s). Avoid generic mood fillers — soft light, glow, mist, wind, petals, stars, rain — unless they are genuinely part of the scene. These sentences MUST add information that is not already in the tags; they must not merely restate tags like `warm light` or `cherry blossoms`.
 
 Rules for the scene-description block:
-- Write 1 to 2 sentences, no more.
+- Write 2 to 4 sentences, no fewer and no more.
 - Use normal English sentence case (first word capitalized, end with a period).
 - Separate the last tag and the first sentence with a period and a space: `..., last_tag. First sentence. Second sentence.`
 - Keep each sentence concise.
@@ -39,7 +39,7 @@ Rules for the scene-description block:
 === SOURCE MATERIAL ===
 
 {% if is_multi_character and character_pool_info and character_pool_info.characters %}
-Character seeds:
+CHARACTER_CORE:
 {% for char in character_pool_info.characters %}
 --- Character {{ loop.index }} ---
 Name: {{ char.tag }}{% if char.series_tag %} (from {{ char.series_tag }}){% endif %}
@@ -49,17 +49,17 @@ Core clothing: {{ char.core_clothing_tags | join(', ') }}
 {% endif %}
 {% endfor %}
 {% elif is_multi_character and character_tag and ',' in character_tag %}
-Character seeds:
+CHARACTER_CORE:
 {% for name in character_tag.split(',') %}
 --- Character {{ loop.index }} ---
 Name: {{ name.strip() }}
 {% endfor %}
 {% elif character_tag %}
-Character / series seed: {{ character_tag }}
+CHARACTER_CORE — Character / series seed: {{ character_tag }}
 {% endif %}
 
 {% if creative_anchor_info %}
-Creative anchors (MUST KEEP):
+CREATIVE_ANCHOR — Creative anchors (MUST KEEP):
 {% for a in creative_anchor_info %}
 - {{ a.tag }}: {{ a.anchor_cn }} — companion tags: {{ a.anchor_tags | join(', ') }}
 {% endfor %}
@@ -88,10 +88,10 @@ Character / series / theme hint: {{ theme_hint }}
 Use this as a soft guide for mood, setting, and scene/environment tags. Place any character/series name in the `[character/series]` slot. Keep the prompt as random as possible.
 {% endif %}
 {% if forced_tags %}
-Forced tags (must keep if compatible): {{ forced_tags }}
+FORCED — Forced tags (must keep unless they violate content ceiling): {{ forced_tags }}
 {% endif %}
 {% if forbidden_tags %}
-Forbidden tags (must drop): {{ forbidden_tags }}
+FORBIDDEN — Forbidden tags (must drop entirely): {{ forbidden_tags }}
 {% endif %}
 
 {% if character_pool_info %}
@@ -118,7 +118,7 @@ Do not merge per-character appearance/clothing tags into shared tags. Write each
 {% endif %}
 
 {% if is_multi_character %}
-Multi-character reminder: When describing two or more characters, write the prompt in this strict order: count/gender -> Character 1 + all Character 1 features -> Character 2 + all Character 2 features -> shared pose/camera/scene tags -> relationship/action phrase -> scene description sentences. Never use list-style sentences such as `one girl..., another girl...`, `one with..., another with...`, or `the first..., the second...`. Put each character's key appearance and clothing immediately after that character's name in the Danbooru tag slots, then use 1-2 short natural-language sentences for the shared scene logic. Finish all tags for Character 1 before starting Character 2. Do not start Character 2 and then go back to Character 1. Emphasize the intimate interaction between the characters: prefer relationship tags such as hug, hand holding, cuddling, or cheek against cheek, and make the relationship/action phrase and scene sentences convey closeness. Differentiate the characters' actions and expressions as much as possible: give each character a distinct pose and facial expression rather than identical ones, unless a shared pose is required by the scene.
+Multi-character reminder: When describing two or more characters, write the prompt in this strict order: count/gender -> Character 1 + all Character 1 features -> Character 2 + all Character 2 features -> shared pose/camera/scene tags -> relationship/action phrase -> scene description sentences. Never use list-style sentences such as `one girl..., another girl...`, `one with..., another with...`, or `the first..., the second...`. Put each character's key appearance and clothing immediately after that character's name in the Danbooru tag slots, then use 2-4 short scene-description sentences for the shared scene logic. Finish all tags for Character 1 before starting Character 2. Emphasize the intimate interaction between the characters: prefer relationship tags such as hug, hand holding, cuddling, or cheek against cheek, and make the relationship/action phrase and scene sentences convey closeness. Differentiate the characters' actions and expressions as much as possible: give each character a distinct pose and facial expression rather than identical ones, unless a shared pose is required by the scene.
 
 The examples below show format only — do not reuse their characters, tags, or scenes.
 
@@ -146,7 +146,18 @@ Generation focus: {{ focus_text }}
 Use this as a soft guide for how much emphasis to put on character description versus background/environment/lighting/objects. Do not add new tags that are not implied by the sampled tags.
 {% endif %}
 
-Sampled tags (THEME SEEDS — read them here; fill the slots from them):
+{% if creative_spark %}
+CREATIVE SPARK (applies to this prompt):
+You may add ONE distinctive creative decision, coherent with the character, anchor, and scene —
+e.g. an unusual but coherent environmental element, an unexpected character-environment interaction,
+a strong scale contrast, or a distinctive foreground/background relationship.
+Do not force it if the scene is already strong; never let it violate the content ceiling, keep the
+character core (CHARACTER_CORE) intact, and keep the scene coherent.
+{% endif %}
+
+SAMPLED (candidate pool, not a checklist — you may discard most of them; select compatible,
+non-redundant, compositionally useful tags only; NEW tags are allowed only for semantic /
+compositional / relationship completion, never to inflate the count, never generic mood fillers):
 ```
 {{ sampled_tags_text }}
 ```

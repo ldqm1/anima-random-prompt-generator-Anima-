@@ -657,6 +657,25 @@ def _prompt_hashes(version_1: str) -> dict[str, str]:
     }
 
 
+def _template_version() -> str:
+    """计算提示词模板版本指纹：system_prompt.md + user_prompt.jinja 内容 sha256 前 16 位。
+
+    微调溯源用：模板（输入渲染规则）一旦变化，旧样本的输入重建即失效，
+    用该指纹在数据侧识别样本所属的模板版本，便于按版本切分/过滤。
+    """
+    import hashlib
+
+    digest = hashlib.sha256()
+    for name in ("system_prompt.md", "user_prompt.jinja"):
+        path = client.MODULE_DIR / name
+        digest.update(name.encode("utf-8"))
+        try:
+            digest.update(path.read_bytes())
+        except OSError:  # noqa: BLE001
+            pass
+    return digest.hexdigest()[:16]
+
+
 def _build_audit_record(
     task: dict[str, Any],
     result: dict[str, Any],
@@ -671,6 +690,11 @@ def _build_audit_record(
     - ``schema_version`` 保证未来加字段不破坏旧记录解析。
 
     所有值均 JSON 可序列化；不含任何敏感信息（api key 绝不进入）。
+
+    schema_version 2 新增（微调溯源）：
+    - ``params.forced_tags`` / ``params.forbidden_tags``；
+    - ``eval_input``：渲染后的输入原文（system_prompt / user_prompt）+ 模板版本指纹；
+    - ``model_raw_output``：后处理前模型原始输出。
     """
     import hashlib
     import time
@@ -708,8 +732,15 @@ def _build_audit_record(
         )
 
     snapshot = task.get("config_snapshot") or {}
+
+    # ---- 微调溯源（schema_version 2）----
+    # 1) 渲染后的输入原文（模型实际收到）；2) 后处理前原始输出；
+    # 3) 模板版本指纹（system_prompt.md + user_prompt.jinja 内容 hash）。
+    render_snap = task.get("render_snapshot") or {}
+    tv = _template_version()
+
     return {
-        "schema_version": 1,
+        "schema_version": 2,
         "id": "%s-%s" % (task.get("seed", ""), hashes["tags_sha256"][:8]),
         "created_at": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
         "generator": {
@@ -726,8 +757,17 @@ def _build_audit_record(
             "theme_hint": task.get("theme_hint", ""),
             "subject_control": task.get("subject_control", ""),
             "extra_requirements": task.get("extra_requirements", ""),
+            "forced_tags": task.get("forced_tags", "") or "",
+            "forbidden_tags": task.get("forbidden_tags", "") or "",
             "is_multi_character": bool(task.get("sampled_text", "").lower().find("2girls") >= 0),
         },
+        "eval_input": {
+            "template_version": tv,
+            "prompt_version": "v1",
+            "system_prompt": render_snap.get("system_prompt") or "",
+            "user_prompt": render_snap.get("user_prompt") or "",
+        },
+        "model_raw_output": task.get("model_raw_output", ""),
         "sampled": {
             "count_gender": _item("count_gender"),
             "character_series": _item("character_series"),
@@ -839,11 +879,21 @@ def _generate_one_task(
                 r18_instructions=task["r18_instructions"],
                 reasoning_effort=task["reasoning_effort"],
                 extra_body=task.get("extra_body"),
+                creative_spark=bool(task.get("creative_spark")),
                 creative_anchor_info=task.get("creative_anchor_info"),
                 api_key=api_key,
                 api_base=api_base,
                 model=model,
             )
+            # 微调溯源：暂存“渲染后的输入原文”与“后处理前原始输出”，
+            # 放在 postprocess 之前捕获（后处理可能改写 result）。
+            task["render_snapshot"] = result.get("render_snapshot")
+            try:
+                _raw = result.get("raw") or {}
+                _first = (_raw.get("choices") or [{}])[0]
+                task["model_raw_output"] = (_first.get("message") or {}).get("content") or ""
+            except Exception:  # noqa: BLE001
+                task["model_raw_output"] = ""
             result = postprocess.postprocess(
                 result,
                 artist_blacklist,
@@ -1498,6 +1548,10 @@ def main(argv: list[str] | None = None) -> int:
 
             safety = _determine_safety(sampled)
 
+            # 概率性"惊喜点"（约 40% 样本注入，放在 user prompt 尾部保护缓存前缀；
+            # 用本任务独立 rng 掷骰，勿用全局 random，避免线程竞争）。
+            creative_spark = rng.random() < 0.40
+
             if args.extra_requirements is None and extra_requirements_pool.get("enabled", False):
                 current_extra_requirements = sample_extra_requirements(
                     extra_requirements_pool, rng=rng
@@ -1508,6 +1562,7 @@ def main(argv: list[str] | None = None) -> int:
             return {
                 "idx": idx,
                 "seed": task_seed,
+                "creative_spark": creative_spark,
                 "sampled": sampled,
                 "sampled_text": sampled_text,
                 "character_tag": character_tag,

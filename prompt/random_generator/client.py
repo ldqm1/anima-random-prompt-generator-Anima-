@@ -235,6 +235,7 @@ def render_user_prompt(
     character_pool_info: dict | None = None,
     placeholder_meanings: dict[str, str] | None = None,
     creative_anchor_info: list[dict] | None = None,
+    creative_spark: bool = False,
 ) -> str:
     """渲染用户提示词模板。
 
@@ -297,6 +298,7 @@ def render_user_prompt(
         is_multi_character=is_multi_character,
         placeholder_meanings=placeholder_meanings,
         creative_anchor_info=creative_anchor_info,
+        creative_spark=creative_spark,
     )
 
 
@@ -720,6 +722,7 @@ def generate_single(
     max_parse_retries: int = 2,
     reasoning_effort: str | None = None,
     extra_body: dict | None = None,
+    creative_spark: bool = False,
 ) -> dict:
     """生成单条随机提示词。
 
@@ -786,6 +789,7 @@ def generate_single(
         character_pool_info=character_pool_info,
         placeholder_meanings=placeholder_meanings,
         creative_anchor_info=creative_anchor_info,
+        creative_spark=creative_spark,
     )
 
     last_parse_error: Exception | None = None
@@ -809,6 +813,11 @@ def generate_single(
                 "version_1": parsed["version_1"],
                 "reasoning": parsed["reasoning"],
                 "raw": raw_response,
+                # 微调溯源：模型实际收到的输入原文（渲染后），零额外渲染成本。
+                "render_snapshot": {
+                    "system_prompt": system_prompt,
+                    "user_prompt": user_prompt,
+                },
             }
         except (ValueError, KeyError, TypeError) as exc:
             last_parse_error = exc
