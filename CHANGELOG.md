@@ -1,6 +1,31 @@
 # Changelog — Anima 随机提示词生成器
 
-> 更新日志区间：`23c0b6e`(v3.1.0) → `HEAD`。最新版本：v3.2.0。
+> 更新日志区间：`6ef2c7c`(v3.2.1) → `HEAD`。最新版本：v3.3.0。
+
+## v3.3.0 (当前发布候选)
+
+基于 v3.2.1 的增量：**UI 框架迁移 tkinter → PySide6（Qt）**。
+
+### 框架迁移
+
+- **PySide6（Qt）重写 GUI**：`prompt/random_generator/gui_qt/`（theme.py / tooltip.py / forms.py / app.py），
+  入口 `anima_gui_qt.py`；功能与 tkinter 版**全等价**：生成 / API / 高级 / 配置 / 日志 5 Tab、
+  动态配置表单 + 悬浮帮助、多预设管理、深色/浅色主题、断点续存、预览复制
+- **性能大幅提升**：Qt 原生控件 + 懒加载折叠，主窗口构建 **0.21s**（tkinter 版 1.1s），
+  切 tab 即时；滚动流畅（QScrollArea）
+- **主题**：Qt 样式表（QSS）浅色/深色，跟随系统（Windows 注册表探测），即时切换并记住
+- **Tooltip**：Qt 原生 QToolTip（支持富文本 + 自动定位），悬停 0.4s 显示
+- **打包**：`build_exe_qt.py` + `anima_gui_qt.spec`，PySide6 单文件 exe 约 **82 MB**（Qt 库大）
+- **移除 tkinter 版**：`anima_gui.py` / `anima_gui.spec` / `build_exe.py` /
+  `gui_app.py` / `gui_forms.py` 已删除（git 历史可回退）；共享逻辑
+  （`gui_engine.py` / `config_presets.py` / `config_merge.py` / `yaml_comments.py`）保留
+
+### 验证
+
+- 无头 self-test：资源加载 / 预览 / 帮助 100% 覆盖 / Qt 表单构建+收集全通过
+- 主窗口无头实例化：5 Tab / 深色主题 / 预设列表 / 表单 21 字段（懒加载）
+- 预设 CRUD / 切换重建 / 配置收集保存 / 锚点懒加载展开全通过
+- exe self-test 退出码 0，GUI 启动正常；51 项单元测试全过
 
 ## v3.2.1 (当前发布候选)
 

@@ -193,8 +193,8 @@ DEEPSEEK_MODEL=deepseek-chat
     「新建 / 复制 / 重命名 / 删除 / 切换」，「导出 .yaml / 导入」，切换预设时
     自动保存当前修改并加载目标预设，生成即用当前激活预设（按不同目标自由切换）；
   - 「日志/输出」页：运行日志、打开输出文件夹；
-  - **深色模式**：窗口底部「外观」下拉——浅色（flatly）/ 深色（superhero）/ 跟随系统，
-    即时切换并记住选择；
+  - **深色模式**：窗口底部「外观」下拉——浅色 / 深色 / 跟随系统，
+    即时切换（Qt 样式表 QSS）并记住选择；
   - 支持**大批量生成**（断点续存：已生成的条数自动跳过，停止后重新开始不会重复）、
     实时进度条、结果列表双击查看全文并复制。
 - **API Key 安全**：勾选"记住"时保存到 `%APPDATA%\AnimaPromptGenerator\settings.json`
@@ -204,15 +204,15 @@ DEEPSEEK_MODEL=deepseek-chat
   预设，激活预设内容同步到 `user_config.yaml` 供引擎合并。「配置」页可导出预设为
   `.yaml` 文件分享给他人、或导入他人导出的预设。exe 打包版的项目 yaml 只读，
   所有修改都经用户目录生效。
-- **从源码运行 GUI**：
+- **从源码运行 GUI**（PySide6 版）：
   ```bash
-  python anima_gui.py
+  python anima_gui_qt.py
   ```
-- **打包 exe**（需本机安装 PyInstaller + ttkbootstrap）：
+- **打包 exe**（需本机安装 PyInstaller + PySide6）：
   ```bash
-  python build_exe.py
+  python build_exe_qt.py
   ```
-  产物为 `dist/AnimaPromptGenerator.exe`（约 46 MB，单文件，自带知识库与全部资源）。
+  产物为 `dist/AnimaPromptGenerator.exe`（约 82 MB，PySide6 原生界面，单文件自带知识库与全部资源）。
 
 ### 命令行
 
