@@ -580,7 +580,27 @@ class TestCliConfig(unittest.TestCase):
     def test_reads_min_r18_tags_and_instructions(self) -> None:
         """_build_config 返回的 min_r18_tags_per_sample、r18_instructions 与 r18_topic_control。"""
         cfg = cli._build_config(self._build_args())
-        min_r18_tags_per_sample, r18_instructions, r18_topic_control = cfg[-3:]
+        (
+            knowledge_sample_counts,
+            deepseek_cfg,
+            output_dir,
+            focus_weights,
+            max_rating,
+            min_tags,
+            max_tags,
+            extra_requirements,
+            extra_requirements_pool,
+            character_whitelist,
+            category_whitelists,
+            character_pool,
+            multi_character_cfg,
+            min_r18_tags_per_sample,
+            r18_instructions,
+            r18_topic_control,
+            default_word_quota,
+            creative_anchors_cfg,
+            subcategory_quotas,
+        ) = cfg
         self.assertIsInstance(min_r18_tags_per_sample, int)
         self.assertGreaterEqual(min_r18_tags_per_sample, 0)
         self.assertIsInstance(r18_instructions, str)

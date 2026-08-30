@@ -1,6 +1,41 @@
 # Changelog — Anima 随机提示词生成器
 
-> 更新日志区间：`b0e72ae`(上次 release) → `HEAD`。最新版本：v2.1.0。
+> 更新日志区间：`3d7f803`(v2.1.0) → `HEAD`。最新版本：v3.0.0。
+
+## v3.0.0 (当前发布候选)
+
+基于 v2.1.0 的增量：**桌面图形界面（GUI）单文件 exe 版**，面向不熟悉 Python / 配置文件的使用者。
+
+### 桌面 GUI（新）
+
+- 新增 `anima_gui.py`（入口）+ `prompt/random_generator/gui_app.py`（界面）+ `gui_engine.py`（引擎层）
+- **中文 4-Tab 界面**（ttkbootstrap，flatly 主题）：
+  - **生成**：数量、内容分级（general/pg12/r15/r18/r18g，首次切 r18/r18g 弹成人确认）、
+    随机/固定种子、主题提示、额外要求、强制/排除 tag、输出目录/文件名、
+    创意锚点/多角色开关、预览样本、开始/停止、实时进度条、结果列表（双击看全文 + 复制）
+  - **API 设置**：API Key（密码框 + 显示切换 + "记住"勾选，保存到 `%APPDATA%\AnimaPromptGenerator\settings.json`，
+    绝不写入项目）、接口地址、模型、Temperature、超时、思考模式、测试连接
+  - **高级**：min/max tags、并发数、最大输出 token、解析重试、额外要求池开关、子类配额只读摘要
+  - **日志/输出**：滚动日志、打开输出文件夹
+- **大批量生成**：多线程 + 逐条落盘 + 断点续存（同一输出文件自动跳过已生成条数，停止后重开不重复）、
+  可取消（已生成结果不丢失）
+- **评级感知资源加载**：按 max_rating 预过滤知识库并按评级缓存，切换 r18 自动重建
+- **引擎层复用完整生成链路**：抽样 → 组装 → 渲染 → DeepSeek → 后处理 → 审计落盘，与 CLI 行为一致
+
+### 打包
+
+- `build_exe.py`：一键打包单文件 exe（自动装 PyInstaller/ttkbootstrap、清理、校验产物）
+- `anima_gui.spec`：仅打包运行时资源（知识库 v1 + 2 个黑名单 csv + 模板/配置/角色池，
+  剔除 source/ 下 100MB+ 非运行文件），产物约 **46 MB**
+- exe 内置 `--self-test`（加载资源 + 预览，写结果文件）用于交付前完整性自检
+- 打包机需 PyInstaller + ttkbootstrap；**exe 用户无需安装任何东西**
+
+### 验证
+
+- 引擎 dry-run（资源加载 8s / 知识库 38681 条 / 预览渲染 9823 字符）通过
+- GUI 实例化 / 控件构建 / 设置持久化 / 评级切换重建 / 队列联动全部通过
+- exe self-test（PyInstaller 打包环境）通过：资源完整、预览正常、退出码 0
+- 单测 51 项全通过（修复既有 `test_reads_min_r18_tags_and_instructions` 的返回元组解包 bug）
 
 ## v2.1.0 (当前发布候选)
 

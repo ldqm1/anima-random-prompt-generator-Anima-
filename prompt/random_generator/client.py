@@ -384,8 +384,9 @@ def _requests_chat_completion(
     timeout: float = 60.0,
     reasoning_effort: str | None = None,
     extra_body: dict | None = None,
+    proxies: dict[str, str] | None = None,
 ) -> dict:
-    """使用 ``requests`` 库直接调用 DeepSeek 聊天补全接口。"""
+    """使用 ``requests`` 库直接调用聊天补全接口（支持可选代理）。"""
     import requests
 
     headers = {
@@ -407,7 +408,8 @@ def _requests_chat_completion(
         payload.update(extra_body)
 
     url = f"{api_base.rstrip('/')}/chat/completions"
-    response = requests.post(url, headers=headers, json=payload, timeout=timeout)
+    response = requests.post(url, headers=headers, json=payload, timeout=timeout,
+                             proxies=proxies)
     response.raise_for_status()
     return response.json()
 
@@ -423,8 +425,9 @@ def call_deepseek(
     timeout: float = 60.0,
     reasoning_effort: str | None = None,
     extra_body: dict | None = None,
+    proxies: dict[str, str] | None = None,
 ) -> dict:
-    """调用 DeepSeek API 并返回原始响应字典。
+    """调用 API 并返回原始响应字典。
 
     参数优先级：显式传入 > 环境变量 > ``config.py`` 默认值。
 
@@ -467,6 +470,9 @@ def call_deepseek(
         import openai  # type: ignore[import-untyped]
     except ImportError:
         use_openai = False
+    # 需要代理时走 requests 路径（openai 库需额外 httpx 配置，避免引入依赖）
+    if proxies:
+        use_openai = False
 
     last_exception: Exception | None = None
     # 重试次数设为 0：仅尝试 1 次，失败直接报错，不重试。
@@ -498,6 +504,7 @@ def call_deepseek(
                 timeout=timeout,
                 reasoning_effort=reasoning_effort,
                 extra_body=extra_body,
+                proxies=proxies,
             )
         except Exception as exc:  # noqa: BLE001
             last_exception = exc
@@ -723,6 +730,7 @@ def generate_single(
     reasoning_effort: str | None = None,
     extra_body: dict | None = None,
     creative_spark: bool = False,
+    proxies: dict[str, str] | None = None,
 ) -> dict:
     """生成单条随机提示词。
 
@@ -805,6 +813,7 @@ def generate_single(
             timeout=timeout,
             reasoning_effort=reasoning_effort,
             extra_body=extra_body,
+            proxies=proxies,
         )
         try:
             parsed = parse_response(raw_response)

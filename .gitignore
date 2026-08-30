@@ -66,3 +66,8 @@ prompt/random_generator/反趋同改造方案.md
 
 # release 打包产物（zip 进 GitHub  Release，不提交仓库）
 release/
+
+# exe 桌面版打包产物（PyInstaller）
+build/
+dist/
+*.spec.bak

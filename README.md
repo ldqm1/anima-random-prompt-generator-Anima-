@@ -167,6 +167,35 @@ DEEPSEEK_MODEL=deepseek-chat
 
 ## 运行方式
 
+### 桌面图形界面（推荐给非技术用户）
+
+针对不熟悉 Python / 配置文件的使用者，项目提供 **单文件 exe 桌面版**（图形界面，中文）：
+
+- **直接使用**：从 Release 下载 `AnimaPromptGenerator.exe`，双击运行即可。
+  无需安装 Python、无需编辑任何配置文件。
+- **界面功能**：
+  - 「生成」页：生成数量、内容分级（general/pg12/r15/r18/r18g，首次切 r18 需确认）、
+    随机/固定种子、主题提示、额外要求、强制/排除 tag、输出目录与文件名、启用创意锚点/多角色开关；
+  - 「API 设置」页：DeepSeek API Key（可勾选"记住"，保存到用户目录而非项目）、
+    接口地址、模型、Temperature、超时、思考模式，带"测试连接"按钮；
+  - 「高级」页：最少/最多 tag 数、并发数、最大输出 token、解析重试、额外要求池开关；
+  - 「日志/输出」页：运行日志、打开输出文件夹；
+  - 支持**大批量生成**（断点续存：已生成的条数自动跳过，停止后重新开始不会重复）、
+    实时进度条、结果列表双击查看全文并复制。
+- **API Key 安全**：勾选"记住"时保存到 `%APPDATA%\AnimaPromptGenerator\settings.json`
+  （用户目录），**绝不写入项目目录**；不勾选则不落盘。
+- **从源码运行 GUI**：
+  ```bash
+  python anima_gui.py
+  ```
+- **打包 exe**（需本机安装 PyInstaller + ttkbootstrap）：
+  ```bash
+  python build_exe.py
+  ```
+  产物为 `dist/AnimaPromptGenerator.exe`（约 46 MB，单文件，自带知识库与全部资源）。
+
+### 命令行
+
 本项目提供根目录快捷入口 `run_generator.py`，所有 `generate` 子命令参数均可直接透传。
 
 ### 常用命令

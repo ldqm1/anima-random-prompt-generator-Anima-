@@ -260,17 +260,19 @@ def _build_fallback_character_pool_info(
 
 def _resolve_api_profile(
     args: argparse.Namespace,
-) -> tuple[str | None, str | None, str | None, Any]:
+) -> tuple[str | None, str | None, str | None, Any, dict[str, str] | None]:
     """合并 API 平台配置：命令行显式参数优先，其次 ``--api-config`` 配置文件。
 
     ``api_key`` 来源依次为：命令行 ``--api-key`` > 配置文件中 ``api_key`` 字段
     > 配置文件中 ``api_key_env`` 指定的环境变量。``api_base`` / ``model``
     为命令行参数 > 配置文件字段。``temperature`` 仅来自配置文件（可为 ``null``
-    表示不发送该参数，适配不支持 temperature 的代理平台）。
+    表示不发送该参数，适配不支持 temperature 的代理平台）。``proxy`` 为
+    配置文件 ``proxy`` 字段（形如 ``http://127.0.0.1:7890`` 或
+    ``socks5h://127.0.0.1:7890``），转换为 requests 代理 dict（仅对该请求生效）。
 
     Returns:
-        ``(api_key, api_base, model, temperature)``；缺失项为 ``None``，由
-        client 层继续回退环境变量与 ``config.py`` 默认值。
+        ``(api_key, api_base, model, temperature, proxies)``；缺失项为 ``None``，
+        由 client 层继续回退环境变量与 ``config.py`` 默认值。
     """
     profile = _load_yaml_config(args.api_config) if args.api_config else {}
     api_key = args.api_key if args.api_key is not None else profile.get("api_key")
@@ -279,7 +281,11 @@ def _resolve_api_profile(
     api_base = args.api_base if args.api_base is not None else profile.get("api_base")
     model = args.model if args.model is not None else profile.get("model")
     temperature = profile.get("temperature")
-    return api_key, api_base, model, temperature
+    proxy = profile.get("proxy")
+    proxies = None
+    if proxy:
+        proxies = {"http": str(proxy), "https": str(proxy)}
+    return api_key, api_base, model, temperature, proxies
 
 
 def _print_progress(current: int, total: int, dry_run: bool = False) -> None:
@@ -880,6 +886,7 @@ def _generate_one_task(
                 reasoning_effort=task["reasoning_effort"],
                 extra_body=task.get("extra_body"),
                 creative_spark=bool(task.get("creative_spark")),
+                proxies=task.get("proxies"),
                 creative_anchor_info=task.get("creative_anchor_info"),
                 api_key=api_key,
                 api_base=api_base,
@@ -1195,7 +1202,7 @@ def main(argv: list[str] | None = None) -> int:
         creative_anchors_cfg,
         subcategory_quotas,
     ) = _build_config(args)
-    api_key, api_base, model, profile_temperature = _resolve_api_profile(args)
+    api_key, api_base, model, profile_temperature, api_proxies = _resolve_api_profile(args)
     # API 配置文件可显式指定 temperature；null 表示不发送该参数（适配
     # 不支持 temperature 的代理平台）。此处按"键是否存在"判断，避免 null 被忽略。
     if args.api_config:
@@ -1590,6 +1597,7 @@ def main(argv: list[str] | None = None) -> int:
                 "max_parse_retries": deepseek_cfg.get("max_parse_retries", 2),
                 "reasoning_effort": deepseek_cfg.get("reasoning_effort"),
                 "extra_body": deepseek_cfg.get("extra_body"),
+                "proxies": api_proxies,
                 "creative_anchor_info": payload.get("creative_anchor_info"),
                 "config_snapshot": {
                     "output_file": output_path,
