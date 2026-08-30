@@ -555,23 +555,26 @@ class MainWindow(QMainWindow):
             w.deleteLater()
 
         # 危险区（章节内默认折叠的小节）
-        collapsed = {
-            "r18_topic_control", "extra_requirements_pool", "character_pool",
-            "character_whitelist", "category_whitelists", "r18_sample_counts",
-            "r18_focus_weights", "default_word_quota",
-            "subcategory_quotas", "sample_counts",
-        }
-
-        self.adv_builder = ConfigFormBuilder(None, merged_help, collapsed_paths=collapsed)
+        # 章节化后不再需要折叠：所有小节直接平铺显示
+        self.adv_builder = ConfigFormBuilder(None, merged_help, collapsed_paths=set())
         self.adv_builder.collapsibles = []
-        self._adv_collapsibles = self.adv_builder.collapsibles
+        self._adv_collapsibles: list[Any] = []
+
+        def _group_title(parent: QWidget, title: str, help_text: str) -> QLabel:
+            lbl = QLabel(title, parent)
+            lbl.setStyleSheet(
+                "font-size: 13px; font-weight: bold; color: #2c7da0;"
+                "padding: 3px 0; margin-top: 6px; border-bottom: 1px solid #444;"
+            )
+            if help_text:
+                attach_tooltip(lbl, help_text)
+            return lbl
 
         for title, keys in SECTIONS:
             page = QWidget(self.section_stack)
             page_lay = QVBoxLayout(page)
             page_lay.setContentsMargins(8, 4, 8, 8)
             page_lay.setSpacing(2)
-            # 章节说明
             head = QLabel(title)
             head.setStyleSheet("font-size: 14px; font-weight: bold; color: #2c7da0;")
             page_lay.addWidget(head)
@@ -587,44 +590,55 @@ class MainWindow(QMainWindow):
             scroll.setWidget(inner)
 
             if "__anchors__" in keys:
-                # 创意锚点章节：懒加载
+                # 创意锚点章节：整体懒加载（78 条一次性构建较重），内部 7 类平铺
                 def _build_anchors(container: QWidget, _anchors=anchors_cfg) -> None:
-                    self.adv_builder.build_dict(_anchors, "", container)
+                    for cat, items in _anchors.items():
+                        from .i18n import FIELD_NAMES
+                        cat_title = FIELD_NAMES.get(cat, cat)
+                        cat_help = merged_help.get(cat, {}).get("help", "")
+                        grp = _group_title(container, f"{cat_title}（{len(items)} 个）", cat_help or f"配置键：{cat}")
+                        container.layout().addWidget(grp)
+                        sub = QWidget(container)
+                        sub_lay = QVBoxLayout(sub)
+                        sub_lay.setContentsMargins(16, 0, 0, 0)
+                        self.adv_builder.build_dict({cat: items}, "", sub)
+                        container.layout().addWidget(sub)
 
-                sec = CollapsibleSection(
-                    inner, "创意锚点池（creative_anchors.yaml）",
-                    default_open=False,
-                    help_text="78 个高概念设定锚点，按 7 类组织；可增删/编辑每个锚点。",
-                    build_callback=_build_anchors,
-                )
-                inner_lay.addWidget(sec)
-                self.adv_builder.collapsibles.append(sec)
+                # 章节内直接放一个占位提示 + 构建回调（用普通 QWidget 承载）
+                placeholder = QLabel("点击「展开锚点配置」加载 78 个创意锚点", inner)
+                placeholder.setStyleSheet("color: #888; padding: 8px;")
+                inner_lay.addWidget(placeholder)
+                btn_load = QPushButton("展开锚点配置", inner)
+                btn_load.setObjectName("primary")
+
+                def _do_load(_checked: bool = False, _ph=placeholder, _bl=btn_load) -> None:
+                    _ph.deleteLater()
+                    _bl.deleteLater()
+                    container = QWidget(inner)
+                    container_lay = QVBoxLayout(container)
+                    container_lay.setContentsMargins(0, 0, 0, 0)
+                    _build_anchors(container)
+                    inner_lay.addWidget(container)
+
+                btn_load.clicked.connect(_do_load)
+                inner_lay.addWidget(btn_load)
             else:
                 for key in keys:
                     if key in merged_gen:
-                        # 小节标题（顶层键中文名）
                         key_title = KEY_NAMES.get(key, key)
                         sec_help = merged_help.get(key, {}).get("help", "")
                         rich = f"配置键：{key}\n\n{sec_help}" if sec_help else f"配置键：{key}"
-                        if key in collapsed:
-                            def _lazy(container: QWidget, _k=key) -> None:
-                                self.adv_builder.build_dict({_k: merged_gen.get(_k)}, "", container)
-
-                            sec = CollapsibleSection(
-                                inner, key_title, default_open=False,
-                                help_text=rich, build_callback=_lazy,
-                            )
-                        else:
+                        # 嵌套 dict 才加分组标题；叶子顶层键直接平铺（避免标题重复）
+                        if isinstance(merged_gen[key], dict):
+                            grp = _group_title(inner, f"{key_title}（{key}）", rich)
+                            inner_lay.addWidget(grp)
                             content = QWidget(inner)
                             content_lay = QVBoxLayout(content)
                             content_lay.setContentsMargins(16, 0, 0, 0)
                             self.adv_builder.build_dict({key: merged_gen[key]}, "", content)
-                            sec = CollapsibleSection(inner, key_title, default_open=True, help_text=rich)
-                            sec._content = content
-                            sec._built = True
-                            sec._layout.addWidget(content)
-                        inner_lay.addWidget(sec)
-                        self.adv_builder.collapsibles.append(sec)
+                            inner_lay.addWidget(content)
+                        else:
+                            self.adv_builder.build_dict({key: merged_gen[key]}, "", inner)
             inner_lay.addStretch(1)
             self.section_stack.addWidget(page)
 

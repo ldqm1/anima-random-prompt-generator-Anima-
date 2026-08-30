@@ -75,6 +75,23 @@ FIELD_NAMES: dict[str, str] = {
     "pool": "角色池",
     "skip_probability": "跳过概率",
     "items": "条目",
+    # 顶层叶子（基础设置章节）
+    "max_rating": "内容分级上限",
+    "min_tags": "最少 tag 数",
+    "max_tags": "最多 tag 数",
+    "output_dir": "默认输出目录",
+    "extra_requirements": "额外要求",
+    "min_r18_tags_per_sample": "r18 最小 tag 数",
+    "r18_instructions": "r18 指令",
+    "creative_anchors": "创意锚点开关",
+    # 创意锚点类别
+    "surreal_scene": "超现实场景",
+    "scale_shift": "尺度反转",
+    "magic_ritual": "魔法仪式",
+    "anime_expression": "动漫表现",
+    "narrative_contrast": "叙事反差",
+    "impossible_action": "不可能动作",
+    "fantastical_element": "奇幻元素",
     # 基础设置
     "temperature": "温度",
     "max_tokens": "最大输出 token",
