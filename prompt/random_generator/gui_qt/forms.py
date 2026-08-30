@@ -331,15 +331,20 @@ def build_leaf_field(
 
     if isinstance(value, str):
         if enum_values:
+            from .i18n import VALUE_LABELS, VALUE_REVERSE
+
             row = _row_widget()
             lbl = _make_label(row, label, help_text)
             cb = QComboBox(row)
-            cb.addItems(enum_values)
-            if value in enum_values:
-                cb.setCurrentText(value)
+            # 显示中文标签（reasoning_effort / mode 等枚举值汉化）
+            labels = [VALUE_LABELS.get(v, v) for v in enum_values]
+            cb.addItems(labels)
+            current_label = VALUE_LABELS.get(str(value), str(value))
+            if current_label in labels:
+                cb.setCurrentText(current_label)
             else:
                 cb.setEditable(True)
-                cb.setCurrentText(value)
+                cb.setCurrentText(current_label)
             row._layout.addWidget(lbl)  # type: ignore[attr-defined]
             row._layout.addWidget(cb)  # type: ignore[attr-defined]
             row._layout.addStretch(1)  # type: ignore[attr-defined]
@@ -348,7 +353,8 @@ def build_leaf_field(
                 attach_tooltip(cb, help_text)
             return FormField(
                 "enum", widget=row,
-                getter=cb.currentText, setter=cb.setCurrentText,
+                getter=lambda: VALUE_REVERSE.get(cb.currentText(), cb.currentText()),
+                setter=lambda v: cb.setCurrentText(VALUE_LABELS.get(str(v), str(v))),
             )
         if "\n" in value or len(value) > 40:
             row = _row_widget()
@@ -449,15 +455,21 @@ class ConfigFormBuilder:
             self._build_value(target, key, value, dotted)
 
     def _build_value(self, parent: QWidget, key: str, value: Any, dotted: str) -> None:
+        from .i18n import field_label, key_label
+
         help_text = self._help(dotted, value)
         if isinstance(value, dict):
             default_open = dotted not in self.collapsed_paths
+            # 章节/分类标题汉化
+            title = key_label(key) if dotted.count(".") == 0 else key_label(key)
+            # tooltip: 英文键 + yaml 注释
+            rich_help = f"配置键：{dotted}\n\n{help_text}" if help_text else f"配置键：{dotted}"
             if default_open:
                 content = QWidget(parent)
                 content_layout = QVBoxLayout(content)
                 content_layout.setContentsMargins(16, 0, 0, 0)
                 self.build_dict(value, dotted, content)
-                section = CollapsibleSection(parent, key, default_open=True, help_text=help_text)
+                section = CollapsibleSection(parent, title, default_open=True, help_text=rich_help)
                 section._content = content
                 section._built = True
                 section._layout.addWidget(content)
@@ -467,13 +479,16 @@ class ConfigFormBuilder:
                     inner.setContentsMargins(16, 0, 0, 0)
                     self.build_dict(_v, _d, container)
 
-                section = CollapsibleSection(parent, key, default_open=False, help_text=help_text, build_callback=_lazy)
+                section = CollapsibleSection(parent, title, default_open=False, help_text=rich_help, build_callback=_lazy)
             # 把 section 放进父布局
             if parent.layout() is not None:
                 parent.layout().addWidget(section)
             self.collapsibles.append(section)
             return
-        field = build_leaf_field(parent, key, value, help_text, dotted)
+        # 叶子字段：显示名汉化，tooltip 含英文键 + 注释
+        display = field_label(key)
+        rich_help = f"配置键：{dotted}\n\n{help_text}" if help_text else f"配置键：{dotted}"
+        field = build_leaf_field(parent, display, value, rich_help, dotted)
         if parent.layout() is not None:
             parent.layout().addWidget(field.widget)
         self.fields[dotted] = field

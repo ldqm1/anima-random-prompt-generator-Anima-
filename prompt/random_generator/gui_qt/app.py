@@ -482,67 +482,61 @@ class MainWindow(QMainWindow):
         self.btn_reset_cfg = QPushButton("恢复默认", f)
         self.btn_reset_cfg.clicked.connect(self._on_reset_config)
         btns.addWidget(self.btn_reset_cfg)
-        self.btn_expand_all = QPushButton("全部展开", f)
-        self.btn_expand_all.clicked.connect(self._on_expand_all)
-        btns.addWidget(self.btn_expand_all)
-        self.btn_collapse_all = QPushButton("全部折叠", f)
-        self.btn_collapse_all.clicked.connect(self._on_collapse_all)
-        btns.addWidget(self.btn_collapse_all)
         self.lbl_cfg_status = QLabel("")
         btns.addWidget(self.lbl_cfg_status)
         btns.addStretch(1)
         outer.addLayout(btns)
 
-        # 可滚动容器
-        scroll = QScrollArea(f)
-        scroll.setWidgetResizable(True)
-        outer.addWidget(scroll, 1)
-        self.adv_inner = QWidget(scroll)
-        # 关键：允许内容区缩小（内容由滚动处理，否则 minimumSizeHint 会撑大窗口）
-        self.adv_inner.setMinimumSize(0, 0)
-        self.adv_inner_layout = QVBoxLayout(self.adv_inner)
-        self.adv_inner_layout.setContentsMargins(4, 4, 8, 4)
-        self.adv_inner_layout.setSpacing(2)
-        scroll.setWidget(self.adv_inner)
+        # 主体：左侧章节导航 + 右侧分页
+        from .i18n import SECTIONS
+        from PySide6.QtWidgets import QListWidget, QStackedWidget, QSplitter
+
+        split = QSplitter(Qt.Orientation.Horizontal, f)
+        outer.addWidget(split, 1)
+
+        # 左：章节列表
+        left = QWidget(split)
+        left_lay = QVBoxLayout(left)
+        left_lay.setContentsMargins(0, 0, 4, 0)
+        left_lay.addWidget(QLabel("配置章节"))
+        self.section_list = QListWidget(left)
+        self.section_list.setFixedWidth(150)
+        self.section_list.currentRowChanged.connect(self._on_section_change)
+        left_lay.addWidget(self.section_list, 1)
+        split.addWidget(left)
+
+        # 右：分页
+        self.section_stack = QStackedWidget(split)
+        split.addWidget(self.section_stack)
+        split.setSizes([150, 820])
+        self._section_keys = [keys for _, keys in SECTIONS]
+        for title, _ in SECTIONS:
+            self.section_list.addItem(title)
 
         # 读取生效配置
         user_cfg = load_user_config()
         merged = merge_with_defaults(self._gen_defaults, user_cfg)
         anchors_over = user_cfg.get("creative_anchors_override")
         self._build_adv_form(merged, anchors_over if isinstance(anchors_over, dict) else {})
+        if self.section_list.count() > 0:
+            self.section_list.setCurrentRow(0)
+
+    def _on_section_change(self, row: int) -> None:
+        if 0 <= row < self.section_stack.count():
+            self.section_stack.setCurrentIndex(row)
 
     def _build_adv_form(self, merged_gen: dict[str, Any], anchors_over: dict[str, Any]) -> None:
+        """按章节构建高级页：左侧章节 → 右侧分页（每章一个滚动页）。"""
         from .. import yaml_comments
         from ..config_merge import merge_with_defaults
-
-        # 清空
-        while self.adv_inner_layout.count():
-            item = self.adv_inner_layout.takeAt(0)
-            w = item.widget()
-            if w is not None:
-                w.deleteLater()
+        from .i18n import SECTIONS, KEY_NAMES
 
         help_map = yaml_comments.build_help_map(config.GENERATION_CONFIG_FILE)
         anchor_help = yaml_comments.build_help_map(config.CREATIVE_ANCHORS_FILE)
         merged_help = dict(help_map)
         merged_help.update(anchor_help)
 
-        collapsed = {
-            "r18_topic_control", "extra_requirements_pool", "character_pool",
-            "character_whitelist", "category_whitelists", "r18_sample_counts",
-            "r18_focus_weights", "default_word_quota",
-            "subcategory_quotas", "sample_counts",
-        }
-
-        self.adv_builder = ConfigFormBuilder(self.adv_inner, merged_help, collapsed_paths=collapsed)
-        # 生成配置分类
-        gen_section = QWidget(self.adv_inner)
-        gen_lay = QVBoxLayout(gen_section)
-        gen_lay.setContentsMargins(0, 0, 0, 0)
-        self.adv_builder.build_dict(merged_gen, "", gen_section)
-        self.adv_inner_layout.addWidget(gen_section)
-
-        # 创意锚点分类（懒加载）
+        # 创意锚点配置
         try:
             import yaml as _yaml
 
@@ -554,31 +548,93 @@ class MainWindow(QMainWindow):
             anchors_cfg = merge_with_defaults(anchors_cfg, anchors_over)
         self._anchor_top_keys = list(anchors_cfg.keys())
 
-        def _build_anchors(container: QWidget) -> None:
-            inner = QVBoxLayout(container)
-            inner.setContentsMargins(16, 0, 0, 0)
-            self.adv_builder.build_dict(anchors_cfg, "", container)
+        # 清空 stack
+        while self.section_stack.count():
+            w = self.section_stack.widget(0)
+            self.section_stack.removeWidget(w)
+            w.deleteLater()
 
-        anchors_section = CollapsibleSection(
-            self.adv_inner, "创意锚点池（creative_anchors.yaml）",
-            default_open=False,
-            help_text="78 个高概念设定锚点，按 7 类组织；可增删/编辑每个锚点。",
-            build_callback=_build_anchors,
-        )
-        self.adv_inner_layout.addWidget(anchors_section)
-        self.adv_builder.collapsibles.append(anchors_section)
+        # 危险区（章节内默认折叠的小节）
+        collapsed = {
+            "r18_topic_control", "extra_requirements_pool", "character_pool",
+            "character_whitelist", "category_whitelists", "r18_sample_counts",
+            "r18_focus_weights", "default_word_quota",
+            "subcategory_quotas", "sample_counts",
+        }
 
-        # 展开全部折叠区块时统一滚动区
-        self._adv_collapsibles: list[Any] = list(self.adv_builder.collapsibles)
+        self.adv_builder = ConfigFormBuilder(None, merged_help, collapsed_paths=collapsed)
+        self.adv_builder.collapsibles = []
+        self._adv_collapsibles = self.adv_builder.collapsibles
+
+        for title, keys in SECTIONS:
+            page = QWidget(self.section_stack)
+            page_lay = QVBoxLayout(page)
+            page_lay.setContentsMargins(8, 4, 8, 8)
+            page_lay.setSpacing(2)
+            # 章节说明
+            head = QLabel(title)
+            head.setStyleSheet("font-size: 14px; font-weight: bold; color: #2c7da0;")
+            page_lay.addWidget(head)
+
+            scroll = QScrollArea(page)
+            scroll.setWidgetResizable(True)
+            page_lay.addWidget(scroll, 1)
+            inner = QWidget(scroll)
+            inner.setMinimumSize(0, 0)
+            inner_lay = QVBoxLayout(inner)
+            inner_lay.setContentsMargins(4, 4, 8, 4)
+            inner_lay.setSpacing(2)
+            scroll.setWidget(inner)
+
+            if "__anchors__" in keys:
+                # 创意锚点章节：懒加载
+                def _build_anchors(container: QWidget, _anchors=anchors_cfg) -> None:
+                    self.adv_builder.build_dict(_anchors, "", container)
+
+                sec = CollapsibleSection(
+                    inner, "创意锚点池（creative_anchors.yaml）",
+                    default_open=False,
+                    help_text="78 个高概念设定锚点，按 7 类组织；可增删/编辑每个锚点。",
+                    build_callback=_build_anchors,
+                )
+                inner_lay.addWidget(sec)
+                self.adv_builder.collapsibles.append(sec)
+            else:
+                for key in keys:
+                    if key in merged_gen:
+                        # 小节标题（顶层键中文名）
+                        key_title = KEY_NAMES.get(key, key)
+                        sec_help = merged_help.get(key, {}).get("help", "")
+                        rich = f"配置键：{key}\n\n{sec_help}" if sec_help else f"配置键：{key}"
+                        if key in collapsed:
+                            def _lazy(container: QWidget, _k=key) -> None:
+                                self.adv_builder.build_dict({_k: merged_gen.get(_k)}, "", container)
+
+                            sec = CollapsibleSection(
+                                inner, key_title, default_open=False,
+                                help_text=rich, build_callback=_lazy,
+                            )
+                        else:
+                            content = QWidget(inner)
+                            content_lay = QVBoxLayout(content)
+                            content_lay.setContentsMargins(16, 0, 0, 0)
+                            self.adv_builder.build_dict({key: merged_gen[key]}, "", content)
+                            sec = CollapsibleSection(inner, key_title, default_open=True, help_text=rich)
+                            sec._content = content
+                            sec._built = True
+                            sec._layout.addWidget(content)
+                        inner_lay.addWidget(sec)
+                        self.adv_builder.collapsibles.append(sec)
+            inner_lay.addStretch(1)
+            self.section_stack.addWidget(page)
 
         # 同步生成页参数
         self._sync_adv_vars(merged_gen)
 
     def _sync_adv_vars(self, merged: dict[str, Any]) -> None:
-        self.sp_count.setValue(1)  # 占位
-        # 生成页依赖的顶层参数在 _collect_config 中从表单读，无需单独 var
-        pool = merged.get("extra_requirements_pool", {})
-        # 无对应控件（Qt 版高级页全覆盖，生成页无需重复）
+        """同步生成页依赖的顶层参数（高级页章节化后仍保持兼容）。"""
+        # 生成页参数在 _collect_config 中从表单读取；这里仅为兼容旧调用保留
+        pass
 
     # ------------------------------------------------------------------
     # 配置页
