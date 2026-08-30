@@ -37,18 +37,35 @@ def _self_test() -> int:
             f"[self-test] 预览成功 seed={pv['seed']} safety={pv['safety']} "
             f"渲染长度={len(pv['user_prompt'])}"
         )
-        # 验证配置编辑模块可用（表单生成器 + 注释提取 + 深合并）
-        from prompt.random_generator import gui_forms, yaml_comments, config
+        # 验证配置编辑模块可用（表单生成器 + 注释提取 + 深合并 + 预设 + 语义帮助）
+        from prompt.random_generator import config_presets, gui_forms, yaml_comments, config
         from prompt.random_generator.config_merge import deep_merge
 
         help_map = yaml_comments.build_help_map(config.GENERATION_CONFIG_FILE)
         lines.append(f"[self-test] 帮助文本键数: {len(help_map)}")
+        # 语义帮助 100% 覆盖
         import yaml
+
+        def _leaves(data, prefix=""):
+            out = []
+            for k, v in data.items():
+                p = f"{prefix}.{k}" if prefix else k
+                if isinstance(v, dict):
+                    out.extend(_leaves(v, p))
+                else:
+                    out.append((p, v))
+            return out
 
         with config.GENERATION_CONFIG_FILE.open("r", encoding="utf-8") as f:
             gen_cfg = yaml.safe_load(f) or {}
+        no_help = [
+            p for p, v in _leaves(gen_cfg)
+            if not help_map.get(p) and not yaml_comments.semantic_help(p, v)
+        ]
+        lines.append(f"[self-test] 无帮助字段数: {len(no_help)}（应为 0）")
         merged = deep_merge(gen_cfg, {"min_tags": 55})
         lines.append(f"[self-test] 深合并 min_tags: {merged.get('min_tags')}")
+        lines.append(f"[self-test] 预设系统默认预设: {config_presets.DEFAULT_PROFILE}")
         ok = True
     except Exception as exc:  # noqa: BLE001
         lines.append(f"[self-test] 失败: {exc!r}")

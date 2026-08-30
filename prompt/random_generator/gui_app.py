@@ -41,7 +41,21 @@ except ImportError:  # pragma: no cover
 
 
 APP_NAME = "Anima 随机提示词生成器"
-APP_VERSION = "3.0.0"
+APP_VERSION = "3.2.0"
+
+# 主题映射：浅色 / 深色 / 跟随系统
+THEME_LIGHT = "flatly"
+THEME_DARK = "superhero"
+THEME_OPTIONS = [
+    "浅色（flatly）",
+    "深色（superhero）",
+    "跟随系统",
+]
+THEME_VALUES = {v: k for k, v in enumerate(THEME_OPTIONS)}
+THEME_NAMES = {
+    0: THEME_LIGHT,
+    1: THEME_DARK,
+}
 
 # 记住的 API 设置保存位置（用户目录，非仓库）
 SETTINGS_DIR = os.path.join(
@@ -102,7 +116,9 @@ def _resource_root() -> str:
 # ---------------------------------------------------------------------------
 class AnimaGui(tb.Window):
     def __init__(self) -> None:
-        super().__init__(themename="flatly")
+        self._saved_theme = _load_settings().get("theme", 0)
+        theme_name = self._resolve_theme_name(int(self._saved_theme))
+        super().__init__(themename=theme_name)
         self.title(f"{APP_NAME} v{APP_VERSION}")
         self.geometry("980x720")
         self.minsize(860, 620)
@@ -124,9 +140,72 @@ class AnimaGui(tb.Window):
         self._gen_defaults = self._read_gen_defaults()
 
         self._build_ui()
+        self._apply_theme(int(self._saved_theme))
         self._load_saved_settings()
         self.after(120, self._poll_queue)
         self._log(f"{APP_NAME} v{APP_VERSION} 已启动。")
+
+    # ------------------------------------------------------------------
+    # 主题（深色模式）
+    # ------------------------------------------------------------------
+    @staticmethod
+    def _system_is_dark() -> bool:
+        """探测 Windows 是否处于深色模式。"""
+        try:
+            import winreg
+
+            with winreg.OpenKey(
+                winreg.HKEY_CURRENT_USER,
+                r"Software\Microsoft\Windows\CurrentVersion\Themes\Personalize",
+            ) as key:
+                value, _ = winreg.QueryValueEx(key, "AppsUseLightTheme")
+                return value == 0
+        except OSError:
+            return False
+
+    def _resolve_theme_name(self, choice: int) -> str:
+        if choice == 1:
+            return THEME_DARK
+        if choice == 2:
+            return THEME_DARK if self._system_is_dark() else THEME_LIGHT
+        return THEME_LIGHT
+
+    def _apply_theme(self, choice: int) -> None:
+        """切换主题：更新 ttkbootstrap 主题 + tk 原生控件配色。"""
+        theme = self._resolve_theme_name(choice)
+        self.style.theme_use(theme)
+        dark = theme == THEME_DARK
+        # tk 原生控件配色
+        bg = "#2b2b2b" if dark else "#f8f9fa"
+        fg = "#e8e8e8" if dark else "#212529"
+        text_bg = "#3c3f41" if dark else "#ffffff"
+        select_bg = "#2c7da0" if dark else "#007bff"
+        self.configure(bg=bg)
+        for name in ("txt_log", "txt_extra"):
+            w = getattr(self, name, None)
+            if w is not None:
+                w.configure(bg=text_bg, fg=fg, insertbackground=fg,
+                            selectbackground=select_bg)
+        canvas = getattr(self, "adv_canvas", None)
+        if canvas is not None:
+            canvas.configure(bg=bg)
+        # 高级页内嵌 Text 控件
+        try:
+            for child in self.adv_inner.winfo_children():
+                self._recolor_tree(child, bg, fg, text_bg, select_bg)
+        except Exception:  # noqa: BLE001
+            pass
+        self._saved_theme = choice
+
+    def _recolor_tree(self, widget: tk.Widget, bg: str, fg: str, text_bg: str, select_bg: str) -> None:
+        """递归给 tk 原生控件（Text/Canvas/Entry 等）上色。"""
+        if isinstance(widget, (tk.Text,)):
+            widget.configure(bg=text_bg, fg=fg, insertbackground=fg,
+                             selectbackground=select_bg)
+        elif isinstance(widget, (tk.Canvas,)):
+            widget.configure(bg=bg)
+        for child in widget.winfo_children():
+            self._recolor_tree(child, bg, fg, text_bg, select_bg)
 
     # ------------------------------------------------------------------
     # 默认参数读取
@@ -151,16 +230,35 @@ class AnimaGui(tb.Window):
         self.tab_gen = tb.Frame(nb)
         self.tab_api = tb.Frame(nb)
         self.tab_adv = tb.Frame(nb)
+        self.tab_profiles = tb.Frame(nb)
         self.tab_log = tb.Frame(nb)
         nb.add(self.tab_gen, text="  生成  ")
         nb.add(self.tab_api, text="  API 设置  ")
         nb.add(self.tab_adv, text="  高级  ")
+        nb.add(self.tab_profiles, text="  配置  ")
         nb.add(self.tab_log, text="  日志 / 输出  ")
 
         self._build_gen_tab()
         self._build_api_tab()
         self._build_adv_tab()
+        self._build_profiles_tab()
         self._build_log_tab()
+
+        # 底部工具条（主题切换）
+        toolbar = tb.Frame(self)
+        toolbar.pack(fill=X, side=BOTTOM, padx=8, pady=(4, 0))
+        tb.Label(toolbar, text="外观:", bootstyle="secondary").pack(side=LEFT)
+        self.var_theme = tk.StringVar(
+            value=THEME_OPTIONS[self._saved_theme]
+            if 0 <= int(self._saved_theme) < 3 else THEME_OPTIONS[0]
+        )
+        cb_theme = tb.Combobox(
+            toolbar, textvariable=self.var_theme,
+            values=THEME_OPTIONS,
+            state="readonly", width=14,
+        )
+        cb_theme.pack(side=LEFT, padx=(4, 0))
+        cb_theme.bind("<<ComboboxSelected>>", self._on_theme_change)
 
         # 状态栏
         self._status = tb.StringVar(value="就绪")
@@ -168,6 +266,19 @@ class AnimaGui(tb.Window):
             self, textvariable=self._status, anchor="w", bootstyle="secondary"
         )
         status_bar.pack(fill=X, side=BOTTOM, padx=8, pady=4)
+
+    @staticmethod
+    def _theme_label(i: int) -> str:
+        return THEME_OPTIONS[i] if 0 <= i < len(THEME_OPTIONS) else THEME_OPTIONS[0]
+
+    def _on_theme_change(self, _event: Any = None) -> None:
+        label = self.var_theme.get()
+        choice = THEME_VALUES.get(label, 0)
+        self._apply_theme(choice)
+        s = _load_settings()
+        s["theme"] = choice
+        _save_settings(s)
+        self._log(f"外观已切换为 {label}。")
 
     # ---------------- 生成页 ----------------
     def _build_gen_tab(self) -> None:
@@ -419,10 +530,23 @@ class AnimaGui(tb.Window):
             lambda e: self.adv_canvas.itemconfigure(self.adv_win, width=e.width),
         )
 
-        # 读取生效配置（默认 + 用户覆盖）
-        default_gen = self._gen_defaults
+        # 读取生效配置（默认 + 用户覆盖，即当前激活预设）
+        from .config_merge import load_user_config
+
         user_cfg = load_user_config()
-        merged = merge_with_defaults(default_gen, user_cfg)
+        merged = merge_with_defaults(self._gen_defaults, user_cfg)
+        anchors_over = user_cfg.get("creative_anchors_override")
+        self._build_adv_form(merged, anchors_over if isinstance(anchors_over, dict) else {})
+
+    def _build_adv_form(self, merged_gen: dict[str, Any], anchors_over: dict[str, Any]) -> None:
+        """构建高级页表单主体（生成配置 + 创意锚点）。可在预设切换时重建。"""
+        from . import gui_forms
+        from . import yaml_comments
+        from .config_merge import merge_with_defaults
+
+        # 清空已有内容（重建时）
+        for child in self.adv_inner.winfo_children():
+            child.destroy()
 
         help_map = yaml_comments.build_help_map(config.GENERATION_CONFIG_FILE)
         anchor_help = yaml_comments.build_help_map(config.CREATIVE_ANCHORS_FILE)
@@ -441,14 +565,14 @@ class AnimaGui(tb.Window):
         )
         # 顶层分类：生成配置 与 创意锚点（两者都可折叠）
         gen_section = tb.Frame(self.adv_inner)
-        self.adv_builder.build_dict(merged, prefix="", parent=gen_section)
+        self.adv_builder.build_dict(merged_gen, prefix="", parent=gen_section)
         gui_forms.CollapsibleSection(
             self.adv_inner, "生成配置（generation_config.yaml）", gen_section,
             default_open=True,
             help_text="生成器全部配置，对应 generation_config.yaml。"
         )
 
-        # 创意锚点：单独加载并构建
+        # 创意锚点：默认文件 + 用户覆盖
         try:
             import yaml as _yaml
 
@@ -456,10 +580,8 @@ class AnimaGui(tb.Window):
                 anchors_cfg = _yaml.safe_load(af) or {}
         except (OSError, ValueError):
             anchors_cfg = {}
-        # 用户覆盖锚点
-        user_anchors = user_cfg.get("creative_anchors_override")
-        if isinstance(user_anchors, dict) and user_anchors:
-            anchors_cfg = merge_with_defaults(anchors_cfg, user_anchors)
+        if anchors_over:
+            anchors_cfg = merge_with_defaults(anchors_cfg, anchors_over)
         self._anchor_top_keys = list(anchors_cfg.keys())
         anchor_section = tb.Frame(self.adv_inner)
         self.adv_builder.build_dict(anchors_cfg, prefix="", parent=anchor_section)
@@ -473,7 +595,7 @@ class AnimaGui(tb.Window):
         self._adv_collapsibles: list[Any] = list(self.adv_builder.collapsibles)
 
         # 同步 var_*（生成页/引擎读取的顶层参数）
-        self._sync_adv_vars(merged)
+        self._sync_adv_vars(merged_gen)
 
     def _sync_adv_vars(self, merged: dict[str, Any]) -> None:
         """从合并配置同步生成页依赖的顶层参数变量。"""
@@ -488,37 +610,23 @@ class AnimaGui(tb.Window):
 
     # ---- 高级页操作 ----
     def _on_save_config(self) -> None:
-        """收集表单 → 与默认 diff → 只写用户覆盖部分到用户目录。"""
+        """收集表单 → diff → 保存到当前激活预设 + 写入用户目录。"""
+        from . import config_presets as cp
         from .config_merge import save_user_config
 
-        collected = self.adv_builder.get_dict()
-        # 分离：生成配置顶层键 与 创意锚点顶层键（surreal_scene 等）
-        anchor_top_keys = set(self._anchor_top_keys)
-        gen_collected: dict[str, Any] = {}
-        anchor_collected: dict[str, Any] = {}
-        for key, value in collected.items():
-            if key in anchor_top_keys:
-                anchor_collected[key] = value
-            else:
-                gen_collected[key] = value
-        # 只保留与默认不同的键（diff）
-        user_part = self._diff_user(gen_collected, self._gen_defaults)
-        # 锚点：与默认锚点比较，仅当确实不同才保存（避免 78 个锚点全量落盘）
-        if anchor_collected:
-            try:
-                import yaml as _yaml
-
-                with config.CREATIVE_ANCHORS_FILE.open("r", encoding="utf-8") as af:
-                    default_anchors = _yaml.safe_load(af) or {}
-                if anchor_collected != default_anchors:
-                    user_part["creative_anchors_override"] = anchor_collected
-            except (OSError, ValueError):
-                user_part["creative_anchors_override"] = anchor_collected
+        gen, anchors = self._collect_profile_content()
+        user_part = dict(gen)
+        if anchors:
+            user_part["creative_anchors_override"] = anchors
         ok = save_user_config(user_part)
         if ok:
+            # 同步到当前预设
+            active = cp.get_active_name()
+            cp.save_profile(active, gen, anchors)
             self.lbl_cfg_status.configure(text="已保存 ✓", bootstyle="success")
-            self._log("高级设置已保存到用户目录（下次生成生效）。")
+            self._log(f"高级设置已保存到预设「{active}」（下次生成生效）。")
             self._invalidate_engine_cache()
+            self._refresh_profiles()
         else:
             self.lbl_cfg_status.configure(text="保存失败", bootstyle="danger")
             messagebox.showerror("保存失败", "无法写入用户配置文件。")
@@ -571,10 +679,390 @@ class AnimaGui(tb.Window):
 
     def _rebuild_adv_form(self) -> None:
         """清空并重建高级页表单（恢复默认后）。"""
+        from .config_merge import merge_with_defaults
+
+        self._build_adv_form(self._gen_defaults, {})
+        self._sync_adv_vars(self._gen_defaults)
+
+    def _collect_profile_content(self) -> tuple[dict[str, Any], dict[str, Any]]:
+        """收集当前高级页表单 → (gen 覆盖, anchors 覆盖)。
+
+        gen = 与默认生成配置 diff 后的用户覆盖；anchors = 与默认锚点 diff 后的覆盖。
+        """
+        collected = self.adv_builder.get_dict()
+        anchor_top_keys = set(getattr(self, "_anchor_top_keys", []))
+        gen_collected: dict[str, Any] = {}
+        anchor_collected: dict[str, Any] = {}
+        for key, value in collected.items():
+            if key in anchor_top_keys:
+                anchor_collected[key] = value
+            else:
+                gen_collected[key] = value
+        gen_user = self._diff_user(gen_collected, self._gen_defaults)
+        # 锚点：与默认比较，仅当确实不同才保留
+        anchors_user: dict[str, Any] = {}
+        if anchor_collected:
+            try:
+                import yaml as _yaml
+
+                with config.CREATIVE_ANCHORS_FILE.open("r", encoding="utf-8") as af:
+                    default_anchors = _yaml.safe_load(af) or {}
+                if anchor_collected != default_anchors:
+                    anchors_user = anchor_collected
+            except (OSError, ValueError):
+                anchors_user = anchor_collected
+        return gen_user, anchors_user
+
+    # ---------------- 配置页（预设） ----------------
+    def _build_profiles_tab(self) -> None:
+        from . import config_presets as cp
+
+        f = self.tab_profiles
+        tb.Label(
+            f,
+            text="配置预设：多套生成参数可保存/切换/导入/导出，用于按不同目标自由生成提示词。"
+                 "切换预设会保存当前修改并加载目标预设。",
+            bootstyle="secondary", wraplength=720,
+        ).pack(anchor="w", padx=12, pady=(8, 6))
+
+        body = tb.Frame(f)
+        body.pack(fill=BOTH, expand=True, padx=12, pady=(0, 8))
+
+        # 左：预设列表
+        left = tb.Frame(body)
+        left.pack(side=LEFT, fill=BOTH, expand=True, padx=(0, 8))
+        tb.Label(left, text="预设列表", bootstyle="primary").pack(anchor="w")
+        list_frame = tb.Frame(left)
+        list_frame.pack(fill=BOTH, expand=True)
+        self.profile_listbox = tk.Listbox(list_frame, height=18, exportselection=False)
+        sb = ttk.Scrollbar(list_frame, orient="vertical", command=self.profile_listbox.yview)
+        self.profile_listbox.configure(yscrollcommand=sb.set)
+        self.profile_listbox.pack(side=LEFT, fill=BOTH, expand=True)
+        sb.pack(side=RIGHT, fill=Y)
+        self.profile_listbox.bind("<<ListboxSelect>>", self._on_profile_select)
+
+        # 右：操作 + 详情
+        right = tb.Frame(body)
+        right.pack(side=RIGHT, fill=BOTH, expand=True, padx=(8, 0))
+        tb.Label(right, text="操作", bootstyle="primary").pack(anchor="w")
+
+        op = tb.Frame(right)
+        op.pack(fill=X, pady=4)
+        tb.Button(op, text="➕ 新建", bootstyle="success-outline", width=9,
+                  command=self._on_profile_new).pack(side=LEFT, padx=(0, 4))
+        tb.Button(op, text="⧉ 复制", bootstyle="secondary-outline", width=9,
+                  command=self._on_profile_duplicate).pack(side=LEFT, padx=(0, 4))
+        tb.Button(op, text="✏ 重命名", bootstyle="secondary-outline", width=9,
+                  command=self._on_profile_rename).pack(side=LEFT, padx=(0, 4))
+        tb.Button(op, text="🗑 删除", bootstyle="danger-outline", width=9,
+                  command=self._on_profile_delete).pack(side=LEFT)
+
+        op2 = tb.Frame(right)
+        op2.pack(fill=X, pady=4)
+        tb.Button(op2, text="☑ 切换到此预设", bootstyle="primary", width=14,
+                  command=self._on_profile_activate).pack(side=LEFT, padx=(0, 4))
+        tb.Button(op2, text="💾 保存当前到预设", bootstyle="success", width=14,
+                  command=self._on_profile_save).pack(side=LEFT)
+
+        op3 = tb.Frame(right)
+        op3.pack(fill=X, pady=4)
+        tb.Button(op3, text="📤 导出", bootstyle="info-outline", width=9,
+                  command=self._on_profile_export).pack(side=LEFT, padx=(0, 4))
+        tb.Button(op3, text="📥 导入", bootstyle="info-outline", width=9,
+                  command=self._on_profile_import).pack(side=LEFT)
+
+        tb.Label(right, text="当前预设详情", bootstyle="primary").pack(anchor="w", pady=(12, 4))
+        self.profile_detail = tk.Text(right, width=46, height=16, state="disabled", wrap="word")
+        self.profile_detail.pack(fill=BOTH, expand=True)
+
+        self.lbl_active_profile = tb.Label(right, text="", bootstyle="success")
+        self.lbl_active_profile.pack(anchor="w", pady=(6, 0))
+
+        self._refresh_profiles()
+
+    def _refresh_profiles(self) -> None:
+        """刷新预设列表 + 激活态标注。"""
+        from . import config_presets as cp
+
+        active = cp.get_active_name()
+        self.profile_listbox.delete(0, "end")
+        for name in cp.list_profile_names():
+            self.profile_listbox.insert("end", name)
+        # 标注激活项
+        for i in range(self.profile_listbox.size()):
+            item = self.profile_listbox.get(i)
+            if item == active:
+                self.profile_listbox.selection_set(i)
+                self.profile_listbox.activate(i)
+                self.profile_listbox.itemconfigure(i, bg="#2c7da0" if self._resolve_theme_name(int(self._saved_theme)) == THEME_DARK else "#d1ecf1")
+        self.lbl_active_profile.configure(text=f"当前激活：{active}")
+        self._show_profile_detail(active)
+
+    def _selected_profile(self) -> str | None:
+        sel = self.profile_listbox.curselection()
+        if not sel:
+            return None
+        return self.profile_listbox.get(sel[0])
+
+    def _show_profile_detail(self, name: str) -> None:
+        from . import config_presets as cp
+
+        profile = cp.get_profile(name)
+        self.profile_detail.configure(state="normal")
+        self.profile_detail.delete("1.0", "end")
+        if profile is None:
+            self.profile_detail.insert("1.0", "（无）")
+        else:
+            gen = profile.get("gen") or {}
+            anchors = profile.get("anchors") or {}
+            lines = [f"预设：{name}", "", "【生成配置覆盖】"]
+            if gen:
+                for k, v in gen.items():
+                    lines.append(f"  {k}: {self._fmt_value(v)}")
+            else:
+                lines.append("  （使用默认）")
+            lines.append("")
+            lines.append("【创意锚点覆盖】")
+            if anchors:
+                for cat, items in anchors.items():
+                    lines.append(f"  {cat}: {len(items)} 个锚点")
+            else:
+                lines.append("  （使用默认）")
+            self.profile_detail.insert("1.0", "\n".join(lines))
+        self.profile_detail.configure(state="disabled")
+
+    @staticmethod
+    def _fmt_value(v: Any) -> str:
+        if isinstance(v, dict):
+            return "{" + ", ".join(f"{k}: {v[k]}" for k in list(v)[:4]) + ("…" if len(v) > 4 else "") + "}"
+        if isinstance(v, list):
+            return f"[{len(v)} 项]"
+        return str(v)
+
+    def _on_profile_select(self, _event: Any = None) -> None:
+        name = self._selected_profile()
+        if name:
+            self._show_profile_detail(name)
+
+    def _on_profile_new(self) -> None:
+        from . import config_presets as cp
+
+        name = self._ask_name("新建预设", "预设名称：", "新预设")
+        if not name:
+            return
+        if not cp.create_profile(name):
+            messagebox.showwarning("新建失败", "预设名称已存在或无效。")
+            return
+        self._refresh_profiles()
+        self._log(f"已新建空预设「{name}」。")
+
+    def _on_profile_duplicate(self) -> None:
+        from . import config_presets as cp
+
+        name = self._selected_profile()
+        if not name:
+            messagebox.showinfo("提示", "请先选择一个预设。")
+            return
+        new_name = self._ask_name("复制预设", f"复制「{name}」为：", f"{name} 副本")
+        if not new_name:
+            return
+        profile = cp.get_profile(name)
+        if profile and cp.create_profile(new_name, profile.get("gen"), profile.get("anchors")):
+            self._refresh_profiles()
+            self._log(f"已复制「{name}」→「{new_name}」。")
+        else:
+            messagebox.showwarning("复制失败", "预设名称已存在或无效。")
+
+    def _on_profile_rename(self) -> None:
+        from . import config_presets as cp
+
+        name = self._selected_profile()
+        if not name:
+            messagebox.showinfo("提示", "请先选择一个预设。")
+            return
+        if name == cp.DEFAULT_PROFILE:
+            messagebox.showinfo("提示", "「默认」预设不可重命名。")
+            return
+        new_name = self._ask_name("重命名预设", f"将「{name}」重命名为：", name)
+        if not new_name:
+            return
+        if cp.rename_profile(name, new_name):
+            self._refresh_profiles()
+            self._log(f"已重命名「{name}」→「{new_name}」。")
+        else:
+            messagebox.showwarning("重命名失败", "名称无效或已存在。")
+
+    def _on_profile_delete(self) -> None:
+        from . import config_presets as cp
+
+        name = self._selected_profile()
+        if not name:
+            messagebox.showinfo("提示", "请先选择一个预设。")
+            return
+        if name == cp.DEFAULT_PROFILE:
+            messagebox.showinfo("提示", "「默认」预设不可删除。")
+            return
+        if not messagebox.askyesno("删除预设", f"确定删除预设「{name}」？"):
+            return
+        cp.delete_profile(name)
+        self._refresh_profiles()
+        self._log(f"已删除预设「{name}」。")
+
+    def _on_profile_activate(self) -> None:
+        from . import config_presets as cp
+
+        name = self._selected_profile()
+        if not name:
+            messagebox.showinfo("提示", "请先选择一个预设。")
+            return
+        # 保存当前修改到当前预设
+        current_active = cp.get_active_name()
+        if self._has_pending_changes():
+            if not messagebox.askyesno(
+                "切换预设",
+                f"当前高级页有未保存的修改。\n是否先保存到当前预设「{current_active}」再切换？\n"
+                "（选“否”将丢弃当前修改）",
+            ):
+                self._log(f"丢弃当前修改，切换到「{name}」。")
+            else:
+                self._save_current_to_profile(current_active)
+        if cp.set_active(name):
+            self._refresh_profiles()
+            self._rebuild_adv_form_from_profile(name)
+            self._log(f"已切换到预设「{name}」，生成将使用该配置。")
+        else:
+            messagebox.showwarning("切换失败", "无法激活该预设。")
+
+    def _on_profile_save(self) -> None:
+        name = self._selected_profile() or "默认"
+        self._save_current_to_profile(name)
+        self._refresh_profiles()
+        self._log(f"当前配置已保存到预设「{name}」。")
+
+    def _save_current_to_profile(self, name: str) -> None:
+        from . import config_presets as cp
+
+        gen, anchors = self._collect_profile_content()
+        cp.save_profile(name, gen, anchors)
+
+    def _has_pending_changes(self) -> bool:
+        """粗略判断高级页是否有未保存修改：比较当前表单收集与激活预设内容。"""
+        from . import config_presets as cp
+
+        active = cp.get_active_name()
+        profile = cp.get_profile(active) or {}
+        gen, anchors = self._collect_profile_content()
+        return gen != (profile.get("gen") or {}) or anchors != (profile.get("anchors") or {})
+
+    def _rebuild_adv_form_from_profile(self, name: str) -> None:
+        """按预设重建高级页表单 + 生成页参数。"""
+        from . import config_presets as cp
+        from .config_merge import merge_with_defaults
+
+        profile = cp.get_profile(name) or {}
+        gen_over = profile.get("gen") or {}
+        anchors_over = profile.get("anchors") or {}
+        merged_gen = merge_with_defaults(self._gen_defaults, gen_over)
+        # 重建高级页
         for child in self.adv_inner.winfo_children():
             child.destroy()
-        self._build_adv_tab()
-        self._sync_adv_vars(self._gen_defaults)
+        # 重新构建表单（使用当前预设的合并配置）
+        self._build_adv_form(merged_gen, anchors_over)
+        self._sync_adv_vars(merged_gen)
+        # 使引擎缓存失效
+        self._invalidate_engine_cache()
+
+    def _on_profile_export(self) -> None:
+        from . import config_presets as cp
+
+        name = self._selected_profile()
+        if not name:
+            messagebox.showinfo("提示", "请先选择一个预设。")
+            return
+        payload = cp.export_profile(name)
+        if payload is None:
+            return
+        path = filedialog.asksaveasfilename(
+            title="导出预设",
+            defaultextension=".yaml",
+            initialfile=f"{name}.yaml",
+            filetypes=[("YAML 配置", "*.yaml"), ("所有文件", "*.*")],
+        )
+        if not path:
+            return
+        try:
+            import yaml
+
+            with open(path, "w", encoding="utf-8") as f:
+                yaml.safe_dump(payload, f, allow_unicode=True, sort_keys=False)
+            self._log(f"已导出预设「{name}」到 {path}")
+            messagebox.showinfo("导出成功", f"已导出到：\n{path}")
+        except OSError as exc:
+            messagebox.showerror("导出失败", str(exc))
+
+    def _on_profile_import(self) -> None:
+        from . import config_presets as cp
+
+        path = filedialog.askopenfilename(
+            title="导入预设",
+            filetypes=[("YAML 配置", "*.yaml *.yml"), ("所有文件", "*.*")],
+        )
+        if not path:
+            return
+        try:
+            import yaml
+
+            with open(path, "r", encoding="utf-8") as f:
+                payload = yaml.safe_load(f) or {}
+        except (OSError, ValueError) as exc:
+            messagebox.showerror("导入失败", f"无法读取文件：{exc}")
+            return
+        if not cp.validate_profile_payload(payload):
+            messagebox.showerror("导入失败", "文件不是有效的预设导出（缺少 gen/anchors 字段）。")
+            return
+        # 可选改名
+        default_name = str(payload.get("profile_name") or "导入的预设")
+        new_name = self._ask_name("导入预设", "导入为预设名：", default_name)
+        if not new_name:
+            return
+        ok, result = cp.import_profile(payload, new_name)
+        if ok:
+            self._refresh_profiles()
+            self._log(f"已导入预设「{result}」。")
+        else:
+            messagebox.showerror("导入失败", result)
+
+    def _ask_name(self, title: str, prompt: str, initial: str) -> str:
+        """简易输入对话框。"""
+        win = tb.Toplevel(self)
+        win.title(title)
+        win.geometry("360x140")
+        win.transient(self)
+        win.grab_set()
+        result: list[str] = []
+
+        tb.Label(win, text=prompt, bootstyle="secondary").pack(anchor="w", padx=12, pady=(12, 4))
+        var = tk.StringVar(value=initial)
+        ent = ttk.Entry(win, textvariable=var, width=36)
+        ent.pack(padx=12, pady=4)
+        ent.focus_set()
+        ent.select_range(0, "end")
+
+        def _ok() -> None:
+            result.append(var.get().strip())
+            win.destroy()
+
+        def _cancel() -> None:
+            win.destroy()
+
+        btns = tb.Frame(win)
+        btns.pack(pady=(8, 0))
+        tb.Button(btns, text="确定", bootstyle="success", width=8, command=_ok).pack(side=LEFT, padx=6)
+        tb.Button(btns, text="取消", bootstyle="secondary-outline", width=8, command=_cancel).pack(side=LEFT, padx=6)
+        win.bind("<Return>", lambda _e: _ok())
+        win.bind("<Escape>", lambda _e: _cancel())
+        self.wait_window(win)
+        return result[0] if result else ""
 
     def _on_expand_all(self) -> None:
         for c in getattr(self, "_adv_collapsibles", []):

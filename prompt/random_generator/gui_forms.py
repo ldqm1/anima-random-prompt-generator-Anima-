@@ -199,7 +199,8 @@ class ListEditor:
         default = self.item_factory() if value is None else value
         if isinstance(default, dict):
             for k, v in default.items():
-                field = self._build_field(sub, k, v, f"{k}", self.field_cfg.get(k))
+                help_text = self.field_cfg.get(k) or yaml_comments.semantic_help(k, v)
+                field = self._build_field(sub, k, v, f"{k}", help_text)
                 fields[k] = field
         fr.sub = sub  # type: ignore[attr-defined]
         return {"frame": fr, "fields": fields, "obj": dict(default) if isinstance(default, dict) else default}
@@ -345,11 +346,12 @@ class ConfigFormBuilder:
         # 本 builder 创建的所有折叠区块（供上层"全部展开/折叠"）
         self.collapsibles: list["CollapsibleSection"] = []
 
-    def _help(self, dotted: str) -> str:
+    def _help(self, dotted: str, value: Any = None) -> str:
+        """返回帮助文本：优先 yaml 注释，其次语义化兜底，最后空串。"""
         entry = self.help_map.get(dotted)
-        if not entry:
-            return ""
-        return entry.get("help") or entry.get("inline") or ""
+        if entry:
+            return entry.get("help") or entry.get("inline") or ""
+        return yaml_comments.semantic_help(dotted, value)
 
     def _enum_for(self, dotted: str, key: str) -> list[str] | None:
         """按点分路径匹配枚举字段；支持 topics 下动态主题键的前缀匹配。"""
@@ -373,7 +375,7 @@ class ConfigFormBuilder:
             self._build_value(target, key, value, dotted)
 
     def _build_value(self, parent: tk.Widget, key: str, value: Any, dotted: str) -> None:
-        help_text = self._help(dotted)
+        help_text = self._help(dotted, value)
         if isinstance(value, dict):
             section_frame = tb.Frame(parent)
             default_open = dotted not in self.collapsed_paths
