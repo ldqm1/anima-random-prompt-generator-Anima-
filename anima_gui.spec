@@ -50,8 +50,12 @@ a = Analysis(
     hiddenimports=[
         "prompt.random_generator.gui_app",
         "prompt.random_generator.gui_engine",
+        "prompt.random_generator.gui_forms",
+        "prompt.random_generator.config_merge",
+        "prompt.random_generator.yaml_comments",
         "prompt.random_generator.cli",
         "ttkbootstrap",
+        "ttkbootstrap.tooltip",
     ],
     hookspath=[],
     hooksconfig={},

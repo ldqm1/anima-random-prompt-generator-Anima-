@@ -37,6 +37,18 @@ def _self_test() -> int:
             f"[self-test] 预览成功 seed={pv['seed']} safety={pv['safety']} "
             f"渲染长度={len(pv['user_prompt'])}"
         )
+        # 验证配置编辑模块可用（表单生成器 + 注释提取 + 深合并）
+        from prompt.random_generator import gui_forms, yaml_comments, config
+        from prompt.random_generator.config_merge import deep_merge
+
+        help_map = yaml_comments.build_help_map(config.GENERATION_CONFIG_FILE)
+        lines.append(f"[self-test] 帮助文本键数: {len(help_map)}")
+        import yaml
+
+        with config.GENERATION_CONFIG_FILE.open("r", encoding="utf-8") as f:
+            gen_cfg = yaml.safe_load(f) or {}
+        merged = deep_merge(gen_cfg, {"min_tags": 55})
+        lines.append(f"[self-test] 深合并 min_tags: {merged.get('min_tags')}")
         ok = True
     except Exception as exc:  # noqa: BLE001
         lines.append(f"[self-test] 失败: {exc!r}")

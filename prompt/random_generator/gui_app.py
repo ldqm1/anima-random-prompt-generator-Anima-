@@ -356,57 +356,235 @@ class AnimaGui(tb.Window):
 
     # ---------------- 高级页 ----------------
     def _build_adv_tab(self) -> None:
+        from . import gui_forms
+        from . import yaml_comments
+        from .config_merge import load_user_config, merge_with_defaults
+
         f = self.tab_adv
-        card = tb.Frame(f, bootstyle="light", padding=12)
-        card.pack(fill=X, padx=16, pady=12)
 
-        grid = tb.Frame(card)
-        grid.pack(fill=X)
+        # 生成页/引擎依赖的顶层参数变量（先创建，避免 _sync_adv_vars 之前被引用）
+        if not hasattr(self, "var_min_tags"):
+            self.var_min_tags = tk.IntVar(value=int(self._gen_defaults.get("min_tags", 40)))
+            self.var_max_tags = tk.IntVar(value=int(self._gen_defaults.get("max_tags", 60)))
+            self.var_workers = tk.IntVar(value=4)
+            dk0 = self._gen_defaults.get("deepseek", {})
+            self.var_max_tokens = tk.IntVar(value=int(dk0.get("max_tokens", 1000)))
+            self.var_max_retries = tk.IntVar(value=int(dk0.get("max_parse_retries", 2)))
+            self.var_extra_pool = tk.BooleanVar(
+                value=bool(self._gen_defaults.get("extra_requirements_pool", {}).get("enabled", False))
+            )
 
-        tb.Label(grid, text="最少 tag 数:").grid(row=0, column=0, sticky="e", pady=3, padx=(0, 8))
-        self.var_min_tags = tk.IntVar(value=int(self._gen_defaults.get("min_tags", 50)))
-        ttk.Spinbox(grid, from_=5, to=200, textvariable=self.var_min_tags, width=8).grid(row=0, column=1, sticky="w", pady=3)
+        # 顶部说明 + 操作按钮
+        top = tb.Frame(f)
+        top.pack(fill=X, padx=12, pady=(8, 4))
+        tb.Label(
+            top,
+            text="完整配置编辑（对应 generation_config.yaml 与 creative_anchors.yaml）。"
+                 "悬停任意控件可查看该项说明与效果；修改后点「保存设置」立即生效。",
+            bootstyle="secondary", wraplength=700,
+        ).pack(anchor="w")
+        btns = tb.Frame(f)
+        btns.pack(fill=X, padx=12, pady=(0, 6))
+        self.btn_save_cfg = tb.Button(btns, text="💾 保存设置", bootstyle="success",
+                                      command=self._on_save_config)
+        self.btn_save_cfg.pack(side=LEFT, padx=(0, 6))
+        self.btn_reset_cfg = tb.Button(btns, text="恢复默认", bootstyle="danger-outline",
+                                       command=self._on_reset_config)
+        self.btn_reset_cfg.pack(side=LEFT, padx=(0, 6))
+        self.btn_expand_all = tb.Button(btns, text="全部展开", bootstyle="secondary-outline",
+                                        command=self._on_expand_all)
+        self.btn_expand_all.pack(side=LEFT, padx=(0, 6))
+        self.btn_collapse_all = tb.Button(btns, text="全部折叠", bootstyle="secondary-outline",
+                                          command=self._on_collapse_all)
+        self.btn_collapse_all.pack(side=LEFT)
+        self.lbl_cfg_status = tb.Label(btns, text="", bootstyle="success")
+        self.lbl_cfg_status.pack(side=LEFT, padx=(12, 0))
 
-        tb.Label(grid, text="最多 tag 数:").grid(row=0, column=2, sticky="e", pady=3, padx=(24, 8))
-        self.var_max_tags = tk.IntVar(value=int(self._gen_defaults.get("max_tags", 75)))
-        ttk.Spinbox(grid, from_=10, to=300, textvariable=self.var_max_tags, width=8).grid(row=0, column=3, sticky="w", pady=3)
+        # 可滚动容器
+        canvas_wrap = tb.Frame(f)
+        canvas_wrap.pack(fill=BOTH, expand=True, padx=8, pady=(0, 8))
+        self.adv_canvas = tk.Canvas(canvas_wrap, highlightthickness=0)
+        vsb = ttk.Scrollbar(canvas_wrap, orient="vertical", command=self.adv_canvas.yview)
+        self.adv_canvas.configure(yscrollcommand=vsb.set)
+        vsb.pack(side=RIGHT, fill=Y)
+        self.adv_canvas.pack(side=LEFT, fill=BOTH, expand=True)
+        self.adv_inner = tb.Frame(self.adv_canvas)
+        self.adv_win = self.adv_canvas.create_window((0, 0), window=self.adv_inner, anchor="nw")
+        self.adv_inner.bind(
+            "<Configure>",
+            lambda _e: self.adv_canvas.configure(scrollregion=self.adv_canvas.bbox("all")),
+        )
+        self.adv_canvas.bind(
+            "<Configure>",
+            lambda e: self.adv_canvas.itemconfigure(self.adv_win, width=e.width),
+        )
 
-        tb.Label(grid, text="并发数:").grid(row=1, column=0, sticky="e", pady=3, padx=(0, 8))
-        self.var_workers = tk.IntVar(value=4)
-        ttk.Spinbox(grid, from_=1, to=32, textvariable=self.var_workers, width=8).grid(row=1, column=1, sticky="w", pady=3)
+        # 读取生效配置（默认 + 用户覆盖）
+        default_gen = self._gen_defaults
+        user_cfg = load_user_config()
+        merged = merge_with_defaults(default_gen, user_cfg)
 
-        tb.Label(grid, text="最大输出 token:").grid(row=1, column=2, sticky="e", pady=3, padx=(24, 8))
-        self.var_max_tokens = tk.IntVar(value=int(self._gen_defaults.get("deepseek", {}).get("max_tokens", 1000)))
-        ttk.Spinbox(grid, from_=100, to=8000, increment=100, textvariable=self.var_max_tokens, width=8).grid(row=1, column=3, sticky="w", pady=3)
+        help_map = yaml_comments.build_help_map(config.GENERATION_CONFIG_FILE)
+        anchor_help = yaml_comments.build_help_map(config.CREATIVE_ANCHORS_FILE)
+        merged_help = dict(help_map)
+        merged_help.update(anchor_help)
 
-        tb.Label(grid, text="解析重试次数:").grid(row=2, column=0, sticky="e", pady=3, padx=(0, 8))
-        self.var_max_retries = tk.IntVar(value=int(self._gen_defaults.get("deepseek", {}).get("max_parse_retries", 2)))
-        ttk.Spinbox(grid, from_=0, to=5, textvariable=self.var_max_retries, width=8).grid(row=2, column=1, sticky="w", pady=3)
+        # 危险区默认折叠
+        collapsed = {
+            "r18_topic_control", "extra_requirements_pool", "character_pool",
+            "character_whitelist", "category_whitelists", "r18_sample_counts",
+            "r18_focus_weights", "default_word_quota",
+        }
 
-        tb.Label(grid, text="额外要求池:").grid(row=2, column=2, sticky="e", pady=3, padx=(24, 8))
-        pool_enabled = self._gen_defaults.get("extra_requirements_pool", {}).get("enabled", False)
-        self.var_extra_pool = tk.BooleanVar(value=bool(pool_enabled))
-        tb.Checkbutton(grid, text="启用（随机抽取风格/氛围要求）", variable=self.var_extra_pool,
-                       bootstyle="round-toggle").grid(row=2, column=3, sticky="w", pady=3)
+        self.adv_builder = gui_forms.ConfigFormBuilder(
+            self.adv_inner, merged_help, collapsed_paths=collapsed
+        )
+        # 顶层分类：生成配置 与 创意锚点（两者都可折叠）
+        gen_section = tb.Frame(self.adv_inner)
+        self.adv_builder.build_dict(merged, prefix="", parent=gen_section)
+        gui_forms.CollapsibleSection(
+            self.adv_inner, "生成配置（generation_config.yaml）", gen_section,
+            default_open=True,
+            help_text="生成器全部配置，对应 generation_config.yaml。"
+        )
 
-        # 只读：子类配额摘要
-        tb.Label(card, text="子类配额（来自生成配置，只读）", bootstyle="primary").pack(anchor="w", pady=(12, 4))
-        quotas = self._gen_defaults.get("subcategory_quotas", {})
-        qtext = tk.Text(card, width=80, height=12, state="disabled")
-        qtext.pack(fill=BOTH, expand=True)
-        lines = []
-        for cat, subs in quotas.items():
-            lines.append(f"【{cat}】")
-            for sub, q in subs.items():
-                if isinstance(q, dict):
-                    lines.append(f"    {sub}: min={q.get('min', 0)} max={q.get('max', '不限')}")
-        if not lines:
-            lines = ["（无子类配额配置）"]
-        qtext.configure(state="normal")
-        qtext.insert("1.0", "\n".join(lines))
-        qtext.configure(state="disabled")
+        # 创意锚点：单独加载并构建
+        try:
+            import yaml as _yaml
 
-        tb.Label(card, text="提示：以上参数一般不需要修改。保持默认即可获得稳定效果。", bootstyle="secondary").pack(anchor="w", pady=(8, 0))
+            with config.CREATIVE_ANCHORS_FILE.open("r", encoding="utf-8") as af:
+                anchors_cfg = _yaml.safe_load(af) or {}
+        except (OSError, ValueError):
+            anchors_cfg = {}
+        # 用户覆盖锚点
+        user_anchors = user_cfg.get("creative_anchors_override")
+        if isinstance(user_anchors, dict) and user_anchors:
+            anchors_cfg = merge_with_defaults(anchors_cfg, user_anchors)
+        self._anchor_top_keys = list(anchors_cfg.keys())
+        anchor_section = tb.Frame(self.adv_inner)
+        self.adv_builder.build_dict(anchors_cfg, prefix="", parent=anchor_section)
+        gui_forms.CollapsibleSection(
+            self.adv_inner, "创意锚点池（creative_anchors.yaml）", anchor_section,
+            default_open=False,
+            help_text="78 个高概念设定锚点，按 7 类组织；可增删/编辑每个锚点的 name/cn/tags/narrative。"
+        )
+
+        # 收集按钮引用，供展开/折叠（builder 已记录全部折叠区块）
+        self._adv_collapsibles: list[Any] = list(self.adv_builder.collapsibles)
+
+        # 同步 var_*（生成页/引擎读取的顶层参数）
+        self._sync_adv_vars(merged)
+
+    def _sync_adv_vars(self, merged: dict[str, Any]) -> None:
+        """从合并配置同步生成页依赖的顶层参数变量。"""
+        self.var_min_tags.set(int(merged.get("min_tags", 40)))
+        self.var_max_tags.set(int(merged.get("max_tags", 60)))
+        self.var_workers.set(4)  # 并发数不来自 yaml，保持默认
+        dk = merged.get("deepseek", {})
+        self.var_max_tokens.set(int(dk.get("max_tokens", 1000)))
+        self.var_max_retries.set(int(dk.get("max_parse_retries", 2)))
+        pool = merged.get("extra_requirements_pool", {})
+        self.var_extra_pool.set(bool(pool.get("enabled", False)))
+
+    # ---- 高级页操作 ----
+    def _on_save_config(self) -> None:
+        """收集表单 → 与默认 diff → 只写用户覆盖部分到用户目录。"""
+        from .config_merge import save_user_config
+
+        collected = self.adv_builder.get_dict()
+        # 分离：生成配置顶层键 与 创意锚点顶层键（surreal_scene 等）
+        anchor_top_keys = set(self._anchor_top_keys)
+        gen_collected: dict[str, Any] = {}
+        anchor_collected: dict[str, Any] = {}
+        for key, value in collected.items():
+            if key in anchor_top_keys:
+                anchor_collected[key] = value
+            else:
+                gen_collected[key] = value
+        # 只保留与默认不同的键（diff）
+        user_part = self._diff_user(gen_collected, self._gen_defaults)
+        # 锚点：与默认锚点比较，仅当确实不同才保存（避免 78 个锚点全量落盘）
+        if anchor_collected:
+            try:
+                import yaml as _yaml
+
+                with config.CREATIVE_ANCHORS_FILE.open("r", encoding="utf-8") as af:
+                    default_anchors = _yaml.safe_load(af) or {}
+                if anchor_collected != default_anchors:
+                    user_part["creative_anchors_override"] = anchor_collected
+            except (OSError, ValueError):
+                user_part["creative_anchors_override"] = anchor_collected
+        ok = save_user_config(user_part)
+        if ok:
+            self.lbl_cfg_status.configure(text="已保存 ✓", bootstyle="success")
+            self._log("高级设置已保存到用户目录（下次生成生效）。")
+            self._invalidate_engine_cache()
+        else:
+            self.lbl_cfg_status.configure(text="保存失败", bootstyle="danger")
+            messagebox.showerror("保存失败", "无法写入用户配置文件。")
+
+    def _diff_user(self, collected: dict[str, Any], default: dict[str, Any]) -> dict[str, Any]:
+        """返回 collected 中与 default 不同的部分（递归 diff）。
+
+        字符串比较忽略尾部换行（Text 控件 strip 掉了 yaml 块尾的 \\n）。
+        """
+        out: dict[str, Any] = {}
+        for key, value in collected.items():
+            if key not in default:
+                out[key] = value
+                continue
+            if isinstance(value, dict) and isinstance(default[key], dict):
+                sub = self._diff_user(value, default[key])
+                if sub:
+                    out[key] = sub
+            elif isinstance(value, str) and isinstance(default[key], str):
+                if value.rstrip("\n") != default[key].rstrip("\n"):
+                    out[key] = value
+            elif value != default[key]:
+                out[key] = value
+        return out
+
+    def _invalidate_engine_cache(self) -> None:
+        from .gui_engine import _cache
+
+        _cache.pop("gen_cfg", None)
+        # 评级相关缓存也失效（配置可能影响抽样）
+        for k in list(_cache.keys()):
+            if k.startswith("r_"):
+                _cache.pop(k, None)
+        self._log("配置缓存已重置，下次生成将使用新设置。")
+
+    def _on_reset_config(self) -> None:
+        from .config_merge import clear_user_config
+
+        if not messagebox.askyesno(
+            "恢复默认",
+            "将删除全部自定义设置并恢复默认配置。\n（API Key 不受影响）\n确定继续？",
+            icon="warning",
+        ):
+            return
+        clear_user_config()
+        self.lbl_cfg_status.configure(text="已恢复默认 ✓", bootstyle="success")
+        self._log("已删除用户配置，恢复默认。请重启窗口以重新加载表单。")
+        # 重建表单
+        self._rebuild_adv_form()
+
+    def _rebuild_adv_form(self) -> None:
+        """清空并重建高级页表单（恢复默认后）。"""
+        for child in self.adv_inner.winfo_children():
+            child.destroy()
+        self._build_adv_tab()
+        self._sync_adv_vars(self._gen_defaults)
+
+    def _on_expand_all(self) -> None:
+        for c in getattr(self, "_adv_collapsibles", []):
+            if not c.open:
+                c._toggle()
+
+    def _on_collapse_all(self) -> None:
+        for c in getattr(self, "_adv_collapsibles", []):
+            if c.open:
+                c._toggle()
 
     # ---------------- 日志页 ----------------
     def _build_log_tab(self) -> None:

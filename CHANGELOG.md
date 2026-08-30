@@ -22,6 +22,23 @@
 - **评级感知资源加载**：按 max_rating 预过滤知识库并按评级缓存，切换 r18 自动重建
 - **引擎层复用完整生成链路**：抽样 → 组装 → 渲染 → DeepSeek → 后处理 → 审计落盘，与 CLI 行为一致
 
+### 高级页完整配置编辑（新增）
+
+- **全量配置可视化**：`generation_config.yaml` 与 `creative_anchors.yaml` 的全部配置项
+  自动加载并按数据类型渲染控件——int→步进框、float→步进框(0.1)、bool→开关、
+  短文本→输入框、长文本/多行→文本框、枚举(reasoning_effort/topic mode)→下拉、
+  标量列表/对象列表→可增删编辑器、深层嵌套→递归展开；78 个创意锚点逐条可编辑
+- **帮助信息零维护**：`yaml_comments.py` 直接从 yaml 注释提取每项的说明文本，
+  悬停控件即显示"配置内容 + 修改效果"（与 yaml 同步，无需单独维护说明表）
+- **分类折叠**：`gui_forms.py` 的 CollapsibleSection——基础区默认展开，
+  危险区（r18 主题控制 / extra_requirements_pool / 角色池 / 白名单池 / r18 专用
+  配额 / default_word_quota）默认折叠；支持「全部展开/折叠」
+- **保存设置**：`config_merge.py` 深合并 + diff——只写与默认**不同**的键到
+  `%APPDATA%\AnimaPromptGenerator\user_config.yaml`（用户目录，exe 打包版 yaml 只读，
+  修改经用户目录生效）；「恢复默认」删除该文件；锚点区仅当确实修改时才落盘
+- **引擎合并**：`gui_engine._load_generation_config` 读默认 + 用户覆盖；
+  `load_resources` 注入用户锚点覆盖；保存后自动失效引擎缓存，下次生成即用新配置
+
 ### 打包
 
 - `build_exe.py`：一键打包单文件 exe（自动装 PyInstaller/ttkbootstrap、清理、校验产物）

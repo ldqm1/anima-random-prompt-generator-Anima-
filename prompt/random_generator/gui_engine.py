@@ -98,14 +98,23 @@ _cache: dict[str, Any] = {}
 
 
 def _load_generation_config() -> dict[str, Any]:
+    """读取生成配置：默认 generation_config.yaml + 用户目录 user_config.yaml 覆盖。"""
     if "gen_cfg" not in _cache:
         try:
             import yaml
 
             with config.GENERATION_CONFIG_FILE.open("r", encoding="utf-8") as f:
-                _cache["gen_cfg"] = yaml.safe_load(f) or {}
+                default = yaml.safe_load(f) or {}
         except (OSError, ImportError):
-            _cache["gen_cfg"] = {}
+            default = {}
+        from .config_merge import load_user_config
+
+        user = load_user_config()
+        if user:
+            from .config_merge import merge_with_defaults
+
+            default = merge_with_defaults(default, user)
+        _cache["gen_cfg"] = default
     return _cache["gen_cfg"]
 
 
@@ -159,6 +168,26 @@ def load_resources(
         creative_anchors = retrieval.load_creative_anchors(
             anchors_cfg.get("file") or config.CREATIVE_ANCHORS_FILE
         )
+        # 用户配置中的锚点覆盖（GUI 高级页可编辑 creative_anchors.yaml）
+        from .config_merge import load_user_config
+
+        user_cfg = load_user_config()
+        user_anchors = user_cfg.get("creative_anchors_override")
+        if isinstance(user_anchors, dict) and user_anchors:
+            from .config_merge import merge_with_defaults
+
+            merged_anchors_cfg = merge_with_defaults(
+                {k: v for k, v in anchors_cfg.items()}, user_anchors
+            )
+            # merged 是按类别的 dict[list]，直接转成锚点结构
+            creative_anchors = {}
+            for cat, items in merged_anchors_cfg.items():
+                if isinstance(items, list):
+                    creative_anchors[str(cat)] = [
+                        dict(i) for i in items
+                        if isinstance(i, dict) and i.get("enabled", True) is not False
+                    ]
+            _log("已应用用户自定义创意锚点。")
 
     res = {
         "knowledge_database": filtered_kb,
