@@ -225,7 +225,6 @@ class AnimaGui(tb.Window):
     # ------------------------------------------------------------------
     def _build_ui(self) -> None:
         nb = tb.Notebook(self, bootstyle="primary")
-        nb.pack(fill=BOTH, expand=True, padx=8, pady=(8, 0))
 
         self.tab_gen = tb.Frame(nb)
         self.tab_api = tb.Frame(nb)
@@ -243,29 +242,29 @@ class AnimaGui(tb.Window):
         self._build_adv_tab()
         self._build_profiles_tab()
         self._build_log_tab()
+        # 底部栏：状态 + 外观切换（同一容器，保证可见）
+        bottom = tb.Frame(self)
+        bottom.pack(fill=X, side=BOTTOM, padx=8, pady=(4, 4))
 
-        # 底部工具条（主题切换）
-        toolbar = tb.Frame(self)
-        toolbar.pack(fill=X, side=BOTTOM, padx=8, pady=(4, 0))
-        tb.Label(toolbar, text="外观:", bootstyle="secondary").pack(side=LEFT)
+        self._status = tk.StringVar(value="就绪")
+        status_bar = tb.Label(bottom, textvariable=self._status, anchor="w", bootstyle="secondary")
+        status_bar.pack(side=LEFT, fill=X, expand=True)
+
+        tb.Label(bottom, text="外观:", bootstyle="secondary").pack(side=LEFT, padx=(8, 0))
         self.var_theme = tk.StringVar(
             value=THEME_OPTIONS[self._saved_theme]
             if 0 <= int(self._saved_theme) < 3 else THEME_OPTIONS[0]
         )
         cb_theme = tb.Combobox(
-            toolbar, textvariable=self.var_theme,
+            bottom, textvariable=self.var_theme,
             values=THEME_OPTIONS,
-            state="readonly", width=14,
+            state="readonly", width=13,
         )
         cb_theme.pack(side=LEFT, padx=(4, 0))
         cb_theme.bind("<<ComboboxSelected>>", self._on_theme_change)
 
-        # 状态栏
-        self._status = tb.StringVar(value="就绪")
-        status_bar = tb.Label(
-            self, textvariable=self._status, anchor="w", bootstyle="secondary"
-        )
-        status_bar.pack(fill=X, side=BOTTOM, padx=8, pady=4)
+        # notebook 最后 pack：确保底部栏先占据 BOTTOM 区域，不被 notebook 请求尺寸挤掉
+        nb.pack(fill=BOTH, expand=True, padx=8, pady=(8, 0))
 
     @staticmethod
     def _theme_label(i: int) -> str:
@@ -414,8 +413,9 @@ class AnimaGui(tb.Window):
         card = tb.Frame(f, bootstyle="light", padding=12)
         card.pack(fill=X, padx=16, pady=12)
 
-        tb.Label(card, text="DeepSeek API 设置", bootstyle="primary").pack(anchor="w")
-        tb.Label(card, text="请填写你自己的 DeepSeek 平台 API Key（https://platform.deepseek.com）", bootstyle="secondary").pack(anchor="w", pady=(0, 8))
+        tb.Label(card, text="API 设置（OpenAI 兼容格式）", bootstyle="primary").pack(anchor="w")
+        tb.Label(card, text="支持任意 OpenAI 兼容接口（DeepSeek / Moonshot / OpenRouter / 本地 vLLM 等）："
+                            "填写 Base URL + API Key + 模型名即可。", bootstyle="secondary").pack(anchor="w", pady=(0, 8))
 
         grid = tb.Frame(card)
         grid.pack(fill=X)
@@ -436,11 +436,16 @@ class AnimaGui(tb.Window):
 
         tb.Label(grid, text="接口地址:").grid(row=1, column=0, sticky="e", pady=3, padx=(0, 8))
         self.var_api_base = tk.StringVar(value="https://api.deepseek.com/v1")
+        tb.Label(grid, text="（例：DeepSeek https://api.deepseek.com/v1 · OpenAI https://api.openai.com/v1 · 本地 http://127.0.0.1:8000/v1）",
+                 bootstyle="secondary").grid(row=1, column=1, sticky="w", pady=(0, 4))
         ttk.Entry(grid, textvariable=self.var_api_base).grid(row=1, column=1, sticky="we", pady=3)
 
         tb.Label(grid, text="模型:").grid(row=2, column=0, sticky="e", pady=3, padx=(0, 8))
         self.var_model = tk.StringVar(value="deepseek-chat")
-        ttk.Entry(grid, textvariable=self.var_model).grid(row=2, column=1, sticky="we", pady=3)
+        tb.Combobox(grid, textvariable=self.var_model, values=[
+            "deepseek-chat", "deepseek-reasoner", "gpt-4o", "gpt-4o-mini",
+            "moonshot-v1-8k", "qwen-plus", "qwen-max", "glm-4", "claude-3-5-sonnet",
+        ], width=34).grid(row=2, column=1, sticky="we", pady=3)
 
         tb.Label(grid, text="Temperature:").grid(row=3, column=0, sticky="e", pady=3, padx=(0, 8))
         tf = tb.Frame(grid)
@@ -455,6 +460,8 @@ class AnimaGui(tb.Window):
         self.var_reasoning = tk.StringVar(value="none")
         tb.Combobox(grid, textvariable=self.var_reasoning, values=["none", "low", "medium", "high"],
                     state="readonly", width=12).grid(row=4, column=1, sticky="w", pady=3)
+        tb.Label(grid, text="（reasoning_effort，不支持则自动忽略；none 更快更省）",
+                 bootstyle="secondary").grid(row=4, column=2, sticky="w", pady=3, padx=(6, 0))
 
         btns = tb.Frame(card)
         btns.pack(fill=X, pady=(10, 0))
@@ -529,6 +536,17 @@ class AnimaGui(tb.Window):
             "<Configure>",
             lambda e: self.adv_canvas.itemconfigure(self.adv_win, width=e.width),
         )
+        # Windows 滚轮滚动（tk Canvas 默认不响应滚轮）
+        def _on_wheel(event: tk.Event) -> None:
+            try:
+                step = -1 if event.delta > 0 else 1
+                self.adv_canvas.yview_scroll(step * 2, "units")
+            except (tk.TclError, RuntimeError):
+                pass
+
+        self.adv_canvas.bind("<MouseWheel>", _on_wheel)
+        self.adv_inner.bind("<MouseWheel>", _on_wheel)
+        canvas_wrap.bind("<MouseWheel>", _on_wheel)
 
         # 读取生效配置（默认 + 用户覆盖，即当前激活预设）
         from .config_merge import load_user_config
@@ -553,11 +571,12 @@ class AnimaGui(tb.Window):
         merged_help = dict(help_map)
         merged_help.update(anchor_help)
 
-        # 危险区默认折叠
+        # 危险区/大数据区默认折叠（懒加载，展开时才构建控件）
         collapsed = {
             "r18_topic_control", "extra_requirements_pool", "character_pool",
             "character_whitelist", "category_whitelists", "r18_sample_counts",
             "r18_focus_weights", "default_word_quota",
+            "subcategory_quotas", "sample_counts",
         }
 
         self.adv_builder = gui_forms.ConfigFormBuilder(
@@ -583,13 +602,17 @@ class AnimaGui(tb.Window):
         if anchors_over:
             anchors_cfg = merge_with_defaults(anchors_cfg, anchors_over)
         self._anchor_top_keys = list(anchors_cfg.keys())
-        anchor_section = tb.Frame(self.adv_inner)
-        self.adv_builder.build_dict(anchors_cfg, prefix="", parent=anchor_section)
-        gui_forms.CollapsibleSection(
-            self.adv_inner, "创意锚点池（creative_anchors.yaml）", anchor_section,
+        # 锚点区懒加载：78 个锚点条目折叠时不构建（显著加快启动与切换）
+        def _build_anchors(container: tk.Widget) -> None:
+            self.adv_builder.build_dict(anchors_cfg, prefix="", parent=container)
+
+        anchors_section = gui_forms.CollapsibleSection(
+            self.adv_inner, "创意锚点池（creative_anchors.yaml）", None,
             default_open=False,
-            help_text="78 个高概念设定锚点，按 7 类组织；可增删/编辑每个锚点的 name/cn/tags/narrative。"
+            help_text="78 个高概念设定锚点，按 7 类组织；可增删/编辑每个锚点的 name/cn/tags/narrative。",
+            build_callback=_build_anchors,
         )
+        self.adv_builder.collapsibles.append(anchors_section)
 
         # 收集按钮引用，供展开/折叠（builder 已记录全部折叠区块）
         self._adv_collapsibles: list[Any] = list(self.adv_builder.collapsibles)

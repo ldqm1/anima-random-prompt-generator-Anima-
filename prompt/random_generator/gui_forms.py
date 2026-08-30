@@ -30,9 +30,99 @@ from tkinter.constants import X, Y, BOTH, LEFT, RIGHT, TOP, BOTTOM, W, E, N, S  
 FILL = "fill"  # noqa: F401
 
 try:
-    from ttkbootstrap.tooltip import ToolTip
+    from ttkbootstrap.tooltip import ToolTip  # type: ignore[import-not-found]
 except ImportError:  # pragma: no cover
     ToolTip = None  # type: ignore[assignment]
+
+
+class SimpleToolTip:
+    """自实现的悬浮提示（ttkbootstrap 2.2.2 无 tooltip 模块时的替代）。
+
+    鼠标悬停 400ms 后显示一个置顶 Toplevel 气泡，移开或点击后消失。
+    """
+
+    def __init__(self, widget: tk.Widget, text: str, wraplength: int = 400) -> None:
+        self.widget = widget
+        self.text = text
+        self.wraplength = wraplength
+        self.tip: tk.Toplevel | None = None
+        self._after_id: str | None = None
+        widget.bind("<Enter>", self._on_enter, add="+")
+        widget.bind("<Leave>", self._on_leave, add="+")
+        widget.bind("<ButtonPress>", self._on_leave, add="+")
+
+    def _on_enter(self, _event: Any = None) -> None:
+        if self.tip is not None:
+            return
+        self._schedule()
+
+    def _schedule(self) -> None:
+        if self._after_id is not None:
+            return
+        try:
+            self._after_id = self.widget.after(400, self._show)
+        except (tk.TclError, RuntimeError):
+            self._after_id = None
+
+    def _on_leave(self, _event: Any = None) -> None:
+        if self._after_id is not None:
+            try:
+                self.widget.after_cancel(self._after_id)
+            except (tk.TclError, RuntimeError):
+                pass
+            self._after_id = None
+        self._hide()
+
+    def _show(self) -> None:
+        self._after_id = None
+        if self.tip is not None:
+            return
+        try:
+            self.tip = tk.Toplevel(self.widget)
+            self.tip.wm_overrideredirect(True)
+            self.tip.wm_attributes("-topmost", True)
+            label = tk.Label(
+                self.tip,
+                text=self.text,
+                justify="left",
+                background="#ffffe0",
+                foreground="#000000",
+                relief="solid",
+                borderwidth=1,
+                font=("Microsoft YaHei UI", 9),
+                wraplength=self.wraplength,
+                padx=8,
+                pady=6,
+            )
+            label.pack()
+            x, y = self._tip_position()
+            self.tip.wm_geometry(f"+{x}+{y}")
+        except (tk.TclError, RuntimeError):
+            self.tip = None
+
+    def _tip_position(self) -> tuple[int, int]:
+        try:
+            wx = self.widget.winfo_rootx()
+            wy = self.widget.winfo_rooty()
+            wh = self.widget.winfo_height()
+            tw = self.tip.winfo_reqwidth() if self.tip else 200
+            th = self.tip.winfo_reqheight() if self.tip else 80
+            sw = self.widget.winfo_screenwidth()
+            x = wx + 12
+            if x + tw > sw:
+                x = max(0, wx - tw - 12)
+            y = wy + wh + 6
+            return x, y
+        except (tk.TclError, RuntimeError):
+            return 0, 0
+
+    def _hide(self) -> None:
+        if self.tip is not None:
+            try:
+                self.tip.destroy()
+            except (tk.TclError, RuntimeError):
+                pass
+            self.tip = None
 
 from . import yaml_comments
 
@@ -42,6 +132,7 @@ _FALSE = "否"
 
 
 def _tooltip(widget: tk.Widget, text: str) -> None:
+    """给控件绑定悬浮帮助。优先用 ttkbootstrap 自带，缺失时用自实现气泡。"""
     if not text:
         return
     if ToolTip is not None:
@@ -50,11 +141,10 @@ def _tooltip(widget: tk.Widget, text: str) -> None:
             return
         except Exception:  # noqa: BLE001
             pass
-    # 兜底：无 ttkbootstrap.tooltip 时用 bind
-    def _show(_e: Any = None) -> None:
+    try:
+        SimpleToolTip(widget, text)
+    except Exception:  # noqa: BLE001
         pass
-
-    widget.bind("<Enter>", _show)
 
 
 class FormRow:
@@ -76,18 +166,26 @@ class FormRow:
 
 
 class CollapsibleSection:
-    """可折叠的分类区块（默认折叠状态由 collapsible=True + default_open 决定）。"""
+    """可折叠的分类区块（默认折叠状态由 collapsible=True + default_open 决定）。
+
+    支持**懒加载**：default_open=False 时内容不立即构建（build_callback 延迟到
+    首次展开才执行），显著减少初始控件数量与布局/滚动开销。
+    """
 
     def __init__(
         self,
         parent: tk.Widget,
         title: str,
-        content: tk.Widget,
+        content: tk.Widget | None = None,
         default_open: bool = True,
         help_text: str = "",
+        build_callback: Callable[[tk.Widget], None] | None = None,
     ) -> None:
         self.content = content
+        self.default_open = default_open
         self.open = default_open
+        self.build_callback = build_callback
+        self.built = content is not None or build_callback is None
         self.header = tb.Frame(parent)
         self.header.pack(fill=X, pady=(4, 0))
         self.btn = tb.Button(
@@ -99,15 +197,32 @@ class CollapsibleSection:
         self.btn.pack(side=LEFT)
         if help_text:
             _tooltip(self.btn, help_text)
-        if not default_open:
+        if default_open and content is not None:
+            self._ensure_content()
+        elif content is not None:
             content.pack_forget()
+
+    def _ensure_content(self) -> None:
+        """确保内容已构建并显示。"""
+        if not self.built and self.build_callback is not None:
+            # 懒加载：构建内容 frame
+            self.content = tb.Frame(self.header.master)
+            try:
+                self.build_callback(self.content)
+                self.content.pack(fill=X, padx=(12, 0), pady=(2, 2))
+                self.built = True
+            except Exception:  # noqa: BLE001
+                self.content = None
+                self.built = False
+        elif self.content is not None:
+            self.content.pack(fill=X, padx=(12, 0), pady=(2, 2))
 
     def _toggle(self) -> None:
         self.open = not self.open
         self.btn.configure(text=("▾ " if self.open else "▸ ") + self.btn.cget("text")[2:])
         if self.open:
-            self.content.pack(fill=X, padx=(12, 0), pady=(2, 2))
-        else:
+            self._ensure_content()
+        elif self.content is not None:
             self.content.pack_forget()
 
 
@@ -377,14 +492,26 @@ class ConfigFormBuilder:
     def _build_value(self, parent: tk.Widget, key: str, value: Any, dotted: str) -> None:
         help_text = self._help(dotted, value)
         if isinstance(value, dict):
-            section_frame = tb.Frame(parent)
             default_open = dotted not in self.collapsed_paths
-            inner = tb.Frame(section_frame)
-            self.build_dict(value, dotted, inner)
-            section = CollapsibleSection(
-                parent, self._display_key(key), inner,
-                default_open=default_open, help_text=help_text,
-            )
+            if default_open:
+                # 默认展开：立即构建
+                section_frame = tb.Frame(parent)
+                inner = tb.Frame(section_frame)
+                self.build_dict(value, dotted, inner)
+                section = CollapsibleSection(
+                    parent, self._display_key(key), inner,
+                    default_open=True, help_text=help_text,
+                )
+            else:
+                # 默认折叠：懒加载（展开时才构建子控件）
+                def _lazy_build(container: tk.Widget, _d=dotted, _v=value) -> None:
+                    self.build_dict(_v, _d, container)
+
+                section = CollapsibleSection(
+                    parent, self._display_key(key), None,
+                    default_open=False, help_text=help_text,
+                    build_callback=_lazy_build,
+                )
             self.collapsibles.append(section)
             return
         fr = tb.Frame(parent)
