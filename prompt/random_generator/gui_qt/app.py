@@ -276,13 +276,13 @@ class MainWindow(QMainWindow):
         row3.addWidget(self.edit_theme, 1)
         left_lay.addLayout(row3)
 
-        # 行4: 额外要求
+        # 行4: 额外要求（填充剩余空间，方便写长要求）
         row4 = QVBoxLayout()
         row4.addWidget(QLabel("额外要求:"))
         self.txt_extra = QPlainTextEdit(left)
-        self.txt_extra.setMaximumHeight(70)
-        row4.addWidget(self.txt_extra)
-        left_lay.addLayout(row4)
+        self.txt_extra.setMinimumHeight(60)
+        row4.addWidget(self.txt_extra, 1)
+        left_lay.addLayout(row4, 1)
 
         # 行5: 强制/排除 tag
         row5 = QHBoxLayout()
@@ -353,8 +353,6 @@ class MainWindow(QMainWindow):
         row9.addWidget(self.lbl_progress)
         left_lay.addLayout(row9)
 
-        left_lay.addStretch(1)
-
         # 右: 结果列表
         right = QWidget(f)
         right_lay = QVBoxLayout(right)
@@ -384,6 +382,7 @@ class MainWindow(QMainWindow):
         desc = QLabel("支持任意 OpenAI 兼容接口（DeepSeek / Moonshot / OpenRouter / 本地 vLLM 等）："
                       "填写 Base URL + API Key + 模型名即可。")
         desc.setWordWrap(True)
+        desc.setMinimumHeight(40)
         lay.addWidget(desc)
 
         form = QFormLayout()
@@ -406,6 +405,7 @@ class MainWindow(QMainWindow):
         self.edit_api_base = QLineEdit("https://api.deepseek.com/v1")
         form.addRow("接口地址:", self.edit_api_base)
         base_hint = QLabel("例：DeepSeek https://api.deepseek.com/v1 · OpenAI https://api.openai.com/v1 · 本地 http://127.0.0.1:8000/v1")
+        base_hint.setWordWrap(True)
         base_hint.setStyleSheet("color: #888;")
         form.addRow("", base_hint)
 
@@ -443,6 +443,7 @@ class MainWindow(QMainWindow):
         self.cb_reasoning.setCurrentText("none")
         form.addRow("思考模式:", self.cb_reasoning)
         re_hint = QLabel("（reasoning_effort，不支持的平台自动忽略；none 更快更省）")
+        re_hint.setWordWrap(True)
         re_hint.setStyleSheet("color: #888;")
         form.addRow("", re_hint)
 
@@ -497,6 +498,8 @@ class MainWindow(QMainWindow):
         scroll.setWidgetResizable(True)
         outer.addWidget(scroll, 1)
         self.adv_inner = QWidget(scroll)
+        # 关键：允许内容区缩小（内容由滚动处理，否则 minimumSizeHint 会撑大窗口）
+        self.adv_inner.setMinimumSize(0, 0)
         self.adv_inner_layout = QVBoxLayout(self.adv_inner)
         self.adv_inner_layout.setContentsMargins(4, 4, 8, 4)
         self.adv_inner_layout.setSpacing(2)

@@ -259,6 +259,27 @@ def parse_scalar(s: str) -> Any:
             return s
 
 
+def _make_label(parent: QWidget, label: str, help_text: str = "", min_w: int = 100) -> QLabel:
+    """自适应宽度的标签：文本宽 + 余量，长键名自动省略并加 tooltip 显示全名。"""
+    from PySide6.QtGui import QFontMetrics
+
+    lbl = QLabel(label, parent)
+    fm = QFontMetrics(lbl.font())
+    text_w = fm.horizontalAdvance(label)
+    width = max(min_w, min(text_w + 10, 280))
+    lbl.setMinimumWidth(width)
+    lbl.setMaximumWidth(320)
+    if text_w + 10 > 280:
+        # 长标签：省略 + tooltip 全名
+        fm_elide = QFontMetrics(lbl.font())
+        elided = fm_elide.elidedText(label, Qt.TextElideMode.ElideMiddle, 280)
+        lbl.setText(elided)
+        attach_tooltip(lbl, f"{label}\n\n{help_text}" if help_text else label)
+    elif help_text:
+        attach_tooltip(lbl, help_text)
+    return lbl
+
+
 def build_leaf_field(
     parent: QWidget, label: str, value: Any, help_text: str, dotted: str = ""
 ) -> FormField:
@@ -280,8 +301,7 @@ def build_leaf_field(
 
     if isinstance(value, int) and not isinstance(value, bool):
         row = _row_widget()
-        lbl = QLabel(label, row)
-        lbl.setFixedWidth(160)
+        lbl = _make_label(row, label, help_text)
         sp = QSpinBox(row)
         sp.setRange(-1000000, 1000000)
         sp.setValue(value)
@@ -290,14 +310,12 @@ def build_leaf_field(
         row._layout.addStretch(1)  # type: ignore[attr-defined]
         row._layout.parentWidget = row  # type: ignore[attr-defined]
         if help_text:
-            attach_tooltip(lbl, help_text)
             attach_tooltip(sp, help_text)
         return FormField("int", widget=row, getter=sp.value, setter=sp.setValue)
 
     if isinstance(value, float):
         row = _row_widget()
-        lbl = QLabel(label, row)
-        lbl.setFixedWidth(160)
+        lbl = _make_label(row, label, help_text)
         sp = QDoubleSpinBox(row)
         sp.setRange(-1000000.0, 1000000.0)
         sp.setSingleStep(0.1)
@@ -314,8 +332,7 @@ def build_leaf_field(
     if isinstance(value, str):
         if enum_values:
             row = _row_widget()
-            lbl = QLabel(label, row)
-            lbl.setFixedWidth(160)
+            lbl = _make_label(row, label, help_text)
             cb = QComboBox(row)
             cb.addItems(enum_values)
             if value in enum_values:
@@ -335,8 +352,7 @@ def build_leaf_field(
             )
         if "\n" in value or len(value) > 40:
             row = _row_widget()
-            lbl = QLabel(label, row)
-            lbl.setFixedWidth(160)
+            lbl = _make_label(row, label, help_text)
             txt = QPlainTextEdit(row)
             txt.setPlainText(value)
             txt.setMaximumHeight(80)
@@ -351,14 +367,12 @@ def build_leaf_field(
                 setter=lambda v: txt.setPlainText(str(v)),
             )
         row = _row_widget()
-        lbl = QLabel(label, row)
-        lbl.setFixedWidth(160)
+        lbl = _make_label(row, label, help_text)
         edit = QLineEdit(row)
         edit.setText(value)
         row._layout.addWidget(lbl)  # type: ignore[attr-defined]
         row._layout.addWidget(edit, 1)  # type: ignore[attr-defined]
         if help_text:
-            attach_tooltip(lbl, help_text)
             attach_tooltip(edit, help_text)
         return FormField(
             "str", widget=row,
@@ -380,8 +394,7 @@ def build_leaf_field(
 
     # None / 其他 → 可选字符串
     row = _row_widget()
-    lbl = QLabel(label, row)
-    lbl.setFixedWidth(160)
+    lbl = _make_label(row, label, help_text)
     edit = QLineEdit(row)
     edit.setPlaceholderText("（空 = null）")
     row._layout.addWidget(lbl)  # type: ignore[attr-defined]

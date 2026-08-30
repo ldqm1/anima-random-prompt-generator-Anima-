@@ -1,6 +1,24 @@
 # Changelog — Anima 随机提示词生成器
 
-> 更新日志区间：`6ef2c7c`(v3.2.1) → `HEAD`。最新版本：v3.3.0。
+> 更新日志区间：`db86fe6`(v3.3.0) → `HEAD`。最新版本：v3.3.1。
+
+## v3.3.1 (当前发布候选)
+
+基于 v3.3.0 的 UX Review 修复（PySide6 版）。
+
+### 布局 / 使用体验修复
+
+- **高级页长键名标签截断**：`min_r18_tags_per_sample` / `tag_count_bonus` 等长键名原固定
+  160px 被截断 → `_make_label` 自适应宽度（按文本宽 + 余量，最长 280px），超长自动省略号
+  并 tooltip 显示全名
+- **API 页说明文字被裁剪**：`支持任意 OpenAI 兼容接口…` 说明与 `例：DeepSeek…` 提示
+  原 wordWrap 后高度不足 / 未换行 → 设置 wordWrap + minimumHeight，完整显示
+- **窗口缩小时高级页滚动区塌缩**：缩小窗口后 QScrollArea 内容区被 minimumSizeHint
+  撑爆 → `adv_inner.setMinimumSize(0, 0)`，任意窗口尺寸滚动区正常
+- **生成页底部 272px 空白**：左侧参数区下方大量留白 → 额外要求文本框改为填充剩余空间
+  （70px → 333px，写长要求更舒服），按钮/进度条贴底，留白 272px → 9px
+- **验证**：5 Tab 无元素重叠（几何相交检测 0 处）；深色模式全控件配色一致（无白底残留）；
+  900x640 最小窗口下所有 tab 尺寸正常
 
 ## v3.3.0 (当前发布候选)
 
