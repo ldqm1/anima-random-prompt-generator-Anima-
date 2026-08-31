@@ -5,9 +5,13 @@
 """
 import os
 
-from PyInstaller.utils.hooks import collect_data_files
+from PyInstaller.utils.hooks import collect_dynamic_libs
 
 ROOT = os.path.abspath(SPECPATH)  # noqa: F821
+
+# PySide6 动态库（Qt6Core/Gui/Widgets 等）。平台插件由 PyInstaller 的
+# hook-PySide6 自动收集，无需手动 collect_all。
+pyside6_binaries = collect_dynamic_libs("PySide6")
 
 datas = [
     (os.path.join(ROOT, "知识库"), "知识库"),
@@ -28,10 +32,12 @@ datas = [
     (os.path.join(ROOT, "docs"), "docs"),
 ]
 
+binaries = pyside6_binaries
+
 a = Analysis(
     [os.path.join(ROOT, "anima_gui_qt.py")],
     pathex=[ROOT],
-    binaries=[],
+    binaries=binaries,
     datas=datas,
     hiddenimports=[
         "prompt.random_generator.gui_qt",
@@ -39,8 +45,8 @@ a = Analysis(
         "prompt.random_generator.gui_qt.forms",
         "prompt.random_generator.gui_qt.theme",
         "prompt.random_generator.gui_qt.tooltip",
+        "prompt.random_generator.gui_qt.toast",
         "prompt.random_generator.gui_engine",
-        "prompt.random_generator.gui_forms",
         "prompt.random_generator.config_merge",
         "prompt.random_generator.config_presets",
         "prompt.random_generator.yaml_comments",
@@ -51,14 +57,15 @@ a = Analysis(
     hooksconfig={},
     runtime_hooks=[],
     excludes=[
-        "pandas",
-        "numpy",
-        "openpyxl",
-        "matplotlib",
-        "IPython",
-        "jupyter",
-        "notebook",
-        "prompt_toolkit",
+        "pandas", "numpy", "openpyxl", "matplotlib", "IPython", "jupyter",
+        "notebook", "prompt_toolkit",
+        "PySide6.QtWebEngine", "PySide6.QtQml", "PySide6.QtQuick",
+        "PySide6.QtMultimedia", "PySide6.Qt3DCore", "PySide6.QtCharts",
+        "PySide6.QtDataVisualization", "PySide6.QtBluetooth", "PySide6.QtLocation",
+        "PySide6.QtNfc", "PySide6.QtPositioning", "PySide6.QtSensors",
+        "PySide6.QtSerialPort", "PySide6.QtSql", "PySide6.QtSvg",
+        "PySide6.QtTest", "PySide6.QtWebSockets", "PySide6.QtXml",
+        "PySide6.QtHelp", "PySide6.QtDesigner", "PySide6.QtUiTools",
     ],
     noarchive=False,
     optimize=0,
