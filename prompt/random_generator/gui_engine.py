@@ -550,16 +550,40 @@ def generate_batch(
 
     # 断点续存：已有 jsonl 条数即已生成数量
     existing = 0
+    existing_records: list[dict[str, Any]] = []
     if jsonl_path.exists():
         with jsonl_path.open("r", encoding="utf-8") as f:
-            existing = sum(1 for _ in f)
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    existing_records.append(json.loads(line))
+                except ValueError:
+                    pass
+        existing = len(existing_records)
     total = max(cfg.count - existing, 0)
     if total <= 0:
-        result.ok = cfg.count
+        # 全部已生成（断点续存）：把已有记录逐条回传给 GUI 填充结果列表
+        result.ok = len(existing_records)
         if on_progress:
-            on_progress(ProgressEvent(done=cfg.count, failed=0, total=cfg.count,
-                                      current="已完成（断点续存）", finished=True))
+            for i, rec in enumerate(existing_records[: cfg.count]):
+                on_progress(ProgressEvent(
+                    done=i + 1, failed=0, total=cfg.count,
+                    current=f"seed={rec.get('seed', '')}",
+                    finished=(i + 1 >= min(cfg.count, len(existing_records))),
+                    record=rec,
+                ))
         return result
+
+    # 部分续存：先把已存在的记录回传 GUI 填充列表，再生成新增部分
+    if existing_records and on_progress:
+        for i, rec in enumerate(existing_records[: cfg.count]):
+            on_progress(ProgressEvent(
+                done=i + 1, failed=0, total=cfg.count,
+                current=f"seed={rec.get('seed', '')}（已存在）",
+                finished=False, record=rec,
+            ))
 
     # 种子生成
     rng = random.Random()
