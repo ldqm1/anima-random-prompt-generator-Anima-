@@ -391,9 +391,11 @@ multi_character:
 # 如需覆盖环境变量或程序默认值，可取消注释并修改。
 deepseek:
   temperature: 0.7
-  max_tokens: 1000
+  # 最大输出 token：部分平台 deepseek-chat 在复杂任务下会先"思考"占用 token，
+  # 过小(如 1000)会导致思考耗尽配额、输出被截断无法解析。建议 4000 以上。
+  max_tokens: 4000
   # 模型思考模式（reasoning_effort）：
-  #   - "none" 关闭推理，输出更快、不占用 max_tokens、成本更低（推荐）
+  #   - "none" 关闭推理（不发送该参数），输出更快、更省（推荐）
   #   - "low" / "medium" / "high" 开启推理（会占用 max_tokens，需相应调大）
   #   - 留空或省略表示不发送该参数，由平台默认决定
   # 注意：必须加引号，"none" 不带引号在 YAML 中会被解析为 null。
