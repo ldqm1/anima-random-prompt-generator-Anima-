@@ -1658,8 +1658,9 @@ class MainWindow(QMainWindow):
         version_1 = record.get("version_1", "")
         tag_count = len([t for t in version_1.split(", ") if t.strip()])
         preview_txt = (version_1[:120] + "…") if len(version_1) > 120 else version_1
+        rating = record.get("max_rating", "")
         item = QListWidgetItem(
-            f"[seed={record.get('seed', '')}] [{record.get('max_rating', '')}] "
+            f"[seed={record.get('seed', '')}] [{rating}] "
             f"[{tag_count} tags] {preview_txt}"
         )
         self.tree.addItem(item)
@@ -1752,6 +1753,9 @@ class MainWindow(QMainWindow):
             QMessageBox.critical(self, "测试失败", str(msg[1]))
 
     def _on_progress(self, ev: ProgressEvent) -> None:
+        # 每条完成时实时加入右侧结果列表
+        if ev.record is not None:
+            self._add_result_row(ev.record)
         if ev.total > 0:
             pct = int(100 * ev.done / ev.total)
             self.progress.setValue(pct)

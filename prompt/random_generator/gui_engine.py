@@ -75,6 +75,7 @@ class ProgressEvent:
     total: int = 0         # 总条数
     current: str = ""      # 当前样本简述（如 seed / 摘要）
     finished: bool = False  # 全部结束
+    record: dict | None = None  # 本条完成的记录（供 GUI 实时展示，None=无）
 
 
 @dataclass
@@ -590,7 +591,7 @@ def generate_batch(
     audit_handle = audit_path.open("a", encoding="utf-8")
     fail_handle = fail_path.open("a", encoding="utf-8")
 
-    def _emit() -> None:
+    def _emit(record: dict | None = None) -> None:
         if on_progress:
             on_progress(ProgressEvent(
                 done=existing + done,
@@ -598,6 +599,7 @@ def generate_batch(
                 total=cfg.count,
                 current=f"seed={tasks[done + failed]['seed']}" if done + failed < len(tasks) else "",
                 finished=False,
+                record=record,
             ))
 
     try:
@@ -646,7 +648,7 @@ def generate_batch(
                         txt_handle.write(version_1 + "\n")
                         txt_handle.flush()
                 done += 1
-                _emit()
+                _emit(record)
         except KeyboardInterrupt:
             result.canceled = True
             for future in futures:

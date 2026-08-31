@@ -367,7 +367,7 @@ def _try_openai_chat_completion(
         "temperature": temperature,
         "max_tokens": max_tokens,
     }
-    if reasoning_effort:
+    if reasoning_effort and reasoning_effort != "none":
         kwargs["reasoning_effort"] = reasoning_effort
     if extra_body:
         kwargs["extra_body"] = extra_body
@@ -404,7 +404,7 @@ def _requests_chat_completion(
         "temperature": temperature,
         "max_tokens": max_tokens,
     }
-    if reasoning_effort:
+    if reasoning_effort and reasoning_effort != "none":
         payload["reasoning_effort"] = reasoning_effort
     if extra_body:
         payload.update(extra_body)
