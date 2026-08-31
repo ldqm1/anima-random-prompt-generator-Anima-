@@ -676,11 +676,34 @@ class MainWindow(QMainWindow):
         self.cb_reasoning = QComboBox()
         self.cb_reasoning.addItems(["none", "low", "medium", "high"])
         self.cb_reasoning.setCurrentText("none")
+        self.cb_reasoning.currentIndexChanged.connect(self._sync_max_tokens_auto)
         form.addRow("思考模式:", self.cb_reasoning)
         re_hint = QLabel("（reasoning_effort，不支持的平台自动忽略；none 更快更省）")
         re_hint.setWordWrap(True)
         re_hint.setStyleSheet("color: #888;")
         form.addRow("", re_hint)
+
+        # max_tokens：自动跟随思考强度（默认）/ 自定义
+        mt_row = QWidget(f)
+        mt_lay = QHBoxLayout(mt_row)
+        mt_lay.setContentsMargins(0, 0, 0, 0)
+        self.cb_max_tokens_auto = QCheckBox("自动跟随思考强度", mt_row)
+        self.cb_max_tokens_auto.setChecked(True)
+        self.cb_max_tokens_auto.toggled.connect(self._sync_max_tokens_auto)
+        mt_lay.addWidget(self.cb_max_tokens_auto)
+        mt_lay.addWidget(QLabel("自定义:", mt_row))
+        self.sp_max_tokens = QSpinBox(mt_row)
+        self.sp_max_tokens.setRange(500, 32000)
+        self.sp_max_tokens.setSingleStep(500)
+        self.sp_max_tokens.setValue(4000)
+        self.sp_max_tokens.setEnabled(False)
+        mt_lay.addWidget(self.sp_max_tokens)
+        mt_lay.addStretch(1)
+        form.addRow("最大 token:", mt_row)
+        self.lbl_mt_hint = QLabel("（自动模式：none→4000 · low→8000 · medium→12000 · high→16000）")
+        self.lbl_mt_hint.setStyleSheet("color: #888;")
+        self.lbl_mt_hint.setWordWrap(True)
+        form.addRow("", self.lbl_mt_hint)
 
         lay.addLayout(form)
 
@@ -697,6 +720,27 @@ class MainWindow(QMainWindow):
         self.edit_api_key.setEchoMode(
             QLineEdit.EchoMode.Normal if self.cb_show_key.isChecked() else QLineEdit.EchoMode.Password
         )
+
+    # max_tokens 自动跟随思考强度
+    _MAX_TOKENS_BY_REASONING = {"none": 4000, "low": 8000, "medium": 12000, "high": 16000}
+
+    def _sync_max_tokens_auto(self, *_args: Any) -> None:
+        """勾选/思考模式变化时，同步自定义输入框启用状态与提示。"""
+        auto = self.cb_max_tokens_auto.isChecked()
+        self.sp_max_tokens.setEnabled(not auto)
+        reasoning = self.cb_reasoning.currentText() or "none"
+        auto_val = self._MAX_TOKENS_BY_REASONING.get(reasoning, 4000)
+        self.lbl_mt_hint.setText(
+            f"（自动模式：当前思考强度 {reasoning} → {auto_val} token。"
+            "勾选「自动跟随思考强度」即自动；取消勾选可自定义）"
+        )
+
+    def _resolve_max_tokens(self) -> int:
+        """根据勾选状态返回实际 max_tokens。"""
+        if not self.cb_max_tokens_auto.isChecked():
+            return int(self.sp_max_tokens.value())
+        reasoning = self.cb_reasoning.currentText() or "none"
+        return int(self._MAX_TOKENS_BY_REASONING.get(reasoning, 4000))
 
     # ------------------------------------------------------------------
     # 高级页
@@ -1291,6 +1335,15 @@ class MainWindow(QMainWindow):
             self.sp_timeout.setValue(int(s["timeout"]))
         if s.get("reasoning"):
             self.cb_reasoning.setCurrentText(s["reasoning"])
+        # max_tokens 自动/自定义
+        if "max_tokens_auto" in s:
+            self.cb_max_tokens_auto.setChecked(bool(s["max_tokens_auto"]))
+        if s.get("max_tokens") is not None:
+            try:
+                self.sp_max_tokens.setValue(int(s["max_tokens"]))
+            except (TypeError, ValueError):
+                pass
+        self._sync_max_tokens_auto()
         if s.get("output_dir"):
             self.edit_output_dir.setText(s["output_dir"])
         if s.get("output_name"):
@@ -1315,6 +1368,8 @@ class MainWindow(QMainWindow):
             "temperature": self.sp_temperature.value(),
             "timeout": self.sp_timeout.value(),
             "reasoning": self.cb_reasoning.currentText(),
+            "max_tokens_auto": bool(self.cb_max_tokens_auto.isChecked()),
+            "max_tokens": int(self.sp_max_tokens.value()),
             "output_dir": self.edit_output_dir.text(),
             "output_name": self.edit_output_name.text(),
             "max_rating": RATING_VALUES.get(self.cb_rating.currentText(), "r15"),
@@ -1377,7 +1432,7 @@ class MainWindow(QMainWindow):
             seed=seed,
             workers=4,
             temperature=float(self.sp_temperature.value()),
-            max_tokens=4000,
+            max_tokens=self._resolve_max_tokens(),
             timeout=float(self.sp_timeout.value()),
             max_parse_retries=2,
             reasoning_effort=self.cb_reasoning.currentText() or None,
