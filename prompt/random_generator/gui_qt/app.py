@@ -138,6 +138,14 @@ class MainWindow(QMainWindow):
         self._apply_cursors()
         self._set_window_icon()
         self._load_saved_settings()
+        # 启动时自动加载上次输出文件的历史结果
+        try:
+            self._load_history_to_tree(
+                self.edit_output_dir.text().strip() or app_output_dir(),
+                self.edit_output_name.text().strip() or "random_prompts",
+            )
+        except Exception:  # noqa: BLE001
+            pass
         self._poll_timer = self._start_poll()
         self._log(f"{APP_NAME} v{APP_VERSION} 已启动（PySide6）。")
 
@@ -1583,6 +1591,54 @@ class MainWindow(QMainWindow):
             return
         self._launch_generation(cfg)
 
+    def _load_history_to_tree(self, output_dir: str, output_name: str, limit: int = 500) -> None:
+        """读取输出文件已有历史记录（最近 limit 条），填充右侧结果列表。
+
+        采用**尾部读取**（从文件末尾向前读，只取最后 limit 条），
+        避免历史 jsonl 巨大时（如数万条）一次性全读导致 GUI 卡顿。
+        """
+        try:
+            import json as _json
+
+            jsonl_path = os.path.join(output_dir, f"{output_name}.jsonl")
+            if not os.path.exists(jsonl_path):
+                return
+            # 尾部读取：从末尾向前读，收集最近 limit 行
+            tail_lines: list[str] = []
+            with open(jsonl_path, "r", encoding="utf-8") as f:
+                f.seek(0, os.SEEK_END)
+                pos = f.tell()
+                leftover = ""  # 上一块读到的后半段（可能是半行）
+                while pos > 0 and len(tail_lines) < limit:
+                    read_size = min(65536, pos)
+                    pos -= read_size
+                    f.seek(pos)
+                    data = f.read(read_size)
+                    # 当前块 + 上一块遗留 → 切行
+                    combined = data + leftover
+                    lines = combined.split("\n")
+                    # 最后一段是不完整行(跨块), 留给下一轮; 其余加入
+                    leftover = lines[0]
+                    new_lines = lines[1:]
+                    tail_lines = new_lines + tail_lines
+                if leftover.strip():
+                    tail_lines.insert(0, leftover)
+            tail_lines = [l for l in tail_lines if l.strip()][-limit:]
+            for line in tail_lines:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    rec = _json.loads(line)
+                except ValueError:
+                    continue
+                if isinstance(rec, dict) and rec.get("version_1"):
+                    self._add_result_row(rec)
+            if self._result_rows:
+                self._log(f"已从历史加载 {len(self._result_rows)} 条结果（最近 {limit} 条）。")
+        except OSError as exc:
+            self._log(f"读取历史结果失败：{exc}")
+
     def _launch_generation(self, cfg: GenConfig) -> None:
         if self._running:
             return
@@ -1592,8 +1648,10 @@ class MainWindow(QMainWindow):
         self.btn_cancel.setEnabled(True)
         self.progress.setValue(0)
         self.lbl_progress.setText("0%")
+        # 生成前先加载该输出文件的历史结果（自动使用历史填充）
         self.tree.clear()
         self._result_rows = []
+        self._load_history_to_tree(cfg.output_dir, cfg.output_name)
         self.lbl_status.setText("正在生成…")
         self._gen_thread = threading.Thread(target=self._gen_worker, args=(cfg,), daemon=True)
         self._gen_thread.start()
