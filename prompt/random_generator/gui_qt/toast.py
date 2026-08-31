@@ -1,10 +1,13 @@
 """轻量 Toast 提示（复制成功等操作反馈）。
 
-在父窗口右下角显示一个小气泡，短暂停留后自动淡出消失。
+在父窗口右下角显示一个小气泡，短暂停留后自动消失。
+
+注意：QWidget 的 ``windowOpacity`` 只对顶层窗口生效，对子控件无效，
+因此这里用 QTimer 到时后直接隐藏 + 销毁（不做透明度动画，保证可靠消失）。
 """
 from __future__ import annotations
 
-from PySide6.QtCore import QEasingCurve, QPropertyAnimation, QTimer, Qt
+from PySide6.QtCore import QTimer
 from PySide6.QtWidgets import QLabel, QWidget
 
 
@@ -16,17 +19,24 @@ class Toast:
         Toast.show(parent, "保存成功 ✓", kind="success")
     """
 
-    _instances: list["Toast"] = []
+    _current: "Toast | None" = None
 
     def __init__(self, parent: QWidget, text: str, kind: str = "info", duration: int = 1600) -> None:
-        super().__init__()
+        # 新气泡替换旧气泡（避免右下角堆叠）
+        if Toast._current is not None:
+            try:
+                Toast._current._dismiss()
+            except Exception:  # noqa: BLE001
+                pass
+        Toast._current = self
+
+        self._parent = parent
         self._label = QLabel(text, parent)
         self._label.setWordWrap(True)
-        self._label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self._label.setStyleSheet(self._style(kind))
         self._label.adjustSize()
         self._label.setMinimumWidth(140)
-        self._label.setMaximumWidth(parent.width() - 40)
+        self._label.setMaximumWidth(max(parent.width() - 40, 140))
 
         # 定位：父窗口右下角
         pw, ph = parent.width(), parent.height()
@@ -37,26 +47,20 @@ class Toast:
         self._label.raise_()
         self._label.show()
 
-        # 透明度动画（淡入淡出）
-        self._anim = QPropertyAnimation(self._label, b"windowOpacity", parent)
-        self._anim.setDuration(250)
-        self._anim.setStartValue(0.0)
-        self._anim.setEndValue(1.0)
-        self._anim.setEasingCurve(QEasingCurve.Type.OutCubic)
-        self._anim.start()
+        # 到时后隐藏并销毁（可靠消失）
+        self._timer = QTimer(parent)
+        self._timer.setSingleShot(True)
+        self._timer.timeout.connect(self._dismiss)
+        self._timer.start(duration)
 
-        # 停留后淡出并销毁
-        self._fade_out = QTimer(parent)
-        self._fade_out.setSingleShot(True)
-        self._fade_out.timeout.connect(self._fade)
-        self._fade_out.start(duration)
-
-    def _fade(self) -> None:
-        self._anim.setDuration(300)
-        self._anim.setStartValue(1.0)
-        self._anim.setEndValue(0.0)
-        self._anim.finished.connect(self._label.deleteLater)
-        self._anim.start()
+    def _dismiss(self) -> None:
+        if Toast._current is self:
+            Toast._current = None
+        try:
+            self._label.hide()
+            self._label.deleteLater()
+        except RuntimeError:  # 控件已销毁
+            pass
 
     @staticmethod
     def _style(kind: str) -> str:
