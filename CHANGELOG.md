@@ -1,10 +1,33 @@
 # Changelog — Anima 随机提示词生成器
 
-> 更新日志区间：`c1270c1`(v3.3.3) → `HEAD`。最新版本：v3.3.4。
+> 更新日志区间：`c1270c1`(v3.3.3) → `HEAD`。最新版本：v3.3.5。
+
+## v3.3.5 (当前发布候选)
+
+### 无 API 模式（新 Tab）
+
+- 顶部新增 **「无 API 模式」** 页：无需 API Key，生成「系统提示词 + 用户提示词」完整模板
+- 点击复制后粘贴到任意网页端 LLM（DeepSeek 网页等），LLM 按指令输出最终单行提示词
+- **生成要求改为仅生成提示词、无需 JSON**：
+  - 新增 `system_prompt_plain.md`（原版变体：§1 角色去掉 JSON 要求、§12 改为纯文本输出协议）
+  - `render_user_prompt` 新增 `plain_output` 参数，模板 `user_prompt.jinja` 的
+    "Produce the JSON output now." 在纯文本模式下替换为"Output ONLY the final single-line prompt"
+  - 原 API 模式完全不受影响（仍要求 JSON）
+- **结果放代码框**：等宽字体（Consolas）QPlainTextEdit 展示完整模板，一键「复制全部」；
+  支持批量生成多条，点下方条目切换查看对应模板
+- 参数：数量 / 内容分级 / 主题提示 / 额外要求（可选）
+- `gui_engine.generate_plain()`：复用抽样 + 渲染链路，不调用 API
 
 ## v3.3.4 (当前发布候选)
 
 基于 v3.3.3 的高级页**彻底平铺**（去除全部折叠）+ 多项显示修复。
+
+### 深色模式单选按钮可见性
+
+- QRadioButton / QCheckBox 指示器补齐完整 QSS（深色 + 浅色）：边框、背景、选中态、
+  悬停态
+- 深色下：未选中 = 深灰背景 `#3c3f41` + 灰色圆环 `#818282`；选中 = 蓝色圆点 `#2c7da0`
+- 像素级验证：未选中态灰色边框可见、选中态整圆蓝色，深色背景下清晰
 
 ### 随机种子互斥单选
 

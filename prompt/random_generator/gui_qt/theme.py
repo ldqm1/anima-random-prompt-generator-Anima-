@@ -90,10 +90,35 @@ QComboBox QAbstractItemView {
 QCheckBox, QRadioButton {
     color: #e8e8e8;
     spacing: 6px;
+    background: transparent;
 }
-QCheckBox::indicator, QRadioButton::indicator {
+QCheckBox::indicator {
     width: 16px;
     height: 16px;
+    border: 1px solid #888;
+    border-radius: 3px;
+    background: #3c3f41;
+}
+QCheckBox::indicator:checked {
+    background: #2c7da0;
+    border-color: #2c7da0;
+}
+QCheckBox::indicator:hover {
+    border-color: #2c7da0;
+}
+QRadioButton::indicator {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #888;
+    border-radius: 9px;
+    background: #3c3f41;
+}
+QRadioButton::indicator:checked {
+    border: 5px solid #2c7da0;
+    background: #2c7da0;
+}
+QRadioButton::indicator:hover {
+    border-color: #2c7da0;
 }
 QScrollBar:vertical {
     background: #2b2b2b;
@@ -247,10 +272,35 @@ QComboBox QAbstractItemView {
 QCheckBox, QRadioButton {
     color: #212529;
     spacing: 6px;
+    background: transparent;
 }
-QCheckBox::indicator, QRadioButton::indicator {
+QCheckBox::indicator {
     width: 16px;
     height: 16px;
+    border: 1px solid #adb5bd;
+    border-radius: 3px;
+    background: #ffffff;
+}
+QCheckBox::indicator:checked {
+    background: #007bff;
+    border-color: #007bff;
+}
+QCheckBox::indicator:hover {
+    border-color: #007bff;
+}
+QRadioButton::indicator {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #adb5bd;
+    border-radius: 9px;
+    background: #ffffff;
+}
+QRadioButton::indicator:checked {
+    border: 5px solid #007bff;
+    background: #007bff;
+}
+QRadioButton::indicator:hover {
+    border-color: #007bff;
 }
 QScrollBar:vertical {
     background: #f8f9fa;

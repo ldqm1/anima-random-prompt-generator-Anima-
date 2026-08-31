@@ -236,6 +236,7 @@ def render_user_prompt(
     placeholder_meanings: dict[str, str] | None = None,
     creative_anchor_info: list[dict] | None = None,
     creative_spark: bool = False,
+    plain_output: bool = False,
 ) -> str:
     """渲染用户提示词模板。
 
@@ -299,6 +300,7 @@ def render_user_prompt(
         placeholder_meanings=placeholder_meanings,
         creative_anchor_info=creative_anchor_info,
         creative_spark=creative_spark,
+        plain_output=plain_output,
     )
 
 

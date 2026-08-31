@@ -190,17 +190,20 @@ class MainWindow(QMainWindow):
         root.addWidget(self.tabs, 1)
 
         self.tab_gen = QWidget()
+        self.tab_nomodel = QWidget()
         self.tab_api = QWidget()
         self.tab_adv = QWidget()
         self.tab_profiles = QWidget()
         self.tab_log = QWidget()
         self.tabs.addTab(self.tab_gen, "生成")
+        self.tabs.addTab(self.tab_nomodel, "无 API 模式")
         self.tabs.addTab(self.tab_api, "API 设置")
         self.tabs.addTab(self.tab_adv, "高级")
         self.tabs.addTab(self.tab_profiles, "配置")
         self.tabs.addTab(self.tab_log, "日志 / 输出")
 
         self._build_gen_tab()
+        self._build_nomodel_tab()
         self._build_api_tab()
         self._build_adv_tab()
         self._build_profiles_tab()
@@ -371,6 +374,143 @@ class MainWindow(QMainWindow):
         d = QFileDialog.getExistingDirectory(self, "选择输出目录", self.edit_output_dir.text())
         if d:
             self.edit_output_dir.setText(d)
+
+    # ------------------------------------------------------------------
+    # 无 API 模式（生成完整提示词模板，复制后发网页端 LLM）
+    # ------------------------------------------------------------------
+    def _build_nomodel_tab(self) -> None:
+        from PySide6.QtWidgets import QTextEdit
+
+        f = self.tab_nomodel
+        outer = QVBoxLayout(f)
+        outer.setContentsMargins(12, 12, 12, 12)
+        outer.setSpacing(6)
+
+        desc = QLabel(
+            "无需 API Key。本页生成「系统提示词 + 用户提示词」完整模板，"
+            "点击复制后粘贴到任意网页端 LLM（如 DeepSeek 网页），LLM 将按指令输出最终单行提示词。"
+        )
+        desc.setWordWrap(True)
+        outer.addWidget(desc)
+
+        # 参数行
+        params = QHBoxLayout()
+        params.addWidget(QLabel("数量:"))
+        self.sp_nm_count = QSpinBox(f)
+        self.sp_nm_count.setRange(1, 50)
+        self.sp_nm_count.setValue(1)
+        params.addWidget(self.sp_nm_count)
+        params.addSpacing(12)
+        params.addWidget(QLabel("内容分级:"))
+        self.cb_nm_rating = QComboBox(f)
+        self.cb_nm_rating.addItems(list(RATING_LABELS.values()))
+        self.cb_nm_rating.setCurrentText(RATING_LABELS["r15"])
+        params.addWidget(self.cb_nm_rating)
+        params.addSpacing(12)
+        params.addWidget(QLabel("主题:"))
+        self.edit_nm_theme = QLineEdit(f)
+        self.edit_nm_theme.setPlaceholderText("可选主题提示")
+        params.addWidget(self.edit_nm_theme, 1)
+        outer.addLayout(params)
+
+        # 额外要求
+        req = QHBoxLayout()
+        req.addWidget(QLabel("额外要求:"))
+        self.edit_nm_extra = QLineEdit(f)
+        self.edit_nm_extra.setPlaceholderText("可选，如：画面要体现可爱的感觉")
+        req.addWidget(self.edit_nm_extra, 1)
+        outer.addLayout(req)
+
+        # 操作
+        ops = QHBoxLayout()
+        self.btn_nm_generate = QPushButton("生成提示词模板", f)
+        self.btn_nm_generate.setObjectName("success")
+        self.btn_nm_generate.clicked.connect(self._on_nomodel_generate)
+        ops.addWidget(self.btn_nm_generate)
+        self.btn_nm_copy = QPushButton("复制全部", f)
+        self.btn_nm_copy.setObjectName("primary")
+        self.btn_nm_copy.clicked.connect(self._on_nomodel_copy)
+        ops.addWidget(self.btn_nm_copy)
+        ops.addWidget(QLabel("（可生成多条，点下方条目查看对应模板）"))
+        ops.addStretch(1)
+        outer.addLayout(ops)
+
+        # 条目列表（多条时切换）
+        self.lbl_nm_prompt = QLabel("生成结果：")
+        outer.addWidget(self.lbl_nm_prompt)
+        self.list_nm_results = QListWidget(f)
+        self.list_nm_results.setMaximumHeight(90)
+        self.list_nm_results.currentRowChanged.connect(self._on_nomodel_select)
+        outer.addWidget(self.list_nm_results)
+        # 代码框
+        self.txt_nm_output = QPlainTextEdit(f)
+        self.txt_nm_output.setReadOnly(True)
+        font = self.txt_nm_output.font()
+        font.setFamily("Consolas")
+        font.setPointSize(10)
+        self.txt_nm_output.setFont(font)
+        outer.addWidget(self.txt_nm_output, 1)
+        self._nm_results: list[dict[str, Any]] = []
+
+    def _on_nomodel_generate(self) -> None:
+        from ..gui_engine import generate_plain
+
+        if not self._ensure_resources():
+            self._log("等待资源加载完成…")
+            return
+        rating = RATING_VALUES.get(self.cb_nm_rating.currentText(), "r15")
+        cfg = GenConfig(
+            max_rating=rating,
+            count=1,
+            min_tags=50,
+            max_tags=75,
+            theme_hint=self.edit_nm_theme.text().strip(),
+            extra_requirements=self.edit_nm_extra.text().strip(),
+            seed=None,
+            workers=4,
+            temperature=0.7,
+            max_tokens=1000,
+            timeout=120.0,
+            max_parse_retries=2,
+            reasoning_effort="none",
+            output_dir=app_output_dir(),
+            output_name="nomodel",
+            creative_anchors_enabled=bool(self.cb_anchors.isChecked()),
+            proxies=None,
+        )
+        n = max(int(self.sp_nm_count.value()), 1)
+        self._nm_results = []
+        self.list_nm_results.clear()
+        self.lbl_nm_prompt.setText(f"生成结果（{n} 条）：")
+        self._log(f"无 API 模式：生成 {n} 条提示词模板（{rating}）…")
+        try:
+            for i in range(n):
+                r = generate_plain(self._resources, cfg)
+                self._nm_results.append(r)
+                self.list_nm_results.addItem(f"#{i+1}  seed={r['seed']}  {r['safety']}  {r['character_tag'] or '（无角色）'}")
+            if self._nm_results:
+                self.list_nm_results.setCurrentRow(0)
+                self._show_nomodel_result(0)
+            self._log(f"无 API 模式生成完成：{n} 条。")
+        except Exception as exc:  # noqa: BLE001
+            self._log(f"无 API 模式生成失败：{exc}")
+            QMessageBox.critical(self, "生成失败", str(exc))
+
+    def _on_nomodel_select(self, row: int) -> None:
+        if 0 <= row < len(self._nm_results):
+            self._show_nomodel_result(row)
+
+    def _show_nomodel_result(self, idx: int) -> None:
+        r = self._nm_results[idx]
+        self.txt_nm_output.setPlainText(r["full_text"])
+        self.lbl_nm_prompt.setText(f"生成结果 #{idx+1}  seed={r['seed']}  分级={r['safety']}")
+
+    def _on_nomodel_copy(self) -> None:
+        text = self.txt_nm_output.toPlainText()
+        if not text:
+            return
+        QApplication.clipboard().setText(text)
+        self._log("无 API 模式：完整提示词模板已复制。")
 
     # ------------------------------------------------------------------
     # API 页

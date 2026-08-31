@@ -162,4 +162,6 @@ compositional / relationship completion, never to inflate the count, never gener
 {{ sampled_tags_text }}
 ```
 
-Produce the JSON output now.
+{% if plain_output %}Output ONLY the final single-line prompt itself — no JSON, no code fences, no labels, no extra text.
+{% else %}Produce the JSON output now.
+{% endif %}

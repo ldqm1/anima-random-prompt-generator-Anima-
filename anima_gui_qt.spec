@@ -14,6 +14,7 @@ datas = [
     (os.path.join(ROOT, "source", "animadex_index.csv"), "source"),
     (os.path.join(ROOT, "source", "artists.csv"), "source"),
     (os.path.join(ROOT, "prompt", "random_generator", "system_prompt.md"), "prompt/random_generator"),
+    (os.path.join(ROOT, "prompt", "random_generator", "system_prompt_plain.md"), "prompt/random_generator"),
     (os.path.join(ROOT, "prompt", "random_generator", "user_prompt.jinja"), "prompt/random_generator"),
     (os.path.join(ROOT, "prompt", "random_generator", "generation_config.yaml"), "prompt/random_generator"),
     (os.path.join(ROOT, "prompt", "random_generator", "creative_anchors.yaml"), "prompt/random_generator"),

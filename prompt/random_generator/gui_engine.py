@@ -462,6 +462,64 @@ def preview(
     }
 
 
+def generate_plain(
+    res: dict[str, Any],
+    cfg: GenConfig,
+) -> dict[str, Any]:
+    """无 API 模式：抽样 + 渲染完整提示词模板（不调用 API）。
+
+    返回可直接复制发给网页端 LLM 的完整文本：
+    系统提示词（纯文本输出版）+ 用户提示词。LLM 收到后按指令输出
+    最终单行提示词。
+
+    Returns:
+        ``{"seed", "system_prompt", "user_prompt", "full_text",
+        "sampled_text", "safety", "is_multi", "character_tag"}``。
+    """
+    seed = cfg.seed if cfg.seed is not None else random.randint(0, 2**32 - 1)
+    task = _build_task(res, cfg, 0, seed, output_path="")
+    # 纯文本输出版系统提示词（无 JSON 要求）
+    system_prompt = client.render_system_prompt(
+        client.MODULE_DIR / "system_prompt_plain.md",
+        max_rating=task["max_rating"],
+        min_tags=task["min_tags"],
+        max_tags=task["max_tags"],
+        r18_instructions=task["r18_instructions"],
+    )
+    user_prompt = client.render_user_prompt(
+        sampled_tags_text=task["sampled_text"],
+        safety=task["safety"],
+        min_tags=task["min_tags"],
+        max_tags=task["max_tags"],
+        theme_hint=task["theme_hint"],
+        focus_text=task["focus_text"],
+        subject_control=task["subject_control"],
+        forced_tags=task["forced_tags"],
+        forbidden_tags=task["forbidden_tags"],
+        character_tag=task["character_tag"],
+        max_rating=task["max_rating"],
+        extra_requirements=task["extra_requirements"],
+        character_pool_info=task["character_pool_info"],
+        placeholder_meanings=task["placeholder_meanings"],
+        creative_anchor_info=task["creative_anchor_info"],
+        plain_output=True,
+    )
+    full_text = (
+        "【系统提示词】\n" + system_prompt + "\n\n"
+        "【用户提示词】\n" + user_prompt
+    )
+    return {
+        "seed": seed,
+        "system_prompt": system_prompt,
+        "user_prompt": user_prompt,
+        "full_text": full_text,
+        "sampled_text": task["sampled_text"],
+        "safety": task["safety"],
+        "is_multi": _is_multi_character(task["sampled_text"]),
+        "character_tag": task["character_tag"],
+    }
+
+
 # ---------------------------------------------------------------------------
 # 批量生成
 # ---------------------------------------------------------------------------
