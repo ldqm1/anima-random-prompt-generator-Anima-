@@ -251,15 +251,19 @@ class MainWindow(QMainWindow):
         row1.addStretch(1)
         left_lay.addLayout(row1)
 
-        # 行2: 种子
+        # 行2: 种子（随机/固定互斥单选）
+        from PySide6.QtWidgets import QRadioButton, QButtonGroup
+
         row2 = QHBoxLayout()
         row2.addWidget(QLabel("随机种子:"))
-        self.rb_seed_random = QCheckBox("随机", left)
+        self.rb_seed_random = QRadioButton("随机", left)
+        self.rb_seed_fixed = QRadioButton("固定", left)
+        self._seed_group = QButtonGroup(left)
+        self._seed_group.addButton(self.rb_seed_random)
+        self._seed_group.addButton(self.rb_seed_fixed)
         self.rb_seed_random.setChecked(True)
         self.rb_seed_random.toggled.connect(self._sync_seed_ui)
         row2.addWidget(self.rb_seed_random)
-        self.rb_seed_fixed = QCheckBox("固定", left)
-        self.rb_seed_fixed.toggled.connect(self._sync_seed_ui)
         row2.addWidget(self.rb_seed_fixed)
         self.sp_seed = QSpinBox(left)
         self.sp_seed.setRange(0, 2**31 - 1)
