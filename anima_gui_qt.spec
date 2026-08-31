@@ -24,6 +24,8 @@ datas = [
     (os.path.join(ROOT, "prompt", "random_generator", "r18_euphemisms.yaml"), "prompt/random_generator"),
     (os.path.join(ROOT, "prompt", "random_generator", "r18_topics.yaml"), "prompt/random_generator"),
     (os.path.join(ROOT, "prompt", "random_generator", "semantic_exclude.yaml"), "prompt/random_generator"),
+    # 配置文档（HTML + 截图）
+    (os.path.join(ROOT, "docs"), "docs"),
 ]
 
 a = Analysis(

@@ -244,6 +244,12 @@ class MainWindow(QMainWindow):
         bottom_lay.setContentsMargins(4, 2, 4, 2)
         self.lbl_status = QLabel("就绪", bottom)
         bottom_lay.addWidget(self.lbl_status, 1)
+        # 配置文档按钮
+        self.btn_doc = QPushButton("📖 配置文档", bottom)
+        self.btn_doc.setObjectName("primary")
+        self.btn_doc.setCursor(Qt.CursorShape.PointingHandCursor)
+        self.btn_doc.clicked.connect(self._open_doc)
+        bottom_lay.addWidget(self.btn_doc)
         bottom_lay.addWidget(QLabel("外观:", bottom))
         self.cb_theme = QComboBox(bottom)
         self.cb_theme.addItems(THEME_OPTIONS)
@@ -251,6 +257,24 @@ class MainWindow(QMainWindow):
         self.cb_theme.currentIndexChanged.connect(self._on_theme_change)
         bottom_lay.addWidget(self.cb_theme)
         root.addWidget(bottom)
+
+    def _open_doc(self) -> None:
+        """打开配置文档 HTML（打包版内置资源，源码版用项目 docs 目录）。"""
+        import webbrowser
+
+        if getattr(sys, "frozen", False):
+            base = getattr(sys, "_MEIPASS", os.path.dirname(sys.executable))
+            doc = os.path.join(base, "docs", "配置文档.html")
+            if not os.path.exists(doc):
+                Toast.show(self, "配置文档未打包，请在源码目录查看", kind="error")
+                return
+            webbrowser.open("file:///" + doc.replace("\\", "/"))
+        else:
+            doc = os.path.join(str(config.PROJECT_DIR), "docs", "配置文档.html")
+            if os.path.exists(doc):
+                webbrowser.open("file:///" + doc.replace("\\", "/"))
+            else:
+                Toast.show(self, "未找到配置文档，请先运行 tools/gen_config_doc.py", kind="error")
 
     # ------------------------------------------------------------------
     # 生成页
