@@ -93,7 +93,6 @@ def main() -> None:
     if "--self-test" in sys.argv:
         sys.exit(_self_test())
     from prompt.random_generator.gui_qt.app import run
-
     run()
 
 
