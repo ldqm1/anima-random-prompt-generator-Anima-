@@ -56,6 +56,7 @@ from ..gui_engine import (
 )
 from .forms import ConfigFormBuilder, CollapsibleSection
 from .theme import THEME_QSS
+from .toast import Toast
 from .tooltip import attach_tooltip
 
 APP_NAME = "Anima 随机提示词生成器"
@@ -530,8 +531,11 @@ class MainWindow(QMainWindow):
                 self.list_nm_results.setCurrentRow(0)
                 self._show_nomodel_result(0)
             self._log(f"无 API 模式生成完成：{n} 条。")
+            self._flash_button(self.btn_nm_generate, f"✓ 已生成 {n} 条")
+            Toast.show(self, f"已生成 {n} 条提示词模板", kind="success")
         except Exception as exc:  # noqa: BLE001
             self._log(f"无 API 模式生成失败：{exc}")
+            Toast.show(self, "生成失败", kind="error")
             QMessageBox.critical(self, "生成失败", str(exc))
 
     def _on_nomodel_select(self, row: int) -> None:
@@ -549,6 +553,23 @@ class MainWindow(QMainWindow):
             return
         QApplication.clipboard().setText(text)
         self._log("无 API 模式：完整提示词模板已复制。")
+        self._flash_button(self.btn_nm_copy, "✓ 已复制")
+        Toast.show(self, "提示词模板已复制到剪贴板", kind="success")
+
+    def _flash_button(self, btn: QPushButton, flash_text: str) -> None:
+        """按钮短暂显示反馈文字后恢复原样。"""
+        orig = btn.text()
+        btn.setText(flash_text)
+
+        def _restore() -> None:
+            try:
+                btn.setText(orig)
+            except RuntimeError:  # 控件已销毁
+                pass
+
+        from PySide6.QtCore import QTimer
+
+        QTimer.singleShot(1200, _restore)
 
     # ------------------------------------------------------------------
     # API 页
@@ -1083,7 +1104,9 @@ class MainWindow(QMainWindow):
             self._refresh_profiles()
             self._rebuild_adv_form_from_profile(name)
             self._log(f"已切换到预设「{name}」，生成将使用该配置。")
+            Toast.show(self, f"已切换到预设「{name}」", kind="success")
         else:
+            Toast.show(self, "切换预设失败", kind="error")
             QMessageBox.warning(self, "切换失败", "无法激活该预设。")
 
     def _on_profile_save(self) -> None:
@@ -1366,8 +1389,11 @@ class MainWindow(QMainWindow):
             self._log(f"高级设置已保存到预设「{active}」（下次生成生效）。")
             self._invalidate_engine_cache()
             self._refresh_profiles()
+            self._flash_button(self.btn_save_cfg, "✓ 已保存")
+            Toast.show(self, f"配置已保存到预设「{active}」", kind="success")
         else:
             self.lbl_cfg_status.setText("保存失败")
+            Toast.show(self, "保存失败", kind="error")
             QMessageBox.critical(self, "保存失败", "无法写入用户配置文件。")
 
     def _diff_user(self, collected: dict[str, Any], default: dict[str, Any]) -> dict[str, Any]:
@@ -1451,9 +1477,11 @@ class MainWindow(QMainWindow):
             res = preview(self._resources, cfg)
         except Exception as exc:  # noqa: BLE001
             self._log(f"预览失败：{exc}")
+            Toast.show(self, "预览失败", kind="error")
             QMessageBox.critical(self, "预览失败", str(exc))
             return
         self._show_preview_window(res)
+        Toast.show(self, "预览样本已生成", kind="success")
 
     def _show_preview_window(self, res: dict[str, Any]) -> None:
         dlg = QDialog(self)
@@ -1634,6 +1662,7 @@ class MainWindow(QMainWindow):
     def _copy_to_clipboard(self, text: str) -> None:
         QApplication.clipboard().setText(text)
         self._log("已复制到剪贴板。")
+        Toast.show(self, "已复制到剪贴板 ✓", kind="success")
 
     # ------------------------------------------------------------------
     # 队列轮询（Qt 信号桥）
@@ -1743,6 +1772,7 @@ class MainWindow(QMainWindow):
         s["theme"] = index
         _save_settings(s)
         self._log(f"外观已切换为 {THEME_OPTIONS[index]}。")
+        Toast.show(self, f"外观已切换为 {THEME_OPTIONS[index]}")
 
     def closeEvent(self, event: QCloseEvent) -> None:  # noqa: N802
         if self._running:
