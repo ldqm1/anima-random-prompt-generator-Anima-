@@ -156,7 +156,7 @@ class ListEditor(QWidget):
         self._items_layout = QVBoxLayout(self._items_box)
         self._items_layout.setContentsMargins(0, 0, 0, 0)
         self._items_layout.setSpacing(2)
-        self._layout.addWidget(self._items_box)
+        self._layout.addWidget(self._items_box, 1)
         add_btn = QPushButton("+ 添加", self)
         add_btn.setObjectName("success")
         add_btn.clicked.connect(self._add_row)
@@ -214,9 +214,15 @@ class ListEditor(QWidget):
         lay.addLayout(head)
         fields = {}
         if isinstance(default, dict):
+            from .i18n import field_label
+
             for k, v in default.items():
                 help_text = self._field_cfg.get(k) or yaml_comments.semantic_help(k, v)
-                field = build_leaf_field(row, k, v, help_text)
+                display = field_label(k)
+                rich = f"配置键：{k}\n\n{help_text}" if help_text else f"配置键：{k}"
+                field = build_leaf_field(row, display, v, rich, k)
+                if field.widget is not None:
+                    lay.addWidget(field.widget)
                 fields[k] = field
         return row, fields
 
@@ -396,6 +402,12 @@ def build_leaf_field(
         le.set(list(value))
         if help_text:
             attach_tooltip(le, help_text)
+        # 空标量列表：显示填入提示（如类别白名单池）
+        if schema == "scalar" and not value:
+            hint = QLabel("（空列表：点「+ 添加」填入条目，或留空使用默认随机抽样）", parent)
+            hint.setStyleSheet("color: #888; font-size: 11px;")
+            if parent.layout() is not None:
+                parent.layout().addWidget(hint)
         return FormField("list", widget=le, getter=le.get, setter=le.set)
 
     # None / 其他 → 可选字符串
@@ -459,31 +471,27 @@ class ConfigFormBuilder:
 
         help_text = self._help(dotted, value)
         if isinstance(value, dict):
-            default_open = dotted not in self.collapsed_paths
-            # 章节/分类标题汉化
-            title = key_label(key) if dotted.count(".") == 0 else key_label(key)
-            # tooltip: 英文键 + yaml 注释
+            # 嵌套 dict：平铺显示（不折叠），分组标题 + 直接构建内容
+            title = key_label(key)
             rich_help = f"配置键：{dotted}\n\n{help_text}" if help_text else f"配置键：{dotted}"
-            if default_open:
-                content = QWidget(parent)
-                content_layout = QVBoxLayout(content)
-                content_layout.setContentsMargins(16, 0, 0, 0)
-                self.build_dict(value, dotted, content)
-                section = CollapsibleSection(parent, title, default_open=True, help_text=rich_help)
-                section._content = content
-                section._built = True
-                section._layout.addWidget(content)
-            else:
-                def _lazy(container: QWidget, _d=dotted, _v=value) -> None:
-                    inner = QVBoxLayout(container)
-                    inner.setContentsMargins(16, 0, 0, 0)
-                    self.build_dict(_v, _d, container)
-
-                section = CollapsibleSection(parent, title, default_open=False, help_text=rich_help, build_callback=_lazy)
-            # 把 section 放进父布局
+            # 分组标题
+            head = QLabel(title, parent)
+            head.setStyleSheet(
+                "font-size: 12px; font-weight: bold; color: #6c757d;"
+                "padding: 2px 0; margin-top: 4px;"
+            )
             if parent.layout() is not None:
-                parent.layout().addWidget(section)
-            self.collapsibles.append(section)
+                parent.layout().addWidget(head)
+            if help_text:
+                from .tooltip import attach_tooltip
+                attach_tooltip(head, rich_help)
+            # 内容直接平铺
+            content = QWidget(parent)
+            content_layout = QVBoxLayout(content)
+            content_layout.setContentsMargins(16, 0, 0, 0)
+            self.build_dict(value, dotted, content)
+            if parent.layout() is not None:
+                parent.layout().addWidget(content)
             return
         # 叶子字段：显示名汉化，tooltip 含英文键 + 注释
         display = field_label(key)
