@@ -476,10 +476,7 @@ class ConfigFormBuilder:
             rich_help = f"配置键：{dotted}\n\n{help_text}" if help_text else f"配置键：{dotted}"
             # 分组标题
             head = QLabel(title, parent)
-            head.setStyleSheet(
-                "font-size: 12px; font-weight: bold; color: #6c757d;"
-                "padding: 2px 0; margin-top: 4px;"
-            )
+            head.setObjectName("groupTitle")
             if parent.layout() is not None:
                 parent.layout().addWidget(head)
             if help_text:

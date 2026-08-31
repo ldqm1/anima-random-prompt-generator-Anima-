@@ -134,9 +134,37 @@ class MainWindow(QMainWindow):
 
         self._build_ui()
         self._apply_theme(self._saved_theme)
+        self._apply_cursors()
+        self._set_window_icon()
         self._load_saved_settings()
         self._poll_timer = self._start_poll()
         self._log(f"{APP_NAME} v{APP_VERSION} 已启动（PySide6）。")
+
+    def _set_window_icon(self) -> None:
+        """设置窗口图标（Qt 标准图标兜底，避免空白标题栏图标）。"""
+        try:
+            from PySide6.QtGui import QIcon
+            from PySide6.QtWidgets import QStyle
+
+            icon = self.style().standardIcon(QStyle.StandardPixmap.SP_FileDialogDetailedView)
+            if not icon.isNull():
+                self.setWindowIcon(icon)
+        except Exception:  # noqa: BLE001
+            pass
+
+    def _apply_cursors(self) -> None:
+        """给所有可点击控件设手型光标，提升可点击性感知。"""
+        from PySide6.QtCore import Qt as _Qt
+        from PySide6.QtWidgets import QAbstractButton, QComboBox, QListWidget, QCheckBox, QRadioButton
+
+        def _walk(w: QWidget) -> None:
+            if isinstance(w, (QAbstractButton, QComboBox, QListWidget)):
+                w.setCursor(_Qt.CursorShape.PointingHandCursor)
+            for ch in w.findChildren(QWidget):
+                if isinstance(ch, (QAbstractButton, QComboBox, QListWidget)):
+                    ch.setCursor(_Qt.CursorShape.PointingHandCursor)
+
+        _walk(self)
 
     # ------------------------------------------------------------------
     # 基础
@@ -231,11 +259,16 @@ class MainWindow(QMainWindow):
         outer = QHBoxLayout(f)
         outer.setContentsMargins(8, 8, 8, 8)
 
-        left = QWidget(f)
+        left = QFrame(f)
+        left.setObjectName("card")
         left_lay = QVBoxLayout(left)
-        left_lay.setContentsMargins(0, 0, 0, 0)
-        left_lay.setSpacing(6)
+        left_lay.setContentsMargins(14, 12, 14, 12)
+        left_lay.setSpacing(7)
         outer.addWidget(left, 3)
+        # 页面标题
+        title = QLabel("随机提示词生成", left)
+        title.setObjectName("sectionTitle")
+        left_lay.addWidget(title)
 
         # 行1: 数量 + 分级
         row1 = QHBoxLayout()
@@ -361,11 +394,14 @@ class MainWindow(QMainWindow):
         left_lay.addLayout(row9)
 
         # 右: 结果列表
-        right = QWidget(f)
+        right = QFrame(f)
+        right.setObjectName("card")
         right_lay = QVBoxLayout(right)
-        right_lay.setContentsMargins(0, 0, 0, 0)
+        right_lay.setContentsMargins(14, 12, 14, 12)
         outer.addWidget(right, 4)
-        right_lay.addWidget(QLabel("生成结果（双击查看全文）"))
+        rtitle = QLabel("生成结果（双击查看全文）", right)
+        rtitle.setObjectName("sectionTitle")
+        right_lay.addWidget(rtitle)
         self.tree = QListWidget(right)
         self.tree.itemDoubleClicked.connect(self._on_row_double)
         right_lay.addWidget(self.tree, 1)
@@ -391,6 +427,7 @@ class MainWindow(QMainWindow):
             "点击复制后粘贴到任意网页端 LLM（如 DeepSeek 网页），LLM 将按指令输出最终单行提示词。"
         )
         desc.setWordWrap(True)
+        desc.setObjectName("hint")
         outer.addWidget(desc)
 
         # 参数行
@@ -445,6 +482,7 @@ class MainWindow(QMainWindow):
         # 代码框
         self.txt_nm_output = QPlainTextEdit(f)
         self.txt_nm_output.setReadOnly(True)
+        self.txt_nm_output.setObjectName("codeBox")
         font = self.txt_nm_output.font()
         font.setFamily("Consolas")
         font.setPointSize(10)
@@ -521,7 +559,7 @@ class MainWindow(QMainWindow):
         lay.setContentsMargins(16, 16, 16, 16)
 
         title = QLabel("API 设置（OpenAI 兼容格式）")
-        title.setStyleSheet("font-size: 15px; font-weight: bold;")
+        title.setObjectName("sectionTitle")
         lay.addWidget(title)
         desc = QLabel("支持任意 OpenAI 兼容接口（DeepSeek / Moonshot / OpenRouter / 本地 vLLM 等）："
                       "填写 Base URL + API Key + 模型名即可。")
@@ -706,10 +744,7 @@ class MainWindow(QMainWindow):
 
         def _group_title(parent: QWidget, title: str, help_text: str) -> QLabel:
             lbl = QLabel(title, parent)
-            lbl.setStyleSheet(
-                "font-size: 13px; font-weight: bold; color: #2c7da0;"
-                "padding: 3px 0; margin-top: 6px; border-bottom: 1px solid #444;"
-            )
+            lbl.setObjectName("groupTitle")
             if help_text:
                 attach_tooltip(lbl, help_text)
             return lbl
@@ -720,7 +755,7 @@ class MainWindow(QMainWindow):
             page_lay.setContentsMargins(8, 4, 8, 8)
             page_lay.setSpacing(2)
             head = QLabel(title)
-            head.setStyleSheet("font-size: 14px; font-weight: bold; color: #2c7da0;")
+            head.setObjectName("sectionTitle")
             page_lay.addWidget(head)
 
             scroll = QScrollArea(page)
@@ -805,6 +840,7 @@ class MainWindow(QMainWindow):
         lay.setContentsMargins(12, 12, 12, 12)
         desc = QLabel("配置预设：多套生成参数可保存/切换/导入/导出，用于按不同目标自由生成提示词。")
         desc.setWordWrap(True)
+        desc.setObjectName("hint")
         lay.addWidget(desc)
 
         split = QSplitter(Qt.Orientation.Horizontal, f)
@@ -814,7 +850,9 @@ class MainWindow(QMainWindow):
         left = QWidget(split)
         left_lay = QVBoxLayout(left)
         left_lay.setContentsMargins(0, 0, 0, 0)
-        left_lay.addWidget(QLabel("预设列表"))
+        pt = QLabel("预设列表")
+        pt.setObjectName("sectionTitle")
+        left_lay.addWidget(pt)
         self.profile_list = QListWidget(left)
         self.profile_list.itemSelectionChanged.connect(self._on_profile_select)
         left_lay.addWidget(self.profile_list, 1)
@@ -824,7 +862,9 @@ class MainWindow(QMainWindow):
         right = QWidget(split)
         right_lay = QVBoxLayout(right)
         right_lay.setContentsMargins(0, 0, 0, 0)
-        right_lay.addWidget(QLabel("操作"))
+        ot = QLabel("操作")
+        ot.setObjectName("sectionTitle")
+        right_lay.addWidget(ot)
 
         op1 = QHBoxLayout()
         for text, objname, handler in [
@@ -860,7 +900,9 @@ class MainWindow(QMainWindow):
         op3.addWidget(b_import)
         right_lay.addLayout(op3)
 
-        right_lay.addWidget(QLabel("当前预设详情"))
+        dt = QLabel("当前预设详情")
+        dt.setObjectName("sectionTitle")
+        right_lay.addWidget(dt)
         self.profile_detail = QPlainTextEdit(right)
         self.profile_detail.setReadOnly(True)
         right_lay.addWidget(self.profile_detail, 1)
@@ -1147,7 +1189,9 @@ class MainWindow(QMainWindow):
         f = self.tab_log
         lay = QVBoxLayout(f)
         lay.setContentsMargins(8, 8, 8, 8)
-        lay.addWidget(QLabel("运行日志"))
+        ltitle = QLabel("运行日志")
+        ltitle.setObjectName("sectionTitle")
+        lay.addWidget(ltitle)
         self.txt_log = QPlainTextEdit(f)
         self.txt_log.setReadOnly(True)
         lay.addWidget(self.txt_log, 1)
